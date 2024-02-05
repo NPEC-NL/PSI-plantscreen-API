@@ -17,7 +17,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from plantscreen.swagger_client.api_client import ApiClient
+from swagger_client.api_client import ApiClient
 
 
 class SprayApi(object):
@@ -32,12 +32,12 @@ class SprayApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_spray_action(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
+    def spray_action(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
         """Return spray action data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spray_action(device_id, round_id, tray_id, async_req=True)
+        >>> thread = api.spray_action(device_id, round_id, tray_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,17 +50,17 @@ class SprayApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_spray_action_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
+            return self.spray_action_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_spray_action_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
+            (data) = self.spray_action_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
             return data
 
-    def get_spray_action_with_http_info(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
+    def spray_action_with_http_info(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
         """Return spray action data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spray_action_with_http_info(device_id, round_id, tray_id, async_req=True)
+        >>> thread = api.spray_action_with_http_info(device_id, round_id, tray_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -83,22 +83,22 @@ class SprayApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_spray_action" % key
+                    " to method spray_action" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
         if ('device_id' not in params or
                 params['device_id'] is None):
-            raise ValueError("Missing the required parameter `device_id` when calling `get_spray_action`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_id` when calling `spray_action`")  # noqa: E501
         # verify the required parameter 'round_id' is set
         if ('round_id' not in params or
                 params['round_id'] is None):
-            raise ValueError("Missing the required parameter `round_id` when calling `get_spray_action`")  # noqa: E501
+            raise ValueError("Missing the required parameter `round_id` when calling `spray_action`")  # noqa: E501
         # verify the required parameter 'tray_id' is set
         if ('tray_id' not in params or
                 params['tray_id'] is None):
-            raise ValueError("Missing the required parameter `tray_id` when calling `get_spray_action`")  # noqa: E501
+            raise ValueError("Missing the required parameter `tray_id` when calling `spray_action`")  # noqa: E501
 
         collection_formats = {}
 

@@ -17,7 +17,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from plantscreen.swagger_client.api_client import ApiClient
+from swagger_client.api_client import ApiClient
 
 
 class SpectrumDeviceApi(object):
@@ -32,12 +32,12 @@ class SpectrumDeviceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_spectrum_device(self, id, **kwargs):  # noqa: E501
+    def spectrum_device(self, id, **kwargs):  # noqa: E501
         """Returns one spectrum device by spectrum device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spectrum_device(id, async_req=True)
+        >>> thread = api.spectrum_device(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class SpectrumDeviceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_spectrum_device_with_http_info(id, **kwargs)  # noqa: E501
+            return self.spectrum_device_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_spectrum_device_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.spectrum_device_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_spectrum_device_with_http_info(self, id, **kwargs):  # noqa: E501
+    def spectrum_device_with_http_info(self, id, **kwargs):  # noqa: E501
         """Returns one spectrum device by spectrum device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spectrum_device_with_http_info(id, async_req=True)
+        >>> thread = api.spectrum_device_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class SpectrumDeviceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_spectrum_device" % key
+                    " to method spectrum_device" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_spectrum_device`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `spectrum_device`")  # noqa: E501
 
         collection_formats = {}
 
@@ -125,12 +125,12 @@ class SpectrumDeviceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_spectrum_device_id(self, **kwargs):  # noqa: E501
+    def spectrum_device_id(self, **kwargs):  # noqa: E501
         """Returns a list of all spectrum device IDs in the database.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spectrum_device_id(async_req=True)
+        >>> thread = api.spectrum_device_id(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -140,17 +140,17 @@ class SpectrumDeviceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_spectrum_device_id_with_http_info(**kwargs)  # noqa: E501
+            return self.spectrum_device_id_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_spectrum_device_id_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.spectrum_device_id_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_spectrum_device_id_with_http_info(self, **kwargs):  # noqa: E501
+    def spectrum_device_id_with_http_info(self, **kwargs):  # noqa: E501
         """Returns a list of all spectrum device IDs in the database.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spectrum_device_id_with_http_info(async_req=True)
+        >>> thread = api.spectrum_device_id_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -170,7 +170,7 @@ class SpectrumDeviceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_spectrum_device_id" % key
+                    " to method spectrum_device_id" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -210,12 +210,12 @@ class SpectrumDeviceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_spectrum_values_date_device(self, id, start, stop, **kwargs):  # noqa: E501
+    def spectrum_values_date_device(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns spectrum values for spectrum device defined by spectrum device ID measured between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spectrum_values_date_device(id, start, stop, async_req=True)
+        >>> thread = api.spectrum_values_date_device(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -228,17 +228,17 @@ class SpectrumDeviceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_spectrum_values_date_device_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            return self.spectrum_values_date_device_with_http_info(id, start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_spectrum_values_date_device_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            (data) = self.spectrum_values_date_device_with_http_info(id, start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_spectrum_values_date_device_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
+    def spectrum_values_date_device_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns spectrum values for spectrum device defined by spectrum device ID measured between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_spectrum_values_date_device_with_http_info(id, start, stop, async_req=True)
+        >>> thread = api.spectrum_values_date_device_with_http_info(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -261,22 +261,22 @@ class SpectrumDeviceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_spectrum_values_date_device" % key
+                    " to method spectrum_values_date_device" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_spectrum_values_date_device`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `spectrum_values_date_device`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_spectrum_values_date_device`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `spectrum_values_date_device`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_spectrum_values_date_device`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `spectrum_values_date_device`")  # noqa: E501
 
         collection_formats = {}
 

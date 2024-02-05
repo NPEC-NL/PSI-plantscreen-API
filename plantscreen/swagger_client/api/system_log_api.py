@@ -17,7 +17,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from plantscreen.swagger_client.api_client import ApiClient
+from swagger_client.api_client import ApiClient
 
 
 class SystemLogApi(object):
@@ -32,12 +32,12 @@ class SystemLogApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_system_log_date_log_tag(self, tag, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_log_tag(self, tag, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by log tag between defined times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_log_tag(tag, start, stop, async_req=True)
+        >>> thread = api.system_log_date_log_tag(tag, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,17 +50,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_date_log_tag_with_http_info(tag, start, stop, **kwargs)  # noqa: E501
+            return self.system_log_date_log_tag_with_http_info(tag, start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_date_log_tag_with_http_info(tag, start, stop, **kwargs)  # noqa: E501
+            (data) = self.system_log_date_log_tag_with_http_info(tag, start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_system_log_date_log_tag_with_http_info(self, tag, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_log_tag_with_http_info(self, tag, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by log tag between defined times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_log_tag_with_http_info(tag, start, stop, async_req=True)
+        >>> thread = api.system_log_date_log_tag_with_http_info(tag, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -83,22 +83,22 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_date_log_tag" % key
+                    " to method system_log_date_log_tag" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'tag' is set
         if ('tag' not in params or
                 params['tag'] is None):
-            raise ValueError("Missing the required parameter `tag` when calling `get_system_log_date_log_tag`")  # noqa: E501
+            raise ValueError("Missing the required parameter `tag` when calling `system_log_date_log_tag`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_system_log_date_log_tag`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `system_log_date_log_tag`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_system_log_date_log_tag`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `system_log_date_log_tag`")  # noqa: E501
 
         collection_formats = {}
 
@@ -141,12 +141,12 @@ class SystemLogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_system_log_date_log_type(self, type, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_log_type(self, type, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by log type between defined times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_log_type(type, start, stop, async_req=True)
+        >>> thread = api.system_log_date_log_type(type, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -159,17 +159,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_date_log_type_with_http_info(type, start, stop, **kwargs)  # noqa: E501
+            return self.system_log_date_log_type_with_http_info(type, start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_date_log_type_with_http_info(type, start, stop, **kwargs)  # noqa: E501
+            (data) = self.system_log_date_log_type_with_http_info(type, start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_system_log_date_log_type_with_http_info(self, type, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_log_type_with_http_info(self, type, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by log type between defined times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_log_type_with_http_info(type, start, stop, async_req=True)
+        >>> thread = api.system_log_date_log_type_with_http_info(type, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -192,22 +192,22 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_date_log_type" % key
+                    " to method system_log_date_log_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'type' is set
         if ('type' not in params or
                 params['type'] is None):
-            raise ValueError("Missing the required parameter `type` when calling `get_system_log_date_log_type`")  # noqa: E501
+            raise ValueError("Missing the required parameter `type` when calling `system_log_date_log_type`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_system_log_date_log_type`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `system_log_date_log_type`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_system_log_date_log_type`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `system_log_date_log_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -250,12 +250,12 @@ class SystemLogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_system_log_date_round(self, id, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_round(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by round ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the round.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_round(id, start, stop, async_req=True)
+        >>> thread = api.system_log_date_round(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -268,17 +268,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_date_round_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            return self.system_log_date_round_with_http_info(id, start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_date_round_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            (data) = self.system_log_date_round_with_http_info(id, start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_system_log_date_round_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_round_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by round ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the round.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_round_with_http_info(id, start, stop, async_req=True)
+        >>> thread = api.system_log_date_round_with_http_info(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -301,22 +301,22 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_date_round" % key
+                    " to method system_log_date_round" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_system_log_date_round`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `system_log_date_round`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_system_log_date_round`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `system_log_date_round`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_system_log_date_round`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `system_log_date_round`")  # noqa: E501
 
         collection_formats = {}
 
@@ -359,12 +359,12 @@ class SystemLogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_system_log_date_tray(self, id, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_tray(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by tray ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the tray.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_tray(id, start, stop, async_req=True)
+        >>> thread = api.system_log_date_tray(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -377,17 +377,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_date_tray_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            return self.system_log_date_tray_with_http_info(id, start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_date_tray_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            (data) = self.system_log_date_tray_with_http_info(id, start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_system_log_date_tray_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
+    def system_log_date_tray_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns important events as system logs by tray ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the tray.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_date_tray_with_http_info(id, start, stop, async_req=True)
+        >>> thread = api.system_log_date_tray_with_http_info(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -410,22 +410,22 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_date_tray" % key
+                    " to method system_log_date_tray" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_system_log_date_tray`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `system_log_date_tray`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_system_log_date_tray`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `system_log_date_tray`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_system_log_date_tray`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `system_log_date_tray`")  # noqa: E501
 
         collection_formats = {}
 
@@ -468,12 +468,12 @@ class SystemLogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_system_log_log_tag(self, **kwargs):  # noqa: E501
+    def system_log_log_tag(self, **kwargs):  # noqa: E501
         """Returns a list of all used system log tag.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_log_tag(async_req=True)
+        >>> thread = api.system_log_log_tag(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -483,17 +483,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_log_tag_with_http_info(**kwargs)  # noqa: E501
+            return self.system_log_log_tag_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_log_tag_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.system_log_log_tag_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_system_log_log_tag_with_http_info(self, **kwargs):  # noqa: E501
+    def system_log_log_tag_with_http_info(self, **kwargs):  # noqa: E501
         """Returns a list of all used system log tag.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_log_tag_with_http_info(async_req=True)
+        >>> thread = api.system_log_log_tag_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -513,7 +513,7 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_log_tag" % key
+                    " to method system_log_log_tag" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -553,12 +553,12 @@ class SystemLogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_system_log_log_type(self, **kwargs):  # noqa: E501
+    def system_log_log_type(self, **kwargs):  # noqa: E501
         """Returns a list of all used system log types.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_log_type(async_req=True)
+        >>> thread = api.system_log_log_type(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -568,17 +568,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_log_type_with_http_info(**kwargs)  # noqa: E501
+            return self.system_log_log_type_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_log_type_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.system_log_log_type_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_system_log_log_type_with_http_info(self, **kwargs):  # noqa: E501
+    def system_log_log_type_with_http_info(self, **kwargs):  # noqa: E501
         """Returns a list of all used system log types.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_log_type_with_http_info(async_req=True)
+        >>> thread = api.system_log_log_type_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -598,7 +598,7 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_log_type" % key
+                    " to method system_log_log_type" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -638,12 +638,12 @@ class SystemLogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_system_log_round(self, id, **kwargs):  # noqa: E501
+    def system_log_round(self, id, **kwargs):  # noqa: E501
         """Returns important events as system logs by round ID. System logs are only optionally assigned to the round.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_round(id, async_req=True)
+        >>> thread = api.system_log_round(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -654,17 +654,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_round_with_http_info(id, **kwargs)  # noqa: E501
+            return self.system_log_round_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_round_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.system_log_round_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_system_log_round_with_http_info(self, id, **kwargs):  # noqa: E501
+    def system_log_round_with_http_info(self, id, **kwargs):  # noqa: E501
         """Returns important events as system logs by round ID. System logs are only optionally assigned to the round.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_round_with_http_info(id, async_req=True)
+        >>> thread = api.system_log_round_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -685,14 +685,14 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_round" % key
+                    " to method system_log_round" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_system_log_round`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `system_log_round`")  # noqa: E501
 
         collection_formats = {}
 
@@ -731,12 +731,12 @@ class SystemLogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_system_log_tray(self, id, **kwargs):  # noqa: E501
+    def system_log_tray(self, id, **kwargs):  # noqa: E501
         """Returns important events as system logs by tray ID. System logs are only optionally assigned to the tray.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_tray(id, async_req=True)
+        >>> thread = api.system_log_tray(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -747,17 +747,17 @@ class SystemLogApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_system_log_tray_with_http_info(id, **kwargs)  # noqa: E501
+            return self.system_log_tray_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_system_log_tray_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.system_log_tray_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_system_log_tray_with_http_info(self, id, **kwargs):  # noqa: E501
+    def system_log_tray_with_http_info(self, id, **kwargs):  # noqa: E501
         """Returns important events as system logs by tray ID. System logs are only optionally assigned to the tray.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_system_log_tray_with_http_info(id, async_req=True)
+        >>> thread = api.system_log_tray_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -778,14 +778,14 @@ class SystemLogApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_system_log_tray" % key
+                    " to method system_log_tray" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_system_log_tray`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `system_log_tray`")  # noqa: E501
 
         collection_formats = {}
 

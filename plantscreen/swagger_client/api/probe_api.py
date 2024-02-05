@@ -17,7 +17,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from plantscreen.swagger_client.api_client import ApiClient
+from swagger_client.api_client import ApiClient
 
 
 class ProbeApi(object):
@@ -32,12 +32,12 @@ class ProbeApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_probe(self, **kwargs):  # noqa: E501
+    def probe(self, **kwargs):  # noqa: E501
         """Returns one environment probe by probe ID. TODO: There are two versions, one with parameter (returning just a single object) and one without (returning an arry). Check how to model this  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_probe(async_req=True)
+        >>> thread = api.probe(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class ProbeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_probe_with_http_info(**kwargs)  # noqa: E501
+            return self.probe_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_probe_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.probe_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_probe_with_http_info(self, **kwargs):  # noqa: E501
+    def probe_with_http_info(self, **kwargs):  # noqa: E501
         """Returns one environment probe by probe ID. TODO: There are two versions, one with parameter (returning just a single object) and one without (returning an arry). Check how to model this  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_probe_with_http_info(async_req=True)
+        >>> thread = api.probe_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,7 +79,7 @@ class ProbeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_probe" % key
+                    " to method probe" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -121,12 +121,12 @@ class ProbeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_probe_value_date(self, start, stop, **kwargs):  # noqa: E501
+    def probe_value_date(self, start, stop, **kwargs):  # noqa: E501
         """Returns all probe values measured between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_probe_value_date(start, stop, async_req=True)
+        >>> thread = api.probe_value_date(start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -138,17 +138,17 @@ class ProbeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_probe_value_date_with_http_info(start, stop, **kwargs)  # noqa: E501
+            return self.probe_value_date_with_http_info(start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_probe_value_date_with_http_info(start, stop, **kwargs)  # noqa: E501
+            (data) = self.probe_value_date_with_http_info(start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_probe_value_date_with_http_info(self, start, stop, **kwargs):  # noqa: E501
+    def probe_value_date_with_http_info(self, start, stop, **kwargs):  # noqa: E501
         """Returns all probe values measured between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_probe_value_date_with_http_info(start, stop, async_req=True)
+        >>> thread = api.probe_value_date_with_http_info(start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -170,18 +170,18 @@ class ProbeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_probe_value_date" % key
+                    " to method probe_value_date" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_probe_value_date`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `probe_value_date`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_probe_value_date`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `probe_value_date`")  # noqa: E501
 
         collection_formats = {}
 
@@ -222,12 +222,12 @@ class ProbeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_probe_value_date_probe(self, id, start, stop, **kwargs):  # noqa: E501
+    def probe_value_date_probe(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns all probe values for probe defined by probe ID measured between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_probe_value_date_probe(id, start, stop, async_req=True)
+        >>> thread = api.probe_value_date_probe(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -240,17 +240,17 @@ class ProbeApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_probe_value_date_probe_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            return self.probe_value_date_probe_with_http_info(id, start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_probe_value_date_probe_with_http_info(id, start, stop, **kwargs)  # noqa: E501
+            (data) = self.probe_value_date_probe_with_http_info(id, start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_probe_value_date_probe_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
+    def probe_value_date_probe_with_http_info(self, id, start, stop, **kwargs):  # noqa: E501
         """Returns all probe values for probe defined by probe ID measured between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_probe_value_date_probe_with_http_info(id, start, stop, async_req=True)
+        >>> thread = api.probe_value_date_probe_with_http_info(id, start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -273,22 +273,22 @@ class ProbeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_probe_value_date_probe" % key
+                    " to method probe_value_date_probe" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_probe_value_date_probe`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `probe_value_date_probe`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_probe_value_date_probe`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `probe_value_date_probe`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_probe_value_date_probe`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `probe_value_date_probe`")  # noqa: E501
 
         collection_formats = {}
 

@@ -17,7 +17,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from plantscreen.swagger_client.api_client import ApiClient
+from swagger_client.api_client import ApiClient
 
 
 class ScalesApi(object):
@@ -32,12 +32,12 @@ class ScalesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_scales_plant_weight(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
+    def scales_plant_weight(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
         """Returns scales data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_plant_weight(device_id, round_id, tray_id, async_req=True)
+        >>> thread = api.scales_plant_weight(device_id, round_id, tray_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,17 +50,17 @@ class ScalesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_scales_plant_weight_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
+            return self.scales_plant_weight_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_scales_plant_weight_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
+            (data) = self.scales_plant_weight_with_http_info(device_id, round_id, tray_id, **kwargs)  # noqa: E501
             return data
 
-    def get_scales_plant_weight_with_http_info(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
+    def scales_plant_weight_with_http_info(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
         """Returns scales data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_plant_weight_with_http_info(device_id, round_id, tray_id, async_req=True)
+        >>> thread = api.scales_plant_weight_with_http_info(device_id, round_id, tray_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -83,22 +83,22 @@ class ScalesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_scales_plant_weight" % key
+                    " to method scales_plant_weight" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
         if ('device_id' not in params or
                 params['device_id'] is None):
-            raise ValueError("Missing the required parameter `device_id` when calling `get_scales_plant_weight`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_id` when calling `scales_plant_weight`")  # noqa: E501
         # verify the required parameter 'round_id' is set
         if ('round_id' not in params or
                 params['round_id'] is None):
-            raise ValueError("Missing the required parameter `round_id` when calling `get_scales_plant_weight`")  # noqa: E501
+            raise ValueError("Missing the required parameter `round_id` when calling `scales_plant_weight`")  # noqa: E501
         # verify the required parameter 'tray_id' is set
         if ('tray_id' not in params or
                 params['tray_id'] is None):
-            raise ValueError("Missing the required parameter `tray_id` when calling `get_scales_plant_weight`")  # noqa: E501
+            raise ValueError("Missing the required parameter `tray_id` when calling `scales_plant_weight`")  # noqa: E501
 
         collection_formats = {}
 
@@ -134,293 +134,6 @@ class ScalesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='JsonScalesMeasureResult',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_scales_weight_reference_plant(self, id, **kwargs):  # noqa: E501
-        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_weight_reference_plant(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int id: plantID (required)
-        :return: JsonPlantWeightReferenceResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_scales_weight_reference_plant_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_scales_weight_reference_plant_with_http_info(id, **kwargs)  # noqa: E501
-            return data
-
-    def get_scales_weight_reference_plant_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_weight_reference_plant_with_http_info(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int id: plantID (required)
-        :return: JsonPlantWeightReferenceResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_scales_weight_reference_plant" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_scales_weight_reference_plant`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'id' in params:
-            query_params.append(('id', params['id']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/Scales/WeightReference/Plant', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_scales_weight_reference_to_date_tray(self, id, _date, **kwargs):  # noqa: E501
-        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_weight_reference_to_date_tray(id, _date, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int id: trayID (required)
-        :param datetime _date: toDate (required)
-        :return: JsonPlantWeightReferenceResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_scales_weight_reference_to_date_tray_with_http_info(id, _date, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_scales_weight_reference_to_date_tray_with_http_info(id, _date, **kwargs)  # noqa: E501
-            return data
-
-    def get_scales_weight_reference_to_date_tray_with_http_info(self, id, _date, **kwargs):  # noqa: E501
-        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_weight_reference_to_date_tray_with_http_info(id, _date, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int id: trayID (required)
-        :param datetime _date: toDate (required)
-        :return: JsonPlantWeightReferenceResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['id', '_date']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_scales_weight_reference_to_date_tray" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_scales_weight_reference_to_date_tray`")  # noqa: E501
-        # verify the required parameter '_date' is set
-        if ('_date' not in params or
-                params['_date'] is None):
-            raise ValueError("Missing the required parameter `_date` when calling `get_scales_weight_reference_to_date_tray`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'id' in params:
-            query_params.append(('id', params['id']))  # noqa: E501
-        if '_date' in params:
-            query_params.append(('date', params['_date']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/Scales/WeightReference/ToDate/Tray', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_scales_weight_reference_tray(self, id, **kwargs):  # noqa: E501
-        """Returns plant weight reference data by tray ID. The weight is in units of grams  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_weight_reference_tray(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int id: trayID (required)
-        :return: JsonPlantWeightReferenceResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_scales_weight_reference_tray_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_scales_weight_reference_tray_with_http_info(id, **kwargs)  # noqa: E501
-            return data
-
-    def get_scales_weight_reference_tray_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Returns plant weight reference data by tray ID. The weight is in units of grams  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_scales_weight_reference_tray_with_http_info(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int id: trayID (required)
-        :return: JsonPlantWeightReferenceResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_scales_weight_reference_tray" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_scales_weight_reference_tray`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'id' in params:
-            query_params.append(('id', params['id']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/Scales/WeightReference/Tray', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -514,6 +227,293 @@ class ScalesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='JsonScalesMeasureByIDResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def scales_weight_reference_plant(self, id, **kwargs):  # noqa: E501
+        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.scales_weight_reference_plant(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: plantID (required)
+        :return: JsonPlantWeightReferenceResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.scales_weight_reference_plant_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.scales_weight_reference_plant_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def scales_weight_reference_plant_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.scales_weight_reference_plant_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: plantID (required)
+        :return: JsonPlantWeightReferenceResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method scales_weight_reference_plant" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `scales_weight_reference_plant`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/Scales/WeightReference/Plant', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def scales_weight_reference_to_date_tray(self, id, _date, **kwargs):  # noqa: E501
+        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.scales_weight_reference_to_date_tray(id, _date, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: trayID (required)
+        :param datetime _date: toDate (required)
+        :return: JsonPlantWeightReferenceResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.scales_weight_reference_to_date_tray_with_http_info(id, _date, **kwargs)  # noqa: E501
+        else:
+            (data) = self.scales_weight_reference_to_date_tray_with_http_info(id, _date, **kwargs)  # noqa: E501
+            return data
+
+    def scales_weight_reference_to_date_tray_with_http_info(self, id, _date, **kwargs):  # noqa: E501
+        """Returns plant weight reference data by plant ID. The weight is in units of grams  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.scales_weight_reference_to_date_tray_with_http_info(id, _date, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: trayID (required)
+        :param datetime _date: toDate (required)
+        :return: JsonPlantWeightReferenceResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', '_date']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method scales_weight_reference_to_date_tray" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `scales_weight_reference_to_date_tray`")  # noqa: E501
+        # verify the required parameter '_date' is set
+        if ('_date' not in params or
+                params['_date'] is None):
+            raise ValueError("Missing the required parameter `_date` when calling `scales_weight_reference_to_date_tray`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/Scales/WeightReference/ToDate/Tray', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def scales_weight_reference_tray(self, id, **kwargs):  # noqa: E501
+        """Returns plant weight reference data by tray ID. The weight is in units of grams  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.scales_weight_reference_tray(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: trayID (required)
+        :return: JsonPlantWeightReferenceResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.scales_weight_reference_tray_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.scales_weight_reference_tray_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def scales_weight_reference_tray_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Returns plant weight reference data by tray ID. The weight is in units of grams  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.scales_weight_reference_tray_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: trayID (required)
+        :return: JsonPlantWeightReferenceResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method scales_weight_reference_tray" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `scales_weight_reference_tray`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/Scales/WeightReference/Tray', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

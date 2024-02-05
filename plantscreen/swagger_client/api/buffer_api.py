@@ -17,7 +17,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from plantscreen.swagger_client.api_client import ApiClient
+from swagger_client.api_client import ApiClient
 
 
 class BufferApi(object):
@@ -32,12 +32,12 @@ class BufferApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_buffer_history(self, id, **kwargs):  # noqa: E501
+    def buffer_history(self, id, **kwargs):  # noqa: E501
         """Returns one buffer history state defined by buffer state ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_buffer_history(id, async_req=True)
+        >>> thread = api.buffer_history(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class BufferApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_buffer_history_with_http_info(id, **kwargs)  # noqa: E501
+            return self.buffer_history_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_buffer_history_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.buffer_history_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_buffer_history_with_http_info(self, id, **kwargs):  # noqa: E501
+    def buffer_history_with_http_info(self, id, **kwargs):  # noqa: E501
         """Returns one buffer history state defined by buffer state ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_buffer_history_with_http_info(id, async_req=True)
+        >>> thread = api.buffer_history_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -79,14 +79,14 @@ class BufferApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_buffer_history" % key
+                    " to method buffer_history" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_buffer_history`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `buffer_history`")  # noqa: E501
 
         collection_formats = {}
 
@@ -125,12 +125,12 @@ class BufferApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_buffer_history_date(self, start, stop, **kwargs):  # noqa: E501
+    def buffer_history_date(self, start, stop, **kwargs):  # noqa: E501
         """Returns buffer history states between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_buffer_history_date(start, stop, async_req=True)
+        >>> thread = api.buffer_history_date(start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -142,17 +142,17 @@ class BufferApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_buffer_history_date_with_http_info(start, stop, **kwargs)  # noqa: E501
+            return self.buffer_history_date_with_http_info(start, stop, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_buffer_history_date_with_http_info(start, stop, **kwargs)  # noqa: E501
+            (data) = self.buffer_history_date_with_http_info(start, stop, **kwargs)  # noqa: E501
             return data
 
-    def get_buffer_history_date_with_http_info(self, start, stop, **kwargs):  # noqa: E501
+    def buffer_history_date_with_http_info(self, start, stop, **kwargs):  # noqa: E501
         """Returns buffer history states between times. Times is entered as the start and end time of the required interval.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_buffer_history_date_with_http_info(start, stop, async_req=True)
+        >>> thread = api.buffer_history_date_with_http_info(start, stop, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -174,18 +174,18 @@ class BufferApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_buffer_history_date" % key
+                    " to method buffer_history_date" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_buffer_history_date`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `buffer_history_date`")  # noqa: E501
         # verify the required parameter 'stop' is set
         if ('stop' not in params or
                 params['stop'] is None):
-            raise ValueError("Missing the required parameter `stop` when calling `get_buffer_history_date`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stop` when calling `buffer_history_date`")  # noqa: E501
 
         collection_formats = {}
 
