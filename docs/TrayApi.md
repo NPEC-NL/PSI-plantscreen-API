@@ -1,4 +1,4 @@
-# swagger_client.TrayApi
+# plantscreen.swagger_client.TrayApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -25,11 +25,11 @@ Returns a scales mapping for tray defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | trayID
 
 try:
@@ -71,11 +71,11 @@ Returns one tray by tray ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | trayID
 
 try:
@@ -117,11 +117,11 @@ Returns one tray profile by tray profile ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | profileID
 
 try:
@@ -163,11 +163,11 @@ Returns one tray profile to which tray defined by ID was assigned on the defined
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | trayID
 _date = '2013-10-20T19:20:30+01:00' # datetime | date
 
@@ -211,11 +211,11 @@ Returns one tray profile to which tray defined by ID is assigned.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | trayID
 
 try:
@@ -257,11 +257,11 @@ Returns tray profiles to which tray defined by ID was assigned between defined t
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | trayID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
@@ -307,11 +307,11 @@ Returns all trays measured in the round defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | roundID
 
 try:
@@ -353,11 +353,11 @@ Returns one tray type by tray type ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | typeID
 
 try:
@@ -399,11 +399,11 @@ Returns one tray type which is assigned to the tray defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | trayID
 
 try:
@@ -445,11 +445,11 @@ Returns one tray type which is assigned to the tray profile defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TrayApi()
+api_instance = plantscreen.swagger_client.TrayApi()
 id = 56 # int | trayProfileID
 
 try:

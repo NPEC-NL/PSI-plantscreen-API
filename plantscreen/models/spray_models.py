@@ -48,11 +48,11 @@ class Spray:
 
 # Spray Action for Tray
 @dataclass
-class getSprayAction:
+class SprayAction:
     Spray: Spray
 
     @staticmethod
     def from_dict(obj: Any) -> 'Spray':
         if obj.get("JsonSprayActionResult") is None:
-            return None
+            return []
         return [Spray.from_dict(y) for y in obj.get("JsonSprayActionResult")] 

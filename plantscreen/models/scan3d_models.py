@@ -10,9 +10,9 @@ class Scan3dImage:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
-    MeasureHeight: int
+    MeasureHeight: float
     MeasureID: int
     RoundID: int
     TrayBarcode: str
@@ -115,7 +115,7 @@ class Scan3dPlant:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterName: str
@@ -157,7 +157,7 @@ class Scan3dLeaf:
     DevicePID: str
     ExperimentID: int
     LeafIndex: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterName: str
@@ -210,7 +210,7 @@ class Scan3d:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dImage':
         if obj.get("JsonScan3dImagingResult") is None:
-            return None
+            return []
         return [Scan3dImage.from_dict(y) for y in obj.get("JsonScan3dImagingResult")] 
 
 # 3D Extended Data by Measure ID
@@ -242,7 +242,7 @@ class Scan3dAnalyzedModelMeasure:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dAnalyze':
         if obj.get("JsonScan3dAnalyzedModelByMeasureIDResult") is None:
-            return None
+            return []
         return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelByMeasureIDResult")] 
 
 # 3D Analyzed Model by Analyse ID
@@ -252,7 +252,7 @@ class Scan3dAnalysedModelAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dAnalyze':
         if obj.get("JsonScan3dAnalyzedModelByAnalyseIDResult") is None:
-            return None
+            return []
         return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelByAnalyseIDResult")] 
 
 # 3D Analyzed Model for Tray
@@ -262,7 +262,7 @@ class Scan3dAnalyzedModel:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dAnalyze':
         if obj.get("JsonScan3dAnalyzedModelResult") is None:
-            return None
+            return []
         return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelResult")] 
 
 # 3D Parameter by ID
@@ -283,7 +283,7 @@ class Scan3dParamUsedAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dParam':
         if obj.get("JsonScan3dUsedParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [Scan3dParam.from_dict(y) for y in obj.get("JsonScan3dUsedParamByAnalyseIDResult")] 
 
 # 3D Used Parameters for Tray
@@ -293,7 +293,7 @@ class Scan3dParamUsed:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dParam':
         if obj.get("JsonScan3dUsedParamResult") is None:
-            return None
+            return []
         return [Scan3dParam.from_dict(y) for y in obj.get("JsonScan3dUsedParamResult")] 
 
 # 3D Plant Parameter Values by Analyse ID
@@ -303,7 +303,7 @@ class Scan3dPlantParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dPlant':
         if obj.get("JsonScan3dPlantParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [Scan3dPlant.from_dict(y) for y in obj.get("JsonScan3dPlantParamByAnalyseIDResult")] 
 
 # 3D Plant Parameter Values for Tray
@@ -313,7 +313,7 @@ class Scan3dPlantParam:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dPlant':
         if obj.get("JsonScan3dPlantParamResult") is None:
-            return None
+            return []
         return [Scan3dPlant.from_dict(y) for y in obj.get("JsonScan3dPlantParamResult")] 
     
 # 3D Local Leaf Parameter Values by Analyse ID
@@ -323,7 +323,7 @@ class Scan3dLeafParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dLeaf':
         if obj.get("JsonScan3dLeafParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [Scan3dLeaf.from_dict(y) for y in obj.get("JsonScan3dLeafParamByAnalyseIDResult")] 
 
 # 3D Local Leaf Parameter Values for Tray
@@ -333,7 +333,7 @@ class Scan3dLeafParam:
     @staticmethod
     def from_dict(obj: Any) -> 'Scan3dLeaf':
         if obj.get("JsonScan3dLeafParamResult") is None:
-            return None
+            return []
         return [Scan3dLeaf.from_dict(y) for y in obj.get("JsonScan3dLeafParamResult")] 
 
 

@@ -1,4 +1,4 @@
-# swagger_client.ExperimentApi
+# plantscreen.swagger_client.ExperimentApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -22,11 +22,11 @@ Returns one experiment by experiment ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ExperimentApi()
+api_instance = plantscreen.swagger_client.ExperimentApi()
 id = 56 # int | experimentID
 
 try:
@@ -68,11 +68,11 @@ Returns all experiments whose rounds took place between defined times. Times is 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ExperimentApi()
+api_instance = plantscreen.swagger_client.ExperimentApi()
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
 
@@ -116,11 +116,11 @@ Returns a list of all experiment IDs in the database.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ExperimentApi()
+api_instance = plantscreen.swagger_client.ExperimentApi()
 
 try:
     # Returns a list of all experiment IDs in the database.
@@ -158,11 +158,11 @@ Returns all experiments that belong to the user defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ExperimentApi()
+api_instance = plantscreen.swagger_client.ExperimentApi()
 id = 56 # int | ownerID
 
 try:
@@ -204,11 +204,11 @@ Returns the experiment notes that the user saved for the experiment defined by I
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ExperimentApi()
+api_instance = plantscreen.swagger_client.ExperimentApi()
 id = 56 # int | experimentID
 
 try:
@@ -250,11 +250,11 @@ Returns the owner(s) of the experiment by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ExperimentApi()
+api_instance = plantscreen.swagger_client.ExperimentApi()
 ids = [56] # list[int] | ownerIDs TODO is this multiple?
 
 try:
@@ -296,11 +296,11 @@ Returns a list of all experiment owner IDs in the database.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ExperimentApi()
+api_instance = plantscreen.swagger_client.ExperimentApi()
 
 try:
     # Returns a list of all experiment owner IDs in the database.

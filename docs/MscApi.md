@@ -1,4 +1,4 @@
-# swagger_client.MscApi
+# plantscreen.swagger_client.MscApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -35,11 +35,11 @@ Returns one Multispectral calibration for individual groups of lights with infor
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | calibrationID
 
 try:
@@ -81,11 +81,11 @@ Returns one light output setting for light group calibration defined by calibrat
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | calibrationLightID. Two versions, with and without parameter (optional)
 
 try:
@@ -127,11 +127,11 @@ Returns the Multispectral calibration for individual groups of lights with infor
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | lightSetID
 
 try:
@@ -173,11 +173,11 @@ Returns Multispectral imaging data for tray defined by tray ID, by round ID of r
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -223,11 +223,11 @@ Returns Multispectral extended data for tray defined by tray ID, by round ID of 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -273,11 +273,11 @@ Returns Multispectral imaging extended data by MSC measure ID. (Only available f
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | measureID
 
 try:
@@ -319,11 +319,11 @@ Returns Multispectral imaging data by MSC measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | measureID
 
 try:
@@ -365,11 +365,11 @@ Returns the Multispectral Statistic leaf parameter values for the parameter defi
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -417,11 +417,11 @@ Returns the Multispectral statistic leaf parameter values for the parameter defi
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | analyseID
 param_id = 56 # int | paramID
 
@@ -465,11 +465,11 @@ Returns one set of the lights for multispectral camera service defined by light 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | lightSetID
 
 try:
@@ -511,11 +511,11 @@ Returns the sets of the lights for multispectral camera service used in the meas
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -561,11 +561,11 @@ Returns one Multispectral parameter by parameter ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | paramID
 
 try:
@@ -607,11 +607,11 @@ Returns the Multispectral parameter images for the parameter defined by paramete
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -659,11 +659,11 @@ Returns the Multispectral parameter image for the parameter defined by parameter
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -707,11 +707,11 @@ Returns the Multispectral plant and leaf parameters used in the analysis by tray
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -757,11 +757,11 @@ Returns Multispectral used plant parameters by analyse ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | analyseID
 
 try:
@@ -803,11 +803,11 @@ Returns Multispectral plant mask by device, round and tray ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -853,11 +853,11 @@ Returns the Multispectral plant mask created for the measured tray defined by MS
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | measureID
 
 try:
@@ -899,11 +899,11 @@ Returns the Multispectral statistic plant parameter values for the parameter def
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -951,11 +951,11 @@ Returns the Multispectral plant parameter values for the parameter defined by pa
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.MscApi()
+api_instance = plantscreen.swagger_client.MscApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 

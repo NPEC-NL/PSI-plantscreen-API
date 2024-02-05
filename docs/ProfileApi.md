@@ -1,4 +1,4 @@
-# swagger_client.ProfileApi
+# plantscreen.swagger_client.ProfileApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -18,11 +18,11 @@ Returns one system profile by profile ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProfileApi()
+api_instance = plantscreen.swagger_client.ProfileApi()
 id = 56 # int | profileID
 
 try:
@@ -64,11 +64,11 @@ Returns the active system profile.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProfileApi()
+api_instance = plantscreen.swagger_client.ProfileApi()
 
 try:
     # Returns the active system profile.
@@ -106,11 +106,11 @@ Returns a list of all system profile IDs in the database
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProfileApi()
+api_instance = plantscreen.swagger_client.ProfileApi()
 
 try:
     # Returns a list of all system profile IDs in the database

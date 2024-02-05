@@ -1,4 +1,4 @@
-# swagger_client.BufferApi
+# plantscreen.swagger_client.BufferApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -17,11 +17,11 @@ Returns one buffer history state defined by buffer state ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BufferApi()
+api_instance = plantscreen.swagger_client.BufferApi()
 id = 56 # int | bufferStateID
 
 try:
@@ -63,11 +63,11 @@ Returns buffer history states between times. Times is entered as the start and e
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BufferApi()
+api_instance = plantscreen.swagger_client.BufferApi()
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
 

@@ -1,4 +1,4 @@
-# swagger_client.ActionApi
+# plantscreen.swagger_client.ActionApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -22,11 +22,11 @@ Returns one scheduled action by action ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi()
+api_instance = plantscreen.swagger_client.ActionApi()
 id = 56 # int | actionID
 
 try:
@@ -68,11 +68,11 @@ Returns all scheduled actions in the experiment defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi()
+api_instance = plantscreen.swagger_client.ActionApi()
 id = 56 # int | experimentID
 
 try:
@@ -114,11 +114,11 @@ Returns one group of scheduled actions by action group ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi()
+api_instance = plantscreen.swagger_client.ActionApi()
 id = 56 # int | groupID
 
 try:
@@ -160,11 +160,11 @@ Returns one group of scheduled actions to which a round defined by ID belongs.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi()
+api_instance = plantscreen.swagger_client.ActionApi()
 id = 56 # int | roundID
 
 try:
@@ -206,11 +206,11 @@ Returns all unfinished scheduled actions (with pending and running action state)
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi()
+api_instance = plantscreen.swagger_client.ActionApi()
 id = 56 # int | experimentID
 
 try:
@@ -252,11 +252,11 @@ Returns one protocol of scheduled action by protocol ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi()
+api_instance = plantscreen.swagger_client.ActionApi()
 id = 56 # int | protocolID
 
 try:
@@ -298,11 +298,11 @@ Returns one group of scheduled actions that belong to round defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi()
+api_instance = plantscreen.swagger_client.ActionApi()
 id = 56 # int | roundID
 
 try:

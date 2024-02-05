@@ -56,90 +56,90 @@ class SystemLogTag:
 
 # System Log by Round ID
 @dataclass
-class getSystemLogRound:
+class SystemLogRound:
     SystemLog: SystemLog
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLog':
         if obj.get("JsonSystemLogByRoundIDResult") is None:
-            return None
+            return []
         return [SystemLog.from_dict(y) for y in obj.get("JsonSystemLogByRoundIDResult")] 
 
 # System Log by Round ID and Date
 @dataclass
-class getSystemLogDateRound:
+class SystemLogDateRound:
     SystemLog: SystemLog
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLog':
         if obj.get("JsonSystemLogByRoundIDAndDateResult") is None:
-            return None
+            return []
         return [SystemLog.from_dict(y) for y in obj.get("JsonSystemLogByRoundIDAndDateResult")] 
 
 # System Log by Tray ID
 @dataclass
-class getSystemLogTray:
+class SystemLogTray:
     SystemLog: SystemLog
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLog':
         if obj.get("JsonSystemLogByTrayIDResult") is None:
-            return None
+            return []
         return [SystemLog.from_dict(y) for y in obj.get("JsonSystemLogByTrayIDResult")] 
 
 # System Log by Tray ID and Date
 @dataclass
-class getSystemLogDateTray:
+class SystemLogDateTray:
     SystemLog: SystemLog
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLog':
         if obj.get("JsonSystemLogByTrayIDAndDateResult") is None:
-            return None
+            return []
         return [SystemLog.from_dict(y) for y in obj.get("JsonSystemLogByTrayIDAndDateResult")] 
 
 # System Log Type 
 @dataclass
-class getSystemLogLogType:
+class SystemLogLogType:
     SystemLogType: SystemLogType
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLogType':
         if obj.get("JsonSystemLogTypeResult") is None:
-            return None
+            return []
         return [SystemLogType.from_dict(y) for y in obj.get("JsonSystemLogTypeResult")] 
 
 # System Log by Log Type and Date
 @dataclass
-class getSystemLogDateLogType:
+class SystemLogDateLogType:
     SystemLog: SystemLog
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLog':
         if obj.get("JsonSystemLogByLogTypeAndDateResult") is None:
-            return None
+            return []
         return [SystemLog.from_dict(y) for y in obj.get("JsonSystemLogByLogTypeAndDateResult")] 
 
 # System Log Tag
 @dataclass
-class getSystemLogLogTag:
+class SystemLogLogTag:
     SystemLogTag: SystemLogTag
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLogTag':
         if obj.get("JsonSystemLogTagResult") is None:
-            return None
+            return []
         return [SystemLogTag.from_dict(y) for y in obj.get("JsonSystemLogTagResult")] 
 
 # System Log by Log Tag and Date
 @dataclass
-class getSystemLogDateLogTag:
+class SystemLogDateLogTag:
     SystemLog: SystemLog
 
     @staticmethod
     def from_dict(obj: Any) -> 'SystemLog':
         if obj.get("JsonSystemLogByLogTagAndDateResult") is None:
-            return None
+            return []
         return [SystemLog.from_dict(y) for y in obj.get("JsonSystemLogByLogTagAndDateResult")] 
 
 

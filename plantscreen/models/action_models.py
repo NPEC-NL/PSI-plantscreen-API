@@ -100,6 +100,8 @@ class ActionWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Action':
+        if obj.get("JsonActionResult") is None:
+            return None
         return Action.from_dict(obj.get("JsonActionResult"))
     
 
@@ -110,6 +112,8 @@ class ActionExperiment:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Action':
+        if obj.get("JsonActionByExperimentIDResult") is None:
+            return []
         return [Action.from_dict(y) for y in obj.get("JsonActionByExperimentIDResult")]
 
 # Unfinished actions by experiment
@@ -119,6 +123,8 @@ class ActionNotDoneExperiment:
 
     @staticmethod
     def from_dict(obj: Any) -> 'NoAction':
+        if obj.get("JsonActionByExperimentIDNotDoneResult") is None:
+            return []
         return [NoAction.from_dict(y) for y in obj.get("JsonActionByExperimentIDNotDoneResult")]
 
 # Scheduled actions by group ID
@@ -128,6 +134,8 @@ class ActionGroup:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Group':
+        if obj.get("JsonActionGroupResult") is None:
+            return None
         return Group.from_dict(obj.get("JsonActionGroupResult"))
 
 # Scheduled actions by round ID
@@ -137,6 +145,8 @@ class ActionGroupRound:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Group':
+        if obj.get("JsonActionGroupByRoundIDResult") is None:
+            return None
         return Group.from_dict(obj.get("JsonActionGroupByRoundIDResult"))  
     
 # Scheduled actions by protocol ID
@@ -146,6 +156,8 @@ class ActionProtocol:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Protocol':
+        if obj.get("JsonActionProtocolResult") is None:
+            return []
         return [Protocol.from_dict(y) for y in obj.get("JsonActionProtocolResult")]
     
 # Scheduled actions by protocol by round ID
@@ -155,6 +167,8 @@ class ActionProtocolRound:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Protocol':
+        if obj.get("JsonActionProtocolByRoundIDResult") is None:
+            return None
         return Protocol.from_dict(obj.get("JsonActionProtocolByRoundIDResult"))  
     
     

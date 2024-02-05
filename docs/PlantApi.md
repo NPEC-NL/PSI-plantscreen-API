@@ -1,4 +1,4 @@
-# swagger_client.PlantApi
+# plantscreen.swagger_client.PlantApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -21,11 +21,11 @@ Returns a list of plants by the list of plant IDs.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PlantApi()
+api_instance = plantscreen.swagger_client.PlantApi()
 ids = [56] # list[int] | plantIDs
 
 try:
@@ -67,11 +67,11 @@ Returns all plant heights measured in the round defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PlantApi()
+api_instance = plantscreen.swagger_client.PlantApi()
 id = 56 # int | roundID
 
 try:
@@ -113,11 +113,11 @@ Returns all plant leaves for the plant assigned to the tray defined by the plant
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PlantApi()
+api_instance = plantscreen.swagger_client.PlantApi()
 plant_id = 56 # int | plantID
 tray_id = 56 # int | trayID
 
@@ -161,11 +161,11 @@ Returns list of plants which are assigned to the tray defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PlantApi()
+api_instance = plantscreen.swagger_client.PlantApi()
 id = 56 # int | trayID
 
 try:
@@ -207,11 +207,11 @@ Returns plants that were assigned to the tray profile defined by tray profile ID
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PlantApi()
+api_instance = plantscreen.swagger_client.PlantApi()
 id = 56 # int | trayProfileID
 
 try:
@@ -253,11 +253,11 @@ Returns plants that were assigned to the tray defined by tray ID between defined
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PlantApi()
+api_instance = plantscreen.swagger_client.PlantApi()
 id = 56 # int | trayID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop

@@ -82,6 +82,8 @@ class ExperimentIDs:
 
     @staticmethod
     def from_dict(obj: Any) -> 'ExperimentIDs':
+        if obj.get("JsonExperimentIDResult") is None:
+            return []        
         _IDs = [int(y.get("ExperimentID")) for y in obj.get("JsonExperimentIDResult")]
         return ExperimentIDs(_IDs)
 
@@ -93,6 +95,8 @@ class ExperimentWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Experiment':
+        if obj.get("JsonExperimentResult") is None:
+            return None       
         return Experiment.from_dict(obj.get("JsonExperimentResult"))
     
 
@@ -103,6 +107,8 @@ class ExperimentDate:
 
     @staticmethod
     def from_dict(obj: Any) -> 'ExperimentDate':
+        if obj.get("JsonExperimentByDateResult") is None:
+            return []     
         return [Experiment.from_dict(y) for y in obj.get("JsonExperimentByDateResult")]
 
 
@@ -112,6 +118,8 @@ class ExperimentOwner:
 
     @staticmethod
     def from_dict(obj: Any) -> 'ExperimentOwner':
+        if obj.get("JsonExperimentByOwnerResult") is None:
+            return []     
         return [Experiment.from_dict(y) for y in obj.get("JsonExperimentByOwnerResult")]
 
 
@@ -122,6 +130,8 @@ class OwnerID:
 
     @staticmethod
     def from_dict(obj: Any) -> 'OwnerID':
+        if obj.get("JsonOwnerIDResult") is None:
+            return []   
         return [y.get('OwnerID') for y in obj.get("JsonOwnerIDResult")]
 
 # Owner by ID
@@ -131,6 +141,8 @@ class OwnerWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Owner':
+        if obj.get("JsonOwnerResult") is None:
+            return []
         return [Owner.from_dict(y) for y in obj.get("JsonOwnerResult")]
     
 
@@ -141,6 +153,8 @@ class NoteExperiment:
 
     @staticmethod
     def from_dict(obj: Any) -> 'NoteExperiment':
+        if obj.get("JsonNoteResult") is None:
+            return []
         return [NoteExperiment.from_dict(y) for y in obj.get("JsonNoteResult")]
     
 

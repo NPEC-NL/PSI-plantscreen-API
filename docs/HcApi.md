@@ -1,4 +1,4 @@
-# swagger_client.HcApi
+# plantscreen.swagger_client.HcApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -32,11 +32,11 @@ Returns Hyperspectral imaging data for tray defined by tray ID, by round ID of r
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -82,11 +82,11 @@ Returns Hyperspectral extended data for tray defined by tray ID, by round ID of 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -132,11 +132,11 @@ Returns Hyperspectral imaging extended data by HC measure ID. (Only available fo
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | measureID
 
 try:
@@ -178,11 +178,11 @@ Returns Hyperspectral imaging data by HC measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | measureID
 
 try:
@@ -224,11 +224,11 @@ Returns the Hyperspectral Statistic leaf parameter values for the parameter defi
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -276,11 +276,11 @@ Returns the Hyperspectral statistic leaf parameter values for the parameter defi
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -324,11 +324,11 @@ Returns one Hyperspectral parameter by parameter ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | paramID
 
 try:
@@ -370,11 +370,11 @@ Returns the Hyperspectral parameter images for the parameter defined by paramete
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -422,11 +422,11 @@ Returns the Hyperspectral parameter image for the parameter defined by parameter
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -470,11 +470,11 @@ Returns the Hyperspectral plant and leaf parameters used in the analysis by tray
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -520,11 +520,11 @@ Returns the Hyperspectral plant and leaf parameters used in the analysis defined
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | analyseID
 
 try:
@@ -566,11 +566,11 @@ Returns Hyperspectral plant masks created for the tray defined by tray ID, by ro
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -616,11 +616,11 @@ Returns the Hyperspectral plant mask created for the measured tray defined by HC
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | measureID
 
 try:
@@ -662,11 +662,11 @@ Returns the Hyperspectral statistic plant parameter values for the parameter def
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -714,11 +714,11 @@ Returns the Hyperspectral statistic plant parameter values for the parameter def
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -762,11 +762,11 @@ Returns the Hyperspectral RGB image created for the tray defined by tray ID, by 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -812,11 +812,11 @@ Returns the Hyperspectral RGB image created for the measured tray by HC measure 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.HcApi()
+api_instance = plantscreen.swagger_client.HcApi()
 id = 56 # int | measureID
 
 try:

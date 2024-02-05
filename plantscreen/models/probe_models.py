@@ -50,6 +50,8 @@ class ProbeWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Probe':
+        if obj.get("JsonProbeResult") is None:
+            return []
         return [Probe.from_dict(y) for y in obj.get("JsonProbeResult")]
 
 # List probevalues in period
@@ -59,6 +61,8 @@ class ProbeValuesDate:
 
     @staticmethod
     def from_dict(obj: Any) -> 'ProbeValuesDate':
+        if obj.get("JsonProbeValueByDateResult") is None:
+            return []
         return [ProbeValue.from_dict(y) for y in obj.get("JsonProbeValueByDateResult")]
     
 # Environment Probe Value by ID and Date
@@ -68,4 +72,6 @@ class ProbeValueDateProbe:
 
     @staticmethod
     def from_dict(obj: Any) -> 'ProbeValueDateProbe':
+        if obj.get("JsonProbeValueByIDAndDateResult") is None:
+            return []
         return [ProbeValue.from_dict(y) for y in obj.get("JsonProbeValueByIDAndDateResult")] 

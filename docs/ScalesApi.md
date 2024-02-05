@@ -1,4 +1,4 @@
-# swagger_client.ScalesApi
+# plantscreen.swagger_client.ScalesApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -20,11 +20,11 @@ Returns scales data for tray defined by tray ID, by round ID of round in which t
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScalesApi()
+api_instance = plantscreen.swagger_client.ScalesApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -70,11 +70,11 @@ Returns plant weight reference data by plant ID. The weight is in units of grams
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScalesApi()
+api_instance = plantscreen.swagger_client.ScalesApi()
 id = 56 # int | plantID
 
 try:
@@ -116,11 +116,11 @@ Returns plant weight reference data by plant ID. The weight is in units of grams
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScalesApi()
+api_instance = plantscreen.swagger_client.ScalesApi()
 id = 56 # int | trayID
 _date = '2013-10-20T19:20:30+01:00' # datetime | toDate
 
@@ -164,11 +164,11 @@ Returns plant weight reference data by tray ID. The weight is in units of grams
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScalesApi()
+api_instance = plantscreen.swagger_client.ScalesApi()
 id = 56 # int | trayID
 
 try:
@@ -210,11 +210,11 @@ Returns scales data by measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScalesApi()
+api_instance = plantscreen.swagger_client.ScalesApi()
 id = 56 # int | measureID
 
 try:

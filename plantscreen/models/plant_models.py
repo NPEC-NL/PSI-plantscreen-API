@@ -27,7 +27,7 @@ class Plant:
 class PlantHeight:
     ExperimentID: int
     HeightDate: str
-    HeightValue: int
+    HeightValue: str
     PlantBarcode: str
     PlantID: int
     PlantName: str
@@ -72,6 +72,8 @@ class PlantWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Plant':
+        if obj.get("JsonPlantResult") is None:
+            return []
         return [Plant.from_dict(y) for y in obj.get("JsonPlantResult")]    
     
 # List plants by tray ID
@@ -81,6 +83,8 @@ class PlantTray:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Plant':
+        if obj.get("JsonPlantByTrayIDResult") is None:
+            return []
         return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayIDResult")]    
 
 # List plants by trayID during period
@@ -90,6 +94,8 @@ class PlantTrayProfileTray:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Plant':
+        if obj.get("JsonPlantByTrayIDAndDatesResult") is None:
+            return []
         return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayIDAndDatesResult")]    
     
 # List plants by tray profile ID
@@ -99,6 +105,8 @@ class PlantTrayProfile:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Plant':
+        if obj.get("JsonPlantByTrayProfileIDResult") is None:
+            return []
         return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayProfileIDResult")]    
         
 # List plant height during round
@@ -108,6 +116,8 @@ class PlantHeightRound:
 
     @staticmethod
     def from_dict(obj: Any) -> 'PlantHeight':
+        if obj.get("JsonPlantHeightByRoundIDResult") is None:
+            return []
         return [PlantHeight.from_dict(y) for y in obj.get("JsonPlantHeightByRoundIDResult")]  
     
 # List plant leaves by plant and tray ID
@@ -117,6 +127,8 @@ class PlantLeaf:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Leaf':
+        if obj.get("JsonPlantLeavesByPlantAndTrayIDResult") is None:
+            return []
         return [Leaf.from_dict(y) for y in obj.get("JsonPlantLeavesByPlantAndTrayIDResult")]  
 
 

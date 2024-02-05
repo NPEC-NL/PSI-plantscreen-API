@@ -10,9 +10,9 @@ class IrImage:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
-    MeasureHeight: int
+    MeasureHeight: float
     MeasureID: int
     RoundID: int
     TrayBarcode: str
@@ -68,7 +68,7 @@ class IrMask:
     DevicePID: str
     ExperimentID: int
     MaskIsLeaf: bool
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
     MeasureID: int
     PlantMaskPath: str
@@ -116,7 +116,7 @@ class IrPlant:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterAvg: float
     ParameterID: int
@@ -166,7 +166,7 @@ class IrLeaf:
     DevicePID: str
     ExperimentID: int
     LeafIndex: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterAvg: float
     ParameterID: int
@@ -230,7 +230,7 @@ class IrImaging:
     @staticmethod
     def from_dict(obj: Any) -> 'IrImage':
         if obj.get("JsonIrImagingResult") is None:
-            return None
+            return []
         
         return [IrImage.from_dict(y) for y in obj.get("JsonIrImagingResult")] 
 
@@ -278,7 +278,7 @@ class IrPlantMask:
     @staticmethod
     def from_dict(obj: Any) -> 'IrMask':
         if obj.get("JsonIrPlantMaskResult") is None:
-            return None
+            return []
         
         return [IrMask.from_dict(y) for y in obj.get("JsonIrPlantMaskResult")] 
 
@@ -302,7 +302,7 @@ class IrPlantMaskImage:
     @staticmethod
     def from_dict(obj: Any) -> 'IrImage':
         if obj.get("JsonIrPlantMaskImageResult") is None:
-            return None
+            return []
         
         return [IrImage.from_dict(y) for y in obj.get("JsonIrPlantMaskImageResult")] 
 
@@ -326,7 +326,7 @@ class IrParamUsedAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'IrParam':
         if obj.get("JsonIrUsedParamByAnalyseIDResult") is None:
-            return None
+            return []
         
         return [IrParam.from_dict(y) for y in obj.get("JsonIrUsedParamByAnalyseIDResult")] 
 
@@ -338,7 +338,7 @@ class IrParamUsed:
     @staticmethod
     def from_dict(obj: Any) -> 'IrParam':
         if obj.get("JsonIrUsedParamResult") is None:
-            return None
+            return []
         
         return [IrParam.from_dict(y) for y in obj.get("JsonIrUsedParamResult")] 
 
@@ -350,7 +350,7 @@ class IrPlantParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'IrPlant':
         if obj.get("JsonIrPlantParamByAnalyseIDResult") is None:
-            return None
+            return []
         
         return [IrPlant.from_dict(y) for y in obj.get("JsonIrPlantParamByAnalyseIDResult")] 
 
@@ -362,7 +362,7 @@ class IrPlantParam:
     @staticmethod
     def from_dict(obj: Any) -> 'IrPlant':
         if obj.get("JsonIrPlantParamResult") is None:
-            return None
+            return []
         
         return [IrPlant.from_dict(y) for y in obj.get("JsonIrPlantParamResult")] 
 
@@ -374,7 +374,7 @@ class IrLeafParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'IrLeaf':
         if obj.get("JsonIrLeafParamByAnalyseIDResult") is None:
-            return None
+            return []
         
         return [IrLeaf.from_dict(y) for y in obj.get("JsonIrLeafParamByAnalyseIDResult")] 
 
@@ -386,6 +386,6 @@ class IrLeafParam:
     @staticmethod
     def from_dict(obj: Any) -> 'IrLeaf':
         if obj.get("JsonIrLeafParamResult") is None:
-            return None
+            return []
         
         return [IrLeaf.from_dict(y) for y in obj.get("JsonIrLeafParamResult")] 

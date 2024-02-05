@@ -10,9 +10,9 @@ class FcImaging:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
-    MeasureHeight: int
+    MeasureHeight: float
     MeasureID: int
     RoundID: int
     TrayBarcode: str
@@ -68,7 +68,7 @@ class FcMask:
     DevicePID: str
     ExperimentID: int
     MaskIsLeaf: bool
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
     MeasureID: int
     PlantMaskPath: str
@@ -114,7 +114,7 @@ class FcAnalyse:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterImagePath: str
@@ -148,11 +148,11 @@ class FcPlant:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterName: str
-    ParameterValue: int
+    ParameterValue: float
     PlantBarcode: str
     PlantID: int
     PlantName: str
@@ -191,7 +191,7 @@ class FcLeaf:
     DevicePID: str
     ExperimentID: int
     LeafIndex: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterName: str
@@ -233,6 +233,8 @@ class FcImagingMeasure:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcImaging':
+        if obj.get("JsonFcImagingByIDResult") is None:
+            return None
         return FcImaging.from_dict(obj.get("JsonFcImagingByIDResult"))
     
 
@@ -243,6 +245,8 @@ class FcImagingWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcImaging':
+        if obj.get("JsonFcImagingResult") is None:
+            return []
         return [FcImaging.from_dict(y) for y in obj.get("JsonFcImagingResult")]    
     
 # Fluorcam extended data by measurement ID
@@ -252,6 +256,8 @@ class FcImagingExtendedDataMeasure:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcMeasure':
+        if obj.get("JsonFcMeasureExtendedDataByIDResult") is None:
+            return None
         return FcMeasure.from_dict(obj.get("JsonFcMeasureExtendedDataByIDResult"))
 
 # Fluorcam extended data for tray
@@ -261,6 +267,8 @@ class FcImagingExtendedData:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcMeasure':
+        if obj.get("JsonFcMeasureExtendedDataResult") is None:
+            return None
         return FcMeasure.from_dict(obj.get("JsonFcMeasureExtendedDataResult"))
 
 # Fluorcam mask by measurement ID
@@ -271,8 +279,10 @@ class FcPlantMaskMeasure:
     @staticmethod
     def from_dict(obj: Any) -> 'FcMask':
         if obj.get("JsonFcPlantMaskByMeasureIDResult") is None:
-                   return None
+            return None
         return FcMask.from_dict(obj.get("JsonFcPlantMaskByMeasureIDResult"))
+    
+    
 
 # Fluorcam mask for tray
 @dataclass
@@ -281,6 +291,8 @@ class FcPlantMask:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcMask':
+        if obj.get("JsonFcPlantMaskResult") is None:
+            return []
         return [FcMask.from_dict(y) for y in obj.get("JsonFcPlantMaskResult")]    
 
 # Fluorcam parameter by parm ID
@@ -290,6 +302,8 @@ class FcParamWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcParam':
+        if obj.get("JsonFcParamResult") is None:
+            return None
         return FcParam.from_dict(obj.get("JsonFcParamResult"))
     
 # Fluorcam parameters by analysis ID
@@ -299,6 +313,8 @@ class IFcParamUsedAnalyse:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcParam':
+        if obj.get("JsonFcUsedParamByAnalyseIDResult") is None:
+            return []
         return [FcParam.from_dict(y) for y in obj.get("JsonFcUsedParamByAnalyseIDResult")] 
 
 # Fluorcam paramaters for tray
@@ -308,6 +324,8 @@ class FcParamUsed:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcParam':
+        if obj.get("JsonFcUsedParamResult") is None:
+            return []
         return [FcParam.from_dict(y) for y in obj.get("JsonFcUsedParamResult")] 
 
 # Fluorcam image parameters by analysis ID
@@ -328,6 +346,8 @@ class FcParamImage:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcAnalyse':
+        if obj.get("JsonFcParameterImageResult") is None:
+            return []
         return [FcAnalyse.from_dict(y) for y in obj.get("JsonFcParameterImageResult")] 
 
 # Fluorcam plant parameter by analysis ID
@@ -337,6 +357,8 @@ class FcPlantParamAnalyse:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcPlant':
+        if obj.get("JsonFcPlantParamByAnalyseIDResult") is None:
+            return []
         return [FcPlant.from_dict(y) for y in obj.get("JsonFcPlantParamByAnalyseIDResult")] 
 
 # Fluorcam plant parameter for tray
@@ -346,6 +368,8 @@ class FcPlantParam:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcPlant':
+        if obj.get("JsonFcPlantParamResult") is None:
+            return []
         return [FcPlant.from_dict(y) for y in obj.get("JsonFcPlantParamResult")] 
     
 # FluorCam Leaf Parameter Values by Analyse ID
@@ -355,6 +379,8 @@ class FcLeafParamAnalyse:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcLeaf':
+        if obj.get("JsonFcLeafParamByAnalyseIDResult") is None:
+            return []
         return [FcLeaf.from_dict(y) for y in obj.get("JsonFcLeafParamByAnalyseIDResult")] 
     
 # Fluorcam leaf parameter for tray
@@ -364,5 +390,7 @@ class FcLeafParam:
 
     @staticmethod
     def from_dict(obj: Any) -> 'FcLeaf':
+        if obj.get("JsonFcLeafParamResult") is None:
+            return []
         return [FcLeaf.from_dict(y) for y in obj.get("JsonFcLeafParamResult")] 
     

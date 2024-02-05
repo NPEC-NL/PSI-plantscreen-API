@@ -1,4 +1,4 @@
-# swagger_client.SprayApi
+# plantscreen.swagger_client.SprayApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -16,11 +16,11 @@ Return spray action data for tray defined by tray ID, by round ID of round in wh
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SprayApi()
+api_instance = plantscreen.swagger_client.SprayApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID

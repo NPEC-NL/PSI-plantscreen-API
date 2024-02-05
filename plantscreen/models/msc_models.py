@@ -10,9 +10,9 @@ class MscImage:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
-    MeasureHeight: int
+    MeasureHeight: float
     MeasureID: int
     RoundID: int
     TrayBarcode: str
@@ -66,7 +66,7 @@ class MscMask:
     DevicePID: str
     ExperimentID: int
     MaskIsLeaf: bool
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
     MeasureID: int
     PlantMaskPath: str
@@ -114,7 +114,7 @@ class MscParamImage:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterImagePath: str
@@ -147,7 +147,7 @@ class MscPlant:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterAvg: float
     ParameterID: int
@@ -197,7 +197,7 @@ class MscLeaf:
     DevicePID: str
     ExperimentID: int
     LeafIndex: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterAvg: float
     ParameterID: int
@@ -310,7 +310,7 @@ class MscImagingMeasure:
     @staticmethod
     def from_dict(obj: Any) -> 'MscImage':
         if obj.get("JsonMscImagingByIDResult") is None:
-            return None
+            return []
         return [MscImage.from_dict(y) for y in obj.get("JsonMscImagingByIDResult")] 
     
 # Multispectral imaging for tray
@@ -321,7 +321,7 @@ class MscImaging:
     @staticmethod
     def from_dict(obj: Any) -> 'MscImage':
         if obj.get("JsonMscImagingResult") is None:
-            return None
+            return []
         return [MscImage.from_dict(y) for y in obj.get("JsonMscImagingResult")] 
     
 # Multispectral extended by measurement ID
@@ -362,7 +362,7 @@ class MscPlantMask:
     @staticmethod
     def from_dict(obj: Any) -> 'MscMask':
         if obj.get("JsonMscPlantMaskResult") is None:
-            return None
+            return []
         return [MscMask.from_dict(y) for y in obj.get("JsonMscPlantMaskResult")] 
     
 # Multispectral parameter by param ID
@@ -382,7 +382,7 @@ class MscParamUsedAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'MscParam':
         if obj.get("JsonMscUsedParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [MscParam.from_dict(y) for y in obj.get("JsonMscUsedParamByAnalyseIDResult")] 
 
 # Multispectral parameter for tray
@@ -392,7 +392,7 @@ class MscParamUsed:
     @staticmethod
     def from_dict(obj: Any) -> 'MscParam':
         if obj.get("JsonMscUsedParamResult") is None:
-            return None
+            return []
         return [MscParam.from_dict(y) for y in obj.get("JsonMscUsedParamResult")] 
     
 # Multispectral parameter image by analysis ID
@@ -412,7 +412,7 @@ class MscParamImageWrapper:
     @staticmethod
     def from_dict(obj: Any) -> 'MscParamImage':
         if obj.get("JsonMscParameterImageResult") is None:
-            return None
+            return []
         return [MscParamImage.from_dict(y) for y in obj.get("JsonMscParameterImageResult")] 
     
 # Multispectral plant parameter by analysis ID
@@ -422,7 +422,7 @@ class MscPlantParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'MscPlant':
         if obj.get("JsonMscPlantParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [MscPlant.from_dict(y) for y in obj.get("JsonMscPlantParamByAnalyseIDResult")] 
     
 # Multispectral plant parameter for tray
@@ -432,7 +432,7 @@ class MscPlantParam:
     @staticmethod
     def from_dict(obj: Any) -> 'MscPlant':
         if obj.get("JsonMscPlantParamResult") is None:
-            return None
+            return []
         return [MscPlant.from_dict(y) for y in obj.get("JsonMscPlantParamResult")] 
     
 # Multispectral leaf parameter by analysis ID
@@ -442,7 +442,7 @@ class MscLeafParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'MscLeaf':
         if obj.get("JsonMscLeafParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [MscLeaf.from_dict(y) for y in obj.get("JsonMscLeafParamByAnalyseIDResult")]         
 
 # Multispectral leaf parameter for tray
@@ -452,7 +452,7 @@ class MscLeafParam:
     @staticmethod
     def from_dict(obj: Any) -> 'MscLeaf':
         if obj.get("JsonMscLeafParamResult") is None:
-            return None
+            return []
         return [MscLeaf.from_dict(y) for y in obj.get("JsonMscLeafParamResult")]     
 
 # Multispectral light by ID
@@ -472,7 +472,7 @@ class MscLightSetUsed:
     @staticmethod
     def from_dict(obj: Any) -> 'MscLight':
         if obj.get("JsonMscLightSetUsedResult") is None:
-            return None
+            return []
         return [MscLight.from_dict(y) for y in obj.get("JsonMscLightSetUsedResult")] 
     
 # Multispectral calibration by ID 
@@ -492,7 +492,7 @@ class MscCalibrationLightSet:
     @staticmethod
     def from_dict(obj: Any) -> 'MscCalibrate':
         if obj.get("JsonMscCalibrationByLightSetIDResult") is None:
-            return None
+            return []
         return [MscCalibrate.from_dict(y) for y in obj.get("JsonMscCalibrationByLightSetIDResult")] 
     
 # Multispectral calibration light by ID TODO
@@ -505,6 +505,6 @@ class MscCalibrationLight:
     @staticmethod
     def from_dict(obj: Any) -> 'MscCaliLight':
         if obj.get("JsonMscCalibrationLightResult") is None:
-            return None
+            return []
         return [MscCaliLight.from_dict(y) for y in obj.get("JsonMscCalibrationLightResult")] 
      

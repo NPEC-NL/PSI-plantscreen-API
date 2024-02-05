@@ -1,4 +1,4 @@
-# swagger_client.SpectrumDeviceApi
+# plantscreen.swagger_client.SpectrumDeviceApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -18,11 +18,11 @@ Returns one spectrum device by spectrum device ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SpectrumDeviceApi()
+api_instance = plantscreen.swagger_client.SpectrumDeviceApi()
 id = 56 # int | spectrumDeviceID
 
 try:
@@ -64,11 +64,11 @@ Returns a list of all spectrum device IDs in the database.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SpectrumDeviceApi()
+api_instance = plantscreen.swagger_client.SpectrumDeviceApi()
 
 try:
     # Returns a list of all spectrum device IDs in the database.
@@ -106,11 +106,11 @@ Returns spectrum values for spectrum device defined by spectrum device ID measur
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SpectrumDeviceApi()
+api_instance = plantscreen.swagger_client.SpectrumDeviceApi()
 id = 56 # int | spectrumDeviceID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop

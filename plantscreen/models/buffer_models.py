@@ -22,7 +22,7 @@ class BufferHistory:
 
 # Buffer History
 @dataclass
-class getBufferHistory:
+class BufferHistoryWrapper:
     BufferHistory: BufferHistory
 
     @staticmethod
@@ -33,12 +33,12 @@ class getBufferHistory:
 
 # Buffer History by Date
 @dataclass
-class getBufferHistoryDate:
+class BufferHistoryDate:
     BufferHistory: BufferHistory
 
     @staticmethod
     def from_dict(obj: Any) -> 'BufferHistory':
         if obj.get("JsonBufferHistoryByDateResult") is None:
-            return None
+            return []
         return [BufferHistory.from_dict(y) for y in obj.get("JsonBufferHistoryByDateResult")] 
     

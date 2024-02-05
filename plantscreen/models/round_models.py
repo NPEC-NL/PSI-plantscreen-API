@@ -53,6 +53,8 @@ class RoundWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Round':
+        if obj.get("JsonRoundResult") is None:
+            return None
         return Round.from_dict(obj.get("JsonRoundResult"))
     
 # List rounds by experiment
@@ -62,6 +64,8 @@ class RoundExperiment:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Round':
+        if obj.get("JsonRoundByExperimentIDResult") is None:
+            return []
         return [Round.from_dict(y) for y in obj.get("JsonRoundByExperimentIDResult")]
 
 
@@ -72,6 +76,8 @@ class RoundDateExperiment:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Round':
+        if obj.get("JsonRoundByExperimentIDAndDateResult") is None:
+            return []
         return [Round.from_dict(y) for y in obj.get("JsonRoundByExperimentIDAndDateResult")]    
 
 # Round order by round ID
@@ -81,6 +87,8 @@ class RoundOrderRound:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Order':
+        if obj.get("JsonRoundOrderResult") is None:
+            return None
         return Order.from_dict(obj.get("JsonRoundOrderResult"))
 
 # Round order by experiment
@@ -90,6 +98,8 @@ class RoundOrderExperiment:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Order':
+        if obj.get("JsonRoundOrderByExperimentIDResult") is None:
+            return []
         return [Order.from_dict(y) for y in obj.get("JsonRoundOrderByExperimentIDResult")]    
     
 # Round order by experiment and date
@@ -99,6 +109,8 @@ class RoundOrderDateExperiment:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Order':
+        if obj.get("JsonRoundOrderByExperimentIDAndDateResult") is None:
+            return []
         return [Order.from_dict(y) for y in obj.get("JsonRoundOrderByExperimentIDAndDateResult")]    
     
 

@@ -1,4 +1,4 @@
-# swagger_client.DeviceApi
+# plantscreen.swagger_client.DeviceApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -18,11 +18,11 @@ Returns one device by device ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DeviceApi()
+api_instance = plantscreen.swagger_client.DeviceApi()
 id = 56 # int | deviceID
 
 try:
@@ -64,11 +64,11 @@ Returns all active devices that have not ended validity.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DeviceApi()
+api_instance = plantscreen.swagger_client.DeviceApi()
 
 try:
     # Returns all active devices that have not ended validity.
@@ -106,11 +106,11 @@ Returns all devices that contains the system profile defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DeviceApi()
+api_instance = plantscreen.swagger_client.DeviceApi()
 id = 56 # int | profileID
 
 try:

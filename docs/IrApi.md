@@ -1,4 +1,4 @@
-# swagger_client.IrApi
+# plantscreen.swagger_client.IrApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -30,11 +30,11 @@ Returns Thermal imaging data for tray defined by tray ID, by round ID of round i
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -80,11 +80,11 @@ Returns Thermal extended data for tray defined by tray ID, by round ID of round 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -130,11 +130,11 @@ Returns Thermal imaging extended data by IR measure ID. (Only available for fiel
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | measureID
 
 try:
@@ -176,11 +176,11 @@ Returns Thermal imaging data by IR measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | measureID
 
 try:
@@ -222,11 +222,11 @@ Returns the Thermal Statistic leaf parameter values for the parameter defined by
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -274,11 +274,11 @@ Returns the Thermal statistic leaf parameter values for the parameter defined by
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | analyseID
 param_id = 56 # int | paramID
 
@@ -322,11 +322,11 @@ Returns one Thermal parameter by parameter ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | paramID
 
 try:
@@ -368,11 +368,11 @@ Returns the Thermal plant and leaf parameters used in the analysis by tray ID, b
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -418,11 +418,11 @@ Returns the Thermalplant and leaf parameters used in the analysis defined by ana
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | analyseID
 
 try:
@@ -464,11 +464,11 @@ Returns Thermal plant masks created for the tray defined by tray ID, by round ID
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -514,11 +514,11 @@ Returns Thermal imaging data masked by the plant mask for tray defined by tray I
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -564,11 +564,11 @@ Returns Thermal imaging data masked by the plant mask defined by IR measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | measureID
 
 try:
@@ -610,11 +610,11 @@ Returns the Thermal plant mask created for the measured tray defined by IR measu
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | measureID
 
 try:
@@ -656,11 +656,11 @@ Returns the Thermal statistic plant parameter values for the parameter defined b
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -708,11 +708,11 @@ Returns the Thermal plant parameter values for the parameter defined by paramete
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.IrApi()
+api_instance = plantscreen.swagger_client.IrApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 

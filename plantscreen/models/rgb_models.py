@@ -10,9 +10,9 @@ class RgbImage:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
-    MeasureHeight: int
+    MeasureHeight: float
     MeasureID: int
     RoundID: int
     TrayBarcode: str
@@ -66,7 +66,7 @@ class RgbMask:
     DevicePID: str
     ExperimentID: int
     MaskIsLeaf: bool
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
     MeasureID: int
     PlantMaskPath: str
@@ -98,9 +98,9 @@ class RgbGreen:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
-    MeasureHeight: int
+    MeasureHeight: float
     MeasureID: int
     RoundID: int
     TrayBarcode: str
@@ -149,7 +149,7 @@ class RgbPlant:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterName: str
@@ -191,7 +191,7 @@ class RgbLeaf:
     DevicePID: str
     ExperimentID: int
     LeafIndex: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterName: str
@@ -245,7 +245,7 @@ class RgbImaging:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbImage':
         if obj.get("JsonRgbImagingResult") is None:
-            return None
+            return []
         return [RgbImage.from_dict(y) for y in obj.get("JsonRgbImagingResult")] 
     
 # RGB Extended Data by Measure ID
@@ -286,7 +286,7 @@ class RgbPlantMask:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbMask':
         if obj.get("JsonRgbPlantMaskResult") is None:
-            return None
+            return []
         return [RgbMask.from_dict(y) for y in obj.get("JsonRgbPlantMaskResult")] 
 
 
@@ -307,7 +307,7 @@ class RgbGreeningMaskImage:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbGreen':
         if obj.get("JsonRgbGreeningMaskImageResult") is None:
-            return None
+            return []
         return [RgbGreen.from_dict(y) for y in obj.get("JsonRgbGreeningMaskImageResult")] 
 
 # RGB Parameter by ID
@@ -327,7 +327,7 @@ class RgbParamUsedAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbParam':
         if obj.get("JsonRgbUsedParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [RgbParam.from_dict(y) for y in obj.get("JsonRgbUsedParamByAnalyseIDResult")] 
     
 # RGB Used Parameters for Tray
@@ -337,7 +337,7 @@ class RgbParamUsed:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbParam':
         if obj.get("JsonRgbcUsedParamsResult") is None:
-            return None
+            return []
         return [RgbParam.from_dict(y) for y in obj.get("JsonRgbcUsedParamsResult")] 
 
 # RGB Used Color Parameters by Analyse ID
@@ -347,7 +347,7 @@ class RgbParamColorUsedAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbParam':
         if obj.get("JsonRgbUsedParamColorByAnalyseIDResult") is None:
-            return None
+            return []
         return [RgbParam.from_dict(y) for y in obj.get("JsonRgbUsedParamColorByAnalyseIDResult")]     
 
 # RGB Used Color Parameters for Tray
@@ -357,7 +357,7 @@ class RgbParamColorUsed:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbParam':
         if obj.get("JsonRgbUsedParamColorResult") is None:
-            return None
+            return []
         return [RgbParam.from_dict(y) for y in obj.get("JsonRgbUsedParamColorResult")]     
 
 # RGB Plant Parameter Values by Analyse ID
@@ -367,7 +367,7 @@ class RgbPlantParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbPlant':
         if obj.get("JsonRgbPlantParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [RgbPlant.from_dict(y) for y in obj.get("JsonRgbPlantParamByAnalyseIDResult")]     
 
 # RGB Plant Parameter Values for Tray
@@ -377,7 +377,7 @@ class RgbPlantParam:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbPlant':
         if obj.get("JsonRgbPlantParamResult") is None:
-            return None
+            return []
         return [RgbPlant.from_dict(y) for y in obj.get("JsonRgbPlantParamResult")]     
 
 # RGB Color Plant Parameter Values by Analyse ID
@@ -387,7 +387,7 @@ class RgbPlantParamColorAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbPlant':
         if obj.get("JsonRgbPlantParamColorByAnalyseIDResult") is None:
-            return None
+            return []
         return [RgbPlant.from_dict(y) for y in obj.get("JsonRgbPlantParamColorByAnalyseIDResult")]     
     
 # RGB Color Plant Parameter Values for Tray
@@ -397,7 +397,7 @@ class RgbPlantParamColor:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbPlant':
         if obj.get("JsonRgbPlantParamColorResult") is None:
-            return None
+            return []
         return [RgbPlant.from_dict(y) for y in obj.get("JsonRgbPlantParamColorResult")]     
 
 # RGB Leaf Parameter Values by Analyse ID
@@ -407,7 +407,7 @@ class RgbLeafParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbLeaf':
         if obj.get("JsonRgbLeafParamByAnalyseIDResult") is None:
-            return None
+            return []
         return [RgbLeaf.from_dict(y) for y in obj.get("JsonRgbLeafParamByAnalyseIDResult")]   
     
 # RGB Leaf Parameter Values for Tray
@@ -417,7 +417,7 @@ class RgbLeafParam:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbLeaf':
         if obj.get("JsonRgbLeafParamResult") is None:
-            return None
+            return []
         return [RgbLeaf.from_dict(y) for y in obj.get("JsonRgbLeafParamResult")]   
     
 # RGB Color Leaf Parameter Values by Analyse ID
@@ -427,7 +427,7 @@ class RgbLeafParamColorAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbLeaf':
         if obj.get("JsonRgbLeafParamColorByAnalyseIDResult") is None:
-            return None
+            return []
         return [RgbLeaf.from_dict(y) for y in obj.get("JsonRgbLeafParamColorByAnalyseIDResult")]   
 
 # RGB Color Leaf Parameter Values for Tray
@@ -437,6 +437,6 @@ class RgbLeafParamColor:
     @staticmethod
     def from_dict(obj: Any) -> 'RgbLeaf':
         if obj.get("JsonRgbLeafParamColorResult") is None:
-            return None
+            return []
         return [RgbLeaf.from_dict(y) for y in obj.get("JsonRgbLeafParamColorResult")]   
 

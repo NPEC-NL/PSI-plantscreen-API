@@ -40,6 +40,8 @@ class DeviceWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Device':
+        if obj.get("JsonDeviceResult") is None:
+            return None
         return Device.from_dict(obj.get("JsonDeviceResult"))
 
 # List active devices
@@ -49,6 +51,8 @@ class DeviceActive:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Device':
+        if obj.get("JsonDeviceActiveResult") is None:
+            return []
         return [Device.from_dict(y) for y in obj.get("JsonDeviceActiveResult")]
 
 # Device by profile ID
@@ -58,4 +62,6 @@ class DeviceProfile:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Device':
+        if obj.get("JsonDeviceByProfileIDResult") is None:
+            return []
         return [Device.from_dict(y) for y in obj.get("JsonDeviceByProfileIDResult")]

@@ -423,15 +423,15 @@ class PSI_API():
 # Probe API
     
     def probe(self) -> probe_models.ProbeWrapper:
-        api_response = self.probe_api.get_probe()
+        api_response = self.probe_api.probe()
         return probe_models.ProbeWrapper.from_dict(api_response)      
     
     def probe_value_date(self, start, stop) -> probe_models.ProbeValuesDate:
-        api_response = self.probe_api.get_probe_value_date(start, stop)
+        api_response = self.probe_api.probe_value_date(start, stop)
         return probe_models.ProbeValuesDate.from_dict(api_response)  
     
     def probe_value_date_probe(self, id, start, stop) -> probe_models.ProbeValueDateProbe:
-        api_response = self.probe_api.get_probe_value_date_probe(id, start, stop)
+        api_response = self.probe_api.probe_value_date_probe(id, start, stop)
         return probe_models.ProbeValueDateProbe.from_dict(api_response)
     
 
@@ -661,81 +661,81 @@ class PSI_API():
         api_response = self.scales_api.scales_plant_weight_measure(id)
         return scales_models.ScalesPlantWeightMeasure.from_dict(api_response)       
 
-    def get_scales_plant_weight(self, device_id, round_id, tray_id) -> scales_models.getScalesPlantWeight:
-        api_response = self.scales_api.get_scales_plant_weight(device_id, round_id, tray_id)
-        return scales_models.getScalesPlantWeight.from_dict(api_response)  
+    def get_scales_plant_weight(self, device_id, round_id, tray_id) -> scales_models.ScalesPlantWeight:
+        api_response = self.scales_api.scales_plant_weight(device_id, round_id, tray_id)
+        return scales_models.ScalesPlantWeight.from_dict(api_response)  
 
-    def get_scales_weight_reference_plant(self, id) -> scales_models.getScalesWeightReferencePlant:
-        api_response = self.scales_api.get_scales_weight_reference_plant(id)
-        return scales_models.getScalesWeightReferencePlant.from_dict(api_response)  
+    def get_scales_weight_reference_plant(self, id) -> scales_models.ScalesWeightReferencePlant:
+        api_response = self.scales_api.scales_weight_reference_plant(id)
+        return scales_models.ScalesWeightReferencePlant.from_dict(api_response)  
 
-    def get_scales_weight_reference_tray(self, id) -> scales_models.getScalesWeightReferenceTray:
-        api_response = self.scales_api.get_scales_weight_reference_tray(id)
-        return scales_models.getScalesWeightReferenceTray.from_dict(api_response)  
+    def get_scales_weight_reference_tray(self, id) -> scales_models.ScalesWeightReferenceTray:
+        api_response = self.scales_api.scales_weight_reference_tray(id)
+        return scales_models.ScalesWeightReferenceTray.from_dict(api_response)  
 
-    def get_scales_weight_reference_to_date_tray(self, id, _date) -> scales_models.getScalesWeightReferenceToDateTray:
-        api_response = self.scales_api.get_scales_weight_reference_to_date_tray(id, _date)
-        return scales_models.getScalesWeightReferenceToDateTray.from_dict(api_response)  
+    def get_scales_weight_reference_to_date_tray(self, id, _date) -> scales_models.ScalesWeightReferenceToDateTray:
+        api_response = self.scales_api.scales_weight_reference_to_date_tray(id, _date)
+        return scales_models.ScalesWeightReferenceToDateTray.from_dict(api_response)  
 
 # Spray API
-    def get_spray_action(self, device_id, round_id, tray_id) -> spray_models.getSprayAction:
-        api_response = self.spray_api.get_spray_action(device_id, round_id, tray_id)
-        return spray_models.getSprayAction.from_dict(api_response)  
+    def get_spray_action(self, device_id, round_id, tray_id) -> spray_models.SprayAction:
+        api_response = self.spray_api.spray_action(device_id, round_id, tray_id)
+        return spray_models.SprayAction.from_dict(api_response)  
 
 # Spectrum Device API
-    def get_spectrum_device_id(self) -> spectrum_device_models.getSpectrumDeviceID:
-        api_response = self.spectrum_device_api.get_spectrum_device_id()
-        return spectrum_device_models.getSpectrumDeviceID.from_dict(api_response)  
+    def get_spectrum_device_id(self) -> spectrum_device_models.SpectrumDeviceID:
+        api_response = self.spectrum_device_api.spectrum_device_id()
+        return spectrum_device_models.SpectrumDeviceID.from_dict(api_response)  
 
-    def get_spectrum_device(self, id) -> spectrum_device_models.getSpectrumDevice:
-        api_response = self.spectrum_device_api.get_spectrum_device(id)
-        return spectrum_device_models.getSpectrumDevice.from_dict(api_response)  
+    def get_spectrum_device(self, id) -> spectrum_device_models.SpectrumDeviceWrapper:
+        api_response = self.spectrum_device_api.spectrum_device(id)
+        return spectrum_device_models.SpectrumDevice.from_dict(api_response)  
 
-    def get_spectrum_values_date_device(self, id, start, stop) -> spectrum_device_models.getSpectrumValuesDateDevice:
-        api_response = self.spectrum_device_api.get_spectrum_values_date_device(id, start, stop)
-        return spectrum_device_models.getSpectrumValuesDateDevice.from_dict(api_response)  
+    def get_spectrum_values_date_device(self, id, start, stop) -> spectrum_device_models.SpectrumValuesDateDevice:
+        api_response = self.spectrum_device_api.spectrum_values_date_device(id, start, stop)
+        return spectrum_device_models.SpectrumValuesDateDevice.from_dict(api_response)  
 
 # Buffer API
-    def get_buffer_history(self, id) -> buffer_models.getBufferHistory:
-        api_response = self.buffer_api.get_buffer_history(id)
-        return buffer_models.getBufferHistory.from_dict(api_response)  
+    def get_buffer_history(self, id) -> buffer_models.BufferHistoryWrapper:
+        api_response = self.buffer_api.buffer_history(id)
+        return buffer_models.BufferHistoryWrapper.from_dict(api_response)  
 
-    def get_buffer_history_date(self, start, stop) -> buffer_models.getBufferHistoryDate:
-        api_response = self.buffer_api.get_buffer_history_date(start, stop)
-        return buffer_models.getBufferHistoryDate.from_dict(api_response)  
+    def get_buffer_history_date(self, start, stop) -> buffer_models.BufferHistoryDate:
+        api_response = self.buffer_api.buffer_history_date(start, stop)
+        return buffer_models.BufferHistoryDate.from_dict(api_response)  
 
 # System Log API
-    def get_system_log_round(self, id) -> system_log_models.getSystemLogRound:
-        api_response = self.system_log_api.get_system_log_round(id)
-        return system_log_models.getSystemLogRound.from_dict(api_response)  
+    def get_system_log_round(self, id) -> system_log_models.SystemLogRound:
+        api_response = self.system_log_api.system_log_round(id)
+        return system_log_models.SystemLogRound.from_dict(api_response)  
 
-    def get_system_log_date_round(self, id, start, stop) -> system_log_models.getSystemLogDateRound:
-        api_response = self.system_log_api.get_system_log_date_round(id, start, stop)
-        return system_log_models.getSystemLogDateRound.from_dict(api_response)  
+    def get_system_log_date_round(self, id, start, stop) -> system_log_models.SystemLogDateRound:
+        api_response = self.system_log_api.system_log_date_round(id, start, stop)
+        return system_log_models.SystemLogDateRound.from_dict(api_response)  
 
-    def get_system_log_tray(self, id) -> system_log_models.getSystemLogTray:
-        api_response = self.system_log_api.get_system_log_tray(id)
-        return system_log_models.getSystemLogTray.from_dict(api_response)  
+    def get_system_log_tray(self, id) -> system_log_models.SystemLogTray:
+        api_response = self.system_log_api.system_log_tray(id)
+        return system_log_models.SystemLogTray.from_dict(api_response)  
 
-    def get_system_log_date_tray(self, id, start, stop) -> system_log_models.getSystemLogDateTray:
-        api_response = self.system_log_api.get_system_log_date_tray(id, start, stop)
-        return system_log_models.getSystemLogDateTray.from_dict(api_response)  
+    def get_system_log_date_tray(self, id, start, stop) -> system_log_models.SystemLogDateTray:
+        api_response = self.system_log_api.system_log_date_tray(id, start, stop)
+        return system_log_models.SystemLogDateTray.from_dict(api_response)  
 
-    def get_system_log_log_type(self) -> system_log_models.getSystemLogLogType:
-        api_response = self.system_log_api.get_system_log_log_type()
-        return system_log_models.getSystemLogLogType.from_dict(api_response)  
+    def get_system_log_log_type(self) -> system_log_models.SystemLogLogType:
+        api_response = self.system_log_api.system_log_log_type()
+        return system_log_models.SystemLogLogType.from_dict(api_response)  
 
-    def get_system_log_date_log_type(self, type, start, stop) -> system_log_models.getSystemLogDateLogType:
-        api_response = self.system_log_api.get_system_log_date_log_type(type, start, stop)
-        return system_log_models.getSystemLogDateLogType.from_dict(api_response)  
+    def get_system_log_date_log_type(self, type, start, stop) -> system_log_models.SystemLogDateLogType:
+        api_response = self.system_log_api.system_log_date_log_type(type, start, stop)
+        return system_log_models.SystemLogDateLogType.from_dict(api_response)  
 
-    def get_system_log_log_tag(self) -> system_log_models.getSystemLogLogTag:
-        api_response = self.system_log_api.get_system_log_log_tag()
-        return system_log_models.getSystemLogLogTag.from_dict(api_response)  
+    def get_system_log_log_tag(self) -> system_log_models.SystemLogLogTag:
+        api_response = self.system_log_api.system_log_log_tag()
+        return system_log_models.SystemLogLogTag.from_dict(api_response)  
 
-    def get_system_log_date_log_tag(self, tag, start, stop) -> system_log_models.getSystemLogDateLogTag:
-        api_response = self.system_log_api.get_system_log_date_log_tag(tag, start, stop)
-        return system_log_models.getSystemLogDateLogTag.from_dict(api_response)  
+    def get_system_log_date_log_tag(self, tag, start, stop) -> system_log_models.SystemLogDateLogTag:
+        api_response = self.system_log_api.system_log_date_log_tag(tag, start, stop)
+        return system_log_models.SystemLogDateLogTag.from_dict(api_response)  
 
 # Version Info API
     def version_info(self) -> version_info_modes.VersionInfo:

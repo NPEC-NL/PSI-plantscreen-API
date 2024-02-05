@@ -1,4 +1,4 @@
-# swagger_client.ProbeApi
+# plantscreen.swagger_client.ProbeApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -18,11 +18,11 @@ Returns one environment probe by probe ID. TODO: There are two versions, one wit
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProbeApi()
+api_instance = plantscreen.swagger_client.ProbeApi()
 id = 56 # int | probeID. Two versions, with and without parameter (optional)
 
 try:
@@ -64,11 +64,11 @@ Returns all probe values measured between times. Times is entered as the start a
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProbeApi()
+api_instance = plantscreen.swagger_client.ProbeApi()
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
 
@@ -112,11 +112,11 @@ Returns all probe values for probe defined by probe ID measured between times. T
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ProbeApi()
+api_instance = plantscreen.swagger_client.ProbeApi()
 id = 56 # int | probeID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop

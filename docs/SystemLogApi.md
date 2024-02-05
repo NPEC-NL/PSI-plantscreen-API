@@ -1,4 +1,4 @@
-# swagger_client.SystemLogApi
+# plantscreen.swagger_client.SystemLogApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -23,11 +23,11 @@ Returns important events as system logs by log tag between defined times. Times 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 tag = 56 # int | tag
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
@@ -73,11 +73,11 @@ Returns important events as system logs by log type between defined times. Times
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 type = 56 # int | type
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
@@ -123,11 +123,11 @@ Returns important events as system logs by round ID between defined times. Times
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 id = 56 # int | roundID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
@@ -173,11 +173,11 @@ Returns important events as system logs by tray ID between defined times. Times 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 id = 56 # int | trayID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
@@ -223,11 +223,11 @@ Returns a list of all used system log tag.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 
 try:
     # Returns a list of all used system log tag.
@@ -265,11 +265,11 @@ Returns a list of all used system log types.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 
 try:
     # Returns a list of all used system log types.
@@ -307,11 +307,11 @@ Returns important events as system logs by round ID. System logs are only option
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 id = 56 # int | roundID
 
 try:
@@ -353,11 +353,11 @@ Returns important events as system logs by tray ID. System logs are only optiona
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SystemLogApi()
+api_instance = plantscreen.swagger_client.SystemLogApi()
 id = 56 # int | trayID
 
 try:

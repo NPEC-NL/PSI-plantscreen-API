@@ -30,6 +30,8 @@ class ProfileID:
 
     @staticmethod
     def from_dict(obj: Any) -> 'ProfileID':
+        if obj.get("JsonSystemProfileIDResult") is None:
+            return []
         _IDs = [int(y.get("ProfileID")) for y in obj.get("JsonSystemProfileIDResult")]
         return ProfileID(_IDs)
 
@@ -40,6 +42,8 @@ class ProfileWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Profile':
+        if obj.get("JsonSystemProfileResult") is None:
+            return []
         return Profile.from_dict(obj.get("JsonSystemProfileResult"))
     
 # List active system profiles
@@ -49,4 +53,6 @@ class ProfileActive:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Profile':
+        if obj.get("JsonSystemProfileActiveResult") is None:
+            return None
         return Profile.from_dict(obj.get("JsonSystemProfileActiveResult"))

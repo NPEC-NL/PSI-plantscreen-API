@@ -15,7 +15,7 @@ class ScalesMeasure:
     PlantBarcode: str
     PlantID: int
     PlantName: str
-    PlantWeight: int
+    PlantWeight: float
     RoundID: int
     TrayBarcode: str
     TrayID: int
@@ -56,7 +56,7 @@ class ScalesMeasure2:
     PlantBarcode: str
     PlantID: int
     PlantName: str
-    PlantWeight: int
+    PlantWeight: float
     RoundID: int
     TrayArea: str
     TrayBarcode: str
@@ -117,18 +117,18 @@ class ScalesPlantWeightMeasure:
 
 # Scales Measure for Tray
 @dataclass
-class getScalesPlantWeight:
+class ScalesPlantWeight:
     ScalesMeasure2: ScalesMeasure2
 
     @staticmethod
     def from_dict(obj: Any) -> 'ScalesMeasure2':
         if obj.get("JsonScalesMeasureResult") is None:
-            return None
+            return []
         return [ScalesMeasure2.from_dict(y) for y in obj.get("JsonScalesMeasureResult")] 
     
 # Plant Weight Reference by Plant ID
 @dataclass
-class getScalesWeightReferencePlant:
+class ScalesWeightReferencePlant:
     ScalesPlant: ScalesPlant
 
     @staticmethod
@@ -139,22 +139,22 @@ class getScalesWeightReferencePlant:
 
 # Plant Weight Reference by Tray ID
 @dataclass
-class getScalesWeightReferenceTray:
+class ScalesWeightReferenceTray:
     ScalesPlant: ScalesPlant
 
     @staticmethod
     def from_dict(obj: Any) -> 'ScalesPlant':
         if obj.get("JsonPlantWeightReferenceByTrayIDResult") is None:
-            return None
+            return []
         return [ScalesPlant.from_dict(y) for y in obj.get("JsonPlantWeightReferenceByTrayIDResult")] 
 
 # Plant Weight Reference by Tray ID to Date
 @dataclass
-class getScalesWeightReferenceToDateTray:
+class ScalesWeightReferenceToDateTray:
     ScalesPlant: ScalesPlant
 
     @staticmethod
     def from_dict(obj: Any) -> 'ScalesPlant':
         if obj.get("JsonPlantWeightReferenceByTrayIDToDateResult") is None:
-            return None
+            return []
         return [ScalesPlant.from_dict(y) for y in obj.get("JsonPlantWeightReferenceByTrayIDToDateResult")] 

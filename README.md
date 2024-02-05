@@ -49,11 +49,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi(swagger_client.ApiClient(configuration))
+api_instance = plantscreen.swagger_client.ActionApi(plantscreen.swagger_client.ApiClient(configuration))
 id = 56 # int | actionID
 
 try:
@@ -64,7 +64,7 @@ except ApiException as e:
     print("Exception when calling ActionApi->action: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi(swagger_client.ApiClient(configuration))
+api_instance = plantscreen.swagger_client.ActionApi(plantscreen.swagger_client.ApiClient(configuration))
 id = 56 # int | experimentID
 
 try:
@@ -75,7 +75,7 @@ except ApiException as e:
     print("Exception when calling ActionApi->action_experiment: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi(swagger_client.ApiClient(configuration))
+api_instance = plantscreen.swagger_client.ActionApi(plantscreen.swagger_client.ApiClient(configuration))
 id = 56 # int | groupID
 
 try:
@@ -86,7 +86,7 @@ except ApiException as e:
     print("Exception when calling ActionApi->action_group: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi(swagger_client.ApiClient(configuration))
+api_instance = plantscreen.swagger_client.ActionApi(plantscreen.swagger_client.ApiClient(configuration))
 id = 56 # int | roundID
 
 try:
@@ -97,7 +97,7 @@ except ApiException as e:
     print("Exception when calling ActionApi->action_group_round: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi(swagger_client.ApiClient(configuration))
+api_instance = plantscreen.swagger_client.ActionApi(plantscreen.swagger_client.ApiClient(configuration))
 id = 56 # int | experimentID
 
 try:
@@ -108,7 +108,7 @@ except ApiException as e:
     print("Exception when calling ActionApi->action_not_done_experiment: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi(swagger_client.ApiClient(configuration))
+api_instance = plantscreen.swagger_client.ActionApi(plantscreen.swagger_client.ApiClient(configuration))
 id = 56 # int | protocolID
 
 try:
@@ -119,7 +119,7 @@ except ApiException as e:
     print("Exception when calling ActionApi->action_protocol: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.ActionApi(swagger_client.ApiClient(configuration))
+api_instance = plantscreen.swagger_client.ActionApi(plantscreen.swagger_client.ApiClient(configuration))
 id = 56 # int | roundID
 
 try:

@@ -1,4 +1,4 @@
-# swagger_client.FileApi
+# plantscreen.swagger_client.FileApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -17,11 +17,11 @@ Returns the streamed file located in the data file storage by defined path.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FileApi()
+api_instance = plantscreen.swagger_client.FileApi()
 path = '2013-10-20T19:20:30+01:00' # datetime | fileStoragePath
 
 try:
@@ -62,11 +62,11 @@ Returns the changelog as a streamed text file. The changelog is a record of all 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FileApi()
+api_instance = plantscreen.swagger_client.FileApi()
 path = '2013-10-20T19:20:30+01:00' # datetime | fileStoragePath
 
 try:

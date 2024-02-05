@@ -1,4 +1,4 @@
-# swagger_client.Scan3dApi
+# plantscreen.swagger_client.Scan3dApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -29,11 +29,11 @@ Returns 3D extended data for tray defined by tray ID, by round ID of round in wh
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -79,11 +79,11 @@ Returns 3D imaging data for tray defined by tray ID, by round ID of round in whi
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -129,11 +129,11 @@ Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | analyseID
 
 try:
@@ -175,11 +175,11 @@ Returns the analyzed 3D data as a triangulated 3D model defined by tray ID, by r
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -225,11 +225,11 @@ Returns the analyzed 3D data as a triangulated 3D model defined by scan 3D measu
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | measureID
 
 try:
@@ -271,11 +271,11 @@ Returns 3D imaging extended data by scan 3D measure ID. (Only available for fiel
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | measureID
 
 try:
@@ -317,11 +317,11 @@ Returns 3D imaging data by scan 3D measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | measureID
 
 try:
@@ -363,11 +363,11 @@ Returns the 3D local leaf parameter values for the parameter defined by paramete
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -415,11 +415,11 @@ Returns the 3D local leaf parameter values for the parameter defined by paramete
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -463,11 +463,11 @@ Returns one 3D parameter by parameter ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | paramID
 
 try:
@@ -509,11 +509,11 @@ Returns the 3D plant and leaf parameters used in the analysis by tray ID, by rou
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -559,11 +559,11 @@ Returns the 3D plant and leaf parameters used in the analysis defined by analyse
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | analyseID
 
 try:
@@ -605,11 +605,11 @@ Returns the 3D plant parameter values for the parameter defined by parameter ID,
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -657,11 +657,11 @@ Returns the 3D plant parameter values for the parameter defined by parameter ID 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.Scan3dApi()
+api_instance = plantscreen.swagger_client.Scan3dApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 

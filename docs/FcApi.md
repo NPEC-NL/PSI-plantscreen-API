@@ -1,4 +1,4 @@
-# swagger_client.FcApi
+# plantscreen.swagger_client.FcApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -30,11 +30,11 @@ Returns FluorCam imaging data for tray defined by tray ID, by round ID of round 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -80,11 +80,11 @@ Returns FluorCam extended data for tray defined by tray ID, by round ID of round
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -130,11 +130,11 @@ Returns FluorCam imaging extended data by FC measure ID. (Only available for fie
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | measureID
 
 try:
@@ -176,11 +176,11 @@ Returns FluorCam imaging data by FC measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | measureID
 
 try:
@@ -222,11 +222,11 @@ Returns the FluorCam leaf parameter values for the parameter defined by paramete
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -274,11 +274,11 @@ Returns the FluorCam leaf parameter values for the parameter defined by paramete
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -322,11 +322,11 @@ Returns one FluorCam parameter by parameter ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | paramID
 
 try:
@@ -368,11 +368,11 @@ Returns the FluorCam parameter images for the parameter defined by parameter ID,
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -420,11 +420,11 @@ Returns the FluorCam parameter image for the parameter defined by parameter ID a
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | analyseID
 param_id = 56 # int | paramID
 
@@ -468,11 +468,11 @@ Returns the FluorCam plant and leaf parameters used in the analysis by tray ID, 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -518,11 +518,11 @@ Returns FluorCam plant masks created for the tray defined by tray ID, by round I
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -568,11 +568,11 @@ Returns the FluorCam plant mask created for the measured tray defined by FC meas
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | measureID
 
 try:
@@ -614,11 +614,11 @@ Returns the FluorCam plant parameter values for the parameter defined by paramet
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -666,11 +666,11 @@ Returns the FluorCam plant parameter values for the parameter defined by paramet
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -714,11 +714,11 @@ Returns the FluorCam plant and leaf parameters used in the analysis defined by a
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FcApi()
+api_instance = plantscreen.swagger_client.FcApi()
 id = 56 # int | analyseID
 
 try:

@@ -46,18 +46,18 @@ class SpectrumValues:
 
 # Spectrum Device IDs
 @dataclass
-class getSpectrumDeviceID:
+class SpectrumDeviceID:
     DeviceID: DeviceID
 
     @staticmethod
     def from_dict(obj: Any) -> 'DeviceID':
         if obj.get("JsonSpectrumDeviceIDResult") is None:
-            return None
+            return []
         return [DeviceID.from_dict(y) for y in obj.get("JsonSpectrumDeviceIDResult")] 
 
 # Spectrum Device by ID
 @dataclass
-class getSpectrumDevice:
+class SpectrumDeviceWrapper:
     SpectrumDevice: SpectrumDevice
 
     @staticmethod
@@ -68,13 +68,13 @@ class getSpectrumDevice:
 
 # Spectrum Values
 @dataclass
-class getSpectrumValuesDateDevice:
+class SpectrumValuesDateDevice:
     SpectrumValues: SpectrumValues
 
     @staticmethod
     def from_dict(obj: Any) -> 'SpectrumValues':
         if obj.get("JsonSpectrumValuesResult") is None:
-            return None
+            return []
         return [SpectrumValues.from_dict(y) for y in obj.get("JsonSpectrumValuesResult")] 
 
 

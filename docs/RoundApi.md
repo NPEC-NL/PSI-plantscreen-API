@@ -1,4 +1,4 @@
-# swagger_client.RoundApi
+# plantscreen.swagger_client.RoundApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -21,11 +21,11 @@ Returns one round by round ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RoundApi()
+api_instance = plantscreen.swagger_client.RoundApi()
 id = 56 # int | roundID
 
 try:
@@ -67,11 +67,11 @@ Returns all rounds measured in the experiment defined by ID between defined time
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RoundApi()
+api_instance = plantscreen.swagger_client.RoundApi()
 id = 56 # int | experimentID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
@@ -117,11 +117,11 @@ Returns all rounds measured in the experiment defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RoundApi()
+api_instance = plantscreen.swagger_client.RoundApi()
 id = 56 # int | experimentID
 
 try:
@@ -163,11 +163,11 @@ Returns all rounds measured in the experiment defined by ID between defined time
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RoundApi()
+api_instance = plantscreen.swagger_client.RoundApi()
 id = 56 # int | experimentID
 start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
 stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
@@ -213,11 +213,11 @@ Returns all rounds measured in the experiment defined by ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RoundApi()
+api_instance = plantscreen.swagger_client.RoundApi()
 id = 56 # int | experimentID
 
 try:
@@ -259,11 +259,11 @@ Returns the round order in the experiment by round ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RoundApi()
+api_instance = plantscreen.swagger_client.RoundApi()
 id = 56 # int | roundID
 
 try:

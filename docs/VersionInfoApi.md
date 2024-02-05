@@ -1,4 +1,4 @@
-# swagger_client.VersionInfoApi
+# plantscreen.swagger_client.VersionInfoApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -16,11 +16,11 @@ Returns version of the database and the PlantScreen Data REST API used
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.VersionInfoApi()
+api_instance = plantscreen.swagger_client.VersionInfoApi()
 
 try:
     # Returns version of the database and the PlantScreen Data REST API used

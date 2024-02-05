@@ -102,6 +102,8 @@ class TrayWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Tray':
+        if obj.get("JsonTrayResult") is None:
+            return None
         return Tray.from_dict(obj.get("JsonTrayResult"))
     
 # List trays in round ID
@@ -111,6 +113,8 @@ class TrayRound:
 
     @staticmethod
     def from_dict(obj: Any) -> 'Tray':
+        if obj.get("JsonTrayByRoundIDResult") is None:
+            return []
         return [Tray.from_dict(y) for y in obj.get("JsonTrayByRoundIDResult")]
 
 # Tray type by tray type ID
@@ -120,6 +124,8 @@ class TrayType:
 
     @staticmethod
     def from_dict(obj: Any) -> 'TrayInfo':
+        if obj.get("JsonTrayTypeResult") is None:
+            return None
         return TrayInfo.from_dict(obj.get("JsonTrayTypeResult"))
     
 # Tray type by tray ID
@@ -129,6 +135,8 @@ class TrayTypeTray:
 
     @staticmethod
     def from_dict(obj: Any) -> 'TrayInfo':
+        if obj.get("JsonTrayTypeByTrayIDResult") is None:
+            return None
         return TrayInfo.from_dict(obj.get("JsonTrayTypeByTrayIDResult"))
 
 # Tray type by profile ID
@@ -138,6 +146,8 @@ class TrayTypeTrayProfile:
 
     @staticmethod
     def from_dict(obj: Any) -> 'TrayInfo':
+        if obj.get("JsonTrayTypeByTrayProfileIDResult") is None:
+            return None
         return TrayInfo.from_dict(obj.get("JsonTrayTypeByTrayProfileIDResult"))  
 
 # Trayprofile by profile ID
@@ -147,6 +157,8 @@ class TrayProfileWrapper:
 
     @staticmethod
     def from_dict(obj: Any) -> 'TrayProfile':
+        if obj.get("JsonTrayProfileResult") is None:
+            return None
         return TrayProfile.from_dict(obj.get("JsonTrayProfileResult"))  
 
 # List trays by trayprofile
@@ -156,6 +168,8 @@ class TrayProfileTray:
 
     @staticmethod
     def from_dict(obj: Any) -> 'TrayProfile':
+        if obj.get("JsonTrayProfileByTrayIDResult") is None:
+            return []
         return [TrayProfile.from_dict(y) for y in obj.get("JsonTrayProfileByTrayIDResult")]
     
 # Trayprofile of tray during period
@@ -165,6 +179,8 @@ class TrayProfileUsedTray:
 
     @staticmethod
     def from_dict(obj: Any) -> 'TrayProfile':
+        if obj.get("JsonUsedTrayProfileByTrayIDResult") is None:
+            return []
         return [TrayProfile.from_dict(y) for y in obj.get("JsonUsedTrayProfileByTrayIDResult")]
     
 
@@ -177,7 +193,6 @@ class TrayProfileToDateTray:
     def from_dict(obj: Any) -> 'TrayProfile':
         if obj.get("JsonTrayProfileByTrayIDToDateResult") is None:
             return None
-
         return  TrayProfile.from_dict(obj.get("JsonTrayProfileByTrayIDToDateResult"))  
     
 # Scalesmap by tray ID
@@ -187,5 +202,7 @@ class ScalesMappingTray:
 
     @staticmethod
     def from_dict(obj: Any) -> 'ScalesMapping':
+        if obj.get("JsonScalesMappingByTrayIDResult") is None:
+            return []
         return  [ScalesMapping.from_dict(y) for y in obj.get("JsonScalesMappingByTrayIDResult")]
     

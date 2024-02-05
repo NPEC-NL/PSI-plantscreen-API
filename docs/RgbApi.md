@@ -1,4 +1,4 @@
-# swagger_client.RgbApi
+# plantscreen.swagger_client.RgbApi
 
 All URIs are relative to *https://localhost:44339/*
 
@@ -36,11 +36,11 @@ Returns RGB greening data data masked by the plant mask for tray defined by tray
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -86,11 +86,11 @@ Returns RGB greening data masked by the plant mask defined by RGB measure ID. Th
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | measureID
 
 try:
@@ -132,11 +132,11 @@ Returns FluorCam imaging data for tray defined by tray ID, by round ID of round 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -182,11 +182,11 @@ Returns RGB extended data for tray defined by tray ID, by round ID of round in w
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -232,11 +232,11 @@ Returns RGB imaging extended data by RGB measure ID. (Only available for field s
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | measureID
 
 try:
@@ -278,11 +278,11 @@ Returns RGB imaging data by RGB measure ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | measureID
 
 try:
@@ -324,11 +324,11 @@ Returns the RGB leaf parameter values for the parameter defined by parameter ID,
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -376,11 +376,11 @@ Returns the RGB leaf parameter values for the parameter defined by parameter ID 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -424,11 +424,11 @@ Returns the RGB greening leaf parameter values for the parameter defined by para
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -476,11 +476,11 @@ Returns the RGB greening leaf parameter values for the parameter defined by para
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -524,11 +524,11 @@ Returns one RGB morfo parameter by parameter ID.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | paramID
 
 try:
@@ -570,11 +570,11 @@ Returns the greening RGB plant and leaf parameters used in the analysis by tray 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -620,11 +620,11 @@ Returns the greening RGB plant and leaf parameters used in the greening analysis
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | analyseID
 
 try:
@@ -666,11 +666,11 @@ Returns the RGB plant and leaf parameters used in the analysis by tray ID, by ro
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -716,11 +716,11 @@ Returns the RGB plant and leaf parameters used in the analysis defined by analys
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | analyseID
 
 try:
@@ -762,11 +762,11 @@ Returns RGB plant masks created for the tray defined by tray ID, by round ID of 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -812,11 +812,11 @@ Returns the RGB plant mask created for the measured tray defined by RGB measure 
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | measureID
 
 try:
@@ -858,11 +858,11 @@ Returns the RGB plant parameter values for the parameter defined by parameter ID
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -910,11 +910,11 @@ Returns the RGB plant parameter values for the parameter defined by parameter ID
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 
@@ -958,11 +958,11 @@ Returns the RGB greening plant parameter values for the parameter defined by par
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 device_id = 56 # int | deviceID
 round_id = 56 # int | roundID
 tray_id = 56 # int | trayID
@@ -1010,11 +1010,11 @@ Returns the RGB greening plant parameter values for the parameter defined by par
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RgbApi()
+api_instance = plantscreen.swagger_client.RgbApi()
 id = 56 # int | analyseID
 param_id = 56 # int | ParamID
 

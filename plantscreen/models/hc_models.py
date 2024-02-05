@@ -10,9 +10,9 @@ class HcImaging:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
-    MeasureHeight: int
+    MeasureHeight: float
     MeasureID: int
     RoundID: int
     TrayBarcode: str
@@ -75,7 +75,7 @@ class HcRgb:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     RgbImagePath: str
     RoundID: int
@@ -103,7 +103,7 @@ class HcMask:
     DevicePID: str
     ExperimentID: int
     MaskIsLeaf: bool
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureDate: str
     MeasureID: int
     PlantMaskPath: str
@@ -149,7 +149,7 @@ class HcImage:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterID: int
     ParameterImagePath: str
@@ -182,7 +182,7 @@ class HcPlant:
     DeviceID: int
     DevicePID: str
     ExperimentID: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterAvg: float
     ParameterID: int
@@ -232,7 +232,7 @@ class HcLeaf:
     DevicePID: str
     ExperimentID: int
     LeafIndex: int
-    MeasureAngle: int
+    MeasureAngle: float
     MeasureID: int
     ParameterAvg: float
     ParameterID: int
@@ -296,22 +296,10 @@ class HcImagingWrapper:
     @staticmethod
     def from_dict(obj: Any) -> 'HcImaging':
         if obj.get("JsonHcImagingResult") is None:
-            return None
+            return []
         
         return [HcImaging.from_dict(y) for y in obj.get("JsonHcImagingResult")] 
 
-# Hyperspectral image for tray
-@dataclass
-class HcImagingWrapper:
-    HcImaging: HcImaging
-
-    @staticmethod
-    def from_dict(obj: Any) -> 'HcImaging':
-        if obj.get("JsonHcImagingResult") is None:
-            return None
-        
-        return [HcImaging.from_dict(y) for y in obj.get("JsonHcImagingResult")] 
-    
 # Hyperspectral extended by measurement ID
 @dataclass
 class HcImagingExtendedDataMeasure:
@@ -356,7 +344,7 @@ class HcRgbImage:
     @staticmethod
     def from_dict(obj: Any) -> 'HcRgb':
         if obj.get("JsonHcRgbImageResult") is None:
-            return None
+            return []
         
         return [HcRgb.from_dict(y) for y in obj.get("JsonHcRgbImageResult")] 
     
@@ -380,7 +368,7 @@ class HcPlantMask:
     @staticmethod
     def from_dict(obj: Any) -> 'HcMask':
         if obj.get("JsonHcPlantMaskResult") is None:
-            return None
+            return []
         
         return [HcMask.from_dict(y) for y in obj.get("JsonHcPlantMaskResult")] 
     
@@ -404,7 +392,7 @@ class HcParamUsedAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'HcParam':
         if obj.get("JsonHcUsedParamByAnalyseIDResult") is None:
-            return None
+            return []
         
         return [HcParam.from_dict(y) for y in obj.get("JsonHcUsedParamByAnalyseIDResult")] 
 
@@ -416,7 +404,7 @@ class HcParamUsed:
     @staticmethod
     def from_dict(obj: Any) -> 'HcParam':
         if obj.get("JsonHcUsedParamResult") is None:
-            return None
+            return []
         
         return [HcParam.from_dict(y) for y in obj.get("JsonHcUsedParamResult")] 
     
@@ -440,7 +428,7 @@ class HcParamImage:
     @staticmethod
     def from_dict(obj: Any) -> 'HcImage':
         if obj.get("JsonHcParameterImageResult") is None:
-            return None
+            return []
         
         return [HcImage.from_dict(y) for y in obj.get("JsonHcParameterImageResult")]         
 
@@ -452,7 +440,7 @@ class HcPlantParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'HcPlant':
         if obj.get("JsonHcPlantParamByAnalyseIDResult") is None:
-            return None
+            return []
         
         return [HcPlant.from_dict(y) for y in obj.get("JsonHcPlantParamByAnalyseIDResult")]    
 
@@ -464,7 +452,7 @@ class HcPlantParam:
     @staticmethod
     def from_dict(obj: Any) -> 'HcPlant':
         if obj.get("JsonHcPlantParamResult") is None:
-            return None
+            return []
         
         return [HcPlant.from_dict(y) for y in obj.get("JsonHcPlantParamResult")]    
 
@@ -476,7 +464,7 @@ class HcLeafParamAnalyse:
     @staticmethod
     def from_dict(obj: Any) -> 'HcLeaf':
         if obj.get("JsonHcLeafParamByAnalyseIDResult") is None:
-            return None
+            return []
         
         return [HcLeaf.from_dict(y) for y in obj.get("JsonHcLeafParamByAnalyseIDResult")]   
 
@@ -488,6 +476,6 @@ class HcLeafParam:
     @staticmethod
     def from_dict(obj: Any) -> 'HcLeaf':
         if obj.get("JsonHcLeafParamsResult") is None:
-            return None
+            return []
         
         return [HcLeaf.from_dict(y) for y in obj.get("JsonHcLeafParamsResult")]   
