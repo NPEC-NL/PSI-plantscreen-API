@@ -115,7 +115,7 @@ class ExperimentOwner:
     Experiments: List[Experiment]
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ExperimentOwner':
+    def from_dict(obj: Any) -> List[Experiment]:
         if obj.get("JsonExperimentByOwnerResult") is None:
             return []     
         return [Experiment.from_dict(y) for y in obj.get("JsonExperimentByOwnerResult")]
@@ -126,7 +126,7 @@ class OwnerID:
     """List experiment owner ids"""
 
     @staticmethod
-    def from_dict(obj: Any) -> List[Experiment]:
+    def from_dict(obj: Any) -> List[int]:
         if obj.get("JsonOwnerIDResult") is None:
             return []
         return [y.get('OwnerID') for y in obj.get("JsonOwnerIDResult")]
