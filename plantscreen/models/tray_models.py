@@ -159,7 +159,7 @@ class TrayProfileWrapper:
     def from_dict(obj: Any) -> 'TrayProfile':
         if obj.get("JsonTrayProfileResult") is None:
             return None
-        return TrayProfile.from_dict(obj.get("JsonTrayProfileResult"))  
+        return TrayProfile.from_dict(obj.get("JsonTrayProfileResult"))
 
 # List trays by trayprofile
 @dataclass

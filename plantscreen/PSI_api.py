@@ -65,9 +65,9 @@ class PSI_API():
         api_response = self.round_api.round(id)
         return models.round.RoundWrapper.from_dict(api_response)
 
-    def round_experiment(self, id) -> models.RoundExperiment:
+    def round_experiment(self, id) -> models.round.RoundExperiment:
         api_response = self.round_api.round_experiment(id)
-        return models.RoundExperiment.from_dict(api_response)
+        return models.round.RoundExperiment.from_dict(api_response)
 
     def round_date_experiment(self, id, start, stop) -> models.round.RoundDateExperiment:
         api_response = self.round_api.round_date_experiment(id, start, stop)
@@ -166,21 +166,21 @@ class PSI_API():
         api_response = self.tray_api.tray_profile(id)
         return models.tray.TrayProfileWrapper.from_dict(api_response)
 
-    def tray_profile_tray(self, id) -> models.TrayProfileTray:
+    def tray_profile_tray(self, id) -> models.tray.TrayProfileTray:
         api_response = self.tray_api.tray_profile_tray(id)
-        return models.TrayProfileTray.from_dict(api_response)
+        return models.tray.TrayProfileTray.from_dict(api_response)
 
-    def tray_profile_used_tray(self, id, start, stop) -> models.TrayProfileUsedTray:
+    def tray_profile_used_tray(self, id, start, stop) -> models.tray.TrayProfileUsedTray:
         api_response = self.tray_api.tray_profile_used_tray(id, start, stop)
-        return models.TrayProfileUsedTray.from_dict(api_response)
+        return models.tray.TrayProfileUsedTray.from_dict(api_response)
 
-    def tray_profile_to_date_tray(self, id, date) -> models.TrayProfileToDateTray:
+    def tray_profile_to_date_tray(self, id, date) -> models.tray.TrayProfileToDateTray:
         api_response = self.tray_api.tray_profile_to_date_tray(id, date)
-        return models.TrayProfileToDateTray.from_dict(api_response)
+        return models.tray.TrayProfileToDateTray.from_dict(api_response)
 
-    def scales_mapping_tray(self, id) -> models.ScalesMappingTray:
+    def scales_mapping_tray(self, id) -> models.tray.ScalesMappingTray:
         api_response = self.tray_api.scales_mapping_tray(id)
-        return models.ScalesMappingTray.from_dict(api_response)
+        return models.tray.ScalesMappingTray.from_dict(api_response)
 
 # # Plant API
 #     def plant(self, id) -> models.PlantWrapper:

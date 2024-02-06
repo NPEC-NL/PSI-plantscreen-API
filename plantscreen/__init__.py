@@ -1,3 +1,3 @@
-from . import swagger_client
-from . import PSI_api
-from .models import *
+from plantscreen import swagger_client
+from plantscreen import PSI_api
+from plantscreen import models
