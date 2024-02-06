@@ -1,58 +1,58 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# Profile baseclass
+
 @dataclass
 class Profile:
-    ProfileActive: bool
-    ProfileID: int
-    ProfileInfo: str
-    ProfileName: str
-    SystemHwConfig: str
-
+    """Profile baseclass"""
+    profile_active: bool
+    profile_id: int
+    profile_info: str
+    profile_name: str
+    system_hw_config: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Profile':
+    def from_dict(obj: Any) -> Profile:
         return Profile(
-            ProfileActive=obj.get("ProfileActive"),
-            ProfileID=obj.get("ProfileID"),
-            ProfileInfo=obj.get("ProfileInfo"),
-            ProfileName=obj.get("ProfileName"),
-            SystemHwConfig=obj.get("SystemHwConfig")
+            profile_active=obj.get("ProfileActive"),
+            profile_id=obj.get("ProfileID"),
+            profile_info=obj.get("ProfileInfo"),
+            profile_name=obj.get("ProfileName"),
+            system_hw_config=obj.get("SystemHwConfig")
         )
 
-# List system profiles
+
 @dataclass
 class ProfileID:
-    IDs: int
+    """List system profiles"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ProfileID':
+    def from_dict(obj: Any) -> List[ProfileID]:
         if obj.get("JsonSystemProfileIDResult") is None:
             return []
-        _IDs = [int(y.get("ProfileID")) for y in obj.get("JsonSystemProfileIDResult")]
-        return ProfileID(_IDs)
+        _ids = [int(y.get("ProfileID")) for y in obj.get("JsonSystemProfileIDResult")]
+        return _ids
 
-# system profile by ID
+
 @dataclass
 class ProfileWrapper:
-    Profile: Profile
+    """System profile by ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Profile':
+    def from_dict(obj: Any) -> Profile:
         if obj.get("JsonSystemProfileResult") is None:
-            return []
+            return None
         return Profile.from_dict(obj.get("JsonSystemProfileResult"))
-    
-# List active system profiles
+
+
 @dataclass
 class ProfileActive:
-    Profile: Profile
+    """List active system profiles"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Profile':
+    def from_dict(obj: Any) -> Profile:
         if obj.get("JsonSystemProfileActiveResult") is None:
             return None
         return Profile.from_dict(obj.get("JsonSystemProfileActiveResult"))

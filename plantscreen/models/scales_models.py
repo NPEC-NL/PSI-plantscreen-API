@@ -1,160 +1,163 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# ScalesMeasure baseclass
+
 @dataclass
 class ScalesMeasure:
-    ActionID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureDate: str
-    MeasureID: int
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    PlantWeight: float
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-    TrayArea: str
-    TrayProfileID: int
-    Watered: bool
+    """ScalesMeasure baseclass"""
+    action_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_date: str
+    measure_id: int
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    plant_weight: float
+    round_id: int
+    tray_barcode: str
+    tray_id: int
+    tray_area: str
+    tray_profile_id: int
+    watered: bool
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesMeasure':
+    def from_dict(obj: Any) -> ScalesMeasure:
         return ScalesMeasure(
-            ActionID=obj.get("ActionID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            PlantWeight=obj.get("PlantWeight"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayProfileID=obj.get("TrayProfileID"),
-            Watered=obj.get("Watered")
+            action_id=obj.get("ActionID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            plant_weight=obj.get("PlantWeight"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID"),
+            tray_area=obj.get("TrayArea"),
+            tray_profile_id=obj.get("TrayProfileID"),
+            watered=obj.get("Watered")
         )
-    
-# ScalesMeasure2 baseclass
+
+
 @dataclass
 class ScalesMeasure2:
-    ActionID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureDate: str
-    MeasureID: int
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    PlantWeight: float
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
-    TrayProfileID: int
-    Watered: bool
+    """ScalesMeasure2 baseclass"""
+    action_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_date: str
+    measure_id: int
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    plant_weight: float
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
+    tray_profile_id: int
+    watered: bool
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesMeasure2':
+    def from_dict(obj: Any) -> ScalesMeasure2:
         return ScalesMeasure2(
-            ActionID=obj.get("ActionID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            PlantWeight=obj.get("PlantWeight"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID"),
-            TrayProfileID=obj.get("TrayProfileID"),
-            Watered=obj.get("Watered")
+            action_id=obj.get("ActionID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            plant_weight=obj.get("PlantWeight"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID"),
+            tray_profile_id=obj.get("TrayProfileID"),
+            watered=obj.get("Watered")
         )
 
-# ScalesPlant baseclass
+
 @dataclass
 class ScalesPlant:
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    ReferenceWeightDate: str
-    ReferenceWeightValue: float
+    """ScalesPlant baseclass"""
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    reference_weight_date: str
+    reference_weight_value: float
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesPlant':
+    def from_dict(obj: Any) -> ScalesPlant:
         return ScalesPlant(
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            ReferenceWeightDate=obj.get("ReferenceWeightDate"),
-            ReferenceWeightValue=obj.get("ReferenceWeightValue")
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            reference_weight_date=obj.get("ReferenceWeightDate"),
+            reference_weight_value=obj.get("ReferenceWeightValue")
         )
 
-# Scales Data by Measure ID
+
 @dataclass
 class ScalesPlantWeightMeasure:
-    ScalesMeasure: ScalesMeasure
+    """Scales Data by Measure ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesMeasure':
+    def from_dict(obj: Any) -> ScalesMeasure:
         if obj.get("JsonScalesMeasureByIDResult") is None:
             return None
         return ScalesMeasure.from_dict(obj.get("JsonScalesMeasureByIDResult"))
 
-# Scales Measure for Tray
+
 @dataclass
 class ScalesPlantWeight:
-    ScalesMeasure2: ScalesMeasure2
+    """Scales Measure for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesMeasure2':
+    def from_dict(obj: Any) -> List[ScalesMeasure2]:
         if obj.get("JsonScalesMeasureResult") is None:
             return []
-        return [ScalesMeasure2.from_dict(y) for y in obj.get("JsonScalesMeasureResult")] 
-    
-# Plant Weight Reference by Plant ID
+        return [ScalesMeasure2.from_dict(y) for y in obj.get("JsonScalesMeasureResult")]
+
+
 @dataclass
 class ScalesWeightReferencePlant:
-    ScalesPlant: ScalesPlant
+    """Plant Weight Reference by Plant ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesPlant':
+    def from_dict(obj: Any) -> ScalesPlant:
         if obj.get("JsonPlantWeightReferenceByPlantIDResult") is None:
             return None
         return ScalesPlant.from_dict(obj.get("JsonPlantWeightReferenceByPlantIDResult"))
 
-# Plant Weight Reference by Tray ID
+
 @dataclass
 class ScalesWeightReferenceTray:
-    ScalesPlant: ScalesPlant
+    """Plant Weight Reference by Tray ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesPlant':
+    def from_dict(obj: Any) -> List[ScalesPlant]:
         if obj.get("JsonPlantWeightReferenceByTrayIDResult") is None:
             return []
-        return [ScalesPlant.from_dict(y) for y in obj.get("JsonPlantWeightReferenceByTrayIDResult")] 
+        return [ScalesPlant.from_dict(y) for y in obj.get("JsonPlantWeightReferenceByTrayIDResult")]
 
-# Plant Weight Reference by Tray ID to Date
+
 @dataclass
 class ScalesWeightReferenceToDateTray:
-    ScalesPlant: ScalesPlant
+    """Plant Weight Reference by Tray ID to Date"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ScalesPlant':
+    def from_dict(obj: Any) -> List[ScalesPlant]:
         if obj.get("JsonPlantWeightReferenceByTrayIDToDateResult") is None:
             return []
-        return [ScalesPlant.from_dict(y) for y in obj.get("JsonPlantWeightReferenceByTrayIDToDateResult")] 
+        return [ScalesPlant.from_dict(y) for y in obj.get("JsonPlantWeightReferenceByTrayIDToDateResult")]

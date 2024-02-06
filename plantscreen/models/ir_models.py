@@ -1,391 +1,377 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# IrImage baseclass
+
 @dataclass
 class IrImage:
-    ActionID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureHeight: float
-    MeasureID: int
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-    TrayProfileID: int
-    ImagePath: str
-    
+    """IrImage baseclass"""
+    action_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_date: str
+    measure_height: float
+    measure_id: int
+    round_id: int
+    tray_barcode: str
+    tray_id: int
+    tray_profile_id: int
+    image_path: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrImage':
+    def from_dict(obj: Any) -> IrImage:
         return IrImage(
-            ActionID=obj.get("ActionID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureHeight=obj.get("MeasureHeight"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID"),
-            TrayProfileID=obj.get("TrayProfileID"),
-            ImagePath=obj.get("ImagePath")
+            action_id=obj.get("ActionID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_height=obj.get("MeasureHeight"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID"),
+            tray_profile_id=obj.get("TrayProfileID"),
+            image_path=obj.get("ImagePath")
         )
 
-# IrExtended baseclass
+
 @dataclass
 class IrExtended:
-    DeviceID: int
-    ExtendedData: str
-    MeasureDate: str
-    MeasureID: int
-    RoundID: int
-    TrayID: int
-    
+    """IrExtended baseclass"""
+    device_id: int
+    extended_data: str
+    measure_date: str
+    measure_id: int
+    round_id: int
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrExtended':
+    def from_dict(obj: Any) -> IrExtended:
         return IrExtended(
-            DeviceID=obj.get("DeviceID"),
-            ExtendedData=obj.get("ExtendedData"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            extended_data=obj.get("ExtendedData"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_id=obj.get("TrayID")
         )
 
-# IrMask baseclass
+
 @dataclass
 class IrMask:
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MaskIsLeaf: bool
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureID: int
-    PlantMaskPath: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-
+    """IrMask baseclass"""
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    mask_is_leaf: bool
+    measure_angle: float
+    measure_date: str
+    measure_id: int
+    plant_mask_path: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrMask':
+    def from_dict(obj: Any) -> IrMask:
         return IrMask(
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MaskIsLeaf=obj.get("MaskIsLeaf"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            PlantMaskPath=obj.get("PlantMaskPath"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            mask_is_leaf=obj.get("MaskIsLeaf"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            plant_mask_path=obj.get("PlantMaskPath"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# IrParam baseclass
+
 @dataclass
 class IrParam:
-    ParameterID: int
-    ParameterName: str
-    ParameterUnit: str
-
+    """IrParam baseclass"""
+    parameter_id: int
+    parameter_name: str
+    parameter_unit: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrParam':
+    def from_dict(obj: Any) -> IrParam:
         return IrParam(
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterUnit=obj.get("ParameterUnit")
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_unit=obj.get("ParameterUnit")
         )
-    
-# IrPlant baseclass
+
+
 @dataclass
 class IrPlant:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterAvg: float
-    ParameterID: int
-    ParameterMax: float
-    ParameterMedian: float
-    ParameterMin: float
-    ParameterName: str
-    ParameterStddev: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """IrPlant baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_avg: float
+    parameter_id: int
+    parameter_max: float
+    parameter_median: float
+    parameter_min: float
+    parameter_name: str
+    parameter_stddev: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrPlant':
+    def from_dict(obj: Any) -> IrPlant:
         return IrPlant(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterAvg=obj.get("ParameterAvg"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterMax=obj.get("ParameterMax"),
-            ParameterMedian=obj.get("ParameterMedian"),
-            ParameterMin=obj.get("ParameterMin"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterStddev=obj.get("ParameterStddev"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_avg=obj.get("ParameterAvg"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_max=obj.get("ParameterMax"),
+            parameter_median=obj.get("ParameterMedian"),
+            parameter_min=obj.get("ParameterMin"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_stddev=obj.get("ParameterStddev"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# IrLeaf baseclass
+
 @dataclass
 class IrLeaf:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    LeafIndex: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterAvg: float
-    ParameterID: int
-    ParameterMax: float
-    ParameterMedian: float
-    ParameterMin: float
-    ParameterName: str
-    ParameterStddev: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """IrLeaf baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    leaf_index: int
+    measure_angle: float
+    measure_id: int
+    parameter_avg: float
+    parameter_id: int
+    parameter_max: float
+    parameter_median: float
+    parameter_min: float
+    parameter_name: str
+    parameter_stddev: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrLeaf':
+    def from_dict(obj: Any) -> IrLeaf:
         return IrLeaf(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            LeafIndex=obj.get("LeafIndex"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterAvg=obj.get("ParameterAvg"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterMax=obj.get("ParameterMax"),
-            ParameterMedian=obj.get("ParameterMedian"),
-            ParameterMin=obj.get("ParameterMin"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterStddev=obj.get("ParameterStddev"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            leaf_index=obj.get("LeafIndex"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_avg=obj.get("ParameterAvg"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_max=obj.get("ParameterMax"),
+            parameter_median=obj.get("ParameterMedian"),
+            parameter_min=obj.get("ParameterMin"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_stddev=obj.get("ParameterStddev"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
 
-# Thermal image by measurement ID
 @dataclass
 class IrImagingMeasure:
-    IrImage: IrImage
+    """Thermal image by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrImage':
+    def from_dict(obj: Any) -> IrImage:
         if obj.get("JsonIrImagingByIDResult") is None:
             return None
-        
         return IrImage.from_dict(obj.get("JsonIrImagingByIDResult"))
 
-# Thermal image for tray ID
+
 @dataclass
 class IrImaging:
-    IrImage: IrImage
+    """Thermal image for tray ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrImage':
+    def from_dict(obj: Any) -> List[IrImage]:
         if obj.get("JsonIrImagingResult") is None:
             return []
-        
-        return [IrImage.from_dict(y) for y in obj.get("JsonIrImagingResult")] 
+        return [IrImage.from_dict(y) for y in obj.get("JsonIrImagingResult")]
 
-# Thermal extended by measurement ID
+
 @dataclass
 class IrImagingExtendedDataMeasure:
-    IrExtended: IrExtended
+    """Thermal extended by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrExtended':
+    def from_dict(obj: Any) -> IrExtended:
         if obj.get("JsonIrMeasureExtendedDataByIDResult") is None:
             return None
-        
         return IrExtended.from_dict(obj.get("JsonIrMeasureExtendedDataByIDResult"))
 
-# Thermal extended for tray
+
 @dataclass
 class IrImagingExtendedData:
-    IrExtended: IrExtended
+    """Thermal extended for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrExtended':
+    def from_dict(obj: Any) -> IrExtended:
         if obj.get("JsonIrMeasureExtendedDataResult") is None:
             return None
-        
         return IrExtended.from_dict(obj.get("JsonIrMeasureExtendedDataResult"))
 
-# Thermal mask by measurement ID
+
 @dataclass
 class IrPlantMaskMeasure:
-    IrMask: IrMask
+    """Thermal mask by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrMask':
+    def from_dict(obj: Any) -> IrMask:
         if obj.get("JsonIrPlantMaskByMeasureIDResult") is None:
             return None
-        
         return IrMask.from_dict(obj.get("JsonIrPlantMaskByMeasureIDResult"))
 
-# Thermal mask for tray
+
 @dataclass
 class IrPlantMask:
-    IrMask: IrMask
+    """Thermal mask for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrMask':
+    def from_dict(obj: Any) -> List[IrMask]:
         if obj.get("JsonIrPlantMaskResult") is None:
             return []
-        
-        return [IrMask.from_dict(y) for y in obj.get("JsonIrPlantMaskResult")] 
+        return [IrMask.from_dict(y) for y in obj.get("JsonIrPlantMaskResult")]
 
-# Thermal mask image by measurement ID
+
 @dataclass
 class IrPlantMaskImageMeasure:
-    IrImage: IrImage
+    """Thermal mask image by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrImage':
+    def from_dict(obj: Any) -> IrImage:
         if obj.get("JsonIrPlantMaskImageByMeasureIDResult") is None:
             return None
-        
         return IrImage.from_dict(obj.get("JsonIrPlantMaskImageByMeasureIDResult"))
 
-# Thermal mask image for tray
+
 @dataclass
 class IrPlantMaskImage:
-    IrImage: IrImage
+    """Thermal mask image for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrImage':
+    def from_dict(obj: Any) -> List[IrImage]:
         if obj.get("JsonIrPlantMaskImageResult") is None:
             return []
-        
-        return [IrImage.from_dict(y) for y in obj.get("JsonIrPlantMaskImageResult")] 
+        return [IrImage.from_dict(y) for y in obj.get("JsonIrPlantMaskImageResult")]
 
-# Thermal parameter by param ID
+
 @dataclass
 class IrParamWrappper:
-    IrParam: IrParam
+    """Thermal parameter by param ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrParam':
+    def from_dict(obj: Any) -> IrParam:
         if obj.get("JsonIrParamResult") is None:
             return None
-        
         return IrParam.from_dict(obj.get("JsonIrParamResult"))
 
-# Thermal parameter by analysis ID
+
 @dataclass
 class IrParamUsedAnalyse:
-    IrParam: IrParam
+    """Thermal parameter by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrParam':
+    def from_dict(obj: Any) -> List[IrParam]:
         if obj.get("JsonIrUsedParamByAnalyseIDResult") is None:
             return []
-        
-        return [IrParam.from_dict(y) for y in obj.get("JsonIrUsedParamByAnalyseIDResult")] 
+        return [IrParam.from_dict(y) for y in obj.get("JsonIrUsedParamByAnalyseIDResult")]
 
-# Thermal parameter for tray
+
 @dataclass
 class IrParamUsed:
-    IrParam: IrParam
+    """Thermal parameter for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrParam':
+    def from_dict(obj: Any) -> List[IrParam]:
         if obj.get("JsonIrUsedParamResult") is None:
             return []
-        
-        return [IrParam.from_dict(y) for y in obj.get("JsonIrUsedParamResult")] 
+        return [IrParam.from_dict(y) for y in obj.get("JsonIrUsedParamResult")]
 
-# Thermal Statistic Plant Parameter Values by Analyse ID
+
 @dataclass
 class IrPlantParamAnalyse:
-    IrPlant: IrPlant
+    """Thermal Statistic Plant Parameter Values by Analyse ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrPlant':
+    def from_dict(obj: Any) -> List[IrPlant]:
         if obj.get("JsonIrPlantParamByAnalyseIDResult") is None:
             return []
-        
-        return [IrPlant.from_dict(y) for y in obj.get("JsonIrPlantParamByAnalyseIDResult")] 
+        return [IrPlant.from_dict(y) for y in obj.get("JsonIrPlantParamByAnalyseIDResult")]
 
-# Thermal Statistic Plant Parameter Values for Tray
+
 @dataclass
 class IrPlantParam:
-    IrPlant: IrPlant
+    """Thermal Statistic Plant Parameter Values for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrPlant':
+    def from_dict(obj: Any) -> List[IrPlant]:
         if obj.get("JsonIrPlantParamResult") is None:
             return []
-        
-        return [IrPlant.from_dict(y) for y in obj.get("JsonIrPlantParamResult")] 
+        return [IrPlant.from_dict(y) for y in obj.get("JsonIrPlantParamResult")]
 
-# Thermal Statistic Leaf Parameter Values by Analyse ID
+
 @dataclass
 class IrLeafParamAnalyse:
-    IrLeaf: IrLeaf
+    """Thermal Statistic Leaf Parameter Values by Analyse ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrLeaf':
+    def from_dict(obj: Any) -> List[IrLeaf]:
         if obj.get("JsonIrLeafParamByAnalyseIDResult") is None:
             return []
-        
-        return [IrLeaf.from_dict(y) for y in obj.get("JsonIrLeafParamByAnalyseIDResult")] 
+        return [IrLeaf.from_dict(y) for y in obj.get("JsonIrLeafParamByAnalyseIDResult")]
 
-# Thermal Statistic Leaf Parameter Values for Tray
+
 @dataclass
 class IrLeafParam:
-    IrLeaf: IrLeaf
+    """Thermal Statistic Leaf Parameter Values for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'IrLeaf':
+    def from_dict(obj: Any) -> List[IrLeaf]:
         if obj.get("JsonIrLeafParamResult") is None:
             return []
-        
-        return [IrLeaf.from_dict(y) for y in obj.get("JsonIrLeafParamResult")] 
+        return [IrLeaf.from_dict(y) for y in obj.get("JsonIrLeafParamResult")]

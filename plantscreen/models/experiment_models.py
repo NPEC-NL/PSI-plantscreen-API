@@ -31,7 +31,7 @@ class Experiment:
 @dataclass
 class Owner:
     """Owner baseclass"""
-    created_date: str
+    create_date: str
     email: str
     first_name: str
     last_failed_date: str
@@ -44,7 +44,7 @@ class Owner:
     @staticmethod
     def from_dict(obj: Any) -> Owner:
         return Owner(
-            created_date=obj.get("CreatedDate"),
+            create_date=obj.get("CreatedDate"),
             email=obj.get("Email"),
             first_name=obj.get("FirstName"),
             last_failed_date=obj.get("LastFailedDate"),
@@ -83,7 +83,7 @@ class ExperimentIDs:
     @staticmethod
     def from_dict(obj: Any) -> List[int]:
         if obj.get("JsonExperimentIDResult") is None:
-            return []        
+            return []
         _ids = [int(y.get("ExperimentID")) for y in obj.get("JsonExperimentIDResult")]
         return _ids
 
@@ -117,7 +117,7 @@ class ExperimentOwner:
     @staticmethod
     def from_dict(obj: Any) -> List[Experiment]:
         if obj.get("JsonExperimentByOwnerResult") is None:
-            return []     
+            return []
         return [Experiment.from_dict(y) for y in obj.get("JsonExperimentByOwnerResult")]
 
 
@@ -151,4 +151,4 @@ class NoteExperiment:
     def from_dict(obj: Any) -> List[Note]:
         if obj.get("JsonNoteResult") is None:
             return []
-        return [NoteExperiment.from_dict(y) for y in obj.get("JsonNoteResult")]
+        return [Note.from_dict(y) for y in obj.get("JsonNoteResult")]

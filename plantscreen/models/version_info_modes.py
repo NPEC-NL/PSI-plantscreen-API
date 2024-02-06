@@ -1,29 +1,28 @@
+from __future__ import annotations
 from dataclasses import dataclass
-from typing import List
 from typing import Any
-import json
 
-# Version baseclass
+
 @dataclass
 class Version:
-    ApiVersion: str
-    DatabaseVersion: int
+    """Version baseclass"""
+    api_version: str
+    database_version: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Version':
+    def from_dict(obj: Any) -> Version:
         return Version(
-            ApiVersion=obj.get("ApiVersion"),
-            DatabaseVersion=obj.get("DatabaseVersion")
+            api_version=obj.get("ApiVersion"),
+            database_version=obj.get("DatabaseVersion")
         )
-    
 
-# Version Info
+
 @dataclass
 class VersionInfo:
-    Version: Version
+    """Version Info"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Version':
+    def from_dict(obj: Any) -> Version:
         if obj.get("JsonVersionInfoResult") is None:
             return None
         return Version.from_dict(obj.get("JsonVersionInfoResult"))

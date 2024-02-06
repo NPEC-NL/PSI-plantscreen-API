@@ -1,396 +1,397 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# FcImaging baseclass
+
 @dataclass
 class FcImaging:
-    ActionID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureHeight: float
-    MeasureID: int
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-    TrayProfileID: int
-    ProtocolPath: str
-    TarPath: str
+    """FcImaging baseclass"""
+    action_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_date: str
+    measure_height: float
+    measure_id: int
+    round_id: int
+    tray_barcode: str
+    tray_id: int
+    tray_profile_id: int
+    protocol_path: str
+    tar_path: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcImaging':
+    def from_dict(obj: Any) -> FcImaging:
         return FcImaging(
-            ActionID=obj.get("ActionID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureHeight=obj.get("MeasureHeight"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID"),
-            TrayProfileID=obj.get("TrayProfileID"),
-            ProtocolPath=obj.get("ProtocolPath"),
-            TarPath=obj.get("TarPath")
+            action_id=obj.get("ActionID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_height=obj.get("MeasureHeight"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID"),
+            tray_profile_id=obj.get("TrayProfileID"),
+            protocol_path=obj.get("ProtocolPath"),
+            tar_path=obj.get("TarPath")
         )
 
-# FcMeasure baseclass
+
 @dataclass
 class FcMeasure:
-    DeviceID: int
-    ExtendedData: str
-    MeasureDate: str
-    MeasureID: int
-    RoundID: int
-    TrayID: int
+    """FcMeasure baseclass"""
+    device_id: int
+    extended_data: str
+    measure_date: str
+    measure_id: int
+    round_id: int
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcMeasure':
+    def from_dict(obj: Any) -> FcMeasure:
         return FcMeasure(
-            DeviceID=obj.get("DeviceID"),
-            ExtendedData=obj.get("ExtendedData"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            extended_data=obj.get("ExtendedData"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_id=obj.get("TrayID")
         )
 
-# FcMask baseclass
+
 @dataclass
 class FcMask:
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MaskIsLeaf: bool
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureID: int
-    PlantMaskPath: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
+    """FcMask baseclass"""
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    mask_is_leaf: bool
+    measure_angle: float
+    measure_date: str
+    measure_id: int
+    plant_mask_path: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcMask':
+    def from_dict(obj: Any) -> FcMask:
         return FcMask(
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MaskIsLeaf=obj.get("MaskIsLeaf"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            PlantMaskPath=obj.get("PlantMaskPath"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            mask_is_leaf=obj.get("MaskIsLeaf"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            plant_mask_path=obj.get("PlantMaskPath"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# FcParam baseclass
+
 @dataclass
 class FcParam:
-    ParameterID: int
-    ParameterName: str
-    ParameterUnit: str
+    """FcParam baseclass"""
+    parameter_id: int
+    parameter_name: str
+    parameter_unit: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcParam':
+    def from_dict(obj: Any) -> FcParam:
         return FcParam(
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterUnit=obj.get("ParameterUnit"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_unit=obj.get("ParameterUnit"),
         )
-    
-# FcAnalyse baseclass
+
+
 @dataclass
 class FcAnalyse:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterID: int
-    ParameterImagePath: str
-    ParameterName: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-        
+    """FcAnalyse baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_id: int
+    parameter_image_path: str
+    parameter_name: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcAnalyse':
+    def from_dict(obj: Any) -> FcAnalyse:
         return FcAnalyse(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterImagePath=obj.get("ParameterImagePath"),
-            ParameterName=obj.get("ParameterName"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
-
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_image_path=obj.get("ParameterImagePath"),
+            parameter_name=obj.get("ParameterName"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
-    
-# FcPlant baseclass
+
+
 @dataclass
 class FcPlant:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterID: int
-    ParameterName: str
-    ParameterValue: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """FcPlant baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_id: int
+    parameter_name: str
+    parameter_value: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcPlant':
+    def from_dict(obj: Any) -> FcPlant:
         return FcPlant(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterValue=obj.get("ParameterValue"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),  
-            TrayArea=obj.get("TrayArea"),             
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
-
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_value=obj.get("ParameterValue"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# FcLeaf baseclass
+
 @dataclass
 class FcLeaf:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    LeafIndex: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterID: int
-    ParameterName: str
-    ParameterValue: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """FcLeaf baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    leaf_index: int
+    measure_angle: float
+    measure_id: int
+    parameter_id: int
+    parameter_name: str
+    parameter_value: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcLeaf':
+    def from_dict(obj: Any) -> FcLeaf:
         return FcLeaf(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            LeafIndex=obj.get("LeafIndex"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterValue=obj.get("ParameterValue"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            leaf_index=obj.get("LeafIndex"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_value=obj.get("ParameterValue"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# Flourcam image by measurement ID
+
 @dataclass
 class FcImagingMeasure:
-    FcImaging: FcImaging
+    """Flourcam image by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcImaging':
+    def from_dict(obj: Any) -> FcImaging:
         if obj.get("JsonFcImagingByIDResult") is None:
             return None
         return FcImaging.from_dict(obj.get("JsonFcImagingByIDResult"))
-    
 
-# Fluorcam image for tray
+
 @dataclass
 class FcImagingWrapper:
-    FcImaging: FcImaging
+    """Fluorcam image for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcImaging':
+    def from_dict(obj: Any) -> List[FcImaging]:
         if obj.get("JsonFcImagingResult") is None:
             return []
-        return [FcImaging.from_dict(y) for y in obj.get("JsonFcImagingResult")]    
-    
-# Fluorcam extended data by measurement ID
+        return [FcImaging.from_dict(y) for y in obj.get("JsonFcImagingResult")]
+
+
 @dataclass
 class FcImagingExtendedDataMeasure:
-    FcMeasure: FcMeasure
+    """Fluorcam extended data by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcMeasure':
+    def from_dict(obj: Any) -> FcMeasure:
         if obj.get("JsonFcMeasureExtendedDataByIDResult") is None:
             return None
         return FcMeasure.from_dict(obj.get("JsonFcMeasureExtendedDataByIDResult"))
 
-# Fluorcam extended data for tray
+
 @dataclass
 class FcImagingExtendedData:
-    FcMeasure: FcMeasure
+    """Fluorcam extended data for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcMeasure':
+    def from_dict(obj: Any) -> FcMeasure:
         if obj.get("JsonFcMeasureExtendedDataResult") is None:
             return None
         return FcMeasure.from_dict(obj.get("JsonFcMeasureExtendedDataResult"))
 
-# Fluorcam mask by measurement ID
+
 @dataclass
 class FcPlantMaskMeasure:
-    FcMask: FcMask
+    """Fluorcam mask by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcMask':
+    def from_dict(obj: Any) -> FcMask:
         if obj.get("JsonFcPlantMaskByMeasureIDResult") is None:
             return None
         return FcMask.from_dict(obj.get("JsonFcPlantMaskByMeasureIDResult"))
-    
-    
 
-# Fluorcam mask for tray
+
 @dataclass
 class FcPlantMask:
-    FcMask: FcMask
+    """Fluorcam mask for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcMask':
+    def from_dict(obj: Any) -> List[FcMask]:
         if obj.get("JsonFcPlantMaskResult") is None:
             return []
-        return [FcMask.from_dict(y) for y in obj.get("JsonFcPlantMaskResult")]    
+        return [FcMask.from_dict(y) for y in obj.get("JsonFcPlantMaskResult")]
 
-# Fluorcam parameter by parm ID
+
 @dataclass
 class FcParamWrapper:
-    FcParam: FcParam
+    """Fluorcam parameter by parm ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcParam':
+    def from_dict(obj: Any) -> FcParam:
         if obj.get("JsonFcParamResult") is None:
             return None
         return FcParam.from_dict(obj.get("JsonFcParamResult"))
-    
-# Fluorcam parameters by analysis ID
+
+
 @dataclass
-class IFcParamUsedAnalyse:
-    FcParam: FcParam
+class FcParamUsedAnalyse:
+    """Fluorcam parameters by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcParam':
+    def from_dict(obj: Any) -> List[FcParam]:
         if obj.get("JsonFcUsedParamByAnalyseIDResult") is None:
             return []
-        return [FcParam.from_dict(y) for y in obj.get("JsonFcUsedParamByAnalyseIDResult")] 
+        return [FcParam.from_dict(y) for y in obj.get("JsonFcUsedParamByAnalyseIDResult")]
 
-# Fluorcam paramaters for tray
+
 @dataclass
 class FcParamUsed:
-    FcParam: FcParam
+    """Fluorcam paramaters for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcParam':
+    def from_dict(obj: Any) -> List[FcParam]:
         if obj.get("JsonFcUsedParamResult") is None:
             return []
-        return [FcParam.from_dict(y) for y in obj.get("JsonFcUsedParamResult")] 
+        return [FcParam.from_dict(y) for y in obj.get("JsonFcUsedParamResult")]
 
-# Fluorcam image parameters by analysis ID
+
 @dataclass
 class FcParamImageAnalyse:
-    FcAnalyse: FcAnalyse
-    
+    """Fluorcam image parameters by analysis ID"""
+
     @staticmethod
-    def from_dict(obj: Any) -> 'FcAnalyse':
+    def from_dict(obj: Any) -> List[FcAnalyse]:
         if obj.get("JsonFcUsedParamByAnalyseIDResult") is None:
             return []
-        return [FcAnalyse.from_dict(y) for y in obj.get("JsonFcUsedParamByAnalyseIDResult")] 
-    
-# Fluorcam image parameters for tray
+        return [FcAnalyse.from_dict(y) for y in obj.get("JsonFcUsedParamByAnalyseIDResult")]
+
+
 @dataclass
 class FcParamImage:
-    FcAnalyse: FcAnalyse
+    """Fluorcam image parameters for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcAnalyse':
+    def from_dict(obj: Any) -> List[FcAnalyse]:
         if obj.get("JsonFcParameterImageResult") is None:
             return []
-        return [FcAnalyse.from_dict(y) for y in obj.get("JsonFcParameterImageResult")] 
+        return [FcAnalyse.from_dict(y) for y in obj.get("JsonFcParameterImageResult")]
 
-# Fluorcam plant parameter by analysis ID
+
 @dataclass
 class FcPlantParamAnalyse:
-    FcPlant: FcPlant
+    """Fluorcam plant parameter by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcPlant':
+    def from_dict(obj: Any) -> List[FcPlant]:
         if obj.get("JsonFcPlantParamByAnalyseIDResult") is None:
             return []
-        return [FcPlant.from_dict(y) for y in obj.get("JsonFcPlantParamByAnalyseIDResult")] 
+        return [FcPlant.from_dict(y) for y in obj.get("JsonFcPlantParamByAnalyseIDResult")]
 
-# Fluorcam plant parameter for tray
+
 @dataclass
 class FcPlantParam:
-    FcPlant: FcPlant
+    """Fluorcam plant parameter for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcPlant':
+    def from_dict(obj: Any) -> List[FcPlant]:
         if obj.get("JsonFcPlantParamResult") is None:
             return []
-        return [FcPlant.from_dict(y) for y in obj.get("JsonFcPlantParamResult")] 
-    
-# FluorCam Leaf Parameter Values by Analyse ID
+        return [FcPlant.from_dict(y) for y in obj.get("JsonFcPlantParamResult")]
+
+
 @dataclass
 class FcLeafParamAnalyse:
-    FcLeaf: FcLeaf
+    """FluorCam Leaf Parameter Values by Analyse ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcLeaf':
+    def from_dict(obj: Any) -> List[FcLeaf]:
         if obj.get("JsonFcLeafParamByAnalyseIDResult") is None:
             return []
-        return [FcLeaf.from_dict(y) for y in obj.get("JsonFcLeafParamByAnalyseIDResult")] 
-    
-# Fluorcam leaf parameter for tray
+        return [FcLeaf.from_dict(y) for y in obj.get("JsonFcLeafParamByAnalyseIDResult")]
+
+
 @dataclass
 class FcLeafParam:
-    FcLeaf: FcLeaf
+    """Fluorcam leaf parameter for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'FcLeaf':
+    def from_dict(obj: Any) -> List[FcLeaf]:
         if obj.get("JsonFcLeafParamResult") is None:
             return []
-        return [FcLeaf.from_dict(y) for y in obj.get("JsonFcLeafParamResult")] 
-    
+        return [FcLeaf.from_dict(y) for y in obj.get("JsonFcLeafParamResult")]

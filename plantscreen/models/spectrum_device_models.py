@@ -1,80 +1,81 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# DeviceID baseclass
+
 @dataclass
 class DeviceID:
-    SpectrumDeviceID: int
+    """DeviceID baseclass"""
+    spectrum_device_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'DeviceID':
+    def from_dict(obj: Any) -> DeviceID:
         return DeviceID(
-            SpectrumDeviceID=obj.get("SpectrumDeviceID")
+            spectrum_device_id=obj.get("SpectrumDeviceID")
         )
 
-# SpectrumDevice baseclass
+
 @dataclass
 class SpectrumDevice:
-    SpectrumDeviceID: int
-    SpectrumDeviceSerial: str
-    SpectrumDeviceWavelengthsJSON: str
+    """SpectrumDevice baseclass"""
+    spectrum_device_id: int
+    spectrum_device_serial: str
+    spectrum_device_wavelengths_json: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'SpectrumDevice':
+    def from_dict(obj: Any) -> SpectrumDevice:
         return SpectrumDevice(
-            SpectrumDeviceID=obj.get("SpectrumDeviceID"),
-            SpectrumDeviceSerial=obj.get("SpectrumDeviceSerial"),
-            SpectrumDeviceWavelengthsJSON=obj.get("SpectrumDeviceWavelengthsJSON")
+            spectrum_device_id=obj.get("SpectrumDeviceID"),
+            spectrum_device_serial=obj.get("SpectrumDeviceSerial"),
+            spectrum_device_wavelengths_json=obj.get("SpectrumDeviceWavelengthsJSON")
         )
 
-# SpectrumValues baseclass
+
 @dataclass
 class SpectrumValues:
-    SpectrumDeviceID: int
-    SpectrumPath: str
-    SpectrumRecordDate: str
+    """SpectrumValues baseclass"""
+    spectrum_device_id: int
+    spectrum_path: str
+    spectrum_record_date: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'SpectrumValues':
+    def from_dict(obj: Any) -> SpectrumValues:
         return SpectrumValues(
-            SpectrumDeviceID=obj.get("SpectrumDeviceID"),
-            SpectrumPath=obj.get("SpectrumPath"),
-            SpectrumRecordDate=obj.get("SpectrumRecordDate")
+            spectrum_device_id=obj.get("SpectrumDeviceID"),
+            spectrum_path=obj.get("SpectrumPath"),
+            spectrum_record_date=obj.get("SpectrumRecordDate")
         )
 
-# Spectrum Device IDs
+
 @dataclass
 class SpectrumDeviceID:
-    DeviceID: DeviceID
+    """Spectrum Device IDs"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'DeviceID':
+    def from_dict(obj: Any) -> List[DeviceID]:
         if obj.get("JsonSpectrumDeviceIDResult") is None:
             return []
-        return [DeviceID.from_dict(y) for y in obj.get("JsonSpectrumDeviceIDResult")] 
+        return [DeviceID.from_dict(y) for y in obj.get("JsonSpectrumDeviceIDResult")]
 
-# Spectrum Device by ID
+
 @dataclass
 class SpectrumDeviceWrapper:
-    SpectrumDevice: SpectrumDevice
+    """Spectrum Device by ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'SpectrumDevice':
+    def from_dict(obj: Any) -> SpectrumDevice:
         if obj.get("JsonSpectrumDeviceResult") is None:
             return None
         return SpectrumDevice.from_dict(obj.get("JsonSpectrumDeviceResult"))
 
-# Spectrum Values
+
 @dataclass
 class SpectrumValuesDateDevice:
-    SpectrumValues: SpectrumValues
+    """Spectrum Values"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'SpectrumValues':
+    def from_dict(obj: Any) -> List[SpectrumValues]:
         if obj.get("JsonSpectrumValuesResult") is None:
             return []
-        return [SpectrumValues.from_dict(y) for y in obj.get("JsonSpectrumValuesResult")] 
-
-
+        return [SpectrumValues.from_dict(y) for y in obj.get("JsonSpectrumValuesResult")]
