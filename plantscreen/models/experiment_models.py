@@ -1,114 +1,112 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# Experiment baseclass
+
 @dataclass
 class Experiment:
-    CreatedDate: str
-    ExperimentID: int
-    ExperimentInfo: str
-    ExperimentName: str
-    ExperimentStatus: str
-    OwnerID: int
-    StatusChangedDate: str
+    """Experiment baseclass"""
+    created_date: str
+    experiment_id: int
+    experiment_info: str
+    experiment_mame: str
+    experiment_status: str
+    owner_id: int
+    status_changed_date: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Experiment':
+    def from_dict(obj: Any) -> Experiment:
         return Experiment(
-            CreatedDate=obj.get("CreatedDate"),
-            ExperimentID=obj.get("ExperimentID"),
-            ExperimentInfo=obj.get("ExperimentInfo"),
-            ExperimentName=obj.get("ExperimentName"),
-            ExperimentStatus=obj.get("ExperimentStatus"),
-            OwnerID=obj.get("OwnerID"),
-            StatusChangedDate=obj.get("StatusChangedDate")
+            created_date=obj.get("CreatedDate"),
+            experiment_id=obj.get("ExperimentID"),
+            experiment_info=obj.get("ExperimentInfo"),
+            experiment_mame=obj.get("ExperimentName"),
+            experiment_status=obj.get("ExperimentStatus"),
+            owner_id=obj.get("OwnerID"),
+            status_changed_date=obj.get("StatusChangedDate")
         )
 
 
-# Owner baseclass
 @dataclass
 class Owner:
-    CreatedDate: str
-    Email: str
-    FirstName: str
-    LastFailedDate: str
-    LastName: str
-    LastSuccessLogin: str
-    Login: str
-    OwnerID: int
-    SmsPhoneNumber: str
+    """Owner baseclass"""
+    created_date: str
+    email: str
+    first_name: str
+    last_failed_date: str
+    last_name: str
+    last_success_login: str
+    login: str
+    owner_id: int
+    sms_phone_number: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Owner':
+    def from_dict(obj: Any) -> Owner:
         return Owner(
-            CreatedDate=obj.get("CreatedDate"),
-            Email=obj.get("Email"),
-            FirstName=obj.get("FirstName"),
-            LastFailedDate=obj.get("LastFailedDate"),
-            LastName=obj.get("LastName"),
-            LastSuccessLogin=obj.get("LastSuccessLogin"),
-            Login=obj.get("Login"),
-            OwnerID=obj.get("OwnerID"),
-            SmsPhoneNumber=obj.get("SmsPhoneNumber")
+            created_date=obj.get("CreatedDate"),
+            email=obj.get("Email"),
+            first_name=obj.get("FirstName"),
+            last_failed_date=obj.get("LastFailedDate"),
+            last_name=obj.get("LastName"),
+            last_success_login=obj.get("LastSuccessLogin"),
+            login=obj.get("Login"),
+            owner_id=obj.get("OwnerID"),
+            sms_phone_number=obj.get("SmsPhoneNumber")
         )
-    
-# Note baseclass
+
+
 @dataclass
 class Note:
-    NoteID: int
-    OwnerID: int
-    ExperimentID: int
-    NoteCreatedDate: str
-    NoteText: str
+    """Note baseclass"""
+    note_id: int
+    owner_id: int
+    experiment_id: int
+    note_created_date: str
+    note_text: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Note':
+    def from_dict(obj: Any) -> Note:
         return Note(
-            NoteID=obj.get("NoteID"),
-            OwnerID=obj.get("OwnerID"),
-            ExperimentID=obj.get("ExperimentID"),
-            NoteCreatedDate=obj.get("NoteCreatedDate"),
-            NoteText=obj.get("NoteText"),
+            note_id=obj.get("NoteID"),
+            owner_id=obj.get("OwnerID"),
+            experiment_id=obj.get("ExperimentID"),
+            note_created_date=obj.get("NoteCreatedDate"),
+            note_text=obj.get("NoteText"),
         )
 
 
-
-# List experiments
 @dataclass
 class ExperimentIDs:
-    IDs: List[int]
+    """"List experiments"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ExperimentIDs':
+    def from_dict(obj: Any) -> List[int]:
         if obj.get("JsonExperimentIDResult") is None:
             return []        
-        _IDs = [int(y.get("ExperimentID")) for y in obj.get("JsonExperimentIDResult")]
-        return ExperimentIDs(_IDs)
+        _ids = [int(y.get("ExperimentID")) for y in obj.get("JsonExperimentIDResult")]
+        return _ids
 
 
-# Experiment by ID (experiment wrapper, JSON result is not list)
 @dataclass
 class ExperimentWrapper:
-    Experiment: Experiment
+    """Experiment by ID (experiment wrapper, JSON result is not list)"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Experiment':
+    def from_dict(obj: Any) -> Experiment:
         if obj.get("JsonExperimentResult") is None:
-            return None       
+            return None
         return Experiment.from_dict(obj.get("JsonExperimentResult"))
-    
 
-# List experiments in period
+
 @dataclass
 class ExperimentDate:
-    Experiments: List[Experiment]
+    """List experiments in period"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ExperimentDate':
+    def from_dict(obj: Any) -> List[Experiment]:
         if obj.get("JsonExperimentByDateResult") is None:
-            return []     
+            return []
         return [Experiment.from_dict(y) for y in obj.get("JsonExperimentByDateResult")]
 
 
@@ -123,38 +121,34 @@ class ExperimentOwner:
         return [Experiment.from_dict(y) for y in obj.get("JsonExperimentByOwnerResult")]
 
 
-# List experiment owner ids
 @dataclass
 class OwnerID:
-    Experiments: List[Experiment]
+    """List experiment owner ids"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'OwnerID':
+    def from_dict(obj: Any) -> List[Experiment]:
         if obj.get("JsonOwnerIDResult") is None:
-            return []   
+            return []
         return [y.get('OwnerID') for y in obj.get("JsonOwnerIDResult")]
 
-# Owner by ID
+
 @dataclass
 class OwnerWrapper:
-    Experiments: List[Owner]
+    """Owner by ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Owner':
+    def from_dict(obj: Any) -> List[Owner]:
         if obj.get("JsonOwnerResult") is None:
             return []
         return [Owner.from_dict(y) for y in obj.get("JsonOwnerResult")]
-    
 
-# List experimental notes
+
 @dataclass
 class NoteExperiment:
-    Experiments: List[Note]
+    """List experimental notes"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'NoteExperiment':
+    def from_dict(obj: Any) -> List[Note]:
         if obj.get("JsonNoteResult") is None:
             return []
         return [NoteExperiment.from_dict(y) for y in obj.get("JsonNoteResult")]
-    
-
