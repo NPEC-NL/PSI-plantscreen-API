@@ -1,40 +1,16 @@
 """"Mock replies for the device API"""
 MOCK_DEVICE_REPLY = {
     "JsonDeviceResult": {
-        "Config": """<?xml version="1.0" encoding="utf-8"?> \
-   <Configuration> <WindowingMode>1</WindowingMode> \
-   <ExtractLines>1</ExtractLines> <Focus>10508</Focus>\
-   <Width>640</Width> <Height>710</Height> \
-   <DefaultZ>0</DefaultZ> \
-   <MaskCenterX>308</MaskCenterX> \
-   <MaskCenterY>637</MaskCenterY> \
-   <Barrel>-0.04</Barrel> \
-   <MaskRotation>0.0</MaskRotation> \
-   <ZConversion>1367</ZConversion> \
-   <RatioCoefficient>0.00123869</RatioCoefficient> \
-   <BackwardFEC>true</BackwardFEC> \
-   <FixedX>false</FixedX> \
-   <FixedXPxMmRatio>0</FixedXPxMmRatio> <FixedY>true</\
-   FixedY> \
-   <FixedYPxMmRatio>0.564726962</FixedYPxMmRatio> \
-   <CenterShift> <Item> <Z>0</Z> <XShift>0</XShift> \
-   <YShift>0</YShift> </Item> </CenterShift> \
-   <ScanLines>710</ScanLines> \
-   <PositionStart>1300</PositionStart> \
-   <PositionEnd>0</PositionEnd> \
-   <ScanSpeed>1770</ScanSpeed> \
-   <MoveSpeed>1700</MoveSpeed> <ScanAxis>Z</ScanAxis>\
-   <HeatingTempDiff>8.0</HeatingTempDiff> \
-   <HeatingTime>1200</HeatingTime> </Configuration>""",
-        "DeviceCaption": "IR",
-        "DeviceFamily": "ThermalCam",
-        "DeviceID": "41",
-        "DeviceName": "Thermal camera (side linescan)",
-        "DevicePID": "IR1",
-        "DeviceType": "FLIR A615",
-        "ProfileID": 1,
-        "ValidityEnd": "2020-05-05 13:35:41",
-        "ValidityStart": "2020-04-22 16:23:57"
+        "DeviceCaption": "RGB 2",
+        "DeviceConfig": "Fake config string A",
+        "DeviceFamily": "RgbCam",
+        "DeviceID": 3,
+        "DeviceName": "RGB camera (top)",
+        "DevicePID": "RGB2",
+        "DeviceType": "PSI 12Mpx",
+        "DeviceValidityEnd": None,
+        "DeviceValidityStart": "2022-10-11 14:59:08",
+        "ProfileID": 1
     }
 }
 
@@ -42,7 +18,7 @@ MOCK_DEVICE_ACTIVE_REPLY = {
     "JsonDeviceActiveResult": [
         {
             "DeviceCaption": "MAN",
-            "DeviceConfig": """<?xml version="1.0" encoding="utf-8" ?> <Configuration/>""",
+            "DeviceConfig": """Fake config string B""",
             "DeviceFamily": "Position",
             "DeviceID": 10,
             "DeviceName": "Manual position",
@@ -54,31 +30,7 @@ MOCK_DEVICE_ACTIVE_REPLY = {
         },
         {
             "DeviceCaption": "IR",
-            "DeviceConfig": """<?xml version="1.0" encoding="utf-8"?> <Configuration> \
-                                <WindowingMode>0</WindowingMode> \
-                                <ExtractLines>1</ExtractLines> <Focus>86</Focus> \
-                                <Width>1024</Width> <Height>620</Height> \
-                                <DefaultZ>0</DefaultZ> \
-                                <MaskCenterX>526</MaskCenterX> \
-                                <MaskCenterY>601</MaskCenterY> \
-                                <Barrel>-0.15</Barrel> \
-                                <MaskRotation>0.0</MaskRotation> <ZConversion>630</\
-                                ZConversion> \
-                                <RatioCoefficient>0.00115742</RatioCoefficient> \
-                                <BackwardFEC>true</BackwardFEC> \
-                                <FixedX>false</FixedX> \
-                                <FixedXPxMmRatio>0</FixedXPxMmRatio> <FixedY>true</\
-                                FixedY> \
-                                <FixedYPxMmRatio>0.933333333</FixedYPxMmRatio> \
-                                <CenterShift> <Item> <Z>0</Z> <XShift>0</XShift> \
-                                <YShift>0</YShift> </Item> </CenterShift> \
-                                <ScanLines>620</ScanLines> \
-                                <PositionStart>885</PositionStart> \
-                                <PositionEnd>220</PositionEnd> \
-                                <ScanSpeed>325</ScanSpeed> \
-                                <MoveSpeed>1300</MoveSpeed> <ScanAxis>Z</ScanAxis> \
-                                <HeatingTempDiff>6.0</HeatingTempDiff> \
-                                <HeatingTime>1200</HeatingTime> </Configuration>""",
+            "DeviceConfig": "Fake config string C",
             "DeviceFamily": "ThermalCam",
             "DeviceID": 19,
             "DeviceName": "Thermal camera (side linescan)",
@@ -95,8 +47,7 @@ MOCK_DEVICE_PROFILE_REPLY = {
     "JsonDeviceByProfileIDResult": [
         {
             "DeviceCaption": "SC 1",
-            "DeviceConfig": """<?xml version="1.0" encoding="utf-8" ?> <Configuration> \
-                                <Row>1</Row> <SU name="1"/> </Configuration>""",
+            "DeviceConfig": """Fake config string D""",
             "DeviceFamily": "Scales",
             "DeviceID": "22",
             "DeviceName": "Scales",
@@ -108,7 +59,7 @@ MOCK_DEVICE_PROFILE_REPLY = {
         },
         {
             "DeviceCaption": "MAN1",
-            "DeviceConfig": """<?xml version="1.0" encoding="utf-8" ?> <Configuration/>""",
+            "DeviceConfig": """Fake config string E""",
             "DeviceFamily": "Position",
             "DeviceID": "23",
             "DeviceName": "Manual position",
