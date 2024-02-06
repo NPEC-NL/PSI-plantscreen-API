@@ -1,174 +1,171 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# Action baseclass
+
 @dataclass
 class Action:
-    ActionDateStart: str
-    ActionDone: bool
-    ActionGroupID: int
-    ActionID: int
-    ActionRunning: bool
-    ActionStatus: str
-    ExperimentID: int
+    """Action baseclass"""
+    action_date_start: str
+    action_done: bool
+    action_group_id: int
+    action_id: int
+    action_running: bool
+    action_status: str
+    experiment_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Action':
+    def from_dict(obj: Any) -> Action:
         return Action(
-            ActionDateStart=obj.get("ActionDateStart"),
-            ActionDone=obj.get("ActionDone"),
-            ActionGroupID=obj.get("ActionGroupID"),
-            ActionID=obj.get("ActionID"),
-            ActionRunning=obj.get("ActionRunning"),
-            ActionStatus=obj.get("ActionStatus"),
-            ExperimentID=obj.get("ExperimentID")
+            action_date_start=obj.get("ActionDateStart"),
+            action_done=obj.get("ActionDone"),
+            action_group_id=obj.get("ActionGroupID"),
+            action_id=obj.get("ActionID"),
+            action_running=obj.get("ActionRunning"),
+            action_status=obj.get("ActionStatus"),
+            experiment_id=obj.get("ExperimentID")
         )
 
 
-# NoAction baseclass
 @dataclass
 class NoAction:
-    ActionID: int
-    ExperimentID: int
-    ActionGroupID: int   
-    ActionDateStart: str
-    ActionStatus: str
-    ActionDone: bool
-    ActionRunning: bool
+    """NoAction baseclass"""
+    action_id: int
+    experiment_id: int
+    action_group_id: int
+    action_date_start: str
+    action_status: str
+    action_done: bool
+    action_running: bool
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Action':
-        return Action(
-            ActionID=obj.get("ActionID"),
-            ExperimentID=obj.get("ExperimentID"),
-            ActionGroupID=obj.get("ActionGroupID"),
-            ActionDateStart=obj.get("ActionDateStart"),
-            ActionStatus=obj.get("ActionStatus"),
-            ActionDone=obj.get("ActionDone"),
-            ActionRunning=obj.get("ActionRunning")
+    def from_dict(obj: Any) -> NoAction:
+        return NoAction(
+            action_id=obj.get("ActionID"),
+            experiment_id=obj.get("ExperimentID"),
+            action_group_id=obj.get("ActionGroupID"),
+            action_date_start=obj.get("ActionDateStart"),
+            action_status=obj.get("ActionStatus"),
+            action_done=obj.get("ActionDone"),
+            action_running=obj.get("ActionRunning")
         )
 
-# Group baseclass
+
 @dataclass
 class Group:
-    ActionProtocolID: int
-    ExperimentID: int
-    GroupCaption: str
-    GroupID: int
-    GroupRepeatingProtocol: str
+    """Group baseclass"""
+    action_protocol_id: int
+    experiment_id: int
+    group_caption: str
+    group_id: int
+    group_repeating_protocol: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Group':
+    def from_dict(obj: Any) -> Group:
         return Group(
-            ActionProtocolID=obj.get("ActionProtocolID"),
-            ExperimentID=obj.get("ExperimentID"),
-            GroupCaption=obj.get("GroupCaption"),
-            GroupID=obj.get("GroupID"),
-            GroupRepeatingProtocol=obj.get("GroupRepeatingProtocol")
+            action_protocol_id=obj.get("ActionProtocolID"),
+            experiment_id=obj.get("ExperimentID"),
+            group_caption=obj.get("GroupCaption"),
+            group_id=obj.get("GroupID"),
+            group_repeating_protocol=obj.get("GroupRepeatingProtocol")
         )
 
-# Protocol baseclass
+
 @dataclass
 class Protocol:
-    ActionID: int
-    ExperimentID: int
-    ProtocolBody: str
-    ProtocolDateChanged: str
-    ProtocolID: int
-    RoundID: int
-
+    """Protocol baseclass"""
+    action_id: int
+    experiment_id: int
+    protocol_body: str
+    protocol_date_changed: str
+    protocol_id: int
+    round_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Protocol':
+    def from_dict(obj: Any) -> Protocol:
         return Protocol(
-            ActionID=obj.get("ActionID"),
-            ExperimentID=obj.get("ExperimentID"),
-            ProtocolBody=obj.get("ProtocolBody"),
-            ProtocolDateChanged=obj.get("ProtocolDateChanged"),
-            ProtocolID=obj.get("ProtocolID"),
-            RoundID=obj.get("RoundID")
+            action_id=obj.get("ActionID"),
+            experiment_id=obj.get("ExperimentID"),
+            protocol_body=obj.get("ProtocolBody"),
+            protocol_date_changed=obj.get("ProtocolDateChanged"),
+            protocol_id=obj.get("ProtocolID"),
+            round_id=obj.get("RoundID")
         )
-    
 
 
-# Action by ID
 @dataclass
 class ActionWrapper:
-    Action: Action
+    """Action by ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Action':
+    def from_dict(obj: Any) -> Action:
         if obj.get("JsonActionResult") is None:
             return None
         return Action.from_dict(obj.get("JsonActionResult"))
-    
 
-# Action by experiment
+
 @dataclass
 class ActionExperiment:
-    Action: Action
+    """Action by experiment"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Action':
+    def from_dict(obj: Any) -> List[Action]:
         if obj.get("JsonActionByExperimentIDResult") is None:
             return []
         return [Action.from_dict(y) for y in obj.get("JsonActionByExperimentIDResult")]
 
-# Unfinished actions by experiment
+
 @dataclass
 class ActionNotDoneExperiment:
-    NoAction: NoAction
+    """Unfinished actions by experiment"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'NoAction':
+    def from_dict(obj: Any) -> List[NoAction]:
         if obj.get("JsonActionByExperimentIDNotDoneResult") is None:
             return []
         return [NoAction.from_dict(y) for y in obj.get("JsonActionByExperimentIDNotDoneResult")]
 
-# Scheduled actions by group ID
+
 @dataclass
 class ActionGroup:
-    Group: Group
+    """Scheduled actions by group ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Group':
+    def from_dict(obj: Any) -> Group:
         if obj.get("JsonActionGroupResult") is None:
             return None
         return Group.from_dict(obj.get("JsonActionGroupResult"))
 
-# Scheduled actions by round ID
+
 @dataclass
 class ActionGroupRound:
-    Group: Group
+    """Scheduled actions by round ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Group':
+    def from_dict(obj: Any) -> Group:
         if obj.get("JsonActionGroupByRoundIDResult") is None:
             return None
-        return Group.from_dict(obj.get("JsonActionGroupByRoundIDResult"))  
-    
-# Scheduled actions by protocol ID
+        return Group.from_dict(obj.get("JsonActionGroupByRoundIDResult"))
+
+
 @dataclass
 class ActionProtocol:
-    Protocol: Protocol
+    """Scheduled actions by protocol ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Protocol':
+    def from_dict(obj: Any) -> List[Protocol]:
         if obj.get("JsonActionProtocolResult") is None:
             return []
         return [Protocol.from_dict(y) for y in obj.get("JsonActionProtocolResult")]
-    
-# Scheduled actions by protocol by round ID
+
+
 @dataclass
 class ActionProtocolRound:
-    Protocol: Protocol
+    """Scheduled actions by protocol by round ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Protocol':
+    def from_dict(obj: Any) -> Protocol:
         if obj.get("JsonActionProtocolByRoundIDResult") is None:
             return None
-        return Protocol.from_dict(obj.get("JsonActionProtocolByRoundIDResult"))  
-    
-    
+        return Protocol.from_dict(obj.get("JsonActionProtocolByRoundIDResult"))

@@ -1,136 +1,134 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# Plant baseclass
+
 @dataclass
 class Plant:
-    PlantBarcode: str
-    PlantID: int
-    PlantInfo: str
-    PlantName: str
-    TrayArea: str
+    """Plant baseclass"""
+    plant_barcode: str
+    plant_id: int
+    plant_info: str
+    plant_name: str
+    tray_area: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Plant':
+    def from_dict(obj: Any) -> Plant:
         return Plant(
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantInfo=obj.get("PlantInfo"),
-            PlantName=obj.get("PlantName"),
-            TrayArea=obj.get("TrayArea")
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_info=obj.get("PlantInfo"),
+            plant_name=obj.get("PlantName"),
+            tray_area=obj.get("TrayArea")
         )
-    
-# PlantHeight baseclass
+
+
 @dataclass
 class PlantHeight:
-    ExperimentID: int
-    HeightDate: str
-    HeightValue: str
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
+    """PlantHeight baseclass"""
+    experiment_id: int
+    height_date: str
+    height_value: str
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'PlantHeight':
+    def from_dict(obj: Any) -> PlantHeight:
         return PlantHeight(
-            ExperimentID=obj.get("ExperimentID"),
-            HeightDate=obj.get("HeightDate"),
-            HeightValue=obj.get("HeightValue"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID")
+            experiment_id=obj.get("ExperimentID"),
+            height_date=obj.get("HeightDate"),
+            height_value=obj.get("HeightValue"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID")
         )
-    
-# Leaf baseclass
+
+
 @dataclass
 class Leaf:
-    LeafIndex: int
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    TrayID: int
+    """Leaf baseclass"""
+    leaf_index: int
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Leaf':
+    def from_dict(obj: Any) -> Leaf:
         return Leaf(
-            LeafIndex=obj.get("LeafIndex"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            TrayID=obj.get("TrayID")
+            leaf_index=obj.get("LeafIndex"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            tray_id=obj.get("TrayID")
         )
-    
 
-# Device by ID
+
 @dataclass
 class PlantWrapper:
-    Plant: Plant
+    """List plants by plant ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Plant':
+    def from_dict(obj: Any) -> List[Plant]:
         if obj.get("JsonPlantResult") is None:
             return []
-        return [Plant.from_dict(y) for y in obj.get("JsonPlantResult")]    
-    
-# List plants by tray ID
+        return [Plant.from_dict(y) for y in obj.get("JsonPlantResult")]
+
+
 @dataclass
 class PlantTray:
-    Plant: Plant
+    """List plants by tray ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Plant':
+    def from_dict(obj: Any) -> List[Plant]:
         if obj.get("JsonPlantByTrayIDResult") is None:
             return []
-        return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayIDResult")]    
+        return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayIDResult")]
 
-# List plants by trayID during period
+
 @dataclass
 class PlantTrayProfileTray:
-    Plant: Plant
+    """List plants by trayID during period"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Plant':
+    def from_dict(obj: Any) -> List[Plant]:
         if obj.get("JsonPlantByTrayIDAndDatesResult") is None:
             return []
-        return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayIDAndDatesResult")]    
-    
-# List plants by tray profile ID
+        return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayIDAndDatesResult")]
+
+
 @dataclass
 class PlantTrayProfile:
-    Plant: Plant
+    """List plants by tray profile ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Plant':
+    def from_dict(obj: Any) -> List[Plant]:
         if obj.get("JsonPlantByTrayProfileIDResult") is None:
             return []
-        return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayProfileIDResult")]    
-        
-# List plant height during round
+        return [Plant.from_dict(y) for y in obj.get("JsonPlantByTrayProfileIDResult")]
+
+
 @dataclass
 class PlantHeightRound:
-    PlantHeight: PlantHeight
+    """List plant height during round"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'PlantHeight':
+    def from_dict(obj: Any) -> List[PlantHeight]:
         if obj.get("JsonPlantHeightByRoundIDResult") is None:
             return []
-        return [PlantHeight.from_dict(y) for y in obj.get("JsonPlantHeightByRoundIDResult")]  
-    
-# List plant leaves by plant and tray ID
+        return [PlantHeight.from_dict(y) for y in obj.get("JsonPlantHeightByRoundIDResult")]
+
+
 @dataclass
 class PlantLeaf:
-    Leaves: Leaf
+    """List plant leaves by plant and tray ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Leaf':
+    def from_dict(obj: Any) -> List[Leaf]:
         if obj.get("JsonPlantLeavesByPlantAndTrayIDResult") is None:
             return []
-        return [Leaf.from_dict(y) for y in obj.get("JsonPlantLeavesByPlantAndTrayIDResult")]  
-
-
-
-
+        return [Leaf.from_dict(y) for y in obj.get("JsonPlantLeavesByPlantAndTrayIDResult")]

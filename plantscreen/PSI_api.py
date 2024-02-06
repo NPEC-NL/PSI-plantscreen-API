@@ -31,7 +31,6 @@ class PSI_API():
         self.file_api = swagger_client.FileApi(swagger_client.ApiClient(configuration))
         self.version_info_api = swagger_client.VersionInfoApi(swagger_client.ApiClient(configuration))
 
-
     def experimentID(self) -> List[int]:
         api_response = self.exp_api.experiment_id()
         return models.experiment.ExperimentIDs.from_dict(api_response)
@@ -114,7 +113,6 @@ class PSI_API():
         api_response = self.action_api.action_protocol_round(id)
         return models.action.ActionProtocolRound.from_dict(api_response)
 
-
 # Device API
     def device(self, id) -> models.device.DeviceWrapper:
         api_response = self.device_api.device(id)
@@ -182,91 +180,91 @@ class PSI_API():
         api_response = self.tray_api.scales_mapping_tray(id)
         return models.tray.ScalesMappingTray.from_dict(api_response)
 
-# # Plant API
-#     def plant(self, id) -> models.PlantWrapper:
-#         api_response = self.plant_api.plant(id)
-#         return models.PlantWrapper.from_dict(api_response)
+# Plant API
+    def plant(self, id) -> models.plant.PlantWrapper:
+        api_response = self.plant_api.plant(id)
+        return models.plant.PlantWrapper.from_dict(api_response)
 
-#     def plant_tray(self, id) -> models.PlantTray:
-#         api_response = self.plant_api.plant_tray(id)
-#         return models.PlantTray.from_dict(api_response)
+    def plant_tray(self, id) -> models.plant.PlantTray:
+        api_response = self.plant_api.plant_tray(id)
+        return models.plant.PlantTray.from_dict(api_response)
 
-#     def plant_tray_profile_tray(self, id, start, stop) -> models.PlantTrayProfileTray:
-#         api_response = self.plant_api.plant_tray_profile_tray(id, start, stop)
-#         return models.PlantTrayProfileTray.from_dict(api_response)
+    def plant_tray_profile_tray(self, id, start, stop) -> models.plant.PlantTrayProfileTray:
+        api_response = self.plant_api.plant_tray_profile_tray(id, start, stop)
+        return models.plant.PlantTrayProfileTray.from_dict(api_response)
 
-#     def plant_tray_profile(self, id) -> models.PlantTrayProfile:
-#         api_response = self.plant_api.plant_tray_profile(id)
-#         return models.PlantTrayProfile.from_dict(api_response)
+    def plant_tray_profile(self, id) -> models.plant.PlantTrayProfile:
+        api_response = self.plant_api.plant_tray_profile(id)
+        return models.plant.PlantTrayProfile.from_dict(api_response)
 
-#     def plant_height_round(self, id) -> models.PlantHeightRound:
-#         api_response = self.plant_api.plant_height_round(id)
-#         return models.PlantHeightRound.from_dict(api_response)
+    def plant_height_round(self, id) -> models.plant.PlantHeightRound:
+        api_response = self.plant_api.plant_height_round(id)
+        return models.plant.PlantHeightRound.from_dict(api_response)
 
-#     def plant_leaf(self, plant_id, tray_id) -> models.PlantLeaf:
-#         api_response = self.plant_api.plant_leaf(plant_id, tray_id)
-#         return models.PlantLeaf.from_dict(api_response)
+    def plant_leaf(self, plant_id, tray_id) -> models.plant.PlantLeaf:
+        api_response = self.plant_api.plant_leaf(plant_id, tray_id)
+        return models.plant.PlantLeaf.from_dict(api_response)
 
-# # Fc API
-#     def fc_imaging_measure(self, id) -> models.FcImagingMeasure:
-#         api_response = self.fc_api.fc_imaging_measure(id)
-#         return models.FcImagingMeasure.from_dict(api_response)
+# Fc API
+    def fc_imaging_measure(self, id) -> models.fc.FcImagingMeasure:
+        api_response = self.fc_api.fc_imaging_measure(id)
+        return models.fc.FcImagingMeasure.from_dict(api_response)
 
-#     def fc_imaging(self, device_id, round_id, tray_id) -> models.FcImagingWrapper:
-#         api_response = self.fc_api.fc_imaging(device_id, round_id, tray_id)
-#         return models.FcImagingWrapper.from_dict(api_response)
+    def fc_imaging(self, device_id, round_id, tray_id) -> models.fc.FcImagingWrapper:
+        api_response = self.fc_api.fc_imaging(device_id, round_id, tray_id)
+        return models.fc.FcImagingWrapper.from_dict(api_response)
 
-#     def fc_imaging_extended_data_measure(self, id) -> models.FcImagingExtendedDataMeasure:
-#         api_response = self.fc_api.fc_imaging_extended_data_measure(id)
-#         return models.FcImagingExtendedDataMeasure.from_dict(api_response)
+    def fc_imaging_extended_data_measure(self, id) -> models.fc.FcImagingExtendedDataMeasure:
+        api_response = self.fc_api.fc_imaging_extended_data_measure(id)
+        return models.fc.FcImagingExtendedDataMeasure.from_dict(api_response)
 
-#     def fc_imaging_extended_data(self, device_id, round_id, tray_id) -> models.FcImagingExtendedData:
-#         api_response = self.fc_api.fc_imaging_extended_data(device_id, round_id, tray_id)
-#         return models.FcImagingExtendedData.from_dict(api_response)
+    def fc_imaging_extended_data(self, device_id, round_id, tray_id) -> models.fc.FcImagingExtendedData:
+        api_response = self.fc_api.fc_imaging_extended_data(device_id, round_id, tray_id)
+        return models.fc.FcImagingExtendedData.from_dict(api_response)
 
-#     def fc_plant_mask_measure(self, id) -> models.FcPlantMaskMeasure:
-#         api_response = self.fc_api.fc_plant_mask_measure(id)
-#         return models.FcPlantMaskMeasure.from_dict(api_response)
+    def fc_plant_mask_measure(self, id) -> models.fc.FcPlantMaskMeasure:
+        api_response = self.fc_api.fc_plant_mask_measure(id)
+        return models.fc.FcPlantMaskMeasure.from_dict(api_response)
 
-#     def fc_plant_mask(self, device_id, round_id, tray_id) -> models.FcPlantMask:
-#         api_response = self.fc_api.fc_plant_mask(device_id, round_id, tray_id)
-#         return models.FcPlantMask.from_dict(api_response)
+    def fc_plant_mask(self, device_id, round_id, tray_id) -> models.fc.FcPlantMask:
+        api_response = self.fc_api.fc_plant_mask(device_id, round_id, tray_id)
+        return models.fc.FcPlantMask.from_dict(api_response)
 
-#     def fc_param(self, id) -> models.FcParamWrapper:
-#         api_response = self.fc_api.fc_param(id)
-#         return models.FcParamWrapper.from_dict(api_response)
+    def fc_param(self, id) -> models.fc.FcParamWrapper:
+        api_response = self.fc_api.fc_param(id)
+        return models.fc.FcParamWrapper.from_dict(api_response)
 
-#     def i_fc_param_used_analyse(self, id) -> models.IFcParamUsedAnalyse:
-#         api_response = self.fc_api.i_fc_param_used_analyse(id)
-#         return models.IFcParamUsedAnalyse.from_dict(api_response)
+    def i_fc_param_used_analyse(self, id) -> models.fc.FcParamUsedAnalyse:
+        api_response = self.fc_api.fc_param_used_analyse(id)
+        return models.fc.FcParamUsedAnalyse.from_dict(api_response)
 
-#     def fc_param_used(self, device_id, round_id, tray_id) -> models.FcParamUsed:
-#         api_response = self.fc_api.fc_param_used(device_id, round_id, tray_id)
-#         return models.FcParamUsed.from_dict(api_response)
+    def fc_param_used(self, device_id, round_id, tray_id) -> models.fc.FcParamUsed:
+        api_response = self.fc_api.fc_param_used(device_id, round_id, tray_id)
+        return models.fc.FcParamUsed.from_dict(api_response)
 
-#     def fc_param_image_analyse(self, id, param_id) -> models.FcParamImageAnalyse:
-#         api_response = self.fc_api.fc_param_image_analyse(id, param_id)
-#         return models.FcParamImageAnalyse.from_dict(api_response)
+    def fc_param_image_analyse(self, id, param_id) -> models.fc.FcParamImageAnalyse:
+        api_response = self.fc_api.fc_param_image_analyse(id, param_id)
+        return models.fc.FcParamImageAnalyse.from_dict(api_response)
 
-#     def fc_param_image(self, device_id, round_id, tray_id, param_id) -> models.FcParamImage:
-#         api_response = self.fc_api.fc_param_image(device_id, round_id, tray_id, param_id)
-#         return models.FcParamImage.from_dict(api_response)
+    def fc_param_image(self, device_id, round_id, tray_id, param_id) -> models.fc.FcParamImage:
+        api_response = self.fc_api.fc_param_image(device_id, round_id, tray_id, param_id)
+        return models.fc.FcParamImage.from_dict(api_response)
 
-#     def fc_plant_param_analyse(self, id, param_id) -> models.FcPlantParamAnalyse:
-#         api_response = self.fc_api.fc_plant_param_analyse(id, param_id)
-#         return models.FcPlantParamAnalyse.from_dict(api_response)
+    def fc_plant_param_analyse(self, id, param_id) -> models.fc.FcPlantParamAnalyse:
+        api_response = self.fc_api.fc_plant_param_analyse(id, param_id)
+        return models.fc.FcPlantParamAnalyse.from_dict(api_response)
 
-#     def fc_plant_param(self, device_id, round_id, tray_id, param_id) -> models.FcPlantParam:
-#         api_response = self.fc_api.fc_plant_param(device_id, round_id, tray_id, param_id)
-#         return models.FcPlantParam.from_dict(api_response)
+    def fc_plant_param(self, device_id, round_id, tray_id, param_id) -> models.fc.FcPlantParam:
+        api_response = self.fc_api.fc_plant_param(device_id, round_id, tray_id, param_id)
+        return models.fc.FcPlantParam.from_dict(api_response)
 
-#     def fc_leaf_param_analyse(self, id, param_id) -> models.FcLeafParamAnalyse:
-#         api_response = self.fc_api.fc_leaf_param_analyse(id, param_id)
-#         return models.FcLeafParamAnalyse.from_dict(api_response)
+    def fc_leaf_param_analyse(self, id, param_id) -> models.fc.FcLeafParamAnalyse:
+        api_response = self.fc_api.fc_leaf_param_analyse(id, param_id)
+        return models.fc.FcLeafParamAnalyse.from_dict(api_response)
 
-#     def fc_leaf_param(self, device_id, round_id, tray_id, param_id) -> models.FcLeafParam:
-#         api_response = self.fc_api.fc_leaf_param(device_id, round_id, tray_id, param_id)
-#         return models.FcLeafParam.from_dict(api_response)
+    def fc_leaf_param(self, device_id, round_id, tray_id, param_id) -> models.fc.FcLeafParam:
+        api_response = self.fc_api.fc_leaf_param(device_id, round_id, tray_id, param_id)
+        return models.fc.FcLeafParam.from_dict(api_response)
 
 # # Hc API
 #     def hc_imaging_measure(self, id) -> models.HcImagingMeasure:

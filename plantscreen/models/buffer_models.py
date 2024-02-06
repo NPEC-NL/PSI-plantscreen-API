@@ -1,44 +1,44 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# BufferHistory baseclass
+
 @dataclass
 class BufferHistory:
-    BufferOccasion: str
-    BufferStateDate: str
-    BufferStateID: int
-    BufferStatePath: str
+    """BufferHistory baseclass"""
+    buffer_occasion: str
+    buffer_state_date: str
+    buffer_state_id: int
+    buffer_state_path: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'BufferHistory':
+    def from_dict(obj: Any) -> BufferHistory:
         return BufferHistory(
-            BufferOccasion=obj.get("BufferOccasion"),
-            BufferStateDate=obj.get("BufferStateDate"),
-            BufferStateID=obj.get("BufferStateID"),
-            BufferStatePath=obj.get("BufferStatePath")
+            buffer_occasion=obj.get("BufferOccasion"),
+            buffer_state_date=obj.get("BufferStateDate"),
+            buffer_state_id=obj.get("BufferStateID"),
+            buffer_state_path=obj.get("BufferStatePath")
         )
 
-# Buffer History
+
 @dataclass
 class BufferHistoryWrapper:
-    BufferHistory: BufferHistory
+    """Buffer History"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'BufferHistory':
+    def from_dict(obj: Any) -> BufferHistory:
         if obj.get("JsonBufferHistoryResult") is None:
             return None
         return BufferHistory.from_dict(obj.get("JsonBufferHistoryResult"))
 
-# Buffer History by Date
+
 @dataclass
 class BufferHistoryDate:
-    BufferHistory: BufferHistory
+    """Buffer History by Date"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'BufferHistory':
+    def from_dict(obj: Any) -> List[BufferHistory]:
         if obj.get("JsonBufferHistoryByDateResult") is None:
             return []
-        return [BufferHistory.from_dict(y) for y in obj.get("JsonBufferHistoryByDateResult")] 
-    
+        return [BufferHistory.from_dict(y) for y in obj.get("JsonBufferHistoryByDateResult")]

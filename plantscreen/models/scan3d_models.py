@@ -1,352 +1,342 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# Scan3dImage baseclass
+
 @dataclass
 class Scan3dImage:
-    ActionID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureHeight: float
-    MeasureID: int
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-    TrayProfileID: int
-    Scan3DModelPath: str
+    """Scan3dImage baseclass"""
+    action_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_date: str
+    measure_height: float
+    measure_id: int
+    round_id: int
+    tray_barcode: str
+    tray_id: int
+    tray_profile_id: int
+    scan_3d_model_path: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dImage':
+    def from_dict(obj: Any) -> Scan3dImage:
         return Scan3dImage(
-            ActionID=obj.get("ActionID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureHeight=obj.get("MeasureHeight"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID"),
-            TrayProfileID=obj.get("TrayProfileID"),
-            Scan3DModelPath=obj.get("Scan3DModelPath")
+            action_id=obj.get("ActionID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_height=obj.get("MeasureHeight"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID"),
+            tray_profile_id=obj.get("TrayProfileID"),
+            scan_3d_model_path=obj.get("Scan3DModelPath")
         )
 
-# Scan3dExtended baseclass
+
 @dataclass
 class Scan3dExtended:
-    DeviceID: int
-    ExtendedData: str
-    MeasureDate: str
-    MeasureID: int
-    RoundID: int
-    TrayID: int
+    """Scan3dExtended baseclass"""
+    device_id: int
+    extended_data: str
+    measure_date: str
+    measure_id: int
+    round_id: int
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dExtended':
+    def from_dict(obj: Any) -> Scan3dExtended:
         return Scan3dExtended(
-            DeviceID=obj.get("DeviceID"),
-            ExtendedData=obj.get("ExtendedData"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayID=obj.get("TrayID")
-        )  
+            device_id=obj.get("DeviceID"),
+            extended_data=obj.get("ExtendedData"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_id=obj.get("TrayID")
+        )
 
-# Scan3dAnalyze baseclass
+
 @dataclass
 class Scan3dAnalyze:
-    AnalyseID: int
-    AnalysedModelPath: str
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureDate: str
-    MeasureID: int
-    PlantBarcode: str
-    PlantID: int
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
+    """Scan3dAnalyze baseclass"""
+    analyse_id: int
+    analysed_model_path: str
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_date: str
+    measure_id: int
+    plant_barcode: str
+    plant_id: int
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dAnalyze':
+    def from_dict(obj: Any) -> Scan3dAnalyze:
         return Scan3dAnalyze(
-            AnalyseID=obj.get("AnalyseID"),
-            AnalysedModelPath=obj.get("AnalysedModelPath"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            analysed_model_path=obj.get("AnalysedModelPath"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
-    
-# Scan3dParam baseclass
+
+
 @dataclass
 class Scan3dParam:
-    ParameterID: int
-    ParameterName: str
-    ParameterUnit: str
-
+    """Scan3dParam baseclass"""
+    parameter_id: int
+    parameter_name: str
+    parameter_unit: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dParam':
+    def from_dict(obj: Any) -> Scan3dParam:
         return Scan3dParam(
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterUnit=obj.get("ParameterUnit")
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_unit=obj.get("ParameterUnit")
         )
 
-# Scan3dPlant baseclass
+
 @dataclass
 class Scan3dPlant:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterID: int
-    ParameterName: str
-    ParameterValue: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """Scan3dPlant baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_id: int
+    parameter_name: str
+    parameter_value: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dPlant':
+    def from_dict(obj: Any) -> Scan3dPlant:
         return Scan3dPlant(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterValue=obj.get("ParameterValue"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
-        )  
-    
-# Scan3dLeaf baseclass
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_value=obj.get("ParameterValue"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
+        )
+
+
 @dataclass
 class Scan3dLeaf:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    LeafIndex: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterID: int
-    ParameterName: str
-    ParameterValue: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """Scan3dLeaf baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    leaf_index: int
+    measure_angle: float
+    measure_id: int
+    parameter_id: int
+    parameter_name: str
+    parameter_value: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dLeaf':
+    def from_dict(obj: Any) -> Scan3dLeaf:
         return Scan3dLeaf(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            LeafIndex=obj.get("LeafIndex"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterValue=obj.get("ParameterValue"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            leaf_index=obj.get("LeafIndex"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_value=obj.get("ParameterValue"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
-    
-# 3D Imaging by Measure ID
+
+
 @dataclass
 class Scan3dImagingMeasure:
-    Scan3dImage: Scan3dImage
+    """3D Imaging by Measure ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dImage':
+    def from_dict(obj: Any) -> Scan3dImage:
         if obj.get("JsonScan3dImagingByIDResult") is None:
             return None
         return Scan3dImage.from_dict(obj.get("JsonScan3dImagingByIDResult"))
 
-# 3D Imaging for Tray
+
 class Scan3d:
-    Scan3dImage: Scan3dImage
+    """3D Imaging for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dImage':
+    def from_dict(obj: Any) -> List[Scan3dImage]:
         if obj.get("JsonScan3dImagingResult") is None:
             return []
-        return [Scan3dImage.from_dict(y) for y in obj.get("JsonScan3dImagingResult")] 
+        return [Scan3dImage.from_dict(y) for y in obj.get("JsonScan3dImagingResult")]
 
-# 3D Extended Data by Measure ID
+
 @dataclass
 class Scan3dImagingExtendedDataMeasure:
-    Scan3dExtended: Scan3dExtended
+    """3D Extended Data by Measure ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dExtended':
+    def from_dict(obj: Any) -> Scan3dExtended:
         if obj.get("JsonScan3DMeasureExtendedDataByIDResult") is None:
             return None
         return Scan3dExtended.from_dict(obj.get("JsonScan3DMeasureExtendedDataByIDResult"))
-    
-# 3D Extended Data for Tray
+
+
 @dataclass
 class Scan3dImagingExtendedData:
-    Scan3dExtended: Scan3dExtended
+    """3D Extended Data for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dExtended':
+    def from_dict(obj: Any) -> Scan3dExtended:
         if obj.get("JsonScan3dMeasureExtendedDataResult") is None:
             return None
         return Scan3dExtended.from_dict(obj.get("JsonScan3dMeasureExtendedDataResult"))
-    
-# 3D Analyzed Model by Measure ID
+
+
 class Scan3dAnalyzedModelMeasure:
-    Scan3dAnalyze: Scan3dAnalyze
+    """3D Analyzed Model by Measure ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dAnalyze':
+    def from_dict(obj: Any) -> List[Scan3dAnalyze]:
         if obj.get("JsonScan3dAnalyzedModelByMeasureIDResult") is None:
             return []
-        return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelByMeasureIDResult")] 
+        return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelByMeasureIDResult")]
 
-# 3D Analyzed Model by Analyse ID
+
 class Scan3dAnalysedModelAnalyse:
-    Scan3dAnalyze: Scan3dAnalyze 
+    """3D Analyzed Model by Analyse IDss"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dAnalyze':
+    def from_dict(obj: Any) -> List[Scan3dAnalyze]:
         if obj.get("JsonScan3dAnalyzedModelByAnalyseIDResult") is None:
             return []
-        return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelByAnalyseIDResult")] 
+        return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelByAnalyseIDResult")]
 
-# 3D Analyzed Model for Tray
+
 class Scan3dAnalyzedModel:
-    Scan3dAnalyze: Scan3dAnalyze 
+    """3D Analyzed Model for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dAnalyze':
+    def from_dict(obj: Any) -> List[Scan3dAnalyze]:
         if obj.get("JsonScan3dAnalyzedModelResult") is None:
             return []
-        return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelResult")] 
+        return [Scan3dAnalyze.from_dict(y) for y in obj.get("JsonScan3dAnalyzedModelResult")]
 
-# 3D Parameter by ID
+
 @dataclass
 class Scan3dParamWrapper:
-    Scan3dParam: Scan3dParam
+    """3D Parameter by ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dParam':
+    def from_dict(obj: Any) -> Scan3dParam:
         if obj.get("JsonScan3dParamResult") is None:
             return None
         return Scan3dParam.from_dict(obj.get("JsonScan3dParamResult"))
-    
-# 3D Used Parameters by Analyse ID
+
+
 class Scan3dParamUsedAnalyse:
-    Scan3dParam: Scan3dParam 
+    """3D Used Parameters by Analyse ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dParam':
+    def from_dict(obj: Any) -> List[Scan3dParam]:
         if obj.get("JsonScan3dUsedParamByAnalyseIDResult") is None:
             return []
-        return [Scan3dParam.from_dict(y) for y in obj.get("JsonScan3dUsedParamByAnalyseIDResult")] 
+        return [Scan3dParam.from_dict(y) for y in obj.get("JsonScan3dUsedParamByAnalyseIDResult")]
 
-# 3D Used Parameters for Tray
+
 class Scan3dParamUsed:
-    Scan3dParam: Scan3dParam 
+    """3D Used Parameters for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dParam':
+    def from_dict(obj: Any) -> List[Scan3dParam]:
         if obj.get("JsonScan3dUsedParamResult") is None:
             return []
-        return [Scan3dParam.from_dict(y) for y in obj.get("JsonScan3dUsedParamResult")] 
+        return [Scan3dParam.from_dict(y) for y in obj.get("JsonScan3dUsedParamResult")]
 
-# 3D Plant Parameter Values by Analyse ID
+
 class Scan3dPlantParamAnalyse:
-    Scan3dPlant: Scan3dPlant 
+    """3D Plant Parameter Values by Analyse ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dPlant':
+    def from_dict(obj: Any) -> List[Scan3dPlant]:
         if obj.get("JsonScan3dPlantParamByAnalyseIDResult") is None:
             return []
-        return [Scan3dPlant.from_dict(y) for y in obj.get("JsonScan3dPlantParamByAnalyseIDResult")] 
+        return [Scan3dPlant.from_dict(y) for y in obj.get("JsonScan3dPlantParamByAnalyseIDResult")]
 
-# 3D Plant Parameter Values for Tray
+
 class Scan3dPlantParam:
-    Scan3dPlant: Scan3dPlant 
+    """3D Plant Parameter Values for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dPlant':
+    def from_dict(obj: Any) -> List[Scan3dPlant]:
         if obj.get("JsonScan3dPlantParamResult") is None:
             return []
-        return [Scan3dPlant.from_dict(y) for y in obj.get("JsonScan3dPlantParamResult")] 
-    
-# 3D Local Leaf Parameter Values by Analyse ID
+        return [Scan3dPlant.from_dict(y) for y in obj.get("JsonScan3dPlantParamResult")]
+
+
 class Scan3dLeafParamAnalyse:
-    Scan3dLeaf: Scan3dLeaf 
+    """3D Local Leaf Parameter Values by Analyse ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dLeaf':
+    def from_dict(obj: Any) -> List[Scan3dLeaf]:
         if obj.get("JsonScan3dLeafParamByAnalyseIDResult") is None:
             return []
-        return [Scan3dLeaf.from_dict(y) for y in obj.get("JsonScan3dLeafParamByAnalyseIDResult")] 
+        return [Scan3dLeaf.from_dict(y) for y in obj.get("JsonScan3dLeafParamByAnalyseIDResult")]
 
-# 3D Local Leaf Parameter Values for Tray
+
 class Scan3dLeafParam:
-    Scan3dLeaf: Scan3dLeaf 
+    """3D Local Leaf Parameter Values for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Scan3dLeaf':
+    def from_dict(obj: Any) -> List[Scan3dLeaf]:
         if obj.get("JsonScan3dLeafParamResult") is None:
             return []
-        return [Scan3dLeaf.from_dict(y) for y in obj.get("JsonScan3dLeafParamResult")] 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return [Scan3dLeaf.from_dict(y) for y in obj.get("JsonScan3dLeafParamResult")]

@@ -1,510 +1,516 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# MscImage baseclass
+
 @dataclass
 class MscImage:
-    ActionID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureHeight: float
-    MeasureID: int
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-    TrayProfileID: int
-    ImagePath: str
+    """MscImage baseclass"""
+    action_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_date: str
+    measure_height: float
+    measure_id: int
+    round_id: int
+    tray_barcode: str
+    tray_id: int
+    tray_profile_id: int
+    image_path: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscImage':
+    def from_dict(obj: Any) -> MscImage:
         return MscImage(
-            ActionID=obj.get("ActionID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureHeight=obj.get("MeasureHeight"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID"),
-            TrayProfileID=obj.get("TrayProfileID"),
-            ImagePath=obj.get("ImagePath")
+            action_id=obj.get("ActionID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_height=obj.get("MeasureHeight"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID"),
+            tray_profile_id=obj.get("TrayProfileID"),
+            image_path=obj.get("ImagePath")
         )
-    
-# MscExtended baseclass
+
+
 @dataclass
 class MscExtended:
-    DeviceID: int
-    ExtendedData: str
-    MeasureDate: str
-    MeasureID: int
-    RoundID: int
-    TrayID: int
+    """MscExtended baseclass"""
+    device_id: int
+    extended_data: str
+    measure_date: str
+    measure_id: int
+    round_id: int
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscExtended':
+    def from_dict(obj: Any) -> MscExtended:
         return MscExtended(
-            DeviceID=obj.get("DeviceID"),
-            ExtendedData=obj.get("ExtendedData"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            extended_data=obj.get("ExtendedData"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_id=obj.get("TrayID")
         )
-    
-# MscMask baseclass
+
+
 @dataclass
 class MscMask:
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MaskIsLeaf: bool
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureID: int
-    PlantMaskPath: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-
+    """MscMask baseclass"""
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    mask_is_leaf: bool
+    measure_angle: float
+    measure_date: str
+    measure_id: int
+    plant_mask_path: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscMask':
+    def from_dict(obj: Any) -> MscMask:
         return MscMask(
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MaskIsLeaf=obj.get("MaskIsLeaf"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            PlantMaskPath=obj.get("PlantMaskPath"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            mask_is_leaf=obj.get("MaskIsLeaf"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            plant_mask_path=obj.get("PlantMaskPath"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
-    
-# MscParam baseclass
+
+
 @dataclass
 class MscParam:
-    ParameterID: int
-    ParameterName: str
-    ParameterUnit: str
-
+    """MscParam baseclass"""
+    parameter_id: int
+    parameter_name: str
+    parameter_unit: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscParam':
+    def from_dict(obj: Any) -> MscParam:
         return MscParam(
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterUnit=obj.get("ParameterUnit")
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_unit=obj.get("ParameterUnit")
         )
-    
-# MscParamImage baseclass
+
+
 @dataclass
 class MscParamImage:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterID: int
-    ParameterImagePath: str
-    ParameterName: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
+    """MscParamImage baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_id: int
+    parameter_image_path: str
+    parameter_name: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscParamImage':
+    def from_dict(obj: Any) -> MscParamImage:
         return MscParamImage(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterImagePath=obj.get("ParameterImagePath"),
-            ParameterName=obj.get("ParameterName"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_image_path=obj.get("ParameterImagePath"),
+            parameter_name=obj.get("ParameterName"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
-    
-# MscPlant baseclass
+
+
 @dataclass
 class MscPlant:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterAvg: float
-    ParameterID: int
-    ParameterMax: float
-    ParameterMedian: float
-    ParameterMin: float
-    ParameterName: str
-    ParameterStddev: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """MscPlant baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_avg: float
+    parameter_id: int
+    parameter_max: float
+    parameter_median: float
+    parameter_min: float
+    parameter_name: str
+    parameter_stddev: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscPlant':
+    def from_dict(obj: Any) -> MscPlant:
         return MscPlant(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterAvg=obj.get("ParameterAvg"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterMax=obj.get("ParameterMax"),
-            ParameterMedian=obj.get("ParameterMedian"),
-            ParameterMin=obj.get("ParameterMin"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterStddev=obj.get("ParameterStddev"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_avg=obj.get("ParameterAvg"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_max=obj.get("ParameterMax"),
+            parameter_median=obj.get("ParameterMedian"),
+            parameter_min=obj.get("ParameterMin"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_stddev=obj.get("ParameterStddev"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# MscLeaf baseclass
+
 @dataclass
 class MscLeaf:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    LeafIndex: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterAvg: float
-    ParameterID: int
-    ParameterMax: float
-    ParameterMedian: float
-    ParameterMin: float
-    ParameterName: str
-    ParameterStddev: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """MscLeaf baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    leaf_index: int
+    measure_angle: float
+    measure_id: int
+    parameter_avg: float
+    parameter_id: int
+    parameter_max: float
+    parameter_median: float
+    parameter_min: float
+    parameter_name: str
+    parameter_stddev: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscLeaf':
+    def from_dict(obj: Any) -> MscLeaf:
         return MscLeaf(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            LeafIndex=obj.get("LeafIndex"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterAvg=obj.get("ParameterAvg"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterMax=obj.get("ParameterMax"),
-            ParameterMedian=obj.get("ParameterMedian"),
-            ParameterMin=obj.get("ParameterMin"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterStddev=obj.get("ParameterStddev"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            leaf_index=obj.get("LeafIndex"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_avg=obj.get("ParameterAvg"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_max=obj.get("ParameterMax"),
+            parameter_median=obj.get("ParameterMedian"),
+            parameter_min=obj.get("ParameterMin"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_stddev=obj.get("ParameterStddev"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# MscLight baseclass
+
 @dataclass
 class MscLight:
-    ChannelID: int
-    LightSetCaption: str
-    LightSetID: int
-    LightSetPidName: str
-    LightSetValid: bool
+    """MscLight baseclass"""
+    channel_id: int
+    light_set_caption: str
+    light_set_id: int
+    light_set_pid_name: str
+    light_set_valid: bool
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscLight':
+    def from_dict(obj: Any) -> MscLight:
         return MscLight(
-            ChannelID=obj.get("ChannelID"),
-            LightSetCaption=obj.get("LightSetCaption"),
-            LightSetID=obj.get("LightSetID"),
-            LightSetPidName=obj.get("LightSetPidName"),
-            LightSetValid=obj.get("LightSetValid")
+            channel_id=obj.get("ChannelID"),
+            light_set_caption=obj.get("LightSetCaption"),
+            light_set_id=obj.get("LightSetID"),
+            light_set_pid_name=obj.get("LightSetPidName"),
+            light_set_valid=obj.get("LightSetValid")
         )
 
-# MscCalibrate baseclass
+
 @dataclass
 class MscCalibrate:
-    CalibrationDate: str
-    CalibrationID: int
-    CalibrationImagePath: str
-    CameraExposure: int
-    CameraGain: int
-    LightSetID: int
+    """MscCalibrate baseclass"""
+    calibration_date: str
+    calibration_id: int
+    calibration_image_path: str
+    camera_exposure: int
+    camera_gain: int
+    light_set_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscCalibrate':
+    def from_dict(obj: Any) -> MscCalibrate:
         return MscCalibrate(
-            CalibrationDate=obj.get("CalibrationDate"),
-            CalibrationID=obj.get("CalibrationID"),
-            CalibrationImagePath=obj.get("CalibrationImagePath"),
-            CameraExposure=obj.get("CameraExposure"),
-            CameraGain=obj.get("CameraGain"),
-            LightSetID=obj.get("LightSetID")
+            calibration_date=obj.get("CalibrationDate"),
+            calibration_id=obj.get("CalibrationID"),
+            calibration_image_path=obj.get("CalibrationImagePath"),
+            camera_exposure=obj.get("CameraExposure"),
+            camera_gain=obj.get("CameraGain"),
+            light_set_id=obj.get("LightSetID")
         )
 
-# MscCaliLight baseclass
+
 @dataclass
 class MscCaliLight:
-    CalibrationID: int
-    CalibrationLightID: int
-    CalibrationLightLevel: int
-    LightCaption: str
-    LightID: int
-    LightSetID: int
+    """MscCaliLight baseclass"""
+    calibration_id: int
+    calibration_light_id: int
+    calibration_light_level: int
+    light_caption: str
+    light_id: int
+    light_set_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscCaliLight':
+    def from_dict(obj: Any) -> MscCaliLight:
         return MscCaliLight(
-            CalibrationID=obj.get("CalibrationID"),
-            CalibrationLightID=obj.get("CalibrationLightID"),
-            CalibrationLightLevel=obj.get("CalibrationLightLevel"),
-            LightCaption=obj.get("LightCaption"),
-            LightID=obj.get("LightID"),
-            LightSetID=obj.get("LightSetID")
+            calibration_id=obj.get("CalibrationID"),
+            calibration_light_id=obj.get("CalibrationLightID"),
+            calibration_light_level=obj.get("CalibrationLightLevel"),
+            light_caption=obj.get("LightCaption"),
+            light_id=obj.get("LightID"),
+            light_set_id=obj.get("LightSetID")
         )
 
 
-# Multispectral Imaging by measurement ID
 @dataclass
 class MscImagingMeasure:
-    MscImage: MscImage
+    """Multispectral Imaging by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscImage':
+    def from_dict(obj: Any) -> List[MscImage]:
         if obj.get("JsonMscImagingByIDResult") is None:
             return []
-        return [MscImage.from_dict(y) for y in obj.get("JsonMscImagingByIDResult")] 
-    
-# Multispectral imaging for tray
+        return [MscImage.from_dict(y) for y in obj.get("JsonMscImagingByIDResult")]
+
+
 @dataclass
 class MscImaging:
-    MscImage: MscImage
+    """Multispectral imaging for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscImage':
+    def from_dict(obj: Any) -> List[MscImage]:
         if obj.get("JsonMscImagingResult") is None:
             return []
-        return [MscImage.from_dict(y) for y in obj.get("JsonMscImagingResult")] 
-    
-# Multispectral extended by measurement ID
+        return [MscImage.from_dict(y) for y in obj.get("JsonMscImagingResult")]
+
+
 class MscImagingExtendedDataMeasure:
-    MscExtended: MscExtended
+    """Multispectral extended by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscExtended':
+    def from_dict(obj: Any) -> MscExtended:
         if obj.get("JsonMscMeasureExtendedDataByIDResult") is None:
             return None
         return MscExtended.from_dict(obj.get("JsonMscMeasureExtendedDataByIDResult"))
-    
-# Multispectral extended for tray
+
+
 class MscImagingExtendedData:
-    MscExtended: MscExtended
+    """Multispectral extended for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscExtended':
+    def from_dict(obj: Any) -> MscExtended:
         if obj.get("JsonMscMeasureExtendedDataResult") is None:
             return None
         return MscExtended.from_dict(obj.get("JsonMscMeasureExtendedDataResult"))
-    
-# Multispectral mask by measurement ID
+
+
 class MscPlantMaskMeasure:
-    MscMask: MscMask
+    """Multispectral mask by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscMask':
+    def from_dict(obj: Any) -> MscMask:
         if obj.get("JsonMscPlantMaskByMeasureIDResult") is None:
             return None
         return MscMask.from_dict(obj.get("JsonMscPlantMaskByMeasureIDResult"))
 
-# Multispectral mask for tray
+
 @dataclass
 class MscPlantMask:
-    MscMask: MscMask
+    """Multispectral mask for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscMask':
+    def from_dict(obj: Any) -> List[MscMask]:
         if obj.get("JsonMscPlantMaskResult") is None:
             return []
-        return [MscMask.from_dict(y) for y in obj.get("JsonMscPlantMaskResult")] 
-    
-# Multispectral parameter by param ID
+        return [MscMask.from_dict(y) for y in obj.get("JsonMscPlantMaskResult")]
+
+
 class MscParamWrapper:
-    MscParam: MscParam
+    """Multispectral parameter by param ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscParam':
+    def from_dict(obj: Any) -> MscParam:
         if obj.get("JsonMscParamResult") is None:
             return None
         return MscParam.from_dict(obj.get("JsonMscParamResult"))
-    
-# Multispectral parameter by analysis ID
+
+
 class MscParamUsedAnalyse:
-    MscParam: MscParam
+    """Multispectral parameter by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscParam':
+    def from_dict(obj: Any) -> List[MscParam]:
         if obj.get("JsonMscUsedParamByAnalyseIDResult") is None:
             return []
-        return [MscParam.from_dict(y) for y in obj.get("JsonMscUsedParamByAnalyseIDResult")] 
+        return [MscParam.from_dict(y) for y in obj.get("JsonMscUsedParamByAnalyseIDResult")]
 
-# Multispectral parameter for tray
+
 class MscParamUsed:
-    MscParam: MscParam
+    """Multispectral parameter for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscParam':
+    def from_dict(obj: Any) -> List[MscParam]:
         if obj.get("JsonMscUsedParamResult") is None:
             return []
-        return [MscParam.from_dict(y) for y in obj.get("JsonMscUsedParamResult")] 
-    
-# Multispectral parameter image by analysis ID
+        return [MscParam.from_dict(y) for y in obj.get("JsonMscUsedParamResult")]
+
+
 class MscParamImageAnalyse:
-    MscParamImage: MscParamImage
+    """Multispectral parameter image by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscParamImage':
+    def from_dict(obj: Any) -> MscParamImage:
         if obj.get("JsonMscParameterImageByAnalyseIDResult") is None:
             return None
         return MscParamImage.from_dict(obj.get("JsonMscParameterImageByAnalyseIDResult"))
 
-# Multispectral parameter image for tray
+
 class MscParamImageWrapper:
-    MscParamImage: MscParamImage
+    """Multispectral parameter image for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscParamImage':
+    def from_dict(obj: Any) -> List[MscParamImage]:
         if obj.get("JsonMscParameterImageResult") is None:
             return []
-        return [MscParamImage.from_dict(y) for y in obj.get("JsonMscParameterImageResult")] 
-    
-# Multispectral plant parameter by analysis ID
+        return [MscParamImage.from_dict(y) for y in obj.get("JsonMscParameterImageResult")]
+
+
 class MscPlantParamAnalyse:
-    MscPlant: MscPlant
+    """Multispectral plant parameter by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscPlant':
+    def from_dict(obj: Any) -> List[MscPlant]:
         if obj.get("JsonMscPlantParamByAnalyseIDResult") is None:
             return []
-        return [MscPlant.from_dict(y) for y in obj.get("JsonMscPlantParamByAnalyseIDResult")] 
-    
-# Multispectral plant parameter for tray
+        return [MscPlant.from_dict(y) for y in obj.get("JsonMscPlantParamByAnalyseIDResult")]
+
+
 class MscPlantParam:
-    MscPlant: MscPlant
+    """Multispectral plant parameter for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscPlant':
+    def from_dict(obj: Any) -> List[MscPlant]:
         if obj.get("JsonMscPlantParamResult") is None:
             return []
-        return [MscPlant.from_dict(y) for y in obj.get("JsonMscPlantParamResult")] 
-    
-# Multispectral leaf parameter by analysis ID
+        return [MscPlant.from_dict(y) for y in obj.get("JsonMscPlantParamResult")]
+
+
 class MscLeafParamAnalyse:
-    MscLeaf: MscLeaf
+    """Multispectral leaf parameter by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscLeaf':
+    def from_dict(obj: Any) -> List[MscLeaf]:
         if obj.get("JsonMscLeafParamByAnalyseIDResult") is None:
             return []
-        return [MscLeaf.from_dict(y) for y in obj.get("JsonMscLeafParamByAnalyseIDResult")]         
+        return [MscLeaf.from_dict(y) for y in obj.get("JsonMscLeafParamByAnalyseIDResult")]
 
-# Multispectral leaf parameter for tray
+
 class MscLeafParam:
-    MscLeaf: MscLeaf
+    """Multispectral leaf parameter for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscLeaf':
+    def from_dict(obj: Any) -> List[MscLeaf]:
         if obj.get("JsonMscLeafParamResult") is None:
             return []
-        return [MscLeaf.from_dict(y) for y in obj.get("JsonMscLeafParamResult")]     
+        return [MscLeaf.from_dict(y) for y in obj.get("JsonMscLeafParamResult")]
 
-# Multispectral light by ID
+
 class MscLightSet:
-    MscLight: MscLight
+    """Multispectral light by ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscLight':
+    def from_dict(obj: Any) -> MscLight:
         if obj.get("JsonMscLightSetResult") is None:
             return None
         return MscLight.from_dict(obj.get("JsonMscLightSetResult"))
-    
-# Multispectral light for tray
+
+
 class MscLightSetUsed:
-    MscLight: MscLight
+    """Multispectral light for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscLight':
+    def from_dict(obj: Any) -> List[MscLight]:
         if obj.get("JsonMscLightSetUsedResult") is None:
             return []
-        return [MscLight.from_dict(y) for y in obj.get("JsonMscLightSetUsedResult")] 
-    
-# Multispectral calibration by ID 
+        return [MscLight.from_dict(y) for y in obj.get("JsonMscLightSetUsedResult")]
+
+
 class MscCalibration:
-    MscCalibrate: MscCalibrate
+    """Multispectral calibration by ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscCalibrate':
+    def from_dict(obj: Any) -> MscCalibrate:
         if obj.get("JsonMscCalibrationResult") is None:
             return None
         return MscCalibrate.from_dict(obj.get("JsonMscCalibrationResult"))
-    
-# Multispectral calibration by lightset ID
+
+
 class MscCalibrationLightSet:
-    MscCalibrate: MscCalibrate
+    """Multispectral calibration by lightset ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscCalibrate':
+    def from_dict(obj: Any) -> List[MscCalibrate]:
         if obj.get("JsonMscCalibrationByLightSetIDResult") is None:
             return []
-        return [MscCalibrate.from_dict(y) for y in obj.get("JsonMscCalibrationByLightSetIDResult")] 
-    
+        return [MscCalibrate.from_dict(y) for y in obj.get("JsonMscCalibrationByLightSetIDResult")]
+
+
 # Multispectral calibration light by ID TODO
 
-    
-# List multispectral calibration light settings
+
 class MscCalibrationLight:
-    MscCaliLight: MscCaliLight
+    """List multispectral calibration light settings"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'MscCaliLight':
+    def from_dict(obj: Any) -> List[MscCaliLight]:
         if obj.get("JsonMscCalibrationLightResult") is None:
             return []
-        return [MscCaliLight.from_dict(y) for y in obj.get("JsonMscCalibrationLightResult")] 
-     
+        return [MscCaliLight.from_dict(y) for y in obj.get("JsonMscCalibrationLightResult")]

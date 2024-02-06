@@ -1,481 +1,471 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# HcImaging baseclass
+
 @dataclass
 class HcImaging:
-    ActionID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureHeight: float
-    MeasureID: int
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
-    TrayProfileID: int
-    CalibrationDarkContentPath: str
-    CalibrationDarkHeaderPath: str
-    CalibrationWhiteContentPath: str
-    CalibrationWhiteHeaderPath: str
-    DataContentPath: str
-    DataHeaderPath: str
+    """HcImaging baseclass"""
+    action_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_date: str
+    measure_height: float
+    measure_id: int
+    round_id: int
+    tray_barcode: str
+    tray_id: int
+    tray_profile_id: int
+    calibration_dark_content_path: str
+    calibration_dark_header_path: str
+    calibration_white_content_path: str
+    calibration_white_header_path: str
+    data_content_path: str
+    data_header_path: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcImaging':
+    def from_dict(obj: Any) -> HcImaging:
         return HcImaging(
-            ActionID=obj.get("ActionID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureHeight=obj.get("MeasureHeight"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID"),
-            TrayProfileID=obj.get("TrayProfileID"),
-            CalibrationDarkContentPath=obj.get("CalibrationDarkContentPath"),
-            CalibrationDarkHeaderPath=obj.get("CalibrationDarkHeaderPath"),
-            CalibrationWhiteContentPath=obj.get("CalibrationWhiteContentPath"),
-            CalibrationWhiteHeaderPath=obj.get("CalibrationWhiteHeaderPath"),
-            DataContentPath=obj.get("DataContentPath"),
-            DataHeaderPath=obj.get("DataHeaderPath")
+            action_id=obj.get("ActionID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_height=obj.get("MeasureHeight"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID"),
+            tray_profile_id=obj.get("TrayProfileID"),
+            calibration_dark_content_path=obj.get("CalibrationDarkContentPath"),
+            calibration_dark_header_path=obj.get("CalibrationDarkHeaderPath"),
+            calibration_white_content_path=obj.get("CalibrationWhiteContentPath"),
+            calibration_white_header_path=obj.get("CalibrationWhiteHeaderPath"),
+            data_content_path=obj.get("DataContentPath"),
+            data_header_path=obj.get("DataHeaderPath")
         )
-    
-# HcMeasure baseclass
+
+
 @dataclass
 class HcMeasure:
-    DeviceID: int
-    ExtendedData: str
-    MeasureDate: str
-    MeasureID: int
-    RoundID: int
-    TrayID: int
+    """HcMeasure baseclass"""
+    device_id: int
+    extended_data: str
+    measure_date: str
+    measure_id: int
+    round_id: int
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcMeasure':
+    def from_dict(obj: Any) -> HcMeasure:
         return HcMeasure(
-            DeviceID=obj.get("DeviceID"),
-            ExtendedData=obj.get("ExtendedData"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            RoundID=obj.get("RoundID"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            extended_data=obj.get("ExtendedData"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            round_id=obj.get("RoundID"),
+            tray_id=obj.get("TrayID")
         )
-    
-# HcRgb baseclass
+
+
 @dataclass
 class HcRgb:
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    RgbImagePath: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
+    """HcRgb baseclass"""
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    rgb_image_path: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcRgb':
+    def from_dict(obj: Any) -> HcRgb:
         return HcRgb(
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            RgbImagePath=obj.get("RgbImagePath"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            rgb_image_path=obj.get("RgbImagePath"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
-    
-# HcMask baseclass
+
+
 @dataclass
 class HcMask:
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MaskIsLeaf: bool
-    MeasureAngle: float
-    MeasureDate: str
-    MeasureID: int
-    PlantMaskPath: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
+    """HcMask baseclass"""
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    mask_is_leaf: bool
+    measure_angle: float
+    measure_date: str
+    measure_id: int
+    plant_mask_path: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcMask':
+    def from_dict(obj: Any) -> HcMask:
         return HcMask(
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MaskIsLeaf=obj.get("MaskIsLeaf"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureDate=obj.get("MeasureDate"),
-            MeasureID=obj.get("MeasureID"),
-            PlantMaskPath=obj.get("PlantMaskPath"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            mask_is_leaf=obj.get("MaskIsLeaf"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_date=obj.get("MeasureDate"),
+            measure_id=obj.get("MeasureID"),
+            plant_mask_path=obj.get("PlantMaskPath"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
-    
-# HcParam baseclass
+
+
 @dataclass
 class HcParam:
-    ParameterID: int
-    ParameterName: str
-    ParameterUnit: str
+    """HcParam baseclass"""
+    parameter_id: int
+    parameter_name: str
+    parameter_unit: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcParam':
+    def from_dict(obj: Any) -> HcParam:
         return HcParam(
-            ParameterID=obj.get("ParameterID"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterUnit=obj.get("ParameterUnit")
+            parameter_id=obj.get("ParameterID"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_unit=obj.get("ParameterUnit")
         )
 
-# HcImage baseclass
+
 @dataclass
 class HcImage:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterID: int
-    ParameterImagePath: str
-    ParameterName: str
-    RoundID: int
-    TrayBarcode: str
-    TrayID: int
+    """HcImage baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_id: int
+    parameter_image_path: str
+    parameter_name: str
+    round_id: int
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcImage':
+    def from_dict(obj: Any) -> HcImage:
         return HcImage(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterImagePath=obj.get("ParameterImagePath"),
-            ParameterName=obj.get("ParameterName"),
-            RoundID=obj.get("RoundID"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_image_path=obj.get("ParameterImagePath"),
+            parameter_name=obj.get("ParameterName"),
+            round_id=obj.get("RoundID"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# HcPlant baseclass
+
 @dataclass
 class HcPlant:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterAvg: float
-    ParameterID: int
-    ParameterMax: float
-    ParameterMedian: float
-    ParameterMin: float
-    ParameterName: str
-    ParameterStddev: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """HcPlant baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    measure_angle: float
+    measure_id: int
+    parameter_avg: float
+    parameter_id: int
+    parameter_max: float
+    parameter_median: float
+    parameter_min: float
+    parameter_name: str
+    parameter_stddev: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcPlant':
+    def from_dict(obj: Any) -> HcPlant:
         return HcPlant(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterAvg=obj.get("ParameterAvg"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterMax=obj.get("ParameterMax"),
-            ParameterMedian=obj.get("ParameterMedian"),
-            ParameterMin=obj.get("ParameterMin"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterStddev=obj.get("ParameterStddev"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_avg=obj.get("ParameterAvg"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_max=obj.get("ParameterMax"),
+            parameter_median=obj.get("ParameterMedian"),
+            parameter_min=obj.get("ParameterMin"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_stddev=obj.get("ParameterStddev"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
-# HcLeaf baseclass
+
 @dataclass
 class HcLeaf:
-    AnalyseID: int
-    DeviceID: int
-    DevicePID: str
-    ExperimentID: int
-    LeafIndex: int
-    MeasureAngle: float
-    MeasureID: int
-    ParameterAvg: float
-    ParameterID: int
-    ParameterMax: float
-    ParameterMedian: float
-    ParameterMin: float
-    ParameterName: str
-    ParameterStddev: float
-    PlantBarcode: str
-    PlantID: int
-    PlantName: str
-    RoundID: int
-    TrayArea: str
-    TrayBarcode: str
-    TrayID: int
+    """HcLeaf baseclass"""
+    analyse_id: int
+    device_id: int
+    device_pid: str
+    experiment_id: int
+    leaf_index: int
+    measure_angle: float
+    measure_id: int
+    parameter_avg: float
+    parameter_id: int
+    parameter_max: float
+    parameter_median: float
+    parameter_min: float
+    parameter_name: str
+    parameter_stddev: float
+    plant_barcode: str
+    plant_id: int
+    plant_name: str
+    round_id: int
+    tray_area: str
+    tray_barcode: str
+    tray_id: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcLeaf':
+    def from_dict(obj: Any) -> HcLeaf:
         return HcLeaf(
-            AnalyseID=obj.get("AnalyseID"),
-            DeviceID=obj.get("DeviceID"),
-            DevicePID=obj.get("DevicePID"),
-            ExperimentID=obj.get("ExperimentID"),
-            LeafIndex=obj.get("LeafIndex"),
-            MeasureAngle=obj.get("MeasureAngle"),
-            MeasureID=obj.get("MeasureID"),
-            ParameterAvg=obj.get("ParameterAvg"),
-            ParameterID=obj.get("ParameterID"),
-            ParameterMax=obj.get("ParameterMax"),
-            ParameterMedian=obj.get("ParameterMedian"),
-            ParameterMin=obj.get("ParameterMin"),
-            ParameterName=obj.get("ParameterName"),
-            ParameterStddev=obj.get("ParameterStddev"),
-            PlantBarcode=obj.get("PlantBarcode"),
-            PlantID=obj.get("PlantID"),
-            PlantName=obj.get("PlantName"),
-            RoundID=obj.get("RoundID"),
-            TrayArea=obj.get("TrayArea"),
-            TrayBarcode=obj.get("TrayBarcode"),
-            TrayID=obj.get("TrayID")
+            analyse_id=obj.get("AnalyseID"),
+            device_id=obj.get("DeviceID"),
+            device_pid=obj.get("DevicePID"),
+            experiment_id=obj.get("ExperimentID"),
+            leaf_index=obj.get("LeafIndex"),
+            measure_angle=obj.get("MeasureAngle"),
+            measure_id=obj.get("MeasureID"),
+            parameter_avg=obj.get("ParameterAvg"),
+            parameter_id=obj.get("ParameterID"),
+            parameter_max=obj.get("ParameterMax"),
+            parameter_median=obj.get("ParameterMedian"),
+            parameter_min=obj.get("ParameterMin"),
+            parameter_name=obj.get("ParameterName"),
+            parameter_stddev=obj.get("ParameterStddev"),
+            plant_barcode=obj.get("PlantBarcode"),
+            plant_id=obj.get("PlantID"),
+            plant_name=obj.get("PlantName"),
+            round_id=obj.get("RoundID"),
+            tray_area=obj.get("TrayArea"),
+            tray_barcode=obj.get("TrayBarcode"),
+            tray_id=obj.get("TrayID")
         )
 
 
-# Hyperspectral image by measurement ID
 @dataclass
 class HcImagingMeasure:
-    HcImaging: HcImaging
+    """Hyperspectral image by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcImaging':
+    def from_dict(obj: Any) -> HcImaging:
         if obj.get("JsonHcImagingByIDResult") is None:
             return None
-        
         return HcImaging.from_dict(obj.get("JsonHcImagingByIDResult"))
-    
-# Hyperspectral image for tray
+
+
 @dataclass
 class HcImagingWrapper:
-    HcImaging: HcImaging
+    """Hyperspectral image for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcImaging':
+    def from_dict(obj: Any) -> List[HcImaging]:
         if obj.get("JsonHcImagingResult") is None:
             return []
-        
-        return [HcImaging.from_dict(y) for y in obj.get("JsonHcImagingResult")] 
+        return [HcImaging.from_dict(y) for y in obj.get("JsonHcImagingResult")]
 
-# Hyperspectral extended by measurement ID
+
 @dataclass
 class HcImagingExtendedDataMeasure:
-    HcMeasure: HcMeasure
+    """Hyperspectral extended by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcMeasure':
+    def from_dict(obj: Any) -> HcMeasure:
         if obj.get("JsonHcMeasureExtendedDataByIDResult") is None:
             return None
-        
         return HcMeasure.from_dict(obj.get("JsonHcMeasureExtendedDataByIDResult"))
 
-# Hyperspectral extended for tray
+
 @dataclass
 class HcImagingExtendedData:
-    HcMeasure: HcMeasure
+    """Hyperspectral extended for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcMeasure':
+    def from_dict(obj: Any) -> HcMeasure:
         if obj.get("JsonHcMeasureExtendedDataResult") is None:
             return None
-        
-        return HcMeasure.from_dict(obj.get("JsonHcMeasureExtendedDataResult"))    
+        return HcMeasure.from_dict(obj.get("JsonHcMeasureExtendedDataResult"))
 
-# Hyperspectral rgb image by measurement ID
+
 @dataclass
 class HcRgbImageMeasure:
-    HcRgb: HcRgb
+    """Hyperspectral rgb image by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcRgb':
+    def from_dict(obj: Any) -> HcRgb:
         if obj.get("JsonHcRgbImageByMeasureIDResult") is None:
             return None
-        
-        return HcRgb.from_dict(obj.get("JsonHcRgbImageByMeasureIDResult"))    
-    
-# Hyperspectral rgb image for tray
+        return HcRgb.from_dict(obj.get("JsonHcRgbImageByMeasureIDResult"))
+
+
 @dataclass
 class HcRgbImage:
-    HcRgb: HcRgb
+    """Hyperspectral rgb image for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcRgb':
+    def from_dict(obj: Any) -> List[HcRgb]:
         if obj.get("JsonHcRgbImageResult") is None:
             return []
-        
-        return [HcRgb.from_dict(y) for y in obj.get("JsonHcRgbImageResult")] 
-    
-# Hyperspectral plant mask by measurement ID
+        return [HcRgb.from_dict(y) for y in obj.get("JsonHcRgbImageResult")]
+
+
 @dataclass
 class HcPlantMaskMeasure:
-    HcMask: HcMask
+    """Hyperspectral plant mask by measurement ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcMask':
+    def from_dict(obj: Any) -> HcMask:
         if obj.get("JsonHcPlantMaskByMeasureIDResult") is None:
             return None
-        
-        return HcMask.from_dict(obj.get("JsonHcPlantMaskByMeasureIDResult"))    
-    
-# Hyperspectral plant mask for tray
+        return HcMask.from_dict(obj.get("JsonHcPlantMaskByMeasureIDResult"))
+
+
 @dataclass
 class HcPlantMask:
-    HcMask: HcMask
+    """Hyperspectral plant mask for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcMask':
+    def from_dict(obj: Any) -> List[HcMask]:
         if obj.get("JsonHcPlantMaskResult") is None:
             return []
-        
-        return [HcMask.from_dict(y) for y in obj.get("JsonHcPlantMaskResult")] 
-    
-# Hyperspectral parameter by parm ID
+        return [HcMask.from_dict(y) for y in obj.get("JsonHcPlantMaskResult")]
+
+
 @dataclass
 class HcParamWrapper:
-    HcParam: HcParam
+    """Hyperspectral parameter by parm ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcParam':
+    def from_dict(obj: Any) -> HcParam:
         if obj.get("JsonHcParamResult") is None:
             return None
-        
-        return HcParam.from_dict(obj.get("JsonHcParamResult"))    
-    
-# Hyperspectral parameters by analysis ID
+        return HcParam.from_dict(obj.get("JsonHcParamResult"))
+
+
 @dataclass
 class HcParamUsedAnalyse:
-    HcParam: HcParam
+    """Hyperspectral parameters by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcParam':
+    def from_dict(obj: Any) -> List[HcParam]:
         if obj.get("JsonHcUsedParamByAnalyseIDResult") is None:
             return []
-        
-        return [HcParam.from_dict(y) for y in obj.get("JsonHcUsedParamByAnalyseIDResult")] 
+        return [HcParam.from_dict(y) for y in obj.get("JsonHcUsedParamByAnalyseIDResult")]
 
-# Hyperspectral parameters for tray
+
 @dataclass
 class HcParamUsed:
-    HcParam: HcParam
+    """Hyperspectral parameters for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcParam':
+    def from_dict(obj: Any) -> List[HcParam]:
         if obj.get("JsonHcUsedParamResult") is None:
             return []
-        
-        return [HcParam.from_dict(y) for y in obj.get("JsonHcUsedParamResult")] 
-    
-# Hyperspectral image parameters by analysis ID
+        return [HcParam.from_dict(y) for y in obj.get("JsonHcUsedParamResult")]
+
+
 @dataclass
 class HcParamImageAnalyse:
-    HcImage: HcImage
+    """Hyperspectral image parameters by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcImage':
+    def from_dict(obj: Any) -> HcImage:
         if obj.get("JsonHcParameterImageByAnalyseIDResult") is None:
             return None
-        
-        return HcImage.from_dict(obj.get("JsonHcParameterImageByAnalyseIDResult"))    
+        return HcImage.from_dict(obj.get("JsonHcParameterImageByAnalyseIDResult"))
 
-# Hyperspectral image parameters for tray
+
 @dataclass
 class HcParamImage:
-    HcImage: HcImage
+    """Hyperspectral image parameters for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcImage':
+    def from_dict(obj: Any) -> List[HcImage]:
         if obj.get("JsonHcParameterImageResult") is None:
             return []
-        
-        return [HcImage.from_dict(y) for y in obj.get("JsonHcParameterImageResult")]         
+        return [HcImage.from_dict(y) for y in obj.get("JsonHcParameterImageResult")]
 
-# Hyperspectral plant parameter by analysis ID
+
 @dataclass
 class HcPlantParamAnalyse:
-    HcPlant: HcPlant
+    """Hyperspectral plant parameter by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcPlant':
+    def from_dict(obj: Any) -> List[HcPlant]:
         if obj.get("JsonHcPlantParamByAnalyseIDResult") is None:
             return []
-        
-        return [HcPlant.from_dict(y) for y in obj.get("JsonHcPlantParamByAnalyseIDResult")]    
+        return [HcPlant.from_dict(y) for y in obj.get("JsonHcPlantParamByAnalyseIDResult")]
 
-# Hyperspectral plant parameter for tray
+
 @dataclass
 class HcPlantParam:
-    HcPlant: HcPlant
+    """Hyperspectral plant parameter for tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcPlant':
+    def from_dict(obj: Any) -> List[HcPlant]:
         if obj.get("JsonHcPlantParamResult") is None:
             return []
-        
-        return [HcPlant.from_dict(y) for y in obj.get("JsonHcPlantParamResult")]    
+        return [HcPlant.from_dict(y) for y in obj.get("JsonHcPlantParamResult")]
 
-# Hyperspectral leaf parameter by analysis ID
+
 @dataclass
 class HcLeafParamAnalyse:
-    HcLeaf: HcLeaf
+    """Hyperspectral leaf parameter by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'HcLeaf':
+    def from_dict(obj: Any) -> List[HcLeaf]:
         if obj.get("JsonHcLeafParamByAnalyseIDResult") is None:
             return []
-        
-        return [HcLeaf.from_dict(y) for y in obj.get("JsonHcLeafParamByAnalyseIDResult")]   
+        return [HcLeaf.from_dict(y) for y in obj.get("JsonHcLeafParamByAnalyseIDResult")]
 
-# Hyperspectral leaf parameter for tray
+
 @dataclass
 class HcLeafParam:
-    HcLeaf: HcLeaf
+    """Hyperspectral leaf parameter for tray"""
 
     @staticmethod
     def from_dict(obj: Any) -> 'HcLeaf':
         if obj.get("JsonHcLeafParamsResult") is None:
             return []
-        
-        return [HcLeaf.from_dict(y) for y in obj.get("JsonHcLeafParamsResult")]   
+        return [HcLeaf.from_dict(y) for y in obj.get("JsonHcLeafParamsResult")]

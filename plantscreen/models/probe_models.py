@@ -1,77 +1,79 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 from typing import Any
-import json
 
-# Probe baseclass
+
 @dataclass
 class Probe:
-    ProbeFamily: str
-    ProbeID: int
-    ProbeName: str
-    ProbePlacement: str
-    ProbeUnit: str
-    ProbeVariable: str
+    """Probe baseclass"""
+    probe_family: str
+    probe_id: int
+    probe_name: str
+    probe_placement: str
+    probe_unit: str
+    probe_variable: str
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Probe':
+    def from_dict(obj: Any) -> Probe:
         return Probe(
-            ProbeFamily=obj.get("ProbeFamily"),
-            ProbeID=obj.get("ProbeID"),
-            ProbeName=obj.get("ProbeName"),
-            ProbePlacement=obj.get("ProbePlacement"),
-            ProbeUnit=obj.get("ProbeUnit"),
-            ProbeVariable=obj.get("ProbeVariable")
+            probe_family=obj.get("ProbeFamily"),
+            probe_id=obj.get("ProbeID"),
+            probe_name=obj.get("ProbeName"),
+            probe_placement=obj.get("ProbePlacement"),
+            probe_unit=obj.get("ProbeUnit"),
+            probe_variable=obj.get("ProbeVariable")
         )
 
-# ProbeValue baseclass
+
 @dataclass
 class ProbeValue:
-    ProbeID: int
-    ProbeName: str
-    ProbeUnit: str
-    ProbeValue: float
-    RecordDate: int
+    """ProbeValue baseclass"""
+    probe_id: int
+    probe_name: str
+    probe_unit: str
+    probe_value: float
+    record_date: int
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ProbeValue':
+    def from_dict(obj: Any) -> ProbeValue:
         return ProbeValue(
-            ProbeID=obj.get("ProbeID"),
-            ProbeName=obj.get("ProbeName"),
-            ProbeUnit=obj.get("ProbeUnit"),
-            ProbeValue=obj.get("ProbeValue"),
-            RecordDate=obj.get("RecordDate")
+            probe_id=obj.get("ProbeID"),
+            probe_name=obj.get("ProbeName"),
+            probe_unit=obj.get("ProbeUnit"),
+            probe_value=obj.get("ProbeValue"),
+            record_date=obj.get("RecordDate")
         )
-    
-# List of environment sensors (all used probes)
+
+
 @dataclass
 class ProbeWrapper:
-    Probe: List[Probe]
+    """List of environment sensors (all used probes)"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Probe':
+    def from_dict(obj: Any) -> List[Probe]:
         if obj.get("JsonProbeResult") is None:
             return []
         return [Probe.from_dict(y) for y in obj.get("JsonProbeResult")]
 
-# List probevalues in period
+
 @dataclass
 class ProbeValuesDate:
-    ProbeValues: List[ProbeValue]
+    """List probevalues in period"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ProbeValuesDate':
+    def from_dict(obj: Any) -> List[ProbeValue]:
         if obj.get("JsonProbeValueByDateResult") is None:
             return []
         return [ProbeValue.from_dict(y) for y in obj.get("JsonProbeValueByDateResult")]
-    
-# Environment Probe Value by ID and Date
+
+
 @dataclass
 class ProbeValueDateProbe:
-    ProbeValue: ProbeValue
+    """Environment Probe Value by ID and Date"""
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ProbeValueDateProbe':
+    def from_dict(obj: Any) -> List[ProbeValue]:
         if obj.get("JsonProbeValueByIDAndDateResult") is None:
             return []
-        return [ProbeValue.from_dict(y) for y in obj.get("JsonProbeValueByIDAndDateResult")] 
+        return [ProbeValue.from_dict(y) for y in obj.get("JsonProbeValueByIDAndDateResult")]
