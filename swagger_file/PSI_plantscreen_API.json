@@ -8178,7 +8178,7 @@
           "RoundID": {
             "type": "integer"
           },
-          "ActionD": {
+          "ActionID": {
             "type": "integer"
           },
           "ExperimentID": {
