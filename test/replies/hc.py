@@ -1,5 +1,5 @@
 """"Mock replies for the Hyperspectral API"""
-MOCK_HC_IMAGING_REPLY = {
+MOCK_HC_IMAGING = {
     "ActionID": 4858,
     "DeviceID": 46,
     "DevicePID": "VNIR",
@@ -20,7 +20,7 @@ MOCK_HC_IMAGING_REPLY = {
     "DataHeaderPath": r"""2021-11-21\2021-11-21--15-32-16_round-0_cam-1_tray-11-15__5.hdr"""
 }
 
-MOCK_HC_DATA_REPLY = {
+MOCK_HC_DATA = {
     "DeviceID": 7,
     "ExtendedData": """<DataSet> <Item name="gain" \
                     type="int" unit="a.u.">236</Item> <Item \
@@ -37,7 +37,7 @@ MOCK_HC_DATA_REPLY = {
     "TrayID": 248
 }
 
-MOCK_HC_RGB_IMAGE_REPLY = {
+MOCK_HC_RGB_IMAGE = {
     "DeviceID": 46,
     "DevicePID": "VNIR",
     "ExperimentID": 75,
@@ -49,7 +49,7 @@ MOCK_HC_RGB_IMAGE_REPLY = {
     "TrayID": 3915
 }
 
-MOCK_HC_PLANT_MASK_REPLY = {
+MOCK_HC_PLANT_MASK = {
     "DeviceID": 46,
     "DevicePID": "VNIR",
     "ExperimentID": 75,
@@ -63,56 +63,35 @@ MOCK_HC_PLANT_MASK_REPLY = {
     "TrayID": 3915
 }
 
-MOCK_HC_PARAM_REPLY = {
+MOCK_HC_PARAM = {
     "ParameterID": 1,
     "ParameterName": "PRI",
     "ParameterUnit": ""
 }
 
-MOCK_HC_PARAM_REPLY_2 = {
+MOCK_HC_PARAM_2 = {
     "ParameterID": 2,
     "ParameterName": "NDVI2",
     "ParameterUnit": ""
 }
 
-MOCK_HC_PARAM_IMAGE_ANALYSE_REPLY = {
-    "JsonHcParameterImageByAnalyseIDResult": {
-        "AnalyseID": 18551,
-        "DeviceID": 46,
-        "DevicePID": "VNIR",
-        "ExperimentID": 75,
-        "MeasureAngle": 0,
-        "MeasureID": 25229,
-        "ParameterID": 7,
-        "ParameterImagePath": r"""2021-11-21\HcParamImage_2021-11-21_15-32-16_6.fimg""",
-        "ParameterName": "OSAVAI",
-        "RoundID": 3810,
-        "TrayBarcode": "11-15__5",
-        "TrayID": 3915
-    }
+
+MOCK_HC_PARAM_IMAGE = {
+    "AnalyseID": 18281,
+    "DeviceID": 46,
+    "DevicePID": "VNIR",
+    "ExperimentID": 75,
+    "MeasureAngle": 0,
+    "MeasureID": 24959,
+    "ParameterID": 7,
+    "ParameterImagePath": r"""2021-11-14\HcParamImage_2021-11-14_15-32-01_6.fimg""",
+    "ParameterName": "OSAVI",
+    "RoundID": 3781,
+    "TrayBarcode": "25-13__5",
+    "TrayID": 4000
 }
 
-MOCK_HC_PARAM_IMAGE_REPLY = {
-    "JsonHcParameterImageResult": [
-        {
-            "AnalyseID": 18281,
-            "DeviceID": 46,
-            "DevicePID": "VNIR",
-            "ExperimentID": 75,
-            "MeasureAngle": 0,
-            "MeasureID": 24959,
-            "ParameterID": 7,
-            "ParameterImagePath": r"""2021-11-14\HcParamImage_2021-11-14_15-32-01_6.fimg""",
-            "ParameterName": "OSAVI",
-            "RoundID": 3781,
-            "TrayBarcode": "25-13__5",
-            "TrayID": 4000
-        }
-    ]
-}
-
-MOCK_PARAM_REPLY = [
-        {
+MOCK_HC_PLANT_PARAM = {
             "AnalyseID": 2230,
             "DeviceID": 168,
             "DevicePID": "VNIR",
@@ -133,8 +112,9 @@ MOCK_PARAM_REPLY = [
             "TrayArea": "A1",
             "TrayBarcode": "PS_Tray_364",
             "TrayID": 93
-        },
-        {
+}
+
+MOCK_HC_PLANT_PARAM_2 = {
             "AnalyseID": 2230,
             "DeviceID": 168,
             "DevicePID": "VNIR",
@@ -155,21 +135,70 @@ MOCK_PARAM_REPLY = [
             "TrayArea": "A5",
             "TrayBarcode": "PS_Tray_364",
             "TrayID": 93
-        }
-    ]
+}
 
-MOCK_HC_IMAGING_MEASURE_REPLY = {"JsonHcImagingByIDResult": MOCK_HC_IMAGING_REPLY}
-MOCK_HC_IMAGING_REPLY = {"JsonHcImagingResult": [MOCK_HC_IMAGING_REPLY]}
-MOCK_HC_IMAGING_EXTENDED_DATA_MEASURE_REPLY = {"JsonHcMeasureExtendedDataByIDResult": MOCK_HC_DATA_REPLY}
-MOCK_HC_IMAGING_EXTENDED_DATA_REPLY = {"JsonHcMeasureExtendedDataResult": MOCK_HC_DATA_REPLY}
-MOCK_HC_RGB_IMAGE_MEASURE_REPLY = {"JsonHcRgbImageByMeasureIDResult": MOCK_HC_RGB_IMAGE_REPLY}
-MOCK_HC_RGB_IMAGE_REPLY = {"JsonHcRgbImageResult": [MOCK_HC_RGB_IMAGE_REPLY]}
-MOCK_HC_PLANT_MASK_MEASURE_REPLY = {"JsonHcPlantMaskByMeasureIDResult": MOCK_HC_PLANT_MASK_REPLY}
-MOCK_HC_PLANT_MASK_REPLY = {"JsonHcPlantMaskResult": [MOCK_HC_PLANT_MASK_REPLY]}
-MOCK_HC_PARAM_REPLY = {"JsonHcParamResult": MOCK_HC_PARAM_REPLY}
-MOCK_HC_PARAM_USED_ANALYSE_REPLY = {"JsonHcUsedParamByAnalyseIDResult": [MOCK_HC_PARAM_REPLY]}
-MOCK_HC_PARAM_USED_REPLY = {"JsonHcUsedParamResult": [MOCK_HC_PARAM_REPLY, MOCK_HC_PARAM_REPLY_2]}
-MOCK_HC_PLANT_PARAM_ANALYSE_REPLY = {"JsonFcPlantParamByAnalyseIDResult": MOCK_PARAM_REPLY}
-MOCK_HC_PLANT_PARAM_REPLY = {"JsonHcPlantParamResult": MOCK_PARAM_REPLY}
-MOCK_HC_LEAF_PARAM_ANALYSE_REPLY = {"JsonHcLeafParamByAnalyseIDResult": MOCK_PARAM_REPLY}
-MOCK_HC_LEAF_PARAM_REPLY = {"JsonHcLeafParamResult": MOCK_PARAM_REPLY}
+MOCK_HC_LEAF_PARAM = {
+    "AnalyseID": 10,
+    "DeviceID": 8,
+    "DevicePID": "VNIR",
+    "ExperimentID": 2,
+    "LeafIndex": 1,
+    "MeasureAngle": 0,
+    "MeasureID": 14,
+    "ParameterAvg": 0.10160069498823517,
+    "ParameterID": 6,
+    "ParameterMax": 0.18943101587918962,
+    "ParameterMedian": 0.07506238796096608,
+    "ParameterMin": 0.028485006833620045,
+    "ParameterName": "MCARI1",
+    "ParameterStddev": 0.052060799122892354,
+    "PlantBarcode": "PS_Tray_120",
+    "PlantID": 72,
+    "PlantName": "IPAP_MA_19",
+    "RoundID": 89,
+    "TrayArea": "A1",
+    "TrayBarcode": "PS_Tray_120",
+    "TrayID": 71
+}
+
+MOCK_HC_LEAF_PARAM_2 = {
+    "AnalyseID": 10,
+    "DeviceID": 8,
+    "DevicePID": "VNIR",
+    "ExperimentID": 2,
+    "LeafIndex": 2,
+    "MeasureAngle": 0,
+    "MeasureID": 14,
+    "ParameterAvg": 0.2312990914821672,
+    "ParameterID": 6,
+    "ParameterMax": 0.5477579569460691,
+    "ParameterMedian": 0.2226733140697425,
+    "ParameterMin": 0.014776641743017335,
+    "ParameterName": "MCARI1",
+    "ParameterStddev": 0.11508643635455965,
+    "PlantBarcode": "PS_Tray_120",
+    "PlantID": 72,
+    "PlantName": "IPAP_MA_19",
+    "RoundID": 89,
+    "TrayArea": "A1",
+    "TrayBarcode": "PS_Tray_120",
+    "TrayID": 71
+}
+
+MOCK_HC_IMAGING_MEASURE_REPLY = {"JsonHcImagingByIDResult": MOCK_HC_IMAGING}
+MOCK_HC_IMAGING_REPLY = {"JsonHcImagingResult": [MOCK_HC_IMAGING]}
+MOCK_HC_IMAGING_EXTENDED_DATA_MEASURE_REPLY = {"JsonHcMeasureExtendedDataByIDResult": MOCK_HC_DATA}
+MOCK_HC_IMAGING_EXTENDED_DATA_REPLY = {"JsonHcMeasureExtendedDataResult": MOCK_HC_DATA}
+MOCK_HC_RGB_IMAGE_MEASURE_REPLY = {"JsonHcRgbImageByMeasureIDResult": MOCK_HC_RGB_IMAGE}
+MOCK_HC_RGB_IMAGE_REPLY = {"JsonHcRgbImageResult": [MOCK_HC_RGB_IMAGE]}
+MOCK_HC_PLANT_MASK_MEASURE_REPLY = {"JsonHcPlantMaskByMeasureIDResult": MOCK_HC_PLANT_MASK}
+MOCK_HC_PLANT_MASK_REPLY = {"JsonHcPlantMaskResult": [MOCK_HC_PLANT_MASK]}
+MOCK_HC_PARAM_REPLY = {"JsonHcParamResult": MOCK_HC_PARAM}
+MOCK_HC_PARAM_USED_ANALYSE_REPLY = {"JsonHcUsedParamByAnalyseIDResult": [MOCK_HC_PARAM]}
+MOCK_HC_PARAM_USED_REPLY = {"JsonHcUsedParamResult": [MOCK_HC_PARAM, MOCK_HC_PARAM_2]}
+MOCK_HC_PARAM_IMAGE_ANALYSE_REPLY = {"JsonHcParameterImageByAnalyseIDResult": MOCK_HC_PARAM_IMAGE}
+MOCK_HC_PARAM_IMAGE_REPLY = {"JsonHcParameterImageResult": [MOCK_HC_PARAM_IMAGE]}
+MOCK_HC_PLANT_PARAM_ANALYSE_REPLY = {"JsonHcPlantParamByAnalyseIDResult": [MOCK_HC_PLANT_PARAM]}
+MOCK_HC_PLANT_PARAM_REPLY = {"JsonHcPlantParamResult": [MOCK_HC_PLANT_PARAM, MOCK_HC_PLANT_PARAM_2]}
+MOCK_HC_LEAF_PARAM_ANALYSE_REPLY = {"JsonHcLeafParamByAnalyseIDResult": [MOCK_HC_LEAF_PARAM, MOCK_HC_LEAF_PARAM_2]}
+MOCK_HC_LEAF_PARAM_REPLY = {"JsonHcLeafParamsResult": [MOCK_HC_LEAF_PARAM, MOCK_HC_LEAF_PARAM_2]}

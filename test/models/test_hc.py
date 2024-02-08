@@ -262,10 +262,10 @@ class HCModels(unittest.TestCase):
         self.assertEqual(reply, [])
 
     def test_hc_param_image(self):
-        reply = models.hc.HcParamImage.from_dict(replies.hc.MOCK_HC_RGB_IMAGE_REPLY)
-        self.assertEqual(len(reply), len(replies.hc.MOCK_HC_RGB_IMAGE_REPLY['JsonHcParameterImageResult']))
-        for i in range(0, len(replies.hc.MOCK_HC_RGB_IMAGE_REPLY['JsonHcParameterImageResult'])):
-            self.hc_image_assertor(reply[i], replies.hc.MOCK_HC_RGB_IMAGE_REPLY['JsonHcParameterImageResult'][i])
+        reply = models.hc.HcParamImage.from_dict(replies.hc.MOCK_HC_PARAM_IMAGE_REPLY)
+        self.assertEqual(len(reply), len(replies.hc.MOCK_HC_PARAM_IMAGE_REPLY['JsonHcParameterImageResult']))
+        for i in range(0, len(replies.hc.MOCK_HC_PARAM_IMAGE_REPLY['JsonHcParameterImageResult'])):
+            self.hc_image_assertor(reply[i], replies.hc.MOCK_HC_PARAM_IMAGE_REPLY['JsonHcParameterImageResult'][i])
 
     def test_hc_plant_param_analysis_none(self):
         reply = models.hc.HcPlantParamAnalyse.from_dict({'JsonHcPlantParamByAnalyseIDResult': None})

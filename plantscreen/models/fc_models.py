@@ -336,10 +336,10 @@ class FcParamImageAnalyse:
     """Fluorcam image parameters by analysis ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> List[FcAnalyse]:
-        if obj.get("JsonFcUsedParamByAnalyseIDResult") is None:
-            return []
-        return [FcAnalyse.from_dict(y) for y in obj.get("JsonFcUsedParamByAnalyseIDResult")]
+    def from_dict(obj: Any) -> FcAnalyse:
+        if obj.get("JsonFcParameterImageByAnalyseIDResult") is None:
+            return None
+        return FcAnalyse.from_dict(obj.get("JsonFcParameterImageByAnalyseIDResult"))
 
 
 @dataclass
