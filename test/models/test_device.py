@@ -24,6 +24,10 @@ class DeviceModels(unittest.TestCase):
         self.assertEqual(exp_class.device_validity_start, exp_dict['DeviceValidityStart'])
         self.assertEqual(exp_class.profile_id, exp_dict['ProfileID'])
 
+    def test_device_none(self):
+        reply = models.device.DeviceWrapper.from_dict({'JsonDeviceResult': None})
+        self.device_assertor(reply, None)
+
     def test_device(self):
         reply = models.device.DeviceWrapper.from_dict(replies.devices.MOCK_DEVICE_REPLY)
         self.device_assertor(reply, replies.devices.MOCK_DEVICE_REPLY['JsonDeviceResult'])
@@ -60,6 +64,7 @@ class DeviceModels(unittest.TestCase):
 if __name__ == "__main__":
     """"Helper for debugging purposes"""
     test_case = DeviceModels()
+    test_case.test_device_none()
     test_case.test_device()
     test_case.test_device_active_none()
     test_case.test_device_active_empty()
