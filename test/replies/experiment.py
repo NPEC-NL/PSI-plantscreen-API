@@ -10,63 +10,35 @@ MOCK_EXPERIMENT_ID_REPLY = {
     ]
 }
 
-MOCK_EXPERIMENT_REPLY = {
-    "JsonExperimentResult": {
-        "CreatedDate": "2021-07-22 13:53:42",
-        "ExperimentID": 72,
-        "ExperimentInfo": "Data can be deleted",
-        "ExperimentName": "Modular - testing -BARA",
-        "ExperimentStatus": "Active",
-        "OwnerID": 6,
-        "StatusChangedDate": "2021-07-22 13:53:42"
-    }
+MOCK_EXPERIMENT_BASE = {
+    "CreatedDate": "2021-07-22 13:53:42",
+    "ExperimentID": 72,
+    "ExperimentInfo": "Data can be deleted",
+    "ExperimentName": "Modular - testing -BARA",
+    "ExperimentStatus": "Active",
+    "OwnerID": 6,
+    "StatusChangedDate": "2021-07-22 13:53:42"
 }
+
+MOCK_EXPERIMENT_BASE_2 = {
+    "CreatedDate": "2021-08-11 15:42:05",
+    "ExperimentID": 73,
+    "ExperimentInfo": "Round 1",
+    "ExperimentName": "PS90 CAPITALIZE_B1K",
+    "ExperimentStatus": "Active",
+    "OwnerID": 6,
+    "StatusChangedDate": "2021-08-11 15:42:05"
+}
+
+MOCK_EXPERIMENT_REPLY = {"JsonExperimentResult": MOCK_EXPERIMENT_BASE}
 
 MOCK_EXPERIMENT_DATE_REPLY = {
-    "JsonExperimentByDateResult": [
-        {
-            "CreatedDate": "2021-07-22 13:53:42",
-            "ExperimentID": 72,
-            "ExperimentInfo": "Data can be deleted",
-            "ExperimentName": "Modular - testing -BARA",
-            "ExperimentStatus": "Active",
-            "OwnerID": 6,
-            "StatusChangedDate": "2021-07-22 13:53:42"
-        },
-        {
-            "CreatedDate": "2021-08-11 15:42:05",
-            "ExperimentID": 73,
-            "ExperimentInfo": "Round 1",
-            "ExperimentName": "PS90 CAPITALIZE_B1K",
-            "ExperimentStatus": "Active",
-            "OwnerID": 6,
-            "StatusChangedDate": "2021-08-11 15:42:05"
-        }
-    ]
-}
+    "JsonExperimentByDateResult": [MOCK_EXPERIMENT_BASE, MOCK_EXPERIMENT_BASE_2]
+    }
 
 MOCK_EXPERIMENT_OWNER_REPLY = {
-    "JsonExperimentByOwnerResult": [
-        {
-            "CreatedDate": "2017-12-06 13:12:56",
-            "ExperimentID": 18,
-            "ExperimentInfo": "Various tests",
-            "ExperimentName": "TEST",
-            "ExperimentStatus": "Deleted",
-            "OwnerID": 11,
-            "StatusChangedDate": "2020-06-02 13:28:57"
-        },
-        {
-            "CreatedDate": "2018-0426 10:06:08",
-            "ExperimentID": 31,
-            "ExperimentInfo": "K.K",
-            "ExperimentName": "PS37_wheatDrought",
-            "ExperimentStatus": "Active",
-            "OwnerID": 11,
-            "StatusChangedDate": "2018-04-26 10:06:08"
-        }
-    ]
-}
+    "JsonExperimentByOwnerResult": [MOCK_EXPERIMENT_BASE, MOCK_EXPERIMENT_BASE_2]
+    }
 
 MOCK_OWNER_ID_REPLY = {
     "JsonOwnerIDResult": [

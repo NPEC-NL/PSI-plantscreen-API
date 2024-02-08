@@ -29,30 +29,6 @@ class Action:
 
 
 @dataclass
-class NoAction:
-    """NoAction baseclass"""
-    action_id: int
-    experiment_id: int
-    action_group_id: int
-    action_date_start: str
-    action_status: str
-    action_done: bool
-    action_running: bool
-
-    @staticmethod
-    def from_dict(obj: Any) -> NoAction:
-        return NoAction(
-            action_id=obj.get("ActionID"),
-            experiment_id=obj.get("ExperimentID"),
-            action_group_id=obj.get("ActionGroupID"),
-            action_date_start=obj.get("ActionDateStart"),
-            action_status=obj.get("ActionStatus"),
-            action_done=obj.get("ActionDone"),
-            action_running=obj.get("ActionRunning")
-        )
-
-
-@dataclass
 class Group:
     """Group baseclass"""
     action_protocol_id: int
@@ -121,10 +97,10 @@ class ActionNotDoneExperiment:
     """Unfinished actions by experiment"""
 
     @staticmethod
-    def from_dict(obj: Any) -> List[NoAction]:
+    def from_dict(obj: Any) -> List[Action]:
         if obj.get("JsonActionByExperimentIDNotDoneResult") is None:
             return []
-        return [NoAction.from_dict(y) for y in obj.get("JsonActionByExperimentIDNotDoneResult")]
+        return [Action.from_dict(y) for y in obj.get("JsonActionByExperimentIDNotDoneResult")]
 
 
 @dataclass
@@ -154,10 +130,10 @@ class ActionProtocol:
     """Scheduled actions by protocol ID"""
 
     @staticmethod
-    def from_dict(obj: Any) -> List[Protocol]:
+    def from_dict(obj: Any) -> Protocol:
         if obj.get("JsonActionProtocolResult") is None:
-            return []
-        return [Protocol.from_dict(y) for y in obj.get("JsonActionProtocolResult")]
+            return None
+        return Protocol.from_dict(obj.get("JsonActionProtocolResult"))
 
 
 @dataclass

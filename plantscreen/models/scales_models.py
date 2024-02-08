@@ -47,48 +47,6 @@ class ScalesMeasure:
 
 
 @dataclass
-class ScalesMeasure2:
-    """ScalesMeasure2 baseclass"""
-    action_id: int
-    device_id: int
-    device_pid: str
-    experiment_id: int
-    measure_date: str
-    measure_id: int
-    plant_barcode: str
-    plant_id: int
-    plant_name: str
-    plant_weight: float
-    round_id: int
-    tray_area: str
-    tray_barcode: str
-    tray_id: int
-    tray_profile_id: int
-    watered: bool
-
-    @staticmethod
-    def from_dict(obj: Any) -> ScalesMeasure2:
-        return ScalesMeasure2(
-            action_id=obj.get("ActionID"),
-            device_id=obj.get("DeviceID"),
-            device_pid=obj.get("DevicePID"),
-            experiment_id=obj.get("ExperimentID"),
-            measure_date=obj.get("MeasureDate"),
-            measure_id=obj.get("MeasureID"),
-            plant_barcode=obj.get("PlantBarcode"),
-            plant_id=obj.get("PlantID"),
-            plant_name=obj.get("PlantName"),
-            plant_weight=obj.get("PlantWeight"),
-            round_id=obj.get("RoundID"),
-            tray_area=obj.get("TrayArea"),
-            tray_barcode=obj.get("TrayBarcode"),
-            tray_id=obj.get("TrayID"),
-            tray_profile_id=obj.get("TrayProfileID"),
-            watered=obj.get("Watered")
-        )
-
-
-@dataclass
 class ScalesPlant:
     """ScalesPlant baseclass"""
     plant_barcode: str
@@ -124,10 +82,10 @@ class ScalesPlantWeight:
     """Scales Measure for Tray"""
 
     @staticmethod
-    def from_dict(obj: Any) -> List[ScalesMeasure2]:
+    def from_dict(obj: Any) -> List[ScalesMeasure]:
         if obj.get("JsonScalesMeasureResult") is None:
             return []
-        return [ScalesMeasure2.from_dict(y) for y in obj.get("JsonScalesMeasureResult")]
+        return [ScalesMeasure.from_dict(y) for y in obj.get("JsonScalesMeasureResult")]
 
 
 @dataclass
