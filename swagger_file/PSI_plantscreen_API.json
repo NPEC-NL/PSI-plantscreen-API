@@ -7833,7 +7833,7 @@
         "type": "object",
         "properties": {
           "JsonIrImagingByIDResult": {
-            "$ref": "#/components/schemas/IrImaging"
+            "$ref": "#/components/schemas/Imaging"
           }
         }
       },
@@ -7843,7 +7843,7 @@
           "JsonIrImagingResult": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IrImaging"
+              "$ref": "#/components/schemas/Imaging"
             }
           }
         }
