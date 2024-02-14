@@ -3,7 +3,7 @@ import plantscreen.models as models
 from typing import List
 
 
-class Imaging_API():
+class ImagingAPI():
     """ Wrapper around the automatically  generated swagger client.
        \n return class instances instead of dictionaries """
     def __init__(self, server, poort):

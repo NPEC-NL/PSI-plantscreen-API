@@ -2,14 +2,14 @@ from __future__ import print_function
 from plantscreen.swagger_client.rest import ApiException
 from pprint import pprint
 import datetime
-from plantscreen.PSI_api import PSI_API
+from plantscreen.complete_api import Plantscreen_API
 
 # create an instance of the API class
 
 # G6
 #api = PSI_API('192.168.80.8', 8061) 
 # G7
-api = PSI_API('http://npec-psi-g7.wurnet.nl', 8061) 
+api = Plantscreen_API('http://npec-psi-g7.wurnet.nl', 8061)
 
 try:
 
