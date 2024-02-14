@@ -28,14 +28,40 @@ class JsonRoundResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_round_result': 'Round'
     }
 
     attribute_map = {
+        'json_round_result': 'JsonRoundResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_round_result=None):  # noqa: E501
         """JsonRoundResult - a model defined in Swagger"""  # noqa: E501
+        self._json_round_result = None
         self.discriminator = None
+        if json_round_result is not None:
+            self.json_round_result = json_round_result
+
+    @property
+    def json_round_result(self):
+        """Gets the json_round_result of this JsonRoundResult.  # noqa: E501
+
+
+        :return: The json_round_result of this JsonRoundResult.  # noqa: E501
+        :rtype: Round
+        """
+        return self._json_round_result
+
+    @json_round_result.setter
+    def json_round_result(self, json_round_result):
+        """Sets the json_round_result of this JsonRoundResult.
+
+
+        :param json_round_result: The json_round_result of this JsonRoundResult.  # noqa: E501
+        :type: Round
+        """
+
+        self._json_round_result = json_round_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

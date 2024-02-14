@@ -28,14 +28,40 @@ class JsonExperimentResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_experiment_result': 'Experiment'
     }
 
     attribute_map = {
+        'json_experiment_result': 'JsonExperimentResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_experiment_result=None):  # noqa: E501
         """JsonExperimentResult - a model defined in Swagger"""  # noqa: E501
+        self._json_experiment_result = None
         self.discriminator = None
+        if json_experiment_result is not None:
+            self.json_experiment_result = json_experiment_result
+
+    @property
+    def json_experiment_result(self):
+        """Gets the json_experiment_result of this JsonExperimentResult.  # noqa: E501
+
+
+        :return: The json_experiment_result of this JsonExperimentResult.  # noqa: E501
+        :rtype: Experiment
+        """
+        return self._json_experiment_result
+
+    @json_experiment_result.setter
+    def json_experiment_result(self, json_experiment_result):
+        """Sets the json_experiment_result of this JsonExperimentResult.
+
+
+        :param json_experiment_result: The json_experiment_result of this JsonExperimentResult.  # noqa: E501
+        :type: Experiment
+        """
+
+        self._json_experiment_result = json_experiment_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

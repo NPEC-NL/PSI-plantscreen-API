@@ -28,14 +28,40 @@ class JsonHcMeasureExtendedDataByIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_hc_measure_extended_data_by_id_result': 'MeasureExtendedData'
     }
 
     attribute_map = {
+        'json_hc_measure_extended_data_by_id_result': 'JsonHcMeasureExtendedDataByIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_hc_measure_extended_data_by_id_result=None):  # noqa: E501
         """JsonHcMeasureExtendedDataByIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_hc_measure_extended_data_by_id_result = None
         self.discriminator = None
+        if json_hc_measure_extended_data_by_id_result is not None:
+            self.json_hc_measure_extended_data_by_id_result = json_hc_measure_extended_data_by_id_result
+
+    @property
+    def json_hc_measure_extended_data_by_id_result(self):
+        """Gets the json_hc_measure_extended_data_by_id_result of this JsonHcMeasureExtendedDataByIDResult.  # noqa: E501
+
+
+        :return: The json_hc_measure_extended_data_by_id_result of this JsonHcMeasureExtendedDataByIDResult.  # noqa: E501
+        :rtype: MeasureExtendedData
+        """
+        return self._json_hc_measure_extended_data_by_id_result
+
+    @json_hc_measure_extended_data_by_id_result.setter
+    def json_hc_measure_extended_data_by_id_result(self, json_hc_measure_extended_data_by_id_result):
+        """Sets the json_hc_measure_extended_data_by_id_result of this JsonHcMeasureExtendedDataByIDResult.
+
+
+        :param json_hc_measure_extended_data_by_id_result: The json_hc_measure_extended_data_by_id_result of this JsonHcMeasureExtendedDataByIDResult.  # noqa: E501
+        :type: MeasureExtendedData
+        """
+
+        self._json_hc_measure_extended_data_by_id_result = json_hc_measure_extended_data_by_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

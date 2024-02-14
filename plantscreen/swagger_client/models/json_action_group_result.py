@@ -28,14 +28,40 @@ class JsonActionGroupResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_action_group_result': 'ActionGroup'
     }
 
     attribute_map = {
+        'json_action_group_result': 'JsonActionGroupResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_action_group_result=None):  # noqa: E501
         """JsonActionGroupResult - a model defined in Swagger"""  # noqa: E501
+        self._json_action_group_result = None
         self.discriminator = None
+        if json_action_group_result is not None:
+            self.json_action_group_result = json_action_group_result
+
+    @property
+    def json_action_group_result(self):
+        """Gets the json_action_group_result of this JsonActionGroupResult.  # noqa: E501
+
+
+        :return: The json_action_group_result of this JsonActionGroupResult.  # noqa: E501
+        :rtype: ActionGroup
+        """
+        return self._json_action_group_result
+
+    @json_action_group_result.setter
+    def json_action_group_result(self, json_action_group_result):
+        """Sets the json_action_group_result of this JsonActionGroupResult.
+
+
+        :param json_action_group_result: The json_action_group_result of this JsonActionGroupResult.  # noqa: E501
+        :type: ActionGroup
+        """
+
+        self._json_action_group_result = json_action_group_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

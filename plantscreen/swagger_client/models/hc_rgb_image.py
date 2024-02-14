@@ -31,37 +31,37 @@ class HcRgbImage(object):
         'device_id': 'int',
         'device_pid': 'str',
         'experiment_id': 'int',
-        'round_id': 'int',
-        'measure_id': 'int',
         'measure_angle': 'int',
-        'tray_id': 'int',
+        'measure_id': 'int',
+        'rgb_image_path': 'str',
+        'round_id': 'int',
         'tray_barcode': 'str',
-        'rgb_image_path': 'str'
+        'tray_id': 'int'
     }
 
     attribute_map = {
         'device_id': 'DeviceID',
         'device_pid': 'DevicePID',
         'experiment_id': 'ExperimentID',
-        'round_id': 'RoundID',
-        'measure_id': 'MeasureID',
         'measure_angle': 'MeasureAngle',
-        'tray_id': 'TrayID',
+        'measure_id': 'MeasureID',
+        'rgb_image_path': 'RgbImagePath',
+        'round_id': 'RoundID',
         'tray_barcode': 'TrayBarcode',
-        'rgb_image_path': 'RgbImagePath'
+        'tray_id': 'TrayID'
     }
 
-    def __init__(self, device_id=None, device_pid=None, experiment_id=None, round_id=None, measure_id=None, measure_angle=None, tray_id=None, tray_barcode=None, rgb_image_path=None):  # noqa: E501
+    def __init__(self, device_id=None, device_pid=None, experiment_id=None, measure_angle=None, measure_id=None, rgb_image_path=None, round_id=None, tray_barcode=None, tray_id=None):  # noqa: E501
         """HcRgbImage - a model defined in Swagger"""  # noqa: E501
         self._device_id = None
         self._device_pid = None
         self._experiment_id = None
-        self._round_id = None
-        self._measure_id = None
         self._measure_angle = None
-        self._tray_id = None
-        self._tray_barcode = None
+        self._measure_id = None
         self._rgb_image_path = None
+        self._round_id = None
+        self._tray_barcode = None
+        self._tray_id = None
         self.discriminator = None
         if device_id is not None:
             self.device_id = device_id
@@ -69,18 +69,18 @@ class HcRgbImage(object):
             self.device_pid = device_pid
         if experiment_id is not None:
             self.experiment_id = experiment_id
-        if round_id is not None:
-            self.round_id = round_id
-        if measure_id is not None:
-            self.measure_id = measure_id
         if measure_angle is not None:
             self.measure_angle = measure_angle
-        if tray_id is not None:
-            self.tray_id = tray_id
-        if tray_barcode is not None:
-            self.tray_barcode = tray_barcode
+        if measure_id is not None:
+            self.measure_id = measure_id
         if rgb_image_path is not None:
             self.rgb_image_path = rgb_image_path
+        if round_id is not None:
+            self.round_id = round_id
+        if tray_barcode is not None:
+            self.tray_barcode = tray_barcode
+        if tray_id is not None:
+            self.tray_id = tray_id
 
     @property
     def device_id(self):
@@ -146,25 +146,25 @@ class HcRgbImage(object):
         self._experiment_id = experiment_id
 
     @property
-    def round_id(self):
-        """Gets the round_id of this HcRgbImage.  # noqa: E501
+    def measure_angle(self):
+        """Gets the measure_angle of this HcRgbImage.  # noqa: E501
 
 
-        :return: The round_id of this HcRgbImage.  # noqa: E501
+        :return: The measure_angle of this HcRgbImage.  # noqa: E501
         :rtype: int
         """
-        return self._round_id
+        return self._measure_angle
 
-    @round_id.setter
-    def round_id(self, round_id):
-        """Sets the round_id of this HcRgbImage.
+    @measure_angle.setter
+    def measure_angle(self, measure_angle):
+        """Sets the measure_angle of this HcRgbImage.
 
 
-        :param round_id: The round_id of this HcRgbImage.  # noqa: E501
+        :param measure_angle: The measure_angle of this HcRgbImage.  # noqa: E501
         :type: int
         """
 
-        self._round_id = round_id
+        self._measure_angle = measure_angle
 
     @property
     def measure_id(self):
@@ -188,46 +188,48 @@ class HcRgbImage(object):
         self._measure_id = measure_id
 
     @property
-    def measure_angle(self):
-        """Gets the measure_angle of this HcRgbImage.  # noqa: E501
+    def rgb_image_path(self):
+        """Gets the rgb_image_path of this HcRgbImage.  # noqa: E501
 
+        filetype  # noqa: E501
 
-        :return: The measure_angle of this HcRgbImage.  # noqa: E501
-        :rtype: int
+        :return: The rgb_image_path of this HcRgbImage.  # noqa: E501
+        :rtype: str
         """
-        return self._measure_angle
+        return self._rgb_image_path
 
-    @measure_angle.setter
-    def measure_angle(self, measure_angle):
-        """Sets the measure_angle of this HcRgbImage.
+    @rgb_image_path.setter
+    def rgb_image_path(self, rgb_image_path):
+        """Sets the rgb_image_path of this HcRgbImage.
 
+        filetype  # noqa: E501
 
-        :param measure_angle: The measure_angle of this HcRgbImage.  # noqa: E501
-        :type: int
+        :param rgb_image_path: The rgb_image_path of this HcRgbImage.  # noqa: E501
+        :type: str
         """
 
-        self._measure_angle = measure_angle
+        self._rgb_image_path = rgb_image_path
 
     @property
-    def tray_id(self):
-        """Gets the tray_id of this HcRgbImage.  # noqa: E501
+    def round_id(self):
+        """Gets the round_id of this HcRgbImage.  # noqa: E501
 
 
-        :return: The tray_id of this HcRgbImage.  # noqa: E501
+        :return: The round_id of this HcRgbImage.  # noqa: E501
         :rtype: int
         """
-        return self._tray_id
+        return self._round_id
 
-    @tray_id.setter
-    def tray_id(self, tray_id):
-        """Sets the tray_id of this HcRgbImage.
+    @round_id.setter
+    def round_id(self, round_id):
+        """Sets the round_id of this HcRgbImage.
 
 
-        :param tray_id: The tray_id of this HcRgbImage.  # noqa: E501
+        :param round_id: The round_id of this HcRgbImage.  # noqa: E501
         :type: int
         """
 
-        self._tray_id = tray_id
+        self._round_id = round_id
 
     @property
     def tray_barcode(self):
@@ -251,27 +253,25 @@ class HcRgbImage(object):
         self._tray_barcode = tray_barcode
 
     @property
-    def rgb_image_path(self):
-        """Gets the rgb_image_path of this HcRgbImage.  # noqa: E501
+    def tray_id(self):
+        """Gets the tray_id of this HcRgbImage.  # noqa: E501
 
-        filetype  # noqa: E501
 
-        :return: The rgb_image_path of this HcRgbImage.  # noqa: E501
-        :rtype: str
+        :return: The tray_id of this HcRgbImage.  # noqa: E501
+        :rtype: int
         """
-        return self._rgb_image_path
+        return self._tray_id
 
-    @rgb_image_path.setter
-    def rgb_image_path(self, rgb_image_path):
-        """Sets the rgb_image_path of this HcRgbImage.
+    @tray_id.setter
+    def tray_id(self, tray_id):
+        """Sets the tray_id of this HcRgbImage.
 
-        filetype  # noqa: E501
 
-        :param rgb_image_path: The rgb_image_path of this HcRgbImage.  # noqa: E501
-        :type: str
+        :param tray_id: The tray_id of this HcRgbImage.  # noqa: E501
+        :type: int
         """
 
-        self._rgb_image_path = rgb_image_path
+        self._tray_id = tray_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

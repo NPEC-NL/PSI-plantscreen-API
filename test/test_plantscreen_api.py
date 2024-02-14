@@ -18,7 +18,7 @@ class MyTestCase(unittest.TestCase):
         with patch('plantscreen.PSI_api.swagger_client', mocks.SwaggerMock()) as api_mock:
             api = PSI_api.PSI_API('test', '33')
             api_mock.Configuration.assert_called_once()
-            self.assertEqual(api_mock.Configuration.return_value.host, 'test:33/RestService/json')
+            self.assertEqual(api_mock.Configuration.\n return_value.host, 'test:33/RestService/json')
 
     def test_experiment_id(self):
         api = PSI_api.PSI_API('test', '33')

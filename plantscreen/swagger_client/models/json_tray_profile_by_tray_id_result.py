@@ -28,14 +28,40 @@ class JsonTrayProfileByTrayIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_tray_profile_by_tray_id_result': 'list[TrayProfile]'
     }
 
     attribute_map = {
+        'json_tray_profile_by_tray_id_result': 'JsonTrayProfileByTrayIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_tray_profile_by_tray_id_result=None):  # noqa: E501
         """JsonTrayProfileByTrayIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_tray_profile_by_tray_id_result = None
         self.discriminator = None
+        if json_tray_profile_by_tray_id_result is not None:
+            self.json_tray_profile_by_tray_id_result = json_tray_profile_by_tray_id_result
+
+    @property
+    def json_tray_profile_by_tray_id_result(self):
+        """Gets the json_tray_profile_by_tray_id_result of this JsonTrayProfileByTrayIDResult.  # noqa: E501
+
+
+        :return: The json_tray_profile_by_tray_id_result of this JsonTrayProfileByTrayIDResult.  # noqa: E501
+        :rtype: list[TrayProfile]
+        """
+        return self._json_tray_profile_by_tray_id_result
+
+    @json_tray_profile_by_tray_id_result.setter
+    def json_tray_profile_by_tray_id_result(self, json_tray_profile_by_tray_id_result):
+        """Sets the json_tray_profile_by_tray_id_result of this JsonTrayProfileByTrayIDResult.
+
+
+        :param json_tray_profile_by_tray_id_result: The json_tray_profile_by_tray_id_result of this JsonTrayProfileByTrayIDResult.  # noqa: E501
+        :type: list[TrayProfile]
+        """
+
+        self._json_tray_profile_by_tray_id_result = json_tray_profile_by_tray_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

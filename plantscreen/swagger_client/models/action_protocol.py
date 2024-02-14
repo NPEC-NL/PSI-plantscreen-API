@@ -28,44 +28,128 @@ class ActionProtocol(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'protocol_id': 'int',
-        'round_id': 'int',
-        'action_d': 'int',
+        'action_id': 'int',
         'experiment_id': 'int',
+        'protocol_body': 'str',
         'protocol_date_changed': 'datetime',
-        'protocol_body': 'object'
+        'protocol_id': 'int',
+        'round_id': 'int'
     }
 
     attribute_map = {
-        'protocol_id': 'ProtocolID',
-        'round_id': 'RoundID',
-        'action_d': 'ActionD',
+        'action_id': 'ActionID',
         'experiment_id': 'ExperimentID',
+        'protocol_body': 'ProtocolBody',
         'protocol_date_changed': 'ProtocolDateChanged',
-        'protocol_body': 'ProtocolBody'
+        'protocol_id': 'ProtocolID',
+        'round_id': 'RoundID'
     }
 
-    def __init__(self, protocol_id=None, round_id=None, action_d=None, experiment_id=None, protocol_date_changed=None, protocol_body=None):  # noqa: E501
+    def __init__(self, action_id=None, experiment_id=None, protocol_body=None, protocol_date_changed=None, protocol_id=None, round_id=None):  # noqa: E501
         """ActionProtocol - a model defined in Swagger"""  # noqa: E501
+        self._action_id = None
+        self._experiment_id = None
+        self._protocol_body = None
+        self._protocol_date_changed = None
         self._protocol_id = None
         self._round_id = None
-        self._action_d = None
-        self._experiment_id = None
-        self._protocol_date_changed = None
-        self._protocol_body = None
         self.discriminator = None
+        if action_id is not None:
+            self.action_id = action_id
+        if experiment_id is not None:
+            self.experiment_id = experiment_id
+        if protocol_body is not None:
+            self.protocol_body = protocol_body
+        if protocol_date_changed is not None:
+            self.protocol_date_changed = protocol_date_changed
         if protocol_id is not None:
             self.protocol_id = protocol_id
         if round_id is not None:
             self.round_id = round_id
-        if action_d is not None:
-            self.action_d = action_d
-        if experiment_id is not None:
-            self.experiment_id = experiment_id
-        if protocol_date_changed is not None:
-            self.protocol_date_changed = protocol_date_changed
-        if protocol_body is not None:
-            self.protocol_body = protocol_body
+
+    @property
+    def action_id(self):
+        """Gets the action_id of this ActionProtocol.  # noqa: E501
+
+
+        :return: The action_id of this ActionProtocol.  # noqa: E501
+        :rtype: int
+        """
+        return self._action_id
+
+    @action_id.setter
+    def action_id(self, action_id):
+        """Sets the action_id of this ActionProtocol.
+
+
+        :param action_id: The action_id of this ActionProtocol.  # noqa: E501
+        :type: int
+        """
+
+        self._action_id = action_id
+
+    @property
+    def experiment_id(self):
+        """Gets the experiment_id of this ActionProtocol.  # noqa: E501
+
+
+        :return: The experiment_id of this ActionProtocol.  # noqa: E501
+        :rtype: int
+        """
+        return self._experiment_id
+
+    @experiment_id.setter
+    def experiment_id(self, experiment_id):
+        """Sets the experiment_id of this ActionProtocol.
+
+
+        :param experiment_id: The experiment_id of this ActionProtocol.  # noqa: E501
+        :type: int
+        """
+
+        self._experiment_id = experiment_id
+
+    @property
+    def protocol_body(self):
+        """Gets the protocol_body of this ActionProtocol.  # noqa: E501
+
+
+        :return: The protocol_body of this ActionProtocol.  # noqa: E501
+        :rtype: str
+        """
+        return self._protocol_body
+
+    @protocol_body.setter
+    def protocol_body(self, protocol_body):
+        """Sets the protocol_body of this ActionProtocol.
+
+
+        :param protocol_body: The protocol_body of this ActionProtocol.  # noqa: E501
+        :type: str
+        """
+
+        self._protocol_body = protocol_body
+
+    @property
+    def protocol_date_changed(self):
+        """Gets the protocol_date_changed of this ActionProtocol.  # noqa: E501
+
+
+        :return: The protocol_date_changed of this ActionProtocol.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._protocol_date_changed
+
+    @protocol_date_changed.setter
+    def protocol_date_changed(self, protocol_date_changed):
+        """Sets the protocol_date_changed of this ActionProtocol.
+
+
+        :param protocol_date_changed: The protocol_date_changed of this ActionProtocol.  # noqa: E501
+        :type: datetime
+        """
+
+        self._protocol_date_changed = protocol_date_changed
 
     @property
     def protocol_id(self):
@@ -108,90 +192,6 @@ class ActionProtocol(object):
         """
 
         self._round_id = round_id
-
-    @property
-    def action_d(self):
-        """Gets the action_d of this ActionProtocol.  # noqa: E501
-
-
-        :return: The action_d of this ActionProtocol.  # noqa: E501
-        :rtype: int
-        """
-        return self._action_d
-
-    @action_d.setter
-    def action_d(self, action_d):
-        """Sets the action_d of this ActionProtocol.
-
-
-        :param action_d: The action_d of this ActionProtocol.  # noqa: E501
-        :type: int
-        """
-
-        self._action_d = action_d
-
-    @property
-    def experiment_id(self):
-        """Gets the experiment_id of this ActionProtocol.  # noqa: E501
-
-
-        :return: The experiment_id of this ActionProtocol.  # noqa: E501
-        :rtype: int
-        """
-        return self._experiment_id
-
-    @experiment_id.setter
-    def experiment_id(self, experiment_id):
-        """Sets the experiment_id of this ActionProtocol.
-
-
-        :param experiment_id: The experiment_id of this ActionProtocol.  # noqa: E501
-        :type: int
-        """
-
-        self._experiment_id = experiment_id
-
-    @property
-    def protocol_date_changed(self):
-        """Gets the protocol_date_changed of this ActionProtocol.  # noqa: E501
-
-
-        :return: The protocol_date_changed of this ActionProtocol.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._protocol_date_changed
-
-    @protocol_date_changed.setter
-    def protocol_date_changed(self, protocol_date_changed):
-        """Sets the protocol_date_changed of this ActionProtocol.
-
-
-        :param protocol_date_changed: The protocol_date_changed of this ActionProtocol.  # noqa: E501
-        :type: datetime
-        """
-
-        self._protocol_date_changed = protocol_date_changed
-
-    @property
-    def protocol_body(self):
-        """Gets the protocol_body of this ActionProtocol.  # noqa: E501
-
-
-        :return: The protocol_body of this ActionProtocol.  # noqa: E501
-        :rtype: object
-        """
-        return self._protocol_body
-
-    @protocol_body.setter
-    def protocol_body(self, protocol_body):
-        """Sets the protocol_body of this ActionProtocol.
-
-
-        :param protocol_body: The protocol_body of this ActionProtocol.  # noqa: E501
-        :type: object
-        """
-
-        self._protocol_body = protocol_body
 
     def to_dict(self):
         """Returns the model properties as a dict"""

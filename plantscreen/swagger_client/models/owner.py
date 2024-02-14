@@ -28,185 +28,59 @@ class Owner(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'owner_id': 'int',
-        'login': 'str',
-        'first_name': 'str',
-        'last_name': 'str',
-        'email': 'str',
-        'sms_phone_number': 'str',
         'create_date': 'datetime',
+        'email': 'str',
+        'first_name': 'str',
+        'last_failed_date': 'datetime',
+        'last_name': 'str',
         'last_success_login': 'datetime',
-        'last_failed_date': 'datetime'
+        'login': 'str',
+        'owner_id': 'int',
+        'sms_phone_number': 'str'
     }
 
     attribute_map = {
-        'owner_id': 'OwnerID',
-        'login': 'Login',
-        'first_name': 'FirstName',
-        'last_name': 'LastName',
-        'email': 'Email',
-        'sms_phone_number': 'SmsPhoneNumber',
         'create_date': 'CreateDate',
+        'email': 'Email',
+        'first_name': 'FirstName',
+        'last_failed_date': 'LastFailedDate',
+        'last_name': 'LastName',
         'last_success_login': 'LastSuccessLogin',
-        'last_failed_date': 'LastFailedDate'
+        'login': 'Login',
+        'owner_id': 'OwnerID',
+        'sms_phone_number': 'SmsPhoneNumber'
     }
 
-    def __init__(self, owner_id=None, login=None, first_name=None, last_name=None, email=None, sms_phone_number=None, create_date=None, last_success_login=None, last_failed_date=None):  # noqa: E501
+    def __init__(self, create_date=None, email=None, first_name=None, last_failed_date=None, last_name=None, last_success_login=None, login=None, owner_id=None, sms_phone_number=None):  # noqa: E501
         """Owner - a model defined in Swagger"""  # noqa: E501
-        self._owner_id = None
-        self._login = None
-        self._first_name = None
-        self._last_name = None
-        self._email = None
-        self._sms_phone_number = None
         self._create_date = None
-        self._last_success_login = None
+        self._email = None
+        self._first_name = None
         self._last_failed_date = None
+        self._last_name = None
+        self._last_success_login = None
+        self._login = None
+        self._owner_id = None
+        self._sms_phone_number = None
         self.discriminator = None
-        if owner_id is not None:
-            self.owner_id = owner_id
-        if login is not None:
-            self.login = login
-        if first_name is not None:
-            self.first_name = first_name
-        if last_name is not None:
-            self.last_name = last_name
-        if email is not None:
-            self.email = email
-        if sms_phone_number is not None:
-            self.sms_phone_number = sms_phone_number
         if create_date is not None:
             self.create_date = create_date
-        if last_success_login is not None:
-            self.last_success_login = last_success_login
+        if email is not None:
+            self.email = email
+        if first_name is not None:
+            self.first_name = first_name
         if last_failed_date is not None:
             self.last_failed_date = last_failed_date
-
-    @property
-    def owner_id(self):
-        """Gets the owner_id of this Owner.  # noqa: E501
-
-
-        :return: The owner_id of this Owner.  # noqa: E501
-        :rtype: int
-        """
-        return self._owner_id
-
-    @owner_id.setter
-    def owner_id(self, owner_id):
-        """Sets the owner_id of this Owner.
-
-
-        :param owner_id: The owner_id of this Owner.  # noqa: E501
-        :type: int
-        """
-
-        self._owner_id = owner_id
-
-    @property
-    def login(self):
-        """Gets the login of this Owner.  # noqa: E501
-
-
-        :return: The login of this Owner.  # noqa: E501
-        :rtype: str
-        """
-        return self._login
-
-    @login.setter
-    def login(self, login):
-        """Sets the login of this Owner.
-
-
-        :param login: The login of this Owner.  # noqa: E501
-        :type: str
-        """
-
-        self._login = login
-
-    @property
-    def first_name(self):
-        """Gets the first_name of this Owner.  # noqa: E501
-
-
-        :return: The first_name of this Owner.  # noqa: E501
-        :rtype: str
-        """
-        return self._first_name
-
-    @first_name.setter
-    def first_name(self, first_name):
-        """Sets the first_name of this Owner.
-
-
-        :param first_name: The first_name of this Owner.  # noqa: E501
-        :type: str
-        """
-
-        self._first_name = first_name
-
-    @property
-    def last_name(self):
-        """Gets the last_name of this Owner.  # noqa: E501
-
-
-        :return: The last_name of this Owner.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_name
-
-    @last_name.setter
-    def last_name(self, last_name):
-        """Sets the last_name of this Owner.
-
-
-        :param last_name: The last_name of this Owner.  # noqa: E501
-        :type: str
-        """
-
-        self._last_name = last_name
-
-    @property
-    def email(self):
-        """Gets the email of this Owner.  # noqa: E501
-
-
-        :return: The email of this Owner.  # noqa: E501
-        :rtype: str
-        """
-        return self._email
-
-    @email.setter
-    def email(self, email):
-        """Sets the email of this Owner.
-
-
-        :param email: The email of this Owner.  # noqa: E501
-        :type: str
-        """
-
-        self._email = email
-
-    @property
-    def sms_phone_number(self):
-        """Gets the sms_phone_number of this Owner.  # noqa: E501
-
-
-        :return: The sms_phone_number of this Owner.  # noqa: E501
-        :rtype: str
-        """
-        return self._sms_phone_number
-
-    @sms_phone_number.setter
-    def sms_phone_number(self, sms_phone_number):
-        """Sets the sms_phone_number of this Owner.
-
-
-        :param sms_phone_number: The sms_phone_number of this Owner.  # noqa: E501
-        :type: str
-        """
-
-        self._sms_phone_number = sms_phone_number
+        if last_name is not None:
+            self.last_name = last_name
+        if last_success_login is not None:
+            self.last_success_login = last_success_login
+        if login is not None:
+            self.login = login
+        if owner_id is not None:
+            self.owner_id = owner_id
+        if sms_phone_number is not None:
+            self.sms_phone_number = sms_phone_number
 
     @property
     def create_date(self):
@@ -230,25 +104,46 @@ class Owner(object):
         self._create_date = create_date
 
     @property
-    def last_success_login(self):
-        """Gets the last_success_login of this Owner.  # noqa: E501
+    def email(self):
+        """Gets the email of this Owner.  # noqa: E501
 
 
-        :return: The last_success_login of this Owner.  # noqa: E501
-        :rtype: datetime
+        :return: The email of this Owner.  # noqa: E501
+        :rtype: str
         """
-        return self._last_success_login
+        return self._email
 
-    @last_success_login.setter
-    def last_success_login(self, last_success_login):
-        """Sets the last_success_login of this Owner.
+    @email.setter
+    def email(self, email):
+        """Sets the email of this Owner.
 
 
-        :param last_success_login: The last_success_login of this Owner.  # noqa: E501
-        :type: datetime
+        :param email: The email of this Owner.  # noqa: E501
+        :type: str
         """
 
-        self._last_success_login = last_success_login
+        self._email = email
+
+    @property
+    def first_name(self):
+        """Gets the first_name of this Owner.  # noqa: E501
+
+
+        :return: The first_name of this Owner.  # noqa: E501
+        :rtype: str
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, first_name):
+        """Sets the first_name of this Owner.
+
+
+        :param first_name: The first_name of this Owner.  # noqa: E501
+        :type: str
+        """
+
+        self._first_name = first_name
 
     @property
     def last_failed_date(self):
@@ -270,6 +165,111 @@ class Owner(object):
         """
 
         self._last_failed_date = last_failed_date
+
+    @property
+    def last_name(self):
+        """Gets the last_name of this Owner.  # noqa: E501
+
+
+        :return: The last_name of this Owner.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_name
+
+    @last_name.setter
+    def last_name(self, last_name):
+        """Sets the last_name of this Owner.
+
+
+        :param last_name: The last_name of this Owner.  # noqa: E501
+        :type: str
+        """
+
+        self._last_name = last_name
+
+    @property
+    def last_success_login(self):
+        """Gets the last_success_login of this Owner.  # noqa: E501
+
+
+        :return: The last_success_login of this Owner.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_success_login
+
+    @last_success_login.setter
+    def last_success_login(self, last_success_login):
+        """Sets the last_success_login of this Owner.
+
+
+        :param last_success_login: The last_success_login of this Owner.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_success_login = last_success_login
+
+    @property
+    def login(self):
+        """Gets the login of this Owner.  # noqa: E501
+
+
+        :return: The login of this Owner.  # noqa: E501
+        :rtype: str
+        """
+        return self._login
+
+    @login.setter
+    def login(self, login):
+        """Sets the login of this Owner.
+
+
+        :param login: The login of this Owner.  # noqa: E501
+        :type: str
+        """
+
+        self._login = login
+
+    @property
+    def owner_id(self):
+        """Gets the owner_id of this Owner.  # noqa: E501
+
+
+        :return: The owner_id of this Owner.  # noqa: E501
+        :rtype: int
+        """
+        return self._owner_id
+
+    @owner_id.setter
+    def owner_id(self, owner_id):
+        """Sets the owner_id of this Owner.
+
+
+        :param owner_id: The owner_id of this Owner.  # noqa: E501
+        :type: int
+        """
+
+        self._owner_id = owner_id
+
+    @property
+    def sms_phone_number(self):
+        """Gets the sms_phone_number of this Owner.  # noqa: E501
+
+
+        :return: The sms_phone_number of this Owner.  # noqa: E501
+        :rtype: str
+        """
+        return self._sms_phone_number
+
+    @sms_phone_number.setter
+    def sms_phone_number(self, sms_phone_number):
+        """Sets the sms_phone_number of this Owner.
+
+
+        :param sms_phone_number: The sms_phone_number of this Owner.  # noqa: E501
+        :type: str
+        """
+
+        self._sms_phone_number = sms_phone_number
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,14 +28,40 @@ class JsonOwnerResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_owner_result': 'list[Owner]'
     }
 
     attribute_map = {
+        'json_owner_result': 'JsonOwnerResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_owner_result=None):  # noqa: E501
         """JsonOwnerResult - a model defined in Swagger"""  # noqa: E501
+        self._json_owner_result = None
         self.discriminator = None
+        if json_owner_result is not None:
+            self.json_owner_result = json_owner_result
+
+    @property
+    def json_owner_result(self):
+        """Gets the json_owner_result of this JsonOwnerResult.  # noqa: E501
+
+
+        :return: The json_owner_result of this JsonOwnerResult.  # noqa: E501
+        :rtype: list[Owner]
+        """
+        return self._json_owner_result
+
+    @json_owner_result.setter
+    def json_owner_result(self, json_owner_result):
+        """Sets the json_owner_result of this JsonOwnerResult.
+
+
+        :param json_owner_result: The json_owner_result of this JsonOwnerResult.  # noqa: E501
+        :type: list[Owner]
+        """
+
+        self._json_owner_result = json_owner_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

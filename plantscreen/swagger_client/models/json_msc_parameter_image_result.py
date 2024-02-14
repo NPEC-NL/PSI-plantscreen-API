@@ -28,14 +28,40 @@ class JsonMscParameterImageResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_msc_parameter_image_result': 'list[ParameterImage]'
     }
 
     attribute_map = {
+        'json_msc_parameter_image_result': 'JsonMscParameterImageResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_msc_parameter_image_result=None):  # noqa: E501
         """JsonMscParameterImageResult - a model defined in Swagger"""  # noqa: E501
+        self._json_msc_parameter_image_result = None
         self.discriminator = None
+        if json_msc_parameter_image_result is not None:
+            self.json_msc_parameter_image_result = json_msc_parameter_image_result
+
+    @property
+    def json_msc_parameter_image_result(self):
+        """Gets the json_msc_parameter_image_result of this JsonMscParameterImageResult.  # noqa: E501
+
+
+        :return: The json_msc_parameter_image_result of this JsonMscParameterImageResult.  # noqa: E501
+        :rtype: list[ParameterImage]
+        """
+        return self._json_msc_parameter_image_result
+
+    @json_msc_parameter_image_result.setter
+    def json_msc_parameter_image_result(self, json_msc_parameter_image_result):
+        """Sets the json_msc_parameter_image_result of this JsonMscParameterImageResult.
+
+
+        :param json_msc_parameter_image_result: The json_msc_parameter_image_result of this JsonMscParameterImageResult.  # noqa: E501
+        :type: list[ParameterImage]
+        """
+
+        self._json_msc_parameter_image_result = json_msc_parameter_image_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

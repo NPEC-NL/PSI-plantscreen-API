@@ -28,102 +28,39 @@ class SystemProfile(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'profile_id': 'int',
-        'profile_name': 'str',
-        'profile_info': 'str',
         'profile_active': 'bool',
-        'system_hw_config': 'object'
+        'profile_id': 'int',
+        'profile_info': 'str',
+        'profile_name': 'str',
+        'system_hw_config': 'str'
     }
 
     attribute_map = {
-        'profile_id': 'ProfileID',
-        'profile_name': 'ProfileName',
-        'profile_info': 'ProfileInfo',
         'profile_active': 'ProfileActive',
+        'profile_id': 'ProfileID',
+        'profile_info': 'ProfileInfo',
+        'profile_name': 'ProfileName',
         'system_hw_config': 'SystemHwConfig'
     }
 
-    def __init__(self, profile_id=None, profile_name=None, profile_info=None, profile_active=None, system_hw_config=None):  # noqa: E501
+    def __init__(self, profile_active=None, profile_id=None, profile_info=None, profile_name=None, system_hw_config=None):  # noqa: E501
         """SystemProfile - a model defined in Swagger"""  # noqa: E501
-        self._profile_id = None
-        self._profile_name = None
-        self._profile_info = None
         self._profile_active = None
+        self._profile_id = None
+        self._profile_info = None
+        self._profile_name = None
         self._system_hw_config = None
         self.discriminator = None
-        if profile_id is not None:
-            self.profile_id = profile_id
-        if profile_name is not None:
-            self.profile_name = profile_name
-        if profile_info is not None:
-            self.profile_info = profile_info
         if profile_active is not None:
             self.profile_active = profile_active
+        if profile_id is not None:
+            self.profile_id = profile_id
+        if profile_info is not None:
+            self.profile_info = profile_info
+        if profile_name is not None:
+            self.profile_name = profile_name
         if system_hw_config is not None:
             self.system_hw_config = system_hw_config
-
-    @property
-    def profile_id(self):
-        """Gets the profile_id of this SystemProfile.  # noqa: E501
-
-
-        :return: The profile_id of this SystemProfile.  # noqa: E501
-        :rtype: int
-        """
-        return self._profile_id
-
-    @profile_id.setter
-    def profile_id(self, profile_id):
-        """Sets the profile_id of this SystemProfile.
-
-
-        :param profile_id: The profile_id of this SystemProfile.  # noqa: E501
-        :type: int
-        """
-
-        self._profile_id = profile_id
-
-    @property
-    def profile_name(self):
-        """Gets the profile_name of this SystemProfile.  # noqa: E501
-
-
-        :return: The profile_name of this SystemProfile.  # noqa: E501
-        :rtype: str
-        """
-        return self._profile_name
-
-    @profile_name.setter
-    def profile_name(self, profile_name):
-        """Sets the profile_name of this SystemProfile.
-
-
-        :param profile_name: The profile_name of this SystemProfile.  # noqa: E501
-        :type: str
-        """
-
-        self._profile_name = profile_name
-
-    @property
-    def profile_info(self):
-        """Gets the profile_info of this SystemProfile.  # noqa: E501
-
-
-        :return: The profile_info of this SystemProfile.  # noqa: E501
-        :rtype: str
-        """
-        return self._profile_info
-
-    @profile_info.setter
-    def profile_info(self, profile_info):
-        """Sets the profile_info of this SystemProfile.
-
-
-        :param profile_info: The profile_info of this SystemProfile.  # noqa: E501
-        :type: str
-        """
-
-        self._profile_info = profile_info
 
     @property
     def profile_active(self):
@@ -147,12 +84,75 @@ class SystemProfile(object):
         self._profile_active = profile_active
 
     @property
+    def profile_id(self):
+        """Gets the profile_id of this SystemProfile.  # noqa: E501
+
+
+        :return: The profile_id of this SystemProfile.  # noqa: E501
+        :rtype: int
+        """
+        return self._profile_id
+
+    @profile_id.setter
+    def profile_id(self, profile_id):
+        """Sets the profile_id of this SystemProfile.
+
+
+        :param profile_id: The profile_id of this SystemProfile.  # noqa: E501
+        :type: int
+        """
+
+        self._profile_id = profile_id
+
+    @property
+    def profile_info(self):
+        """Gets the profile_info of this SystemProfile.  # noqa: E501
+
+
+        :return: The profile_info of this SystemProfile.  # noqa: E501
+        :rtype: str
+        """
+        return self._profile_info
+
+    @profile_info.setter
+    def profile_info(self, profile_info):
+        """Sets the profile_info of this SystemProfile.
+
+
+        :param profile_info: The profile_info of this SystemProfile.  # noqa: E501
+        :type: str
+        """
+
+        self._profile_info = profile_info
+
+    @property
+    def profile_name(self):
+        """Gets the profile_name of this SystemProfile.  # noqa: E501
+
+
+        :return: The profile_name of this SystemProfile.  # noqa: E501
+        :rtype: str
+        """
+        return self._profile_name
+
+    @profile_name.setter
+    def profile_name(self, profile_name):
+        """Sets the profile_name of this SystemProfile.
+
+
+        :param profile_name: The profile_name of this SystemProfile.  # noqa: E501
+        :type: str
+        """
+
+        self._profile_name = profile_name
+
+    @property
     def system_hw_config(self):
         """Gets the system_hw_config of this SystemProfile.  # noqa: E501
 
 
         :return: The system_hw_config of this SystemProfile.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._system_hw_config
 
@@ -162,7 +162,7 @@ class SystemProfile(object):
 
 
         :param system_hw_config: The system_hw_config of this SystemProfile.  # noqa: E501
-        :type: object
+        :type: str
         """
 
         self._system_hw_config = system_hw_config

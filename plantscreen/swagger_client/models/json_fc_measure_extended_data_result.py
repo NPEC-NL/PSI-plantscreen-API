@@ -28,14 +28,40 @@ class JsonFcMeasureExtendedDataResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_fc_measure_extended_data_result': 'MeasureExtendedData'
     }
 
     attribute_map = {
+        'json_fc_measure_extended_data_result': 'JsonFcMeasureExtendedDataResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_fc_measure_extended_data_result=None):  # noqa: E501
         """JsonFcMeasureExtendedDataResult - a model defined in Swagger"""  # noqa: E501
+        self._json_fc_measure_extended_data_result = None
         self.discriminator = None
+        if json_fc_measure_extended_data_result is not None:
+            self.json_fc_measure_extended_data_result = json_fc_measure_extended_data_result
+
+    @property
+    def json_fc_measure_extended_data_result(self):
+        """Gets the json_fc_measure_extended_data_result of this JsonFcMeasureExtendedDataResult.  # noqa: E501
+
+
+        :return: The json_fc_measure_extended_data_result of this JsonFcMeasureExtendedDataResult.  # noqa: E501
+        :rtype: MeasureExtendedData
+        """
+        return self._json_fc_measure_extended_data_result
+
+    @json_fc_measure_extended_data_result.setter
+    def json_fc_measure_extended_data_result(self, json_fc_measure_extended_data_result):
+        """Sets the json_fc_measure_extended_data_result of this JsonFcMeasureExtendedDataResult.
+
+
+        :param json_fc_measure_extended_data_result: The json_fc_measure_extended_data_result of this JsonFcMeasureExtendedDataResult.  # noqa: E501
+        :type: MeasureExtendedData
+        """
+
+        self._json_fc_measure_extended_data_result = json_fc_measure_extended_data_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

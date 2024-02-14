@@ -28,7 +28,7 @@ class ExperimentIDWrapper(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'experiment_id': 'float'
+        'experiment_id': 'int'
     }
 
     attribute_map = {
@@ -48,7 +48,7 @@ class ExperimentIDWrapper(object):
 
 
         :return: The experiment_id of this ExperimentIDWrapper.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._experiment_id
 
@@ -58,7 +58,7 @@ class ExperimentIDWrapper(object):
 
 
         :param experiment_id: The experiment_id of this ExperimentIDWrapper.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._experiment_id = experiment_id

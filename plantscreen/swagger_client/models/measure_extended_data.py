@@ -29,43 +29,43 @@ class MeasureExtendedData(object):
     """
     swagger_types = {
         'device_id': 'int',
-        'round_id': 'int',
-        'tray_id': 'int',
-        'measure_id': 'int',
+        'extended_data': 'str',
         'measure_date': 'datetime',
-        'extended_data': 'object'
+        'measure_id': 'int',
+        'round_id': 'int',
+        'tray_id': 'int'
     }
 
     attribute_map = {
         'device_id': 'DeviceID',
-        'round_id': 'RoundID',
-        'tray_id': 'TrayID',
-        'measure_id': 'MeasureID',
+        'extended_data': 'ExtendedData',
         'measure_date': 'MeasureDate',
-        'extended_data': 'ExtendedData'
+        'measure_id': 'MeasureID',
+        'round_id': 'RoundID',
+        'tray_id': 'TrayID'
     }
 
-    def __init__(self, device_id=None, round_id=None, tray_id=None, measure_id=None, measure_date=None, extended_data=None):  # noqa: E501
+    def __init__(self, device_id=None, extended_data=None, measure_date=None, measure_id=None, round_id=None, tray_id=None):  # noqa: E501
         """MeasureExtendedData - a model defined in Swagger"""  # noqa: E501
         self._device_id = None
+        self._extended_data = None
+        self._measure_date = None
+        self._measure_id = None
         self._round_id = None
         self._tray_id = None
-        self._measure_id = None
-        self._measure_date = None
-        self._extended_data = None
         self.discriminator = None
         if device_id is not None:
             self.device_id = device_id
+        if extended_data is not None:
+            self.extended_data = extended_data
+        if measure_date is not None:
+            self.measure_date = measure_date
+        if measure_id is not None:
+            self.measure_id = measure_id
         if round_id is not None:
             self.round_id = round_id
         if tray_id is not None:
             self.tray_id = tray_id
-        if measure_id is not None:
-            self.measure_id = measure_id
-        if measure_date is not None:
-            self.measure_date = measure_date
-        if extended_data is not None:
-            self.extended_data = extended_data
 
     @property
     def device_id(self):
@@ -87,6 +87,69 @@ class MeasureExtendedData(object):
         """
 
         self._device_id = device_id
+
+    @property
+    def extended_data(self):
+        """Gets the extended_data of this MeasureExtendedData.  # noqa: E501
+
+
+        :return: The extended_data of this MeasureExtendedData.  # noqa: E501
+        :rtype: str
+        """
+        return self._extended_data
+
+    @extended_data.setter
+    def extended_data(self, extended_data):
+        """Sets the extended_data of this MeasureExtendedData.
+
+
+        :param extended_data: The extended_data of this MeasureExtendedData.  # noqa: E501
+        :type: str
+        """
+
+        self._extended_data = extended_data
+
+    @property
+    def measure_date(self):
+        """Gets the measure_date of this MeasureExtendedData.  # noqa: E501
+
+
+        :return: The measure_date of this MeasureExtendedData.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._measure_date
+
+    @measure_date.setter
+    def measure_date(self, measure_date):
+        """Sets the measure_date of this MeasureExtendedData.
+
+
+        :param measure_date: The measure_date of this MeasureExtendedData.  # noqa: E501
+        :type: datetime
+        """
+
+        self._measure_date = measure_date
+
+    @property
+    def measure_id(self):
+        """Gets the measure_id of this MeasureExtendedData.  # noqa: E501
+
+
+        :return: The measure_id of this MeasureExtendedData.  # noqa: E501
+        :rtype: int
+        """
+        return self._measure_id
+
+    @measure_id.setter
+    def measure_id(self, measure_id):
+        """Sets the measure_id of this MeasureExtendedData.
+
+
+        :param measure_id: The measure_id of this MeasureExtendedData.  # noqa: E501
+        :type: int
+        """
+
+        self._measure_id = measure_id
 
     @property
     def round_id(self):
@@ -129,69 +192,6 @@ class MeasureExtendedData(object):
         """
 
         self._tray_id = tray_id
-
-    @property
-    def measure_id(self):
-        """Gets the measure_id of this MeasureExtendedData.  # noqa: E501
-
-
-        :return: The measure_id of this MeasureExtendedData.  # noqa: E501
-        :rtype: int
-        """
-        return self._measure_id
-
-    @measure_id.setter
-    def measure_id(self, measure_id):
-        """Sets the measure_id of this MeasureExtendedData.
-
-
-        :param measure_id: The measure_id of this MeasureExtendedData.  # noqa: E501
-        :type: int
-        """
-
-        self._measure_id = measure_id
-
-    @property
-    def measure_date(self):
-        """Gets the measure_date of this MeasureExtendedData.  # noqa: E501
-
-
-        :return: The measure_date of this MeasureExtendedData.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._measure_date
-
-    @measure_date.setter
-    def measure_date(self, measure_date):
-        """Sets the measure_date of this MeasureExtendedData.
-
-
-        :param measure_date: The measure_date of this MeasureExtendedData.  # noqa: E501
-        :type: datetime
-        """
-
-        self._measure_date = measure_date
-
-    @property
-    def extended_data(self):
-        """Gets the extended_data of this MeasureExtendedData.  # noqa: E501
-
-
-        :return: The extended_data of this MeasureExtendedData.  # noqa: E501
-        :rtype: object
-        """
-        return self._extended_data
-
-    @extended_data.setter
-    def extended_data(self, extended_data):
-        """Sets the extended_data of this MeasureExtendedData.
-
-
-        :param extended_data: The extended_data of this MeasureExtendedData.  # noqa: E501
-        :type: object
-        """
-
-        self._extended_data = extended_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

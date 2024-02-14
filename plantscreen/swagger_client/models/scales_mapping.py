@@ -28,76 +28,55 @@ class ScalesMapping(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tray_type_id': 'int',
-        'map_row': 'int',
+        'map_area': 'str',
         'map_column': 'int',
-        'map_area': 'str'
+        'map_row': 'int',
+        'tray_type_id': 'int'
     }
 
     attribute_map = {
-        'tray_type_id': 'TrayTypeID',
-        'map_row': 'MapRow',
+        'map_area': 'MapArea',
         'map_column': 'MapColumn',
-        'map_area': 'MapArea'
+        'map_row': 'MapRow',
+        'tray_type_id': 'TrayTypeID'
     }
 
-    def __init__(self, tray_type_id=None, map_row=None, map_column=None, map_area=None):  # noqa: E501
+    def __init__(self, map_area=None, map_column=None, map_row=None, tray_type_id=None):  # noqa: E501
         """ScalesMapping - a model defined in Swagger"""  # noqa: E501
-        self._tray_type_id = None
-        self._map_row = None
-        self._map_column = None
         self._map_area = None
+        self._map_column = None
+        self._map_row = None
+        self._tray_type_id = None
         self.discriminator = None
-        if tray_type_id is not None:
-            self.tray_type_id = tray_type_id
-        if map_row is not None:
-            self.map_row = map_row
-        if map_column is not None:
-            self.map_column = map_column
         if map_area is not None:
             self.map_area = map_area
+        if map_column is not None:
+            self.map_column = map_column
+        if map_row is not None:
+            self.map_row = map_row
+        if tray_type_id is not None:
+            self.tray_type_id = tray_type_id
 
     @property
-    def tray_type_id(self):
-        """Gets the tray_type_id of this ScalesMapping.  # noqa: E501
+    def map_area(self):
+        """Gets the map_area of this ScalesMapping.  # noqa: E501
 
 
-        :return: The tray_type_id of this ScalesMapping.  # noqa: E501
-        :rtype: int
+        :return: The map_area of this ScalesMapping.  # noqa: E501
+        :rtype: str
         """
-        return self._tray_type_id
+        return self._map_area
 
-    @tray_type_id.setter
-    def tray_type_id(self, tray_type_id):
-        """Sets the tray_type_id of this ScalesMapping.
-
-
-        :param tray_type_id: The tray_type_id of this ScalesMapping.  # noqa: E501
-        :type: int
-        """
-
-        self._tray_type_id = tray_type_id
-
-    @property
-    def map_row(self):
-        """Gets the map_row of this ScalesMapping.  # noqa: E501
+    @map_area.setter
+    def map_area(self, map_area):
+        """Sets the map_area of this ScalesMapping.
 
 
-        :return: The map_row of this ScalesMapping.  # noqa: E501
-        :rtype: int
-        """
-        return self._map_row
-
-    @map_row.setter
-    def map_row(self, map_row):
-        """Sets the map_row of this ScalesMapping.
-
-
-        :param map_row: The map_row of this ScalesMapping.  # noqa: E501
-        :type: int
+        :param map_area: The map_area of this ScalesMapping.  # noqa: E501
+        :type: str
         """
 
-        self._map_row = map_row
+        self._map_area = map_area
 
     @property
     def map_column(self):
@@ -121,25 +100,46 @@ class ScalesMapping(object):
         self._map_column = map_column
 
     @property
-    def map_area(self):
-        """Gets the map_area of this ScalesMapping.  # noqa: E501
+    def map_row(self):
+        """Gets the map_row of this ScalesMapping.  # noqa: E501
 
 
-        :return: The map_area of this ScalesMapping.  # noqa: E501
-        :rtype: str
+        :return: The map_row of this ScalesMapping.  # noqa: E501
+        :rtype: int
         """
-        return self._map_area
+        return self._map_row
 
-    @map_area.setter
-    def map_area(self, map_area):
-        """Sets the map_area of this ScalesMapping.
+    @map_row.setter
+    def map_row(self, map_row):
+        """Sets the map_row of this ScalesMapping.
 
 
-        :param map_area: The map_area of this ScalesMapping.  # noqa: E501
-        :type: str
+        :param map_row: The map_row of this ScalesMapping.  # noqa: E501
+        :type: int
         """
 
-        self._map_area = map_area
+        self._map_row = map_row
+
+    @property
+    def tray_type_id(self):
+        """Gets the tray_type_id of this ScalesMapping.  # noqa: E501
+
+
+        :return: The tray_type_id of this ScalesMapping.  # noqa: E501
+        :rtype: int
+        """
+        return self._tray_type_id
+
+    @tray_type_id.setter
+    def tray_type_id(self, tray_type_id):
+        """Sets the tray_type_id of this ScalesMapping.
+
+
+        :param tray_type_id: The tray_type_id of this ScalesMapping.  # noqa: E501
+        :type: int
+        """
+
+        self._tray_type_id = tray_type_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

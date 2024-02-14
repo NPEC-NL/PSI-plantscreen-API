@@ -28,14 +28,40 @@ class JsonSystemLogTagResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_system_log_tag_result': 'list[LogTag]'
     }
 
     attribute_map = {
+        'json_system_log_tag_result': 'JsonSystemLogTagResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_system_log_tag_result=None):  # noqa: E501
         """JsonSystemLogTagResult - a model defined in Swagger"""  # noqa: E501
+        self._json_system_log_tag_result = None
         self.discriminator = None
+        if json_system_log_tag_result is not None:
+            self.json_system_log_tag_result = json_system_log_tag_result
+
+    @property
+    def json_system_log_tag_result(self):
+        """Gets the json_system_log_tag_result of this JsonSystemLogTagResult.  # noqa: E501
+
+
+        :return: The json_system_log_tag_result of this JsonSystemLogTagResult.  # noqa: E501
+        :rtype: list[LogTag]
+        """
+        return self._json_system_log_tag_result
+
+    @json_system_log_tag_result.setter
+    def json_system_log_tag_result(self, json_system_log_tag_result):
+        """Sets the json_system_log_tag_result of this JsonSystemLogTagResult.
+
+
+        :param json_system_log_tag_result: The json_system_log_tag_result of this JsonSystemLogTagResult.  # noqa: E501
+        :type: list[LogTag]
+        """
+
+        self._json_system_log_tag_result = json_system_log_tag_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

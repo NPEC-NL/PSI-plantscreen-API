@@ -28,14 +28,40 @@ class JsonActionByExperimentIDNotDoneResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_action_by_experiment_id_not_done_result': 'list[Action]'
     }
 
     attribute_map = {
+        'json_action_by_experiment_id_not_done_result': 'JsonActionByExperimentIDNotDoneResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_action_by_experiment_id_not_done_result=None):  # noqa: E501
         """JsonActionByExperimentIDNotDoneResult - a model defined in Swagger"""  # noqa: E501
+        self._json_action_by_experiment_id_not_done_result = None
         self.discriminator = None
+        if json_action_by_experiment_id_not_done_result is not None:
+            self.json_action_by_experiment_id_not_done_result = json_action_by_experiment_id_not_done_result
+
+    @property
+    def json_action_by_experiment_id_not_done_result(self):
+        """Gets the json_action_by_experiment_id_not_done_result of this JsonActionByExperimentIDNotDoneResult.  # noqa: E501
+
+
+        :return: The json_action_by_experiment_id_not_done_result of this JsonActionByExperimentIDNotDoneResult.  # noqa: E501
+        :rtype: list[Action]
+        """
+        return self._json_action_by_experiment_id_not_done_result
+
+    @json_action_by_experiment_id_not_done_result.setter
+    def json_action_by_experiment_id_not_done_result(self, json_action_by_experiment_id_not_done_result):
+        """Sets the json_action_by_experiment_id_not_done_result of this JsonActionByExperimentIDNotDoneResult.
+
+
+        :param json_action_by_experiment_id_not_done_result: The json_action_by_experiment_id_not_done_result of this JsonActionByExperimentIDNotDoneResult.  # noqa: E501
+        :type: list[Action]
+        """
+
+        self._json_action_by_experiment_id_not_done_result = json_action_by_experiment_id_not_done_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

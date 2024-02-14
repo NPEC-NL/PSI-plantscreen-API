@@ -1,5 +1,5 @@
 """"Mock replies for the action API"""
-MOCK_ACTION_BASE = {
+MOCK_ACTION = {
     "ActionDateStart": "2021-11-18 06:00:00",
     "ActionDone": True,
     "ActionGroupID": 2867,
@@ -7,9 +7,9 @@ MOCK_ACTION_BASE = {
     "ActionRunning": False,
     "ActionStatus": "ActionConflict",
     "ExperimentID": 75
-    }
+}
 
-MOCK_ACTION_BASE_2 = {
+MOCK_ACTION_2 = {
     "ActionDateStart": "2019-11-12 09:14:52",
     "ActionDone": True,
     "ActionGroupID": 1491,
@@ -17,33 +17,19 @@ MOCK_ACTION_BASE_2 = {
     "ActionRunning": False,
     "ActionStatus": "Ok",
     "ExperimentID": 50
-    }
+}
 
-MOCK_ACTION_REPLY = {"JsonActionResult": MOCK_ACTION_BASE}
-
-MOCK_ACTION_EXPERIMENT_REPLY = {
-    "JsonActionByExperimentIDResult": [MOCK_ACTION_BASE, MOCK_ACTION_BASE_2]
-    }
-
-MOCK_ACTION_NOT_DONE_EXPERIMENT_REPLY = {
-    "JsonActionByExperimentIDNotDoneResult": [MOCK_ACTION_BASE, MOCK_ACTION_BASE_2]
-    }
-
-MOCK_GROUP_BASE = {
+MOCK_GROUP = {
     "ActionProtocolID": 2211,
     "ExperimentID": 60,
     "GroupCaption": "SWAP_0310",
     "GroupID": 2210,
     "GroupRepeatingProtocol": """<GroupTiming type="Once"> \
         <DateTime>2020-10-03 16:13:48</DateTime> </GroupTiming>"""
-    }
+}
 
-MOCK_ACTION_GROUP_REPLY = {"JsonActionGroupResult": MOCK_GROUP_BASE}
-
-MOCK_ACTION_GROUP_ROUND_REPLY = {"JsonActionGroupByRoundIDResult": MOCK_GROUP_BASE}
-
-MOCK_PROTOCOL_BASE = {
-    "ActionD": 4377,
+MOCK_PROTOCOL = {
+    "ActionID": 4377,
     "ExperimentID": 73,
     "ProtocolBody": """<Protocol> <SetLight> <Light name="LightMain1" value="16" /> \
                         <Light name="LightMain2" value="0" /> </SetLight> \
@@ -61,8 +47,12 @@ MOCK_PROTOCOL_BASE = {
     "ProtocolDateChanged": "2021-08-19 11:38:01",
     "ProtocolID": 2700,
     "RoundID": 3522
-    }
+}
 
-MOCK_ACTION_PROTOCOL_REPLY = {"JsonActionProtocolResult": MOCK_PROTOCOL_BASE}
-
-MOCK_ACTION_PROTOCOL_ROUND_REPLY = {"JsonActionProtocolByRoundIDResult": MOCK_PROTOCOL_BASE}
+MOCK_ACTION_REPLY = {"JsonActionResult": MOCK_ACTION}
+MOCK_ACTION_EXPERIMENT_REPLY = {"JsonActionByExperimentIDResult": [MOCK_ACTION, MOCK_ACTION_2]}
+MOCK_ACTION_NOT_DONE_EXPERIMENT_REPLY = {"JsonActionByExperimentIDNotDoneResult": [MOCK_ACTION, MOCK_ACTION]}
+MOCK_ACTION_GROUP_REPLY = {"JsonActionGroupResult": MOCK_GROUP}
+MOCK_ACTION_GROUP_ROUND_REPLY = {"JsonActionGroupByRoundIDResult": MOCK_GROUP}
+MOCK_ACTION_PROTOCOL_REPLY = {"JsonActionProtocolResult": MOCK_PROTOCOL}
+MOCK_ACTION_PROTOCOL_ROUND_REPLY = {"JsonActionProtocolByRoundIDResult": MOCK_PROTOCOL}

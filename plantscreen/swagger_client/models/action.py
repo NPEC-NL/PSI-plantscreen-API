@@ -28,112 +28,49 @@ class Action(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'action_id': 'int',
-        'experiment_id': 'int',
-        'action_group_id': 'int',
         'action_date_start': 'datetime',
-        'action_status': 'str',
         'action_done': 'bool',
-        'action_running': 'bool'
+        'action_group_id': 'int',
+        'action_id': 'int',
+        'action_running': 'bool',
+        'action_status': 'str',
+        'experiment_id': 'int'
     }
 
     attribute_map = {
-        'action_id': 'ActionID',
-        'experiment_id': 'ExperimentID',
-        'action_group_id': 'ActionGroupID',
         'action_date_start': 'ActionDateStart',
-        'action_status': 'ActionStatus',
         'action_done': 'ActionDone',
-        'action_running': 'ActionRunning'
+        'action_group_id': 'ActionGroupID',
+        'action_id': 'ActionID',
+        'action_running': 'ActionRunning',
+        'action_status': 'ActionStatus',
+        'experiment_id': 'ExperimentID'
     }
 
-    def __init__(self, action_id=None, experiment_id=None, action_group_id=None, action_date_start=None, action_status=None, action_done=None, action_running=None):  # noqa: E501
+    def __init__(self, action_date_start=None, action_done=None, action_group_id=None, action_id=None, action_running=None, action_status=None, experiment_id=None):  # noqa: E501
         """Action - a model defined in Swagger"""  # noqa: E501
-        self._action_id = None
-        self._experiment_id = None
-        self._action_group_id = None
         self._action_date_start = None
-        self._action_status = None
         self._action_done = None
+        self._action_group_id = None
+        self._action_id = None
         self._action_running = None
+        self._action_status = None
+        self._experiment_id = None
         self.discriminator = None
-        if action_id is not None:
-            self.action_id = action_id
-        if experiment_id is not None:
-            self.experiment_id = experiment_id
-        if action_group_id is not None:
-            self.action_group_id = action_group_id
         if action_date_start is not None:
             self.action_date_start = action_date_start
-        if action_status is not None:
-            self.action_status = action_status
         if action_done is not None:
             self.action_done = action_done
+        if action_group_id is not None:
+            self.action_group_id = action_group_id
+        if action_id is not None:
+            self.action_id = action_id
         if action_running is not None:
             self.action_running = action_running
-
-    @property
-    def action_id(self):
-        """Gets the action_id of this Action.  # noqa: E501
-
-
-        :return: The action_id of this Action.  # noqa: E501
-        :rtype: int
-        """
-        return self._action_id
-
-    @action_id.setter
-    def action_id(self, action_id):
-        """Sets the action_id of this Action.
-
-
-        :param action_id: The action_id of this Action.  # noqa: E501
-        :type: int
-        """
-
-        self._action_id = action_id
-
-    @property
-    def experiment_id(self):
-        """Gets the experiment_id of this Action.  # noqa: E501
-
-
-        :return: The experiment_id of this Action.  # noqa: E501
-        :rtype: int
-        """
-        return self._experiment_id
-
-    @experiment_id.setter
-    def experiment_id(self, experiment_id):
-        """Sets the experiment_id of this Action.
-
-
-        :param experiment_id: The experiment_id of this Action.  # noqa: E501
-        :type: int
-        """
-
-        self._experiment_id = experiment_id
-
-    @property
-    def action_group_id(self):
-        """Gets the action_group_id of this Action.  # noqa: E501
-
-
-        :return: The action_group_id of this Action.  # noqa: E501
-        :rtype: int
-        """
-        return self._action_group_id
-
-    @action_group_id.setter
-    def action_group_id(self, action_group_id):
-        """Sets the action_group_id of this Action.
-
-
-        :param action_group_id: The action_group_id of this Action.  # noqa: E501
-        :type: int
-        """
-
-        self._action_group_id = action_group_id
+        if action_status is not None:
+            self.action_status = action_status
+        if experiment_id is not None:
+            self.experiment_id = experiment_id
 
     @property
     def action_date_start(self):
@@ -157,27 +94,6 @@ class Action(object):
         self._action_date_start = action_date_start
 
     @property
-    def action_status(self):
-        """Gets the action_status of this Action.  # noqa: E501
-
-
-        :return: The action_status of this Action.  # noqa: E501
-        :rtype: str
-        """
-        return self._action_status
-
-    @action_status.setter
-    def action_status(self, action_status):
-        """Sets the action_status of this Action.
-
-
-        :param action_status: The action_status of this Action.  # noqa: E501
-        :type: str
-        """
-
-        self._action_status = action_status
-
-    @property
     def action_done(self):
         """Gets the action_done of this Action.  # noqa: E501
 
@@ -199,6 +115,48 @@ class Action(object):
         self._action_done = action_done
 
     @property
+    def action_group_id(self):
+        """Gets the action_group_id of this Action.  # noqa: E501
+
+
+        :return: The action_group_id of this Action.  # noqa: E501
+        :rtype: int
+        """
+        return self._action_group_id
+
+    @action_group_id.setter
+    def action_group_id(self, action_group_id):
+        """Sets the action_group_id of this Action.
+
+
+        :param action_group_id: The action_group_id of this Action.  # noqa: E501
+        :type: int
+        """
+
+        self._action_group_id = action_group_id
+
+    @property
+    def action_id(self):
+        """Gets the action_id of this Action.  # noqa: E501
+
+
+        :return: The action_id of this Action.  # noqa: E501
+        :rtype: int
+        """
+        return self._action_id
+
+    @action_id.setter
+    def action_id(self, action_id):
+        """Sets the action_id of this Action.
+
+
+        :param action_id: The action_id of this Action.  # noqa: E501
+        :type: int
+        """
+
+        self._action_id = action_id
+
+    @property
     def action_running(self):
         """Gets the action_running of this Action.  # noqa: E501
 
@@ -218,6 +176,48 @@ class Action(object):
         """
 
         self._action_running = action_running
+
+    @property
+    def action_status(self):
+        """Gets the action_status of this Action.  # noqa: E501
+
+
+        :return: The action_status of this Action.  # noqa: E501
+        :rtype: str
+        """
+        return self._action_status
+
+    @action_status.setter
+    def action_status(self, action_status):
+        """Sets the action_status of this Action.
+
+
+        :param action_status: The action_status of this Action.  # noqa: E501
+        :type: str
+        """
+
+        self._action_status = action_status
+
+    @property
+    def experiment_id(self):
+        """Gets the experiment_id of this Action.  # noqa: E501
+
+
+        :return: The experiment_id of this Action.  # noqa: E501
+        :rtype: int
+        """
+        return self._experiment_id
+
+    @experiment_id.setter
+    def experiment_id(self, experiment_id):
+        """Sets the experiment_id of this Action.
+
+
+        :param experiment_id: The experiment_id of this Action.  # noqa: E501
+        :type: int
+        """
+
+        self._experiment_id = experiment_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

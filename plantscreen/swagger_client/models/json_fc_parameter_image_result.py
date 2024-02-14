@@ -28,14 +28,40 @@ class JsonFcParameterImageResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_fc_parameter_image_result': 'list[ParameterImage]'
     }
 
     attribute_map = {
+        'json_fc_parameter_image_result': 'JsonFcParameterImageResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_fc_parameter_image_result=None):  # noqa: E501
         """JsonFcParameterImageResult - a model defined in Swagger"""  # noqa: E501
+        self._json_fc_parameter_image_result = None
         self.discriminator = None
+        if json_fc_parameter_image_result is not None:
+            self.json_fc_parameter_image_result = json_fc_parameter_image_result
+
+    @property
+    def json_fc_parameter_image_result(self):
+        """Gets the json_fc_parameter_image_result of this JsonFcParameterImageResult.  # noqa: E501
+
+
+        :return: The json_fc_parameter_image_result of this JsonFcParameterImageResult.  # noqa: E501
+        :rtype: list[ParameterImage]
+        """
+        return self._json_fc_parameter_image_result
+
+    @json_fc_parameter_image_result.setter
+    def json_fc_parameter_image_result(self, json_fc_parameter_image_result):
+        """Sets the json_fc_parameter_image_result of this JsonFcParameterImageResult.
+
+
+        :param json_fc_parameter_image_result: The json_fc_parameter_image_result of this JsonFcParameterImageResult.  # noqa: E501
+        :type: list[ParameterImage]
+        """
+
+        self._json_fc_parameter_image_result = json_fc_parameter_image_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,14 +28,40 @@ class JsonScan3dUsedParamByAnalyseIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_scan3d_used_param_by_analyse_id_result': 'list[Parameter]'
     }
 
     attribute_map = {
+        'json_scan3d_used_param_by_analyse_id_result': 'JsonScan3dUsedParamByAnalyseIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_scan3d_used_param_by_analyse_id_result=None):  # noqa: E501
         """JsonScan3dUsedParamByAnalyseIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_scan3d_used_param_by_analyse_id_result = None
         self.discriminator = None
+        if json_scan3d_used_param_by_analyse_id_result is not None:
+            self.json_scan3d_used_param_by_analyse_id_result = json_scan3d_used_param_by_analyse_id_result
+
+    @property
+    def json_scan3d_used_param_by_analyse_id_result(self):
+        """Gets the json_scan3d_used_param_by_analyse_id_result of this JsonScan3dUsedParamByAnalyseIDResult.  # noqa: E501
+
+
+        :return: The json_scan3d_used_param_by_analyse_id_result of this JsonScan3dUsedParamByAnalyseIDResult.  # noqa: E501
+        :rtype: list[Parameter]
+        """
+        return self._json_scan3d_used_param_by_analyse_id_result
+
+    @json_scan3d_used_param_by_analyse_id_result.setter
+    def json_scan3d_used_param_by_analyse_id_result(self, json_scan3d_used_param_by_analyse_id_result):
+        """Sets the json_scan3d_used_param_by_analyse_id_result of this JsonScan3dUsedParamByAnalyseIDResult.
+
+
+        :param json_scan3d_used_param_by_analyse_id_result: The json_scan3d_used_param_by_analyse_id_result of this JsonScan3dUsedParamByAnalyseIDResult.  # noqa: E501
+        :type: list[Parameter]
+        """
+
+        self._json_scan3d_used_param_by_analyse_id_result = json_scan3d_used_param_by_analyse_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

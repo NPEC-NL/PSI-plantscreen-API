@@ -28,14 +28,40 @@ class JsonRoundOrderResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_round_order_result': 'RoundOrder'
     }
 
     attribute_map = {
+        'json_round_order_result': 'JsonRoundOrderResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_round_order_result=None):  # noqa: E501
         """JsonRoundOrderResult - a model defined in Swagger"""  # noqa: E501
+        self._json_round_order_result = None
         self.discriminator = None
+        if json_round_order_result is not None:
+            self.json_round_order_result = json_round_order_result
+
+    @property
+    def json_round_order_result(self):
+        """Gets the json_round_order_result of this JsonRoundOrderResult.  # noqa: E501
+
+
+        :return: The json_round_order_result of this JsonRoundOrderResult.  # noqa: E501
+        :rtype: RoundOrder
+        """
+        return self._json_round_order_result
+
+    @json_round_order_result.setter
+    def json_round_order_result(self, json_round_order_result):
+        """Sets the json_round_order_result of this JsonRoundOrderResult.
+
+
+        :param json_round_order_result: The json_round_order_result of this JsonRoundOrderResult.  # noqa: E501
+        :type: RoundOrder
+        """
+
+        self._json_round_order_result = json_round_order_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

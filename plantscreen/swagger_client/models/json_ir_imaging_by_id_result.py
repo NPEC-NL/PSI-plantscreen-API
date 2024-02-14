@@ -28,14 +28,40 @@ class JsonIrImagingByIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_ir_imaging_by_id_result': 'Imaging'
     }
 
     attribute_map = {
+        'json_ir_imaging_by_id_result': 'JsonIrImagingByIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_ir_imaging_by_id_result=None):  # noqa: E501
         """JsonIrImagingByIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_ir_imaging_by_id_result = None
         self.discriminator = None
+        if json_ir_imaging_by_id_result is not None:
+            self.json_ir_imaging_by_id_result = json_ir_imaging_by_id_result
+
+    @property
+    def json_ir_imaging_by_id_result(self):
+        """Gets the json_ir_imaging_by_id_result of this JsonIrImagingByIDResult.  # noqa: E501
+
+
+        :return: The json_ir_imaging_by_id_result of this JsonIrImagingByIDResult.  # noqa: E501
+        :rtype: Imaging
+        """
+        return self._json_ir_imaging_by_id_result
+
+    @json_ir_imaging_by_id_result.setter
+    def json_ir_imaging_by_id_result(self, json_ir_imaging_by_id_result):
+        """Sets the json_ir_imaging_by_id_result of this JsonIrImagingByIDResult.
+
+
+        :param json_ir_imaging_by_id_result: The json_ir_imaging_by_id_result of this JsonIrImagingByIDResult.  # noqa: E501
+        :type: Imaging
+        """
+
+        self._json_ir_imaging_by_id_result = json_ir_imaging_by_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

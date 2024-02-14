@@ -28,14 +28,40 @@ class JsonTrayTypeResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_tray_type_result': 'TrayType'
     }
 
     attribute_map = {
+        'json_tray_type_result': 'JsonTrayTypeResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_tray_type_result=None):  # noqa: E501
         """JsonTrayTypeResult - a model defined in Swagger"""  # noqa: E501
+        self._json_tray_type_result = None
         self.discriminator = None
+        if json_tray_type_result is not None:
+            self.json_tray_type_result = json_tray_type_result
+
+    @property
+    def json_tray_type_result(self):
+        """Gets the json_tray_type_result of this JsonTrayTypeResult.  # noqa: E501
+
+
+        :return: The json_tray_type_result of this JsonTrayTypeResult.  # noqa: E501
+        :rtype: TrayType
+        """
+        return self._json_tray_type_result
+
+    @json_tray_type_result.setter
+    def json_tray_type_result(self, json_tray_type_result):
+        """Sets the json_tray_type_result of this JsonTrayTypeResult.
+
+
+        :param json_tray_type_result: The json_tray_type_result of this JsonTrayTypeResult.  # noqa: E501
+        :type: TrayType
+        """
+
+        self._json_tray_type_result = json_tray_type_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

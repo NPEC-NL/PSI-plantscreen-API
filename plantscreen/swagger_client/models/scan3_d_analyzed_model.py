@@ -28,74 +28,118 @@ class Scan3DAnalyzedModel(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'analyse_id': 'int',
+        'analysed_model_path': 'str',
         'device_id': 'int',
         'device_pid': 'str',
         'experiment_id': 'int',
-        'round_id': 'int',
-        'tray_id': 'int',
-        'tray_barcode': 'str',
-        'plant_id': 'int',
-        'plant_barcode': 'str',
-        'measure_id': 'int',
         'measure_date': 'datetime',
-        'analyse_id': 'int',
-        'analysed_model_path': 'str'
+        'measure_id': 'int',
+        'plant_barcode': 'str',
+        'plant_id': 'int',
+        'round_id': 'int',
+        'tray_barcode': 'str',
+        'tray_id': 'int'
     }
 
     attribute_map = {
+        'analyse_id': 'AnalyseID',
+        'analysed_model_path': 'AnalysedModelPath',
         'device_id': 'DeviceID',
         'device_pid': 'DevicePID',
         'experiment_id': 'ExperimentID',
-        'round_id': 'RoundID',
-        'tray_id': 'TrayID',
-        'tray_barcode': 'TrayBarcode',
-        'plant_id': 'PlantID',
-        'plant_barcode': 'PlantBarcode',
-        'measure_id': 'MeasureID',
         'measure_date': 'MeasureDate',
-        'analyse_id': 'AnalyseID',
-        'analysed_model_path': 'AnalysedModelPath'
+        'measure_id': 'MeasureID',
+        'plant_barcode': 'PlantBarcode',
+        'plant_id': 'PlantID',
+        'round_id': 'RoundID',
+        'tray_barcode': 'TrayBarcode',
+        'tray_id': 'TrayID'
     }
 
-    def __init__(self, device_id=None, device_pid=None, experiment_id=None, round_id=None, tray_id=None, tray_barcode=None, plant_id=None, plant_barcode=None, measure_id=None, measure_date=None, analyse_id=None, analysed_model_path=None):  # noqa: E501
+    def __init__(self, analyse_id=None, analysed_model_path=None, device_id=None, device_pid=None, experiment_id=None, measure_date=None, measure_id=None, plant_barcode=None, plant_id=None, round_id=None, tray_barcode=None, tray_id=None):  # noqa: E501
         """Scan3DAnalyzedModel - a model defined in Swagger"""  # noqa: E501
+        self._analyse_id = None
+        self._analysed_model_path = None
         self._device_id = None
         self._device_pid = None
         self._experiment_id = None
-        self._round_id = None
-        self._tray_id = None
-        self._tray_barcode = None
-        self._plant_id = None
-        self._plant_barcode = None
-        self._measure_id = None
         self._measure_date = None
-        self._analyse_id = None
-        self._analysed_model_path = None
+        self._measure_id = None
+        self._plant_barcode = None
+        self._plant_id = None
+        self._round_id = None
+        self._tray_barcode = None
+        self._tray_id = None
         self.discriminator = None
+        if analyse_id is not None:
+            self.analyse_id = analyse_id
+        if analysed_model_path is not None:
+            self.analysed_model_path = analysed_model_path
         if device_id is not None:
             self.device_id = device_id
         if device_pid is not None:
             self.device_pid = device_pid
         if experiment_id is not None:
             self.experiment_id = experiment_id
-        if round_id is not None:
-            self.round_id = round_id
-        if tray_id is not None:
-            self.tray_id = tray_id
-        if tray_barcode is not None:
-            self.tray_barcode = tray_barcode
-        if plant_id is not None:
-            self.plant_id = plant_id
-        if plant_barcode is not None:
-            self.plant_barcode = plant_barcode
-        if measure_id is not None:
-            self.measure_id = measure_id
         if measure_date is not None:
             self.measure_date = measure_date
-        if analyse_id is not None:
-            self.analyse_id = analyse_id
-        if analysed_model_path is not None:
-            self.analysed_model_path = analysed_model_path
+        if measure_id is not None:
+            self.measure_id = measure_id
+        if plant_barcode is not None:
+            self.plant_barcode = plant_barcode
+        if plant_id is not None:
+            self.plant_id = plant_id
+        if round_id is not None:
+            self.round_id = round_id
+        if tray_barcode is not None:
+            self.tray_barcode = tray_barcode
+        if tray_id is not None:
+            self.tray_id = tray_id
+
+    @property
+    def analyse_id(self):
+        """Gets the analyse_id of this Scan3DAnalyzedModel.  # noqa: E501
+
+
+        :return: The analyse_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._analyse_id
+
+    @analyse_id.setter
+    def analyse_id(self, analyse_id):
+        """Sets the analyse_id of this Scan3DAnalyzedModel.
+
+
+        :param analyse_id: The analyse_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :type: int
+        """
+
+        self._analyse_id = analyse_id
+
+    @property
+    def analysed_model_path(self):
+        """Gets the analysed_model_path of this Scan3DAnalyzedModel.  # noqa: E501
+
+        filetype  # noqa: E501
+
+        :return: The analysed_model_path of this Scan3DAnalyzedModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._analysed_model_path
+
+    @analysed_model_path.setter
+    def analysed_model_path(self, analysed_model_path):
+        """Sets the analysed_model_path of this Scan3DAnalyzedModel.
+
+        filetype  # noqa: E501
+
+        :param analysed_model_path: The analysed_model_path of this Scan3DAnalyzedModel.  # noqa: E501
+        :type: str
+        """
+
+        self._analysed_model_path = analysed_model_path
 
     @property
     def device_id(self):
@@ -161,109 +205,25 @@ class Scan3DAnalyzedModel(object):
         self._experiment_id = experiment_id
 
     @property
-    def round_id(self):
-        """Gets the round_id of this Scan3DAnalyzedModel.  # noqa: E501
+    def measure_date(self):
+        """Gets the measure_date of this Scan3DAnalyzedModel.  # noqa: E501
 
 
-        :return: The round_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :rtype: int
+        :return: The measure_date of this Scan3DAnalyzedModel.  # noqa: E501
+        :rtype: datetime
         """
-        return self._round_id
+        return self._measure_date
 
-    @round_id.setter
-    def round_id(self, round_id):
-        """Sets the round_id of this Scan3DAnalyzedModel.
-
-
-        :param round_id: The round_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :type: int
-        """
-
-        self._round_id = round_id
-
-    @property
-    def tray_id(self):
-        """Gets the tray_id of this Scan3DAnalyzedModel.  # noqa: E501
+    @measure_date.setter
+    def measure_date(self, measure_date):
+        """Sets the measure_date of this Scan3DAnalyzedModel.
 
 
-        :return: The tray_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :rtype: int
-        """
-        return self._tray_id
-
-    @tray_id.setter
-    def tray_id(self, tray_id):
-        """Sets the tray_id of this Scan3DAnalyzedModel.
-
-
-        :param tray_id: The tray_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :type: int
+        :param measure_date: The measure_date of this Scan3DAnalyzedModel.  # noqa: E501
+        :type: datetime
         """
 
-        self._tray_id = tray_id
-
-    @property
-    def tray_barcode(self):
-        """Gets the tray_barcode of this Scan3DAnalyzedModel.  # noqa: E501
-
-
-        :return: The tray_barcode of this Scan3DAnalyzedModel.  # noqa: E501
-        :rtype: str
-        """
-        return self._tray_barcode
-
-    @tray_barcode.setter
-    def tray_barcode(self, tray_barcode):
-        """Sets the tray_barcode of this Scan3DAnalyzedModel.
-
-
-        :param tray_barcode: The tray_barcode of this Scan3DAnalyzedModel.  # noqa: E501
-        :type: str
-        """
-
-        self._tray_barcode = tray_barcode
-
-    @property
-    def plant_id(self):
-        """Gets the plant_id of this Scan3DAnalyzedModel.  # noqa: E501
-
-
-        :return: The plant_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :rtype: int
-        """
-        return self._plant_id
-
-    @plant_id.setter
-    def plant_id(self, plant_id):
-        """Sets the plant_id of this Scan3DAnalyzedModel.
-
-
-        :param plant_id: The plant_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :type: int
-        """
-
-        self._plant_id = plant_id
-
-    @property
-    def plant_barcode(self):
-        """Gets the plant_barcode of this Scan3DAnalyzedModel.  # noqa: E501
-
-
-        :return: The plant_barcode of this Scan3DAnalyzedModel.  # noqa: E501
-        :rtype: str
-        """
-        return self._plant_barcode
-
-    @plant_barcode.setter
-    def plant_barcode(self, plant_barcode):
-        """Sets the plant_barcode of this Scan3DAnalyzedModel.
-
-
-        :param plant_barcode: The plant_barcode of this Scan3DAnalyzedModel.  # noqa: E501
-        :type: str
-        """
-
-        self._plant_barcode = plant_barcode
+        self._measure_date = measure_date
 
     @property
     def measure_id(self):
@@ -287,69 +247,109 @@ class Scan3DAnalyzedModel(object):
         self._measure_id = measure_id
 
     @property
-    def measure_date(self):
-        """Gets the measure_date of this Scan3DAnalyzedModel.  # noqa: E501
+    def plant_barcode(self):
+        """Gets the plant_barcode of this Scan3DAnalyzedModel.  # noqa: E501
 
 
-        :return: The measure_date of this Scan3DAnalyzedModel.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._measure_date
-
-    @measure_date.setter
-    def measure_date(self, measure_date):
-        """Sets the measure_date of this Scan3DAnalyzedModel.
-
-
-        :param measure_date: The measure_date of this Scan3DAnalyzedModel.  # noqa: E501
-        :type: datetime
-        """
-
-        self._measure_date = measure_date
-
-    @property
-    def analyse_id(self):
-        """Gets the analyse_id of this Scan3DAnalyzedModel.  # noqa: E501
-
-
-        :return: The analyse_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :rtype: int
-        """
-        return self._analyse_id
-
-    @analyse_id.setter
-    def analyse_id(self, analyse_id):
-        """Sets the analyse_id of this Scan3DAnalyzedModel.
-
-
-        :param analyse_id: The analyse_id of this Scan3DAnalyzedModel.  # noqa: E501
-        :type: int
-        """
-
-        self._analyse_id = analyse_id
-
-    @property
-    def analysed_model_path(self):
-        """Gets the analysed_model_path of this Scan3DAnalyzedModel.  # noqa: E501
-
-        filetype  # noqa: E501
-
-        :return: The analysed_model_path of this Scan3DAnalyzedModel.  # noqa: E501
+        :return: The plant_barcode of this Scan3DAnalyzedModel.  # noqa: E501
         :rtype: str
         """
-        return self._analysed_model_path
+        return self._plant_barcode
 
-    @analysed_model_path.setter
-    def analysed_model_path(self, analysed_model_path):
-        """Sets the analysed_model_path of this Scan3DAnalyzedModel.
+    @plant_barcode.setter
+    def plant_barcode(self, plant_barcode):
+        """Sets the plant_barcode of this Scan3DAnalyzedModel.
 
-        filetype  # noqa: E501
 
-        :param analysed_model_path: The analysed_model_path of this Scan3DAnalyzedModel.  # noqa: E501
+        :param plant_barcode: The plant_barcode of this Scan3DAnalyzedModel.  # noqa: E501
         :type: str
         """
 
-        self._analysed_model_path = analysed_model_path
+        self._plant_barcode = plant_barcode
+
+    @property
+    def plant_id(self):
+        """Gets the plant_id of this Scan3DAnalyzedModel.  # noqa: E501
+
+
+        :return: The plant_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._plant_id
+
+    @plant_id.setter
+    def plant_id(self, plant_id):
+        """Sets the plant_id of this Scan3DAnalyzedModel.
+
+
+        :param plant_id: The plant_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :type: int
+        """
+
+        self._plant_id = plant_id
+
+    @property
+    def round_id(self):
+        """Gets the round_id of this Scan3DAnalyzedModel.  # noqa: E501
+
+
+        :return: The round_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._round_id
+
+    @round_id.setter
+    def round_id(self, round_id):
+        """Sets the round_id of this Scan3DAnalyzedModel.
+
+
+        :param round_id: The round_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :type: int
+        """
+
+        self._round_id = round_id
+
+    @property
+    def tray_barcode(self):
+        """Gets the tray_barcode of this Scan3DAnalyzedModel.  # noqa: E501
+
+
+        :return: The tray_barcode of this Scan3DAnalyzedModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._tray_barcode
+
+    @tray_barcode.setter
+    def tray_barcode(self, tray_barcode):
+        """Sets the tray_barcode of this Scan3DAnalyzedModel.
+
+
+        :param tray_barcode: The tray_barcode of this Scan3DAnalyzedModel.  # noqa: E501
+        :type: str
+        """
+
+        self._tray_barcode = tray_barcode
+
+    @property
+    def tray_id(self):
+        """Gets the tray_id of this Scan3DAnalyzedModel.  # noqa: E501
+
+
+        :return: The tray_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._tray_id
+
+    @tray_id.setter
+    def tray_id(self, tray_id):
+        """Sets the tray_id of this Scan3DAnalyzedModel.
+
+
+        :param tray_id: The tray_id of this Scan3DAnalyzedModel.  # noqa: E501
+        :type: int
+        """
+
+        self._tray_id = tray_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

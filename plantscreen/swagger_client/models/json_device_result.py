@@ -28,14 +28,40 @@ class JsonDeviceResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_device_result': 'Device'
     }
 
     attribute_map = {
+        'json_device_result': 'JsonDeviceResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_device_result=None):  # noqa: E501
         """JsonDeviceResult - a model defined in Swagger"""  # noqa: E501
+        self._json_device_result = None
         self.discriminator = None
+        if json_device_result is not None:
+            self.json_device_result = json_device_result
+
+    @property
+    def json_device_result(self):
+        """Gets the json_device_result of this JsonDeviceResult.  # noqa: E501
+
+
+        :return: The json_device_result of this JsonDeviceResult.  # noqa: E501
+        :rtype: Device
+        """
+        return self._json_device_result
+
+    @json_device_result.setter
+    def json_device_result(self, json_device_result):
+        """Sets the json_device_result of this JsonDeviceResult.
+
+
+        :param json_device_result: The json_device_result of this JsonDeviceResult.  # noqa: E501
+        :type: Device
+        """
+
+        self._json_device_result = json_device_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,5 +1,5 @@
 """"Mock replies for the device API"""
-MOCK_DEVICE_BASE = {
+MOCK_DEVICE = {
     "DeviceCaption": "RGB 2",
     "DeviceConfig": "Fake config string A",
     "DeviceFamily": "RgbCam",
@@ -12,7 +12,7 @@ MOCK_DEVICE_BASE = {
     "ProfileID": 1
     }
 
-MOCK_DEVICE_BASE_2 = {
+MOCK_DEVICE_2 = {
     "DeviceCaption": "MAN",
     "DeviceConfig": "Fake config string B",
     "DeviceFamily": "Position",
@@ -25,12 +25,6 @@ MOCK_DEVICE_BASE_2 = {
     "ProfileID": 1
     }
 
-MOCK_DEVICE_REPLY = {"JsonDeviceResult": MOCK_DEVICE_BASE}
-
-MOCK_DEVICE_ACTIVE_REPLY = {
-    "JsonDeviceActiveResult": [MOCK_DEVICE_BASE, MOCK_DEVICE_BASE_2]
-    }
-
-MOCK_DEVICE_PROFILE_REPLY = {
-    "JsonDeviceByProfileIDResult": [MOCK_DEVICE_BASE, MOCK_DEVICE_BASE_2]
-    }
+MOCK_DEVICE_REPLY = {"JsonDeviceResult": MOCK_DEVICE}
+MOCK_DEVICE_ACTIVE_REPLY = {"JsonDeviceActiveResult": [MOCK_DEVICE, MOCK_DEVICE_2]}
+MOCK_DEVICE_PROFILE_REPLY = {"JsonDeviceByProfileIDResult": [MOCK_DEVICE, MOCK_DEVICE_2]}

@@ -28,60 +28,39 @@ class Plant(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'plant_id': 'int',
         'plant_barcode': 'str',
-        'plant_name': 'str',
+        'plant_id': 'int',
         'plant_info': 'str',
+        'plant_name': 'str',
         'tray_area': 'str'
     }
 
     attribute_map = {
-        'plant_id': 'PlantID',
         'plant_barcode': 'PlantBarcode',
-        'plant_name': 'PlantName',
+        'plant_id': 'PlantID',
         'plant_info': 'PlantInfo',
+        'plant_name': 'PlantName',
         'tray_area': 'TrayArea'
     }
 
-    def __init__(self, plant_id=None, plant_barcode=None, plant_name=None, plant_info=None, tray_area=None):  # noqa: E501
+    def __init__(self, plant_barcode=None, plant_id=None, plant_info=None, plant_name=None, tray_area=None):  # noqa: E501
         """Plant - a model defined in Swagger"""  # noqa: E501
-        self._plant_id = None
         self._plant_barcode = None
-        self._plant_name = None
+        self._plant_id = None
         self._plant_info = None
+        self._plant_name = None
         self._tray_area = None
         self.discriminator = None
-        if plant_id is not None:
-            self.plant_id = plant_id
         if plant_barcode is not None:
             self.plant_barcode = plant_barcode
-        if plant_name is not None:
-            self.plant_name = plant_name
+        if plant_id is not None:
+            self.plant_id = plant_id
         if plant_info is not None:
             self.plant_info = plant_info
+        if plant_name is not None:
+            self.plant_name = plant_name
         if tray_area is not None:
             self.tray_area = tray_area
-
-    @property
-    def plant_id(self):
-        """Gets the plant_id of this Plant.  # noqa: E501
-
-
-        :return: The plant_id of this Plant.  # noqa: E501
-        :rtype: int
-        """
-        return self._plant_id
-
-    @plant_id.setter
-    def plant_id(self, plant_id):
-        """Sets the plant_id of this Plant.
-
-
-        :param plant_id: The plant_id of this Plant.  # noqa: E501
-        :type: int
-        """
-
-        self._plant_id = plant_id
 
     @property
     def plant_barcode(self):
@@ -105,25 +84,25 @@ class Plant(object):
         self._plant_barcode = plant_barcode
 
     @property
-    def plant_name(self):
-        """Gets the plant_name of this Plant.  # noqa: E501
+    def plant_id(self):
+        """Gets the plant_id of this Plant.  # noqa: E501
 
 
-        :return: The plant_name of this Plant.  # noqa: E501
-        :rtype: str
+        :return: The plant_id of this Plant.  # noqa: E501
+        :rtype: int
         """
-        return self._plant_name
+        return self._plant_id
 
-    @plant_name.setter
-    def plant_name(self, plant_name):
-        """Sets the plant_name of this Plant.
+    @plant_id.setter
+    def plant_id(self, plant_id):
+        """Sets the plant_id of this Plant.
 
 
-        :param plant_name: The plant_name of this Plant.  # noqa: E501
-        :type: str
+        :param plant_id: The plant_id of this Plant.  # noqa: E501
+        :type: int
         """
 
-        self._plant_name = plant_name
+        self._plant_id = plant_id
 
     @property
     def plant_info(self):
@@ -145,6 +124,27 @@ class Plant(object):
         """
 
         self._plant_info = plant_info
+
+    @property
+    def plant_name(self):
+        """Gets the plant_name of this Plant.  # noqa: E501
+
+
+        :return: The plant_name of this Plant.  # noqa: E501
+        :rtype: str
+        """
+        return self._plant_name
+
+    @plant_name.setter
+    def plant_name(self, plant_name):
+        """Sets the plant_name of this Plant.
+
+
+        :param plant_name: The plant_name of this Plant.  # noqa: E501
+        :type: str
+        """
+
+        self._plant_name = plant_name
 
     @property
     def tray_area(self):

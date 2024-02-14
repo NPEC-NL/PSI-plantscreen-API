@@ -28,14 +28,40 @@ class JsonSpectrumDeviceResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_spectrum_device_result': 'SpectrumDevice'
     }
 
     attribute_map = {
+        'json_spectrum_device_result': 'JsonSpectrumDeviceResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_spectrum_device_result=None):  # noqa: E501
         """JsonSpectrumDeviceResult - a model defined in Swagger"""  # noqa: E501
+        self._json_spectrum_device_result = None
         self.discriminator = None
+        if json_spectrum_device_result is not None:
+            self.json_spectrum_device_result = json_spectrum_device_result
+
+    @property
+    def json_spectrum_device_result(self):
+        """Gets the json_spectrum_device_result of this JsonSpectrumDeviceResult.  # noqa: E501
+
+
+        :return: The json_spectrum_device_result of this JsonSpectrumDeviceResult.  # noqa: E501
+        :rtype: SpectrumDevice
+        """
+        return self._json_spectrum_device_result
+
+    @json_spectrum_device_result.setter
+    def json_spectrum_device_result(self, json_spectrum_device_result):
+        """Sets the json_spectrum_device_result of this JsonSpectrumDeviceResult.
+
+
+        :param json_spectrum_device_result: The json_spectrum_device_result of this JsonSpectrumDeviceResult.  # noqa: E501
+        :type: SpectrumDevice
+        """
+
+        self._json_spectrum_device_result = json_spectrum_device_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

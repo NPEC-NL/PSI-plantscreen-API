@@ -28,81 +28,39 @@ class ActionGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group_id': 'int',
-        'experiment_id': 'int',
         'action_protocol_id': 'int',
+        'experiment_id': 'int',
         'group_caption': 'str',
-        'group_repeating_protocol': 'object'
+        'group_id': 'int',
+        'group_repeating_protocol': 'str'
     }
 
     attribute_map = {
-        'group_id': 'GroupID',
-        'experiment_id': 'ExperimentID',
         'action_protocol_id': 'ActionProtocolID',
+        'experiment_id': 'ExperimentID',
         'group_caption': 'GroupCaption',
+        'group_id': 'GroupID',
         'group_repeating_protocol': 'GroupRepeatingProtocol'
     }
 
-    def __init__(self, group_id=None, experiment_id=None, action_protocol_id=None, group_caption=None, group_repeating_protocol=None):  # noqa: E501
+    def __init__(self, action_protocol_id=None, experiment_id=None, group_caption=None, group_id=None, group_repeating_protocol=None):  # noqa: E501
         """ActionGroup - a model defined in Swagger"""  # noqa: E501
-        self._group_id = None
-        self._experiment_id = None
         self._action_protocol_id = None
+        self._experiment_id = None
         self._group_caption = None
+        self._group_id = None
         self._group_repeating_protocol = None
         self.discriminator = None
-        if group_id is not None:
-            self.group_id = group_id
-        if experiment_id is not None:
-            self.experiment_id = experiment_id
         if action_protocol_id is not None:
             self.action_protocol_id = action_protocol_id
+        if experiment_id is not None:
+            self.experiment_id = experiment_id
         if group_caption is not None:
             self.group_caption = group_caption
+        if group_id is not None:
+            self.group_id = group_id
         if group_repeating_protocol is not None:
             self.group_repeating_protocol = group_repeating_protocol
-
-    @property
-    def group_id(self):
-        """Gets the group_id of this ActionGroup.  # noqa: E501
-
-
-        :return: The group_id of this ActionGroup.  # noqa: E501
-        :rtype: int
-        """
-        return self._group_id
-
-    @group_id.setter
-    def group_id(self, group_id):
-        """Sets the group_id of this ActionGroup.
-
-
-        :param group_id: The group_id of this ActionGroup.  # noqa: E501
-        :type: int
-        """
-
-        self._group_id = group_id
-
-    @property
-    def experiment_id(self):
-        """Gets the experiment_id of this ActionGroup.  # noqa: E501
-
-
-        :return: The experiment_id of this ActionGroup.  # noqa: E501
-        :rtype: int
-        """
-        return self._experiment_id
-
-    @experiment_id.setter
-    def experiment_id(self, experiment_id):
-        """Sets the experiment_id of this ActionGroup.
-
-
-        :param experiment_id: The experiment_id of this ActionGroup.  # noqa: E501
-        :type: int
-        """
-
-        self._experiment_id = experiment_id
 
     @property
     def action_protocol_id(self):
@@ -126,6 +84,27 @@ class ActionGroup(object):
         self._action_protocol_id = action_protocol_id
 
     @property
+    def experiment_id(self):
+        """Gets the experiment_id of this ActionGroup.  # noqa: E501
+
+
+        :return: The experiment_id of this ActionGroup.  # noqa: E501
+        :rtype: int
+        """
+        return self._experiment_id
+
+    @experiment_id.setter
+    def experiment_id(self, experiment_id):
+        """Sets the experiment_id of this ActionGroup.
+
+
+        :param experiment_id: The experiment_id of this ActionGroup.  # noqa: E501
+        :type: int
+        """
+
+        self._experiment_id = experiment_id
+
+    @property
     def group_caption(self):
         """Gets the group_caption of this ActionGroup.  # noqa: E501
 
@@ -147,12 +126,33 @@ class ActionGroup(object):
         self._group_caption = group_caption
 
     @property
+    def group_id(self):
+        """Gets the group_id of this ActionGroup.  # noqa: E501
+
+
+        :return: The group_id of this ActionGroup.  # noqa: E501
+        :rtype: int
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this ActionGroup.
+
+
+        :param group_id: The group_id of this ActionGroup.  # noqa: E501
+        :type: int
+        """
+
+        self._group_id = group_id
+
+    @property
     def group_repeating_protocol(self):
         """Gets the group_repeating_protocol of this ActionGroup.  # noqa: E501
 
 
         :return: The group_repeating_protocol of this ActionGroup.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._group_repeating_protocol
 
@@ -162,7 +162,7 @@ class ActionGroup(object):
 
 
         :param group_repeating_protocol: The group_repeating_protocol of this ActionGroup.  # noqa: E501
-        :type: object
+        :type: str
         """
 
         self._group_repeating_protocol = group_repeating_protocol

@@ -28,14 +28,40 @@ class JsonProbeValueByDateResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_probe_value_by_date_result': 'list[ProbeValue]'
     }
 
     attribute_map = {
+        'json_probe_value_by_date_result': 'JsonProbeValueByDateResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_probe_value_by_date_result=None):  # noqa: E501
         """JsonProbeValueByDateResult - a model defined in Swagger"""  # noqa: E501
+        self._json_probe_value_by_date_result = None
         self.discriminator = None
+        if json_probe_value_by_date_result is not None:
+            self.json_probe_value_by_date_result = json_probe_value_by_date_result
+
+    @property
+    def json_probe_value_by_date_result(self):
+        """Gets the json_probe_value_by_date_result of this JsonProbeValueByDateResult.  # noqa: E501
+
+
+        :return: The json_probe_value_by_date_result of this JsonProbeValueByDateResult.  # noqa: E501
+        :rtype: list[ProbeValue]
+        """
+        return self._json_probe_value_by_date_result
+
+    @json_probe_value_by_date_result.setter
+    def json_probe_value_by_date_result(self, json_probe_value_by_date_result):
+        """Sets the json_probe_value_by_date_result of this JsonProbeValueByDateResult.
+
+
+        :param json_probe_value_by_date_result: The json_probe_value_by_date_result of this JsonProbeValueByDateResult.  # noqa: E501
+        :type: list[ProbeValue]
+        """
+
+        self._json_probe_value_by_date_result = json_probe_value_by_date_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

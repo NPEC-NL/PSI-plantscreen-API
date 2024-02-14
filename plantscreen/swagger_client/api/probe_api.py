@@ -33,7 +33,7 @@ class ProbeApi(object):
         self.api_client = api_client
 
     def probe(self, **kwargs):  # noqa: E501
-        """Returns one environment probe by probe ID. TODO: There are two versions, one with parameter (returning just a single object) and one without (returning an arry). Check how to model this  # noqa: E501
+        """If called without ID it returns all probeIDs, when called with it returns one environment probe of that probe ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -42,7 +42,7 @@ class ProbeApi(object):
 
         :param async_req bool
         :param int id: probeID. Two versions, with and without parameter
-        :return: JsonProbeByIDResult
+        :return: InlineResponse2001
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -54,7 +54,7 @@ class ProbeApi(object):
             return data
 
     def probe_with_http_info(self, **kwargs):  # noqa: E501
-        """Returns one environment probe by probe ID. TODO: There are two versions, one with parameter (returning just a single object) and one without (returning an arry). Check how to model this  # noqa: E501
+        """If called without ID it returns all probeIDs, when called with it returns one environment probe of that probe ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -63,7 +63,7 @@ class ProbeApi(object):
 
         :param async_req bool
         :param int id: probeID. Two versions, with and without parameter
-        :return: JsonProbeByIDResult
+        :return: InlineResponse2001
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -113,7 +113,7 @@ class ProbeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonProbeByIDResult',  # noqa: E501
+            response_type='InlineResponse2001',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

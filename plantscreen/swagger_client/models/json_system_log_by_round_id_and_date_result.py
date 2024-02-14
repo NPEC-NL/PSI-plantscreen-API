@@ -28,14 +28,40 @@ class JsonSystemLogByRoundIDAndDateResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_system_log_by_round_id_and_date_result': 'list[SystemLog]'
     }
 
     attribute_map = {
+        'json_system_log_by_round_id_and_date_result': 'JsonSystemLogByRoundIDAndDateResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_system_log_by_round_id_and_date_result=None):  # noqa: E501
         """JsonSystemLogByRoundIDAndDateResult - a model defined in Swagger"""  # noqa: E501
+        self._json_system_log_by_round_id_and_date_result = None
         self.discriminator = None
+        if json_system_log_by_round_id_and_date_result is not None:
+            self.json_system_log_by_round_id_and_date_result = json_system_log_by_round_id_and_date_result
+
+    @property
+    def json_system_log_by_round_id_and_date_result(self):
+        """Gets the json_system_log_by_round_id_and_date_result of this JsonSystemLogByRoundIDAndDateResult.  # noqa: E501
+
+
+        :return: The json_system_log_by_round_id_and_date_result of this JsonSystemLogByRoundIDAndDateResult.  # noqa: E501
+        :rtype: list[SystemLog]
+        """
+        return self._json_system_log_by_round_id_and_date_result
+
+    @json_system_log_by_round_id_and_date_result.setter
+    def json_system_log_by_round_id_and_date_result(self, json_system_log_by_round_id_and_date_result):
+        """Sets the json_system_log_by_round_id_and_date_result of this JsonSystemLogByRoundIDAndDateResult.
+
+
+        :param json_system_log_by_round_id_and_date_result: The json_system_log_by_round_id_and_date_result of this JsonSystemLogByRoundIDAndDateResult.  # noqa: E501
+        :type: list[SystemLog]
+        """
+
+        self._json_system_log_by_round_id_and_date_result = json_system_log_by_round_id_and_date_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,14 +28,40 @@ class JsonMscCalibrationResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_msc_calibration_result': 'MscCalibration'
     }
 
     attribute_map = {
+        'json_msc_calibration_result': 'JsonMscCalibrationResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_msc_calibration_result=None):  # noqa: E501
         """JsonMscCalibrationResult - a model defined in Swagger"""  # noqa: E501
+        self._json_msc_calibration_result = None
         self.discriminator = None
+        if json_msc_calibration_result is not None:
+            self.json_msc_calibration_result = json_msc_calibration_result
+
+    @property
+    def json_msc_calibration_result(self):
+        """Gets the json_msc_calibration_result of this JsonMscCalibrationResult.  # noqa: E501
+
+
+        :return: The json_msc_calibration_result of this JsonMscCalibrationResult.  # noqa: E501
+        :rtype: MscCalibration
+        """
+        return self._json_msc_calibration_result
+
+    @json_msc_calibration_result.setter
+    def json_msc_calibration_result(self, json_msc_calibration_result):
+        """Sets the json_msc_calibration_result of this JsonMscCalibrationResult.
+
+
+        :param json_msc_calibration_result: The json_msc_calibration_result of this JsonMscCalibrationResult.  # noqa: E501
+        :type: MscCalibration
+        """
+
+        self._json_msc_calibration_result = json_msc_calibration_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

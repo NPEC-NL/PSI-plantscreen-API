@@ -28,14 +28,40 @@ class JsonHcImagingResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_hc_imaging_result': 'list[HcImaging]'
     }
 
     attribute_map = {
+        'json_hc_imaging_result': 'JsonHcImagingResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_hc_imaging_result=None):  # noqa: E501
         """JsonHcImagingResult - a model defined in Swagger"""  # noqa: E501
+        self._json_hc_imaging_result = None
         self.discriminator = None
+        if json_hc_imaging_result is not None:
+            self.json_hc_imaging_result = json_hc_imaging_result
+
+    @property
+    def json_hc_imaging_result(self):
+        """Gets the json_hc_imaging_result of this JsonHcImagingResult.  # noqa: E501
+
+
+        :return: The json_hc_imaging_result of this JsonHcImagingResult.  # noqa: E501
+        :rtype: list[HcImaging]
+        """
+        return self._json_hc_imaging_result
+
+    @json_hc_imaging_result.setter
+    def json_hc_imaging_result(self, json_hc_imaging_result):
+        """Sets the json_hc_imaging_result of this JsonHcImagingResult.
+
+
+        :param json_hc_imaging_result: The json_hc_imaging_result of this JsonHcImagingResult.  # noqa: E501
+        :type: list[HcImaging]
+        """
+
+        self._json_hc_imaging_result = json_hc_imaging_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

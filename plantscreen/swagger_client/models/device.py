@@ -28,127 +28,64 @@ class Device(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'device_id': 'int',
-        'profile_id': 'int',
-        'device_pid': 'str',
         'device_caption': 'str',
-        'device_name': 'str',
-        'device_type': 'str',
+        'device_config': 'str',
         'device_family': 'str',
+        'device_id': 'int',
+        'device_name': 'str',
+        'device_pid': 'str',
+        'device_type': 'str',
         'device_validity_start': 'datetime',
         'device_validity_end': 'datetime',
-        'config': 'object'
+        'profile_id': 'int'
     }
 
     attribute_map = {
-        'device_id': 'DeviceID',
-        'profile_id': 'ProfileID',
-        'device_pid': 'DevicePID',
         'device_caption': 'DeviceCaption',
-        'device_name': 'DeviceName',
-        'device_type': 'DeviceType',
+        'device_config': 'DeviceConfig',
         'device_family': 'DeviceFamily',
+        'device_id': 'DeviceID',
+        'device_name': 'DeviceName',
+        'device_pid': 'DevicePID',
+        'device_type': 'DeviceType',
         'device_validity_start': 'DeviceValidityStart',
         'device_validity_end': 'DeviceValidityEnd',
-        'config': 'Config'
+        'profile_id': 'ProfileID'
     }
 
-    def __init__(self, device_id=None, profile_id=None, device_pid=None, device_caption=None, device_name=None, device_type=None, device_family=None, device_validity_start=None, device_validity_end=None, config=None):  # noqa: E501
+    def __init__(self, device_caption=None, device_config=None, device_family=None, device_id=None, device_name=None, device_pid=None, device_type=None, device_validity_start=None, device_validity_end=None, profile_id=None):  # noqa: E501
         """Device - a model defined in Swagger"""  # noqa: E501
-        self._device_id = None
-        self._profile_id = None
-        self._device_pid = None
         self._device_caption = None
-        self._device_name = None
-        self._device_type = None
+        self._device_config = None
         self._device_family = None
+        self._device_id = None
+        self._device_name = None
+        self._device_pid = None
+        self._device_type = None
         self._device_validity_start = None
         self._device_validity_end = None
-        self._config = None
+        self._profile_id = None
         self.discriminator = None
-        if device_id is not None:
-            self.device_id = device_id
-        if profile_id is not None:
-            self.profile_id = profile_id
-        if device_pid is not None:
-            self.device_pid = device_pid
         if device_caption is not None:
             self.device_caption = device_caption
-        if device_name is not None:
-            self.device_name = device_name
-        if device_type is not None:
-            self.device_type = device_type
+        if device_config is not None:
+            self.device_config = device_config
         if device_family is not None:
             self.device_family = device_family
+        if device_id is not None:
+            self.device_id = device_id
+        if device_name is not None:
+            self.device_name = device_name
+        if device_pid is not None:
+            self.device_pid = device_pid
+        if device_type is not None:
+            self.device_type = device_type
         if device_validity_start is not None:
             self.device_validity_start = device_validity_start
         if device_validity_end is not None:
             self.device_validity_end = device_validity_end
-        if config is not None:
-            self.config = config
-
-    @property
-    def device_id(self):
-        """Gets the device_id of this Device.  # noqa: E501
-
-
-        :return: The device_id of this Device.  # noqa: E501
-        :rtype: int
-        """
-        return self._device_id
-
-    @device_id.setter
-    def device_id(self, device_id):
-        """Sets the device_id of this Device.
-
-
-        :param device_id: The device_id of this Device.  # noqa: E501
-        :type: int
-        """
-
-        self._device_id = device_id
-
-    @property
-    def profile_id(self):
-        """Gets the profile_id of this Device.  # noqa: E501
-
-
-        :return: The profile_id of this Device.  # noqa: E501
-        :rtype: int
-        """
-        return self._profile_id
-
-    @profile_id.setter
-    def profile_id(self, profile_id):
-        """Sets the profile_id of this Device.
-
-
-        :param profile_id: The profile_id of this Device.  # noqa: E501
-        :type: int
-        """
-
-        self._profile_id = profile_id
-
-    @property
-    def device_pid(self):
-        """Gets the device_pid of this Device.  # noqa: E501
-
-
-        :return: The device_pid of this Device.  # noqa: E501
-        :rtype: str
-        """
-        return self._device_pid
-
-    @device_pid.setter
-    def device_pid(self, device_pid):
-        """Sets the device_pid of this Device.
-
-
-        :param device_pid: The device_pid of this Device.  # noqa: E501
-        :type: str
-        """
-
-        self._device_pid = device_pid
+        if profile_id is not None:
+            self.profile_id = profile_id
 
     @property
     def device_caption(self):
@@ -172,46 +109,25 @@ class Device(object):
         self._device_caption = device_caption
 
     @property
-    def device_name(self):
-        """Gets the device_name of this Device.  # noqa: E501
+    def device_config(self):
+        """Gets the device_config of this Device.  # noqa: E501
 
 
-        :return: The device_name of this Device.  # noqa: E501
+        :return: The device_config of this Device.  # noqa: E501
         :rtype: str
         """
-        return self._device_name
+        return self._device_config
 
-    @device_name.setter
-    def device_name(self, device_name):
-        """Sets the device_name of this Device.
+    @device_config.setter
+    def device_config(self, device_config):
+        """Sets the device_config of this Device.
 
 
-        :param device_name: The device_name of this Device.  # noqa: E501
+        :param device_config: The device_config of this Device.  # noqa: E501
         :type: str
         """
 
-        self._device_name = device_name
-
-    @property
-    def device_type(self):
-        """Gets the device_type of this Device.  # noqa: E501
-
-
-        :return: The device_type of this Device.  # noqa: E501
-        :rtype: str
-        """
-        return self._device_type
-
-    @device_type.setter
-    def device_type(self, device_type):
-        """Sets the device_type of this Device.
-
-
-        :param device_type: The device_type of this Device.  # noqa: E501
-        :type: str
-        """
-
-        self._device_type = device_type
+        self._device_config = device_config
 
     @property
     def device_family(self):
@@ -233,6 +149,90 @@ class Device(object):
         """
 
         self._device_family = device_family
+
+    @property
+    def device_id(self):
+        """Gets the device_id of this Device.  # noqa: E501
+
+
+        :return: The device_id of this Device.  # noqa: E501
+        :rtype: int
+        """
+        return self._device_id
+
+    @device_id.setter
+    def device_id(self, device_id):
+        """Sets the device_id of this Device.
+
+
+        :param device_id: The device_id of this Device.  # noqa: E501
+        :type: int
+        """
+
+        self._device_id = device_id
+
+    @property
+    def device_name(self):
+        """Gets the device_name of this Device.  # noqa: E501
+
+
+        :return: The device_name of this Device.  # noqa: E501
+        :rtype: str
+        """
+        return self._device_name
+
+    @device_name.setter
+    def device_name(self, device_name):
+        """Sets the device_name of this Device.
+
+
+        :param device_name: The device_name of this Device.  # noqa: E501
+        :type: str
+        """
+
+        self._device_name = device_name
+
+    @property
+    def device_pid(self):
+        """Gets the device_pid of this Device.  # noqa: E501
+
+
+        :return: The device_pid of this Device.  # noqa: E501
+        :rtype: str
+        """
+        return self._device_pid
+
+    @device_pid.setter
+    def device_pid(self, device_pid):
+        """Sets the device_pid of this Device.
+
+
+        :param device_pid: The device_pid of this Device.  # noqa: E501
+        :type: str
+        """
+
+        self._device_pid = device_pid
+
+    @property
+    def device_type(self):
+        """Gets the device_type of this Device.  # noqa: E501
+
+
+        :return: The device_type of this Device.  # noqa: E501
+        :rtype: str
+        """
+        return self._device_type
+
+    @device_type.setter
+    def device_type(self, device_type):
+        """Sets the device_type of this Device.
+
+
+        :param device_type: The device_type of this Device.  # noqa: E501
+        :type: str
+        """
+
+        self._device_type = device_type
 
     @property
     def device_validity_start(self):
@@ -277,25 +277,25 @@ class Device(object):
         self._device_validity_end = device_validity_end
 
     @property
-    def config(self):
-        """Gets the config of this Device.  # noqa: E501
+    def profile_id(self):
+        """Gets the profile_id of this Device.  # noqa: E501
 
 
-        :return: The config of this Device.  # noqa: E501
-        :rtype: object
+        :return: The profile_id of this Device.  # noqa: E501
+        :rtype: int
         """
-        return self._config
+        return self._profile_id
 
-    @config.setter
-    def config(self, config):
-        """Sets the config of this Device.
+    @profile_id.setter
+    def profile_id(self, profile_id):
+        """Sets the profile_id of this Device.
 
 
-        :param config: The config of this Device.  # noqa: E501
-        :type: object
+        :param profile_id: The profile_id of this Device.  # noqa: E501
+        :type: int
         """
 
-        self._config = config
+        self._profile_id = profile_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

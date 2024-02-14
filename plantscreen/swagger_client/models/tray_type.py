@@ -29,12 +29,12 @@ class TrayType(object):
     """
     swagger_types = {
         'type_id': 'int',
-        'type_name': 'str',
         'type_info': 'str',
-        'type_mask_top': 'object',
-        'type_mask_side': 'object',
-        'type_mask_under_side': 'object',
-        'type_mask_bottom': 'object',
+        'type_mask_bottom': 'str',
+        'type_mask_side': 'str',
+        'type_mask_top': 'str',
+        'type_mask_under_side': 'str',
+        'type_name': 'str',
         'type_size_x': 'int',
         'type_size_y': 'int',
         'type_size_z': 'int'
@@ -42,44 +42,44 @@ class TrayType(object):
 
     attribute_map = {
         'type_id': 'TypeID',
-        'type_name': 'TypeName',
         'type_info': 'TypeInfo',
-        'type_mask_top': 'TypeMaskTop',
-        'type_mask_side': 'TypeMaskSide',
-        'type_mask_under_side': 'TypeMaskUnderSide',
         'type_mask_bottom': 'TypeMaskBottom',
+        'type_mask_side': 'TypeMaskSide',
+        'type_mask_top': 'TypeMaskTop',
+        'type_mask_under_side': 'TypeMaskUnderSide',
+        'type_name': 'TypeName',
         'type_size_x': 'TypeSizeX',
         'type_size_y': 'TypeSizeY',
         'type_size_z': 'TypeSizeZ'
     }
 
-    def __init__(self, type_id=None, type_name=None, type_info=None, type_mask_top=None, type_mask_side=None, type_mask_under_side=None, type_mask_bottom=None, type_size_x=None, type_size_y=None, type_size_z=None):  # noqa: E501
+    def __init__(self, type_id=None, type_info=None, type_mask_bottom=None, type_mask_side=None, type_mask_top=None, type_mask_under_side=None, type_name=None, type_size_x=None, type_size_y=None, type_size_z=None):  # noqa: E501
         """TrayType - a model defined in Swagger"""  # noqa: E501
         self._type_id = None
-        self._type_name = None
         self._type_info = None
-        self._type_mask_top = None
-        self._type_mask_side = None
-        self._type_mask_under_side = None
         self._type_mask_bottom = None
+        self._type_mask_side = None
+        self._type_mask_top = None
+        self._type_mask_under_side = None
+        self._type_name = None
         self._type_size_x = None
         self._type_size_y = None
         self._type_size_z = None
         self.discriminator = None
         if type_id is not None:
             self.type_id = type_id
-        if type_name is not None:
-            self.type_name = type_name
         if type_info is not None:
             self.type_info = type_info
-        if type_mask_top is not None:
-            self.type_mask_top = type_mask_top
-        if type_mask_side is not None:
-            self.type_mask_side = type_mask_side
-        if type_mask_under_side is not None:
-            self.type_mask_under_side = type_mask_under_side
         if type_mask_bottom is not None:
             self.type_mask_bottom = type_mask_bottom
+        if type_mask_side is not None:
+            self.type_mask_side = type_mask_side
+        if type_mask_top is not None:
+            self.type_mask_top = type_mask_top
+        if type_mask_under_side is not None:
+            self.type_mask_under_side = type_mask_under_side
+        if type_name is not None:
+            self.type_name = type_name
         if type_size_x is not None:
             self.type_size_x = type_size_x
         if type_size_y is not None:
@@ -109,27 +109,6 @@ class TrayType(object):
         self._type_id = type_id
 
     @property
-    def type_name(self):
-        """Gets the type_name of this TrayType.  # noqa: E501
-
-
-        :return: The type_name of this TrayType.  # noqa: E501
-        :rtype: str
-        """
-        return self._type_name
-
-    @type_name.setter
-    def type_name(self, type_name):
-        """Sets the type_name of this TrayType.
-
-
-        :param type_name: The type_name of this TrayType.  # noqa: E501
-        :type: str
-        """
-
-        self._type_name = type_name
-
-    @property
     def type_info(self):
         """Gets the type_info of this TrayType.  # noqa: E501
 
@@ -151,75 +130,12 @@ class TrayType(object):
         self._type_info = type_info
 
     @property
-    def type_mask_top(self):
-        """Gets the type_mask_top of this TrayType.  # noqa: E501
-
-
-        :return: The type_mask_top of this TrayType.  # noqa: E501
-        :rtype: object
-        """
-        return self._type_mask_top
-
-    @type_mask_top.setter
-    def type_mask_top(self, type_mask_top):
-        """Sets the type_mask_top of this TrayType.
-
-
-        :param type_mask_top: The type_mask_top of this TrayType.  # noqa: E501
-        :type: object
-        """
-
-        self._type_mask_top = type_mask_top
-
-    @property
-    def type_mask_side(self):
-        """Gets the type_mask_side of this TrayType.  # noqa: E501
-
-
-        :return: The type_mask_side of this TrayType.  # noqa: E501
-        :rtype: object
-        """
-        return self._type_mask_side
-
-    @type_mask_side.setter
-    def type_mask_side(self, type_mask_side):
-        """Sets the type_mask_side of this TrayType.
-
-
-        :param type_mask_side: The type_mask_side of this TrayType.  # noqa: E501
-        :type: object
-        """
-
-        self._type_mask_side = type_mask_side
-
-    @property
-    def type_mask_under_side(self):
-        """Gets the type_mask_under_side of this TrayType.  # noqa: E501
-
-
-        :return: The type_mask_under_side of this TrayType.  # noqa: E501
-        :rtype: object
-        """
-        return self._type_mask_under_side
-
-    @type_mask_under_side.setter
-    def type_mask_under_side(self, type_mask_under_side):
-        """Sets the type_mask_under_side of this TrayType.
-
-
-        :param type_mask_under_side: The type_mask_under_side of this TrayType.  # noqa: E501
-        :type: object
-        """
-
-        self._type_mask_under_side = type_mask_under_side
-
-    @property
     def type_mask_bottom(self):
         """Gets the type_mask_bottom of this TrayType.  # noqa: E501
 
 
         :return: The type_mask_bottom of this TrayType.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._type_mask_bottom
 
@@ -229,10 +145,94 @@ class TrayType(object):
 
 
         :param type_mask_bottom: The type_mask_bottom of this TrayType.  # noqa: E501
-        :type: object
+        :type: str
         """
 
         self._type_mask_bottom = type_mask_bottom
+
+    @property
+    def type_mask_side(self):
+        """Gets the type_mask_side of this TrayType.  # noqa: E501
+
+
+        :return: The type_mask_side of this TrayType.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_mask_side
+
+    @type_mask_side.setter
+    def type_mask_side(self, type_mask_side):
+        """Sets the type_mask_side of this TrayType.
+
+
+        :param type_mask_side: The type_mask_side of this TrayType.  # noqa: E501
+        :type: str
+        """
+
+        self._type_mask_side = type_mask_side
+
+    @property
+    def type_mask_top(self):
+        """Gets the type_mask_top of this TrayType.  # noqa: E501
+
+
+        :return: The type_mask_top of this TrayType.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_mask_top
+
+    @type_mask_top.setter
+    def type_mask_top(self, type_mask_top):
+        """Sets the type_mask_top of this TrayType.
+
+
+        :param type_mask_top: The type_mask_top of this TrayType.  # noqa: E501
+        :type: str
+        """
+
+        self._type_mask_top = type_mask_top
+
+    @property
+    def type_mask_under_side(self):
+        """Gets the type_mask_under_side of this TrayType.  # noqa: E501
+
+
+        :return: The type_mask_under_side of this TrayType.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_mask_under_side
+
+    @type_mask_under_side.setter
+    def type_mask_under_side(self, type_mask_under_side):
+        """Sets the type_mask_under_side of this TrayType.
+
+
+        :param type_mask_under_side: The type_mask_under_side of this TrayType.  # noqa: E501
+        :type: str
+        """
+
+        self._type_mask_under_side = type_mask_under_side
+
+    @property
+    def type_name(self):
+        """Gets the type_name of this TrayType.  # noqa: E501
+
+
+        :return: The type_name of this TrayType.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_name
+
+    @type_name.setter
+    def type_name(self, type_name):
+        """Sets the type_name of this TrayType.
+
+
+        :param type_name: The type_name of this TrayType.  # noqa: E501
+        :type: str
+        """
+
+        self._type_name = type_name
 
     @property
     def type_size_x(self):

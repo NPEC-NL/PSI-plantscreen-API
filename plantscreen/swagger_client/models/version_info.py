@@ -28,45 +28,24 @@ class VersionInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'database_version': 'int',
-        'api_version': 'str'
+        'api_version': 'str',
+        'database_version': 'int'
     }
 
     attribute_map = {
-        'database_version': 'DatabaseVersion',
-        'api_version': 'ApiVersion'
+        'api_version': 'ApiVersion',
+        'database_version': 'DatabaseVersion'
     }
 
-    def __init__(self, database_version=None, api_version=None):  # noqa: E501
+    def __init__(self, api_version=None, database_version=None):  # noqa: E501
         """VersionInfo - a model defined in Swagger"""  # noqa: E501
-        self._database_version = None
         self._api_version = None
+        self._database_version = None
         self.discriminator = None
-        if database_version is not None:
-            self.database_version = database_version
         if api_version is not None:
             self.api_version = api_version
-
-    @property
-    def database_version(self):
-        """Gets the database_version of this VersionInfo.  # noqa: E501
-
-
-        :return: The database_version of this VersionInfo.  # noqa: E501
-        :rtype: int
-        """
-        return self._database_version
-
-    @database_version.setter
-    def database_version(self, database_version):
-        """Sets the database_version of this VersionInfo.
-
-
-        :param database_version: The database_version of this VersionInfo.  # noqa: E501
-        :type: int
-        """
-
-        self._database_version = database_version
+        if database_version is not None:
+            self.database_version = database_version
 
     @property
     def api_version(self):
@@ -88,6 +67,27 @@ class VersionInfo(object):
         """
 
         self._api_version = api_version
+
+    @property
+    def database_version(self):
+        """Gets the database_version of this VersionInfo.  # noqa: E501
+
+
+        :return: The database_version of this VersionInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._database_version
+
+    @database_version.setter
+    def database_version(self, database_version):
+        """Sets the database_version of this VersionInfo.
+
+
+        :param database_version: The database_version of this VersionInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._database_version = database_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

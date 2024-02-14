@@ -28,14 +28,40 @@ class JsonScan3dAnalyzedModelResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_scan3d_analyzed_model_result': 'list[Scan3DAnalyzedModel]'
     }
 
     attribute_map = {
+        'json_scan3d_analyzed_model_result': 'JsonScan3dAnalyzedModelResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_scan3d_analyzed_model_result=None):  # noqa: E501
         """JsonScan3dAnalyzedModelResult - a model defined in Swagger"""  # noqa: E501
+        self._json_scan3d_analyzed_model_result = None
         self.discriminator = None
+        if json_scan3d_analyzed_model_result is not None:
+            self.json_scan3d_analyzed_model_result = json_scan3d_analyzed_model_result
+
+    @property
+    def json_scan3d_analyzed_model_result(self):
+        """Gets the json_scan3d_analyzed_model_result of this JsonScan3dAnalyzedModelResult.  # noqa: E501
+
+
+        :return: The json_scan3d_analyzed_model_result of this JsonScan3dAnalyzedModelResult.  # noqa: E501
+        :rtype: list[Scan3DAnalyzedModel]
+        """
+        return self._json_scan3d_analyzed_model_result
+
+    @json_scan3d_analyzed_model_result.setter
+    def json_scan3d_analyzed_model_result(self, json_scan3d_analyzed_model_result):
+        """Sets the json_scan3d_analyzed_model_result of this JsonScan3dAnalyzedModelResult.
+
+
+        :param json_scan3d_analyzed_model_result: The json_scan3d_analyzed_model_result of this JsonScan3dAnalyzedModelResult.  # noqa: E501
+        :type: list[Scan3DAnalyzedModel]
+        """
+
+        self._json_scan3d_analyzed_model_result = json_scan3d_analyzed_model_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

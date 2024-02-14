@@ -126,7 +126,7 @@ class MscApi(object):
             collection_formats=collection_formats)
 
     def msc_calibration_light(self, **kwargs):  # noqa: E501
-        """Returns one light output setting for light group calibration defined by calibration light ID. TODO There are two versions, with and without parameters but one gives array back, one single value?  # noqa: E501
+        """Returns a list of all lightsettings if no ID is passed. Or the light output setting for light group calibration defined by calibration light ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -135,7 +135,7 @@ class MscApi(object):
 
         :param async_req bool
         :param int id: calibrationLightID. Two versions, with and without parameter
-        :return: JsonMscCalibrationLightByIDResult
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -147,7 +147,7 @@ class MscApi(object):
             return data
 
     def msc_calibration_light_with_http_info(self, **kwargs):  # noqa: E501
-        """Returns one light output setting for light group calibration defined by calibration light ID. TODO There are two versions, with and without parameters but one gives array back, one single value?  # noqa: E501
+        """Returns a list of all lightsettings if no ID is passed. Or the light output setting for light group calibration defined by calibration light ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -156,7 +156,7 @@ class MscApi(object):
 
         :param async_req bool
         :param int id: calibrationLightID. Two versions, with and without parameter
-        :return: JsonMscCalibrationLightByIDResult
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -206,7 +206,7 @@ class MscApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonMscCalibrationLightByIDResult',  # noqa: E501
+            response_type='InlineResponse200',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

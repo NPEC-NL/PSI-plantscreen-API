@@ -28,14 +28,40 @@ class JsonRoundByExperimentIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_round_by_experiment_id_result': 'list[Round]'
     }
 
     attribute_map = {
+        'json_round_by_experiment_id_result': 'JsonRoundByExperimentIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_round_by_experiment_id_result=None):  # noqa: E501
         """JsonRoundByExperimentIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_round_by_experiment_id_result = None
         self.discriminator = None
+        if json_round_by_experiment_id_result is not None:
+            self.json_round_by_experiment_id_result = json_round_by_experiment_id_result
+
+    @property
+    def json_round_by_experiment_id_result(self):
+        """Gets the json_round_by_experiment_id_result of this JsonRoundByExperimentIDResult.  # noqa: E501
+
+
+        :return: The json_round_by_experiment_id_result of this JsonRoundByExperimentIDResult.  # noqa: E501
+        :rtype: list[Round]
+        """
+        return self._json_round_by_experiment_id_result
+
+    @json_round_by_experiment_id_result.setter
+    def json_round_by_experiment_id_result(self, json_round_by_experiment_id_result):
+        """Sets the json_round_by_experiment_id_result of this JsonRoundByExperimentIDResult.
+
+
+        :param json_round_by_experiment_id_result: The json_round_by_experiment_id_result of this JsonRoundByExperimentIDResult.  # noqa: E501
+        :type: list[Round]
+        """
+
+        self._json_round_by_experiment_id_result = json_round_by_experiment_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

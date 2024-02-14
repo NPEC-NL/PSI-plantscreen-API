@@ -1,5 +1,5 @@
 """"Mock replies for the Thermal API"""
-MOCK_IR_IMAGE_BASE = {
+MOCK_IR_IMAGE = {
     "ActionID": 4845,
     "DeviceID": 44,
     "DevicePID": "IR1",
@@ -15,11 +15,7 @@ MOCK_IR_IMAGE_BASE = {
     "ImagePath": r"""2021-11-25\IrRawFrame_2021-11-25_14-35-50.raw"""
 }
 
-MOCK_IR_IMAGING_MEASURE_REPLY = {"JsonIrImagingByIDResult": MOCK_IR_IMAGE_BASE}
-
-MOCK_IR_IMAGING_REPLY = {"JsonIrImagingResult": [MOCK_IR_IMAGE_BASE]}
-
-MOCK_IR_EXTENDED_BASE = {
+MOCK_IR_EXTENDED = {
     "DeviceID": 5,
     "ExtendedData": """<DataSet> <Item name="latitude" \
                     type="double" unit="degree">49.33952739</Item> \
@@ -34,11 +30,7 @@ MOCK_IR_EXTENDED_BASE = {
     "TrayID": 248
 }
 
-MOCK_IR_IMAGING_EXTENDED_DATA_MEASURE_REPLY = {"JsonIrMeasureExtendedDataByIDResult": MOCK_IR_EXTENDED_BASE}
-
-MOCK_IR_IMAGING_EXTENDED_DATA_REPLY = {"JsonIrMeasureExtendedDataResult": MOCK_IR_EXTENDED_BASE}
-
-MOCK_IR_MASK_BASE = {
+MOCK_IR_MASK = {
     "DeviceID": 44,
     "DevicePID": "IR1",
     "ExperimentID": 75,
@@ -52,37 +44,19 @@ MOCK_IR_MASK_BASE = {
     "TrayID": 4015
 }
 
-MOCK_IR_PLANT_MASK_MEASURE_REPLY = {"JsonIrPlantMaskByMeasureIDResult": MOCK_IR_MASK_BASE}
-
-MOCK_IR_PLANT_MASK_REPLY = {"JsonIrPlantMaskResult": [MOCK_IR_MASK_BASE]}
-
-MOCK_IR_PLANT_MASK_IMAGE_MEASURE_REPLY = {"JsonIrPlantMaskImageByMeasureIDResult": MOCK_IR_IMAGE_BASE}
-
-MOCK_IR_PLANT_MASK_IMAGE_REPLY = {"JsonIrPlantMaskImageResult": [MOCK_IR_IMAGE_BASE]}
-
-MOCK_IR_PARAM_BASE = {
+MOCK_IR_PARAM = {
     "ParameterID": 5,
     "ParameterName": "Temp4",
     "ParameterUnit": "a.u."
 }
 
-MOCK_IR_PARAM_BASE_2 = {
+MOCK_IR_PARAM_2 = {
     "ParameterID": 6,
     "ParameterName": "Size",
     "ParameterUnit": ""
 }
 
-MOCK_IR_PARAM_REPLY = {"JsonIrParamResult": MOCK_IR_PARAM_BASE}
-
-MOCK_IR_PARAM_USED_ANALYSE_REPLY = {
-    "JsonIrUsedParamByAnalyseIDResult": [MOCK_IR_PARAM_BASE, MOCK_IR_PARAM_BASE_2]
-    }
-
-MOCK_IR_PARAM_USED_REPLY = {
-    "JsonIrUsedParamResult": [MOCK_IR_PARAM_BASE, MOCK_IR_PARAM_BASE_2]
-    }
-
-MOCK_IR_PLANT_BASE = {
+MOCK_IR_PLANT = {
     "AnalyseID": 53424,
     "DeviceID": 44,
     "DevicePID": "IR1",
@@ -105,11 +79,7 @@ MOCK_IR_PLANT_BASE = {
     "TrayID": 4010
 }
 
-MOCK_IR_PLANT_PARAM_ANALYSE_REPLY = {"JsonIrPlantParamByAnalyseIDResult": [MOCK_IR_PLANT_BASE]}
-
-MOCK_IR_PLANT_PARAM_REPLY = {"JsonIrPlantParamResult": [MOCK_IR_PLANT_BASE]}
-
-MOCK_IR_LEAF_BASE = {
+MOCK_IR_LEAF = {
     "AnalyseID": 6211,
     "DeviceID": 163,
     "DevicePID": "IR1",
@@ -133,7 +103,7 @@ MOCK_IR_LEAF_BASE = {
     "TrayID": 41
 }
 
-MOCK_IR_LEAF_BASE_2 = {
+MOCK_IR_LEAF_2 = {
     "AnalyseID": 6211,
     "DeviceID": 163,
     "DevicePID": "IR1",
@@ -157,10 +127,18 @@ MOCK_IR_LEAF_BASE_2 = {
     "TrayID": 41
 }
 
-MOCK_IR_LEAF_PARAM_ANALYSE_REPLY = {
-    "JsonIrLeafParamByAnalyseIDResult": [MOCK_IR_PLANT_BASE, MOCK_IR_LEAF_BASE_2]
-    }
-
-MOCK_IR_LEAF_PARAM_REPLY = {
-    "JsonIrLeafParamResult": [MOCK_IR_PLANT_BASE, MOCK_IR_LEAF_BASE_2]
-    }
+MOCK_IR_IMAGING_MEASURE_REPLY = {"JsonIrImagingByIDResult": MOCK_IR_IMAGE}
+MOCK_IR_IMAGING_REPLY = {"JsonIrImagingResult": [MOCK_IR_IMAGE]}
+MOCK_IR_IMAGING_EXTENDED_DATA_MEASURE_REPLY = {"JsonIrMeasureExtendedDataByIDResult": MOCK_IR_EXTENDED}
+MOCK_IR_IMAGING_EXTENDED_DATA_REPLY = {"JsonIrMeasureExtendedDataResult": MOCK_IR_EXTENDED}
+MOCK_IR_PLANT_MASK_MEASURE_REPLY = {"JsonIrPlantMaskByMeasureIDResult": MOCK_IR_MASK}
+MOCK_IR_PLANT_MASK_REPLY = {"JsonIrPlantMaskResult": [MOCK_IR_MASK]}
+MOCK_IR_PLANT_MASK_IMAGE_MEASURE_REPLY = {"JsonIrPlantMaskImageByMeasureIDResult": MOCK_IR_IMAGE}
+MOCK_IR_PLANT_MASK_IMAGE_REPLY = {"JsonIrPlantMaskImageResult": [MOCK_IR_IMAGE]}
+MOCK_IR_PARAM_REPLY = {"JsonIrParamResult": MOCK_IR_PARAM}
+MOCK_IR_PARAM_USED_ANALYSE_REPLY = {"JsonIrUsedParamByAnalyseIDResult": [MOCK_IR_PARAM, MOCK_IR_PARAM_2]}
+MOCK_IR_PARAM_USED_REPLY = {"JsonIrUsedParamResult": [MOCK_IR_PARAM, MOCK_IR_PARAM_2]}
+MOCK_IR_PLANT_PARAM_ANALYSE_REPLY = {"JsonIrPlantParamByAnalyseIDResult": [MOCK_IR_PLANT]}
+MOCK_IR_PLANT_PARAM_REPLY = {"JsonIrPlantParamResult": [MOCK_IR_PLANT]}
+MOCK_IR_LEAF_PARAM_ANALYSE_REPLY = {"JsonIrLeafParamByAnalyseIDResult": [MOCK_IR_LEAF, MOCK_IR_LEAF_2]}
+MOCK_IR_LEAF_PARAM_REPLY = {"JsonIrLeafParamResult": [MOCK_IR_LEAF, MOCK_IR_LEAF_2]}

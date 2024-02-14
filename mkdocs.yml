@@ -1,0 +1,22 @@
+site_name: Documentation-Test
+site_description: python documentation test
+
+theme: readthedocs
+repo_name: wurDevTim/Documentation-Test
+repo_url: https://github.com/wurDevTim/Documentation-Test
+
+nav:
+  - Home: index.md
+  - Code: 
+    - PSI_API: Code/PSI_API.md
+#    - Swagger_docs:
+  - Changelog: CHANGELOG.md
+extra_css:
+  - style.css
+
+markdown_extensions:
+- pymdownx.snippets:
+    check_paths: true
+
+plugins: 
+- mkdocstrings

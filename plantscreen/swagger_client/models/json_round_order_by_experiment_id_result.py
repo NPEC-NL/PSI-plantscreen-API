@@ -28,14 +28,40 @@ class JsonRoundOrderByExperimentIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_round_order_by_experiment_id_result': 'list[RoundOrder]'
     }
 
     attribute_map = {
+        'json_round_order_by_experiment_id_result': 'JsonRoundOrderByExperimentIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_round_order_by_experiment_id_result=None):  # noqa: E501
         """JsonRoundOrderByExperimentIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_round_order_by_experiment_id_result = None
         self.discriminator = None
+        if json_round_order_by_experiment_id_result is not None:
+            self.json_round_order_by_experiment_id_result = json_round_order_by_experiment_id_result
+
+    @property
+    def json_round_order_by_experiment_id_result(self):
+        """Gets the json_round_order_by_experiment_id_result of this JsonRoundOrderByExperimentIDResult.  # noqa: E501
+
+
+        :return: The json_round_order_by_experiment_id_result of this JsonRoundOrderByExperimentIDResult.  # noqa: E501
+        :rtype: list[RoundOrder]
+        """
+        return self._json_round_order_by_experiment_id_result
+
+    @json_round_order_by_experiment_id_result.setter
+    def json_round_order_by_experiment_id_result(self, json_round_order_by_experiment_id_result):
+        """Sets the json_round_order_by_experiment_id_result of this JsonRoundOrderByExperimentIDResult.
+
+
+        :param json_round_order_by_experiment_id_result: The json_round_order_by_experiment_id_result of this JsonRoundOrderByExperimentIDResult.  # noqa: E501
+        :type: list[RoundOrder]
+        """
+
+        self._json_round_order_by_experiment_id_result = json_round_order_by_experiment_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""
