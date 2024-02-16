@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>swagger_client.SystemLogApi - Documentation-Test</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "swagger_client.SystemLogApi";
+        var mkdocs_page_input_path = "Code\\Swagger_docs\\SystemLogApi.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Documentation-Test
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Code</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../PSI_API.md">PSI_API</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG/">Changelog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Documentation-Test</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">swagger_client.SystemLogApi</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/wurDevTim/Documentation-Test/edit/master/docs/Code/Swagger_docs/SystemLogApi.md">Edit on wurDevTim/Documentation-Test</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="swagger_clientsystemlogapi">swagger_client.SystemLogApi</h1>
+<p>All URIs are relative to <em>https://localhost:44339/</em></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>HTTP request</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./#system_log_date_log_tag"><strong>system_log_date_log_tag</strong></a></td>
+<td><strong>GET</strong> /SystemLog/Date/LogTag</td>
+<td>Returns important events as system logs by log tag between defined times. Times is entered as the start and end time of the required interval.</td>
+</tr>
+<tr>
+<td><a href="./#system_log_date_log_type"><strong>system_log_date_log_type</strong></a></td>
+<td><strong>GET</strong> /SystemLog/Date/LogType</td>
+<td>Returns important events as system logs by log type between defined times. Times is entered as the start and end time of the required interval.</td>
+</tr>
+<tr>
+<td><a href="./#system_log_date_round"><strong>system_log_date_round</strong></a></td>
+<td><strong>GET</strong> /SystemLog/Date/Round</td>
+<td>Returns important events as system logs by round ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the round.</td>
+</tr>
+<tr>
+<td><a href="./#system_log_date_tray"><strong>system_log_date_tray</strong></a></td>
+<td><strong>GET</strong> /SystemLog/Date/Tray</td>
+<td>Returns important events as system logs by tray ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the tray.</td>
+</tr>
+<tr>
+<td><a href="./#system_log_log_tag"><strong>system_log_log_tag</strong></a></td>
+<td><strong>GET</strong> /SystemLog/LogTag</td>
+<td>Returns a list of all used system log tag.</td>
+</tr>
+<tr>
+<td><a href="./#system_log_log_type"><strong>system_log_log_type</strong></a></td>
+<td><strong>GET</strong> /SystemLog/LogType</td>
+<td>Returns a list of all used system log types.</td>
+</tr>
+<tr>
+<td><a href="./#system_log_round"><strong>system_log_round</strong></a></td>
+<td><strong>GET</strong> /SystemLog/Round</td>
+<td>Returns important events as system logs by round ID. System logs are only optionally assigned to the round.</td>
+</tr>
+<tr>
+<td><a href="./#system_log_tray"><strong>system_log_tray</strong></a></td>
+<td><strong>GET</strong> /SystemLog/Tray</td>
+<td>Returns important events as system logs by tray ID. System logs are only optionally assigned to the tray.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="system_log_date_log_tag"><strong>system_log_date_log_tag</strong></h1>
+<blockquote>
+<p>JsonSystemLogByLogTagAndDateResult system_log_date_log_tag(tag, start, stop)</p>
+</blockquote>
+<p>Returns important events as system logs by log tag between defined times. Times is entered as the start and end time of the required interval.</p>
+<h3 id="example">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+tag = 'tag_example' # str | tag
+start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
+stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
+
+try:
+    # Returns important events as system logs by log tag between defined times. Times is entered as the start and end time of the required interval.
+    api_response = api_instance.system_log_date_log_tag(tag, start, stop)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_date_log_tag: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>tag</strong></td>
+<td><strong>str</strong></td>
+<td>tag</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>start</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStart</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>stop</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStop</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type">Return type</h3>
+<p><a href="../JsonSystemLogByLogTagAndDateResult/"><strong>JsonSystemLogByLogTagAndDateResult</strong></a></p>
+<h3 id="authorization">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="system_log_date_log_type"><strong>system_log_date_log_type</strong></h1>
+<blockquote>
+<p>JsonSystemLogByLogTypeAndDateResult system_log_date_log_type(type, start, stop)</p>
+</blockquote>
+<p>Returns important events as system logs by log type between defined times. Times is entered as the start and end time of the required interval.</p>
+<h3 id="example_1">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+type = 'type_example' # str | type
+start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
+stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
+
+try:
+    # Returns important events as system logs by log type between defined times. Times is entered as the start and end time of the required interval.
+    api_response = api_instance.system_log_date_log_type(type, start, stop)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_date_log_type: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>type</strong></td>
+<td><strong>str</strong></td>
+<td>type</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>start</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStart</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>stop</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStop</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_1">Return type</h3>
+<p><a href="../JsonSystemLogByLogTypeAndDateResult/"><strong>JsonSystemLogByLogTypeAndDateResult</strong></a></p>
+<h3 id="authorization_1">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_1">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="system_log_date_round"><strong>system_log_date_round</strong></h1>
+<blockquote>
+<p>JsonSystemLogByRoundIDAndDateResult system_log_date_round(id, start, stop)</p>
+</blockquote>
+<p>Returns important events as system logs by round ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the round.</p>
+<h3 id="example_2">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+id = 56 # int | roundID
+start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
+stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
+
+try:
+    # Returns important events as system logs by round ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the round.
+    api_response = api_instance.system_log_date_round(id, start, stop)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_date_round: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_2">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>start</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStart</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>stop</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStop</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_2">Return type</h3>
+<p><a href="../JsonSystemLogByRoundIDAndDateResult/"><strong>JsonSystemLogByRoundIDAndDateResult</strong></a></p>
+<h3 id="authorization_2">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_2">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="system_log_date_tray"><strong>system_log_date_tray</strong></h1>
+<blockquote>
+<p>JsonSystemLogByTrayIDAndDateResult system_log_date_tray(id, start, stop)</p>
+</blockquote>
+<p>Returns important events as system logs by tray ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the tray.</p>
+<h3 id="example_3">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+id = 56 # int | trayID
+start = '2013-10-20T19:20:30+01:00' # datetime | dateStart
+stop = '2013-10-20T19:20:30+01:00' # datetime | dateStop
+
+try:
+    # Returns important events as system logs by tray ID between defined times. Times is entered as the start and end time of the required interval. System logs are only optionally assigned to the tray.
+    api_response = api_instance.system_log_date_tray(id, start, stop)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_date_tray: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_3">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>start</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStart</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>stop</strong></td>
+<td><strong>datetime</strong></td>
+<td>dateStop</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_3">Return type</h3>
+<p><a href="../JsonSystemLogByTrayIDAndDateResult/"><strong>JsonSystemLogByTrayIDAndDateResult</strong></a></p>
+<h3 id="authorization_3">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_3">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="system_log_log_tag"><strong>system_log_log_tag</strong></h1>
+<blockquote>
+<p>JsonSystemLogTagResult system_log_log_tag()</p>
+</blockquote>
+<p>Returns a list of all used system log tag.</p>
+<h3 id="example_4">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+
+try:
+    # Returns a list of all used system log tag.
+    api_response = api_instance.system_log_log_tag()
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_log_tag: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_4">Parameters</h3>
+<p>This endpoint does not need any parameter.</p>
+<h3 id="return-type_4">Return type</h3>
+<p><a href="../JsonSystemLogTagResult/"><strong>JsonSystemLogTagResult</strong></a></p>
+<h3 id="authorization_4">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_4">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="system_log_log_type"><strong>system_log_log_type</strong></h1>
+<blockquote>
+<p>JsonSystemLogTypeResult system_log_log_type()</p>
+</blockquote>
+<p>Returns a list of all used system log types.</p>
+<h3 id="example_5">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+
+try:
+    # Returns a list of all used system log types.
+    api_response = api_instance.system_log_log_type()
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_log_type: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_5">Parameters</h3>
+<p>This endpoint does not need any parameter.</p>
+<h3 id="return-type_5">Return type</h3>
+<p><a href="../JsonSystemLogTypeResult/"><strong>JsonSystemLogTypeResult</strong></a></p>
+<h3 id="authorization_5">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_5">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="system_log_round"><strong>system_log_round</strong></h1>
+<blockquote>
+<p>JsonSystemLogByRoundIDResult system_log_round(id)</p>
+</blockquote>
+<p>Returns important events as system logs by round ID. System logs are only optionally assigned to the round.</p>
+<h3 id="example_6">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+id = 56 # int | roundID
+
+try:
+    # Returns important events as system logs by round ID. System logs are only optionally assigned to the round.
+    api_response = api_instance.system_log_round(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_round: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_6">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_6">Return type</h3>
+<p><a href="../JsonSystemLogByRoundIDResult/"><strong>JsonSystemLogByRoundIDResult</strong></a></p>
+<h3 id="authorization_6">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_6">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="system_log_tray"><strong>system_log_tray</strong></h1>
+<blockquote>
+<p>JsonSystemLogByTrayIDResult system_log_tray(id)</p>
+</blockquote>
+<p>Returns important events as system logs by tray ID. System logs are only optionally assigned to the tray.</p>
+<h3 id="example_7">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SystemLogApi()
+id = 56 # int | trayID
+
+try:
+    # Returns important events as system logs by tray ID. System logs are only optionally assigned to the tray.
+    api_response = api_instance.system_log_tray(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling SystemLogApi-&gt;system_log_tray: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_7">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_7">Return type</h3>
+<p><a href="../JsonSystemLogByTrayIDResult/"><strong>JsonSystemLogByTrayIDResult</strong></a></p>
+<h3 id="authorization_7">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_7">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

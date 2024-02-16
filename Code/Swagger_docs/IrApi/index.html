@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>swagger_client.IrApi - Documentation-Test</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "swagger_client.IrApi";
+        var mkdocs_page_input_path = "Code\\Swagger_docs\\IrApi.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Documentation-Test
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Code</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../PSI_API.md">PSI_API</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG/">Changelog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Documentation-Test</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">swagger_client.IrApi</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/wurDevTim/Documentation-Test/edit/master/docs/Code/Swagger_docs/IrApi.md">Edit on wurDevTim/Documentation-Test</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="swagger_clientirapi">swagger_client.IrApi</h1>
+<p>All URIs are relative to <em>https://localhost:44339/</em></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>HTTP request</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./#ir_imaging"><strong>ir_imaging</strong></a></td>
+<td><strong>GET</strong> /Ir/Imaging</td>
+<td>Returns Thermal imaging data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_imaging_extended_data"><strong>ir_imaging_extended_data</strong></a></td>
+<td><strong>GET</strong> /Ir/Imaging/ExtendedData</td>
+<td>Returns Thermal extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_imaging_extended_data_measure"><strong>ir_imaging_extended_data_measure</strong></a></td>
+<td><strong>GET</strong> /Ir/Imaging/ExtendedData/Measure</td>
+<td>Returns Thermal imaging extended data by IR measure ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_imaging_measure"><strong>ir_imaging_measure</strong></a></td>
+<td><strong>GET</strong> /Ir/Imaging/Measure</td>
+<td>Returns Thermal imaging data by IR measure ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_leaf_param"><strong>ir_leaf_param</strong></a></td>
+<td><strong>GET</strong> /Ir/Leaf/Param</td>
+<td>Returns the Thermal Statistic leaf parameter values for the parameter defined by parameter ID, by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_leaf_param_analyse"><strong>ir_leaf_param_analyse</strong></a></td>
+<td><strong>GET</strong> /Ir/Leaf/Param/Analyse</td>
+<td>Returns the Thermal statistic leaf parameter values for the parameter defined by parameter ID and calculated in the analysis defined by analyse ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_param"><strong>ir_param</strong></a></td>
+<td><strong>GET</strong> /Ir/Param</td>
+<td>Returns one Thermal parameter by parameter ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_param_used"><strong>ir_param_used</strong></a></td>
+<td><strong>GET</strong> /Ir/Param/Used</td>
+<td>Returns the Thermal plant and leaf parameters used in the analysis by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_param_used_analyse"><strong>ir_param_used_analyse</strong></a></td>
+<td><strong>GET</strong> /Ir/Param/Used/Analyse</td>
+<td>Returns the Thermalplant and leaf parameters used in the analysis defined by analyse ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_plant_mask"><strong>ir_plant_mask</strong></a></td>
+<td><strong>GET</strong> /Ir/Plant/Mask</td>
+<td>Returns Thermal plant masks created for the tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_plant_mask_image"><strong>ir_plant_mask_image</strong></a></td>
+<td><strong>GET</strong> /Ir/Plant/Mask/Image</td>
+<td>Returns Thermal imaging data masked by the plant mask for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_plant_mask_image_measure"><strong>ir_plant_mask_image_measure</strong></a></td>
+<td><strong>GET</strong> /Ir/Plant/Mask/Image/Measure</td>
+<td>Returns Thermal imaging data masked by the plant mask defined by IR measure ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_plant_mask_measure"><strong>ir_plant_mask_measure</strong></a></td>
+<td><strong>GET</strong> /Ir/Plant/Mask/Measure</td>
+<td>Returns the Thermal plant mask created for the measured tray defined by IR measure ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_plant_param"><strong>ir_plant_param</strong></a></td>
+<td><strong>GET</strong> /Ir/Plant/Param</td>
+<td>Returns the Thermal statistic plant parameter values for the parameter defined by parameter ID, by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.</td>
+</tr>
+<tr>
+<td><a href="./#ir_plant_param_analyse"><strong>ir_plant_param_analyse</strong></a></td>
+<td><strong>GET</strong> /Ir/Plant/Param/Analyse</td>
+<td>Returns the Thermal plant parameter values for the parameter defined by parameter ID and calculated in the analysis defined by analyse ID.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ir_imaging"><strong>ir_imaging</strong></h1>
+<blockquote>
+<p>JsonIrImagingResult ir_imaging(device_id, round_id, tray_id)</p>
+</blockquote>
+<p>Returns Thermal imaging data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</p>
+<h3 id="example">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+device_id = 56 # int | deviceID
+round_id = 56 # int | roundID
+tray_id = 56 # int | trayID
+
+try:
+    # Returns Thermal imaging data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
+    api_response = api_instance.ir_imaging(device_id, round_id, tray_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_imaging: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>device_id</strong></td>
+<td><strong>int</strong></td>
+<td>deviceID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>round_id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tray_id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type">Return type</h3>
+<p><a href="../JsonIrImagingResult/"><strong>JsonIrImagingResult</strong></a></p>
+<h3 id="authorization">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_imaging_extended_data"><strong>ir_imaging_extended_data</strong></h1>
+<blockquote>
+<p>JsonIrMeasureExtendedDataResult ir_imaging_extended_data(device_id, round_id, tray_id)</p>
+</blockquote>
+<p>Returns Thermal extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</p>
+<h3 id="example_1">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+device_id = 56 # int | deviceID
+round_id = 56 # int | roundID
+tray_id = 56 # int | trayID
+
+try:
+    # Returns Thermal extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
+    api_response = api_instance.ir_imaging_extended_data(device_id, round_id, tray_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_imaging_extended_data: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>device_id</strong></td>
+<td><strong>int</strong></td>
+<td>deviceID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>round_id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tray_id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_1">Return type</h3>
+<p><a href="../JsonIrMeasureExtendedDataResult/"><strong>JsonIrMeasureExtendedDataResult</strong></a></p>
+<h3 id="authorization_1">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_1">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_imaging_extended_data_measure"><strong>ir_imaging_extended_data_measure</strong></h1>
+<blockquote>
+<p>JsonIrMeasureExtendedDataByIDResult ir_imaging_extended_data_measure(id)</p>
+</blockquote>
+<p>Returns Thermal imaging extended data by IR measure ID.</p>
+<h3 id="example_2">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | measureID
+
+try:
+    # Returns Thermal imaging extended data by IR measure ID.
+    api_response = api_instance.ir_imaging_extended_data_measure(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_imaging_extended_data_measure: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_2">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>measureID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_2">Return type</h3>
+<p><a href="../JsonIrMeasureExtendedDataByIDResult/"><strong>JsonIrMeasureExtendedDataByIDResult</strong></a></p>
+<h3 id="authorization_2">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_2">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_imaging_measure"><strong>ir_imaging_measure</strong></h1>
+<blockquote>
+<p>JsonIrImagingByIDResult ir_imaging_measure(id)</p>
+</blockquote>
+<p>Returns Thermal imaging data by IR measure ID.</p>
+<h3 id="example_3">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | measureID
+
+try:
+    # Returns Thermal imaging data by IR measure ID.
+    api_response = api_instance.ir_imaging_measure(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_imaging_measure: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_3">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>measureID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_3">Return type</h3>
+<p><a href="../JsonIrImagingByIDResult/"><strong>JsonIrImagingByIDResult</strong></a></p>
+<h3 id="authorization_3">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_3">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_leaf_param"><strong>ir_leaf_param</strong></h1>
+<blockquote>
+<p>JsonIrLeafParamResult ir_leaf_param(device_id, round_id, tray_id, param_id)</p>
+</blockquote>
+<p>Returns the Thermal Statistic leaf parameter values for the parameter defined by parameter ID, by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.</p>
+<h3 id="example_4">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+device_id = 56 # int | deviceID
+round_id = 56 # int | roundID
+tray_id = 56 # int | trayID
+param_id = 56 # int | paramID
+
+try:
+    # Returns the Thermal Statistic leaf parameter values for the parameter defined by parameter ID, by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.
+    api_response = api_instance.ir_leaf_param(device_id, round_id, tray_id, param_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_leaf_param: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>device_id</strong></td>
+<td><strong>int</strong></td>
+<td>deviceID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>round_id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tray_id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>param_id</strong></td>
+<td><strong>int</strong></td>
+<td>paramID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_4">Return type</h3>
+<p><a href="../JsonIrLeafParamResult/"><strong>JsonIrLeafParamResult</strong></a></p>
+<h3 id="authorization_4">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_4">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_leaf_param_analyse"><strong>ir_leaf_param_analyse</strong></h1>
+<blockquote>
+<p>JsonIrLeafParamByAnalyseIDResult ir_leaf_param_analyse(id, param_id)</p>
+</blockquote>
+<p>Returns the Thermal statistic leaf parameter values for the parameter defined by parameter ID and calculated in the analysis defined by analyse ID.</p>
+<h3 id="example_5">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | analyseID
+param_id = 56 # int | paramID
+
+try:
+    # Returns the Thermal statistic leaf parameter values for the parameter defined by parameter ID and calculated in the analysis defined by analyse ID.
+    api_response = api_instance.ir_leaf_param_analyse(id, param_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_leaf_param_analyse: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_5">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>analyseID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>param_id</strong></td>
+<td><strong>int</strong></td>
+<td>paramID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_5">Return type</h3>
+<p><a href="../JsonIrLeafParamByAnalyseIDResult/"><strong>JsonIrLeafParamByAnalyseIDResult</strong></a></p>
+<h3 id="authorization_5">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_5">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_param"><strong>ir_param</strong></h1>
+<blockquote>
+<p>JsonIrParamResult ir_param(id)</p>
+</blockquote>
+<p>Returns one Thermal parameter by parameter ID.</p>
+<h3 id="example_6">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | paramID
+
+try:
+    # Returns one Thermal parameter by parameter ID.
+    api_response = api_instance.ir_param(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_param: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_6">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>paramID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_6">Return type</h3>
+<p><a href="../JsonIrParamResult/"><strong>JsonIrParamResult</strong></a></p>
+<h3 id="authorization_6">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_6">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_param_used"><strong>ir_param_used</strong></h1>
+<blockquote>
+<p>JsonIrUsedParamResult ir_param_used(device_id, round_id, tray_id)</p>
+</blockquote>
+<p>Returns the Thermal plant and leaf parameters used in the analysis by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.</p>
+<h3 id="example_7">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+device_id = 56 # int | deviceID
+round_id = 56 # int | roundID
+tray_id = 56 # int | trayID
+
+try:
+    # Returns the Thermal plant and leaf parameters used in the analysis by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.
+    api_response = api_instance.ir_param_used(device_id, round_id, tray_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_param_used: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_7">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>device_id</strong></td>
+<td><strong>int</strong></td>
+<td>deviceID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>round_id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tray_id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_7">Return type</h3>
+<p><a href="../JsonIrUsedParamResult/"><strong>JsonIrUsedParamResult</strong></a></p>
+<h3 id="authorization_7">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_7">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_param_used_analyse"><strong>ir_param_used_analyse</strong></h1>
+<blockquote>
+<p>JsonIrUsedParamByAnalyseIDResult ir_param_used_analyse(id)</p>
+</blockquote>
+<p>Returns the Thermalplant and leaf parameters used in the analysis defined by analyse ID.</p>
+<h3 id="example_8">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | analyseID
+
+try:
+    # Returns the Thermalplant and leaf parameters used in the analysis defined by analyse ID.
+    api_response = api_instance.ir_param_used_analyse(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_param_used_analyse: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_8">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>analyseID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_8">Return type</h3>
+<p><a href="../JsonIrUsedParamByAnalyseIDResult/"><strong>JsonIrUsedParamByAnalyseIDResult</strong></a></p>
+<h3 id="authorization_8">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_8">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_plant_mask"><strong>ir_plant_mask</strong></h1>
+<blockquote>
+<p>JsonIrPlantMaskResult ir_plant_mask(device_id, round_id, tray_id)</p>
+</blockquote>
+<p>Returns Thermal plant masks created for the tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</p>
+<h3 id="example_9">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+device_id = 56 # int | deviceID
+round_id = 56 # int | roundID
+tray_id = 56 # int | trayID
+
+try:
+    # Returns Thermal plant masks created for the tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
+    api_response = api_instance.ir_plant_mask(device_id, round_id, tray_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_plant_mask: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_9">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>device_id</strong></td>
+<td><strong>int</strong></td>
+<td>deviceID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>round_id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tray_id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_9">Return type</h3>
+<p><a href="../JsonIrPlantMaskResult/"><strong>JsonIrPlantMaskResult</strong></a></p>
+<h3 id="authorization_9">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_9">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_plant_mask_image"><strong>ir_plant_mask_image</strong></h1>
+<blockquote>
+<p>JsonIrPlantMaskImageResult ir_plant_mask_image(device_id, round_id, tray_id)</p>
+</blockquote>
+<p>Returns Thermal imaging data masked by the plant mask for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.</p>
+<h3 id="example_10">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+device_id = 56 # int | deviceID
+round_id = 56 # int | roundID
+tray_id = 56 # int | trayID
+
+try:
+    # Returns Thermal imaging data masked by the plant mask for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
+    api_response = api_instance.ir_plant_mask_image(device_id, round_id, tray_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_plant_mask_image: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_10">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>device_id</strong></td>
+<td><strong>int</strong></td>
+<td>deviceID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>round_id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tray_id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_10">Return type</h3>
+<p><a href="../JsonIrPlantMaskImageResult/"><strong>JsonIrPlantMaskImageResult</strong></a></p>
+<h3 id="authorization_10">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_10">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_plant_mask_image_measure"><strong>ir_plant_mask_image_measure</strong></h1>
+<blockquote>
+<p>JsonIrPlantMaskImageByMeasureIDResult ir_plant_mask_image_measure(id)</p>
+</blockquote>
+<p>Returns Thermal imaging data masked by the plant mask defined by IR measure ID.</p>
+<h3 id="example_11">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | measureID
+
+try:
+    # Returns Thermal imaging data masked by the plant mask defined by IR measure ID.
+    api_response = api_instance.ir_plant_mask_image_measure(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_plant_mask_image_measure: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_11">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>measureID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_11">Return type</h3>
+<p><a href="../JsonIrPlantMaskImageByMeasureIDResult/"><strong>JsonIrPlantMaskImageByMeasureIDResult</strong></a></p>
+<h3 id="authorization_11">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_11">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_plant_mask_measure"><strong>ir_plant_mask_measure</strong></h1>
+<blockquote>
+<p>JsonIrPlantMaskByMeasureIDResult ir_plant_mask_measure(id)</p>
+</blockquote>
+<p>Returns the Thermal plant mask created for the measured tray defined by IR measure ID.</p>
+<h3 id="example_12">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | measureID
+
+try:
+    # Returns the Thermal plant mask created for the measured tray defined by IR measure ID.
+    api_response = api_instance.ir_plant_mask_measure(id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_plant_mask_measure: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_12">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>measureID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_12">Return type</h3>
+<p><a href="../JsonIrPlantMaskByMeasureIDResult/"><strong>JsonIrPlantMaskByMeasureIDResult</strong></a></p>
+<h3 id="authorization_12">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_12">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_plant_param"><strong>ir_plant_param</strong></h1>
+<blockquote>
+<p>JsonIrPlantParamResult ir_plant_param(device_id, round_id, tray_id, param_id)</p>
+</blockquote>
+<p>Returns the Thermal statistic plant parameter values for the parameter defined by parameter ID, by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.</p>
+<h3 id="example_13">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+device_id = 56 # int | deviceID
+round_id = 56 # int | roundID
+tray_id = 56 # int | trayID
+param_id = 56 # int | paramID
+
+try:
+    # Returns the Thermal statistic plant parameter values for the parameter defined by parameter ID, by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID.
+    api_response = api_instance.ir_plant_param(device_id, round_id, tray_id, param_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_plant_param: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_13">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>device_id</strong></td>
+<td><strong>int</strong></td>
+<td>deviceID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>round_id</strong></td>
+<td><strong>int</strong></td>
+<td>roundID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>tray_id</strong></td>
+<td><strong>int</strong></td>
+<td>trayID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>param_id</strong></td>
+<td><strong>int</strong></td>
+<td>paramID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_13">Return type</h3>
+<p><a href="../JsonIrPlantParamResult/"><strong>JsonIrPlantParamResult</strong></a></p>
+<h3 id="authorization_13">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_13">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+<h1 id="ir_plant_param_analyse"><strong>ir_plant_param_analyse</strong></h1>
+<blockquote>
+<p>JsonIrPlantParamByAnalyseIDResult ir_plant_param_analyse(id, param_id)</p>
+</blockquote>
+<p>Returns the Thermal plant parameter values for the parameter defined by parameter ID and calculated in the analysis defined by analyse ID.</p>
+<h3 id="example_14">Example</h3>
+<pre><code class="language-python">from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IrApi()
+id = 56 # int | analyseID
+param_id = 56 # int | ParamID
+
+try:
+    # Returns the Thermal plant parameter values for the parameter defined by parameter ID and calculated in the analysis defined by analyse ID.
+    api_response = api_instance.ir_plant_param_analyse(id, param_id)
+    pprint(api_response)
+except ApiException as e:
+    print(&quot;Exception when calling IrApi-&gt;ir_plant_param_analyse: %s\n&quot; % e)
+</code></pre>
+<h3 id="parameters_14">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td><strong>int</strong></td>
+<td>analyseID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>param_id</strong></td>
+<td><strong>int</strong></td>
+<td>ParamID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_14">Return type</h3>
+<p><a href="../JsonIrPlantParamByAnalyseIDResult/"><strong>JsonIrPlantParamByAnalyseIDResult</strong></a></p>
+<h3 id="authorization_14">Authorization</h3>
+<p>No authorization required</p>
+<h3 id="http-request-headers_14">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: application/json</li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../README.md#documentation-for-api-endpoints">[Back to API list]</a> <a href="../README.md#documentation-for-models">[Back to Model list]</a> <a href="../README.md">[Back to README]</a></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
