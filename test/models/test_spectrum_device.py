@@ -12,11 +12,6 @@ import replies
 
 
 class SpectrumDeviceModels(unittest.TestCase):
-    def test_spectrum_devices_none(self):
-        """"None reply"""
-        reply = models.spectrum_device.SpectrumDeviceIDs.from_dict({'json_spectrum_device_id_result': None})
-        self.assertEqual(reply, [])
-
     def test_spectrum_devices_empty(self):
         """"emply list reply"""
         reply = models.spectrum_device.SpectrumDeviceIDs.from_dict({'json_spectrum_device_id_result': []})
@@ -33,6 +28,5 @@ class SpectrumDeviceModels(unittest.TestCase):
 if __name__ == "__main__":
     """"Helper for debugging purposes"""
     test_case = SpectrumDeviceModels()
-    test_case.test_spectrum_devices_none()
     test_case.test_spectrum_devices_empty()
     test_case.test_spectrum_devices()

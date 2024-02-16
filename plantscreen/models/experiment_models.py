@@ -13,8 +13,6 @@ class ExperimentIDs:
 
         Return
             List[int]"""
-        if obj.get("json_experiment_id_result") is None:
-            return []
         _ids = [int(y.get("experiment_id")) for y in obj.get("json_experiment_id_result")]
         return _ids
 
@@ -28,6 +26,4 @@ class OwnerID:
 
         Return
             List[int]"""
-        if obj.get("json_owner_id_result") is None:
-            return []
         return [y.get('owner_id') for y in obj.get("json_owner_id_result")]

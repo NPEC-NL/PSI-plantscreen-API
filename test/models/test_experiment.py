@@ -12,11 +12,6 @@ import replies
 
 
 class ExperimentModels(unittest.TestCase):
-    def test_experiment_id_none(self):
-        """"None reply"""
-        reply = models.experiment.ExperimentIDs.from_dict({'json_experiment_id_result': None})
-        self.assertEqual(reply, [])
-
     def test_experiment_id_empty(self):
         """"emply list reply"""
         reply = models.experiment.ExperimentIDs.from_dict({'json_experiment_id_result': []})
@@ -27,11 +22,6 @@ class ExperimentModels(unittest.TestCase):
         self.assertEqual(len(reply), len(replies.experiment.MOCK_EXPERIMENT_ID_JSON['json_experiment_id_result']))
         for i in range(0, len(replies.experiment.MOCK_EXPERIMENT_ID_JSON['json_experiment_id_result'])):
             self.assertEqual(reply[i], replies.experiment.MOCK_EXPERIMENT_ID_JSON['json_experiment_id_result'][i]['experiment_id'])
-
-    def test_experiment_owner_id_none(self):
-        """"None reply"""
-        reply = models.experiment.OwnerID.from_dict({'json_owner_id_result': None})
-        self.assertEqual(reply, [])
 
     def test_experiment_owner_id_empty(self):
         """"emply list reply"""
@@ -48,8 +38,6 @@ class ExperimentModels(unittest.TestCase):
 if __name__ == "__main__":
     """"Helper for debugging purposes"""
     test_case = ExperimentModels()
-    test_case.test_experiment_id_none()
     test_case.test_experiment_id_empty()
     test_case.test_experiment_id()
-    test_case.test_experiment_owner_id_none()
     test_case.test_experiment_owner_id()

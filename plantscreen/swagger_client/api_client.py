@@ -586,13 +586,7 @@ class ApiClient(object):
         except ImportError:
             return string
         except ValueError:
-            raise rest.ApiException(
-                status=0,
-                reason=(
-                    "Failed to parse `{0}` as datetime object"
-                    .format(string)
-                )
-            )
+            return string
 
     def __hasattr(self, object, name):
             return name in object.__class__.__dict__

@@ -28,7 +28,7 @@ class LogType(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'log_type': 'LogTypeLogType'
+        'log_type': 'str'
     }
 
     attribute_map = {
@@ -48,7 +48,7 @@ class LogType(object):
 
 
         :return: The log_type of this LogType.  # noqa: E501
-        :rtype: LogTypeLogType
+        :rtype: str
         """
         return self._log_type
 
@@ -58,7 +58,7 @@ class LogType(object):
 
 
         :param log_type: The log_type of this LogType.  # noqa: E501
-        :type: LogTypeLogType
+        :type: str
         """
 
         self._log_type = log_type

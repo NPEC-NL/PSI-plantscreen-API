@@ -198,21 +198,38 @@ class MscApi(object):
         # Authentication setting
         auth_settings = []  # noqa: E501
 
-        return self.api_client.call_api(
-            '/Msc/CalibrationLight', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InlineResponse200',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+        if 'id' in params:
+            return self.api_client.call_api(
+                '/Msc/CalibrationLight', 'GET',
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type='JsonMscCalibrationLightByIDResult',  # noqa: E501
+                auth_settings=auth_settings,
+                async_req=params.get('async_req'),
+                _return_http_data_only=params.get('_return_http_data_only'),
+                _preload_content=params.get('_preload_content', True),
+                _request_timeout=params.get('_request_timeout'),
+                collection_formats=collection_formats)
+        else:
+            return self.api_client.call_api(
+                '/Msc/CalibrationLight', 'GET',
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type='JsonMscCalibrationLightResult',  # noqa: E501
+                auth_settings=auth_settings,
+                async_req=params.get('async_req'),
+                _return_http_data_only=params.get('_return_http_data_only'),
+                _preload_content=params.get('_preload_content', True),
+                _request_timeout=params.get('_request_timeout'),
+                collection_formats=collection_formats)
 
     def msc_calibration_light_set(self, id, **kwargs):  # noqa: E501
         """Returns the Multispectral calibration for individual groups of lights with information about the exposure and gain of the camera defined by light set ID.  # noqa: E501
@@ -417,7 +434,7 @@ class MscApi(object):
             collection_formats=collection_formats)
 
     def msc_imaging_extended_data(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
-        """Returns Multispectral extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID. (Only available for field systems.)  # noqa: E501
+        """Returns Multispectral extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -440,7 +457,7 @@ class MscApi(object):
             return data
 
     def msc_imaging_extended_data_with_http_info(self, device_id, round_id, tray_id, **kwargs):  # noqa: E501
-        """Returns Multispectral extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID. (Only available for field systems.)  # noqa: E501
+        """Returns Multispectral extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -526,7 +543,7 @@ class MscApi(object):
             collection_formats=collection_formats)
 
     def msc_imaging_extended_data_measure(self, id, **kwargs):  # noqa: E501
-        """Returns Multispectral imaging extended data by MSC measure ID. (Only available for field systems.)  # noqa: E501
+        """Returns Multispectral imaging extended data by MSC measure ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -547,7 +564,7 @@ class MscApi(object):
             return data
 
     def msc_imaging_extended_data_measure_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Returns Multispectral imaging extended data by MSC measure ID. (Only available for field systems.)  # noqa: E501
+        """Returns Multispectral imaging extended data by MSC measure ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

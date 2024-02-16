@@ -10,6 +10,17 @@ MOCK_PROFILE_ID_REPLY = {
     ]
 }
 
+MOCK_PROFILE_ID_JSON = {
+    "json_system_profile_id_result": [
+        {
+            "profile_id": 1
+        },
+        {
+            "profile_id": 3
+        }
+    ]
+}
+
 MOCK_PROFILE_BASE = {
     "ProfileActive": False,
     "ProfileID": 4,
