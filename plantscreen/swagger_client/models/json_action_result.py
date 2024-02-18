@@ -28,14 +28,40 @@ class JsonActionResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_action_result': 'Action'
     }
 
     attribute_map = {
+        'json_action_result': 'JsonActionResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_action_result=None):  # noqa: E501
         """JsonActionResult - a model defined in Swagger"""  # noqa: E501
+        self._json_action_result = None
         self.discriminator = None
+        if json_action_result is not None:
+            self.json_action_result = json_action_result
+
+    @property
+    def json_action_result(self):
+        """Gets the json_action_result of this JsonActionResult.  # noqa: E501
+
+
+        :return: The json_action_result of this JsonActionResult.  # noqa: E501
+        :rtype: Action
+        """
+        return self._json_action_result
+
+    @json_action_result.setter
+    def json_action_result(self, json_action_result):
+        """Sets the json_action_result of this JsonActionResult.
+
+
+        :param json_action_result: The json_action_result of this JsonActionResult.  # noqa: E501
+        :type: Action
+        """
+
+        self._json_action_result = json_action_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

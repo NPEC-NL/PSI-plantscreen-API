@@ -10,7 +10,18 @@ MOCK_EXPERIMENT_ID_REPLY = {
     ]
 }
 
-MOCK_EXPERIMENT_BASE = {
+MOCK_EXPERIMENT_ID_JSON = {
+    "json_experiment_id_result": [
+        {
+            "experiment_id": 2
+        },
+        {
+            "experiment_id": 3
+        }
+    ]
+}
+
+MOCK_EXPERIMENT = {
     "CreatedDate": "2021-07-22 13:53:42",
     "ExperimentID": 72,
     "ExperimentInfo": "Data can be deleted",
@@ -20,7 +31,7 @@ MOCK_EXPERIMENT_BASE = {
     "StatusChangedDate": "2021-07-22 13:53:42"
 }
 
-MOCK_EXPERIMENT_BASE_2 = {
+MOCK_EXPERIMENT_2 = {
     "CreatedDate": "2021-08-11 15:42:05",
     "ExperimentID": 73,
     "ExperimentInfo": "Round 1",
@@ -30,15 +41,9 @@ MOCK_EXPERIMENT_BASE_2 = {
     "StatusChangedDate": "2021-08-11 15:42:05"
 }
 
-MOCK_EXPERIMENT_REPLY = {"JsonExperimentResult": MOCK_EXPERIMENT_BASE}
-
-MOCK_EXPERIMENT_DATE_REPLY = {
-    "JsonExperimentByDateResult": [MOCK_EXPERIMENT_BASE, MOCK_EXPERIMENT_BASE_2]
-    }
-
-MOCK_EXPERIMENT_OWNER_REPLY = {
-    "JsonExperimentByOwnerResult": [MOCK_EXPERIMENT_BASE, MOCK_EXPERIMENT_BASE_2]
-    }
+MOCK_EXPERIMENT_REPLY = {"JsonExperimentResult": MOCK_EXPERIMENT}
+MOCK_EXPERIMENT_DATE_REPLY = {"JsonExperimentByDateResult": [MOCK_EXPERIMENT, MOCK_EXPERIMENT_2]}
+MOCK_EXPERIMENT_OWNER_REPLY = {"JsonExperimentByOwnerResult": [MOCK_EXPERIMENT, MOCK_EXPERIMENT_2]}
 
 MOCK_OWNER_ID_REPLY = {
     "JsonOwnerIDResult": [
@@ -47,6 +52,17 @@ MOCK_OWNER_ID_REPLY = {
         },
         {
             "OwnerID": 13
+        }
+    ]
+}
+
+MOCK_OWNER_ID_JSON = {
+    "json_owner_id_result": [
+        {
+            "owner_id": 6
+        },
+        {
+            "owner_id": 13
         }
     ]
 }

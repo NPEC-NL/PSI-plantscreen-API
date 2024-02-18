@@ -28,14 +28,40 @@ class JsonScalesMeasureResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_scales_measure_result': 'list[ScalesData]'
     }
 
     attribute_map = {
+        'json_scales_measure_result': 'JsonScalesMeasureResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_scales_measure_result=None):  # noqa: E501
         """JsonScalesMeasureResult - a model defined in Swagger"""  # noqa: E501
+        self._json_scales_measure_result = None
         self.discriminator = None
+        if json_scales_measure_result is not None:
+            self.json_scales_measure_result = json_scales_measure_result
+
+    @property
+    def json_scales_measure_result(self):
+        """Gets the json_scales_measure_result of this JsonScalesMeasureResult.  # noqa: E501
+
+
+        :return: The json_scales_measure_result of this JsonScalesMeasureResult.  # noqa: E501
+        :rtype: list[ScalesData]
+        """
+        return self._json_scales_measure_result
+
+    @json_scales_measure_result.setter
+    def json_scales_measure_result(self, json_scales_measure_result):
+        """Sets the json_scales_measure_result of this JsonScalesMeasureResult.
+
+
+        :param json_scales_measure_result: The json_scales_measure_result of this JsonScalesMeasureResult.  # noqa: E501
+        :type: list[ScalesData]
+        """
+
+        self._json_scales_measure_result = json_scales_measure_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

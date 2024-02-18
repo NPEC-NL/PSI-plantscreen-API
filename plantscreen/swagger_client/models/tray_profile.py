@@ -28,102 +28,39 @@ class TrayProfile(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'profile_id': 'int',
-        'tray_id': 'int',
-        'profile_name': 'str',
         'profile_date_start': 'datetime',
-        'profile_date_stop': 'datetime'
+        'profile_date_stop': 'datetime',
+        'profile_id': 'int',
+        'profile_name': 'str',
+        'tray_id': 'int'
     }
 
     attribute_map = {
-        'profile_id': 'ProfileID',
-        'tray_id': 'TrayID',
-        'profile_name': 'ProfileName',
         'profile_date_start': 'ProfileDateStart',
-        'profile_date_stop': 'ProfileDateStop'
+        'profile_date_stop': 'ProfileDateStop',
+        'profile_id': 'ProfileID',
+        'profile_name': 'ProfileName',
+        'tray_id': 'TrayID'
     }
 
-    def __init__(self, profile_id=None, tray_id=None, profile_name=None, profile_date_start=None, profile_date_stop=None):  # noqa: E501
+    def __init__(self, profile_date_start=None, profile_date_stop=None, profile_id=None, profile_name=None, tray_id=None):  # noqa: E501
         """TrayProfile - a model defined in Swagger"""  # noqa: E501
-        self._profile_id = None
-        self._tray_id = None
-        self._profile_name = None
         self._profile_date_start = None
         self._profile_date_stop = None
+        self._profile_id = None
+        self._profile_name = None
+        self._tray_id = None
         self.discriminator = None
-        if profile_id is not None:
-            self.profile_id = profile_id
-        if tray_id is not None:
-            self.tray_id = tray_id
-        if profile_name is not None:
-            self.profile_name = profile_name
         if profile_date_start is not None:
             self.profile_date_start = profile_date_start
         if profile_date_stop is not None:
             self.profile_date_stop = profile_date_stop
-
-    @property
-    def profile_id(self):
-        """Gets the profile_id of this TrayProfile.  # noqa: E501
-
-
-        :return: The profile_id of this TrayProfile.  # noqa: E501
-        :rtype: int
-        """
-        return self._profile_id
-
-    @profile_id.setter
-    def profile_id(self, profile_id):
-        """Sets the profile_id of this TrayProfile.
-
-
-        :param profile_id: The profile_id of this TrayProfile.  # noqa: E501
-        :type: int
-        """
-
-        self._profile_id = profile_id
-
-    @property
-    def tray_id(self):
-        """Gets the tray_id of this TrayProfile.  # noqa: E501
-
-
-        :return: The tray_id of this TrayProfile.  # noqa: E501
-        :rtype: int
-        """
-        return self._tray_id
-
-    @tray_id.setter
-    def tray_id(self, tray_id):
-        """Sets the tray_id of this TrayProfile.
-
-
-        :param tray_id: The tray_id of this TrayProfile.  # noqa: E501
-        :type: int
-        """
-
-        self._tray_id = tray_id
-
-    @property
-    def profile_name(self):
-        """Gets the profile_name of this TrayProfile.  # noqa: E501
-
-
-        :return: The profile_name of this TrayProfile.  # noqa: E501
-        :rtype: str
-        """
-        return self._profile_name
-
-    @profile_name.setter
-    def profile_name(self, profile_name):
-        """Sets the profile_name of this TrayProfile.
-
-
-        :param profile_name: The profile_name of this TrayProfile.  # noqa: E501
-        :type: str
-        """
-
-        self._profile_name = profile_name
+        if profile_id is not None:
+            self.profile_id = profile_id
+        if profile_name is not None:
+            self.profile_name = profile_name
+        if tray_id is not None:
+            self.tray_id = tray_id
 
     @property
     def profile_date_start(self):
@@ -166,6 +103,69 @@ class TrayProfile(object):
         """
 
         self._profile_date_stop = profile_date_stop
+
+    @property
+    def profile_id(self):
+        """Gets the profile_id of this TrayProfile.  # noqa: E501
+
+
+        :return: The profile_id of this TrayProfile.  # noqa: E501
+        :rtype: int
+        """
+        return self._profile_id
+
+    @profile_id.setter
+    def profile_id(self, profile_id):
+        """Sets the profile_id of this TrayProfile.
+
+
+        :param profile_id: The profile_id of this TrayProfile.  # noqa: E501
+        :type: int
+        """
+
+        self._profile_id = profile_id
+
+    @property
+    def profile_name(self):
+        """Gets the profile_name of this TrayProfile.  # noqa: E501
+
+
+        :return: The profile_name of this TrayProfile.  # noqa: E501
+        :rtype: str
+        """
+        return self._profile_name
+
+    @profile_name.setter
+    def profile_name(self, profile_name):
+        """Sets the profile_name of this TrayProfile.
+
+
+        :param profile_name: The profile_name of this TrayProfile.  # noqa: E501
+        :type: str
+        """
+
+        self._profile_name = profile_name
+
+    @property
+    def tray_id(self):
+        """Gets the tray_id of this TrayProfile.  # noqa: E501
+
+
+        :return: The tray_id of this TrayProfile.  # noqa: E501
+        :rtype: int
+        """
+        return self._tray_id
+
+    @tray_id.setter
+    def tray_id(self, tray_id):
+        """Sets the tray_id of this TrayProfile.
+
+
+        :param tray_id: The tray_id of this TrayProfile.  # noqa: E501
+        :type: int
+        """
+
+        self._tray_id = tray_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

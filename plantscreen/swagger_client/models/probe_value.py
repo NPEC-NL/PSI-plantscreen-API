@@ -30,35 +30,35 @@ class ProbeValue(object):
     swagger_types = {
         'probe_id': 'int',
         'probe_name': 'str',
-        'probe_value': 'float',
         'probe_unit': 'str',
+        'probe_value': 'float',
         'record_date': 'datetime'
     }
 
     attribute_map = {
         'probe_id': 'ProbeID',
         'probe_name': 'ProbeName',
-        'probe_value': 'ProbeValue',
         'probe_unit': 'ProbeUnit',
+        'probe_value': 'ProbeValue',
         'record_date': 'RecordDate'
     }
 
-    def __init__(self, probe_id=None, probe_name=None, probe_value=None, probe_unit=None, record_date=None):  # noqa: E501
+    def __init__(self, probe_id=None, probe_name=None, probe_unit=None, probe_value=None, record_date=None):  # noqa: E501
         """ProbeValue - a model defined in Swagger"""  # noqa: E501
         self._probe_id = None
         self._probe_name = None
-        self._probe_value = None
         self._probe_unit = None
+        self._probe_value = None
         self._record_date = None
         self.discriminator = None
         if probe_id is not None:
             self.probe_id = probe_id
         if probe_name is not None:
             self.probe_name = probe_name
-        if probe_value is not None:
-            self.probe_value = probe_value
         if probe_unit is not None:
             self.probe_unit = probe_unit
+        if probe_value is not None:
+            self.probe_value = probe_value
         if record_date is not None:
             self.record_date = record_date
 
@@ -105,27 +105,6 @@ class ProbeValue(object):
         self._probe_name = probe_name
 
     @property
-    def probe_value(self):
-        """Gets the probe_value of this ProbeValue.  # noqa: E501
-
-
-        :return: The probe_value of this ProbeValue.  # noqa: E501
-        :rtype: float
-        """
-        return self._probe_value
-
-    @probe_value.setter
-    def probe_value(self, probe_value):
-        """Sets the probe_value of this ProbeValue.
-
-
-        :param probe_value: The probe_value of this ProbeValue.  # noqa: E501
-        :type: float
-        """
-
-        self._probe_value = probe_value
-
-    @property
     def probe_unit(self):
         """Gets the probe_unit of this ProbeValue.  # noqa: E501
 
@@ -145,6 +124,27 @@ class ProbeValue(object):
         """
 
         self._probe_unit = probe_unit
+
+    @property
+    def probe_value(self):
+        """Gets the probe_value of this ProbeValue.  # noqa: E501
+
+
+        :return: The probe_value of this ProbeValue.  # noqa: E501
+        :rtype: float
+        """
+        return self._probe_value
+
+    @probe_value.setter
+    def probe_value(self, probe_value):
+        """Sets the probe_value of this ProbeValue.
+
+
+        :param probe_value: The probe_value of this ProbeValue.  # noqa: E501
+        :type: float
+        """
+
+        self._probe_value = probe_value
 
     @property
     def record_date(self):

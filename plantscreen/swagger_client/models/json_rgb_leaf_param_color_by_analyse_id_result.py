@@ -28,14 +28,40 @@ class JsonRgbLeafParamColorByAnalyseIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_rgb_leaf_param_color_by_analyse_id_result': 'list[LeafParameter]'
     }
 
     attribute_map = {
+        'json_rgb_leaf_param_color_by_analyse_id_result': 'JsonRgbLeafParamColorByAnalyseIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_rgb_leaf_param_color_by_analyse_id_result=None):  # noqa: E501
         """JsonRgbLeafParamColorByAnalyseIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_rgb_leaf_param_color_by_analyse_id_result = None
         self.discriminator = None
+        if json_rgb_leaf_param_color_by_analyse_id_result is not None:
+            self.json_rgb_leaf_param_color_by_analyse_id_result = json_rgb_leaf_param_color_by_analyse_id_result
+
+    @property
+    def json_rgb_leaf_param_color_by_analyse_id_result(self):
+        """Gets the json_rgb_leaf_param_color_by_analyse_id_result of this JsonRgbLeafParamColorByAnalyseIDResult.  # noqa: E501
+
+
+        :return: The json_rgb_leaf_param_color_by_analyse_id_result of this JsonRgbLeafParamColorByAnalyseIDResult.  # noqa: E501
+        :rtype: list[LeafParameter]
+        """
+        return self._json_rgb_leaf_param_color_by_analyse_id_result
+
+    @json_rgb_leaf_param_color_by_analyse_id_result.setter
+    def json_rgb_leaf_param_color_by_analyse_id_result(self, json_rgb_leaf_param_color_by_analyse_id_result):
+        """Sets the json_rgb_leaf_param_color_by_analyse_id_result of this JsonRgbLeafParamColorByAnalyseIDResult.
+
+
+        :param json_rgb_leaf_param_color_by_analyse_id_result: The json_rgb_leaf_param_color_by_analyse_id_result of this JsonRgbLeafParamColorByAnalyseIDResult.  # noqa: E501
+        :type: list[LeafParameter]
+        """
+
+        self._json_rgb_leaf_param_color_by_analyse_id_result = json_rgb_leaf_param_color_by_analyse_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

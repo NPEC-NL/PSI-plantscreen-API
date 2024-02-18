@@ -28,14 +28,40 @@ class JsonSprayActionResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_spray_action_result': 'list[SprayAction]'
     }
 
     attribute_map = {
+        'json_spray_action_result': 'JsonSprayActionResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_spray_action_result=None):  # noqa: E501
         """JsonSprayActionResult - a model defined in Swagger"""  # noqa: E501
+        self._json_spray_action_result = None
         self.discriminator = None
+        if json_spray_action_result is not None:
+            self.json_spray_action_result = json_spray_action_result
+
+    @property
+    def json_spray_action_result(self):
+        """Gets the json_spray_action_result of this JsonSprayActionResult.  # noqa: E501
+
+
+        :return: The json_spray_action_result of this JsonSprayActionResult.  # noqa: E501
+        :rtype: list[SprayAction]
+        """
+        return self._json_spray_action_result
+
+    @json_spray_action_result.setter
+    def json_spray_action_result(self, json_spray_action_result):
+        """Sets the json_spray_action_result of this JsonSprayActionResult.
+
+
+        :param json_spray_action_result: The json_spray_action_result of this JsonSprayActionResult.  # noqa: E501
+        :type: list[SprayAction]
+        """
+
+        self._json_spray_action_result = json_spray_action_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,14 +28,40 @@ class JsonIrPlantMaskByMeasureIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_ir_plant_mask_by_measure_id_result': 'PlantMask'
     }
 
     attribute_map = {
+        'json_ir_plant_mask_by_measure_id_result': 'JsonIrPlantMaskByMeasureIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_ir_plant_mask_by_measure_id_result=None):  # noqa: E501
         """JsonIrPlantMaskByMeasureIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_ir_plant_mask_by_measure_id_result = None
         self.discriminator = None
+        if json_ir_plant_mask_by_measure_id_result is not None:
+            self.json_ir_plant_mask_by_measure_id_result = json_ir_plant_mask_by_measure_id_result
+
+    @property
+    def json_ir_plant_mask_by_measure_id_result(self):
+        """Gets the json_ir_plant_mask_by_measure_id_result of this JsonIrPlantMaskByMeasureIDResult.  # noqa: E501
+
+
+        :return: The json_ir_plant_mask_by_measure_id_result of this JsonIrPlantMaskByMeasureIDResult.  # noqa: E501
+        :rtype: PlantMask
+        """
+        return self._json_ir_plant_mask_by_measure_id_result
+
+    @json_ir_plant_mask_by_measure_id_result.setter
+    def json_ir_plant_mask_by_measure_id_result(self, json_ir_plant_mask_by_measure_id_result):
+        """Sets the json_ir_plant_mask_by_measure_id_result of this JsonIrPlantMaskByMeasureIDResult.
+
+
+        :param json_ir_plant_mask_by_measure_id_result: The json_ir_plant_mask_by_measure_id_result of this JsonIrPlantMaskByMeasureIDResult.  # noqa: E501
+        :type: PlantMask
+        """
+
+        self._json_ir_plant_mask_by_measure_id_result = json_ir_plant_mask_by_measure_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

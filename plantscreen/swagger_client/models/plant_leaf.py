@@ -29,34 +29,34 @@ class PlantLeaf(object):
     """
     swagger_types = {
         'leaf_index': 'int',
-        'plant_id': 'int',
         'plant_barcode': 'str',
+        'plant_id': 'int',
         'plant_name': 'str',
         'tray_id': 'int'
     }
 
     attribute_map = {
         'leaf_index': 'LeafIndex',
-        'plant_id': 'PlantID',
         'plant_barcode': 'PlantBarcode',
+        'plant_id': 'PlantID',
         'plant_name': 'PlantName',
         'tray_id': 'TrayID'
     }
 
-    def __init__(self, leaf_index=None, plant_id=None, plant_barcode=None, plant_name=None, tray_id=None):  # noqa: E501
+    def __init__(self, leaf_index=None, plant_barcode=None, plant_id=None, plant_name=None, tray_id=None):  # noqa: E501
         """PlantLeaf - a model defined in Swagger"""  # noqa: E501
         self._leaf_index = None
-        self._plant_id = None
         self._plant_barcode = None
+        self._plant_id = None
         self._plant_name = None
         self._tray_id = None
         self.discriminator = None
         if leaf_index is not None:
             self.leaf_index = leaf_index
-        if plant_id is not None:
-            self.plant_id = plant_id
         if plant_barcode is not None:
             self.plant_barcode = plant_barcode
+        if plant_id is not None:
+            self.plant_id = plant_id
         if plant_name is not None:
             self.plant_name = plant_name
         if tray_id is not None:
@@ -84,27 +84,6 @@ class PlantLeaf(object):
         self._leaf_index = leaf_index
 
     @property
-    def plant_id(self):
-        """Gets the plant_id of this PlantLeaf.  # noqa: E501
-
-
-        :return: The plant_id of this PlantLeaf.  # noqa: E501
-        :rtype: int
-        """
-        return self._plant_id
-
-    @plant_id.setter
-    def plant_id(self, plant_id):
-        """Sets the plant_id of this PlantLeaf.
-
-
-        :param plant_id: The plant_id of this PlantLeaf.  # noqa: E501
-        :type: int
-        """
-
-        self._plant_id = plant_id
-
-    @property
     def plant_barcode(self):
         """Gets the plant_barcode of this PlantLeaf.  # noqa: E501
 
@@ -124,6 +103,27 @@ class PlantLeaf(object):
         """
 
         self._plant_barcode = plant_barcode
+
+    @property
+    def plant_id(self):
+        """Gets the plant_id of this PlantLeaf.  # noqa: E501
+
+
+        :return: The plant_id of this PlantLeaf.  # noqa: E501
+        :rtype: int
+        """
+        return self._plant_id
+
+    @plant_id.setter
+    def plant_id(self, plant_id):
+        """Sets the plant_id of this PlantLeaf.
+
+
+        :param plant_id: The plant_id of this PlantLeaf.  # noqa: E501
+        :type: int
+        """
+
+        self._plant_id = plant_id
 
     @property
     def plant_name(self):

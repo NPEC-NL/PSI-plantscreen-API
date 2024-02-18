@@ -28,14 +28,40 @@ class JsonIrPlantMaskImageResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_ir_plant_mask_image_result': 'list[Imaging]'
     }
 
     attribute_map = {
+        'json_ir_plant_mask_image_result': 'JsonIrPlantMaskImageResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_ir_plant_mask_image_result=None):  # noqa: E501
         """JsonIrPlantMaskImageResult - a model defined in Swagger"""  # noqa: E501
+        self._json_ir_plant_mask_image_result = None
         self.discriminator = None
+        if json_ir_plant_mask_image_result is not None:
+            self.json_ir_plant_mask_image_result = json_ir_plant_mask_image_result
+
+    @property
+    def json_ir_plant_mask_image_result(self):
+        """Gets the json_ir_plant_mask_image_result of this JsonIrPlantMaskImageResult.  # noqa: E501
+
+
+        :return: The json_ir_plant_mask_image_result of this JsonIrPlantMaskImageResult.  # noqa: E501
+        :rtype: list[Imaging]
+        """
+        return self._json_ir_plant_mask_image_result
+
+    @json_ir_plant_mask_image_result.setter
+    def json_ir_plant_mask_image_result(self, json_ir_plant_mask_image_result):
+        """Sets the json_ir_plant_mask_image_result of this JsonIrPlantMaskImageResult.
+
+
+        :param json_ir_plant_mask_image_result: The json_ir_plant_mask_image_result of this JsonIrPlantMaskImageResult.  # noqa: E501
+        :type: list[Imaging]
+        """
+
+        self._json_ir_plant_mask_image_result = json_ir_plant_mask_image_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

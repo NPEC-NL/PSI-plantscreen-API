@@ -1,0 +1,1 @@
+::: plantscreen.models.spectrum_device

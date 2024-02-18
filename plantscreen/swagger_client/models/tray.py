@@ -28,86 +28,44 @@ class Tray(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tray_id': 'int',
-        'tray_type_id': 'int',
         'tray_barcode': 'str',
+        'tray_id': 'int',
         'tray_info': 'str',
         'tray_status': 'str',
-        'tray_status_changed': 'datetime'
+        'tray_status_changed': 'datetime',
+        'tray_type_id': 'int'
     }
 
     attribute_map = {
-        'tray_id': 'TrayID',
-        'tray_type_id': 'TrayTypeID',
         'tray_barcode': 'TrayBarcode',
+        'tray_id': 'TrayID',
         'tray_info': 'TrayInfo',
         'tray_status': 'TrayStatus',
-        'tray_status_changed': 'TrayStatusChanged'
+        'tray_status_changed': 'TrayStatusChanged',
+        'tray_type_id': 'TrayTypeID'
     }
 
-    def __init__(self, tray_id=None, tray_type_id=None, tray_barcode=None, tray_info=None, tray_status=None, tray_status_changed=None):  # noqa: E501
+    def __init__(self, tray_barcode=None, tray_id=None, tray_info=None, tray_status=None, tray_status_changed=None, tray_type_id=None):  # noqa: E501
         """Tray - a model defined in Swagger"""  # noqa: E501
-        self._tray_id = None
-        self._tray_type_id = None
         self._tray_barcode = None
+        self._tray_id = None
         self._tray_info = None
         self._tray_status = None
         self._tray_status_changed = None
+        self._tray_type_id = None
         self.discriminator = None
-        if tray_id is not None:
-            self.tray_id = tray_id
-        if tray_type_id is not None:
-            self.tray_type_id = tray_type_id
         if tray_barcode is not None:
             self.tray_barcode = tray_barcode
+        if tray_id is not None:
+            self.tray_id = tray_id
         if tray_info is not None:
             self.tray_info = tray_info
         if tray_status is not None:
             self.tray_status = tray_status
         if tray_status_changed is not None:
             self.tray_status_changed = tray_status_changed
-
-    @property
-    def tray_id(self):
-        """Gets the tray_id of this Tray.  # noqa: E501
-
-
-        :return: The tray_id of this Tray.  # noqa: E501
-        :rtype: int
-        """
-        return self._tray_id
-
-    @tray_id.setter
-    def tray_id(self, tray_id):
-        """Sets the tray_id of this Tray.
-
-
-        :param tray_id: The tray_id of this Tray.  # noqa: E501
-        :type: int
-        """
-
-        self._tray_id = tray_id
-
-    @property
-    def tray_type_id(self):
-        """Gets the tray_type_id of this Tray.  # noqa: E501
-
-
-        :return: The tray_type_id of this Tray.  # noqa: E501
-        :rtype: int
-        """
-        return self._tray_type_id
-
-    @tray_type_id.setter
-    def tray_type_id(self, tray_type_id):
-        """Sets the tray_type_id of this Tray.
-
-
-        :param tray_type_id: The tray_type_id of this Tray.  # noqa: E501
-        :type: int
-        """
-
-        self._tray_type_id = tray_type_id
+        if tray_type_id is not None:
+            self.tray_type_id = tray_type_id
 
     @property
     def tray_barcode(self):
@@ -129,6 +87,27 @@ class Tray(object):
         """
 
         self._tray_barcode = tray_barcode
+
+    @property
+    def tray_id(self):
+        """Gets the tray_id of this Tray.  # noqa: E501
+
+
+        :return: The tray_id of this Tray.  # noqa: E501
+        :rtype: int
+        """
+        return self._tray_id
+
+    @tray_id.setter
+    def tray_id(self, tray_id):
+        """Sets the tray_id of this Tray.
+
+
+        :param tray_id: The tray_id of this Tray.  # noqa: E501
+        :type: int
+        """
+
+        self._tray_id = tray_id
 
     @property
     def tray_info(self):
@@ -198,6 +177,27 @@ class Tray(object):
         """
 
         self._tray_status_changed = tray_status_changed
+
+    @property
+    def tray_type_id(self):
+        """Gets the tray_type_id of this Tray.  # noqa: E501
+
+
+        :return: The tray_type_id of this Tray.  # noqa: E501
+        :rtype: int
+        """
+        return self._tray_type_id
+
+    @tray_type_id.setter
+    def tray_type_id(self, tray_type_id):
+        """Sets the tray_type_id of this Tray.
+
+
+        :param tray_type_id: The tray_type_id of this Tray.  # noqa: E501
+        :type: int
+        """
+
+        self._tray_type_id = tray_type_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

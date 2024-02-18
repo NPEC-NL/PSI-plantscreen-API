@@ -28,96 +28,92 @@ class HcImaging(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'action_id': 'int',
         'device_id': 'int',
         'device_pid': 'str',
         'experiment_id': 'int',
-        'action_id': 'int',
-        'round_id': 'int',
-        'tray_id': 'int',
-        'tray_barcode': 'str',
-        'tray_profile_id': 'int',
-        'measure_id': 'int',
+        'measure_angle': 'int',
         'measure_date': 'datetime',
         'measure_height': 'int',
-        'measure_angle': 'int',
-        'data_header_path': 'str',
-        'data_content_path': 'str',
+        'measure_id': 'int',
+        'round_id': 'int',
+        'tray_barcode': 'str',
+        'tray_id': 'int',
+        'tray_profile_id': 'int',
         'calibration_white_header_path': 'str',
         'calibration_white_content_path': 'str',
         'calibration_dark_header_path': 'str',
-        'calibration_dark_content_path': 'str'
+        'calibration_dark_content_path': 'str',
+        'data_content_path': 'str',
+        'data_header_path': 'str'
     }
 
     attribute_map = {
+        'action_id': 'ActionID',
         'device_id': 'DeviceID',
         'device_pid': 'DevicePID',
         'experiment_id': 'ExperimentID',
-        'action_id': 'ActionID',
-        'round_id': 'RoundID',
-        'tray_id': 'TrayID',
-        'tray_barcode': 'TrayBarcode',
-        'tray_profile_id': 'TrayProfileID',
-        'measure_id': 'MeasureID',
+        'measure_angle': 'MeasureAngle',
         'measure_date': 'MeasureDate',
         'measure_height': 'MeasureHeight',
-        'measure_angle': 'MeasureAngle',
-        'data_header_path': 'DataHeaderPath',
-        'data_content_path': 'DataContentPath',
+        'measure_id': 'MeasureID',
+        'round_id': 'RoundID',
+        'tray_barcode': 'TrayBarcode',
+        'tray_id': 'TrayID',
+        'tray_profile_id': 'TrayProfileID',
         'calibration_white_header_path': 'CalibrationWhiteHeaderPath',
         'calibration_white_content_path': 'CalibrationWhiteContentPath',
         'calibration_dark_header_path': 'CalibrationDarkHeaderPath',
-        'calibration_dark_content_path': 'CalibrationDarkContentPath'
+        'calibration_dark_content_path': 'CalibrationDarkContentPath',
+        'data_content_path': 'DataContentPath',
+        'data_header_path': 'DataHeaderPath'
     }
 
-    def __init__(self, device_id=None, device_pid=None, experiment_id=None, action_id=None, round_id=None, tray_id=None, tray_barcode=None, tray_profile_id=None, measure_id=None, measure_date=None, measure_height=None, measure_angle=None, data_header_path=None, data_content_path=None, calibration_white_header_path=None, calibration_white_content_path=None, calibration_dark_header_path=None, calibration_dark_content_path=None):  # noqa: E501
+    def __init__(self, action_id=None, device_id=None, device_pid=None, experiment_id=None, measure_angle=None, measure_date=None, measure_height=None, measure_id=None, round_id=None, tray_barcode=None, tray_id=None, tray_profile_id=None, calibration_white_header_path=None, calibration_white_content_path=None, calibration_dark_header_path=None, calibration_dark_content_path=None, data_content_path=None, data_header_path=None):  # noqa: E501
         """HcImaging - a model defined in Swagger"""  # noqa: E501
+        self._action_id = None
         self._device_id = None
         self._device_pid = None
         self._experiment_id = None
-        self._action_id = None
-        self._round_id = None
-        self._tray_id = None
-        self._tray_barcode = None
-        self._tray_profile_id = None
-        self._measure_id = None
+        self._measure_angle = None
         self._measure_date = None
         self._measure_height = None
-        self._measure_angle = None
-        self._data_header_path = None
-        self._data_content_path = None
+        self._measure_id = None
+        self._round_id = None
+        self._tray_barcode = None
+        self._tray_id = None
+        self._tray_profile_id = None
         self._calibration_white_header_path = None
         self._calibration_white_content_path = None
         self._calibration_dark_header_path = None
         self._calibration_dark_content_path = None
+        self._data_content_path = None
+        self._data_header_path = None
         self.discriminator = None
+        if action_id is not None:
+            self.action_id = action_id
         if device_id is not None:
             self.device_id = device_id
         if device_pid is not None:
             self.device_pid = device_pid
         if experiment_id is not None:
             self.experiment_id = experiment_id
-        if action_id is not None:
-            self.action_id = action_id
-        if round_id is not None:
-            self.round_id = round_id
-        if tray_id is not None:
-            self.tray_id = tray_id
-        if tray_barcode is not None:
-            self.tray_barcode = tray_barcode
-        if tray_profile_id is not None:
-            self.tray_profile_id = tray_profile_id
-        if measure_id is not None:
-            self.measure_id = measure_id
+        if measure_angle is not None:
+            self.measure_angle = measure_angle
         if measure_date is not None:
             self.measure_date = measure_date
         if measure_height is not None:
             self.measure_height = measure_height
-        if measure_angle is not None:
-            self.measure_angle = measure_angle
-        if data_header_path is not None:
-            self.data_header_path = data_header_path
-        if data_content_path is not None:
-            self.data_content_path = data_content_path
+        if measure_id is not None:
+            self.measure_id = measure_id
+        if round_id is not None:
+            self.round_id = round_id
+        if tray_barcode is not None:
+            self.tray_barcode = tray_barcode
+        if tray_id is not None:
+            self.tray_id = tray_id
+        if tray_profile_id is not None:
+            self.tray_profile_id = tray_profile_id
         if calibration_white_header_path is not None:
             self.calibration_white_header_path = calibration_white_header_path
         if calibration_white_content_path is not None:
@@ -126,6 +122,31 @@ class HcImaging(object):
             self.calibration_dark_header_path = calibration_dark_header_path
         if calibration_dark_content_path is not None:
             self.calibration_dark_content_path = calibration_dark_content_path
+        if data_content_path is not None:
+            self.data_content_path = data_content_path
+        if data_header_path is not None:
+            self.data_header_path = data_header_path
+
+    @property
+    def action_id(self):
+        """Gets the action_id of this HcImaging.  # noqa: E501
+
+
+        :return: The action_id of this HcImaging.  # noqa: E501
+        :rtype: int
+        """
+        return self._action_id
+
+    @action_id.setter
+    def action_id(self, action_id):
+        """Sets the action_id of this HcImaging.
+
+
+        :param action_id: The action_id of this HcImaging.  # noqa: E501
+        :type: int
+        """
+
+        self._action_id = action_id
 
     @property
     def device_id(self):
@@ -191,130 +212,25 @@ class HcImaging(object):
         self._experiment_id = experiment_id
 
     @property
-    def action_id(self):
-        """Gets the action_id of this HcImaging.  # noqa: E501
+    def measure_angle(self):
+        """Gets the measure_angle of this HcImaging.  # noqa: E501
 
 
-        :return: The action_id of this HcImaging.  # noqa: E501
+        :return: The measure_angle of this HcImaging.  # noqa: E501
         :rtype: int
         """
-        return self._action_id
+        return self._measure_angle
 
-    @action_id.setter
-    def action_id(self, action_id):
-        """Sets the action_id of this HcImaging.
+    @measure_angle.setter
+    def measure_angle(self, measure_angle):
+        """Sets the measure_angle of this HcImaging.
 
 
-        :param action_id: The action_id of this HcImaging.  # noqa: E501
+        :param measure_angle: The measure_angle of this HcImaging.  # noqa: E501
         :type: int
         """
 
-        self._action_id = action_id
-
-    @property
-    def round_id(self):
-        """Gets the round_id of this HcImaging.  # noqa: E501
-
-
-        :return: The round_id of this HcImaging.  # noqa: E501
-        :rtype: int
-        """
-        return self._round_id
-
-    @round_id.setter
-    def round_id(self, round_id):
-        """Sets the round_id of this HcImaging.
-
-
-        :param round_id: The round_id of this HcImaging.  # noqa: E501
-        :type: int
-        """
-
-        self._round_id = round_id
-
-    @property
-    def tray_id(self):
-        """Gets the tray_id of this HcImaging.  # noqa: E501
-
-
-        :return: The tray_id of this HcImaging.  # noqa: E501
-        :rtype: int
-        """
-        return self._tray_id
-
-    @tray_id.setter
-    def tray_id(self, tray_id):
-        """Sets the tray_id of this HcImaging.
-
-
-        :param tray_id: The tray_id of this HcImaging.  # noqa: E501
-        :type: int
-        """
-
-        self._tray_id = tray_id
-
-    @property
-    def tray_barcode(self):
-        """Gets the tray_barcode of this HcImaging.  # noqa: E501
-
-
-        :return: The tray_barcode of this HcImaging.  # noqa: E501
-        :rtype: str
-        """
-        return self._tray_barcode
-
-    @tray_barcode.setter
-    def tray_barcode(self, tray_barcode):
-        """Sets the tray_barcode of this HcImaging.
-
-
-        :param tray_barcode: The tray_barcode of this HcImaging.  # noqa: E501
-        :type: str
-        """
-
-        self._tray_barcode = tray_barcode
-
-    @property
-    def tray_profile_id(self):
-        """Gets the tray_profile_id of this HcImaging.  # noqa: E501
-
-
-        :return: The tray_profile_id of this HcImaging.  # noqa: E501
-        :rtype: int
-        """
-        return self._tray_profile_id
-
-    @tray_profile_id.setter
-    def tray_profile_id(self, tray_profile_id):
-        """Sets the tray_profile_id of this HcImaging.
-
-
-        :param tray_profile_id: The tray_profile_id of this HcImaging.  # noqa: E501
-        :type: int
-        """
-
-        self._tray_profile_id = tray_profile_id
-
-    @property
-    def measure_id(self):
-        """Gets the measure_id of this HcImaging.  # noqa: E501
-
-
-        :return: The measure_id of this HcImaging.  # noqa: E501
-        :rtype: int
-        """
-        return self._measure_id
-
-    @measure_id.setter
-    def measure_id(self, measure_id):
-        """Sets the measure_id of this HcImaging.
-
-
-        :param measure_id: The measure_id of this HcImaging.  # noqa: E501
-        :type: int
-        """
-
-        self._measure_id = measure_id
+        self._measure_angle = measure_angle
 
     @property
     def measure_date(self):
@@ -359,71 +275,109 @@ class HcImaging(object):
         self._measure_height = measure_height
 
     @property
-    def measure_angle(self):
-        """Gets the measure_angle of this HcImaging.  # noqa: E501
+    def measure_id(self):
+        """Gets the measure_id of this HcImaging.  # noqa: E501
 
 
-        :return: The measure_angle of this HcImaging.  # noqa: E501
+        :return: The measure_id of this HcImaging.  # noqa: E501
         :rtype: int
         """
-        return self._measure_angle
+        return self._measure_id
 
-    @measure_angle.setter
-    def measure_angle(self, measure_angle):
-        """Sets the measure_angle of this HcImaging.
+    @measure_id.setter
+    def measure_id(self, measure_id):
+        """Sets the measure_id of this HcImaging.
 
 
-        :param measure_angle: The measure_angle of this HcImaging.  # noqa: E501
+        :param measure_id: The measure_id of this HcImaging.  # noqa: E501
         :type: int
         """
 
-        self._measure_angle = measure_angle
+        self._measure_id = measure_id
 
     @property
-    def data_header_path(self):
-        """Gets the data_header_path of this HcImaging.  # noqa: E501
+    def round_id(self):
+        """Gets the round_id of this HcImaging.  # noqa: E501
 
-        filetype  # noqa: E501
 
-        :return: The data_header_path of this HcImaging.  # noqa: E501
+        :return: The round_id of this HcImaging.  # noqa: E501
+        :rtype: int
+        """
+        return self._round_id
+
+    @round_id.setter
+    def round_id(self, round_id):
+        """Sets the round_id of this HcImaging.
+
+
+        :param round_id: The round_id of this HcImaging.  # noqa: E501
+        :type: int
+        """
+
+        self._round_id = round_id
+
+    @property
+    def tray_barcode(self):
+        """Gets the tray_barcode of this HcImaging.  # noqa: E501
+
+
+        :return: The tray_barcode of this HcImaging.  # noqa: E501
         :rtype: str
         """
-        return self._data_header_path
+        return self._tray_barcode
 
-    @data_header_path.setter
-    def data_header_path(self, data_header_path):
-        """Sets the data_header_path of this HcImaging.
+    @tray_barcode.setter
+    def tray_barcode(self, tray_barcode):
+        """Sets the tray_barcode of this HcImaging.
 
-        filetype  # noqa: E501
 
-        :param data_header_path: The data_header_path of this HcImaging.  # noqa: E501
+        :param tray_barcode: The tray_barcode of this HcImaging.  # noqa: E501
         :type: str
         """
 
-        self._data_header_path = data_header_path
+        self._tray_barcode = tray_barcode
 
     @property
-    def data_content_path(self):
-        """Gets the data_content_path of this HcImaging.  # noqa: E501
+    def tray_id(self):
+        """Gets the tray_id of this HcImaging.  # noqa: E501
 
-        filetype  # noqa: E501
 
-        :return: The data_content_path of this HcImaging.  # noqa: E501
-        :rtype: str
+        :return: The tray_id of this HcImaging.  # noqa: E501
+        :rtype: int
         """
-        return self._data_content_path
+        return self._tray_id
 
-    @data_content_path.setter
-    def data_content_path(self, data_content_path):
-        """Sets the data_content_path of this HcImaging.
+    @tray_id.setter
+    def tray_id(self, tray_id):
+        """Sets the tray_id of this HcImaging.
 
-        filetype  # noqa: E501
 
-        :param data_content_path: The data_content_path of this HcImaging.  # noqa: E501
-        :type: str
+        :param tray_id: The tray_id of this HcImaging.  # noqa: E501
+        :type: int
         """
 
-        self._data_content_path = data_content_path
+        self._tray_id = tray_id
+
+    @property
+    def tray_profile_id(self):
+        """Gets the tray_profile_id of this HcImaging.  # noqa: E501
+
+
+        :return: The tray_profile_id of this HcImaging.  # noqa: E501
+        :rtype: int
+        """
+        return self._tray_profile_id
+
+    @tray_profile_id.setter
+    def tray_profile_id(self, tray_profile_id):
+        """Sets the tray_profile_id of this HcImaging.
+
+
+        :param tray_profile_id: The tray_profile_id of this HcImaging.  # noqa: E501
+        :type: int
+        """
+
+        self._tray_profile_id = tray_profile_id
 
     @property
     def calibration_white_header_path(self):
@@ -516,6 +470,52 @@ class HcImaging(object):
         """
 
         self._calibration_dark_content_path = calibration_dark_content_path
+
+    @property
+    def data_content_path(self):
+        """Gets the data_content_path of this HcImaging.  # noqa: E501
+
+        filetype  # noqa: E501
+
+        :return: The data_content_path of this HcImaging.  # noqa: E501
+        :rtype: str
+        """
+        return self._data_content_path
+
+    @data_content_path.setter
+    def data_content_path(self, data_content_path):
+        """Sets the data_content_path of this HcImaging.
+
+        filetype  # noqa: E501
+
+        :param data_content_path: The data_content_path of this HcImaging.  # noqa: E501
+        :type: str
+        """
+
+        self._data_content_path = data_content_path
+
+    @property
+    def data_header_path(self):
+        """Gets the data_header_path of this HcImaging.  # noqa: E501
+
+        filetype  # noqa: E501
+
+        :return: The data_header_path of this HcImaging.  # noqa: E501
+        :rtype: str
+        """
+        return self._data_header_path
+
+    @data_header_path.setter
+    def data_header_path(self, data_header_path):
+        """Sets the data_header_path of this HcImaging.
+
+        filetype  # noqa: E501
+
+        :param data_header_path: The data_header_path of this HcImaging.  # noqa: E501
+        :type: str
+        """
+
+        self._data_header_path = data_header_path
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,81 +28,39 @@ class ExperimentNote(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'note_id': 'int',
-        'owner_id': 'int',
         'experiment_id': 'int',
         'note_created_date': 'datetime',
-        'note_text': 'str'
+        'note_id': 'int',
+        'note_text': 'str',
+        'owner_id': 'int'
     }
 
     attribute_map = {
-        'note_id': 'NoteID',
-        'owner_id': 'OwnerID',
         'experiment_id': 'ExperimentID',
         'note_created_date': 'NoteCreatedDate',
-        'note_text': 'NoteText'
+        'note_id': 'NoteID',
+        'note_text': 'NoteText',
+        'owner_id': 'OwnerID'
     }
 
-    def __init__(self, note_id=None, owner_id=None, experiment_id=None, note_created_date=None, note_text=None):  # noqa: E501
+    def __init__(self, experiment_id=None, note_created_date=None, note_id=None, note_text=None, owner_id=None):  # noqa: E501
         """ExperimentNote - a model defined in Swagger"""  # noqa: E501
-        self._note_id = None
-        self._owner_id = None
         self._experiment_id = None
         self._note_created_date = None
+        self._note_id = None
         self._note_text = None
+        self._owner_id = None
         self.discriminator = None
-        if note_id is not None:
-            self.note_id = note_id
-        if owner_id is not None:
-            self.owner_id = owner_id
         if experiment_id is not None:
             self.experiment_id = experiment_id
         if note_created_date is not None:
             self.note_created_date = note_created_date
+        if note_id is not None:
+            self.note_id = note_id
         if note_text is not None:
             self.note_text = note_text
-
-    @property
-    def note_id(self):
-        """Gets the note_id of this ExperimentNote.  # noqa: E501
-
-
-        :return: The note_id of this ExperimentNote.  # noqa: E501
-        :rtype: int
-        """
-        return self._note_id
-
-    @note_id.setter
-    def note_id(self, note_id):
-        """Sets the note_id of this ExperimentNote.
-
-
-        :param note_id: The note_id of this ExperimentNote.  # noqa: E501
-        :type: int
-        """
-
-        self._note_id = note_id
-
-    @property
-    def owner_id(self):
-        """Gets the owner_id of this ExperimentNote.  # noqa: E501
-
-
-        :return: The owner_id of this ExperimentNote.  # noqa: E501
-        :rtype: int
-        """
-        return self._owner_id
-
-    @owner_id.setter
-    def owner_id(self, owner_id):
-        """Sets the owner_id of this ExperimentNote.
-
-
-        :param owner_id: The owner_id of this ExperimentNote.  # noqa: E501
-        :type: int
-        """
-
-        self._owner_id = owner_id
+        if owner_id is not None:
+            self.owner_id = owner_id
 
     @property
     def experiment_id(self):
@@ -147,6 +105,27 @@ class ExperimentNote(object):
         self._note_created_date = note_created_date
 
     @property
+    def note_id(self):
+        """Gets the note_id of this ExperimentNote.  # noqa: E501
+
+
+        :return: The note_id of this ExperimentNote.  # noqa: E501
+        :rtype: int
+        """
+        return self._note_id
+
+    @note_id.setter
+    def note_id(self, note_id):
+        """Sets the note_id of this ExperimentNote.
+
+
+        :param note_id: The note_id of this ExperimentNote.  # noqa: E501
+        :type: int
+        """
+
+        self._note_id = note_id
+
+    @property
     def note_text(self):
         """Gets the note_text of this ExperimentNote.  # noqa: E501
 
@@ -166,6 +145,27 @@ class ExperimentNote(object):
         """
 
         self._note_text = note_text
+
+    @property
+    def owner_id(self):
+        """Gets the owner_id of this ExperimentNote.  # noqa: E501
+
+
+        :return: The owner_id of this ExperimentNote.  # noqa: E501
+        :rtype: int
+        """
+        return self._owner_id
+
+    @owner_id.setter
+    def owner_id(self, owner_id):
+        """Sets the owner_id of this ExperimentNote.
+
+
+        :param owner_id: The owner_id of this ExperimentNote.  # noqa: E501
+        :type: int
+        """
+
+        self._owner_id = owner_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

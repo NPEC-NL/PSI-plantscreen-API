@@ -28,96 +28,54 @@ class Round(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'round_id': 'int',
-        'experiment_id': 'int',
         'action_id': 'int',
+        'experiment_id': 'int',
         'round_date_start': 'datetime',
         'round_date_stop': 'datetime',
-        'round_status': 'str',
         'round_done': 'bool',
-        'round_protocol_path': 'str'
+        'round_id': 'int',
+        'round_protocol_path': 'str',
+        'round_status': 'str'
     }
 
     attribute_map = {
-        'round_id': 'RoundID',
-        'experiment_id': 'ExperimentID',
         'action_id': 'ActionID',
+        'experiment_id': 'ExperimentID',
         'round_date_start': 'RoundDateStart',
         'round_date_stop': 'RoundDateStop',
-        'round_status': 'RoundStatus',
         'round_done': 'RoundDone',
-        'round_protocol_path': 'RoundProtocolPath'
+        'round_id': 'RoundID',
+        'round_protocol_path': 'RoundProtocolPath',
+        'round_status': 'RoundStatus'
     }
 
-    def __init__(self, round_id=None, experiment_id=None, action_id=None, round_date_start=None, round_date_stop=None, round_status=None, round_done=None, round_protocol_path=None):  # noqa: E501
+    def __init__(self, action_id=None, experiment_id=None, round_date_start=None, round_date_stop=None, round_done=None, round_id=None, round_protocol_path=None, round_status=None):  # noqa: E501
         """Round - a model defined in Swagger"""  # noqa: E501
-        self._round_id = None
-        self._experiment_id = None
         self._action_id = None
+        self._experiment_id = None
         self._round_date_start = None
         self._round_date_stop = None
-        self._round_status = None
         self._round_done = None
+        self._round_id = None
         self._round_protocol_path = None
+        self._round_status = None
         self.discriminator = None
-        if round_id is not None:
-            self.round_id = round_id
-        if experiment_id is not None:
-            self.experiment_id = experiment_id
         if action_id is not None:
             self.action_id = action_id
+        if experiment_id is not None:
+            self.experiment_id = experiment_id
         if round_date_start is not None:
             self.round_date_start = round_date_start
         if round_date_stop is not None:
             self.round_date_stop = round_date_stop
-        if round_status is not None:
-            self.round_status = round_status
         if round_done is not None:
             self.round_done = round_done
+        if round_id is not None:
+            self.round_id = round_id
         if round_protocol_path is not None:
             self.round_protocol_path = round_protocol_path
-
-    @property
-    def round_id(self):
-        """Gets the round_id of this Round.  # noqa: E501
-
-
-        :return: The round_id of this Round.  # noqa: E501
-        :rtype: int
-        """
-        return self._round_id
-
-    @round_id.setter
-    def round_id(self, round_id):
-        """Sets the round_id of this Round.
-
-
-        :param round_id: The round_id of this Round.  # noqa: E501
-        :type: int
-        """
-
-        self._round_id = round_id
-
-    @property
-    def experiment_id(self):
-        """Gets the experiment_id of this Round.  # noqa: E501
-
-
-        :return: The experiment_id of this Round.  # noqa: E501
-        :rtype: int
-        """
-        return self._experiment_id
-
-    @experiment_id.setter
-    def experiment_id(self, experiment_id):
-        """Sets the experiment_id of this Round.
-
-
-        :param experiment_id: The experiment_id of this Round.  # noqa: E501
-        :type: int
-        """
-
-        self._experiment_id = experiment_id
+        if round_status is not None:
+            self.round_status = round_status
 
     @property
     def action_id(self):
@@ -139,6 +97,27 @@ class Round(object):
         """
 
         self._action_id = action_id
+
+    @property
+    def experiment_id(self):
+        """Gets the experiment_id of this Round.  # noqa: E501
+
+
+        :return: The experiment_id of this Round.  # noqa: E501
+        :rtype: int
+        """
+        return self._experiment_id
+
+    @experiment_id.setter
+    def experiment_id(self, experiment_id):
+        """Sets the experiment_id of this Round.
+
+
+        :param experiment_id: The experiment_id of this Round.  # noqa: E501
+        :type: int
+        """
+
+        self._experiment_id = experiment_id
 
     @property
     def round_date_start(self):
@@ -183,27 +162,6 @@ class Round(object):
         self._round_date_stop = round_date_stop
 
     @property
-    def round_status(self):
-        """Gets the round_status of this Round.  # noqa: E501
-
-
-        :return: The round_status of this Round.  # noqa: E501
-        :rtype: str
-        """
-        return self._round_status
-
-    @round_status.setter
-    def round_status(self, round_status):
-        """Sets the round_status of this Round.
-
-
-        :param round_status: The round_status of this Round.  # noqa: E501
-        :type: str
-        """
-
-        self._round_status = round_status
-
-    @property
     def round_done(self):
         """Gets the round_done of this Round.  # noqa: E501
 
@@ -223,6 +181,27 @@ class Round(object):
         """
 
         self._round_done = round_done
+
+    @property
+    def round_id(self):
+        """Gets the round_id of this Round.  # noqa: E501
+
+
+        :return: The round_id of this Round.  # noqa: E501
+        :rtype: int
+        """
+        return self._round_id
+
+    @round_id.setter
+    def round_id(self, round_id):
+        """Sets the round_id of this Round.
+
+
+        :param round_id: The round_id of this Round.  # noqa: E501
+        :type: int
+        """
+
+        self._round_id = round_id
 
     @property
     def round_protocol_path(self):
@@ -246,6 +225,27 @@ class Round(object):
         """
 
         self._round_protocol_path = round_protocol_path
+
+    @property
+    def round_status(self):
+        """Gets the round_status of this Round.  # noqa: E501
+
+
+        :return: The round_status of this Round.  # noqa: E501
+        :rtype: str
+        """
+        return self._round_status
+
+    @round_status.setter
+    def round_status(self, round_status):
+        """Sets the round_status of this Round.
+
+
+        :param round_status: The round_status of this Round.  # noqa: E501
+        :type: str
+        """
+
+        self._round_status = round_status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

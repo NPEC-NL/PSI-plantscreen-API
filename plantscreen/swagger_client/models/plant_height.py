@@ -29,48 +29,48 @@ class PlantHeight(object):
     """
     swagger_types = {
         'experiment_id': 'int',
-        'round_id': 'int',
-        'plant_id': 'int',
-        'plant_barcode': 'str',
-        'plant_name': 'str',
         'height_date': 'datetime',
-        'height_value': 'int'
+        'height_value': 'int',
+        'plant_barcode': 'str',
+        'plant_id': 'int',
+        'plant_name': 'str',
+        'round_id': 'int'
     }
 
     attribute_map = {
         'experiment_id': 'ExperimentID',
-        'round_id': 'RoundID',
-        'plant_id': 'PlantID',
-        'plant_barcode': 'PlantBarcode',
-        'plant_name': 'PlantName',
         'height_date': 'HeightDate',
-        'height_value': 'HeightValue'
+        'height_value': 'HeightValue',
+        'plant_barcode': 'PlantBarcode',
+        'plant_id': 'PlantID',
+        'plant_name': 'PlantName',
+        'round_id': 'RoundID'
     }
 
-    def __init__(self, experiment_id=None, round_id=None, plant_id=None, plant_barcode=None, plant_name=None, height_date=None, height_value=None):  # noqa: E501
+    def __init__(self, experiment_id=None, height_date=None, height_value=None, plant_barcode=None, plant_id=None, plant_name=None, round_id=None):  # noqa: E501
         """PlantHeight - a model defined in Swagger"""  # noqa: E501
         self._experiment_id = None
-        self._round_id = None
-        self._plant_id = None
-        self._plant_barcode = None
-        self._plant_name = None
         self._height_date = None
         self._height_value = None
+        self._plant_barcode = None
+        self._plant_id = None
+        self._plant_name = None
+        self._round_id = None
         self.discriminator = None
         if experiment_id is not None:
             self.experiment_id = experiment_id
-        if round_id is not None:
-            self.round_id = round_id
-        if plant_id is not None:
-            self.plant_id = plant_id
-        if plant_barcode is not None:
-            self.plant_barcode = plant_barcode
-        if plant_name is not None:
-            self.plant_name = plant_name
         if height_date is not None:
             self.height_date = height_date
         if height_value is not None:
             self.height_value = height_value
+        if plant_barcode is not None:
+            self.plant_barcode = plant_barcode
+        if plant_id is not None:
+            self.plant_id = plant_id
+        if plant_name is not None:
+            self.plant_name = plant_name
+        if round_id is not None:
+            self.round_id = round_id
 
     @property
     def experiment_id(self):
@@ -92,90 +92,6 @@ class PlantHeight(object):
         """
 
         self._experiment_id = experiment_id
-
-    @property
-    def round_id(self):
-        """Gets the round_id of this PlantHeight.  # noqa: E501
-
-
-        :return: The round_id of this PlantHeight.  # noqa: E501
-        :rtype: int
-        """
-        return self._round_id
-
-    @round_id.setter
-    def round_id(self, round_id):
-        """Sets the round_id of this PlantHeight.
-
-
-        :param round_id: The round_id of this PlantHeight.  # noqa: E501
-        :type: int
-        """
-
-        self._round_id = round_id
-
-    @property
-    def plant_id(self):
-        """Gets the plant_id of this PlantHeight.  # noqa: E501
-
-
-        :return: The plant_id of this PlantHeight.  # noqa: E501
-        :rtype: int
-        """
-        return self._plant_id
-
-    @plant_id.setter
-    def plant_id(self, plant_id):
-        """Sets the plant_id of this PlantHeight.
-
-
-        :param plant_id: The plant_id of this PlantHeight.  # noqa: E501
-        :type: int
-        """
-
-        self._plant_id = plant_id
-
-    @property
-    def plant_barcode(self):
-        """Gets the plant_barcode of this PlantHeight.  # noqa: E501
-
-
-        :return: The plant_barcode of this PlantHeight.  # noqa: E501
-        :rtype: str
-        """
-        return self._plant_barcode
-
-    @plant_barcode.setter
-    def plant_barcode(self, plant_barcode):
-        """Sets the plant_barcode of this PlantHeight.
-
-
-        :param plant_barcode: The plant_barcode of this PlantHeight.  # noqa: E501
-        :type: str
-        """
-
-        self._plant_barcode = plant_barcode
-
-    @property
-    def plant_name(self):
-        """Gets the plant_name of this PlantHeight.  # noqa: E501
-
-
-        :return: The plant_name of this PlantHeight.  # noqa: E501
-        :rtype: str
-        """
-        return self._plant_name
-
-    @plant_name.setter
-    def plant_name(self, plant_name):
-        """Sets the plant_name of this PlantHeight.
-
-
-        :param plant_name: The plant_name of this PlantHeight.  # noqa: E501
-        :type: str
-        """
-
-        self._plant_name = plant_name
 
     @property
     def height_date(self):
@@ -218,6 +134,90 @@ class PlantHeight(object):
         """
 
         self._height_value = height_value
+
+    @property
+    def plant_barcode(self):
+        """Gets the plant_barcode of this PlantHeight.  # noqa: E501
+
+
+        :return: The plant_barcode of this PlantHeight.  # noqa: E501
+        :rtype: str
+        """
+        return self._plant_barcode
+
+    @plant_barcode.setter
+    def plant_barcode(self, plant_barcode):
+        """Sets the plant_barcode of this PlantHeight.
+
+
+        :param plant_barcode: The plant_barcode of this PlantHeight.  # noqa: E501
+        :type: str
+        """
+
+        self._plant_barcode = plant_barcode
+
+    @property
+    def plant_id(self):
+        """Gets the plant_id of this PlantHeight.  # noqa: E501
+
+
+        :return: The plant_id of this PlantHeight.  # noqa: E501
+        :rtype: int
+        """
+        return self._plant_id
+
+    @plant_id.setter
+    def plant_id(self, plant_id):
+        """Sets the plant_id of this PlantHeight.
+
+
+        :param plant_id: The plant_id of this PlantHeight.  # noqa: E501
+        :type: int
+        """
+
+        self._plant_id = plant_id
+
+    @property
+    def plant_name(self):
+        """Gets the plant_name of this PlantHeight.  # noqa: E501
+
+
+        :return: The plant_name of this PlantHeight.  # noqa: E501
+        :rtype: str
+        """
+        return self._plant_name
+
+    @plant_name.setter
+    def plant_name(self, plant_name):
+        """Sets the plant_name of this PlantHeight.
+
+
+        :param plant_name: The plant_name of this PlantHeight.  # noqa: E501
+        :type: str
+        """
+
+        self._plant_name = plant_name
+
+    @property
+    def round_id(self):
+        """Gets the round_id of this PlantHeight.  # noqa: E501
+
+
+        :return: The round_id of this PlantHeight.  # noqa: E501
+        :rtype: int
+        """
+        return self._round_id
+
+    @round_id.setter
+    def round_id(self, round_id):
+        """Sets the round_id of this PlantHeight.
+
+
+        :param round_id: The round_id of this PlantHeight.  # noqa: E501
+        :type: int
+        """
+
+        self._round_id = round_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

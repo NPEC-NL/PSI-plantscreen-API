@@ -28,14 +28,40 @@ class JsonExperimentByDateResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_experiment_by_date_result': 'list[Experiment]'
     }
 
     attribute_map = {
+        'json_experiment_by_date_result': 'JsonExperimentByDateResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_experiment_by_date_result=None):  # noqa: E501
         """JsonExperimentByDateResult - a model defined in Swagger"""  # noqa: E501
+        self._json_experiment_by_date_result = None
         self.discriminator = None
+        if json_experiment_by_date_result is not None:
+            self.json_experiment_by_date_result = json_experiment_by_date_result
+
+    @property
+    def json_experiment_by_date_result(self):
+        """Gets the json_experiment_by_date_result of this JsonExperimentByDateResult.  # noqa: E501
+
+
+        :return: The json_experiment_by_date_result of this JsonExperimentByDateResult.  # noqa: E501
+        :rtype: list[Experiment]
+        """
+        return self._json_experiment_by_date_result
+
+    @json_experiment_by_date_result.setter
+    def json_experiment_by_date_result(self, json_experiment_by_date_result):
+        """Sets the json_experiment_by_date_result of this JsonExperimentByDateResult.
+
+
+        :param json_experiment_by_date_result: The json_experiment_by_date_result of this JsonExperimentByDateResult.  # noqa: E501
+        :type: list[Experiment]
+        """
+
+        self._json_experiment_by_date_result = json_experiment_by_date_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,14 +28,40 @@ class JsonVersionInfoResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_version_info_result': 'VersionInfo'
     }
 
     attribute_map = {
+        'json_version_info_result': 'JsonVersionInfoResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_version_info_result=None):  # noqa: E501
         """JsonVersionInfoResult - a model defined in Swagger"""  # noqa: E501
+        self._json_version_info_result = None
         self.discriminator = None
+        if json_version_info_result is not None:
+            self.json_version_info_result = json_version_info_result
+
+    @property
+    def json_version_info_result(self):
+        """Gets the json_version_info_result of this JsonVersionInfoResult.  # noqa: E501
+
+
+        :return: The json_version_info_result of this JsonVersionInfoResult.  # noqa: E501
+        :rtype: VersionInfo
+        """
+        return self._json_version_info_result
+
+    @json_version_info_result.setter
+    def json_version_info_result(self, json_version_info_result):
+        """Sets the json_version_info_result of this JsonVersionInfoResult.
+
+
+        :param json_version_info_result: The json_version_info_result of this JsonVersionInfoResult.  # noqa: E501
+        :type: VersionInfo
+        """
+
+        self._json_version_info_result = json_version_info_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

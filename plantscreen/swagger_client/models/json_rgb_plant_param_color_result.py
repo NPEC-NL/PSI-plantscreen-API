@@ -28,14 +28,40 @@ class JsonRgbPlantParamColorResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_rgb_plant_param_color_result': 'list[PlantParameter]'
     }
 
     attribute_map = {
+        'json_rgb_plant_param_color_result': 'JsonRgbPlantParamColorResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_rgb_plant_param_color_result=None):  # noqa: E501
         """JsonRgbPlantParamColorResult - a model defined in Swagger"""  # noqa: E501
+        self._json_rgb_plant_param_color_result = None
         self.discriminator = None
+        if json_rgb_plant_param_color_result is not None:
+            self.json_rgb_plant_param_color_result = json_rgb_plant_param_color_result
+
+    @property
+    def json_rgb_plant_param_color_result(self):
+        """Gets the json_rgb_plant_param_color_result of this JsonRgbPlantParamColorResult.  # noqa: E501
+
+
+        :return: The json_rgb_plant_param_color_result of this JsonRgbPlantParamColorResult.  # noqa: E501
+        :rtype: list[PlantParameter]
+        """
+        return self._json_rgb_plant_param_color_result
+
+    @json_rgb_plant_param_color_result.setter
+    def json_rgb_plant_param_color_result(self, json_rgb_plant_param_color_result):
+        """Sets the json_rgb_plant_param_color_result of this JsonRgbPlantParamColorResult.
+
+
+        :param json_rgb_plant_param_color_result: The json_rgb_plant_param_color_result of this JsonRgbPlantParamColorResult.  # noqa: E501
+        :type: list[PlantParameter]
+        """
+
+        self._json_rgb_plant_param_color_result = json_rgb_plant_param_color_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,44 +28,65 @@ class Probe(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'probe_family': 'str',
         'probe_id': 'int',
         'probe_name': 'str',
-        'probe_family': 'str',
         'probe_placement': 'str',
-        'probe_variable': 'str',
-        'probe_unit': 'str'
+        'probe_unit': 'str',
+        'probe_variable': 'str'
     }
 
     attribute_map = {
+        'probe_family': 'ProbeFamily',
         'probe_id': 'ProbeID',
         'probe_name': 'ProbeName',
-        'probe_family': 'ProbeFamily',
         'probe_placement': 'ProbePlacement',
-        'probe_variable': 'ProbeVariable',
-        'probe_unit': 'ProbeUnit'
+        'probe_unit': 'ProbeUnit',
+        'probe_variable': 'ProbeVariable'
     }
 
-    def __init__(self, probe_id=None, probe_name=None, probe_family=None, probe_placement=None, probe_variable=None, probe_unit=None):  # noqa: E501
+    def __init__(self, probe_family=None, probe_id=None, probe_name=None, probe_placement=None, probe_unit=None, probe_variable=None):  # noqa: E501
         """Probe - a model defined in Swagger"""  # noqa: E501
+        self._probe_family = None
         self._probe_id = None
         self._probe_name = None
-        self._probe_family = None
         self._probe_placement = None
-        self._probe_variable = None
         self._probe_unit = None
+        self._probe_variable = None
         self.discriminator = None
+        if probe_family is not None:
+            self.probe_family = probe_family
         if probe_id is not None:
             self.probe_id = probe_id
         if probe_name is not None:
             self.probe_name = probe_name
-        if probe_family is not None:
-            self.probe_family = probe_family
         if probe_placement is not None:
             self.probe_placement = probe_placement
-        if probe_variable is not None:
-            self.probe_variable = probe_variable
         if probe_unit is not None:
             self.probe_unit = probe_unit
+        if probe_variable is not None:
+            self.probe_variable = probe_variable
+
+    @property
+    def probe_family(self):
+        """Gets the probe_family of this Probe.  # noqa: E501
+
+
+        :return: The probe_family of this Probe.  # noqa: E501
+        :rtype: str
+        """
+        return self._probe_family
+
+    @probe_family.setter
+    def probe_family(self, probe_family):
+        """Sets the probe_family of this Probe.
+
+
+        :param probe_family: The probe_family of this Probe.  # noqa: E501
+        :type: str
+        """
+
+        self._probe_family = probe_family
 
     @property
     def probe_id(self):
@@ -110,27 +131,6 @@ class Probe(object):
         self._probe_name = probe_name
 
     @property
-    def probe_family(self):
-        """Gets the probe_family of this Probe.  # noqa: E501
-
-
-        :return: The probe_family of this Probe.  # noqa: E501
-        :rtype: str
-        """
-        return self._probe_family
-
-    @probe_family.setter
-    def probe_family(self, probe_family):
-        """Sets the probe_family of this Probe.
-
-
-        :param probe_family: The probe_family of this Probe.  # noqa: E501
-        :type: str
-        """
-
-        self._probe_family = probe_family
-
-    @property
     def probe_placement(self):
         """Gets the probe_placement of this Probe.  # noqa: E501
 
@@ -152,27 +152,6 @@ class Probe(object):
         self._probe_placement = probe_placement
 
     @property
-    def probe_variable(self):
-        """Gets the probe_variable of this Probe.  # noqa: E501
-
-
-        :return: The probe_variable of this Probe.  # noqa: E501
-        :rtype: str
-        """
-        return self._probe_variable
-
-    @probe_variable.setter
-    def probe_variable(self, probe_variable):
-        """Sets the probe_variable of this Probe.
-
-
-        :param probe_variable: The probe_variable of this Probe.  # noqa: E501
-        :type: str
-        """
-
-        self._probe_variable = probe_variable
-
-    @property
     def probe_unit(self):
         """Gets the probe_unit of this Probe.  # noqa: E501
 
@@ -192,6 +171,27 @@ class Probe(object):
         """
 
         self._probe_unit = probe_unit
+
+    @property
+    def probe_variable(self):
+        """Gets the probe_variable of this Probe.  # noqa: E501
+
+
+        :return: The probe_variable of this Probe.  # noqa: E501
+        :rtype: str
+        """
+        return self._probe_variable
+
+    @probe_variable.setter
+    def probe_variable(self, probe_variable):
+        """Sets the probe_variable of this Probe.
+
+
+        :param probe_variable: The probe_variable of this Probe.  # noqa: E501
+        :type: str
+        """
+
+        self._probe_variable = probe_variable
 
     def to_dict(self):
         """Returns the model properties as a dict"""

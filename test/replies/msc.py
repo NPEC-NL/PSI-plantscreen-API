@@ -1,5 +1,5 @@
 """"Mock replies for the Multispectral API"""
-MOCK_MSC_IMAGE_BASE = {
+MOCK_MSC_IMAGE = {
     "ActionID": 684,
     "DeviceID": 6,
     "DevicePID": "MSC1",
@@ -15,7 +15,7 @@ MOCK_MSC_IMAGE_BASE = {
     "ImagePath": r"""2021-08-19\MscRawFrame_2021-08-19_10-31-44.usraw"""
 }
 
-MOCK_MSC_IMAGE_BASE_2 = {
+MOCK_MSC_IMAGE_2 = {
     "ActionID": 684,
     "DeviceID": 6,
     "DevicePID": "MSC1",
@@ -31,15 +31,7 @@ MOCK_MSC_IMAGE_BASE_2 = {
     "ImagePath": r"""2021-08-19\MscRawFrame_2021-08-19_10-31-44_2.usraw"""
 }
 
-MOCK_MSC_IMAGING_MEASURE_REPLY = {
-    "JsonMscImagingByIDResult": [MOCK_MSC_IMAGE_BASE, MOCK_MSC_IMAGE_BASE_2]
-    }
-
-MOCK_MSC_IMAGING_REPLY = {
-    "JsonMscImagingResult": [MOCK_MSC_IMAGE_BASE, MOCK_MSC_IMAGE_BASE_2]
-    }
-
-MOCK_MSC_EXTENDED_BASE = {
+MOCK_MSC_EXTENDED = {
     "DeviceID": 0,
     "ExtendedData": """<DataSet> <Item name="latitude"
                     type="double" unit="degree">49.33946426</Item>
@@ -54,20 +46,7 @@ MOCK_MSC_EXTENDED_BASE = {
     "TrayID": 0
 }
 
-MOCK_MSC_EXTENDED_BASE_2 = {
-    "DeviceID": 0,
-    "ExtendedData": None,
-    "MeasureDate": None,
-    "MeasureID": 0,
-    "RoundID": 0,
-    "TrayID": 0
-}
-
-MOCK_MSC_IMAGING_EXTENDED_DATA_MEASURE_REPLY = {"JsonMscMeasureExtendedDataByIDResult": MOCK_MSC_EXTENDED_BASE}
-
-MOCK_MSC_IMAGING_EXTENDED_DATA_REPLY = {"JsonMscMeasureExtendedDataResult": MOCK_MSC_EXTENDED_BASE_2}
-
-MOCK_MSC_MASK_BASE = {
+MOCK_MSC_MASK = {
     "DeviceID": 6,
     "DevicePID": "MSC1",
     "ExperimentID": 71,
@@ -81,33 +60,19 @@ MOCK_MSC_MASK_BASE = {
     "TrayID": 528
 }
 
-MOCK_MSC_PLANT_MASK_MEASURE_REPLY = {"JsonMscPlantMaskByMeasureIDResult": MOCK_MSC_MASK_BASE}
-
-MOCK_MSC_PLANT_MASK_REPLY = {"JsonMscPlantMaskResult": [MOCK_MSC_MASK_BASE]}
-
-MOCK_MSC_PARAM_BASE = {
+MOCK_MSC_PARAM = {
     "ParameterID": 5,
     "ParameterName": "Par1",
     "ParameterUnit": "a.u."
 }
 
-MOCK_MSC_PARAM_BASE_2 = {
+MOCK_MSC_PARAM_2 = {
     "ParameterID": 6,
     "ParameterName": "Water Content",
     "ParameterUnit": ""
 }
 
-MOCK_MSC_PARAM_REPLY = {"JsonMscParamResult": MOCK_MSC_PARAM_BASE}
-
-MOCK_MSC_PARAM_USED_ANALYSE_REPLY = {
-    "JsonMscUsedParamByAnalyseIDResult": [MOCK_MSC_PARAM_BASE, MOCK_MSC_PARAM_BASE_2]
-    }
-
-MOCK_MSC_PARAM_USED_REPLY = {
-    "JsonMscUsedParamResult": [MOCK_MSC_PARAM_BASE, MOCK_MSC_PARAM_BASE_2]
-    }
-
-MOCK_MSC_PARAM_IMAGE_BASE = {
+MOCK_MSC_PARAM_IMAGE = {
     "AnalyseID": 2331,
     "DeviceID": 6,
     "DevicePID": "MSC1",
@@ -121,11 +86,7 @@ MOCK_MSC_PARAM_IMAGE_BASE = {
     "TrayID": 520
 }
 
-MOCK_MSC_PARAM_IMAGE_ANALYSE_REPLY = {"JsonMscParameterImageByAnalyseIDResult": MOCK_MSC_PARAM_IMAGE_BASE}
-
-MOCK_MSC_PARAM_IMAGE_REPLY = {"JsonMscParameterImageResult": [MOCK_MSC_PARAM_IMAGE_BASE]}
-
-MOCK_MSC_PLANT_BASE = {
+MOCK_MSC_PLANT = {
     "AnalyseID": 2345,
     "DeviceID": 6,
     "DevicePID": "MSC1",
@@ -148,7 +109,7 @@ MOCK_MSC_PLANT_BASE = {
     "TrayID": 528
 }
 
-MOCK_MSC_PLANT_BASE_2 = {
+MOCK_MSC_PLANT_2 = {
     "AnalyseID": 2345,
     "DeviceID": 6,
     "DevicePID": "MSC1",
@@ -171,15 +132,7 @@ MOCK_MSC_PLANT_BASE_2 = {
     "TrayID": 528
 }
 
-MOCK_MSC_PLANT_PARAM_ANALYSE_REPLY = {
-    "JsonMscPlantParamByAnalyseIDResult": [MOCK_MSC_PLANT_BASE, MOCK_MSC_PLANT_BASE_2]
-    }
-
-MOCK_MSC_PLANT_PARAM_REPLY = {
-    "JsonMscPlantParamResult": [MOCK_MSC_PLANT_BASE, MOCK_MSC_PLANT_BASE_2]
-    }
-
-MOCK_MSC_LEAF_BASE = {
+MOCK_MSC_LEAF = {
     "AnalyseID": 2345,
     "DeviceID": 6,
     "DevicePID": "MSC1",
@@ -203,7 +156,7 @@ MOCK_MSC_LEAF_BASE = {
     "TrayID": 528
 }
 
-MOCK_MSC_LEAF_BASE_2 = {
+MOCK_MSC_LEAF_2 = {
     "AnalyseID": 2345,
     "DeviceID": 6,
     "DevicePID": "MSC1",
@@ -227,15 +180,7 @@ MOCK_MSC_LEAF_BASE_2 = {
     "TrayID": 528
 }
 
-MOCK_MSC_LEAF_PARAM_ANALYSE_REPLY = {
-    "JsonMscLeafParamByAnalyseIDResult": [MOCK_MSC_LEAF_BASE, MOCK_MSC_LEAF_BASE_2]
-    }
-
-MOCK_MSC_LEAF_PARAM_REPLY = {
-    "JsonMscLeafParamResult": [MOCK_MSC_LEAF_BASE, MOCK_MSC_LEAF_BASE_2]
-    }
-
-MOCK_MSC_LIGHT_BASE = {
+MOCK_MSC_LIGHT = {
     "ChannelID": 4,
     "LightSetCaption": "300 nm",
     "LightSetID": 9,
@@ -243,7 +188,7 @@ MOCK_MSC_LIGHT_BASE = {
     "LightSetValid": True
 }
 
-MOCK_MSC_LIGHT_BASE_2 = {
+MOCK_MSC_LIGHT_2 = {
     "ChannelID": 2,
     "LightSetCaption": "200 nm",
     "LightSetID": 5,
@@ -251,13 +196,7 @@ MOCK_MSC_LIGHT_BASE_2 = {
     "LightSetValid": True
 }
 
-MOCK_MSC_LIGHT_SET_REPLY = {"JsonMscLightSetResult": MOCK_MSC_LIGHT_BASE}
-
-MOCK_MSC_LIGHT_SET_USED_REPLY = {
-    "JsonMscLightSetUsedResult": [MOCK_MSC_LIGHT_BASE, MOCK_MSC_LIGHT_BASE_2]
-    }
-
-MOCK_MSC_CALIBRATE_BASE = {
+MOCK_MSC_CALIBRATE = {
     "CalibrationDate": "2019-09-26 16:41:24",
     "CalibrationID": 8,
     "CalibrationImagePath": r"""2019-09-26\MscRawFrame_2019-09-26_16-41-24_calibFrame.usraw""",
@@ -266,45 +205,42 @@ MOCK_MSC_CALIBRATE_BASE = {
     "LightSetID": 1
 }
 
-MOCK_MSC_CALIBRATION_REPLY = {"JsonMscCalibrationResult": MOCK_MSC_CALIBRATE_BASE}
-
-MOCK_MSC_CALIBRATION_LIGHT_SET_REPLY = {"JsonMscCalibrationByLightSetIDResult": [MOCK_MSC_CALIBRATE_BASE]}
-
-# MOCK OF Multispectral calibration light by ID TODO
-
-MOCK_MSC_CALIBRATION_LIGHT_REPLY = {
-    "JsonMscCalibrationLightResult": [
-        {
-            "CalibrationID": 5,
-            "CalibrationLightID": 6,
-            "CalibrationLightLevel": 100,
-            "LightCaption": "1450 nm",
-            "LightID": 2,
-            "LightSetID": 2
-        },
-        {
-            "CalibrationID": 6,
-            "CalibrationLightID": 7,
-            "CalibrationLightLevel": 15,
-            "LightCaption": "940 nm",
-            "LightID": 1,
-            "LightSetID": 3
-        },
-        {
-            "CalibrationID": 6,
-            "CalibrationLightID": 8,
-            "CalibrationLightLevel": 45,
-            "LightCaption": "1450 nm",
-            "LightID": 2,
-            "LightSetID": 3
-        },
-        {
-            "CalibrationID": 8,
-            "CalibrationLightID": 10,
-            "CalibrationLightLevel": 32,
-            "LightCaption": "940 nm",
-            "LightID": 1,
-            "LightSetID": 1
-        }
-    ]
+MOCK_MSC_CALIBRATION_LIGHT = {
+    "CalibrationID": 5,
+    "CalibrationLightID": 6,
+    "CalibrationLightLevel": 100,
+    "LightCaption": "1450 nm",
+    "LightID": 2,
+    "LightSetID": 2
 }
+
+MOCK_MSC_CALIBRATION_LIGHT_2 = {
+    "CalibrationID": 6,
+    "CalibrationLightID": 7,
+    "CalibrationLightLevel": 15,
+    "LightCaption": "940 nm",
+    "LightID": 1,
+    "LightSetID": 3
+ }
+
+MOCK_MSC_IMAGING_MEASURE_REPLY = {"JsonMscImagingByIDResult": [MOCK_MSC_IMAGE, MOCK_MSC_IMAGE_2]}
+MOCK_MSC_IMAGING_REPLY = {"JsonMscImagingResult": [MOCK_MSC_IMAGE, MOCK_MSC_IMAGE_2]}
+MOCK_MSC_IMAGING_EXTENDED_DATA_MEASURE_REPLY = {"JsonMscMeasureExtendedDataByIDResult": MOCK_MSC_EXTENDED}
+MOCK_MSC_IMAGING_EXTENDED_DATA_REPLY = {"JsonMscMeasureExtendedDataResult": MOCK_MSC_EXTENDED}
+MOCK_MSC_PLANT_MASK_MEASURE_REPLY = {"JsonMscPlantMaskByMeasureIDResult": MOCK_MSC_MASK}
+MOCK_MSC_PLANT_MASK_REPLY = {"JsonMscPlantMaskResult": [MOCK_MSC_MASK]}
+MOCK_MSC_PARAM_REPLY = {"JsonMscParamResult": MOCK_MSC_PARAM}
+MOCK_MSC_PARAM_USED_ANALYSE_REPLY = {"JsonMscUsedParamByAnalyseIDResult": [MOCK_MSC_PARAM, MOCK_MSC_PARAM_2]}
+MOCK_MSC_PARAM_USED_REPLY = {"JsonMscUsedParamResult": [MOCK_MSC_PARAM, MOCK_MSC_PARAM_2]}
+MOCK_MSC_PARAM_IMAGE_ANALYSE_REPLY = {"JsonMscParameterImageByAnalyseIDResult": MOCK_MSC_PARAM_IMAGE}
+MOCK_MSC_PARAM_IMAGE_REPLY = {"JsonMscParameterImageResult": [MOCK_MSC_PARAM_IMAGE]}
+MOCK_MSC_PLANT_PARAM_ANALYSE_REPLY = {"JsonMscPlantParamByAnalyseIDResult": [MOCK_MSC_PLANT, MOCK_MSC_PLANT_2]}
+MOCK_MSC_PLANT_PARAM_REPLY = {"JsonMscPlantParamResult": [MOCK_MSC_PLANT, MOCK_MSC_PLANT_2]}
+MOCK_MSC_LEAF_PARAM_ANALYSE_REPLY = {"JsonMscLeafParamByAnalyseIDResult": [MOCK_MSC_LEAF, MOCK_MSC_LEAF_2]}
+MOCK_MSC_LEAF_PARAM_REPLY = {"JsonMscLeafParamResult": [MOCK_MSC_LEAF, MOCK_MSC_LEAF_2]}
+MOCK_MSC_LIGHT_SET_REPLY = {"JsonMscLightSetResult": MOCK_MSC_LIGHT}
+MOCK_MSC_LIGHT_SET_USED_REPLY = {"JsonMscLightSetUsedResult": [MOCK_MSC_LIGHT, MOCK_MSC_LIGHT_2]}
+MOCK_MSC_CALIBRATION_REPLY = {"JsonMscCalibrationResult": MOCK_MSC_CALIBRATE}
+MOCK_MSC_CALIBRATION_LIGHT_SET_REPLY = {"JsonMscCalibrationByLightSetIDResult": [MOCK_MSC_CALIBRATE]}
+MOCK_MSC_CALIBRATION_LIGHT_ID_REPLY = {"JsonMscCalibrationLightByIDResult": MOCK_MSC_CALIBRATION_LIGHT}
+MOCK_MSC_CALIBRATION_LIGHT_REPLY = {"JsonMscCalibrationLightResult": [MOCK_MSC_CALIBRATION_LIGHT, MOCK_MSC_CALIBRATION_LIGHT_2]}

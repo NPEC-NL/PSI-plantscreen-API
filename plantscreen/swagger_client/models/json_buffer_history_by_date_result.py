@@ -28,14 +28,40 @@ class JsonBufferHistoryByDateResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_buffer_history_by_date_result': 'list[BufferHistory]'
     }
 
     attribute_map = {
+        'json_buffer_history_by_date_result': 'JsonBufferHistoryByDateResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_buffer_history_by_date_result=None):  # noqa: E501
         """JsonBufferHistoryByDateResult - a model defined in Swagger"""  # noqa: E501
+        self._json_buffer_history_by_date_result = None
         self.discriminator = None
+        if json_buffer_history_by_date_result is not None:
+            self.json_buffer_history_by_date_result = json_buffer_history_by_date_result
+
+    @property
+    def json_buffer_history_by_date_result(self):
+        """Gets the json_buffer_history_by_date_result of this JsonBufferHistoryByDateResult.  # noqa: E501
+
+
+        :return: The json_buffer_history_by_date_result of this JsonBufferHistoryByDateResult.  # noqa: E501
+        :rtype: list[BufferHistory]
+        """
+        return self._json_buffer_history_by_date_result
+
+    @json_buffer_history_by_date_result.setter
+    def json_buffer_history_by_date_result(self, json_buffer_history_by_date_result):
+        """Sets the json_buffer_history_by_date_result of this JsonBufferHistoryByDateResult.
+
+
+        :param json_buffer_history_by_date_result: The json_buffer_history_by_date_result of this JsonBufferHistoryByDateResult.  # noqa: E501
+        :type: list[BufferHistory]
+        """
+
+        self._json_buffer_history_by_date_result = json_buffer_history_by_date_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

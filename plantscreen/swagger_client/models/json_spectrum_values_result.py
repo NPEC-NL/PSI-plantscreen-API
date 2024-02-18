@@ -28,14 +28,40 @@ class JsonSpectrumValuesResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_spectrum_values_result': 'list[SpectrumValues]'
     }
 
     attribute_map = {
+        'json_spectrum_values_result': 'JsonSpectrumValuesResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_spectrum_values_result=None):  # noqa: E501
         """JsonSpectrumValuesResult - a model defined in Swagger"""  # noqa: E501
+        self._json_spectrum_values_result = None
         self.discriminator = None
+        if json_spectrum_values_result is not None:
+            self.json_spectrum_values_result = json_spectrum_values_result
+
+    @property
+    def json_spectrum_values_result(self):
+        """Gets the json_spectrum_values_result of this JsonSpectrumValuesResult.  # noqa: E501
+
+
+        :return: The json_spectrum_values_result of this JsonSpectrumValuesResult.  # noqa: E501
+        :rtype: list[SpectrumValues]
+        """
+        return self._json_spectrum_values_result
+
+    @json_spectrum_values_result.setter
+    def json_spectrum_values_result(self, json_spectrum_values_result):
+        """Sets the json_spectrum_values_result of this JsonSpectrumValuesResult.
+
+
+        :param json_spectrum_values_result: The json_spectrum_values_result of this JsonSpectrumValuesResult.  # noqa: E501
+        :type: list[SpectrumValues]
+        """
+
+        self._json_spectrum_values_result = json_spectrum_values_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,60 +28,39 @@ class PlantWeightReference(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'plant_id': 'int',
         'plant_barcode': 'str',
+        'plant_id': 'int',
         'plant_name': 'str',
-        'reference_weight_value': 'float',
-        'reference_weight_date': 'datetime'
+        'reference_weight_date': 'datetime',
+        'reference_weight_value': 'float'
     }
 
     attribute_map = {
-        'plant_id': 'PlantID',
         'plant_barcode': 'PlantBarcode',
+        'plant_id': 'PlantID',
         'plant_name': 'PlantName',
-        'reference_weight_value': 'ReferenceWeightValue',
-        'reference_weight_date': 'ReferenceWeightDate'
+        'reference_weight_date': 'ReferenceWeightDate',
+        'reference_weight_value': 'ReferenceWeightValue'
     }
 
-    def __init__(self, plant_id=None, plant_barcode=None, plant_name=None, reference_weight_value=None, reference_weight_date=None):  # noqa: E501
+    def __init__(self, plant_barcode=None, plant_id=None, plant_name=None, reference_weight_date=None, reference_weight_value=None):  # noqa: E501
         """PlantWeightReference - a model defined in Swagger"""  # noqa: E501
-        self._plant_id = None
         self._plant_barcode = None
+        self._plant_id = None
         self._plant_name = None
-        self._reference_weight_value = None
         self._reference_weight_date = None
+        self._reference_weight_value = None
         self.discriminator = None
-        if plant_id is not None:
-            self.plant_id = plant_id
         if plant_barcode is not None:
             self.plant_barcode = plant_barcode
+        if plant_id is not None:
+            self.plant_id = plant_id
         if plant_name is not None:
             self.plant_name = plant_name
-        if reference_weight_value is not None:
-            self.reference_weight_value = reference_weight_value
         if reference_weight_date is not None:
             self.reference_weight_date = reference_weight_date
-
-    @property
-    def plant_id(self):
-        """Gets the plant_id of this PlantWeightReference.  # noqa: E501
-
-
-        :return: The plant_id of this PlantWeightReference.  # noqa: E501
-        :rtype: int
-        """
-        return self._plant_id
-
-    @plant_id.setter
-    def plant_id(self, plant_id):
-        """Sets the plant_id of this PlantWeightReference.
-
-
-        :param plant_id: The plant_id of this PlantWeightReference.  # noqa: E501
-        :type: int
-        """
-
-        self._plant_id = plant_id
+        if reference_weight_value is not None:
+            self.reference_weight_value = reference_weight_value
 
     @property
     def plant_barcode(self):
@@ -105,6 +84,27 @@ class PlantWeightReference(object):
         self._plant_barcode = plant_barcode
 
     @property
+    def plant_id(self):
+        """Gets the plant_id of this PlantWeightReference.  # noqa: E501
+
+
+        :return: The plant_id of this PlantWeightReference.  # noqa: E501
+        :rtype: int
+        """
+        return self._plant_id
+
+    @plant_id.setter
+    def plant_id(self, plant_id):
+        """Sets the plant_id of this PlantWeightReference.
+
+
+        :param plant_id: The plant_id of this PlantWeightReference.  # noqa: E501
+        :type: int
+        """
+
+        self._plant_id = plant_id
+
+    @property
     def plant_name(self):
         """Gets the plant_name of this PlantWeightReference.  # noqa: E501
 
@@ -126,27 +126,6 @@ class PlantWeightReference(object):
         self._plant_name = plant_name
 
     @property
-    def reference_weight_value(self):
-        """Gets the reference_weight_value of this PlantWeightReference.  # noqa: E501
-
-
-        :return: The reference_weight_value of this PlantWeightReference.  # noqa: E501
-        :rtype: float
-        """
-        return self._reference_weight_value
-
-    @reference_weight_value.setter
-    def reference_weight_value(self, reference_weight_value):
-        """Sets the reference_weight_value of this PlantWeightReference.
-
-
-        :param reference_weight_value: The reference_weight_value of this PlantWeightReference.  # noqa: E501
-        :type: float
-        """
-
-        self._reference_weight_value = reference_weight_value
-
-    @property
     def reference_weight_date(self):
         """Gets the reference_weight_date of this PlantWeightReference.  # noqa: E501
 
@@ -166,6 +145,27 @@ class PlantWeightReference(object):
         """
 
         self._reference_weight_date = reference_weight_date
+
+    @property
+    def reference_weight_value(self):
+        """Gets the reference_weight_value of this PlantWeightReference.  # noqa: E501
+
+
+        :return: The reference_weight_value of this PlantWeightReference.  # noqa: E501
+        :rtype: float
+        """
+        return self._reference_weight_value
+
+    @reference_weight_value.setter
+    def reference_weight_value(self, reference_weight_value):
+        """Sets the reference_weight_value of this PlantWeightReference.
+
+
+        :param reference_weight_value: The reference_weight_value of this PlantWeightReference.  # noqa: E501
+        :type: float
+        """
+
+        self._reference_weight_value = reference_weight_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

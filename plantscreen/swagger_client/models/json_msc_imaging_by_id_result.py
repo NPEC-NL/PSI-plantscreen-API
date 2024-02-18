@@ -28,14 +28,40 @@ class JsonMscImagingByIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_msc_imaging_by_id_result': 'list[Imaging]'
     }
 
     attribute_map = {
+        'json_msc_imaging_by_id_result': 'JsonMscImagingByIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_msc_imaging_by_id_result=None):  # noqa: E501
         """JsonMscImagingByIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_msc_imaging_by_id_result = None
         self.discriminator = None
+        if json_msc_imaging_by_id_result is not None:
+            self.json_msc_imaging_by_id_result = json_msc_imaging_by_id_result
+
+    @property
+    def json_msc_imaging_by_id_result(self):
+        """Gets the json_msc_imaging_by_id_result of this JsonMscImagingByIDResult.  # noqa: E501
+
+
+        :return: The json_msc_imaging_by_id_result of this JsonMscImagingByIDResult.  # noqa: E501
+        :rtype: list[Imaging]
+        """
+        return self._json_msc_imaging_by_id_result
+
+    @json_msc_imaging_by_id_result.setter
+    def json_msc_imaging_by_id_result(self, json_msc_imaging_by_id_result):
+        """Sets the json_msc_imaging_by_id_result of this JsonMscImagingByIDResult.
+
+
+        :param json_msc_imaging_by_id_result: The json_msc_imaging_by_id_result of this JsonMscImagingByIDResult.  # noqa: E501
+        :type: list[Imaging]
+        """
+
+        self._json_msc_imaging_by_id_result = json_msc_imaging_by_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

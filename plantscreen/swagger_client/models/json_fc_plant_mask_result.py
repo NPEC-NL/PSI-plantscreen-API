@@ -28,14 +28,40 @@ class JsonFcPlantMaskResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_fc_plant_mask_result': 'list[PlantMask]'
     }
 
     attribute_map = {
+        'json_fc_plant_mask_result': 'JsonFcPlantMaskResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_fc_plant_mask_result=None):  # noqa: E501
         """JsonFcPlantMaskResult - a model defined in Swagger"""  # noqa: E501
+        self._json_fc_plant_mask_result = None
         self.discriminator = None
+        if json_fc_plant_mask_result is not None:
+            self.json_fc_plant_mask_result = json_fc_plant_mask_result
+
+    @property
+    def json_fc_plant_mask_result(self):
+        """Gets the json_fc_plant_mask_result of this JsonFcPlantMaskResult.  # noqa: E501
+
+
+        :return: The json_fc_plant_mask_result of this JsonFcPlantMaskResult.  # noqa: E501
+        :rtype: list[PlantMask]
+        """
+        return self._json_fc_plant_mask_result
+
+    @json_fc_plant_mask_result.setter
+    def json_fc_plant_mask_result(self, json_fc_plant_mask_result):
+        """Sets the json_fc_plant_mask_result of this JsonFcPlantMaskResult.
+
+
+        :param json_fc_plant_mask_result: The json_fc_plant_mask_result of this JsonFcPlantMaskResult.  # noqa: E501
+        :type: list[PlantMask]
+        """
+
+        self._json_fc_plant_mask_result = json_fc_plant_mask_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

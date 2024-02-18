@@ -28,76 +28,34 @@ class BufferHistory(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'buffer_state_id': 'int',
-        'buffer_state_date': 'datetime',
         'buffer_occasion': 'str',
+        'buffer_state_date': 'datetime',
+        'buffer_state_id': 'int',
         'buffer_state_path': 'str'
     }
 
     attribute_map = {
-        'buffer_state_id': 'BufferStateID',
-        'buffer_state_date': 'BufferStateDate',
         'buffer_occasion': 'BufferOccasion',
+        'buffer_state_date': 'BufferStateDate',
+        'buffer_state_id': 'BufferStateID',
         'buffer_state_path': 'BufferStatePath'
     }
 
-    def __init__(self, buffer_state_id=None, buffer_state_date=None, buffer_occasion=None, buffer_state_path=None):  # noqa: E501
+    def __init__(self, buffer_occasion=None, buffer_state_date=None, buffer_state_id=None, buffer_state_path=None):  # noqa: E501
         """BufferHistory - a model defined in Swagger"""  # noqa: E501
-        self._buffer_state_id = None
-        self._buffer_state_date = None
         self._buffer_occasion = None
+        self._buffer_state_date = None
+        self._buffer_state_id = None
         self._buffer_state_path = None
         self.discriminator = None
-        if buffer_state_id is not None:
-            self.buffer_state_id = buffer_state_id
-        if buffer_state_date is not None:
-            self.buffer_state_date = buffer_state_date
         if buffer_occasion is not None:
             self.buffer_occasion = buffer_occasion
+        if buffer_state_date is not None:
+            self.buffer_state_date = buffer_state_date
+        if buffer_state_id is not None:
+            self.buffer_state_id = buffer_state_id
         if buffer_state_path is not None:
             self.buffer_state_path = buffer_state_path
-
-    @property
-    def buffer_state_id(self):
-        """Gets the buffer_state_id of this BufferHistory.  # noqa: E501
-
-
-        :return: The buffer_state_id of this BufferHistory.  # noqa: E501
-        :rtype: int
-        """
-        return self._buffer_state_id
-
-    @buffer_state_id.setter
-    def buffer_state_id(self, buffer_state_id):
-        """Sets the buffer_state_id of this BufferHistory.
-
-
-        :param buffer_state_id: The buffer_state_id of this BufferHistory.  # noqa: E501
-        :type: int
-        """
-
-        self._buffer_state_id = buffer_state_id
-
-    @property
-    def buffer_state_date(self):
-        """Gets the buffer_state_date of this BufferHistory.  # noqa: E501
-
-
-        :return: The buffer_state_date of this BufferHistory.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._buffer_state_date
-
-    @buffer_state_date.setter
-    def buffer_state_date(self, buffer_state_date):
-        """Sets the buffer_state_date of this BufferHistory.
-
-
-        :param buffer_state_date: The buffer_state_date of this BufferHistory.  # noqa: E501
-        :type: datetime
-        """
-
-        self._buffer_state_date = buffer_state_date
 
     @property
     def buffer_occasion(self):
@@ -125,6 +83,48 @@ class BufferHistory(object):
             )
 
         self._buffer_occasion = buffer_occasion
+
+    @property
+    def buffer_state_date(self):
+        """Gets the buffer_state_date of this BufferHistory.  # noqa: E501
+
+
+        :return: The buffer_state_date of this BufferHistory.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._buffer_state_date
+
+    @buffer_state_date.setter
+    def buffer_state_date(self, buffer_state_date):
+        """Sets the buffer_state_date of this BufferHistory.
+
+
+        :param buffer_state_date: The buffer_state_date of this BufferHistory.  # noqa: E501
+        :type: datetime
+        """
+
+        self._buffer_state_date = buffer_state_date
+
+    @property
+    def buffer_state_id(self):
+        """Gets the buffer_state_id of this BufferHistory.  # noqa: E501
+
+
+        :return: The buffer_state_id of this BufferHistory.  # noqa: E501
+        :rtype: int
+        """
+        return self._buffer_state_id
+
+    @buffer_state_id.setter
+    def buffer_state_id(self, buffer_state_id):
+        """Sets the buffer_state_id of this BufferHistory.
+
+
+        :param buffer_state_id: The buffer_state_id of this BufferHistory.  # noqa: E501
+        :type: int
+        """
+
+        self._buffer_state_id = buffer_state_id
 
     @property
     def buffer_state_path(self):

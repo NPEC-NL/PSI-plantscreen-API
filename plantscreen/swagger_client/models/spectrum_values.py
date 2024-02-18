@@ -29,28 +29,28 @@ class SpectrumValues(object):
     """
     swagger_types = {
         'spectrum_device_id': 'int',
-        'spectrum_record_date': 'datetime',
-        'spectrum_path': 'str'
+        'spectrum_path': 'str',
+        'spectrum_record_date': 'datetime'
     }
 
     attribute_map = {
         'spectrum_device_id': 'SpectrumDeviceID',
-        'spectrum_record_date': 'SpectrumRecordDate',
-        'spectrum_path': 'SpectrumPath'
+        'spectrum_path': 'SpectrumPath',
+        'spectrum_record_date': 'SpectrumRecordDate'
     }
 
-    def __init__(self, spectrum_device_id=None, spectrum_record_date=None, spectrum_path=None):  # noqa: E501
+    def __init__(self, spectrum_device_id=None, spectrum_path=None, spectrum_record_date=None):  # noqa: E501
         """SpectrumValues - a model defined in Swagger"""  # noqa: E501
         self._spectrum_device_id = None
-        self._spectrum_record_date = None
         self._spectrum_path = None
+        self._spectrum_record_date = None
         self.discriminator = None
         if spectrum_device_id is not None:
             self.spectrum_device_id = spectrum_device_id
-        if spectrum_record_date is not None:
-            self.spectrum_record_date = spectrum_record_date
         if spectrum_path is not None:
             self.spectrum_path = spectrum_path
+        if spectrum_record_date is not None:
+            self.spectrum_record_date = spectrum_record_date
 
     @property
     def spectrum_device_id(self):
@@ -74,27 +74,6 @@ class SpectrumValues(object):
         self._spectrum_device_id = spectrum_device_id
 
     @property
-    def spectrum_record_date(self):
-        """Gets the spectrum_record_date of this SpectrumValues.  # noqa: E501
-
-
-        :return: The spectrum_record_date of this SpectrumValues.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._spectrum_record_date
-
-    @spectrum_record_date.setter
-    def spectrum_record_date(self, spectrum_record_date):
-        """Sets the spectrum_record_date of this SpectrumValues.
-
-
-        :param spectrum_record_date: The spectrum_record_date of this SpectrumValues.  # noqa: E501
-        :type: datetime
-        """
-
-        self._spectrum_record_date = spectrum_record_date
-
-    @property
     def spectrum_path(self):
         """Gets the spectrum_path of this SpectrumValues.  # noqa: E501
 
@@ -116,6 +95,27 @@ class SpectrumValues(object):
         """
 
         self._spectrum_path = spectrum_path
+
+    @property
+    def spectrum_record_date(self):
+        """Gets the spectrum_record_date of this SpectrumValues.  # noqa: E501
+
+
+        :return: The spectrum_record_date of this SpectrumValues.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._spectrum_record_date
+
+    @spectrum_record_date.setter
+    def spectrum_record_date(self, spectrum_record_date):
+        """Sets the spectrum_record_date of this SpectrumValues.
+
+
+        :param spectrum_record_date: The spectrum_record_date of this SpectrumValues.  # noqa: E501
+        :type: datetime
+        """
+
+        self._spectrum_record_date = spectrum_record_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

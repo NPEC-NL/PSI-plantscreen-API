@@ -28,14 +28,40 @@ class JsonProbeByIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_probe_by_id_result': 'Probe'
     }
 
     attribute_map = {
+        'json_probe_by_id_result': 'JsonProbeByIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_probe_by_id_result=None):  # noqa: E501
         """JsonProbeByIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_probe_by_id_result = None
         self.discriminator = None
+        if json_probe_by_id_result is not None:
+            self.json_probe_by_id_result = json_probe_by_id_result
+
+    @property
+    def json_probe_by_id_result(self):
+        """Gets the json_probe_by_id_result of this JsonProbeByIDResult.  # noqa: E501
+
+
+        :return: The json_probe_by_id_result of this JsonProbeByIDResult.  # noqa: E501
+        :rtype: Probe
+        """
+        return self._json_probe_by_id_result
+
+    @json_probe_by_id_result.setter
+    def json_probe_by_id_result(self, json_probe_by_id_result):
+        """Sets the json_probe_by_id_result of this JsonProbeByIDResult.
+
+
+        :param json_probe_by_id_result: The json_probe_by_id_result of this JsonProbeByIDResult.  # noqa: E501
+        :type: Probe
+        """
+
+        self._json_probe_by_id_result = json_probe_by_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

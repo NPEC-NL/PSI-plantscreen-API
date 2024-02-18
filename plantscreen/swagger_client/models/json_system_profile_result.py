@@ -28,14 +28,40 @@ class JsonSystemProfileResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_system_profile_result': 'SystemProfile'
     }
 
     attribute_map = {
+        'json_system_profile_result': 'JsonSystemProfileResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_system_profile_result=None):  # noqa: E501
         """JsonSystemProfileResult - a model defined in Swagger"""  # noqa: E501
+        self._json_system_profile_result = None
         self.discriminator = None
+        if json_system_profile_result is not None:
+            self.json_system_profile_result = json_system_profile_result
+
+    @property
+    def json_system_profile_result(self):
+        """Gets the json_system_profile_result of this JsonSystemProfileResult.  # noqa: E501
+
+
+        :return: The json_system_profile_result of this JsonSystemProfileResult.  # noqa: E501
+        :rtype: SystemProfile
+        """
+        return self._json_system_profile_result
+
+    @json_system_profile_result.setter
+    def json_system_profile_result(self, json_system_profile_result):
+        """Sets the json_system_profile_result of this JsonSystemProfileResult.
+
+
+        :param json_system_profile_result: The json_system_profile_result of this JsonSystemProfileResult.  # noqa: E501
+        :type: SystemProfile
+        """
+
+        self._json_system_profile_result = json_system_profile_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

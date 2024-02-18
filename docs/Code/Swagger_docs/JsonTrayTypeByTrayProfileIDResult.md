@@ -1,0 +1,9 @@
+# JsonTrayTypeByTrayProfileIDResult
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**json_tray_type_by_tray_profile_id_result** | [**TrayType**](TrayType.md) |  | [optional] 
+
+[[Back to Model list]](../swagger_file.md#documentation-for-models) [[Back to API list]](../swagger_file.md#documentation-for-api-endpoints) [[Back to README]](../swagger_file.md)
+

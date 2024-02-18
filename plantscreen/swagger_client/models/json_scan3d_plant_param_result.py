@@ -28,14 +28,40 @@ class JsonScan3dPlantParamResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_scan3d_plant_param_result': 'list[PlantParameter]'
     }
 
     attribute_map = {
+        'json_scan3d_plant_param_result': 'JsonScan3dPlantParamResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_scan3d_plant_param_result=None):  # noqa: E501
         """JsonScan3dPlantParamResult - a model defined in Swagger"""  # noqa: E501
+        self._json_scan3d_plant_param_result = None
         self.discriminator = None
+        if json_scan3d_plant_param_result is not None:
+            self.json_scan3d_plant_param_result = json_scan3d_plant_param_result
+
+    @property
+    def json_scan3d_plant_param_result(self):
+        """Gets the json_scan3d_plant_param_result of this JsonScan3dPlantParamResult.  # noqa: E501
+
+
+        :return: The json_scan3d_plant_param_result of this JsonScan3dPlantParamResult.  # noqa: E501
+        :rtype: list[PlantParameter]
+        """
+        return self._json_scan3d_plant_param_result
+
+    @json_scan3d_plant_param_result.setter
+    def json_scan3d_plant_param_result(self, json_scan3d_plant_param_result):
+        """Sets the json_scan3d_plant_param_result of this JsonScan3dPlantParamResult.
+
+
+        :param json_scan3d_plant_param_result: The json_scan3d_plant_param_result of this JsonScan3dPlantParamResult.  # noqa: E501
+        :type: list[PlantParameter]
+        """
+
+        self._json_scan3d_plant_param_result = json_scan3d_plant_param_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

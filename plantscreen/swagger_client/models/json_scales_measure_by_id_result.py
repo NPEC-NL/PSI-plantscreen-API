@@ -28,14 +28,40 @@ class JsonScalesMeasureByIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_scales_measure_by_id_result': 'ScalesData'
     }
 
     attribute_map = {
+        'json_scales_measure_by_id_result': 'JsonScalesMeasureByIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_scales_measure_by_id_result=None):  # noqa: E501
         """JsonScalesMeasureByIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_scales_measure_by_id_result = None
         self.discriminator = None
+        if json_scales_measure_by_id_result is not None:
+            self.json_scales_measure_by_id_result = json_scales_measure_by_id_result
+
+    @property
+    def json_scales_measure_by_id_result(self):
+        """Gets the json_scales_measure_by_id_result of this JsonScalesMeasureByIDResult.  # noqa: E501
+
+
+        :return: The json_scales_measure_by_id_result of this JsonScalesMeasureByIDResult.  # noqa: E501
+        :rtype: ScalesData
+        """
+        return self._json_scales_measure_by_id_result
+
+    @json_scales_measure_by_id_result.setter
+    def json_scales_measure_by_id_result(self, json_scales_measure_by_id_result):
+        """Sets the json_scales_measure_by_id_result of this JsonScalesMeasureByIDResult.
+
+
+        :param json_scales_measure_by_id_result: The json_scales_measure_by_id_result of this JsonScalesMeasureByIDResult.  # noqa: E501
+        :type: ScalesData
+        """
+
+        self._json_scales_measure_by_id_result = json_scales_measure_by_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

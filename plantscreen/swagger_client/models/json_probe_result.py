@@ -28,14 +28,40 @@ class JsonProbeResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_probe_result': 'list[Probe]'
     }
 
     attribute_map = {
+        'json_probe_result': 'JsonProbeResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_probe_result=None):  # noqa: E501
         """JsonProbeResult - a model defined in Swagger"""  # noqa: E501
+        self._json_probe_result = None
         self.discriminator = None
+        if json_probe_result is not None:
+            self.json_probe_result = json_probe_result
+
+    @property
+    def json_probe_result(self):
+        """Gets the json_probe_result of this JsonProbeResult.  # noqa: E501
+
+
+        :return: The json_probe_result of this JsonProbeResult.  # noqa: E501
+        :rtype: list[Probe]
+        """
+        return self._json_probe_result
+
+    @json_probe_result.setter
+    def json_probe_result(self, json_probe_result):
+        """Sets the json_probe_result of this JsonProbeResult.
+
+
+        :param json_probe_result: The json_probe_result of this JsonProbeResult.  # noqa: E501
+        :type: list[Probe]
+        """
+
+        self._json_probe_result = json_probe_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

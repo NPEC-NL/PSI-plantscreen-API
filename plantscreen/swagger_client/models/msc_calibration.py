@@ -28,86 +28,44 @@ class MscCalibration(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'calibration_id': 'int',
-        'light_set_id': 'int',
         'calibration_date': 'datetime',
+        'calibration_id': 'int',
         'calibration_image_path': 'str',
         'camera_exposure': 'int',
-        'camera_gain': 'int'
+        'camera_gain': 'int',
+        'light_set_id': 'int'
     }
 
     attribute_map = {
-        'calibration_id': 'CalibrationID',
-        'light_set_id': 'LightSetID',
         'calibration_date': 'CalibrationDate',
+        'calibration_id': 'CalibrationID',
         'calibration_image_path': 'CalibrationImagePath',
         'camera_exposure': 'CameraExposure',
-        'camera_gain': 'CameraGain'
+        'camera_gain': 'CameraGain',
+        'light_set_id': 'LightSetID'
     }
 
-    def __init__(self, calibration_id=None, light_set_id=None, calibration_date=None, calibration_image_path=None, camera_exposure=None, camera_gain=None):  # noqa: E501
+    def __init__(self, calibration_date=None, calibration_id=None, calibration_image_path=None, camera_exposure=None, camera_gain=None, light_set_id=None):  # noqa: E501
         """MscCalibration - a model defined in Swagger"""  # noqa: E501
-        self._calibration_id = None
-        self._light_set_id = None
         self._calibration_date = None
+        self._calibration_id = None
         self._calibration_image_path = None
         self._camera_exposure = None
         self._camera_gain = None
+        self._light_set_id = None
         self.discriminator = None
-        if calibration_id is not None:
-            self.calibration_id = calibration_id
-        if light_set_id is not None:
-            self.light_set_id = light_set_id
         if calibration_date is not None:
             self.calibration_date = calibration_date
+        if calibration_id is not None:
+            self.calibration_id = calibration_id
         if calibration_image_path is not None:
             self.calibration_image_path = calibration_image_path
         if camera_exposure is not None:
             self.camera_exposure = camera_exposure
         if camera_gain is not None:
             self.camera_gain = camera_gain
-
-    @property
-    def calibration_id(self):
-        """Gets the calibration_id of this MscCalibration.  # noqa: E501
-
-
-        :return: The calibration_id of this MscCalibration.  # noqa: E501
-        :rtype: int
-        """
-        return self._calibration_id
-
-    @calibration_id.setter
-    def calibration_id(self, calibration_id):
-        """Sets the calibration_id of this MscCalibration.
-
-
-        :param calibration_id: The calibration_id of this MscCalibration.  # noqa: E501
-        :type: int
-        """
-
-        self._calibration_id = calibration_id
-
-    @property
-    def light_set_id(self):
-        """Gets the light_set_id of this MscCalibration.  # noqa: E501
-
-
-        :return: The light_set_id of this MscCalibration.  # noqa: E501
-        :rtype: int
-        """
-        return self._light_set_id
-
-    @light_set_id.setter
-    def light_set_id(self, light_set_id):
-        """Sets the light_set_id of this MscCalibration.
-
-
-        :param light_set_id: The light_set_id of this MscCalibration.  # noqa: E501
-        :type: int
-        """
-
-        self._light_set_id = light_set_id
+        if light_set_id is not None:
+            self.light_set_id = light_set_id
 
     @property
     def calibration_date(self):
@@ -129,6 +87,27 @@ class MscCalibration(object):
         """
 
         self._calibration_date = calibration_date
+
+    @property
+    def calibration_id(self):
+        """Gets the calibration_id of this MscCalibration.  # noqa: E501
+
+
+        :return: The calibration_id of this MscCalibration.  # noqa: E501
+        :rtype: int
+        """
+        return self._calibration_id
+
+    @calibration_id.setter
+    def calibration_id(self, calibration_id):
+        """Sets the calibration_id of this MscCalibration.
+
+
+        :param calibration_id: The calibration_id of this MscCalibration.  # noqa: E501
+        :type: int
+        """
+
+        self._calibration_id = calibration_id
 
     @property
     def calibration_image_path(self):
@@ -194,6 +173,27 @@ class MscCalibration(object):
         """
 
         self._camera_gain = camera_gain
+
+    @property
+    def light_set_id(self):
+        """Gets the light_set_id of this MscCalibration.  # noqa: E501
+
+
+        :return: The light_set_id of this MscCalibration.  # noqa: E501
+        :rtype: int
+        """
+        return self._light_set_id
+
+    @light_set_id.setter
+    def light_set_id(self, light_set_id):
+        """Sets the light_set_id of this MscCalibration.
+
+
+        :param light_set_id: The light_set_id of this MscCalibration.  # noqa: E501
+        :type: int
+        """
+
+        self._light_set_id = light_set_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,14 +28,40 @@ class JsonScalesMappingByTrayIDResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_scales_mapping_by_tray_id_result': 'list[ScalesMapping]'
     }
 
     attribute_map = {
+        'json_scales_mapping_by_tray_id_result': 'JsonScalesMappingByTrayIDResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_scales_mapping_by_tray_id_result=None):  # noqa: E501
         """JsonScalesMappingByTrayIDResult - a model defined in Swagger"""  # noqa: E501
+        self._json_scales_mapping_by_tray_id_result = None
         self.discriminator = None
+        if json_scales_mapping_by_tray_id_result is not None:
+            self.json_scales_mapping_by_tray_id_result = json_scales_mapping_by_tray_id_result
+
+    @property
+    def json_scales_mapping_by_tray_id_result(self):
+        """Gets the json_scales_mapping_by_tray_id_result of this JsonScalesMappingByTrayIDResult.  # noqa: E501
+
+
+        :return: The json_scales_mapping_by_tray_id_result of this JsonScalesMappingByTrayIDResult.  # noqa: E501
+        :rtype: list[ScalesMapping]
+        """
+        return self._json_scales_mapping_by_tray_id_result
+
+    @json_scales_mapping_by_tray_id_result.setter
+    def json_scales_mapping_by_tray_id_result(self, json_scales_mapping_by_tray_id_result):
+        """Sets the json_scales_mapping_by_tray_id_result of this JsonScalesMappingByTrayIDResult.
+
+
+        :param json_scales_mapping_by_tray_id_result: The json_scales_mapping_by_tray_id_result of this JsonScalesMappingByTrayIDResult.  # noqa: E501
+        :type: list[ScalesMapping]
+        """
+
+        self._json_scales_mapping_by_tray_id_result = json_scales_mapping_by_tray_id_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

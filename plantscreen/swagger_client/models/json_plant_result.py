@@ -28,14 +28,40 @@ class JsonPlantResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_plant_result': 'list[Plant]'
     }
 
     attribute_map = {
+        'json_plant_result': 'JsonPlantResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_plant_result=None):  # noqa: E501
         """JsonPlantResult - a model defined in Swagger"""  # noqa: E501
+        self._json_plant_result = None
         self.discriminator = None
+        if json_plant_result is not None:
+            self.json_plant_result = json_plant_result
+
+    @property
+    def json_plant_result(self):
+        """Gets the json_plant_result of this JsonPlantResult.  # noqa: E501
+
+
+        :return: The json_plant_result of this JsonPlantResult.  # noqa: E501
+        :rtype: list[Plant]
+        """
+        return self._json_plant_result
+
+    @json_plant_result.setter
+    def json_plant_result(self, json_plant_result):
+        """Sets the json_plant_result of this JsonPlantResult.
+
+
+        :param json_plant_result: The json_plant_result of this JsonPlantResult.  # noqa: E501
+        :type: list[Plant]
+        """
+
+        self._json_plant_result = json_plant_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,85 +28,85 @@ class SystemLog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'log_id': 'int',
+        'experiment_id': 'int',
         'log_date': 'datetime',
-        'log_type': 'str',
+        'log_id': 'int',
         'log_tag': 'str',
         'log_text': 'str',
-        'experiment_id': 'int',
+        'log_type': 'str',
         'round_id': 'int',
-        'tray_profile_id': 'int',
+        'tray_barcode': 'str',
         'tray_id': 'int',
-        'tray_barcode': 'str'
+        'tray_profile_id': 'int'
     }
 
     attribute_map = {
-        'log_id': 'LogID',
+        'experiment_id': 'ExperimentID',
         'log_date': 'LogDate',
-        'log_type': 'LogType',
+        'log_id': 'LogID',
         'log_tag': 'LogTag',
         'log_text': 'LogText',
-        'experiment_id': 'ExperimentID',
+        'log_type': 'LogType',
         'round_id': 'RoundID',
-        'tray_profile_id': 'TrayProfileID',
+        'tray_barcode': 'TrayBarcode',
         'tray_id': 'TrayID',
-        'tray_barcode': 'TrayBarcode'
+        'tray_profile_id': 'TrayProfileID'
     }
 
-    def __init__(self, log_id=None, log_date=None, log_type=None, log_tag=None, log_text=None, experiment_id=None, round_id=None, tray_profile_id=None, tray_id=None, tray_barcode=None):  # noqa: E501
+    def __init__(self, experiment_id=None, log_date=None, log_id=None, log_tag=None, log_text=None, log_type=None, round_id=None, tray_barcode=None, tray_id=None, tray_profile_id=None):  # noqa: E501
         """SystemLog - a model defined in Swagger"""  # noqa: E501
-        self._log_id = None
+        self._experiment_id = None
         self._log_date = None
-        self._log_type = None
+        self._log_id = None
         self._log_tag = None
         self._log_text = None
-        self._experiment_id = None
+        self._log_type = None
         self._round_id = None
-        self._tray_profile_id = None
-        self._tray_id = None
         self._tray_barcode = None
+        self._tray_id = None
+        self._tray_profile_id = None
         self.discriminator = None
-        if log_id is not None:
-            self.log_id = log_id
+        if experiment_id is not None:
+            self.experiment_id = experiment_id
         if log_date is not None:
             self.log_date = log_date
-        if log_type is not None:
-            self.log_type = log_type
+        if log_id is not None:
+            self.log_id = log_id
         if log_tag is not None:
             self.log_tag = log_tag
         if log_text is not None:
             self.log_text = log_text
-        if experiment_id is not None:
-            self.experiment_id = experiment_id
+        if log_type is not None:
+            self.log_type = log_type
         if round_id is not None:
             self.round_id = round_id
-        if tray_profile_id is not None:
-            self.tray_profile_id = tray_profile_id
-        if tray_id is not None:
-            self.tray_id = tray_id
         if tray_barcode is not None:
             self.tray_barcode = tray_barcode
+        if tray_id is not None:
+            self.tray_id = tray_id
+        if tray_profile_id is not None:
+            self.tray_profile_id = tray_profile_id
 
     @property
-    def log_id(self):
-        """Gets the log_id of this SystemLog.  # noqa: E501
+    def experiment_id(self):
+        """Gets the experiment_id of this SystemLog.  # noqa: E501
 
 
-        :return: The log_id of this SystemLog.  # noqa: E501
+        :return: The experiment_id of this SystemLog.  # noqa: E501
         :rtype: int
         """
-        return self._log_id
+        return self._experiment_id
 
-    @log_id.setter
-    def log_id(self, log_id):
-        """Sets the log_id of this SystemLog.
+    @experiment_id.setter
+    def experiment_id(self, experiment_id):
+        """Sets the experiment_id of this SystemLog.
 
 
-        :param log_id: The log_id of this SystemLog.  # noqa: E501
+        :param experiment_id: The experiment_id of this SystemLog.  # noqa: E501
         :type: int
         """
 
-        self._log_id = log_id
+        self._experiment_id = experiment_id
 
     @property
     def log_date(self):
@@ -130,25 +130,25 @@ class SystemLog(object):
         self._log_date = log_date
 
     @property
-    def log_type(self):
-        """Gets the log_type of this SystemLog.  # noqa: E501
+    def log_id(self):
+        """Gets the log_id of this SystemLog.  # noqa: E501
 
 
-        :return: The log_type of this SystemLog.  # noqa: E501
-        :rtype: str
+        :return: The log_id of this SystemLog.  # noqa: E501
+        :rtype: int
         """
-        return self._log_type
+        return self._log_id
 
-    @log_type.setter
-    def log_type(self, log_type):
-        """Sets the log_type of this SystemLog.
+    @log_id.setter
+    def log_id(self, log_id):
+        """Sets the log_id of this SystemLog.
 
 
-        :param log_type: The log_type of this SystemLog.  # noqa: E501
-        :type: str
+        :param log_id: The log_id of this SystemLog.  # noqa: E501
+        :type: int
         """
 
-        self._log_type = log_type
+        self._log_id = log_id
 
     @property
     def log_tag(self):
@@ -193,25 +193,25 @@ class SystemLog(object):
         self._log_text = log_text
 
     @property
-    def experiment_id(self):
-        """Gets the experiment_id of this SystemLog.  # noqa: E501
+    def log_type(self):
+        """Gets the log_type of this SystemLog.  # noqa: E501
 
 
-        :return: The experiment_id of this SystemLog.  # noqa: E501
-        :rtype: int
+        :return: The log_type of this SystemLog.  # noqa: E501
+        :rtype: str
         """
-        return self._experiment_id
+        return self._log_type
 
-    @experiment_id.setter
-    def experiment_id(self, experiment_id):
-        """Sets the experiment_id of this SystemLog.
+    @log_type.setter
+    def log_type(self, log_type):
+        """Sets the log_type of this SystemLog.
 
 
-        :param experiment_id: The experiment_id of this SystemLog.  # noqa: E501
-        :type: int
+        :param log_type: The log_type of this SystemLog.  # noqa: E501
+        :type: str
         """
 
-        self._experiment_id = experiment_id
+        self._log_type = log_type
 
     @property
     def round_id(self):
@@ -235,25 +235,25 @@ class SystemLog(object):
         self._round_id = round_id
 
     @property
-    def tray_profile_id(self):
-        """Gets the tray_profile_id of this SystemLog.  # noqa: E501
+    def tray_barcode(self):
+        """Gets the tray_barcode of this SystemLog.  # noqa: E501
 
 
-        :return: The tray_profile_id of this SystemLog.  # noqa: E501
-        :rtype: int
+        :return: The tray_barcode of this SystemLog.  # noqa: E501
+        :rtype: str
         """
-        return self._tray_profile_id
+        return self._tray_barcode
 
-    @tray_profile_id.setter
-    def tray_profile_id(self, tray_profile_id):
-        """Sets the tray_profile_id of this SystemLog.
+    @tray_barcode.setter
+    def tray_barcode(self, tray_barcode):
+        """Sets the tray_barcode of this SystemLog.
 
 
-        :param tray_profile_id: The tray_profile_id of this SystemLog.  # noqa: E501
-        :type: int
+        :param tray_barcode: The tray_barcode of this SystemLog.  # noqa: E501
+        :type: str
         """
 
-        self._tray_profile_id = tray_profile_id
+        self._tray_barcode = tray_barcode
 
     @property
     def tray_id(self):
@@ -277,25 +277,25 @@ class SystemLog(object):
         self._tray_id = tray_id
 
     @property
-    def tray_barcode(self):
-        """Gets the tray_barcode of this SystemLog.  # noqa: E501
+    def tray_profile_id(self):
+        """Gets the tray_profile_id of this SystemLog.  # noqa: E501
 
 
-        :return: The tray_barcode of this SystemLog.  # noqa: E501
-        :rtype: str
+        :return: The tray_profile_id of this SystemLog.  # noqa: E501
+        :rtype: int
         """
-        return self._tray_barcode
+        return self._tray_profile_id
 
-    @tray_barcode.setter
-    def tray_barcode(self, tray_barcode):
-        """Sets the tray_barcode of this SystemLog.
+    @tray_profile_id.setter
+    def tray_profile_id(self, tray_profile_id):
+        """Sets the tray_profile_id of this SystemLog.
 
 
-        :param tray_barcode: The tray_barcode of this SystemLog.  # noqa: E501
-        :type: str
+        :param tray_profile_id: The tray_profile_id of this SystemLog.  # noqa: E501
+        :type: int
         """
 
-        self._tray_barcode = tray_barcode
+        self._tray_profile_id = tray_profile_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

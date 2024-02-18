@@ -28,50 +28,29 @@ class RoundOrder(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'round_id': 'int',
         'experiment_id': 'int',
-        'order': 'int'
+        'order': 'int',
+        'round_id': 'int'
     }
 
     attribute_map = {
-        'round_id': 'RoundID',
         'experiment_id': 'ExperimentID',
-        'order': 'Order'
+        'order': 'Order',
+        'round_id': 'RoundID'
     }
 
-    def __init__(self, round_id=None, experiment_id=None, order=None):  # noqa: E501
+    def __init__(self, experiment_id=None, order=None, round_id=None):  # noqa: E501
         """RoundOrder - a model defined in Swagger"""  # noqa: E501
-        self._round_id = None
         self._experiment_id = None
         self._order = None
+        self._round_id = None
         self.discriminator = None
-        if round_id is not None:
-            self.round_id = round_id
         if experiment_id is not None:
             self.experiment_id = experiment_id
         if order is not None:
             self.order = order
-
-    @property
-    def round_id(self):
-        """Gets the round_id of this RoundOrder.  # noqa: E501
-
-
-        :return: The round_id of this RoundOrder.  # noqa: E501
-        :rtype: int
-        """
-        return self._round_id
-
-    @round_id.setter
-    def round_id(self, round_id):
-        """Sets the round_id of this RoundOrder.
-
-
-        :param round_id: The round_id of this RoundOrder.  # noqa: E501
-        :type: int
-        """
-
-        self._round_id = round_id
+        if round_id is not None:
+            self.round_id = round_id
 
     @property
     def experiment_id(self):
@@ -114,6 +93,27 @@ class RoundOrder(object):
         """
 
         self._order = order
+
+    @property
+    def round_id(self):
+        """Gets the round_id of this RoundOrder.  # noqa: E501
+
+
+        :return: The round_id of this RoundOrder.  # noqa: E501
+        :rtype: int
+        """
+        return self._round_id
+
+    @round_id.setter
+    def round_id(self, round_id):
+        """Sets the round_id of this RoundOrder.
+
+
+        :param round_id: The round_id of this RoundOrder.  # noqa: E501
+        :type: int
+        """
+
+        self._round_id = round_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

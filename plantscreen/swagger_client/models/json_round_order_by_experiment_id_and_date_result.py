@@ -28,14 +28,40 @@ class JsonRoundOrderByExperimentIDAndDateResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_round_order_by_experiment_id_and_date_result': 'list[RoundOrder]'
     }
 
     attribute_map = {
+        'json_round_order_by_experiment_id_and_date_result': 'JsonRoundOrderByExperimentIDAndDateResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_round_order_by_experiment_id_and_date_result=None):  # noqa: E501
         """JsonRoundOrderByExperimentIDAndDateResult - a model defined in Swagger"""  # noqa: E501
+        self._json_round_order_by_experiment_id_and_date_result = None
         self.discriminator = None
+        if json_round_order_by_experiment_id_and_date_result is not None:
+            self.json_round_order_by_experiment_id_and_date_result = json_round_order_by_experiment_id_and_date_result
+
+    @property
+    def json_round_order_by_experiment_id_and_date_result(self):
+        """Gets the json_round_order_by_experiment_id_and_date_result of this JsonRoundOrderByExperimentIDAndDateResult.  # noqa: E501
+
+
+        :return: The json_round_order_by_experiment_id_and_date_result of this JsonRoundOrderByExperimentIDAndDateResult.  # noqa: E501
+        :rtype: list[RoundOrder]
+        """
+        return self._json_round_order_by_experiment_id_and_date_result
+
+    @json_round_order_by_experiment_id_and_date_result.setter
+    def json_round_order_by_experiment_id_and_date_result(self, json_round_order_by_experiment_id_and_date_result):
+        """Sets the json_round_order_by_experiment_id_and_date_result of this JsonRoundOrderByExperimentIDAndDateResult.
+
+
+        :param json_round_order_by_experiment_id_and_date_result: The json_round_order_by_experiment_id_and_date_result of this JsonRoundOrderByExperimentIDAndDateResult.  # noqa: E501
+        :type: list[RoundOrder]
+        """
+
+        self._json_round_order_by_experiment_id_and_date_result = json_round_order_by_experiment_id_and_date_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

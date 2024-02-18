@@ -28,49 +28,70 @@ class Experiment(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'experiment_id': 'int',
-        'owner_id': 'int',
-        'experiment_name': 'str',
-        'experiment_info': 'str',
         'created_date': 'datetime',
+        'experiment_id': 'int',
+        'experiment_info': 'str',
+        'experiment_name': 'str',
         'experiment_status': 'str',
+        'owner_id': 'int',
         'status_changed_date': 'datetime'
     }
 
     attribute_map = {
-        'experiment_id': 'ExperimentID',
-        'owner_id': 'OwnerID',
-        'experiment_name': 'ExperimentName',
-        'experiment_info': 'ExperimentInfo',
         'created_date': 'CreatedDate',
+        'experiment_id': 'ExperimentID',
+        'experiment_info': 'ExperimentInfo',
+        'experiment_name': 'ExperimentName',
         'experiment_status': 'ExperimentStatus',
+        'owner_id': 'OwnerID',
         'status_changed_date': 'StatusChangedDate'
     }
 
-    def __init__(self, experiment_id=None, owner_id=None, experiment_name=None, experiment_info=None, created_date=None, experiment_status=None, status_changed_date=None):  # noqa: E501
+    def __init__(self, created_date=None, experiment_id=None, experiment_info=None, experiment_name=None, experiment_status=None, owner_id=None, status_changed_date=None):  # noqa: E501
         """Experiment - a model defined in Swagger"""  # noqa: E501
-        self._experiment_id = None
-        self._owner_id = None
-        self._experiment_name = None
-        self._experiment_info = None
         self._created_date = None
+        self._experiment_id = None
+        self._experiment_info = None
+        self._experiment_name = None
         self._experiment_status = None
+        self._owner_id = None
         self._status_changed_date = None
         self.discriminator = None
-        if experiment_id is not None:
-            self.experiment_id = experiment_id
-        if owner_id is not None:
-            self.owner_id = owner_id
-        if experiment_name is not None:
-            self.experiment_name = experiment_name
-        if experiment_info is not None:
-            self.experiment_info = experiment_info
         if created_date is not None:
             self.created_date = created_date
+        if experiment_id is not None:
+            self.experiment_id = experiment_id
+        if experiment_info is not None:
+            self.experiment_info = experiment_info
+        if experiment_name is not None:
+            self.experiment_name = experiment_name
         if experiment_status is not None:
             self.experiment_status = experiment_status
+        if owner_id is not None:
+            self.owner_id = owner_id
         if status_changed_date is not None:
             self.status_changed_date = status_changed_date
+
+    @property
+    def created_date(self):
+        """Gets the created_date of this Experiment.  # noqa: E501
+
+
+        :return: The created_date of this Experiment.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_date
+
+    @created_date.setter
+    def created_date(self, created_date):
+        """Sets the created_date of this Experiment.
+
+
+        :param created_date: The created_date of this Experiment.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_date = created_date
 
     @property
     def experiment_id(self):
@@ -94,48 +115,6 @@ class Experiment(object):
         self._experiment_id = experiment_id
 
     @property
-    def owner_id(self):
-        """Gets the owner_id of this Experiment.  # noqa: E501
-
-
-        :return: The owner_id of this Experiment.  # noqa: E501
-        :rtype: int
-        """
-        return self._owner_id
-
-    @owner_id.setter
-    def owner_id(self, owner_id):
-        """Sets the owner_id of this Experiment.
-
-
-        :param owner_id: The owner_id of this Experiment.  # noqa: E501
-        :type: int
-        """
-
-        self._owner_id = owner_id
-
-    @property
-    def experiment_name(self):
-        """Gets the experiment_name of this Experiment.  # noqa: E501
-
-
-        :return: The experiment_name of this Experiment.  # noqa: E501
-        :rtype: str
-        """
-        return self._experiment_name
-
-    @experiment_name.setter
-    def experiment_name(self, experiment_name):
-        """Sets the experiment_name of this Experiment.
-
-
-        :param experiment_name: The experiment_name of this Experiment.  # noqa: E501
-        :type: str
-        """
-
-        self._experiment_name = experiment_name
-
-    @property
     def experiment_info(self):
         """Gets the experiment_info of this Experiment.  # noqa: E501
 
@@ -157,25 +136,25 @@ class Experiment(object):
         self._experiment_info = experiment_info
 
     @property
-    def created_date(self):
-        """Gets the created_date of this Experiment.  # noqa: E501
+    def experiment_name(self):
+        """Gets the experiment_name of this Experiment.  # noqa: E501
 
 
-        :return: The created_date of this Experiment.  # noqa: E501
-        :rtype: datetime
+        :return: The experiment_name of this Experiment.  # noqa: E501
+        :rtype: str
         """
-        return self._created_date
+        return self._experiment_name
 
-    @created_date.setter
-    def created_date(self, created_date):
-        """Sets the created_date of this Experiment.
+    @experiment_name.setter
+    def experiment_name(self, experiment_name):
+        """Sets the experiment_name of this Experiment.
 
 
-        :param created_date: The created_date of this Experiment.  # noqa: E501
-        :type: datetime
+        :param experiment_name: The experiment_name of this Experiment.  # noqa: E501
+        :type: str
         """
 
-        self._created_date = created_date
+        self._experiment_name = experiment_name
 
     @property
     def experiment_status(self):
@@ -203,6 +182,27 @@ class Experiment(object):
             )
 
         self._experiment_status = experiment_status
+
+    @property
+    def owner_id(self):
+        """Gets the owner_id of this Experiment.  # noqa: E501
+
+
+        :return: The owner_id of this Experiment.  # noqa: E501
+        :rtype: int
+        """
+        return self._owner_id
+
+    @owner_id.setter
+    def owner_id(self, owner_id):
+        """Sets the owner_id of this Experiment.
+
+
+        :param owner_id: The owner_id of this Experiment.  # noqa: E501
+        :type: int
+        """
+
+        self._owner_id = owner_id
 
     @property
     def status_changed_date(self):

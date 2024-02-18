@@ -28,14 +28,40 @@ class JsonSystemProfileActiveResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_system_profile_active_result': 'SystemProfile'
     }
 
     attribute_map = {
+        'json_system_profile_active_result': 'JsonSystemProfileActiveResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_system_profile_active_result=None):  # noqa: E501
         """JsonSystemProfileActiveResult - a model defined in Swagger"""  # noqa: E501
+        self._json_system_profile_active_result = None
         self.discriminator = None
+        if json_system_profile_active_result is not None:
+            self.json_system_profile_active_result = json_system_profile_active_result
+
+    @property
+    def json_system_profile_active_result(self):
+        """Gets the json_system_profile_active_result of this JsonSystemProfileActiveResult.  # noqa: E501
+
+
+        :return: The json_system_profile_active_result of this JsonSystemProfileActiveResult.  # noqa: E501
+        :rtype: SystemProfile
+        """
+        return self._json_system_profile_active_result
+
+    @json_system_profile_active_result.setter
+    def json_system_profile_active_result(self, json_system_profile_active_result):
+        """Sets the json_system_profile_active_result of this JsonSystemProfileActiveResult.
+
+
+        :param json_system_profile_active_result: The json_system_profile_active_result of this JsonSystemProfileActiveResult.  # noqa: E501
+        :type: SystemProfile
+        """
+
+        self._json_system_profile_active_result = json_system_profile_active_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

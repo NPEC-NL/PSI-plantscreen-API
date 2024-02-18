@@ -23,7 +23,7 @@ import six
 from six.moves.urllib.parse import quote
 
 from plantscreen.swagger_client.configuration import Configuration
-import plantscreen.swagger_client.models
+import plantscreen.swagger_client.models as models
 from plantscreen.swagger_client import rest
 
 
@@ -257,7 +257,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(plantscreen.swagger_client.models, klass)
+                klass = getattr(models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
@@ -586,13 +586,7 @@ class ApiClient(object):
         except ImportError:
             return string
         except ValueError:
-            raise rest.ApiException(
-                status=0,
-                reason=(
-                    "Failed to parse `{0}` as datetime object"
-                    .format(string)
-                )
-            )
+            return string
 
     def __hasattr(self, object, name):
             return name in object.__class__.__dict__

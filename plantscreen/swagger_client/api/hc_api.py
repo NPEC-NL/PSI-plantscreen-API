@@ -260,7 +260,7 @@ class HcApi(object):
 
         :param async_req bool
         :param int id: measureID (required)
-        :return: JsonHcMeasureExtendedDataResult
+        :return: JsonHcMeasureExtendedDataByIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -281,7 +281,7 @@ class HcApi(object):
 
         :param async_req bool
         :param int id: measureID (required)
-        :return: JsonHcMeasureExtendedDataResult
+        :return: JsonHcMeasureExtendedDataByIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -335,7 +335,7 @@ class HcApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonHcMeasureExtendedDataResult',  # noqa: E501
+            response_type='JsonHcMeasureExtendedDataByIDResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -564,7 +564,7 @@ class HcApi(object):
         :param async_req bool
         :param int id: analyseID (required)
         :param int param_id: ParamID (required)
-        :return: JsonFcLeafParamByAnalyseIDResult
+        :return: JsonHcLeafParamByAnalyseIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -586,7 +586,7 @@ class HcApi(object):
         :param async_req bool
         :param int id: analyseID (required)
         :param int param_id: ParamID (required)
-        :return: JsonFcLeafParamByAnalyseIDResult
+        :return: JsonHcLeafParamByAnalyseIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -646,7 +646,7 @@ class HcApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonFcLeafParamByAnalyseIDResult',  # noqa: E501
+            response_type='JsonHcLeafParamByAnalyseIDResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1497,7 +1497,7 @@ class HcApi(object):
         :param async_req bool
         :param int id: analyseID (required)
         :param int param_id: ParamID (required)
-        :return: JsonFcPlantParamByAnalyseIDResult
+        :return: JsonHcPlantParamByAnalyseIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1519,7 +1519,7 @@ class HcApi(object):
         :param async_req bool
         :param int id: analyseID (required)
         :param int param_id: ParamID (required)
-        :return: JsonFcPlantParamByAnalyseIDResult
+        :return: JsonHcPlantParamByAnalyseIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1579,7 +1579,7 @@ class HcApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonFcPlantParamByAnalyseIDResult',  # noqa: E501
+            response_type='JsonHcPlantParamByAnalyseIDResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

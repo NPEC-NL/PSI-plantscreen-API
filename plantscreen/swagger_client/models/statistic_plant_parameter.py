@@ -28,114 +28,135 @@ class StatisticPlantParameter(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'analyse_id': 'int',
         'device_id': 'int',
         'device_pid': 'str',
         'experiment_id': 'int',
-        'round_id': 'int',
-        'measure_id': 'int',
         'measure_angle': 'int',
-        'analyse_id': 'int',
-        'tray_id': 'int',
-        'tray_barcode': 'str',
-        'tray_area': 'str',
-        'plant_id': 'int',
-        'plant_barcode': 'str',
-        'plant_name': 'str',
-        'parameter_id': 'int',
-        'parameter_name': 'str',
+        'measure_id': 'int',
         'parameter_avg': 'float',
-        'parameter_stddev': 'float',
+        'parameter_id': 'int',
+        'parameter_max': 'float',
         'parameter_median': 'float',
         'parameter_min': 'float',
-        'parameter_max': 'float'
+        'parameter_name': 'str',
+        'parameter_stddev': 'float',
+        'plant_barcode': 'str',
+        'plant_id': 'int',
+        'plant_name': 'str',
+        'round_id': 'int',
+        'tray_area': 'str',
+        'tray_barcode': 'str',
+        'tray_id': 'int'
     }
 
     attribute_map = {
+        'analyse_id': 'AnalyseID',
         'device_id': 'DeviceID',
         'device_pid': 'DevicePID',
         'experiment_id': 'ExperimentID',
-        'round_id': 'RoundID',
-        'measure_id': 'MeasureID',
         'measure_angle': 'MeasureAngle',
-        'analyse_id': 'AnalyseID',
-        'tray_id': 'TrayID',
-        'tray_barcode': 'TrayBarcode',
-        'tray_area': 'TrayArea',
-        'plant_id': 'PlantID',
-        'plant_barcode': 'PlantBarcode',
-        'plant_name': 'PlantName',
-        'parameter_id': 'ParameterID',
-        'parameter_name': 'ParameterName',
+        'measure_id': 'MeasureID',
         'parameter_avg': 'ParameterAvg',
-        'parameter_stddev': 'ParameterStddev',
+        'parameter_id': 'ParameterID',
+        'parameter_max': 'ParameterMax',
         'parameter_median': 'ParameterMedian',
         'parameter_min': 'ParameterMin',
-        'parameter_max': 'ParameterMax'
+        'parameter_name': 'ParameterName',
+        'parameter_stddev': 'ParameterStddev',
+        'plant_barcode': 'PlantBarcode',
+        'plant_id': 'PlantID',
+        'plant_name': 'PlantName',
+        'round_id': 'RoundID',
+        'tray_area': 'TrayArea',
+        'tray_barcode': 'TrayBarcode',
+        'tray_id': 'TrayID'
     }
 
-    def __init__(self, device_id=None, device_pid=None, experiment_id=None, round_id=None, measure_id=None, measure_angle=None, analyse_id=None, tray_id=None, tray_barcode=None, tray_area=None, plant_id=None, plant_barcode=None, plant_name=None, parameter_id=None, parameter_name=None, parameter_avg=None, parameter_stddev=None, parameter_median=None, parameter_min=None, parameter_max=None):  # noqa: E501
+    def __init__(self, analyse_id=None, device_id=None, device_pid=None, experiment_id=None, measure_angle=None, measure_id=None, parameter_avg=None, parameter_id=None, parameter_max=None, parameter_median=None, parameter_min=None, parameter_name=None, parameter_stddev=None, plant_barcode=None, plant_id=None, plant_name=None, round_id=None, tray_area=None, tray_barcode=None, tray_id=None):  # noqa: E501
         """StatisticPlantParameter - a model defined in Swagger"""  # noqa: E501
+        self._analyse_id = None
         self._device_id = None
         self._device_pid = None
         self._experiment_id = None
-        self._round_id = None
-        self._measure_id = None
         self._measure_angle = None
-        self._analyse_id = None
-        self._tray_id = None
-        self._tray_barcode = None
-        self._tray_area = None
-        self._plant_id = None
-        self._plant_barcode = None
-        self._plant_name = None
-        self._parameter_id = None
-        self._parameter_name = None
+        self._measure_id = None
         self._parameter_avg = None
-        self._parameter_stddev = None
+        self._parameter_id = None
+        self._parameter_max = None
         self._parameter_median = None
         self._parameter_min = None
-        self._parameter_max = None
+        self._parameter_name = None
+        self._parameter_stddev = None
+        self._plant_barcode = None
+        self._plant_id = None
+        self._plant_name = None
+        self._round_id = None
+        self._tray_area = None
+        self._tray_barcode = None
+        self._tray_id = None
         self.discriminator = None
+        if analyse_id is not None:
+            self.analyse_id = analyse_id
         if device_id is not None:
             self.device_id = device_id
         if device_pid is not None:
             self.device_pid = device_pid
         if experiment_id is not None:
             self.experiment_id = experiment_id
-        if round_id is not None:
-            self.round_id = round_id
-        if measure_id is not None:
-            self.measure_id = measure_id
         if measure_angle is not None:
             self.measure_angle = measure_angle
-        if analyse_id is not None:
-            self.analyse_id = analyse_id
-        if tray_id is not None:
-            self.tray_id = tray_id
-        if tray_barcode is not None:
-            self.tray_barcode = tray_barcode
-        if tray_area is not None:
-            self.tray_area = tray_area
-        if plant_id is not None:
-            self.plant_id = plant_id
-        if plant_barcode is not None:
-            self.plant_barcode = plant_barcode
-        if plant_name is not None:
-            self.plant_name = plant_name
-        if parameter_id is not None:
-            self.parameter_id = parameter_id
-        if parameter_name is not None:
-            self.parameter_name = parameter_name
+        if measure_id is not None:
+            self.measure_id = measure_id
         if parameter_avg is not None:
             self.parameter_avg = parameter_avg
-        if parameter_stddev is not None:
-            self.parameter_stddev = parameter_stddev
+        if parameter_id is not None:
+            self.parameter_id = parameter_id
+        if parameter_max is not None:
+            self.parameter_max = parameter_max
         if parameter_median is not None:
             self.parameter_median = parameter_median
         if parameter_min is not None:
             self.parameter_min = parameter_min
-        if parameter_max is not None:
-            self.parameter_max = parameter_max
+        if parameter_name is not None:
+            self.parameter_name = parameter_name
+        if parameter_stddev is not None:
+            self.parameter_stddev = parameter_stddev
+        if plant_barcode is not None:
+            self.plant_barcode = plant_barcode
+        if plant_id is not None:
+            self.plant_id = plant_id
+        if plant_name is not None:
+            self.plant_name = plant_name
+        if round_id is not None:
+            self.round_id = round_id
+        if tray_area is not None:
+            self.tray_area = tray_area
+        if tray_barcode is not None:
+            self.tray_barcode = tray_barcode
+        if tray_id is not None:
+            self.tray_id = tray_id
+
+    @property
+    def analyse_id(self):
+        """Gets the analyse_id of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The analyse_id of this StatisticPlantParameter.  # noqa: E501
+        :rtype: int
+        """
+        return self._analyse_id
+
+    @analyse_id.setter
+    def analyse_id(self, analyse_id):
+        """Sets the analyse_id of this StatisticPlantParameter.
+
+
+        :param analyse_id: The analyse_id of this StatisticPlantParameter.  # noqa: E501
+        :type: int
+        """
+
+        self._analyse_id = analyse_id
 
     @property
     def device_id(self):
@@ -201,25 +222,25 @@ class StatisticPlantParameter(object):
         self._experiment_id = experiment_id
 
     @property
-    def round_id(self):
-        """Gets the round_id of this StatisticPlantParameter.  # noqa: E501
+    def measure_angle(self):
+        """Gets the measure_angle of this StatisticPlantParameter.  # noqa: E501
 
 
-        :return: The round_id of this StatisticPlantParameter.  # noqa: E501
+        :return: The measure_angle of this StatisticPlantParameter.  # noqa: E501
         :rtype: int
         """
-        return self._round_id
+        return self._measure_angle
 
-    @round_id.setter
-    def round_id(self, round_id):
-        """Sets the round_id of this StatisticPlantParameter.
+    @measure_angle.setter
+    def measure_angle(self, measure_angle):
+        """Sets the measure_angle of this StatisticPlantParameter.
 
 
-        :param round_id: The round_id of this StatisticPlantParameter.  # noqa: E501
+        :param measure_angle: The measure_angle of this StatisticPlantParameter.  # noqa: E501
         :type: int
         """
 
-        self._round_id = round_id
+        self._measure_angle = measure_angle
 
     @property
     def measure_id(self):
@@ -243,172 +264,25 @@ class StatisticPlantParameter(object):
         self._measure_id = measure_id
 
     @property
-    def measure_angle(self):
-        """Gets the measure_angle of this StatisticPlantParameter.  # noqa: E501
+    def parameter_avg(self):
+        """Gets the parameter_avg of this StatisticPlantParameter.  # noqa: E501
 
 
-        :return: The measure_angle of this StatisticPlantParameter.  # noqa: E501
-        :rtype: int
+        :return: The parameter_avg of this StatisticPlantParameter.  # noqa: E501
+        :rtype: float
         """
-        return self._measure_angle
+        return self._parameter_avg
 
-    @measure_angle.setter
-    def measure_angle(self, measure_angle):
-        """Sets the measure_angle of this StatisticPlantParameter.
-
-
-        :param measure_angle: The measure_angle of this StatisticPlantParameter.  # noqa: E501
-        :type: int
-        """
-
-        self._measure_angle = measure_angle
-
-    @property
-    def analyse_id(self):
-        """Gets the analyse_id of this StatisticPlantParameter.  # noqa: E501
+    @parameter_avg.setter
+    def parameter_avg(self, parameter_avg):
+        """Sets the parameter_avg of this StatisticPlantParameter.
 
 
-        :return: The analyse_id of this StatisticPlantParameter.  # noqa: E501
-        :rtype: int
-        """
-        return self._analyse_id
-
-    @analyse_id.setter
-    def analyse_id(self, analyse_id):
-        """Sets the analyse_id of this StatisticPlantParameter.
-
-
-        :param analyse_id: The analyse_id of this StatisticPlantParameter.  # noqa: E501
-        :type: int
+        :param parameter_avg: The parameter_avg of this StatisticPlantParameter.  # noqa: E501
+        :type: float
         """
 
-        self._analyse_id = analyse_id
-
-    @property
-    def tray_id(self):
-        """Gets the tray_id of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The tray_id of this StatisticPlantParameter.  # noqa: E501
-        :rtype: int
-        """
-        return self._tray_id
-
-    @tray_id.setter
-    def tray_id(self, tray_id):
-        """Sets the tray_id of this StatisticPlantParameter.
-
-
-        :param tray_id: The tray_id of this StatisticPlantParameter.  # noqa: E501
-        :type: int
-        """
-
-        self._tray_id = tray_id
-
-    @property
-    def tray_barcode(self):
-        """Gets the tray_barcode of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The tray_barcode of this StatisticPlantParameter.  # noqa: E501
-        :rtype: str
-        """
-        return self._tray_barcode
-
-    @tray_barcode.setter
-    def tray_barcode(self, tray_barcode):
-        """Sets the tray_barcode of this StatisticPlantParameter.
-
-
-        :param tray_barcode: The tray_barcode of this StatisticPlantParameter.  # noqa: E501
-        :type: str
-        """
-
-        self._tray_barcode = tray_barcode
-
-    @property
-    def tray_area(self):
-        """Gets the tray_area of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The tray_area of this StatisticPlantParameter.  # noqa: E501
-        :rtype: str
-        """
-        return self._tray_area
-
-    @tray_area.setter
-    def tray_area(self, tray_area):
-        """Sets the tray_area of this StatisticPlantParameter.
-
-
-        :param tray_area: The tray_area of this StatisticPlantParameter.  # noqa: E501
-        :type: str
-        """
-
-        self._tray_area = tray_area
-
-    @property
-    def plant_id(self):
-        """Gets the plant_id of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The plant_id of this StatisticPlantParameter.  # noqa: E501
-        :rtype: int
-        """
-        return self._plant_id
-
-    @plant_id.setter
-    def plant_id(self, plant_id):
-        """Sets the plant_id of this StatisticPlantParameter.
-
-
-        :param plant_id: The plant_id of this StatisticPlantParameter.  # noqa: E501
-        :type: int
-        """
-
-        self._plant_id = plant_id
-
-    @property
-    def plant_barcode(self):
-        """Gets the plant_barcode of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The plant_barcode of this StatisticPlantParameter.  # noqa: E501
-        :rtype: str
-        """
-        return self._plant_barcode
-
-    @plant_barcode.setter
-    def plant_barcode(self, plant_barcode):
-        """Sets the plant_barcode of this StatisticPlantParameter.
-
-
-        :param plant_barcode: The plant_barcode of this StatisticPlantParameter.  # noqa: E501
-        :type: str
-        """
-
-        self._plant_barcode = plant_barcode
-
-    @property
-    def plant_name(self):
-        """Gets the plant_name of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The plant_name of this StatisticPlantParameter.  # noqa: E501
-        :rtype: str
-        """
-        return self._plant_name
-
-    @plant_name.setter
-    def plant_name(self, plant_name):
-        """Sets the plant_name of this StatisticPlantParameter.
-
-
-        :param plant_name: The plant_name of this StatisticPlantParameter.  # noqa: E501
-        :type: str
-        """
-
-        self._plant_name = plant_name
+        self._parameter_avg = parameter_avg
 
     @property
     def parameter_id(self):
@@ -432,67 +306,25 @@ class StatisticPlantParameter(object):
         self._parameter_id = parameter_id
 
     @property
-    def parameter_name(self):
-        """Gets the parameter_name of this StatisticPlantParameter.  # noqa: E501
+    def parameter_max(self):
+        """Gets the parameter_max of this StatisticPlantParameter.  # noqa: E501
 
 
-        :return: The parameter_name of this StatisticPlantParameter.  # noqa: E501
-        :rtype: str
-        """
-        return self._parameter_name
-
-    @parameter_name.setter
-    def parameter_name(self, parameter_name):
-        """Sets the parameter_name of this StatisticPlantParameter.
-
-
-        :param parameter_name: The parameter_name of this StatisticPlantParameter.  # noqa: E501
-        :type: str
-        """
-
-        self._parameter_name = parameter_name
-
-    @property
-    def parameter_avg(self):
-        """Gets the parameter_avg of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The parameter_avg of this StatisticPlantParameter.  # noqa: E501
+        :return: The parameter_max of this StatisticPlantParameter.  # noqa: E501
         :rtype: float
         """
-        return self._parameter_avg
+        return self._parameter_max
 
-    @parameter_avg.setter
-    def parameter_avg(self, parameter_avg):
-        """Sets the parameter_avg of this StatisticPlantParameter.
+    @parameter_max.setter
+    def parameter_max(self, parameter_max):
+        """Sets the parameter_max of this StatisticPlantParameter.
 
 
-        :param parameter_avg: The parameter_avg of this StatisticPlantParameter.  # noqa: E501
+        :param parameter_max: The parameter_max of this StatisticPlantParameter.  # noqa: E501
         :type: float
         """
 
-        self._parameter_avg = parameter_avg
-
-    @property
-    def parameter_stddev(self):
-        """Gets the parameter_stddev of this StatisticPlantParameter.  # noqa: E501
-
-
-        :return: The parameter_stddev of this StatisticPlantParameter.  # noqa: E501
-        :rtype: float
-        """
-        return self._parameter_stddev
-
-    @parameter_stddev.setter
-    def parameter_stddev(self, parameter_stddev):
-        """Sets the parameter_stddev of this StatisticPlantParameter.
-
-
-        :param parameter_stddev: The parameter_stddev of this StatisticPlantParameter.  # noqa: E501
-        :type: float
-        """
-
-        self._parameter_stddev = parameter_stddev
+        self._parameter_max = parameter_max
 
     @property
     def parameter_median(self):
@@ -537,25 +369,193 @@ class StatisticPlantParameter(object):
         self._parameter_min = parameter_min
 
     @property
-    def parameter_max(self):
-        """Gets the parameter_max of this StatisticPlantParameter.  # noqa: E501
+    def parameter_name(self):
+        """Gets the parameter_name of this StatisticPlantParameter.  # noqa: E501
 
 
-        :return: The parameter_max of this StatisticPlantParameter.  # noqa: E501
+        :return: The parameter_name of this StatisticPlantParameter.  # noqa: E501
+        :rtype: str
+        """
+        return self._parameter_name
+
+    @parameter_name.setter
+    def parameter_name(self, parameter_name):
+        """Sets the parameter_name of this StatisticPlantParameter.
+
+
+        :param parameter_name: The parameter_name of this StatisticPlantParameter.  # noqa: E501
+        :type: str
+        """
+
+        self._parameter_name = parameter_name
+
+    @property
+    def parameter_stddev(self):
+        """Gets the parameter_stddev of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The parameter_stddev of this StatisticPlantParameter.  # noqa: E501
         :rtype: float
         """
-        return self._parameter_max
+        return self._parameter_stddev
 
-    @parameter_max.setter
-    def parameter_max(self, parameter_max):
-        """Sets the parameter_max of this StatisticPlantParameter.
+    @parameter_stddev.setter
+    def parameter_stddev(self, parameter_stddev):
+        """Sets the parameter_stddev of this StatisticPlantParameter.
 
 
-        :param parameter_max: The parameter_max of this StatisticPlantParameter.  # noqa: E501
+        :param parameter_stddev: The parameter_stddev of this StatisticPlantParameter.  # noqa: E501
         :type: float
         """
 
-        self._parameter_max = parameter_max
+        self._parameter_stddev = parameter_stddev
+
+    @property
+    def plant_barcode(self):
+        """Gets the plant_barcode of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The plant_barcode of this StatisticPlantParameter.  # noqa: E501
+        :rtype: str
+        """
+        return self._plant_barcode
+
+    @plant_barcode.setter
+    def plant_barcode(self, plant_barcode):
+        """Sets the plant_barcode of this StatisticPlantParameter.
+
+
+        :param plant_barcode: The plant_barcode of this StatisticPlantParameter.  # noqa: E501
+        :type: str
+        """
+
+        self._plant_barcode = plant_barcode
+
+    @property
+    def plant_id(self):
+        """Gets the plant_id of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The plant_id of this StatisticPlantParameter.  # noqa: E501
+        :rtype: int
+        """
+        return self._plant_id
+
+    @plant_id.setter
+    def plant_id(self, plant_id):
+        """Sets the plant_id of this StatisticPlantParameter.
+
+
+        :param plant_id: The plant_id of this StatisticPlantParameter.  # noqa: E501
+        :type: int
+        """
+
+        self._plant_id = plant_id
+
+    @property
+    def plant_name(self):
+        """Gets the plant_name of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The plant_name of this StatisticPlantParameter.  # noqa: E501
+        :rtype: str
+        """
+        return self._plant_name
+
+    @plant_name.setter
+    def plant_name(self, plant_name):
+        """Sets the plant_name of this StatisticPlantParameter.
+
+
+        :param plant_name: The plant_name of this StatisticPlantParameter.  # noqa: E501
+        :type: str
+        """
+
+        self._plant_name = plant_name
+
+    @property
+    def round_id(self):
+        """Gets the round_id of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The round_id of this StatisticPlantParameter.  # noqa: E501
+        :rtype: int
+        """
+        return self._round_id
+
+    @round_id.setter
+    def round_id(self, round_id):
+        """Sets the round_id of this StatisticPlantParameter.
+
+
+        :param round_id: The round_id of this StatisticPlantParameter.  # noqa: E501
+        :type: int
+        """
+
+        self._round_id = round_id
+
+    @property
+    def tray_area(self):
+        """Gets the tray_area of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The tray_area of this StatisticPlantParameter.  # noqa: E501
+        :rtype: str
+        """
+        return self._tray_area
+
+    @tray_area.setter
+    def tray_area(self, tray_area):
+        """Sets the tray_area of this StatisticPlantParameter.
+
+
+        :param tray_area: The tray_area of this StatisticPlantParameter.  # noqa: E501
+        :type: str
+        """
+
+        self._tray_area = tray_area
+
+    @property
+    def tray_barcode(self):
+        """Gets the tray_barcode of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The tray_barcode of this StatisticPlantParameter.  # noqa: E501
+        :rtype: str
+        """
+        return self._tray_barcode
+
+    @tray_barcode.setter
+    def tray_barcode(self, tray_barcode):
+        """Sets the tray_barcode of this StatisticPlantParameter.
+
+
+        :param tray_barcode: The tray_barcode of this StatisticPlantParameter.  # noqa: E501
+        :type: str
+        """
+
+        self._tray_barcode = tray_barcode
+
+    @property
+    def tray_id(self):
+        """Gets the tray_id of this StatisticPlantParameter.  # noqa: E501
+
+
+        :return: The tray_id of this StatisticPlantParameter.  # noqa: E501
+        :rtype: int
+        """
+        return self._tray_id
+
+    @tray_id.setter
+    def tray_id(self, tray_id):
+        """Sets the tray_id of this StatisticPlantParameter.
+
+
+        :param tray_id: The tray_id of this StatisticPlantParameter.  # noqa: E501
+        :type: int
+        """
+
+        self._tray_id = tray_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

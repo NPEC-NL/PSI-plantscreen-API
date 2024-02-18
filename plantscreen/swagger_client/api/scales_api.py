@@ -244,7 +244,7 @@ class ScalesApi(object):
 
         :param async_req bool
         :param int id: plantID (required)
-        :return: JsonPlantWeightReferenceResult
+        :return: JsonPlantWeightReferenceByPlantIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -265,7 +265,7 @@ class ScalesApi(object):
 
         :param async_req bool
         :param int id: plantID (required)
-        :return: JsonPlantWeightReferenceResult
+        :return: JsonPlantWeightReferenceByPlantIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -319,7 +319,7 @@ class ScalesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
+            response_type='JsonPlantWeightReferenceByPlantIDResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -338,7 +338,7 @@ class ScalesApi(object):
         :param async_req bool
         :param int id: trayID (required)
         :param datetime _date: toDate (required)
-        :return: JsonPlantWeightReferenceResult
+        :return: JsonPlantWeightReferenceByTrayIDToDateResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -360,7 +360,7 @@ class ScalesApi(object):
         :param async_req bool
         :param int id: trayID (required)
         :param datetime _date: toDate (required)
-        :return: JsonPlantWeightReferenceResult
+        :return: JsonPlantWeightReferenceByTrayIDToDateResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -420,7 +420,7 @@ class ScalesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
+            response_type='JsonPlantWeightReferenceByTrayIDToDateResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -438,7 +438,7 @@ class ScalesApi(object):
 
         :param async_req bool
         :param int id: trayID (required)
-        :return: JsonPlantWeightReferenceResult
+        :return: JsonPlantWeightReferenceByTrayIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -459,7 +459,7 @@ class ScalesApi(object):
 
         :param async_req bool
         :param int id: trayID (required)
-        :return: JsonPlantWeightReferenceResult
+        :return: JsonPlantWeightReferenceByTrayIDResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -513,7 +513,7 @@ class ScalesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonPlantWeightReferenceResult',  # noqa: E501
+            response_type='JsonPlantWeightReferenceByTrayIDResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

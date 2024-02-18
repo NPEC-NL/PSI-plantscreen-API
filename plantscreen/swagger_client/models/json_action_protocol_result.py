@@ -28,14 +28,40 @@ class JsonActionProtocolResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_action_protocol_result': 'ActionProtocol'
     }
 
     attribute_map = {
+        'json_action_protocol_result': 'JsonActionProtocolResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_action_protocol_result=None):  # noqa: E501
         """JsonActionProtocolResult - a model defined in Swagger"""  # noqa: E501
+        self._json_action_protocol_result = None
         self.discriminator = None
+        if json_action_protocol_result is not None:
+            self.json_action_protocol_result = json_action_protocol_result
+
+    @property
+    def json_action_protocol_result(self):
+        """Gets the json_action_protocol_result of this JsonActionProtocolResult.  # noqa: E501
+
+
+        :return: The json_action_protocol_result of this JsonActionProtocolResult.  # noqa: E501
+        :rtype: ActionProtocol
+        """
+        return self._json_action_protocol_result
+
+    @json_action_protocol_result.setter
+    def json_action_protocol_result(self, json_action_protocol_result):
+        """Sets the json_action_protocol_result of this JsonActionProtocolResult.
+
+
+        :param json_action_protocol_result: The json_action_protocol_result of this JsonActionProtocolResult.  # noqa: E501
+        :type: ActionProtocol
+        """
+
+        self._json_action_protocol_result = json_action_protocol_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

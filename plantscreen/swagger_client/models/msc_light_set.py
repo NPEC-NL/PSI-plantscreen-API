@@ -28,60 +28,39 @@ class MscLightSet(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'light_set_id': 'int',
         'channel_id': 'int',
         'light_set_caption': 'str',
+        'light_set_id': 'int',
         'light_set_pid_name': 'str',
         'light_set_valid': 'bool'
     }
 
     attribute_map = {
-        'light_set_id': 'LightSetID',
         'channel_id': 'ChannelID',
         'light_set_caption': 'LightSetCaption',
+        'light_set_id': 'LightSetID',
         'light_set_pid_name': 'LightSetPidName',
         'light_set_valid': 'LightSetValid'
     }
 
-    def __init__(self, light_set_id=None, channel_id=None, light_set_caption=None, light_set_pid_name=None, light_set_valid=None):  # noqa: E501
+    def __init__(self, channel_id=None, light_set_caption=None, light_set_id=None, light_set_pid_name=None, light_set_valid=None):  # noqa: E501
         """MscLightSet - a model defined in Swagger"""  # noqa: E501
-        self._light_set_id = None
         self._channel_id = None
         self._light_set_caption = None
+        self._light_set_id = None
         self._light_set_pid_name = None
         self._light_set_valid = None
         self.discriminator = None
-        if light_set_id is not None:
-            self.light_set_id = light_set_id
         if channel_id is not None:
             self.channel_id = channel_id
         if light_set_caption is not None:
             self.light_set_caption = light_set_caption
+        if light_set_id is not None:
+            self.light_set_id = light_set_id
         if light_set_pid_name is not None:
             self.light_set_pid_name = light_set_pid_name
         if light_set_valid is not None:
             self.light_set_valid = light_set_valid
-
-    @property
-    def light_set_id(self):
-        """Gets the light_set_id of this MscLightSet.  # noqa: E501
-
-
-        :return: The light_set_id of this MscLightSet.  # noqa: E501
-        :rtype: int
-        """
-        return self._light_set_id
-
-    @light_set_id.setter
-    def light_set_id(self, light_set_id):
-        """Sets the light_set_id of this MscLightSet.
-
-
-        :param light_set_id: The light_set_id of this MscLightSet.  # noqa: E501
-        :type: int
-        """
-
-        self._light_set_id = light_set_id
 
     @property
     def channel_id(self):
@@ -124,6 +103,27 @@ class MscLightSet(object):
         """
 
         self._light_set_caption = light_set_caption
+
+    @property
+    def light_set_id(self):
+        """Gets the light_set_id of this MscLightSet.  # noqa: E501
+
+
+        :return: The light_set_id of this MscLightSet.  # noqa: E501
+        :rtype: int
+        """
+        return self._light_set_id
+
+    @light_set_id.setter
+    def light_set_id(self, light_set_id):
+        """Sets the light_set_id of this MscLightSet.
+
+
+        :param light_set_id: The light_set_id of this MscLightSet.  # noqa: E501
+        :type: int
+        """
+
+        self._light_set_id = light_set_id
 
     @property
     def light_set_pid_name(self):

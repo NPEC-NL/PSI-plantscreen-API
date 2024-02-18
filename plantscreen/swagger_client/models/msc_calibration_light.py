@@ -28,65 +28,44 @@ class MscCalibrationLight(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'calibration_light_id': 'int',
         'calibration_id': 'int',
-        'light_set_id': 'int',
+        'calibration_light_id': 'int',
         'calibration_light_level': 'int',
+        'light_caption': 'str',
         'light_id': 'int',
-        'light_caption': 'str'
+        'light_set_id': 'int'
     }
 
     attribute_map = {
-        'calibration_light_id': 'CalibrationLightID',
         'calibration_id': 'CalibrationID',
-        'light_set_id': 'LightSetID',
+        'calibration_light_id': 'CalibrationLightID',
         'calibration_light_level': 'CalibrationLightLevel',
+        'light_caption': 'LightCaption',
         'light_id': 'LightID',
-        'light_caption': 'LightCaption'
+        'light_set_id': 'LightSetID'
     }
 
-    def __init__(self, calibration_light_id=None, calibration_id=None, light_set_id=None, calibration_light_level=None, light_id=None, light_caption=None):  # noqa: E501
+    def __init__(self, calibration_id=None, calibration_light_id=None, calibration_light_level=None, light_caption=None, light_id=None, light_set_id=None):  # noqa: E501
         """MscCalibrationLight - a model defined in Swagger"""  # noqa: E501
-        self._calibration_light_id = None
         self._calibration_id = None
-        self._light_set_id = None
+        self._calibration_light_id = None
         self._calibration_light_level = None
-        self._light_id = None
         self._light_caption = None
+        self._light_id = None
+        self._light_set_id = None
         self.discriminator = None
-        if calibration_light_id is not None:
-            self.calibration_light_id = calibration_light_id
         if calibration_id is not None:
             self.calibration_id = calibration_id
-        if light_set_id is not None:
-            self.light_set_id = light_set_id
+        if calibration_light_id is not None:
+            self.calibration_light_id = calibration_light_id
         if calibration_light_level is not None:
             self.calibration_light_level = calibration_light_level
-        if light_id is not None:
-            self.light_id = light_id
         if light_caption is not None:
             self.light_caption = light_caption
-
-    @property
-    def calibration_light_id(self):
-        """Gets the calibration_light_id of this MscCalibrationLight.  # noqa: E501
-
-
-        :return: The calibration_light_id of this MscCalibrationLight.  # noqa: E501
-        :rtype: int
-        """
-        return self._calibration_light_id
-
-    @calibration_light_id.setter
-    def calibration_light_id(self, calibration_light_id):
-        """Sets the calibration_light_id of this MscCalibrationLight.
-
-
-        :param calibration_light_id: The calibration_light_id of this MscCalibrationLight.  # noqa: E501
-        :type: int
-        """
-
-        self._calibration_light_id = calibration_light_id
+        if light_id is not None:
+            self.light_id = light_id
+        if light_set_id is not None:
+            self.light_set_id = light_set_id
 
     @property
     def calibration_id(self):
@@ -110,25 +89,25 @@ class MscCalibrationLight(object):
         self._calibration_id = calibration_id
 
     @property
-    def light_set_id(self):
-        """Gets the light_set_id of this MscCalibrationLight.  # noqa: E501
+    def calibration_light_id(self):
+        """Gets the calibration_light_id of this MscCalibrationLight.  # noqa: E501
 
 
-        :return: The light_set_id of this MscCalibrationLight.  # noqa: E501
+        :return: The calibration_light_id of this MscCalibrationLight.  # noqa: E501
         :rtype: int
         """
-        return self._light_set_id
+        return self._calibration_light_id
 
-    @light_set_id.setter
-    def light_set_id(self, light_set_id):
-        """Sets the light_set_id of this MscCalibrationLight.
+    @calibration_light_id.setter
+    def calibration_light_id(self, calibration_light_id):
+        """Sets the calibration_light_id of this MscCalibrationLight.
 
 
-        :param light_set_id: The light_set_id of this MscCalibrationLight.  # noqa: E501
+        :param calibration_light_id: The calibration_light_id of this MscCalibrationLight.  # noqa: E501
         :type: int
         """
 
-        self._light_set_id = light_set_id
+        self._calibration_light_id = calibration_light_id
 
     @property
     def calibration_light_level(self):
@@ -152,6 +131,27 @@ class MscCalibrationLight(object):
         self._calibration_light_level = calibration_light_level
 
     @property
+    def light_caption(self):
+        """Gets the light_caption of this MscCalibrationLight.  # noqa: E501
+
+
+        :return: The light_caption of this MscCalibrationLight.  # noqa: E501
+        :rtype: str
+        """
+        return self._light_caption
+
+    @light_caption.setter
+    def light_caption(self, light_caption):
+        """Sets the light_caption of this MscCalibrationLight.
+
+
+        :param light_caption: The light_caption of this MscCalibrationLight.  # noqa: E501
+        :type: str
+        """
+
+        self._light_caption = light_caption
+
+    @property
     def light_id(self):
         """Gets the light_id of this MscCalibrationLight.  # noqa: E501
 
@@ -173,25 +173,25 @@ class MscCalibrationLight(object):
         self._light_id = light_id
 
     @property
-    def light_caption(self):
-        """Gets the light_caption of this MscCalibrationLight.  # noqa: E501
+    def light_set_id(self):
+        """Gets the light_set_id of this MscCalibrationLight.  # noqa: E501
 
 
-        :return: The light_caption of this MscCalibrationLight.  # noqa: E501
-        :rtype: str
+        :return: The light_set_id of this MscCalibrationLight.  # noqa: E501
+        :rtype: int
         """
-        return self._light_caption
+        return self._light_set_id
 
-    @light_caption.setter
-    def light_caption(self, light_caption):
-        """Sets the light_caption of this MscCalibrationLight.
+    @light_set_id.setter
+    def light_set_id(self, light_set_id):
+        """Sets the light_set_id of this MscCalibrationLight.
 
 
-        :param light_caption: The light_caption of this MscCalibrationLight.  # noqa: E501
-        :type: str
+        :param light_set_id: The light_set_id of this MscCalibrationLight.  # noqa: E501
+        :type: int
         """
 
-        self._light_caption = light_caption
+        self._light_set_id = light_set_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

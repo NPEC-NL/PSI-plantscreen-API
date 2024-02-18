@@ -28,14 +28,40 @@ class JsonScan3dMeasureExtendedDataResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_scan3d_measure_extended_data_result': 'MeasureExtendedData'
     }
 
     attribute_map = {
+        'json_scan3d_measure_extended_data_result': 'JsonScan3dMeasureExtendedDataResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_scan3d_measure_extended_data_result=None):  # noqa: E501
         """JsonScan3dMeasureExtendedDataResult - a model defined in Swagger"""  # noqa: E501
+        self._json_scan3d_measure_extended_data_result = None
         self.discriminator = None
+        if json_scan3d_measure_extended_data_result is not None:
+            self.json_scan3d_measure_extended_data_result = json_scan3d_measure_extended_data_result
+
+    @property
+    def json_scan3d_measure_extended_data_result(self):
+        """Gets the json_scan3d_measure_extended_data_result of this JsonScan3dMeasureExtendedDataResult.  # noqa: E501
+
+
+        :return: The json_scan3d_measure_extended_data_result of this JsonScan3dMeasureExtendedDataResult.  # noqa: E501
+        :rtype: MeasureExtendedData
+        """
+        return self._json_scan3d_measure_extended_data_result
+
+    @json_scan3d_measure_extended_data_result.setter
+    def json_scan3d_measure_extended_data_result(self, json_scan3d_measure_extended_data_result):
+        """Sets the json_scan3d_measure_extended_data_result of this JsonScan3dMeasureExtendedDataResult.
+
+
+        :param json_scan3d_measure_extended_data_result: The json_scan3d_measure_extended_data_result of this JsonScan3dMeasureExtendedDataResult.  # noqa: E501
+        :type: MeasureExtendedData
+        """
+
+        self._json_scan3d_measure_extended_data_result = json_scan3d_measure_extended_data_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -28,14 +28,40 @@ class JsonMscLightSetUsedResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_msc_light_set_used_result': 'list[MscLightSet]'
     }
 
     attribute_map = {
+        'json_msc_light_set_used_result': 'JsonMscLightSetUsedResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_msc_light_set_used_result=None):  # noqa: E501
         """JsonMscLightSetUsedResult - a model defined in Swagger"""  # noqa: E501
+        self._json_msc_light_set_used_result = None
         self.discriminator = None
+        if json_msc_light_set_used_result is not None:
+            self.json_msc_light_set_used_result = json_msc_light_set_used_result
+
+    @property
+    def json_msc_light_set_used_result(self):
+        """Gets the json_msc_light_set_used_result of this JsonMscLightSetUsedResult.  # noqa: E501
+
+
+        :return: The json_msc_light_set_used_result of this JsonMscLightSetUsedResult.  # noqa: E501
+        :rtype: list[MscLightSet]
+        """
+        return self._json_msc_light_set_used_result
+
+    @json_msc_light_set_used_result.setter
+    def json_msc_light_set_used_result(self, json_msc_light_set_used_result):
+        """Sets the json_msc_light_set_used_result of this JsonMscLightSetUsedResult.
+
+
+        :param json_msc_light_set_used_result: The json_msc_light_set_used_result of this JsonMscLightSetUsedResult.  # noqa: E501
+        :type: list[MscLightSet]
+        """
+
+        self._json_msc_light_set_used_result = json_msc_light_set_used_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

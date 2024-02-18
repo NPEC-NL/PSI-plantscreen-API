@@ -28,14 +28,40 @@ class JsonNoteResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_note_result': 'list[ExperimentNote]'
     }
 
     attribute_map = {
+        'json_note_result': 'JsonNoteResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_note_result=None):  # noqa: E501
         """JsonNoteResult - a model defined in Swagger"""  # noqa: E501
+        self._json_note_result = None
         self.discriminator = None
+        if json_note_result is not None:
+            self.json_note_result = json_note_result
+
+    @property
+    def json_note_result(self):
+        """Gets the json_note_result of this JsonNoteResult.  # noqa: E501
+
+
+        :return: The json_note_result of this JsonNoteResult.  # noqa: E501
+        :rtype: list[ExperimentNote]
+        """
+        return self._json_note_result
+
+    @json_note_result.setter
+    def json_note_result(self, json_note_result):
+        """Sets the json_note_result of this JsonNoteResult.
+
+
+        :param json_note_result: The json_note_result of this JsonNoteResult.  # noqa: E501
+        :type: list[ExperimentNote]
+        """
+
+        self._json_note_result = json_note_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""

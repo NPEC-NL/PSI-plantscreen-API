@@ -28,14 +28,40 @@ class JsonHcRgbImageResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'json_hc_rgb_image_result': 'list[HcRgbImage]'
     }
 
     attribute_map = {
+        'json_hc_rgb_image_result': 'JsonHcRgbImageResult'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, json_hc_rgb_image_result=None):  # noqa: E501
         """JsonHcRgbImageResult - a model defined in Swagger"""  # noqa: E501
+        self._json_hc_rgb_image_result = None
         self.discriminator = None
+        if json_hc_rgb_image_result is not None:
+            self.json_hc_rgb_image_result = json_hc_rgb_image_result
+
+    @property
+    def json_hc_rgb_image_result(self):
+        """Gets the json_hc_rgb_image_result of this JsonHcRgbImageResult.  # noqa: E501
+
+
+        :return: The json_hc_rgb_image_result of this JsonHcRgbImageResult.  # noqa: E501
+        :rtype: list[HcRgbImage]
+        """
+        return self._json_hc_rgb_image_result
+
+    @json_hc_rgb_image_result.setter
+    def json_hc_rgb_image_result(self, json_hc_rgb_image_result):
+        """Sets the json_hc_rgb_image_result of this JsonHcRgbImageResult.
+
+
+        :param json_hc_rgb_image_result: The json_hc_rgb_image_result of this JsonHcRgbImageResult.  # noqa: E501
+        :type: list[HcRgbImage]
+        """
+
+        self._json_hc_rgb_image_result = json_hc_rgb_image_result
 
     def to_dict(self):
         """Returns the model properties as a dict"""
