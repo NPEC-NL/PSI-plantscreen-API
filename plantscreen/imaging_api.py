@@ -880,9 +880,6 @@ class ImagingAPI():
         """ Returns a list of all lightsettings if no ID is passed.
         Or the light output setting for light group calibration defined by calibration light ID
 
-        Args:
-            -
-
         Return:
             swagger_client.MscCalibrationLight """
         api_response = self.msc_api.msc_calibration_light()

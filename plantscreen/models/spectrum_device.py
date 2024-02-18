@@ -11,7 +11,7 @@ class SpectrumDeviceIDs:
     def from_dict(obj: Any) -> List[int]:
         """"Convert json to
 
-        Return
+        Return:
             List[int]"""
         _ids = [int(y.get("spectrum_device_id")) for y in obj.get("json_spectrum_device_id_result")]
         return _ids

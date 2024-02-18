@@ -27,9 +27,6 @@ class SystemAPI():
         """ If called without ID it returns all probeIDs,
         when called with it returns one environment probe of that probe ID
 
-        Args:
-            -
-
         Return:
             swagger_client.Probe """
         api_response = self.probe_api.probe()
@@ -152,9 +149,6 @@ class SystemAPI():
 # Spectrum Device API
     def spectrum_device_id(self) -> List[int]:
         """ Returns a list of all spectrum device IDs in the database
-
-        Args:
-            -
 
         Return:
             List[int] """

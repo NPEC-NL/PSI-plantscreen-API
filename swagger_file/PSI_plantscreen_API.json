@@ -183,7 +183,7 @@
           {
             "in": "query",
             "name": "ids",
-            "description": "ownerIDs TODO is this multiple?",
+            "description": "List of experiment IDs",
             "schema": {
               "type": "array",
               "items": {

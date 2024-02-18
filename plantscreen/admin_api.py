@@ -30,10 +30,7 @@ class AdminAPI():
         self.version_info_api = swagger_client.VersionInfoApi(swagger_client.ApiClient(configuration))
 
     def experimentID(self) -> List[int]:
-        """ returns a list of all experiment IDs in the database
-
-        Args:
-            -
+        """ Returns a list of all experiment IDs in the database
 
         Return:
             List[int] """
@@ -41,7 +38,7 @@ class AdminAPI():
         return models.experiment.ExperimentIDs.from_dict(api_response.to_dict())
 
     def experiment(self, exp_id: int) -> swagger_client.Experiment:
-        """ returns one experiment by experiment ID
+        """ Returns one experiment by experiment ID
 
         Args:
             exp_id (int): Experiment ID
@@ -52,7 +49,7 @@ class AdminAPI():
         return api_response.json_experiment_result
 
     def experiment_date(self, start: str, stop: str) -> List[swagger_client.Experiment]:
-        """ returns all experiments whose rounds took place between defined times.
+        """ Returns all experiments whose rounds took place between defined times.
         Times is entered as the start and end time of the required interval.
         All experiments with at least one round between these times will be returned
 
@@ -66,7 +63,7 @@ class AdminAPI():
         return api_response.json_experiment_by_date_result
 
     def experiment_owner(self, owner_id: int) -> List[swagger_client.Experiment]:
-        """ returns all experiments that belong to the user defined by ID
+        """ Returns all experiments that belong to the user defined by ID
 
         Args:
             owner_id (int): Owner ID
@@ -77,10 +74,7 @@ class AdminAPI():
         return api_response.json_experiment_by_owner_result
 
     def owner_id(self) -> List[int]:
-        """ returns a list of all experiment owner IDs in the database
-
-        Args:
-            -
+        """ Returns a list of all experiment owner IDs in the database
 
         Return:
             List[int] """
@@ -88,7 +82,7 @@ class AdminAPI():
         return models.experiment.OwnerID.from_dict(api_response.to_dict())
 
     def owner(self, exp_ids: List[int]) -> List[swagger_client.Owner]:
-        """ returns the owner(s) of the experiment by ID
+        """ Returns the owner(s) of the experiment by ID
 
         Args:
             exp_ids (List(int)): List of experiment IDs
@@ -99,7 +93,7 @@ class AdminAPI():
         return api_response.json_owner_result
 
     def note_experiment(self, exp_id: int) -> List[swagger_client.ExperimentNote]:
-        """ returns the experiment notes that the user saved for the experiment defined by ID
+        """ Returns the experiment notes that the user saved for the experiment defined by ID
 
         Args:
             exp_id (int): Experiment ID
@@ -111,7 +105,7 @@ class AdminAPI():
 
 # Round API
     def round(self, round_id: int) -> swagger_client.Round:
-        """ returns one round by round ID
+        """ Returns one round by round ID
 
         Args:
             round_id (int): Round ID
@@ -122,7 +116,7 @@ class AdminAPI():
         return api_response.json_round_result
 
     def round_experiment(self, exp_id: int) -> List[swagger_client.Round]:
-        """ returns all rounds measured in the experiment defined by ID
+        """ Returns all rounds measured in the experiment defined by ID
 
         Args:
             exp_id (int): Experiment ID
@@ -133,7 +127,7 @@ class AdminAPI():
         return api_response.json_round_by_experiment_id_result
 
     def round_date_experiment(self, exp_id: str, start: str, stop: str) -> List[swagger_client.Round]:
-        """ returns all rounds measured in the experiment defined by ID between defined times.
+        """ Returns all rounds measured in the experiment defined by ID between defined times.
         Times is entered as the start and end time of the required interval
 
         Args:
@@ -147,7 +141,7 @@ class AdminAPI():
         return api_response.json_round_by_experiment_id_and_date_result
 
     def round_order_round(self, round_id: int) -> swagger_client.RoundOrder:
-        """ returns the round order in the experiment by round ID
+        """ Returns the round order in the experiment by round ID
 
         Args:
             round_id (int): Round ID
@@ -158,7 +152,7 @@ class AdminAPI():
         return api_response.json_round_order_result
 
     def round_order_experiment(self, exp_id: int) -> List[swagger_client.RoundOrder]:
-        """ returns all rounds measured in the experiment defined by ID
+        """ Returns all rounds measured in the experiment defined by ID
 
         Args:
             exp_id (int): Experiment ID
@@ -169,7 +163,7 @@ class AdminAPI():
         return api_response.json_round_order_by_experiment_id_result
 
     def round_order_date_experiment(self, exp_id: int, start: str, stop: str) -> List[swagger_client.RoundOrder]:
-        """ returns all rounds measured in the experiment defined by ID
+        """ Returns all rounds measured in the experiment defined by ID
 
         Args:
             exp_id (int): Experiment ID
@@ -183,7 +177,7 @@ class AdminAPI():
 
 # Action API
     def action(self, action_id: int) -> swagger_client.Action:
-        """ returns one scheduled action by action ID
+        """ Returns one scheduled action by action ID
 
         Args:
             action_id (int): Action ID
@@ -194,7 +188,7 @@ class AdminAPI():
         return api_response.json_action_result
 
     def action_experiment(self, exp_id: int) -> List[swagger_client.Action]:
-        """ returns all scheduled actions in the experiment defined by ID
+        """ Returns all scheduled actions in the experiment defined by ID
 
         Args:
             exp_id (int): Experiment ID
@@ -205,7 +199,7 @@ class AdminAPI():
         return api_response.json_action_by_experiment_id_result
 
     def action_not_done_experiment(self, exp_id: int) -> List[swagger_client.Action]:
-        """ returns all unfinished scheduled actions (with pending and running action state)
+        """ Returns all unfinished scheduled actions (with pending and running action state)
         in the experiment defined by ID
 
         Args:
@@ -217,7 +211,7 @@ class AdminAPI():
         return api_response.json_action_by_experiment_id_not_done_result
 
     def action_group(self, group_id: int) -> swagger_client.ActionGroup:
-        """ returns one group of scheduled actions by action group ID
+        """ Returns one group of scheduled actions by action group ID
 
         Args:
             group_id (int): Group ID
@@ -228,7 +222,7 @@ class AdminAPI():
         return api_response.json_action_group_result
 
     def action_group_round(self, round_id: int) -> swagger_client.ActionGroup:
-        """ returns one group of scheduled actions to which a round defined by ID belongs
+        """ Returns one group of scheduled actions to which a round defined by ID belongs
 
         Args:
             round_id (int): Round ID
@@ -239,7 +233,7 @@ class AdminAPI():
         return api_response.json_action_group_by_round_id_result
 
     def action_protocol(self, prot_id: int) -> swagger_client.ActionProtocol:
-        """ returns one protocol of scheduled action by protocol ID
+        """ Returns one protocol of scheduled action by protocol ID
 
         Args:
             prot_id (int): Protocol ID
@@ -250,7 +244,7 @@ class AdminAPI():
         return api_response.json_action_protocol_result
 
     def action_protocol_round(self, round_id: int) -> swagger_client.ActionProtocol:
-        """ returns one group of scheduled actions that belong to round defined by ID
+        """ Returns one group of scheduled actions that belong to round defined by ID
 
         Args:
             round_id (int): Round ID
@@ -262,7 +256,7 @@ class AdminAPI():
 
 # Device API
     def device(self, device_id: int) -> swagger_client.Device:
-        """ returns one device by device ID
+        """ Returns one device by device ID
 
         Args:
             device_id (int): Device ID
@@ -273,10 +267,7 @@ class AdminAPI():
         return api_response.json_device_result
 
     def device_active(self) -> List[swagger_client.Device]:
-        """ returns all active devices that have not ended validity
-
-        Args:
-            -
+        """ Returns all active devices that have not ended validity
 
         Return:
             List[swagger_client.Device] """
@@ -284,7 +275,7 @@ class AdminAPI():
         return api_response.json_device_active_result
 
     def device_profile(self, prof_id: int) -> List[swagger_client.Device]:
-        """ returns all devices that contains the system profile defined by ID
+        """ Returns all devices that contains the system profile defined by ID
 
         Args:
             prof_id (int): Profile ID
@@ -296,10 +287,7 @@ class AdminAPI():
 
 # Profile API
     def profile_id(self) -> List[int]:
-        """ returns a list of all system profile IDs in the database
-
-        Args:
-            -
+        """ Returns a list of all system profile IDs in the database
 
         Return:
             List[int] """
@@ -307,7 +295,7 @@ class AdminAPI():
         return models.profile_models.ProfileIDs.from_dict(api_response.to_dict())
 
     def profile(self, prof_id: int) -> swagger_client.SystemProfile:
-        """ returns one system profile by profile ID
+        """ Returns one system profile by profile ID
 
         Args:
             prof_id (int): Profile ID
@@ -318,10 +306,7 @@ class AdminAPI():
         return api_response.json_system_profile_result
 
     def profile_active(self) -> swagger_client.SystemProfile:
-        """ returns the active system profile
-
-        Args:
-            -
+        """ Returns the active system profile
 
         Return:
             swagger_client.SystemProfile """
@@ -330,7 +315,7 @@ class AdminAPI():
 
 # Tray API
     def tray(self, tray_id: int) -> swagger_client.Tray:
-        """ returns one tray by tray ID
+        """ Returns one tray by tray ID
 
         Args:
             tray_id (int): Tray ID
@@ -341,7 +326,7 @@ class AdminAPI():
         return api_response.json_tray_result
 
     def tray_round(self, round_id: int) -> List[swagger_client.Tray]:
-        """ returns all trays measured in the round defined by ID
+        """ Returns all trays measured in the round defined by ID
 
         Args:
             round_id (int): Round ID
@@ -352,7 +337,7 @@ class AdminAPI():
         return api_response.json_tray_by_round_id_result
 
     def tray_type(self, tray_id: int) -> swagger_client.TrayType:
-        """ returns one tray type by tray type ID
+        """ Returns one tray type by tray type ID
 
         Args:
             tray_id (int): Tray ID
@@ -363,7 +348,7 @@ class AdminAPI():
         return api_response.json_tray_type_result
 
     def tray_type_tray(self, tray_id: int) -> swagger_client.TrayType:
-        """ returns one tray type which is assigned to the tray defined by ID
+        """ Returns one tray type which is assigned to the tray defined by ID
 
         Args:
             tray_id (int): Tray ID
@@ -374,7 +359,7 @@ class AdminAPI():
         return api_response.json_tray_type_by_tray_id_result
 
     def tray_type_tray_profile(self, tray_prof_id: int) -> swagger_client.TrayType:
-        """ returns one tray type which is assigned to the tray profile defined by ID
+        """ Returns one tray type which is assigned to the tray profile defined by ID
 
         Args:
             tray_prof_id (int): Tray profile ID
@@ -385,7 +370,7 @@ class AdminAPI():
         return api_response.json_tray_type_by_tray_profile_id_result
 
     def tray_profile(self, prof_id: int) -> swagger_client.TrayProfile:
-        """ returns one tray profile by tray profile ID
+        """ Returns one tray profile by tray profile ID
 
         Args:
             prof_id (int): Profile ID
@@ -396,7 +381,7 @@ class AdminAPI():
         return api_response.json_tray_profile_by_id_result
 
     def tray_profile_tray(self, tray_id: int) -> swagger_client.TrayProfile:
-        """ returns one tray profile to which tray defined by ID is assigned
+        """ Returns one tray profile to which tray defined by ID is assigned
 
         Args:
             tray_id (int): Tray ID
@@ -407,7 +392,7 @@ class AdminAPI():
         return api_response.json_tray_profile_by_tray_id_result
 
     def tray_profile_used_tray(self, tray_id: int, start: str, stop: str) -> List[swagger_client.TrayProfile]:
-        """ returns tray profiles to which tray defined by ID was assigned between defined times.
+        """ Returns tray profiles to which tray defined by ID was assigned between defined times.
         Times is entered as the start and end time of the required interval.
         All tray profiles assigned to tray between these times will be returned
 
@@ -422,7 +407,7 @@ class AdminAPI():
         return api_response.json_used_tray_profile_by_tray_id_result
 
     def tray_profile_to_date_tray(self, tray_id: int, date: str) -> swagger_client.TrayProfile:
-        """ returns one tray profile to which tray defined by ID was assigned on the defined time
+        """ Returns one tray profile to which tray defined by ID was assigned on the defined time
 
         Args:
             tray_id (int): Tray ID
@@ -434,7 +419,7 @@ class AdminAPI():
         return api_response.json_tray_profile_by_tray_idto_date_result
 
     def scales_mapping_tray(self, tray_id: int) -> List[swagger_client.ScalesMapping]:
-        """ returns tray profiles to which tray defined by ID was assigned between defined times.
+        """ Returns tray profiles to which tray defined by ID was assigned between defined times.
         Times is entered as the start and end time of the required interval.
         All tray profiles assigned to tray between these times will be returned
 
@@ -448,7 +433,7 @@ class AdminAPI():
 
 # Plant API
     def plant(self, plant_ids: List[int]) -> List[swagger_client.Plant]:
-        """ returns a list of plants by the list of plant IDs
+        """ Returns a list of plants by the list of plant IDs
 
         Args:
             plant_ids (List[int]): plant IDs
@@ -459,7 +444,7 @@ class AdminAPI():
         return api_response.json_plant_result
 
     def plant_tray(self, tray_id: int) -> List[swagger_client.Plant]:
-        """ returns list of plants which are assigned to the tray defined by ID
+        """ Returns list of plants which are assigned to the tray defined by ID
 
         Args:
             tray_id (int): Tray ID
@@ -470,7 +455,7 @@ class AdminAPI():
         return api_response.json_plant_by_tray_id_result
 
     def plant_tray_profile_tray(self, tray_id: int, start: str, stop: str) -> List[swagger_client.Plant]:
-        """ returns plants that were assigned to the tray defined by tray ID between defined times.
+        """ Returns plants that were assigned to the tray defined by tray ID between defined times.
         Times is entered as the start and end time of the required interval.
         All plants assigned to tray between these times will be returned
 
@@ -485,7 +470,7 @@ class AdminAPI():
         return api_response.json_plant_by_tray_id_and_dates_result
 
     def plant_tray_profile(self, tray_prof_id: int) -> List[swagger_client.Plant]:
-        """ returns plants that were assigned to the tray profile defined by tray profile ID without time limit
+        """ Returns plants that were assigned to the tray profile defined by tray profile ID without time limit
 
         Args:
             tray_prof_id (int): Tray profile ID
@@ -496,7 +481,7 @@ class AdminAPI():
         return api_response.json_plant_by_tray_profile_id_result
 
     def plant_height_round(self, round_id: int) -> List[swagger_client.PlantHeight]:
-        """ returns all plant heights measured in the round defined by ID
+        """ Returns all plant heights measured in the round defined by ID
 
         Args:
             round_id (int): Round ID
@@ -507,7 +492,7 @@ class AdminAPI():
         return api_response.json_plant_height_by_round_id_result
 
     def plant_leaf(self, plant_id: int, tray_id: int) -> List[swagger_client.PlantLeaf]:
-        """ returns all plant heights measured in the round defined by ID
+        """ Returns all plant heights measured in the round defined by ID
 
         Args:
             plant_id (int): Plant ID
@@ -520,7 +505,7 @@ class AdminAPI():
 
 # Buffer API
     def buffer_history(self, buff_id: int) -> swagger_client.BufferHistory:
-        """ returns one buffer history state defined by buffer state ID
+        """ Returns one buffer history state defined by buffer state ID
 
         Args:
             buff_id (int): Buffer state ID
@@ -531,12 +516,12 @@ class AdminAPI():
         return api_response.json_buffer_history_result
 
     def buffer_history_date(self, start: str, stop: str) -> List[swagger_client.BufferHistory]:
-        """ returns buffer history states between times.
+        """ Returns buffer history states between times.
         Times is entered as the start and end time of the required interval.
 
         Args:
-            start (string) Startdate
-            stop (string) Stopdate
+            start (string): Startdate
+            stop (string): Stopdate
 
         Return:
             List[swagger_client.BufferHistory] """
@@ -603,9 +588,6 @@ class AdminAPI():
     def system_log_type(self) -> List[swagger_client.LogType]:
         """ Returns a list of all used system log types
 
-        Args:
-            -
-
         Return:
             List[swagger_client.LogType]
         """
@@ -629,9 +611,6 @@ class AdminAPI():
 
     def system_log_tag(self) -> List[swagger_client.LogTag]:
         """ Returns a list of all used system log tag
-
-        Args:
-            -
 
         Return:
             List[swagger_client.LogTag]
@@ -657,11 +636,8 @@ class AdminAPI():
     def version_info(self) -> swagger_client.VersionInfo:
         """ Returns version of the database and the PlantScreen Data REST API used
 
-        Args:
-            -
-
         Return:
             swagger_client.VersionInfo
         """
         api_response = self.version_info_api.version_info()
-        return api_response.json_version_info_result 
+        return api_response.json_version_info_result

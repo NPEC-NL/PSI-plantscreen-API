@@ -1,3 +1,5 @@
+from __future__ import absolute_import
+
 from plantscreen import swagger_client
 from plantscreen import models
 from plantscreen.admin_api import AdminAPI

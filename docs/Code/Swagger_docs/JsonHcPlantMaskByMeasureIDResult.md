@@ -1,0 +1,9 @@
+# JsonHcPlantMaskByMeasureIDResult
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**json_hc_plant_mask_by_measure_id_result** | [**PlantMask**](PlantMask.md) |  | [optional] 
+
+[[Back to Model list]](../swagger_file.md#documentation-for-models) [[Back to API list]](../swagger_file.md#documentation-for-api-endpoints) [[Back to README]](../swagger_file.md)
+

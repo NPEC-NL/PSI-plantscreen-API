@@ -1,0 +1,42 @@
+[project]
+name = "psi-plantscreen"
+version = "0.1.8"
+description = "Python API implementation of PSI plantscreen API"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["PSI", "plantscreen", "API"]
+license = {file = "LICENSE.txt"}
+maintainers = [
+  {name = "NPEC WUR"} # Optional
+]
+
+classifiers = [
+'Development Status :: 3 - Alpha',
+'Intended Audience :: Developers',
+'Intended Audience :: Science/Research',
+'Topic :: Software Development :: Libraries :: Python Modules',
+'Programming Language :: Python :: 3',
+'Programming Language :: Python :: 3 :: Only',
+'Operating System :: OS Independent',
+'Operating System :: Microsoft :: Windows',
+'Operating System :: POSIX',
+'Operating System :: Unix',
+'Operating System :: MacOS',
+]
+
+dependencies = [
+"certifi", 
+"six", 
+"python_dateutil", 
+"urllib3"
+]
+
+[tool.setuptools]
+packages = ["plantscreen", "plantscreen.models", "plantscreen.swagger_client", "plantscreen.swagger_client.api", "plantscreen.swagger_client.models"]
+
+[project.urls]
+"Homepage" = "https://github.com/wurDevTim/PSI-Plantscreen-API"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"

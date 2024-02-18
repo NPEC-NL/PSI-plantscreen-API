@@ -11,7 +11,7 @@ class ProfileIDs:
     def from_dict(obj: Any) -> List[int]:
         """"Convert json to
 
-        Return
+        Return:
             List[int]"""
         _ids = [int(y.get("profile_id")) for y in obj.get("json_system_profile_id_result")]
         return _ids

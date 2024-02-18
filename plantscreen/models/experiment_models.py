@@ -11,7 +11,7 @@ class ExperimentIDs:
     def from_dict(obj: Any) -> List[int]:
         """"Convert json to
 
-        Return
+        Return:
             List[int]"""
         _ids = [int(y.get("experiment_id")) for y in obj.get("json_experiment_id_result")]
         return _ids
@@ -24,6 +24,6 @@ class OwnerID:
     def from_dict(obj: Any) -> List[int]:
         """"Convert json to
 
-        Return
+        Return:
             List[int]"""
         return [y.get('owner_id') for y in obj.get("json_owner_id_result")]
