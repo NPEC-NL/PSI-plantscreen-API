@@ -78,6 +78,6 @@ Additional notes:
 Build with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
 ## Authors
-Tim van Daalen and Pinglin Zhang
-NPEC
+Tim van Daalen and Pinglin Zhang  
+NPEC  
 https://www.npec.nl/
