@@ -1,5 +1,7 @@
 import plantscreen.swagger_client as swagger_client
 import plantscreen.models as models
+from io import BytesIO
+from requests import Session
 from typing import List
 
 
@@ -26,8 +28,12 @@ class AdminAPI():
         self.plant_api = swagger_client.PlantApi(swagger_client.ApiClient(configuration))
         self.buffer_api = swagger_client.BufferApi(swagger_client.ApiClient(configuration))
         self.system_log_api = swagger_client.SystemLogApi(swagger_client.ApiClient(configuration))
-        self.file_api = swagger_client.FileApi(swagger_client.ApiClient(configuration))
         self.version_info_api = swagger_client.VersionInfoApi(swagger_client.ApiClient(configuration))
+
+        # File api endpoints are called without a returntype:
+        self._configuration_2 = swagger_client.Configuration()
+        self._configuration_2.host = f'{server}:{poort}/RestService'
+        self.file_api = swagger_client.FileApi(swagger_client.ApiClient(self._configuration_2))
 
     def experimentID(self) -> List[int]:
         """ Returns a list of all experiment IDs in the database
@@ -641,3 +647,32 @@ class AdminAPI():
         """
         api_response = self.version_info_api.version_info()
         return api_response.json_version_info_result
+
+# File changelog
+    def changelog(self) -> str:
+        """ Returns the changelog of the plantscreen API
+
+        Return:
+            string
+        """
+        temp = self.file_api.file_changelog()[2:-1]
+        temp = temp.replace('\\r\\n', '\n')
+        temp = temp.replace('\\t', '\t')
+        return temp
+
+# File download
+    def download_file(self, filename: str) -> BytesIO:
+        """ Returns the content of a file as bytesio object
+
+        Args:
+            filename (str): Name of the file to download
+
+        Return:
+            io.BytesIO
+        """
+        s = Session()
+        data = BytesIO()
+        with s.get(f"{self._configuration_2.host}/file", params={"path": filename}, headers=None, stream=True) as resp:
+            data.write(resp.content)
+        data.seek(0)
+        return data

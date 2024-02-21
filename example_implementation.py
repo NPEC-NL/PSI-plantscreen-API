@@ -1,4 +1,5 @@
 import datetime
+import traceback
 from os import getenv
 from dotenv import load_dotenv
 from pprint import pprint
@@ -8,6 +9,7 @@ from plantscreen.complete_api import Complete_API
 
 
 if __name__ == "__main__":
+    """Ëxample implementation of all plantscreen endpoints"""
     load_dotenv()
     # Create an instance of the API class
     api = Complete_API(getenv('URL'), getenv('PORT'))
@@ -826,5 +828,10 @@ if __name__ == "__main__":
         api_response = api.version_info()
         pprint(f"Version info: {api_response}")
 
+        # Returns the changelog
+        string = api.changelog()
+        print(f"Changelog: {string}")
+
     except ApiException as e:
-        print("Exception when calling ActionApi->get_action: %s\n" % e)
+        print(traceback.format_exc())
+        print("Exception: %s\n" % e)

@@ -121,43 +121,41 @@ class FileApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def file_changelog(self, path, **kwargs):  # noqa: E501
+    def file_changelog(self, **kwargs):  # noqa: E501
         """Returns the changelog as a streamed text file. The changelog is a record of all notable changes made in individual versions of the API.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.file_changelog(path, async_req=True)
+        >>> thread = api.file_changelog(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param datetime path: fileStoragePath (required)
-        :return: None
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.file_changelog_with_http_info(path, **kwargs)  # noqa: E501
+            return self.file_changelog_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.file_changelog_with_http_info(path, **kwargs)  # noqa: E501
+            (data) = self.file_changelog_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def file_changelog_with_http_info(self, path, **kwargs):  # noqa: E501
+    def file_changelog_with_http_info(self, **kwargs):  # noqa: E501
         """Returns the changelog as a streamed text file. The changelog is a record of all notable changes made in individual versions of the API.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.file_changelog_with_http_info(path, async_req=True)
+        >>> thread = api.file_changelog_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param datetime path: fileStoragePath (required)
-        :return: None
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['path']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -172,18 +170,12 @@ class FileApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `file_changelog`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'path' in params:
-            query_params.append(('path', params['path']))  # noqa: E501
 
         header_params = {}
 
@@ -191,6 +183,10 @@ class FileApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -202,7 +198,7 @@ class FileApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

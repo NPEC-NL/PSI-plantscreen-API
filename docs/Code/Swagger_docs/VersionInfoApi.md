@@ -4,7 +4,50 @@ All URIs are relative to *https://localhost:44339/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**file_changelog**](VersionInfoApi.md#file_changelog) | **GET** /file/Changelog | Returns the changelog as a streamed text file. The changelog is a record of all notable changes made in individual versions of the API.
 [**version_info**](VersionInfoApi.md#version_info) | **GET** /VersionInfo | Returns version of the database and the PlantScreen Data REST API used
+
+# **file_changelog**
+> str file_changelog()
+
+Returns the changelog as a streamed text file. The changelog is a record of all notable changes made in individual versions of the API.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.VersionInfoApi()
+
+try:
+    # Returns the changelog as a streamed text file. The changelog is a record of all notable changes made in individual versions of the API.
+    api_response = api_instance.file_changelog()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VersionInfoApi->file_changelog: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **version_info**
 > JsonVersionInfoResult version_info()
@@ -46,5 +89,5 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../swagger_file.md#documentation-for-api-endpoints) [[Back to Model list]](../swagger_file.md#documentation-for-models) [[Back to README]](../swagger_file.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
