@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Imaging api - Documentation-Test</title>
+    <title>imaging_api - Documentation-Test</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -14,7 +14,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Imaging api";
+        var mkdocs_page_name = "imaging_api";
         var mkdocs_page_input_path = "Code\\imaging_api.md";
         var mkdocs_page_url = null;
       </script>
@@ -38,17 +38,529 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../CHANGELOG/">CHANGELOG</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">index</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Code</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="" href="../PSI_API.md">PSI_API</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../admin_api/">admin_api</a>
                   </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../CHANGELOG/">Changelog</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../complete_api/">complete_api</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">imaging_api</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../swagger_file/">swagger_file</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../system_api/">system_api</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Models/experiment_models/">experiment_models</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Models/profile_models/">profile_models</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Models/spectrum_device_models/">spectrum_device_models</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Swagger_docs</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Action/">Action</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ActionApi/">ActionApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ActionGroup/">ActionGroup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ActionProtocol/">ActionProtocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/BufferApi/">BufferApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/BufferHistory/">BufferHistory</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Device/">Device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/DeviceApi/">DeviceApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Experiment/">Experiment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ExperimentApi/">ExperimentApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ExperimentIDWrapper/">ExperimentIDWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ExperimentNote/">ExperimentNote</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/FcApi/">FcApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/FcImaging/">FcImaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/FileApi/">FileApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/HcApi/">HcApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/HcImaging/">HcImaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/HcRgbImage/">HcRgbImage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Imaging/">Imaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/InlineResponse200/">InlineResponse200</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/InlineResponse2001/">InlineResponse2001</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/IrApi/">IrApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonActionByExperimentIDNotDoneResult/">JsonActionByExperimentIDNotDoneResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonActionByExperimentIDResult/">JsonActionByExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonActionGroupByRoundIDResult/">JsonActionGroupByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonActionGroupResult/">JsonActionGroupResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonActionProtocolByRoundIDResult/">JsonActionProtocolByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonActionProtocolResult/">JsonActionProtocolResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonActionResult/">JsonActionResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonBufferHistoryByDateResult/">JsonBufferHistoryByDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonBufferHistoryResult/">JsonBufferHistoryResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonDeviceActiveResult/">JsonDeviceActiveResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonDeviceByProfileIDResult/">JsonDeviceByProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonDeviceResult/">JsonDeviceResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonExperimentByDateResult/">JsonExperimentByDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonExperimentByOwnerResult/">JsonExperimentByOwnerResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonExperimentIDResult/">JsonExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonExperimentResult/">JsonExperimentResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcImagingByIDResult/">JsonFcImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcImagingResult/">JsonFcImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcLeafParamByAnalyseIDResult/">JsonFcLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcLeafParamResult/">JsonFcLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcMeasureExtendedDataByIDResult/">JsonFcMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcMeasureExtendedDataResult/">JsonFcMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcParameterImageByAnalyseIDResult/">JsonFcParameterImageByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcParameterImageResult/">JsonFcParameterImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcParamResult/">JsonFcParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcPlantMaskByMeasureIDResult/">JsonFcPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcPlantMaskResult/">JsonFcPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcPlantParamByAnalyseIDResult/">JsonFcPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcPlantParamResult/">JsonFcPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcUsedParamByAnalyseIDResult/">JsonFcUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonFcUsedParamResult/">JsonFcUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcImagingByIDResult/">JsonHcImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcImagingResult/">JsonHcImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcLeafParamByAnalyseIDResult/">JsonHcLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcLeafParamResult/">JsonHcLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcMeasureExtendedDataByIDResult/">JsonHcMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcMeasureExtendedDataResult/">JsonHcMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcParameterImageByAnalyseIDResult/">JsonHcParameterImageByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcParameterImageResult/">JsonHcParameterImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcParamResult/">JsonHcParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcPlantMaskByMeasureIDResult/">JsonHcPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcPlantMaskResult/">JsonHcPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcPlantParamByAnalyseIDResult/">JsonHcPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcPlantParamResult/">JsonHcPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcRgbImageByMeasureIDResult/">JsonHcRgbImageByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcRgbImageResult/">JsonHcRgbImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcUsedParamByAnalyseIDResult/">JsonHcUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonHcUsedParamResult/">JsonHcUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrImagingByIDResult/">JsonIrImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrImagingResult/">JsonIrImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrLeafParamByAnalyseIDResult/">JsonIrLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrLeafParamResult/">JsonIrLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrMeasureExtendedDataByIDResult/">JsonIrMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrMeasureExtendedDataResult/">JsonIrMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrParamResult/">JsonIrParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrPlantMaskByMeasureIDResult/">JsonIrPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrPlantMaskImageByMeasureIDResult/">JsonIrPlantMaskImageByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrPlantMaskImageResult/">JsonIrPlantMaskImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrPlantMaskResult/">JsonIrPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrPlantParamByAnalyseIDResult/">JsonIrPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrPlantParamResult/">JsonIrPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrUsedParamByAnalyseIDResult/">JsonIrUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonIrUsedParamResult/">JsonIrUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscCalibrationByLightSetIDResult/">JsonMscCalibrationByLightSetIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscCalibrationLightByIDResult/">JsonMscCalibrationLightByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscCalibrationLightResult/">JsonMscCalibrationLightResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscCalibrationResult/">JsonMscCalibrationResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscImagingByIDResult/">JsonMscImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscImagingResult/">JsonMscImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscLeafParamByAnalyseIDResult/">JsonMscLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscLeafParamResult/">JsonMscLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscLightSetResult/">JsonMscLightSetResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscLightSetUsedResult/">JsonMscLightSetUsedResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscMeasureExtendedDataByIDResult/">JsonMscMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscMeasureExtendedDataResult/">JsonMscMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscParameterImageByAnalyseIDResult/">JsonMscParameterImageByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscParameterImageResult/">JsonMscParameterImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscParamResult/">JsonMscParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscPlantMaskByMeasureIDResult/">JsonMscPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscPlantMaskResult/">JsonMscPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscPlantParamByAnalyseIDResult/">JsonMscPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscPlantParamResult/">JsonMscPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscUsedParamByAnalyseIDResult/">JsonMscUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonMscUsedParamResult/">JsonMscUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonNoteResult/">JsonNoteResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonOwnerIDResult/">JsonOwnerIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonOwnerResult/">JsonOwnerResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantByTrayIDAndDatesResult/">JsonPlantByTrayIDAndDatesResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantByTrayIDResult/">JsonPlantByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantByTrayProfileIDResult/">JsonPlantByTrayProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantHeightByRoundIDResult/">JsonPlantHeightByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantLeavesByPlantAndTrayIDResult/">JsonPlantLeavesByPlantAndTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantResult/">JsonPlantResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantWeightReferenceByPlantIDResult/">JsonPlantWeightReferenceByPlantIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantWeightReferenceByTrayIDResult/">JsonPlantWeightReferenceByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonPlantWeightReferenceByTrayIDToDateResult/">JsonPlantWeightReferenceByTrayIDToDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonProbeByIDResult/">JsonProbeByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonProbeResult/">JsonProbeResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonProbeValueByDateResult/">JsonProbeValueByDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonProbeValueByIDAndDateResult/">JsonProbeValueByIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbGreeningMaskImageByMeasureIDResult/">JsonRgbGreeningMaskImageByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbGreeningMaskImageResult/">JsonRgbGreeningMaskImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbImagingByIDResult/">JsonRgbImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbImagingResult/">JsonRgbImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbLeafParamByAnalyseIDResult/">JsonRgbLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbLeafParamColorByAnalyseIDResult/">JsonRgbLeafParamColorByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbLeafParamColorResult/">JsonRgbLeafParamColorResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbLeafParamResult/">JsonRgbLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbMeasureExtendedDataByIDResult/">JsonRgbMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbMeasureExtendedDataResult/">JsonRgbMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbParamResult/">JsonRgbParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbPlantMaskByMeasureIDResult/">JsonRgbPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbPlantMaskResult/">JsonRgbPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbPlantParamByAnalyseIDResult/">JsonRgbPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbPlantParamColorByAnalyseIDResult/">JsonRgbPlantParamColorByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbPlantParamColorResult/">JsonRgbPlantParamColorResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbPlantParamResult/">JsonRgbPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbUsedParamByAnalyseIDResult/">JsonRgbUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbUsedParamColorByAnalyseIDResult/">JsonRgbUsedParamColorByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbUsedParamColorResult/">JsonRgbUsedParamColorResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRgbUsedParamsResult/">JsonRgbUsedParamsResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRoundByExperimentIDAndDateResult/">JsonRoundByExperimentIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRoundByExperimentIDResult/">JsonRoundByExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRoundOrderByExperimentIDAndDateResult/">JsonRoundOrderByExperimentIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRoundOrderByExperimentIDResult/">JsonRoundOrderByExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRoundOrderResult/">JsonRoundOrderResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonRoundResult/">JsonRoundResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScalesMappingByTrayIDResult/">JsonScalesMappingByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScalesMeasureByIDResult/">JsonScalesMeasureByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScalesMeasureResult/">JsonScalesMeasureResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dAnalyzedModelByAnalyseIDResult/">JsonScan3dAnalyzedModelByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dAnalyzedModelByMeasureIDResult/">JsonScan3dAnalyzedModelByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dAnalyzedModelResult/">JsonScan3dAnalyzedModelResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dImagingByIDResult/">JsonScan3dImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dImagingResult/">JsonScan3dImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dLeafParamByAnalyseIDResult/">JsonScan3dLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dLeafParamResult/">JsonScan3dLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dMeasureExtendedDataByIDResult/">JsonScan3dMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dMeasureExtendedDataResult/">JsonScan3dMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dParamResult/">JsonScan3dParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dPlantParamByAnalyseIDResult/">JsonScan3dPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dPlantParamResult/">JsonScan3dPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dUsedParamByAnalyseIDResult/">JsonScan3dUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonScan3dUsedParamResult/">JsonScan3dUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSpectrumDeviceIDResult/">JsonSpectrumDeviceIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSpectrumDeviceResult/">JsonSpectrumDeviceResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSpectrumValuesResult/">JsonSpectrumValuesResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSprayActionResult/">JsonSprayActionResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogByLogTagAndDateResult/">JsonSystemLogByLogTagAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogByLogTypeAndDateResult/">JsonSystemLogByLogTypeAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogByRoundIDAndDateResult/">JsonSystemLogByRoundIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogByRoundIDResult/">JsonSystemLogByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogByTrayIDAndDateResult/">JsonSystemLogByTrayIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogByTrayIDResult/">JsonSystemLogByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogTagResult/">JsonSystemLogTagResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemLogTypeResult/">JsonSystemLogTypeResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemProfileActiveResult/">JsonSystemProfileActiveResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemProfileIDResult/">JsonSystemProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonSystemProfileResult/">JsonSystemProfileResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayByRoundIDResult/">JsonTrayByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayProfileByIDResult/">JsonTrayProfileByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayProfileByTrayIDResult/">JsonTrayProfileByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayProfileByTrayIDToDateResult/">JsonTrayProfileByTrayIDToDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayResult/">JsonTrayResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayTypeByTrayIDResult/">JsonTrayTypeByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayTypeByTrayProfileIDResult/">JsonTrayTypeByTrayProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonTrayTypeResult/">JsonTrayTypeResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonUsedTrayProfileByTrayIDResult/">JsonUsedTrayProfileByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/JsonVersionInfoResult/">JsonVersionInfoResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/LeafParameter/">LeafParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/LogTag/">LogTag</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/LogType/">LogType</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/MeasureExtendedData/">MeasureExtendedData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/MscApi/">MscApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/MscCalibration/">MscCalibration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/MscCalibrationLight/">MscCalibrationLight</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/MscLightSet/">MscLightSet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Owner/">Owner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/OwnerIDWrapper/">OwnerIDWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Parameter/">Parameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ParameterImage/">ParameterImage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Plant/">Plant</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/PlantApi/">PlantApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/PlantHeight/">PlantHeight</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/PlantLeaf/">PlantLeaf</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/PlantMask/">PlantMask</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/PlantParameter/">PlantParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/PlantWeightReference/">PlantWeightReference</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Probe/">Probe</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ProbeApi/">ProbeApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ProbeValue/">ProbeValue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ProfileApi/">ProfileApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ProfileIDWrapper/">ProfileIDWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/RgbApi/">RgbApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/RgbGreeningMaskImage/">RgbGreeningMaskImage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Round/">Round</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/RoundApi/">RoundApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/RoundOrder/">RoundOrder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ScalesApi/">ScalesApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ScalesData/">ScalesData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/ScalesMapping/">ScalesMapping</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Scan3DAnalyzedModel/">Scan3DAnalyzedModel</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Scan3dApi/">Scan3dApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Scan3DImaging/">Scan3DImaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SpectrumDevice/">SpectrumDevice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SpectrumDeviceApi/">SpectrumDeviceApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SpectrumDeviceID/">SpectrumDeviceID</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SpectrumDeviceWavelengthsJSONWrapper/">SpectrumDeviceWavelengthsJSONWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SpectrumValues/">SpectrumValues</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SprayAction/">SprayAction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SprayApi/">SprayApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/StatisticLeafParameter/">StatisticLeafParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/StatisticPlantParameter/">StatisticPlantParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SystemLog/">SystemLog</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SystemLogApi/">SystemLogApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/SystemProfile/">SystemProfile</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/Tray/">Tray</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/TrayApi/">TrayApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/TrayProfile/">TrayProfile</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/TrayType/">TrayType</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/VersionInfo/">VersionInfo</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Swagger_docs/VersionInfoApi/">VersionInfoApi</a>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -64,7 +576,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Imaging api</li>
+          <li class="breadcrumb-item">Code</li>
+      <li class="breadcrumb-item active">imaging_api</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/wurDevTim/Documentation-Test/edit/master/docs/Code/imaging_api.md">Edit on wurDevTim/Documentation-Test</a>
     </li>
@@ -1449,10 +1962,7 @@
 <span class="normal">1340</span>
 <span class="normal">1341</span>
 <span class="normal">1342</span>
-<span class="normal">1343</span>
-<span class="normal">1344</span>
-<span class="normal">1345</span>
-<span class="normal">1346</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ImagingAPI</span><span class="p">():</span>
+<span class="normal">1343</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ImagingAPI</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Wrapper around the automatically  generated swagger client.</span>
 <span class="sd">       \n return class instances instead of dictionaries &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">poort</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -2329,9 +2839,6 @@
     <span class="k">def</span> <span class="nf">msc_calibration_light</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MscCalibrationLight</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot; Returns a list of all lightsettings if no ID is passed.</span>
 <span class="sd">        Or the light output setting for light group calibration defined by calibration light ID</span>
-
-<span class="sd">        Args:</span>
-<span class="sd">            -</span>
 
 <span class="sd">        Return:</span>
 <span class="sd">            swagger_client.MscCalibrationLight &quot;&quot;&quot;</span>
@@ -7026,15 +7533,9 @@ Or the light output setting for light group calibration defined by calibration l
 <span class="normal">883</span>
 <span class="normal">884</span>
 <span class="normal">885</span>
-<span class="normal">886</span>
-<span class="normal">887</span>
-<span class="normal">888</span>
-<span class="normal">889</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">msc_calibration_light</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MscCalibrationLight</span><span class="p">:</span>
+<span class="normal">886</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">msc_calibration_light</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MscCalibrationLight</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns a list of all lightsettings if no ID is passed.</span>
 <span class="sd">    Or the light output setting for light group calibration defined by calibration light ID</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        -</span>
 
 <span class="sd">    Return:</span>
 <span class="sd">        swagger_client.MscCalibrationLight &quot;&quot;&quot;</span>
@@ -8645,7 +9146,10 @@ therefore it is only available if greening analysis has been performed on the re
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">980</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">977</span>
+<span class="normal">978</span>
+<span class="normal">979</span>
+<span class="normal">980</span>
 <span class="normal">981</span>
 <span class="normal">982</span>
 <span class="normal">983</span>
@@ -8656,10 +9160,7 @@ therefore it is only available if greening analysis has been performed on the re
 <span class="normal">988</span>
 <span class="normal">989</span>
 <span class="normal">990</span>
-<span class="normal">991</span>
-<span class="normal">992</span>
-<span class="normal">993</span>
-<span class="normal">994</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_greening_mask_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">RgbGreeningMaskImage</span><span class="p">]:</span>
+<span class="normal">991</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_greening_mask_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">RgbGreeningMaskImage</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns RGB greening data data masked by the plant mask for tray defined by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was measured and by device defined by device ID.</span>
 <span class="sd">    The greening mask image is created by greening analysis,</span>
@@ -8728,7 +9229,10 @@ therefore it is only available if greening analysis has been performed on the re
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">967</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">964</span>
+<span class="normal">965</span>
+<span class="normal">966</span>
+<span class="normal">967</span>
 <span class="normal">968</span>
 <span class="normal">969</span>
 <span class="normal">970</span>
@@ -8736,10 +9240,7 @@ therefore it is only available if greening analysis has been performed on the re
 <span class="normal">972</span>
 <span class="normal">973</span>
 <span class="normal">974</span>
-<span class="normal">975</span>
-<span class="normal">976</span>
-<span class="normal">977</span>
-<span class="normal">978</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_greening_mask_image_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">RgbGreeningMaskImage</span><span class="p">:</span>
+<span class="normal">975</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_greening_mask_image_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">RgbGreeningMaskImage</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns RGB greening data masked by the plant mask defined by RGB measure ID.</span>
 <span class="sd">    The greening mask image is created by greening analysis,</span>
 <span class="sd">    therefore it is only available if greening analysis has been performed on the required data</span>
@@ -8820,7 +9321,10 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">903</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">900</span>
+<span class="normal">901</span>
+<span class="normal">902</span>
+<span class="normal">903</span>
 <span class="normal">904</span>
 <span class="normal">905</span>
 <span class="normal">906</span>
@@ -8829,10 +9333,7 @@ by round ID of round in which the tray was measured and by device defined by dev
 <span class="normal">909</span>
 <span class="normal">910</span>
 <span class="normal">911</span>
-<span class="normal">912</span>
-<span class="normal">913</span>
-<span class="normal">914</span>
-<span class="normal">915</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Imaging</span><span class="p">]:</span>
+<span class="normal">912</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Imaging</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns FluorCam imaging data for tray defined by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was measured and by device defined by device ID</span>
 
@@ -8914,7 +9415,10 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">928</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">925</span>
+<span class="normal">926</span>
+<span class="normal">927</span>
+<span class="normal">928</span>
 <span class="normal">929</span>
 <span class="normal">930</span>
 <span class="normal">931</span>
@@ -8923,10 +9427,7 @@ by round ID of round in which the tray was measured and by device defined by dev
 <span class="normal">934</span>
 <span class="normal">935</span>
 <span class="normal">936</span>
-<span class="normal">937</span>
-<span class="normal">938</span>
-<span class="normal">939</span>
-<span class="normal">940</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging_extended_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
+<span class="normal">937</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging_extended_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns RGB extended data for tray defined by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was measured and by device defined by device ID</span>
 
@@ -8991,16 +9492,16 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">917</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">914</span>
+<span class="normal">915</span>
+<span class="normal">916</span>
+<span class="normal">917</span>
 <span class="normal">918</span>
 <span class="normal">919</span>
 <span class="normal">920</span>
 <span class="normal">921</span>
 <span class="normal">922</span>
-<span class="normal">923</span>
-<span class="normal">924</span>
-<span class="normal">925</span>
-<span class="normal">926</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging_extended_data_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
+<span class="normal">923</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging_extended_data_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns RGB imaging extended data by RGB measure ID</span>
 
 <span class="sd">    Args:</span>
@@ -9062,16 +9563,16 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">892</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">889</span>
+<span class="normal">890</span>
+<span class="normal">891</span>
+<span class="normal">892</span>
 <span class="normal">893</span>
 <span class="normal">894</span>
 <span class="normal">895</span>
 <span class="normal">896</span>
 <span class="normal">897</span>
-<span class="normal">898</span>
-<span class="normal">899</span>
-<span class="normal">900</span>
-<span class="normal">901</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Imaging</span><span class="p">:</span>
+<span class="normal">898</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_imaging_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Imaging</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns RGB imaging data by RGB measure ID</span>
 
 <span class="sd">    Args:</span>
@@ -9158,7 +9659,10 @@ by tray ID, by round ID of round in which the tray was analyzed and by device de
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1126</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1123</span>
+<span class="normal">1124</span>
+<span class="normal">1125</span>
+<span class="normal">1126</span>
 <span class="normal">1127</span>
 <span class="normal">1128</span>
 <span class="normal">1129</span>
@@ -9168,10 +9672,7 @@ by tray ID, by round ID of round in which the tray was analyzed and by device de
 <span class="normal">1133</span>
 <span class="normal">1134</span>
 <span class="normal">1135</span>
-<span class="normal">1136</span>
-<span class="normal">1137</span>
-<span class="normal">1138</span>
-<span class="normal">1139</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
+<span class="normal">1136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB leaf parameter values for the parameter defined by parameter ID,</span>
 <span class="sd">    by tray ID, by round ID of round in which the tray was analyzed and by device defined by device ID</span>
 
@@ -9246,7 +9747,10 @@ in the analysis defined by analyse ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1113</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1110</span>
+<span class="normal">1111</span>
+<span class="normal">1112</span>
+<span class="normal">1113</span>
 <span class="normal">1114</span>
 <span class="normal">1115</span>
 <span class="normal">1116</span>
@@ -9254,10 +9758,7 @@ in the analysis defined by analyse ID</p>
 <span class="normal">1118</span>
 <span class="normal">1119</span>
 <span class="normal">1120</span>
-<span class="normal">1121</span>
-<span class="normal">1122</span>
-<span class="normal">1123</span>
-<span class="normal">1124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
+<span class="normal">1121</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB leaf parameter values for the parameter defined by parameter ID and calculated</span>
 <span class="sd">    in the analysis defined by analyse ID</span>
 
@@ -9346,7 +9847,10 @@ in the analysis defined by analyse ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1154</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1151</span>
+<span class="normal">1152</span>
+<span class="normal">1153</span>
+<span class="normal">1154</span>
 <span class="normal">1155</span>
 <span class="normal">1156</span>
 <span class="normal">1157</span>
@@ -9356,10 +9860,7 @@ in the analysis defined by analyse ID</p>
 <span class="normal">1161</span>
 <span class="normal">1162</span>
 <span class="normal">1163</span>
-<span class="normal">1164</span>
-<span class="normal">1165</span>
-<span class="normal">1166</span>
-<span class="normal">1167</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
+<span class="normal">1164</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB greening leaf parameter values for the parameter defined by parameter ID, by tray ID, by round ID of</span>
 <span class="sd">     round in which the tray was analyzed and by device defined by device ID</span>
 
@@ -9434,7 +9935,10 @@ in the analysis defined by analyse ID (for greening analysis)</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1141</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1138</span>
+<span class="normal">1139</span>
+<span class="normal">1140</span>
+<span class="normal">1141</span>
 <span class="normal">1142</span>
 <span class="normal">1143</span>
 <span class="normal">1144</span>
@@ -9442,10 +9946,7 @@ in the analysis defined by analyse ID (for greening analysis)</p>
 <span class="normal">1146</span>
 <span class="normal">1147</span>
 <span class="normal">1148</span>
-<span class="normal">1149</span>
-<span class="normal">1150</span>
-<span class="normal">1151</span>
-<span class="normal">1152</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param_color_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
+<span class="normal">1149</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_leaf_param_color_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB greening leaf parameter values for the parameter defined by parameter ID and calculated</span>
 <span class="sd">    in the analysis defined by analyse ID (for greening analysis)</span>
 
@@ -9509,16 +10010,16 @@ in the analysis defined by analyse ID (for greening analysis)</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 996</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 993</span>
+<span class="normal"> 994</span>
+<span class="normal"> 995</span>
+<span class="normal"> 996</span>
 <span class="normal"> 997</span>
 <span class="normal"> 998</span>
 <span class="normal"> 999</span>
 <span class="normal">1000</span>
 <span class="normal">1001</span>
-<span class="normal">1002</span>
-<span class="normal">1003</span>
-<span class="normal">1004</span>
-<span class="normal">1005</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">:</span>
+<span class="normal">1002</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns one RGB morfo parameter by parameter ID</span>
 
 <span class="sd">    Args:</span>
@@ -9597,7 +10098,10 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1043</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1040</span>
+<span class="normal">1041</span>
+<span class="normal">1042</span>
+<span class="normal">1043</span>
 <span class="normal">1044</span>
 <span class="normal">1045</span>
 <span class="normal">1046</span>
@@ -9606,10 +10110,7 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 <span class="normal">1049</span>
 <span class="normal">1050</span>
 <span class="normal">1051</span>
-<span class="normal">1052</span>
-<span class="normal">1053</span>
-<span class="normal">1054</span>
-<span class="normal">1055</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_color_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
+<span class="normal">1052</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_color_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the greening RGB plant and leaf parameters used in the analysis by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was analyzed and by device defined by device ID</span>
 
@@ -9675,17 +10176,17 @@ defined by analyse ID (for greening analysis)</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1031</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1028</span>
+<span class="normal">1029</span>
+<span class="normal">1030</span>
+<span class="normal">1031</span>
 <span class="normal">1032</span>
 <span class="normal">1033</span>
 <span class="normal">1034</span>
 <span class="normal">1035</span>
 <span class="normal">1036</span>
 <span class="normal">1037</span>
-<span class="normal">1038</span>
-<span class="normal">1039</span>
-<span class="normal">1040</span>
-<span class="normal">1041</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_color_used_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
+<span class="normal">1038</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_color_used_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the greening RGB plant and leaf parameters used in the greening analysis</span>
 <span class="sd">    defined by analyse ID (for greening analysis)</span>
 
@@ -9764,7 +10265,10 @@ defined by analyse ID (for greening analysis)</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1018</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1015</span>
+<span class="normal">1016</span>
+<span class="normal">1017</span>
+<span class="normal">1018</span>
 <span class="normal">1019</span>
 <span class="normal">1020</span>
 <span class="normal">1021</span>
@@ -9772,10 +10276,7 @@ defined by analyse ID (for greening analysis)</p>
 <span class="normal">1023</span>
 <span class="normal">1024</span>
 <span class="normal">1025</span>
-<span class="normal">1026</span>
-<span class="normal">1027</span>
-<span class="normal">1028</span>
-<span class="normal">1029</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
+<span class="normal">1026</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB plant and leaf parameters used in the analysis defined by analyse ID</span>
 
 <span class="sd">    Args:</span>
@@ -9839,16 +10340,16 @@ defined by analyse ID (for greening analysis)</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1007</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1004</span>
+<span class="normal">1005</span>
+<span class="normal">1006</span>
+<span class="normal">1007</span>
 <span class="normal">1008</span>
 <span class="normal">1009</span>
 <span class="normal">1010</span>
 <span class="normal">1011</span>
 <span class="normal">1012</span>
-<span class="normal">1013</span>
-<span class="normal">1014</span>
-<span class="normal">1015</span>
-<span class="normal">1016</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_used_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
+<span class="normal">1013</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_param_used_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB plant and leaf parameters used in the analysis defined by analyse ID</span>
 
 <span class="sd">    Args:</span>
@@ -9927,7 +10428,10 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">953</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">950</span>
+<span class="normal">951</span>
+<span class="normal">952</span>
+<span class="normal">953</span>
 <span class="normal">954</span>
 <span class="normal">955</span>
 <span class="normal">956</span>
@@ -9936,10 +10440,7 @@ by round ID of round in which the tray was measured and by device defined by dev
 <span class="normal">959</span>
 <span class="normal">960</span>
 <span class="normal">961</span>
-<span class="normal">962</span>
-<span class="normal">963</span>
-<span class="normal">964</span>
-<span class="normal">965</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantMask</span><span class="p">]:</span>
+<span class="normal">962</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantMask</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns RGB plant masks created for the tray defined by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was measured and by device defined by device ID</span>
 
@@ -10004,16 +10505,16 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">942</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">939</span>
+<span class="normal">940</span>
+<span class="normal">941</span>
+<span class="normal">942</span>
 <span class="normal">943</span>
 <span class="normal">944</span>
 <span class="normal">945</span>
 <span class="normal">946</span>
 <span class="normal">947</span>
-<span class="normal">948</span>
-<span class="normal">949</span>
-<span class="normal">950</span>
-<span class="normal">951</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_mask_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantMask</span><span class="p">:</span>
+<span class="normal">948</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_mask_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantMask</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB plant mask created for the measured tray defined by RGB measure ID</span>
 
 <span class="sd">    Args:</span>
@@ -10100,7 +10601,10 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1070</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1067</span>
+<span class="normal">1068</span>
+<span class="normal">1069</span>
+<span class="normal">1070</span>
 <span class="normal">1071</span>
 <span class="normal">1072</span>
 <span class="normal">1073</span>
@@ -10110,10 +10614,7 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 <span class="normal">1077</span>
 <span class="normal">1078</span>
 <span class="normal">1079</span>
-<span class="normal">1080</span>
-<span class="normal">1081</span>
-<span class="normal">1082</span>
-<span class="normal">1083</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
+<span class="normal">1080</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB plant parameter values for the parameter defined by parameter ID, by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was analyzed and by device defined by device ID</span>
 
@@ -10188,7 +10689,10 @@ calculated in the analysis defined by analyse ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1057</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1054</span>
+<span class="normal">1055</span>
+<span class="normal">1056</span>
+<span class="normal">1057</span>
 <span class="normal">1058</span>
 <span class="normal">1059</span>
 <span class="normal">1060</span>
@@ -10196,10 +10700,7 @@ calculated in the analysis defined by analyse ID</p>
 <span class="normal">1062</span>
 <span class="normal">1063</span>
 <span class="normal">1064</span>
-<span class="normal">1065</span>
-<span class="normal">1066</span>
-<span class="normal">1067</span>
-<span class="normal">1068</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
+<span class="normal">1065</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB plant parameter values for the parameter defined by parameter ID and</span>
 <span class="sd">    calculated in the analysis defined by analyse ID</span>
 
@@ -10288,7 +10789,10 @@ in the analysis defined by analyse ID (for greening analysis)</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1098</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1095</span>
+<span class="normal">1096</span>
+<span class="normal">1097</span>
+<span class="normal">1098</span>
 <span class="normal">1099</span>
 <span class="normal">1100</span>
 <span class="normal">1101</span>
@@ -10298,10 +10802,7 @@ in the analysis defined by analyse ID (for greening analysis)</p>
 <span class="normal">1105</span>
 <span class="normal">1106</span>
 <span class="normal">1107</span>
-<span class="normal">1108</span>
-<span class="normal">1109</span>
-<span class="normal">1110</span>
-<span class="normal">1111</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
+<span class="normal">1108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB greening plant parameter values for the parameter defined by parameter ID and calculated</span>
 <span class="sd">    in the analysis defined by analyse ID (for greening analysis)</span>
 
@@ -10376,7 +10877,10 @@ in the analysis defined by analyse ID (for greening analysis)</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1085</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1082</span>
+<span class="normal">1083</span>
+<span class="normal">1084</span>
+<span class="normal">1085</span>
 <span class="normal">1086</span>
 <span class="normal">1087</span>
 <span class="normal">1088</span>
@@ -10384,10 +10888,7 @@ in the analysis defined by analyse ID (for greening analysis)</p>
 <span class="normal">1090</span>
 <span class="normal">1091</span>
 <span class="normal">1092</span>
-<span class="normal">1093</span>
-<span class="normal">1094</span>
-<span class="normal">1095</span>
-<span class="normal">1096</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param_color_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
+<span class="normal">1093</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rgb_plant_param_color_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the RGB greening plant parameter values for the parameter defined by parameter ID and calculated</span>
 <span class="sd">    in the analysis defined by analyse ID (for greening analysis)</span>
 
@@ -10468,7 +10969,10 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1242</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1239</span>
+<span class="normal">1240</span>
+<span class="normal">1241</span>
+<span class="normal">1242</span>
 <span class="normal">1243</span>
 <span class="normal">1244</span>
 <span class="normal">1245</span>
@@ -10477,10 +10981,7 @@ by round ID of round in which the tray was measured and by device defined by dev
 <span class="normal">1248</span>
 <span class="normal">1249</span>
 <span class="normal">1250</span>
-<span class="normal">1251</span>
-<span class="normal">1252</span>
-<span class="normal">1253</span>
-<span class="normal">1254</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_analyzed_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DAnalyzedModel</span><span class="p">:</span>
+<span class="normal">1251</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_analyzed_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DAnalyzedModel</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the analyzed 3D data as a triangulated 3D model defined by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was measured and by device defined by device ID</span>
 
@@ -10545,16 +11046,16 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1231</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1228</span>
+<span class="normal">1229</span>
+<span class="normal">1230</span>
+<span class="normal">1231</span>
 <span class="normal">1232</span>
 <span class="normal">1233</span>
 <span class="normal">1234</span>
 <span class="normal">1235</span>
 <span class="normal">1236</span>
-<span class="normal">1237</span>
-<span class="normal">1238</span>
-<span class="normal">1239</span>
-<span class="normal">1240</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_analyzed_model_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DAnalyzedModel</span><span class="p">:</span>
+<span class="normal">1237</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_analyzed_model_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DAnalyzedModel</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID</span>
 
 <span class="sd">    Args:</span>
@@ -10616,16 +11117,16 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1220</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1217</span>
+<span class="normal">1218</span>
+<span class="normal">1219</span>
+<span class="normal">1220</span>
 <span class="normal">1221</span>
 <span class="normal">1222</span>
 <span class="normal">1223</span>
 <span class="normal">1224</span>
 <span class="normal">1225</span>
-<span class="normal">1226</span>
-<span class="normal">1227</span>
-<span class="normal">1228</span>
-<span class="normal">1229</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_analyzed_model_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DAnalyzedModel</span><span class="p">:</span>
+<span class="normal">1226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_analyzed_model_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DAnalyzedModel</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the analyzed 3D data as a triangulated 3D model defined by scan 3D measure ID</span>
 
 <span class="sd">    Args:</span>
@@ -10704,7 +11205,10 @@ was measured and by device defined by device ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1181</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1178</span>
+<span class="normal">1179</span>
+<span class="normal">1180</span>
+<span class="normal">1181</span>
 <span class="normal">1182</span>
 <span class="normal">1183</span>
 <span class="normal">1184</span>
@@ -10713,10 +11217,7 @@ was measured and by device defined by device ID</p>
 <span class="normal">1187</span>
 <span class="normal">1188</span>
 <span class="normal">1189</span>
-<span class="normal">1190</span>
-<span class="normal">1191</span>
-<span class="normal">1192</span>
-<span class="normal">1193</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DImaging</span><span class="p">]:</span>
+<span class="normal">1190</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DImaging</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns 3D imaging data for tray defined by tray ID, by round ID of round in which the tray</span>
 <span class="sd">    was measured and by device defined by device ID</span>
 
@@ -10798,7 +11299,10 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1206</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1203</span>
+<span class="normal">1204</span>
+<span class="normal">1205</span>
+<span class="normal">1206</span>
 <span class="normal">1207</span>
 <span class="normal">1208</span>
 <span class="normal">1209</span>
@@ -10807,10 +11311,7 @@ by round ID of round in which the tray was measured and by device defined by dev
 <span class="normal">1212</span>
 <span class="normal">1213</span>
 <span class="normal">1214</span>
-<span class="normal">1215</span>
-<span class="normal">1216</span>
-<span class="normal">1217</span>
-<span class="normal">1218</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging_extended_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
+<span class="normal">1215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging_extended_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns 3D extended data for tray defined by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was measured and by device defined by device ID</span>
 
@@ -10875,16 +11376,16 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1195</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1192</span>
+<span class="normal">1193</span>
+<span class="normal">1194</span>
+<span class="normal">1195</span>
 <span class="normal">1196</span>
 <span class="normal">1197</span>
 <span class="normal">1198</span>
 <span class="normal">1199</span>
 <span class="normal">1200</span>
-<span class="normal">1201</span>
-<span class="normal">1202</span>
-<span class="normal">1203</span>
-<span class="normal">1204</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging_extended_data_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
+<span class="normal">1201</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging_extended_data_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">MeasureExtendedData</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns 3D imaging extended data by scan 3D measure ID</span>
 
 <span class="sd">    Args:</span>
@@ -10946,16 +11447,16 @@ by round ID of round in which the tray was measured and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1170</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1167</span>
+<span class="normal">1168</span>
+<span class="normal">1169</span>
+<span class="normal">1170</span>
 <span class="normal">1171</span>
 <span class="normal">1172</span>
 <span class="normal">1173</span>
 <span class="normal">1174</span>
 <span class="normal">1175</span>
-<span class="normal">1176</span>
-<span class="normal">1177</span>
-<span class="normal">1178</span>
-<span class="normal">1179</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DImaging</span><span class="p">:</span>
+<span class="normal">1176</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_imaging_measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meas_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Scan3DImaging</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns 3D imaging data by scan 3D measure ID</span>
 
 <span class="sd">    Args:</span>
@@ -11042,7 +11543,10 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1333</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1330</span>
+<span class="normal">1331</span>
+<span class="normal">1332</span>
+<span class="normal">1333</span>
 <span class="normal">1334</span>
 <span class="normal">1335</span>
 <span class="normal">1336</span>
@@ -11052,10 +11556,7 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 <span class="normal">1340</span>
 <span class="normal">1341</span>
 <span class="normal">1342</span>
-<span class="normal">1343</span>
-<span class="normal">1344</span>
-<span class="normal">1345</span>
-<span class="normal">1346</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_leaf_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
+<span class="normal">1343</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_leaf_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the 3D local leaf parameter values for the parameter defined by parameter ID, by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was analyzed and by device defined by device ID</span>
 
@@ -11130,7 +11631,10 @@ in the analysis defined by analyse ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1320</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1317</span>
+<span class="normal">1318</span>
+<span class="normal">1319</span>
+<span class="normal">1320</span>
 <span class="normal">1321</span>
 <span class="normal">1322</span>
 <span class="normal">1323</span>
@@ -11138,10 +11642,7 @@ in the analysis defined by analyse ID</p>
 <span class="normal">1325</span>
 <span class="normal">1326</span>
 <span class="normal">1327</span>
-<span class="normal">1328</span>
-<span class="normal">1329</span>
-<span class="normal">1330</span>
-<span class="normal">1331</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_leaf_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
+<span class="normal">1328</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_leaf_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">LeafParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the 3D local leaf parameter values for the parameter defined by parameter ID and calculated</span>
 <span class="sd">    in the analysis defined by analyse ID</span>
 
@@ -11205,16 +11706,16 @@ in the analysis defined by analyse ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1256</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1253</span>
+<span class="normal">1254</span>
+<span class="normal">1255</span>
+<span class="normal">1256</span>
 <span class="normal">1257</span>
 <span class="normal">1258</span>
 <span class="normal">1259</span>
 <span class="normal">1260</span>
 <span class="normal">1261</span>
-<span class="normal">1262</span>
-<span class="normal">1263</span>
-<span class="normal">1264</span>
-<span class="normal">1265</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">:</span>
+<span class="normal">1262</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns one 3D parameter by parameter ID</span>
 
 <span class="sd">    Args:</span>
@@ -11293,7 +11794,10 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1278</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1275</span>
+<span class="normal">1276</span>
+<span class="normal">1277</span>
+<span class="normal">1278</span>
 <span class="normal">1279</span>
 <span class="normal">1280</span>
 <span class="normal">1281</span>
@@ -11302,10 +11806,7 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 <span class="normal">1284</span>
 <span class="normal">1285</span>
 <span class="normal">1286</span>
-<span class="normal">1287</span>
-<span class="normal">1288</span>
-<span class="normal">1289</span>
-<span class="normal">1290</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_param_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
+<span class="normal">1287</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_param_used</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the 3D plant and leaf parameters used in the analysis by tray ID,</span>
 <span class="sd">    by round ID of round in which the tray was analyzed and by device defined by device ID</span>
 
@@ -11370,16 +11871,16 @@ by round ID of round in which the tray was analyzed and by device defined by dev
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1267</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1264</span>
+<span class="normal">1265</span>
+<span class="normal">1266</span>
+<span class="normal">1267</span>
 <span class="normal">1268</span>
 <span class="normal">1269</span>
 <span class="normal">1270</span>
 <span class="normal">1271</span>
 <span class="normal">1272</span>
-<span class="normal">1273</span>
-<span class="normal">1274</span>
-<span class="normal">1275</span>
-<span class="normal">1276</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_param_used_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
+<span class="normal">1273</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_param_used_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">Parameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the 3D plant and leaf parameters used in the analysis defined by analyse ID</span>
 
 <span class="sd">    Args:</span>
@@ -11466,7 +11967,10 @@ calculated in the analysis defined by analyse ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1305</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1302</span>
+<span class="normal">1303</span>
+<span class="normal">1304</span>
+<span class="normal">1305</span>
 <span class="normal">1306</span>
 <span class="normal">1307</span>
 <span class="normal">1308</span>
@@ -11476,10 +11980,7 @@ calculated in the analysis defined by analyse ID</p>
 <span class="normal">1312</span>
 <span class="normal">1313</span>
 <span class="normal">1314</span>
-<span class="normal">1315</span>
-<span class="normal">1316</span>
-<span class="normal">1317</span>
-<span class="normal">1318</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_plant_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
+<span class="normal">1315</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_plant_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">round_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tray_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the 3D plant parameter values for the parameter defined by parameter ID and</span>
 <span class="sd">    calculated in the analysis defined by analyse ID</span>
 
@@ -11554,7 +12055,10 @@ calculated in the analysis defined by analyse ID</p>
 </details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\imaging_api.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1292</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1289</span>
+<span class="normal">1290</span>
+<span class="normal">1291</span>
+<span class="normal">1292</span>
 <span class="normal">1293</span>
 <span class="normal">1294</span>
 <span class="normal">1295</span>
@@ -11562,10 +12066,7 @@ calculated in the analysis defined by analyse ID</p>
 <span class="normal">1297</span>
 <span class="normal">1298</span>
 <span class="normal">1299</span>
-<span class="normal">1300</span>
-<span class="normal">1301</span>
-<span class="normal">1302</span>
-<span class="normal">1303</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_plant_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
+<span class="normal">1300</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">scan3d_plant_param_analyse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">analysis_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">param_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">swagger_client</span><span class="o">.</span><span class="n">PlantParameter</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the 3D plant parameter values for the parameter defined by parameter ID and</span>
 <span class="sd">    calculated in the analysis defined by analyse ID</span>
 
@@ -11603,6 +12104,10 @@ calculated in the analysis defined by analyse ID</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../complete_api/" class="btn btn-neutral float-left" title="complete_api"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../swagger_file/" class="btn btn-neutral float-right" title="swagger_file">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -11624,6 +12129,10 @@ calculated in the analysis defined by analyse ID</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../complete_api/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../swagger_file/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

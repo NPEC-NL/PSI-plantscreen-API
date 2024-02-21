@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Experiment models - Documentation-Test</title>
+    <title>experiment_models - Documentation-Test</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -14,7 +14,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Experiment models";
+        var mkdocs_page_name = "experiment_models";
         var mkdocs_page_input_path = "Code\\Models\\experiment_models.md";
         var mkdocs_page_url = null;
       </script>
@@ -38,17 +38,529 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG/">CHANGELOG</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">index</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Code</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="" href="../../PSI_API.md">PSI_API</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../admin_api/">admin_api</a>
                   </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG/">Changelog</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../complete_api/">complete_api</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imaging_api/">imaging_api</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../swagger_file/">swagger_file</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../system_api/">system_api</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Models</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">experiment_models</a>
+    <ul class="current">
+    </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../profile_models/">profile_models</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spectrum_device_models/">spectrum_device_models</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Swagger_docs</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Action/">Action</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ActionApi/">ActionApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ActionGroup/">ActionGroup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ActionProtocol/">ActionProtocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/BufferApi/">BufferApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/BufferHistory/">BufferHistory</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Device/">Device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/DeviceApi/">DeviceApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Experiment/">Experiment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ExperimentApi/">ExperimentApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ExperimentIDWrapper/">ExperimentIDWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ExperimentNote/">ExperimentNote</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/FcApi/">FcApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/FcImaging/">FcImaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/FileApi/">FileApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/HcApi/">HcApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/HcImaging/">HcImaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/HcRgbImage/">HcRgbImage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Imaging/">Imaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/InlineResponse200/">InlineResponse200</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/InlineResponse2001/">InlineResponse2001</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/IrApi/">IrApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonActionByExperimentIDNotDoneResult/">JsonActionByExperimentIDNotDoneResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonActionByExperimentIDResult/">JsonActionByExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonActionGroupByRoundIDResult/">JsonActionGroupByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonActionGroupResult/">JsonActionGroupResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonActionProtocolByRoundIDResult/">JsonActionProtocolByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonActionProtocolResult/">JsonActionProtocolResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonActionResult/">JsonActionResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonBufferHistoryByDateResult/">JsonBufferHistoryByDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonBufferHistoryResult/">JsonBufferHistoryResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonDeviceActiveResult/">JsonDeviceActiveResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonDeviceByProfileIDResult/">JsonDeviceByProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonDeviceResult/">JsonDeviceResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonExperimentByDateResult/">JsonExperimentByDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonExperimentByOwnerResult/">JsonExperimentByOwnerResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonExperimentIDResult/">JsonExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonExperimentResult/">JsonExperimentResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcImagingByIDResult/">JsonFcImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcImagingResult/">JsonFcImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcLeafParamByAnalyseIDResult/">JsonFcLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcLeafParamResult/">JsonFcLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcMeasureExtendedDataByIDResult/">JsonFcMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcMeasureExtendedDataResult/">JsonFcMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcParameterImageByAnalyseIDResult/">JsonFcParameterImageByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcParameterImageResult/">JsonFcParameterImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcParamResult/">JsonFcParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcPlantMaskByMeasureIDResult/">JsonFcPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcPlantMaskResult/">JsonFcPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcPlantParamByAnalyseIDResult/">JsonFcPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcPlantParamResult/">JsonFcPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcUsedParamByAnalyseIDResult/">JsonFcUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonFcUsedParamResult/">JsonFcUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcImagingByIDResult/">JsonHcImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcImagingResult/">JsonHcImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcLeafParamByAnalyseIDResult/">JsonHcLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcLeafParamResult/">JsonHcLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcMeasureExtendedDataByIDResult/">JsonHcMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcMeasureExtendedDataResult/">JsonHcMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcParameterImageByAnalyseIDResult/">JsonHcParameterImageByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcParameterImageResult/">JsonHcParameterImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcParamResult/">JsonHcParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcPlantMaskByMeasureIDResult/">JsonHcPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcPlantMaskResult/">JsonHcPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcPlantParamByAnalyseIDResult/">JsonHcPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcPlantParamResult/">JsonHcPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcRgbImageByMeasureIDResult/">JsonHcRgbImageByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcRgbImageResult/">JsonHcRgbImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcUsedParamByAnalyseIDResult/">JsonHcUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonHcUsedParamResult/">JsonHcUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrImagingByIDResult/">JsonIrImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrImagingResult/">JsonIrImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrLeafParamByAnalyseIDResult/">JsonIrLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrLeafParamResult/">JsonIrLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrMeasureExtendedDataByIDResult/">JsonIrMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrMeasureExtendedDataResult/">JsonIrMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrParamResult/">JsonIrParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrPlantMaskByMeasureIDResult/">JsonIrPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrPlantMaskImageByMeasureIDResult/">JsonIrPlantMaskImageByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrPlantMaskImageResult/">JsonIrPlantMaskImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrPlantMaskResult/">JsonIrPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrPlantParamByAnalyseIDResult/">JsonIrPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrPlantParamResult/">JsonIrPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrUsedParamByAnalyseIDResult/">JsonIrUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonIrUsedParamResult/">JsonIrUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscCalibrationByLightSetIDResult/">JsonMscCalibrationByLightSetIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscCalibrationLightByIDResult/">JsonMscCalibrationLightByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscCalibrationLightResult/">JsonMscCalibrationLightResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscCalibrationResult/">JsonMscCalibrationResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscImagingByIDResult/">JsonMscImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscImagingResult/">JsonMscImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscLeafParamByAnalyseIDResult/">JsonMscLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscLeafParamResult/">JsonMscLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscLightSetResult/">JsonMscLightSetResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscLightSetUsedResult/">JsonMscLightSetUsedResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscMeasureExtendedDataByIDResult/">JsonMscMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscMeasureExtendedDataResult/">JsonMscMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscParameterImageByAnalyseIDResult/">JsonMscParameterImageByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscParameterImageResult/">JsonMscParameterImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscParamResult/">JsonMscParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscPlantMaskByMeasureIDResult/">JsonMscPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscPlantMaskResult/">JsonMscPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscPlantParamByAnalyseIDResult/">JsonMscPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscPlantParamResult/">JsonMscPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscUsedParamByAnalyseIDResult/">JsonMscUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonMscUsedParamResult/">JsonMscUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonNoteResult/">JsonNoteResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonOwnerIDResult/">JsonOwnerIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonOwnerResult/">JsonOwnerResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantByTrayIDAndDatesResult/">JsonPlantByTrayIDAndDatesResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantByTrayIDResult/">JsonPlantByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantByTrayProfileIDResult/">JsonPlantByTrayProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantHeightByRoundIDResult/">JsonPlantHeightByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantLeavesByPlantAndTrayIDResult/">JsonPlantLeavesByPlantAndTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantResult/">JsonPlantResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantWeightReferenceByPlantIDResult/">JsonPlantWeightReferenceByPlantIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantWeightReferenceByTrayIDResult/">JsonPlantWeightReferenceByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonPlantWeightReferenceByTrayIDToDateResult/">JsonPlantWeightReferenceByTrayIDToDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonProbeByIDResult/">JsonProbeByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonProbeResult/">JsonProbeResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonProbeValueByDateResult/">JsonProbeValueByDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonProbeValueByIDAndDateResult/">JsonProbeValueByIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbGreeningMaskImageByMeasureIDResult/">JsonRgbGreeningMaskImageByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbGreeningMaskImageResult/">JsonRgbGreeningMaskImageResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbImagingByIDResult/">JsonRgbImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbImagingResult/">JsonRgbImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbLeafParamByAnalyseIDResult/">JsonRgbLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbLeafParamColorByAnalyseIDResult/">JsonRgbLeafParamColorByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbLeafParamColorResult/">JsonRgbLeafParamColorResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbLeafParamResult/">JsonRgbLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbMeasureExtendedDataByIDResult/">JsonRgbMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbMeasureExtendedDataResult/">JsonRgbMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbParamResult/">JsonRgbParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbPlantMaskByMeasureIDResult/">JsonRgbPlantMaskByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbPlantMaskResult/">JsonRgbPlantMaskResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbPlantParamByAnalyseIDResult/">JsonRgbPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbPlantParamColorByAnalyseIDResult/">JsonRgbPlantParamColorByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbPlantParamColorResult/">JsonRgbPlantParamColorResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbPlantParamResult/">JsonRgbPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbUsedParamByAnalyseIDResult/">JsonRgbUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbUsedParamColorByAnalyseIDResult/">JsonRgbUsedParamColorByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbUsedParamColorResult/">JsonRgbUsedParamColorResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRgbUsedParamsResult/">JsonRgbUsedParamsResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRoundByExperimentIDAndDateResult/">JsonRoundByExperimentIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRoundByExperimentIDResult/">JsonRoundByExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRoundOrderByExperimentIDAndDateResult/">JsonRoundOrderByExperimentIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRoundOrderByExperimentIDResult/">JsonRoundOrderByExperimentIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRoundOrderResult/">JsonRoundOrderResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonRoundResult/">JsonRoundResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScalesMappingByTrayIDResult/">JsonScalesMappingByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScalesMeasureByIDResult/">JsonScalesMeasureByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScalesMeasureResult/">JsonScalesMeasureResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dAnalyzedModelByAnalyseIDResult/">JsonScan3dAnalyzedModelByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dAnalyzedModelByMeasureIDResult/">JsonScan3dAnalyzedModelByMeasureIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dAnalyzedModelResult/">JsonScan3dAnalyzedModelResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dImagingByIDResult/">JsonScan3dImagingByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dImagingResult/">JsonScan3dImagingResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dLeafParamByAnalyseIDResult/">JsonScan3dLeafParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dLeafParamResult/">JsonScan3dLeafParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dMeasureExtendedDataByIDResult/">JsonScan3dMeasureExtendedDataByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dMeasureExtendedDataResult/">JsonScan3dMeasureExtendedDataResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dParamResult/">JsonScan3dParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dPlantParamByAnalyseIDResult/">JsonScan3dPlantParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dPlantParamResult/">JsonScan3dPlantParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dUsedParamByAnalyseIDResult/">JsonScan3dUsedParamByAnalyseIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonScan3dUsedParamResult/">JsonScan3dUsedParamResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSpectrumDeviceIDResult/">JsonSpectrumDeviceIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSpectrumDeviceResult/">JsonSpectrumDeviceResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSpectrumValuesResult/">JsonSpectrumValuesResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSprayActionResult/">JsonSprayActionResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogByLogTagAndDateResult/">JsonSystemLogByLogTagAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogByLogTypeAndDateResult/">JsonSystemLogByLogTypeAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogByRoundIDAndDateResult/">JsonSystemLogByRoundIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogByRoundIDResult/">JsonSystemLogByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogByTrayIDAndDateResult/">JsonSystemLogByTrayIDAndDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogByTrayIDResult/">JsonSystemLogByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogTagResult/">JsonSystemLogTagResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemLogTypeResult/">JsonSystemLogTypeResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemProfileActiveResult/">JsonSystemProfileActiveResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemProfileIDResult/">JsonSystemProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonSystemProfileResult/">JsonSystemProfileResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayByRoundIDResult/">JsonTrayByRoundIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayProfileByIDResult/">JsonTrayProfileByIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayProfileByTrayIDResult/">JsonTrayProfileByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayProfileByTrayIDToDateResult/">JsonTrayProfileByTrayIDToDateResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayResult/">JsonTrayResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayTypeByTrayIDResult/">JsonTrayTypeByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayTypeByTrayProfileIDResult/">JsonTrayTypeByTrayProfileIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonTrayTypeResult/">JsonTrayTypeResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonUsedTrayProfileByTrayIDResult/">JsonUsedTrayProfileByTrayIDResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/JsonVersionInfoResult/">JsonVersionInfoResult</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/LeafParameter/">LeafParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/LogTag/">LogTag</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/LogType/">LogType</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/MeasureExtendedData/">MeasureExtendedData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/MscApi/">MscApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/MscCalibration/">MscCalibration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/MscCalibrationLight/">MscCalibrationLight</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/MscLightSet/">MscLightSet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Owner/">Owner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/OwnerIDWrapper/">OwnerIDWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Parameter/">Parameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ParameterImage/">ParameterImage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Plant/">Plant</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/PlantApi/">PlantApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/PlantHeight/">PlantHeight</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/PlantLeaf/">PlantLeaf</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/PlantMask/">PlantMask</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/PlantParameter/">PlantParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/PlantWeightReference/">PlantWeightReference</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Probe/">Probe</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ProbeApi/">ProbeApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ProbeValue/">ProbeValue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ProfileApi/">ProfileApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ProfileIDWrapper/">ProfileIDWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/RgbApi/">RgbApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/RgbGreeningMaskImage/">RgbGreeningMaskImage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Round/">Round</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/RoundApi/">RoundApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/RoundOrder/">RoundOrder</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ScalesApi/">ScalesApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ScalesData/">ScalesData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/ScalesMapping/">ScalesMapping</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Scan3DAnalyzedModel/">Scan3DAnalyzedModel</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Scan3dApi/">Scan3dApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Scan3DImaging/">Scan3DImaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SpectrumDevice/">SpectrumDevice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SpectrumDeviceApi/">SpectrumDeviceApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SpectrumDeviceID/">SpectrumDeviceID</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SpectrumDeviceWavelengthsJSONWrapper/">SpectrumDeviceWavelengthsJSONWrapper</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SpectrumValues/">SpectrumValues</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SprayAction/">SprayAction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SprayApi/">SprayApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/StatisticLeafParameter/">StatisticLeafParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/StatisticPlantParameter/">StatisticPlantParameter</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SystemLog/">SystemLog</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SystemLogApi/">SystemLogApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/SystemProfile/">SystemProfile</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/Tray/">Tray</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/TrayApi/">TrayApi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/TrayProfile/">TrayProfile</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/TrayType/">TrayType</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/VersionInfo/">VersionInfo</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Swagger_docs/VersionInfoApi/">VersionInfoApi</a>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -64,7 +576,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Experiment models</li>
+          <li class="breadcrumb-item">Code</li>
+          <li class="breadcrumb-item">Models</li>
+      <li class="breadcrumb-item active">experiment_models</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/wurDevTim/Documentation-Test/edit/master/docs/Code/Models/experiment_models.md">Edit on wurDevTim/Documentation-Test</a>
     </li>
@@ -131,7 +645,7 @@
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;&quot;Convert json to</span>
 
-<span class="sd">        Return</span>
+<span class="sd">        Return:</span>
 <span class="sd">            List[int]&quot;&quot;&quot;</span>
         <span class="n">_ids</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;experiment_id&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;json_experiment_id_result&quot;</span><span class="p">)]</span>
         <span class="k">return</span> <span class="n">_ids</span>
@@ -168,9 +682,11 @@
   <div class="doc doc-contents ">
   
       <p>"Convert json to</p>
-<p>Return
-    List[int]</p>
 
+<details class="return" open>
+  <summary>Return</summary>
+  <p>List[int]</p>
+</details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\models\experiment_models.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
@@ -184,7 +700,7 @@
 <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;Convert json to</span>
 
-<span class="sd">    Return</span>
+<span class="sd">    Return:</span>
 <span class="sd">        List[int]&quot;&quot;&quot;</span>
     <span class="n">_ids</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;experiment_id&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;json_experiment_id_result&quot;</span><span class="p">)]</span>
     <span class="k">return</span> <span class="n">_ids</span>
@@ -241,7 +757,7 @@
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;&quot;Convert json to</span>
 
-<span class="sd">        Return</span>
+<span class="sd">        Return:</span>
 <span class="sd">            List[int]&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;owner_id&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;json_owner_id_result&quot;</span><span class="p">)]</span>
 </code></pre></div></td></tr></table></div>
@@ -277,9 +793,11 @@
   <div class="doc doc-contents ">
   
       <p>"Convert json to</p>
-<p>Return
-    List[int]</p>
 
+<details class="return" open>
+  <summary>Return</summary>
+  <p>List[int]</p>
+</details>
           <details class="quote">
             <summary>Source code in <code>plantscreen\models\experiment_models.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
@@ -292,7 +810,7 @@
 <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;Convert json to</span>
 
-<span class="sd">    Return</span>
+<span class="sd">    Return:</span>
 <span class="sd">        List[int]&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;owner_id&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;json_owner_id_result&quot;</span><span class="p">)]</span>
 </code></pre></div></td></tr></table></div>
@@ -321,6 +839,10 @@
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../system_api/" class="btn btn-neutral float-left" title="system_api"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../profile_models/" class="btn btn-neutral float-right" title="profile_models">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -342,6 +864,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../../system_api/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../profile_models/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
