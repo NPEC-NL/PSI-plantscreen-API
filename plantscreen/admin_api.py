@@ -1,5 +1,6 @@
 import plantscreen.swagger_client as swagger_client
 import plantscreen.models as models
+from constants import REQUEST_TIMEOUT
 from io import BytesIO
 from requests import Session
 from typing import List
@@ -40,7 +41,7 @@ class AdminAPI():
 
         Return:
             List[int] """
-        api_response = self.exp_api.experiment_id()
+        api_response = self.exp_api.experiment_id(_request_timeout=REQUEST_TIMEOUT)
         return models.experiment.ExperimentIDs.from_dict(api_response.to_dict())
 
     def experiment(self, exp_id: int) -> swagger_client.Experiment:
@@ -51,7 +52,7 @@ class AdminAPI():
 
         Return:
             swagger_client.Experiment """
-        api_response = self.exp_api.experiment(exp_id)
+        api_response = self.exp_api.experiment(exp_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_experiment_result
 
     def experiment_date(self, start: str, stop: str) -> List[swagger_client.Experiment]:
@@ -65,7 +66,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Experiment] """
-        api_response = self.exp_api.experiment_date(start, stop)
+        api_response = self.exp_api.experiment_date(start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_experiment_by_date_result
 
     def experiment_owner(self, owner_id: int) -> List[swagger_client.Experiment]:
@@ -76,7 +77,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Experiment] """
-        api_response = self.exp_api.experiment_owner(owner_id)
+        api_response = self.exp_api.experiment_owner(owner_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_experiment_by_owner_result
 
     def owner_id(self) -> List[int]:
@@ -84,7 +85,7 @@ class AdminAPI():
 
         Return:
             List[int] """
-        api_response = self.exp_api.owner_id()
+        api_response = self.exp_api.owner_id(_request_timeout=REQUEST_TIMEOUT)
         return models.experiment.OwnerID.from_dict(api_response.to_dict())
 
     def owner(self, exp_ids: List[int]) -> List[swagger_client.Owner]:
@@ -95,7 +96,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Owner] """
-        api_response = self.exp_api.owner(exp_ids)
+        api_response = self.exp_api.owner(exp_ids, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_owner_result
 
     def note_experiment(self, exp_id: int) -> List[swagger_client.ExperimentNote]:
@@ -106,7 +107,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.ExperimentNote] """
-        api_response = self.exp_api.note_experiment(exp_id)
+        api_response = self.exp_api.note_experiment(exp_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_note_result
 
 # Round API
@@ -118,7 +119,7 @@ class AdminAPI():
 
         Return:
             swagger_client.Round """
-        api_response = self.round_api.round(round_id)
+        api_response = self.round_api.round(round_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_round_result
 
     def round_experiment(self, exp_id: int) -> List[swagger_client.Round]:
@@ -129,7 +130,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Round] """
-        api_response = self.round_api.round_experiment(exp_id)
+        api_response = self.round_api.round_experiment(exp_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_round_by_experiment_id_result
 
     def round_date_experiment(self, exp_id: str, start: str, stop: str) -> List[swagger_client.Round]:
@@ -143,7 +144,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Round] """
-        api_response = self.round_api.round_date_experiment(exp_id, start, stop)
+        api_response = self.round_api.round_date_experiment(exp_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_round_by_experiment_id_and_date_result
 
     def round_order_round(self, round_id: int) -> swagger_client.RoundOrder:
@@ -154,7 +155,7 @@ class AdminAPI():
 
         Return:
             swagger_client.RoundOrder """
-        api_response = self.round_api.round_order_round(round_id)
+        api_response = self.round_api.round_order_round(round_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_round_order_result
 
     def round_order_experiment(self, exp_id: int) -> List[swagger_client.RoundOrder]:
@@ -165,7 +166,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.RoundOrder] """
-        api_response = self.round_api.round_order_experiment(exp_id)
+        api_response = self.round_api.round_order_experiment(exp_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_round_order_by_experiment_id_result
 
     def round_order_date_experiment(self, exp_id: int, start: str, stop: str) -> List[swagger_client.RoundOrder]:
@@ -178,7 +179,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.RoundOrder] """
-        api_response = self.round_api.round_order_date_experiment(exp_id, start, stop)
+        api_response = self.round_api.round_order_date_experiment(exp_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_round_order_by_experiment_id_and_date_result
 
 # Action API
@@ -190,7 +191,7 @@ class AdminAPI():
 
         Return:
             swagger_client.Action """
-        api_response = self.action_api.action(action_id)
+        api_response = self.action_api.action(action_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_action_result
 
     def action_experiment(self, exp_id: int) -> List[swagger_client.Action]:
@@ -201,7 +202,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Action] """
-        api_response = self.action_api.action_experiment(exp_id)
+        api_response = self.action_api.action_experiment(exp_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_action_by_experiment_id_result
 
     def action_not_done_experiment(self, exp_id: int) -> List[swagger_client.Action]:
@@ -213,7 +214,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Action] """
-        api_response = self.action_api.action_not_done_experiment(exp_id)
+        api_response = self.action_api.action_not_done_experiment(exp_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_action_by_experiment_id_not_done_result
 
     def action_group(self, group_id: int) -> swagger_client.ActionGroup:
@@ -224,7 +225,7 @@ class AdminAPI():
 
         Return:
             swagger_client.ActionGroup """
-        api_response = self.action_api.action_group(group_id)
+        api_response = self.action_api.action_group(group_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_action_group_result
 
     def action_group_round(self, round_id: int) -> swagger_client.ActionGroup:
@@ -235,7 +236,7 @@ class AdminAPI():
 
         Return:
             swagger_client.ActionGroup """
-        api_response = self.action_api.action_group_round(round_id)
+        api_response = self.action_api.action_group_round(round_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_action_group_by_round_id_result
 
     def action_protocol(self, prot_id: int) -> swagger_client.ActionProtocol:
@@ -246,7 +247,7 @@ class AdminAPI():
 
         Return:
             swagger_client.ActionProtocol """
-        api_response = self.action_api.action_protocol(prot_id)
+        api_response = self.action_api.action_protocol(prot_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_action_protocol_result
 
     def action_protocol_round(self, round_id: int) -> swagger_client.ActionProtocol:
@@ -257,7 +258,7 @@ class AdminAPI():
 
         Return:
             swagger_client.ActionProtocol """
-        api_response = self.action_api.action_protocol_round(round_id)
+        api_response = self.action_api.action_protocol_round(round_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_action_protocol_by_round_id_result
 
 # Device API
@@ -269,7 +270,7 @@ class AdminAPI():
 
         Return:
             swagger_client.Device """
-        api_response = self.device_api.device(device_id)
+        api_response = self.device_api.device(device_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_device_result
 
     def device_active(self) -> List[swagger_client.Device]:
@@ -277,7 +278,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Device] """
-        api_response = self.device_api.device_active()
+        api_response = self.device_api.device_active(_request_timeout=REQUEST_TIMEOUT)
         return api_response.json_device_active_result
 
     def device_profile(self, prof_id: int) -> List[swagger_client.Device]:
@@ -288,7 +289,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Device] """
-        api_response = self.device_api.device_profile(prof_id)
+        api_response = self.device_api.device_profile(prof_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_device_by_profile_id_result
 
 # Profile API
@@ -297,7 +298,7 @@ class AdminAPI():
 
         Return:
             List[int] """
-        api_response = self.profile_api.profile_id()
+        api_response = self.profile_api.profile_id(_request_timeout=REQUEST_TIMEOUT)
         return models.profile_models.ProfileIDs.from_dict(api_response.to_dict())
 
     def profile(self, prof_id: int) -> swagger_client.SystemProfile:
@@ -308,7 +309,7 @@ class AdminAPI():
 
         Return:
             swagger_client.SystemProfile """
-        api_response = self.profile_api.profile(prof_id)
+        api_response = self.profile_api.profile(prof_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_profile_result
 
     def profile_active(self) -> swagger_client.SystemProfile:
@@ -316,7 +317,7 @@ class AdminAPI():
 
         Return:
             swagger_client.SystemProfile """
-        api_response = self.profile_api.profile_active()
+        api_response = self.profile_api.profile_active(_request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_profile_active_result
 
 # Tray API
@@ -328,7 +329,7 @@ class AdminAPI():
 
         Return:
             swagger_client.Tray """
-        api_response = self.tray_api.tray(tray_id)
+        api_response = self.tray_api.tray(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_result
 
     def tray_round(self, round_id: int) -> List[swagger_client.Tray]:
@@ -339,7 +340,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Tray] """
-        api_response = self.tray_api.tray_round(round_id)
+        api_response = self.tray_api.tray_round(round_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_by_round_id_result
 
     def tray_type(self, tray_id: int) -> swagger_client.TrayType:
@@ -350,7 +351,7 @@ class AdminAPI():
 
         Return:
             swagger_client.TrayType """
-        api_response = self.tray_api.tray_type(tray_id)
+        api_response = self.tray_api.tray_type(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_type_result
 
     def tray_type_tray(self, tray_id: int) -> swagger_client.TrayType:
@@ -361,7 +362,7 @@ class AdminAPI():
 
         Return:
             swagger_client.TrayType """
-        api_response = self.tray_api.tray_type_tray(tray_id)
+        api_response = self.tray_api.tray_type_tray(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_type_by_tray_id_result
 
     def tray_type_tray_profile(self, tray_prof_id: int) -> swagger_client.TrayType:
@@ -372,7 +373,7 @@ class AdminAPI():
 
         Return:
             swagger_client.TrayType """
-        api_response = self.tray_api.tray_type_tray_profile(tray_prof_id)
+        api_response = self.tray_api.tray_type_tray_profile(tray_prof_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_type_by_tray_profile_id_result
 
     def tray_profile(self, prof_id: int) -> swagger_client.TrayProfile:
@@ -383,7 +384,7 @@ class AdminAPI():
 
         Return:
             swagger_client.TrayProfile """
-        api_response = self.tray_api.tray_profile(prof_id)
+        api_response = self.tray_api.tray_profile(prof_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_profile_by_id_result
 
     def tray_profile_tray(self, tray_id: int) -> swagger_client.TrayProfile:
@@ -394,7 +395,7 @@ class AdminAPI():
 
         Return:
             swagger_client.TrayProfile """
-        api_response = self.tray_api.tray_profile_tray(tray_id)
+        api_response = self.tray_api.tray_profile_tray(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_profile_by_tray_id_result
 
     def tray_profile_used_tray(self, tray_id: int, start: str, stop: str) -> List[swagger_client.TrayProfile]:
@@ -409,7 +410,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.TrayProfile] """
-        api_response = self.tray_api.tray_profile_used_tray(tray_id, start, stop)
+        api_response = self.tray_api.tray_profile_used_tray(tray_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_used_tray_profile_by_tray_id_result
 
     def tray_profile_to_date_tray(self, tray_id: int, date: str) -> swagger_client.TrayProfile:
@@ -421,7 +422,7 @@ class AdminAPI():
 
         Return:
             swagger_client.TrayProfile """
-        api_response = self.tray_api.tray_profile_to_date_tray(tray_id, date)
+        api_response = self.tray_api.tray_profile_to_date_tray(tray_id, date, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_tray_profile_by_tray_idto_date_result
 
     def scales_mapping_tray(self, tray_id: int) -> List[swagger_client.ScalesMapping]:
@@ -434,7 +435,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.ScalesMapping] """
-        api_response = self.tray_api.scales_mapping_tray(tray_id)
+        api_response = self.tray_api.scales_mapping_tray(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_scales_mapping_by_tray_id_result
 
 # Plant API
@@ -446,7 +447,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Plant] """
-        api_response = self.plant_api.plant(plant_ids)
+        api_response = self.plant_api.plant(plant_ids, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_result
 
     def plant_tray(self, tray_id: int) -> List[swagger_client.Plant]:
@@ -457,7 +458,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Plant] """
-        api_response = self.plant_api.plant_tray(tray_id)
+        api_response = self.plant_api.plant_tray(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_by_tray_id_result
 
     def plant_tray_profile_tray(self, tray_id: int, start: str, stop: str) -> List[swagger_client.Plant]:
@@ -472,7 +473,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Plant] """
-        api_response = self.plant_api.plant_tray_profile_tray(tray_id, start, stop)
+        api_response = self.plant_api.plant_tray_profile_tray(tray_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_by_tray_id_and_dates_result
 
     def plant_tray_profile(self, tray_prof_id: int) -> List[swagger_client.Plant]:
@@ -483,7 +484,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.Plant] """
-        api_response = self.plant_api.plant_tray_profile(tray_prof_id)
+        api_response = self.plant_api.plant_tray_profile(tray_prof_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_by_tray_profile_id_result
 
     def plant_height_round(self, round_id: int) -> List[swagger_client.PlantHeight]:
@@ -494,7 +495,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.PlantHeight] """
-        api_response = self.plant_api.plant_height_round(round_id)
+        api_response = self.plant_api.plant_height_round(round_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_height_by_round_id_result
 
     def plant_leaf(self, plant_id: int, tray_id: int) -> List[swagger_client.PlantLeaf]:
@@ -506,7 +507,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.PlantLeaf] """
-        api_response = self.plant_api.plant_leaf(plant_id, tray_id)
+        api_response = self.plant_api.plant_leaf(plant_id, tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_leaves_by_plant_and_tray_id_result
 
 # Buffer API
@@ -518,7 +519,7 @@ class AdminAPI():
 
         Return:
             swagger_client.BufferHistory """
-        api_response = self.buffer_api.buffer_history(buff_id)
+        api_response = self.buffer_api.buffer_history(buff_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_buffer_history_result
 
     def buffer_history_date(self, start: str, stop: str) -> List[swagger_client.BufferHistory]:
@@ -531,7 +532,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.BufferHistory] """
-        api_response = self.buffer_api.buffer_history_date(start, stop)
+        api_response = self.buffer_api.buffer_history_date(start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_buffer_history_by_date_result
 
 # System Log API
@@ -543,7 +544,7 @@ class AdminAPI():
 
         Return:
             List[swagger_client.SystemLog] """
-        api_response = self.system_log_api.system_log_round(round_id)
+        api_response = self.system_log_api.system_log_round(round_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_by_round_id_result
 
     def system_log_date_round(self, round_id: int, start: str, stop: str) -> List[swagger_client.SystemLog]:
@@ -559,7 +560,7 @@ class AdminAPI():
         Return:
             List[swagger_client.SystemLog]
         """
-        api_response = self.system_log_api.system_log_date_round(round_id, start, stop)
+        api_response = self.system_log_api.system_log_date_round(round_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_by_round_id_and_date_result
 
     def system_log_tray(self, tray_id: int) -> List[swagger_client.SystemLog]:
@@ -572,7 +573,7 @@ class AdminAPI():
         Return:
             List[swagger_client.SystemLog]
         """
-        api_response = self.system_log_api.system_log_tray(tray_id)
+        api_response = self.system_log_api.system_log_tray(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_by_tray_id_result
 
     def system_log_date_tray(self, tray_id: int, start: str, stop: str) -> List[swagger_client.SystemLog]:
@@ -588,7 +589,7 @@ class AdminAPI():
         Return:
             List[swagger_client.SystemLog]
         """
-        api_response = self.system_log_api.system_log_date_tray(tray_id, start, stop)
+        api_response = self.system_log_api.system_log_date_tray(tray_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_by_tray_id_and_date_result
 
     def system_log_type(self) -> List[swagger_client.LogType]:
@@ -597,7 +598,7 @@ class AdminAPI():
         Return:
             List[swagger_client.LogType]
         """
-        api_response = self.system_log_api.system_log_log_type()
+        api_response = self.system_log_api.system_log_log_type(_request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_type_result
 
     def system_log_date_log_type(self, type: str, start: str, stop: str) -> List[swagger_client.SystemLog]:
@@ -612,7 +613,7 @@ class AdminAPI():
         Return:
             List[swagger_client.SystemLog]
         """
-        api_response = self.system_log_api.system_log_date_log_type(type, start, stop)
+        api_response = self.system_log_api.system_log_date_log_type(type, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_by_log_type_and_date_result
 
     def system_log_tag(self) -> List[swagger_client.LogTag]:
@@ -621,7 +622,7 @@ class AdminAPI():
         Return:
             List[swagger_client.LogTag]
         """
-        api_response = self.system_log_api.system_log_log_tag()
+        api_response = self.system_log_api.system_log_log_tag(_request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_tag_result
 
     def system_log_date_log_tag(self, tag: str, start: str, stop: str) -> List[swagger_client.SystemLog]:
@@ -635,7 +636,7 @@ class AdminAPI():
         Return:
             List[swagger_client.SystemLog]
         """
-        api_response = self.system_log_api.system_log_date_log_tag(tag, start, stop)
+        api_response = self.system_log_api.system_log_date_log_tag(tag, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_system_log_by_log_tag_and_date_result
 
 # Version Info API
@@ -645,7 +646,7 @@ class AdminAPI():
         Return:
             swagger_client.VersionInfo
         """
-        api_response = self.version_info_api.version_info()
+        api_response = self.version_info_api.version_info(_request_timeout=REQUEST_TIMEOUT)
         return api_response.json_version_info_result
 
 # File changelog
@@ -655,7 +656,7 @@ class AdminAPI():
         Return:
             string
         """
-        temp = self.file_api.file_changelog()[2:-1]
+        temp = self.file_api.file_changelog(_request_timeout=REQUEST_TIMEOUT)[2:-1]
         temp = temp.replace('\\r\\n', '\n')
         temp = temp.replace('\\t', '\t')
         return temp
@@ -672,7 +673,7 @@ class AdminAPI():
         """
         s = Session()
         data = BytesIO()
-        with s.get(f"{self._configuration_2.host}/file", params={"path": filename}, headers=None, stream=True) as resp:
+        with s.get(f"{self._configuration_2.host}/file", params={"path": filename}, headers=None, stream=True, timeout=300) as resp:
             data.write(resp.content)
         data.seek(0)
         return data

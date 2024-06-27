@@ -1,5 +1,6 @@
 import plantscreen.swagger_client as swagger_client
 import plantscreen.models as models
+from constants import REQUEST_TIMEOUT
 from typing import List
 
 
@@ -29,7 +30,7 @@ class SystemAPI():
 
         Return:
             swagger_client.Probe """
-        api_response = self.probe_api.probe()
+        api_response = self.probe_api.probe(_request_timeout=REQUEST_TIMEOUT)
         return api_response.json_probe_result
 
     def probeID(self, probe_id: int) -> swagger_client.Probe:
@@ -41,7 +42,7 @@ class SystemAPI():
 
         Return:
             swagger_client.Probe """
-        api_response = self.probe_api.probe(id=probe_id)
+        api_response = self.probe_api.probe(id=probe_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_probe_by_id_result
 
     def probe_value_date(self, start: str, stop: str) -> List[swagger_client.ProbeValue]:
@@ -54,7 +55,7 @@ class SystemAPI():
 
         Return:
             swagger_client.Probe """
-        api_response = self.probe_api.probe_value_date(start, stop)
+        api_response = self.probe_api.probe_value_date(start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_probe_value_by_date_result
 
     def probe_value_date_probe(self, probe_id: int, start: str, stop: str) -> List[swagger_client.ProbeValue]:
@@ -68,7 +69,7 @@ class SystemAPI():
 
         Return:
             swagger_client.Probe """
-        api_response = self.probe_api.probe_value_date_probe(probe_id, start, stop)
+        api_response = self.probe_api.probe_value_date_probe(probe_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_probe_value_by_id_and_date_result
 
 # Scales API
@@ -80,7 +81,7 @@ class SystemAPI():
 
         Return:
             swagger_client.ScalesData """
-        api_response = self.scales_api.scales_plant_weight_measure(id)
+        api_response = self.scales_api.scales_plant_weight_measure(meas_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_scales_measure_by_id_result
 
     def scales_plant_weight(self, device_id: int, round_id: int, tray_id: int) -> List[swagger_client.ScalesData]:
@@ -94,7 +95,7 @@ class SystemAPI():
 
         Return:
             List[swagger_client.ScalesData] """
-        api_response = self.scales_api.scales_plant_weight(device_id, round_id, tray_id)
+        api_response = self.scales_api.scales_plant_weight(device_id, round_id, tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_scales_measure_result
 
     def scales_weight_reference_plant(self, meas_id: int) -> swagger_client.PlantWeightReference:
@@ -105,7 +106,7 @@ class SystemAPI():
 
         Return:
             swagger_client.PlantWeightReference """
-        api_response = self.scales_api.scales_weight_reference_plant(meas_id)
+        api_response = self.scales_api.scales_weight_reference_plant(meas_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_weight_reference_by_plant_id_result
 
     def scales_weight_reference_tray(self, tray_id: int) -> List[swagger_client.PlantWeightReference]:
@@ -116,7 +117,7 @@ class SystemAPI():
 
         Return:
             List[swagger_client.PlantWeightReference] """
-        api_response = self.scales_api.scales_weight_reference_tray(tray_id)
+        api_response = self.scales_api.scales_weight_reference_tray(tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_weight_reference_by_tray_id_result
 
     def scales_weight_reference_to_date_tray(self, tray_id: int, date: str) -> List[swagger_client.PlantWeightReference]:
@@ -128,7 +129,7 @@ class SystemAPI():
 
         Return:
             List[swagger_client.PlantWeightReference] """
-        api_response = self.scales_api.scales_weight_reference_to_date_tray(tray_id, date)
+        api_response = self.scales_api.scales_weight_reference_to_date_tray(tray_id, date, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_plant_weight_reference_by_tray_id_to_date_result
 
 # Spray API
@@ -143,7 +144,7 @@ class SystemAPI():
 
         Return:
             swagger_client.SprayAction """
-        api_response = self.spray_api.spray_action(device_id, round_id, tray_id)
+        api_response = self.spray_api.spray_action(device_id, round_id, tray_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_spray_action_result
 
 # Spectrum Device API
@@ -152,7 +153,7 @@ class SystemAPI():
 
         Return:
             List[int] """
-        api_response = self.spectrum_device_api.spectrum_device_id()
+        api_response = self.spectrum_device_api.spectrum_device_id(_request_timeout=REQUEST_TIMEOUT)
         return models.spectrum_device.SpectrumDeviceIDs.from_dict(api_response.to_dict())
 
     def spectrum_device(self, spec_dev_id: int) -> swagger_client.SpectrumDevice:
@@ -163,7 +164,7 @@ class SystemAPI():
 
         Return:
             swagger_client.SpectrumDevice """
-        api_response = self.spectrum_device_api.spectrum_device(spec_dev_id)
+        api_response = self.spectrum_device_api.spectrum_device(spec_dev_id, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_spectrum_device_result
 
     def spectrum_values_date_device(self, spec_dev_id: int, start: str, stop: str) -> List[swagger_client.SpectrumDevice]:
@@ -176,5 +177,5 @@ class SystemAPI():
 
         Return:
             List[swagger_client.SpectrumDevice] """
-        api_response = self.spectrum_device_api.spectrum_values_date_device(spec_dev_id, start, stop)
+        api_response = self.spectrum_device_api.spectrum_values_date_device(spec_dev_id, start, stop, _request_timeout=REQUEST_TIMEOUT)
         return api_response.json_spectrum_values_result
