@@ -21,6 +21,9 @@ We, the NPEC team, believe it's a waist of everyones time if we all have to figu
 Therefore we created he swagger file and a simple python wrapper to integrate the plantscreen API.
 
 ## Installation 
+Unfortunately currently only available on test pypi, installable with:
+`python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple psi-plantscreen`
+
 `pip install psi-plantscreen `  
 Build and tested with python 3.8 on windows 10  
 Cross platform support for Linux, macOS and Windows
