@@ -1,6 +1,6 @@
 [project]
 name = "psi-plantscreen"
-version = "0.1.8"
+version = "0.2.0"
 description = "Python API implementation of PSI plantscreen API"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -28,7 +28,8 @@ dependencies = [
 "certifi", 
 "six", 
 "python_dateutil", 
-"urllib3"
+"urllib3",
+"requests"
 ]
 
 [tool.setuptools]
