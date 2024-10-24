@@ -1,6 +1,6 @@
 import plantscreen.swagger_client as swagger_client
 import plantscreen.models as models
-from constants import REQUEST_TIMEOUT
+from plantscreen.constants import REQUEST_TIMEOUT
 from io import BytesIO
 from requests import Session
 from typing import List

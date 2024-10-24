@@ -1,5 +1,5 @@
 import plantscreen.swagger_client as swagger_client
-from constants import REQUEST_TIMEOUT
+from plantscreen.constants import REQUEST_TIMEOUT
 from typing import List
 
 
