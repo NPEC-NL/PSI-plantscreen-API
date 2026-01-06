@@ -177,13 +177,13 @@
         "tags": [
           "Experiment"
         ],
-        "summary": "Returns the owner(s) of the experiment by ID.",
+        "summary": "Returns the owner(s) of the experiment by owner ID.",
         "operationId": "Owner",
         "parameters": [
           {
             "in": "query",
             "name": "ids",
-            "description": "List of experiment IDs",
+            "description": "List of Owner IDs",
             "schema": {
               "type": "array",
               "items": {
