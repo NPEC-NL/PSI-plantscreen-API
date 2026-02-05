@@ -1,0 +1,70 @@
+name: Generate Python Client from OpenAPI Spec
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'OpenAPI_Specification/PSI_plantscreen_API.json'
+      - '.github/workflows/generate-openapi-client.yml'
+
+jobs:
+  generate-client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate Python client using OpenAPI Generator
+        uses: addnab/docker-run-action@v3
+        with:
+          image: openapitools/openapi-generator-cli
+          options: -v ${{ github.workspace }}:/local
+          run: >
+            openapi-generator-cli generate \
+              -i /local/OpenAPI_Specification/PSI_plantscreen_API.json \
+              -g python \
+              -o /local/build \
+              --additional-properties=packageName=plantscreen
+
+      - name: Copy generated code to /plantscreen
+        run: |
+          if [ -d build/plantscreen ]; then
+            rm -rf plantscreen/
+            mkdir -p plantscreen
+            cp -r build/plantscreen/* plantscreen/
+          fi
+
+      - name: Copy generated docs to /docs/docs
+        run: |
+          if [ -d build/docs ]; then
+            rm -rf docs/
+            mkdir -p docs
+            mkdir -p docs/docs
+            cp -r build/docs/* docs/docs/
+          fi
+
+      - name: copy README to docs section
+        run: |
+          cp README.md docs/README.md
+
+      - name: Copy python code to /test
+        run: |
+          if [ -d build/test ]; then
+            rm -rf test/
+            mkdir -p test
+            cp -r build/test/* test/
+          fi
+
+      - name: Commit and push generated client
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Using GITHUB_TOKEN for authentication"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs
+          git add test
+          git add plantscreen
+          git commit -m 'chore: regenerate python client from OpenAPI spec' || echo 'No changes to commit'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git push
