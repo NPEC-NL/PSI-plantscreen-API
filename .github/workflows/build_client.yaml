@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'OpenAPI_Specification/PSI_plantscreen_API.json'
+      - 'OpenAPI_specification/PSI_plantscreen_API.json'
       - '.github/workflows/generate-openapi-client.yml'
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
           options: -v ${{ github.workspace }}:/local
           run: >
             openapi-generator-cli generate \
-              -i /local/OpenAPI_Specification/PSI_plantscreen_API.json \
+              -i /local/OpenAPI_specification/PSI_plantscreen_API.json \
               -g python \
               -o /local/build \
               --additional-properties=packageName=plantscreen
