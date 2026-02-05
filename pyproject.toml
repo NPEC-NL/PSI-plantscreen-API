@@ -1,14 +1,15 @@
 [project]
 name = "psi-plantscreen"
-version = "0.2.1"
 description = "Python API implementation of PSI plantscreen API"
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = ["PSI", "plantscreen", "API"]
 license = {file = "LICENSE.txt"}
 maintainers = [
-  {name = "NPEC WUR"} # Optional
+  {name = "NPEC WUR"}
 ]
+
+dynamic = ["version"]
 
 classifiers = [
 'Development Status :: 3 - Alpha',
@@ -25,19 +26,44 @@ classifiers = [
 ]
 
 dependencies = [
-"certifi", 
-"six", 
-"python_dateutil", 
-"urllib3",
-"requests"
+  "certifi", 
+  "six",
+  "python_dateutil>=2.8.2",
+  "urllib3>=2.1.0,<3.0.0",
+  "pydantic>=2",
+  "typing-extensions>=4.7.1"
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=7.2.1",
+  "pytest-cov>=2.8.1",
+  "tox>=3.9.0",
+  "flake8>=4.0.0",
+  "types-python-dateutil>=2.8.19.14",
+  "mypy>=1.5"
+]
+
+build = [
+  "build >= 1.0.3",
+  "setuptools >= 21.0.0",
+  "twine >= 4.0.2",
+  "mkdocs >= 1.5.3",
+  "mkdocs-material >= 9.5.6"
 ]
 
 [tool.setuptools]
-packages = ["plantscreen", "plantscreen.models", "plantscreen.swagger_client", "plantscreen.swagger_client.api", "plantscreen.swagger_client.models"]
+packages = ["plantscreen"]
+
+[tool.setuptools_scm]
+write_to = "plantscreen/_version.py"
 
 [project.urls]
-"Homepage" = "https://github.com/wurDevTim/PSI-Plantscreen-API"
+"Homepage" = "https://github.com/NPEC-NL/PSI-Plantscreen-API"
+ 
+[tool.flake8]
+max-line-length = 100
 
 [build-system]
-requires = ["setuptools>=43.0.0", "wheel"]
+requires = ["setuptools>=45", "setuptools-scm[toml]>=6.2", "wheel"]
 build-backend = "setuptools.build_meta"
