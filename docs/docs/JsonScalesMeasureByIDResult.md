@@ -1,0 +1,29 @@
+# JsonScalesMeasureByIDResult
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**json_scales_measure_by_id_result** | [**ScalesData**](ScalesData.md) |  | [optional] 
+
+## Example
+
+```python
+from plantscreen.models.json_scales_measure_by_id_result import JsonScalesMeasureByIDResult
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of JsonScalesMeasureByIDResult from a JSON string
+json_scales_measure_by_id_result_instance = JsonScalesMeasureByIDResult.from_json(json)
+# print the JSON string representation of the object
+print(JsonScalesMeasureByIDResult.to_json())
+
+# convert the object into a dict
+json_scales_measure_by_id_result_dict = json_scales_measure_by_id_result_instance.to_dict()
+# create an instance of JsonScalesMeasureByIDResult from a dict
+json_scales_measure_by_id_result_from_dict = JsonScalesMeasureByIDResult.from_dict(json_scales_measure_by_id_result_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

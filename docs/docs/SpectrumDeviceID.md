@@ -1,0 +1,29 @@
+# SpectrumDeviceID
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**spectrum_device_id** | **int** |  | [optional] 
+
+## Example
+
+```python
+from plantscreen.models.spectrum_device_id import SpectrumDeviceID
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of SpectrumDeviceID from a JSON string
+spectrum_device_id_instance = SpectrumDeviceID.from_json(json)
+# print the JSON string representation of the object
+print(SpectrumDeviceID.to_json())
+
+# convert the object into a dict
+spectrum_device_id_dict = spectrum_device_id_instance.to_dict()
+# create an instance of SpectrumDeviceID from a dict
+spectrum_device_id_from_dict = SpectrumDeviceID.from_dict(spectrum_device_id_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

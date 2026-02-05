@@ -1,0 +1,32 @@
+# ScalesMapping
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**map_area** | **str** |  | [optional] 
+**map_column** | **int** |  | [optional] 
+**map_row** | **int** |  | [optional] 
+**tray_type_id** | **int** |  | [optional] 
+
+## Example
+
+```python
+from plantscreen.models.scales_mapping import ScalesMapping
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ScalesMapping from a JSON string
+scales_mapping_instance = ScalesMapping.from_json(json)
+# print the JSON string representation of the object
+print(ScalesMapping.to_json())
+
+# convert the object into a dict
+scales_mapping_dict = scales_mapping_instance.to_dict()
+# create an instance of ScalesMapping from a dict
+scales_mapping_from_dict = ScalesMapping.from_dict(scales_mapping_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
