@@ -6383,13 +6383,16 @@
               "application/json": {
                 "schema": {
                   "oneOf": [
-                    {
-                      "$ref": "#/components/schemas/JsonProbeResult"
-                    },
-                    {
-                      "$ref": "#/components/schemas/JsonProbeByIDResult"
+                    { "$ref": "#/components/schemas/JsonProbeResult" },
+                    { "$ref": "#/components/schemas/JsonProbeByIDResult" }
+                  ],
+                  "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                      "JsonProbeResult": "#/components/schemas/JsonProbeResult",
+                      "JsonProbeByIDResult": "#/components/schemas/JsonProbeByIDResult"
                     }
-                  ]
+                  }
                 }
               }
             }
