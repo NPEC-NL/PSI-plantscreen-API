@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json_hc_parameter_image_by_analyse_id_result** | [**List[ParameterImage]**](ParameterImage.md) |  | [optional] 
+**json_hc_parameter_image_by_analyse_id_result** | [**ParameterImage**](ParameterImage.md) |  | [optional] 
 
 ## Example
 

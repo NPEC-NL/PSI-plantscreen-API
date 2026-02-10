@@ -28,7 +28,7 @@ class JsonHcParameterImageByAnalyseIDResult(BaseModel):
     """
     JsonHcParameterImageByAnalyseIDResult
     """ # noqa: E501
-    json_hc_parameter_image_by_analyse_id_result: Optional[List[ParameterImage]] = Field(default=None, alias="JsonHcParameterImageByAnalyseIDResult")
+    json_hc_parameter_image_by_analyse_id_result: Optional[ParameterImage] = Field(default=None, alias="JsonHcParameterImageByAnalyseIDResult")
     __properties: ClassVar[List[str]] = ["JsonHcParameterImageByAnalyseIDResult"]
 
     model_config = ConfigDict(
@@ -70,13 +70,9 @@ class JsonHcParameterImageByAnalyseIDResult(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in json_hc_parameter_image_by_analyse_id_result (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of json_hc_parameter_image_by_analyse_id_result
         if self.json_hc_parameter_image_by_analyse_id_result:
-            for _item_json_hc_parameter_image_by_analyse_id_result in self.json_hc_parameter_image_by_analyse_id_result:
-                if _item_json_hc_parameter_image_by_analyse_id_result:
-                    _items.append(_item_json_hc_parameter_image_by_analyse_id_result.to_dict())
-            _dict['JsonHcParameterImageByAnalyseIDResult'] = _items
+            _dict['JsonHcParameterImageByAnalyseIDResult'] = self.json_hc_parameter_image_by_analyse_id_result.to_dict()
         return _dict
 
     @classmethod
@@ -89,7 +85,7 @@ class JsonHcParameterImageByAnalyseIDResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "JsonHcParameterImageByAnalyseIDResult": [ParameterImage.from_dict(_item) for _item in obj["JsonHcParameterImageByAnalyseIDResult"]] if obj.get("JsonHcParameterImageByAnalyseIDResult") is not None else None
+            "JsonHcParameterImageByAnalyseIDResult": ParameterImage.from_dict(obj["JsonHcParameterImageByAnalyseIDResult"]) if obj.get("JsonHcParameterImageByAnalyseIDResult") is not None else None
         })
         return _obj
 

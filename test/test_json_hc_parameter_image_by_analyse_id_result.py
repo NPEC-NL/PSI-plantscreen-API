@@ -36,21 +36,19 @@ class TestJsonHcParameterImageByAnalyseIDResult(unittest.TestCase):
         model = JsonHcParameterImageByAnalyseIDResult()
         if include_optional:
             return JsonHcParameterImageByAnalyseIDResult(
-                json_hc_parameter_image_by_analyse_id_result = [
-                    plantscreen.models.parameter_image.ParameterImage(
-                        analyse_id = 56, 
-                        device_id = 56, 
-                        device_pid = '', 
-                        experiment_id = 56, 
-                        measure_angle = 56, 
-                        measure_id = 56, 
-                        parameter_id = 56, 
-                        parameter_image_path = '', 
-                        parameter_name = '', 
-                        round_id = 56, 
-                        tray_barcode = '', 
-                        tray_id = 56, )
-                    ]
+                json_hc_parameter_image_by_analyse_id_result = plantscreen.models.parameter_image.ParameterImage(
+                    analyse_id = 56, 
+                    device_id = 56, 
+                    device_pid = '', 
+                    experiment_id = 56, 
+                    measure_angle = 56, 
+                    measure_id = 56, 
+                    parameter_id = 56, 
+                    parameter_image_path = '', 
+                    parameter_name = '', 
+                    round_id = 56, 
+                    tray_barcode = '', 
+                    tray_id = 56, )
             )
         else:
             return JsonHcParameterImageByAnalyseIDResult(
