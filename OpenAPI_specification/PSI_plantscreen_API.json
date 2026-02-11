@@ -5697,7 +5697,7 @@
           "Scan3d"
         ],
         "summary": "Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.",
-        "operationId": "Scan3dAnalysedModelAnalyse",
+        "operationId": "Scan3dAnalyzedModelAnalyse",
         "parameters": [
           {
             "in": "query",
