@@ -4,19 +4,21 @@ from os import getenv
 from dotenv import load_dotenv
 from pprint import pprint
 
-from plantscreen.swagger_client.rest import ApiException
-from plantscreen.complete_api import Complete_API
+import plantscreen
+from plantscreen.rest import ApiException
 
 
 if __name__ == "__main__":
     """Ëxample implementation of all plantscreen endpoints"""
     load_dotenv()
     # Create an instance of the API class
-    api = Complete_API(getenv('URL'), getenv('PORT'))
+    api = plantscreen.CompleteAPIClient(
+            plantscreen.Configuration(host=getenv('URL'))
+        )
 
     try:
         # Returns a list of all experiment IDs in the database
-        api_response = api.experimentID()
+        api_response = api.experiment_id()
         pprint(f"Experiments list: {api_response}")
 
         # Returns one experiment by experiment ID
@@ -114,7 +116,7 @@ if __name__ == "__main__":
         ---------------------------------------------------------------------------------------------------------------------
         """
         # Returns one device by device ID
-        device = api.device(3)
+        device = api.device(11)
         pprint(f"Device: {device}")
 
         # Returns all active devices that have not ended validity
@@ -654,7 +656,7 @@ if __name__ == "__main__":
 
         # Returns 3D scanning imaging data for tray defined by tray ID, by round ID of round in which the tray was measured and by
         # device defined by device ID
-        scan3d_img = api.scan3d_imaging(1, 1, 1)
+        scan3d_img = api.scan3d(1, 1, 1)
         pprint(f"imaging information for device, Round, tray ID: {scan3d_img}")
 
         # Returns 3D scanning imaging extended data by measure ID
@@ -729,7 +731,7 @@ if __name__ == "__main__":
         pprint(f"Probe list: {api_response}")
 
         # Returns one probes by ID
-        api_response = api.probeID(5)
+        api_response = api.probe(5)
         pprint(f"Probe by ID: {api_response}")
 
         # Returns all probe values measured between times
@@ -801,23 +803,23 @@ if __name__ == "__main__":
         pprint(f"Logs for tray between {start} and {stop}: {logs}")
 
         # Returns Log types
-        log_types = api.system_log_type()
+        log_types = api.system_log_log_type()
         pprint(f"Logs types: {log_types}")
 
         # Returns Log types during period
         start = datetime.datetime(year=2023, month=9, day=1, hour=1)
         stop = datetime.datetime(year=2023, month=9, day=1, hour=2)
-        log_types = api.system_log_date_log_type(1, start, stop)
+        log_types = api.system_log_date_log_type("1", start, stop)
         pprint(f"Logs for round: {log_types}")
 
         # Returns Log tags
-        log_tags = api.system_log_tag()
+        log_tags = api.system_log_log_tag()
         pprint(f"Logs tags: {log_tags}")
 
         # Returns Log types during period
         start = datetime.datetime(year=2023, month=9, day=1, hour=1)
         stop = datetime.datetime(year=2023, month=9, day=1, hour=2)
-        log_tags = api.system_log_date_log_tag(1, start, stop)
+        log_tags = api.system_log_date_log_tag("1", start, stop)
         pprint(f"Logs for round: {log_tags}")
 
         """-----------------------------------------------------------------------------------------------------------------
@@ -829,7 +831,7 @@ if __name__ == "__main__":
         pprint(f"Version info: {api_response}")
 
         # Returns the changelog
-        string = api.changelog()
+        string = api.version_info()
         print(f"Changelog: {string}")
 
     except ApiException as e:
