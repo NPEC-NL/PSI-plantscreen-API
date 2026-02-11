@@ -64,6 +64,9 @@ write_to = "plantscreen/_version.py"
 [tool.flake8]
 max-line-length = 100
 
+[tool.ruff]
+line-length = 100
+
 [build-system]
 requires = ["setuptools>=45", "setuptools-scm[toml]>=6.2", "wheel"]
 build-backend = "setuptools.build_meta"
