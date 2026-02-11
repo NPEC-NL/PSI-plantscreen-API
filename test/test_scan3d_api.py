@@ -34,17 +34,17 @@ class TestScan3dApi(unittest.TestCase):
         """
         pass
 
-    def test_scan3d_analysed_model_analyse(self) -> None:
-        """Test case for scan3d_analysed_model_analyse
-
-        Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
-        """
-        pass
-
     def test_scan3d_analyzed_model(self) -> None:
         """Test case for scan3d_analyzed_model
 
         Returns the analyzed 3D data as a triangulated 3D model defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
+        """
+        pass
+
+    def test_scan3d_analyzed_model_analyse(self) -> None:
+        """Test case for scan3d_analyzed_model_analyse
+
+        Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
         """
         pass
 

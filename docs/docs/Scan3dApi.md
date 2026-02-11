@@ -5,8 +5,8 @@ All URIs are relative to *https://localhost:44339*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**scan3d**](Scan3dApi.md#scan3d) | **GET** /Scan3d/Imaging | Returns 3D imaging data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
-[**scan3d_analysed_model_analyse**](Scan3dApi.md#scan3d_analysed_model_analyse) | **GET** /Scan3d/AnalyzedModel/Analyse | Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
 [**scan3d_analyzed_model**](Scan3dApi.md#scan3d_analyzed_model) | **GET** /Scan3d/AnalyzedModel | Returns the analyzed 3D data as a triangulated 3D model defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
+[**scan3d_analyzed_model_analyse**](Scan3dApi.md#scan3d_analyzed_model_analyse) | **GET** /Scan3d/AnalyzedModel/Analyse | Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
 [**scan3d_analyzed_model_measure**](Scan3dApi.md#scan3d_analyzed_model_measure) | **GET** /Scan3d/AnalyzedModel/Measure | Returns the analyzed 3D data as a triangulated 3D model defined by scan 3D measure ID.
 [**scan3d_imaging_extended_data**](Scan3dApi.md#scan3d_imaging_extended_data) | **GET** /Scan3d/Imaging/ExtendedData | Returns 3D extended data for tray defined by tray ID, by round ID of round in which the tray was measured and by device defined by device ID.
 [**scan3d_imaging_extended_data_measure**](Scan3dApi.md#scan3d_imaging_extended_data_measure) | **GET** /Scan3d/Imaging/ExtendedData/Measure | Returns 3D imaging extended data by scan 3D measure ID.
@@ -90,72 +90,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **scan3d_analysed_model_analyse**
-> JsonScan3dAnalyzedModelByAnalyseIDResult scan3d_analysed_model_analyse(id)
-
-Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
-
-### Example
-
-
-```python
-import plantscreen
-from plantscreen.models.json_scan3d_analyzed_model_by_analyse_id_result import JsonScan3dAnalyzedModelByAnalyseIDResult
-from plantscreen.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://localhost:44339
-# See configuration.py for a list of all supported configuration parameters.
-configuration = plantscreen.Configuration(
-    host = "https://localhost:44339"
-)
-
-
-# Enter a context with an instance of the API client
-with plantscreen.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = plantscreen.Scan3dApi(api_client)
-    id = 56 # int | analyseID
-
-    try:
-        # Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
-        api_response = api_instance.scan3d_analysed_model_analyse(id)
-        print("The response of Scan3dApi->scan3d_analysed_model_analyse:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling Scan3dApi->scan3d_analysed_model_analyse: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| analyseID | 
-
-### Return type
-
-[**JsonScan3dAnalyzedModelByAnalyseIDResult**](JsonScan3dAnalyzedModelByAnalyseIDResult.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **scan3d_analyzed_model**
 > JsonScan3dAnalyzedModelResult scan3d_analyzed_model(device_id, round_id, tray_id)
 
@@ -208,6 +142,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JsonScan3dAnalyzedModelResult**](JsonScan3dAnalyzedModelResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **scan3d_analyzed_model_analyse**
+> JsonScan3dAnalyzedModelByAnalyseIDResult scan3d_analyzed_model_analyse(id)
+
+Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
+
+### Example
+
+
+```python
+import plantscreen
+from plantscreen.models.json_scan3d_analyzed_model_by_analyse_id_result import JsonScan3dAnalyzedModelByAnalyseIDResult
+from plantscreen.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://localhost:44339
+# See configuration.py for a list of all supported configuration parameters.
+configuration = plantscreen.Configuration(
+    host = "https://localhost:44339"
+)
+
+
+# Enter a context with an instance of the API client
+with plantscreen.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = plantscreen.Scan3dApi(api_client)
+    id = 56 # int | analyseID
+
+    try:
+        # Returns the analyzed 3D data as a triangulated 3D model defined by analyse ID.
+        api_response = api_instance.scan3d_analyzed_model_analyse(id)
+        print("The response of Scan3dApi->scan3d_analyzed_model_analyse:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling Scan3dApi->scan3d_analyzed_model_analyse: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| analyseID | 
+
+### Return type
+
+[**JsonScan3dAnalyzedModelByAnalyseIDResult**](JsonScan3dAnalyzedModelByAnalyseIDResult.md)
 
 ### Authorization
 
