@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'OpenAPI_specification/PSI_plantscreen_API.json'
+      - '.github/workflows/generate-openapi-client.yml'
 
 jobs:
   generate-client:
@@ -22,25 +23,25 @@ jobs:
             openapi-generator-cli generate \
               -i /local/OpenAPI_specification/PSI_plantscreen_API.json \
               -g python \
-              -o /local/build \
+              -o /local/generated \
               --additional-properties=packageName=plantscreen
 
       - name: Copy generated code to /plantscreen
         run: |
-          if [ -d build/plantscreen ]; then
+          if [ -d generated/plantscreen ]; then
             rm -rf plantscreen/
             mkdir -p plantscreen
-            cp -r build/plantscreen/* plantscreen/
+            cp -r generated/plantscreen/* plantscreen/
           fi
 
       - name: Copy generated docs to /docs/docs
         run: |
-          if [ -d build/docs ]; then
+          if [ -d generated/docs ]; then
             rm -rf docs/
             mkdir -p docs
             mkdir -p docs/docs
-            cp -r build/docs/* docs/docs/
-            cp build/README.md docs/plantsc_README.md
+            cp -r generated/docs/* docs/docs/
+            cp generated/README.md docs/plantsc_README.md
           fi
 
       - name: copy README to docs section
