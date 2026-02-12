@@ -19,7 +19,7 @@ def update_datetime_format(file_path):
             f.write(new_content)
         print(f"Updated datetime_format in {file_path}")
     else:
-        print("No datetime_format assignment found to update.")
+        raise Exception("No datetime_format assignment found to update.")
 
 
 update_datetime_format('plantscreen/configuration.py')

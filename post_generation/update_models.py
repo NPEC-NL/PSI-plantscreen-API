@@ -30,7 +30,7 @@ def update_fields_with_or_none(file_path, field_names):
         print(f"Updated {', '.join(updated_fields)} in {file_path}")
     else:
         not_found = [f for f in field_names if f not in updated_fields]
-        print(
+        raise Exception(
             (
                 f"No matching fields found for {', '.join(not_found)} "
                 f"in {file_path}."

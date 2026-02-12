@@ -18,7 +18,7 @@ def update_probe_api_source():
     if n > 0:
         print("Updated imports in probe_api.py")
     else:
-        print("No matching imports found in probe_api.py")
+        raise Exception("No matching imports found in probe_api.py")
 
 
     # Replace all references to Probe200Response with JsonProbeResult | JsonProbeByIDResult
@@ -26,7 +26,7 @@ def update_probe_api_source():
     if n > 0:
         print("Updated references to Probe200Response in probe_api.py")
     else:
-        print("No matching references to Probe200Response found in probe_api.py")
+        raise Exception("No matching references to Probe200Response found in probe_api.py")
 
     # Replace the response_types_map assignment block with the new logic
     pattern = re.compile(
@@ -47,7 +47,7 @@ def update_probe_api_source():
     if n > 0:
         print("Updated response_types_map assignment in probe_api.py")
     else:
-        print("No matching response_types_map assignment found in probe_api.py")
+        raise Exception("No matching response_types_map assignment found in probe_api.py")
 
     # Insert the check_resp_type method into the ProbeApi class after the init method
     lines = source_code.splitlines(keepends=True)
@@ -76,7 +76,7 @@ def update_probe_api_source():
             lines = lines[:insert_at] + probe_resp_type_check + lines[insert_at:]
             print("Inserted check_resp_type method in probe_api.py")
         else:
-            print("No __init__ method found in probe_api.py to insert check_resp_type method after.")
+            raise Exception("No __init__ method found in probe_api.py to insert check_resp_type method after.")
     else:
         print("check_resp_type method already exists in probe_api.py, skipping update to avoid overwriting existing method.")
 
@@ -100,14 +100,14 @@ def update_msc_api_source():
     if n > 0:
         print("Updated imports in msc_api.py")
     else:
-        print("No matching imports found in msc_api.py")
+        raise Exception("No matching imports found in msc_api.py")
 
     # Replace all references to MscCalibrationLight200Response with JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult
     source_code, n = re.subn(r'\bMscCalibrationLight200Response\b', 'JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult', source_code)
     if n > 0:
         print("Updated references to MscCalibrationLight200Response in msc_api.py")
     else:
-        print("No matching references to MscCalibrationLight200Response found in msc_api.py")
+        raise Exception("No matching references to MscCalibrationLight200Response found in msc_api.py")
 
     # Replace the check_resp_type method with the new logic to determine the correct response type based on the presence of specific keys in the response JSON.
     pattern = re.compile(
@@ -128,7 +128,7 @@ def update_msc_api_source():
     if n > 0:
         print("Updated check_resp_type method in msc_api.py")
     else:
-        print("No matching check_resp_type method found in msc_api.py")
+        raise Exception("No matching check_resp_type method found in msc_api.py")
 
     # Insert the check_resp_type method into the ProbeApi class after the init method
     lines = source_code.splitlines(keepends=True)
@@ -157,7 +157,7 @@ def update_msc_api_source():
             lines = lines[:insert_at] + probe_resp_type_check + lines[insert_at:]
             print("Inserted check_resp_type method in msc_api.py")
         else:
-            print("No __init__ method found in msc_api.py to insert check_resp_type method after.")
+            raise Exception("No __init__ method found in msc_api.py to insert check_resp_type method after.")
     else:
         print("check_resp_type method already exists in msc_api.py, skipping update to avoid overwriting existing method.")
 
@@ -187,7 +187,7 @@ def replace_probe_method(source: str) -> str:
     if n > 0:
         print("Updated probe method in complete_api_client.py")
     else:
-        print("No matching probe method found in complete_api_client.py")
+        raise Exception("No matching probe method found in complete_api_client.py")
     return source
 
 
@@ -213,7 +213,7 @@ def replace_msc_calibration_light_method(source: str) -> str:
     if n > 0:
         print("Updated msc_calibration_light method in complete_api_client.py")
     else:
-        print("No matching msc_calibration_light method found in complete_api_client.py")
+        raise Exception("No matching msc_calibration_light method found in complete_api_client.py")
     return source
 
 

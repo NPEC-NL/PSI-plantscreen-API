@@ -32,7 +32,7 @@ def update_experiment_id_return(content: str) -> str:
     if n > 0:
         print("Updated experiment_id method")
     else:
-        print("No matching experiment_id method found to update.")
+        raise Exception("No matching experiment_id method found to update.")
     return new_content
 
 
@@ -59,7 +59,7 @@ def update_owner_id_return(content: str) -> str:
     if n > 0:
         print("Updated owner_id method")
     else:
-        print("No matching owner_id method found to update.")
+        raise Exception("No matching owner_id method found to update.")
     return new_content
 
 
@@ -89,8 +89,9 @@ def update_profile_id_return(content: str) -> str:
     if n > 0:
         print("Updated profile_id method")
     else:
-        print("No matching profile_id method found to update.")
+        raise Exception("No matching profile_id method found to update.")
     return new_content
+
 
 # Update CompleteAPIClient
 source_file = 'plantscreen/complete_api_client.py'
