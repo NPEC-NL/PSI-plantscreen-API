@@ -38,33 +38,6 @@ class Round(BaseModel):
     round_status: Optional[StrictStr] = Field(default=None, alias="RoundStatus")
     __properties: ClassVar[List[str]] = ["ActionID", "ExperimentID", "RoundDateStart", "RoundDateStop", "RoundDone", "RoundID", "RoundProtocolPath", "RoundStatus"]
 
-    @field_validator('round_date_start')
-    def round_date_start_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
-            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
-        return value
-
-    @field_validator('round_date_stop')
-    def round_date_stop_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
-            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
-        return value
-
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
-
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -111,8 +84,8 @@ class Round(BaseModel):
         _obj = cls.model_validate({
             "ActionID": obj.get("ActionID"),
             "ExperimentID": obj.get("ExperimentID"),
-            "RoundDateStart": obj.get("RoundDateStart"),
-            "RoundDateStop": obj.get("RoundDateStop"),
+            "RoundDateStart": obj.get("RoundDateStart") or None,
+            "RoundDateStop": obj.get("RoundDateStop") or None,
             "RoundDone": obj.get("RoundDone"),
             "RoundID": obj.get("RoundID"),
             "RoundProtocolPath": obj.get("RoundProtocolPath"),

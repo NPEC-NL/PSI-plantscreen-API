@@ -47,23 +47,6 @@ class SprayAction(BaseModel):
     tray_profile_id: Optional[StrictInt] = Field(default=None, alias="TrayProfileID")
     __properties: ClassVar[List[str]] = ["ActionID", "DeviceID", "DevicePID", "ExperimentID", "LiquidAmount", "LiquidName", "PlantBarcode", "PlantID", "PlantName", "RoundID", "SprayActionDate", "SprayActionID", "SprayTime", "TrayArea", "TrayBarcode", "TrayID", "TrayProfileID"]
 
-    @field_validator('spray_action_date')
-    def spray_action_date_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
-            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
-        return value
-
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
-
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -118,9 +101,9 @@ class SprayAction(BaseModel):
             "PlantID": obj.get("PlantID"),
             "PlantName": obj.get("PlantName"),
             "RoundID": obj.get("RoundID"),
-            "SprayActionDate": obj.get("SprayActionDate"),
+            "SprayActionDate": obj.get("SprayActionDate") or None,
             "SprayActionID": obj.get("SprayActionID"),
-            "SprayTime": obj.get("SprayTime"),
+            "SprayTime": obj.get("SprayTime") or None,
             "TrayArea": obj.get("TrayArea"),
             "TrayBarcode": obj.get("TrayBarcode"),
             "TrayID": obj.get("TrayID"),

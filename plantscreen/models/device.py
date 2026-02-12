@@ -40,33 +40,6 @@ class Device(BaseModel):
     profile_id: Optional[StrictInt] = Field(default=None, alias="ProfileID")
     __properties: ClassVar[List[str]] = ["DeviceCaption", "DeviceConfig", "DeviceFamily", "DeviceID", "DeviceName", "DevicePID", "DeviceType", "DeviceValidityStart", "DeviceValidityEnd", "ProfileID"]
 
-    @field_validator('device_validity_start')
-    def device_validity_start_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
-            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
-        return value
-
-    @field_validator('device_validity_end')
-    def device_validity_end_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
-            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
-        return value
-
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
-
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -118,8 +91,8 @@ class Device(BaseModel):
             "DeviceName": obj.get("DeviceName"),
             "DevicePID": obj.get("DevicePID"),
             "DeviceType": obj.get("DeviceType"),
-            "DeviceValidityStart": obj.get("DeviceValidityStart"),
-            "DeviceValidityEnd": obj.get("DeviceValidityEnd"),
+            "DeviceValidityStart": obj.get("DeviceValidityStart") or None,
+            "DeviceValidityEnd": obj.get("DeviceValidityEnd") or None,
             "ProfileID": obj.get("ProfileID")
         })
         return _obj

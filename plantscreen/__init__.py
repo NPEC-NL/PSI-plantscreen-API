@@ -272,6 +272,7 @@ __all__ = [
     "TrayProfile",
     "TrayType",
     "VersionInfo",
+    "CompleteAPIClient",
 ]
 
 # import apis into sdk package
@@ -532,4 +533,5 @@ from plantscreen.models.tray import Tray as Tray
 from plantscreen.models.tray_profile import TrayProfile as TrayProfile
 from plantscreen.models.tray_type import TrayType as TrayType
 from plantscreen.models.version_info import VersionInfo as VersionInfo
+from plantscreen.complete_api_client import CompleteAPIClient
 

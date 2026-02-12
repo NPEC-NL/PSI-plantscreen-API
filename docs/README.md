@@ -6,8 +6,8 @@
 <img src="https://badge.fury.io/py/psi-plantscreen.svg" alt="PyPI version"/></a>
 </p>
 
-- [Documentation](https://wurDevTim.github.io/PSI-plantscreen-API/) <br>
-- [Source Code](https://github.com/wurDevTim/PSI-plantscreen-API) <br>
+- [Documentation](https://NPEC-NL.github.io/PSI-plantscreen-API/) <br>
+- [Source Code](https://github.com/NPEC-NL/PSI-Plantscreen-API) <br>
 ---
 
 Photon System Instruments (PSI) develivers equipment accross the globe. 
@@ -40,38 +40,21 @@ Examples:
 - [How to download the last 5 measurement files](https://github.com/wurDevTim/PSI-plantscreen-API/blob/main/example_usecase.py)
 
 ## Contributing
-### Build requirements:
-build >= 1.0.3
-setuptools >= 21.0.0
-twine >= 4.0.2
-mkdocs >= 1.5.3
-mkdocs-material >= 9.5.6
+
 
 
 ### Updating the swagger file
-The API is automatically generated from the [swagger file](https://github.com/wurDevTim/PSI-Fytotron-API/blob/main/swagger_file/PSI_fytotron_API.json) with the [swagger editor](https://editor.swagger.io/).
-After generation unpack the zip and move them to the following location:
-- Move The `docs` folder to: `docs/Code/Swagger_docs`
-- `REAME.md` is copied to: `docs/Code`
-- Move the code from `swagger_client` to `plantscreen/swagger_client`. 
-    - Replace all occurances of `from swagger_client` with `from plantscreen.swagger_client`
-    - When no datetimes is set, PSI returns an empty string by default. The swagger conversion throws a valueerror when it tries to convert this empty string to a datetime object. To solve this, go to `swagger_client > api_client`, the function: `__deserialize_datatime` and change the return of a ValueError to an empty string.
+The API is automatically generated from the [OpenAPI specification file](https://github.com/NPEC-NL/PSI-Fytotron-API/blob/main/OpenAPI_specification/PSI_fytotron_API.json) with the [openapi generator cli](https://github.com/OpenAPITools/openapi-generator-cli).
+The workflows automatically build the client and copy the files to the right folders.
+After this some postprocessing scripts are executed to make it work:
+1. `fix_field_validator.py` removed the field validators for datetime variables, these don't work.
+2. run `pip install .` and then use `generate_complete_api_client.py` to create a single file with all the api calls for convenience.
+3. Use `fix_one_of_calls.py` to fix the two endpoints with multiple return values. While the keyword: `oneof` is used in the specification, this does not work.
+3. Run `simplify_returns.py`, for convenience. 
+4. `update_models.py` to account for the `""` the server returns instead of `None` for missing datetime values.
+5. `update_config_file.py` to set the datetime format correct.
+6. `add_docstrings.py` can be used to add doc strings to all the functions.
 
-There are two endpoints with multiple return values. While the keyword: `oneof` is used in the swagger file we did not manage to generate this correctly in February 2024. The current solution is to update the swagger file:
-
-In swagger_client > api > probe_api.py
-Function: `probe_with_http_info` updates the call to:
-if 'id' in params:
-- response_type='JsonProbeByIDResult'
-else
-- response_type='JsonProbeByResult'
-
-In swagger_client > api > msc_api.py
-Function `msc_calibration_light_with_http_info` updates the call to:
-if 'id' in params:
-- response_type='JsonMscCalibrationLightByIDResult'
-else
-- response_type='JsonMscCalibrationLightResult'
 
 Additional notes:
 - The fileendpoints are called without the '/json' , which means they require a different url.
@@ -80,7 +63,4 @@ Additional notes:
 ### Documentation
 Build with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
-## Authors
-Tim van Daalen and Pinglin Zhang  
-NPEC  
-https://www.npec.nl/
+#
