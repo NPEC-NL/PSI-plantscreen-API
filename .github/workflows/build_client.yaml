@@ -5,7 +5,6 @@ on:
   push:
     paths:
       - 'OpenAPI_specification/PSI_plantscreen_API.json'
-      - '.github/workflows/generate-openapi-client.yml'
 
 jobs:
   generate-client:
@@ -55,6 +54,31 @@ jobs:
             mkdir -p test
             cp -r build/test/* test/
           fi
+
+      # Run post-generation scripts to fix issues in generated code
+      - name: Run fix_field_validator.py
+        run: python post_generation/fix_field_validator.py
+
+      - name: Install package in workflow
+        run: pip install .
+
+      - name: Run generate_complete_api_client.py
+        run: python post_generation/generate_complete_api_client.py      
+
+      - name: Run fix_one_of_calls.py
+        run: python post_generation/fix_one_of_calls.py 
+
+      - name: Run simplify_returns.py
+        run: python post_generation/simplify_returns.py 
+
+      - name: Run update_models.py
+        run: python post_generation/update_models.py 
+
+      - name: Run update_config_file.py
+        run: python post_generation/update_config_file.py 
+
+      - name: Run add_docstrings.py
+        run: python post_generation/add_docstrings.py 
 
       - name: Commit and push generated client
         env:
