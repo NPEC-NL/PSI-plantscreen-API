@@ -186,7 +186,7 @@ def generate_combined_api_client():
             "from plantscreen.models import "
             f"{', '.join(sorted(model_names))}"
         ),
-        '',
+        '\n',
         '',
         'class CompleteAPIClient(ApiClient):',
         '    def __init__(self, *args: Any, **kwargs: Any) -> None:',
