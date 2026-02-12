@@ -11,22 +11,31 @@ the id field from each object in the list and return that instead.
 
 def update_experiment_id_return(content: str) -> str:
     pattern = re.compile(
-        r"def experiment_id\(self, _request_timeout=None, _request_auth=None, "
-        r"_content_type=None, _headers=None, _host_index=0\):\n\s+"
-        r"result = self._ExperimentApi.experiment_id\(_request_timeout, "
-        r"_request_auth, _content_type, _headers, _host_index\)\n\s+"
-        r"return getattr\(result, \"json_experiment_id_result\", None\)"
+        (
+            r"def experiment_id\(self, _request_timeout: Optional\[Union\[float, "
+            r"Tuple\[float, float\]\]\] = None, "
+            r"_request_auth: Optional\[Dict\[str, Any\]] = None, "
+            r"_content_type: Optional\[str\] = None, "
+            r"_headers: Optional\[Dict\[str, Any\]] = None, "
+            r"_host_index: int = 0\) -> List\[ExperimentIDWrapper\]:\n"
+            r"\s+result = self\._ExperimentApi\.experiment_id\("
+            r"_request_timeout, _request_auth, _content_type, _headers, "
+            r"_host_index\)\n"
+            r"\s+return getattr\(result, \"json_experiment_id_result\", None\)"
+        )
     )
     replacement = (
-        "def experiment_id(self, _request_timeout=None, _request_auth=None, "
-        "_content_type=None, _headers=None, _host_index=0) -> list[int]:\n"
-        "        result = self._ExperimentApi.experiment_id("
-        "_request_timeout, _request_auth, _content_type, _headers, _host_index)\n"
-        "        temp = getattr(result, \"json_experiment_id_result\", None)\n"
-        "        if temp is not None:\n"
-        "            return [x.experiment_id for x in temp]\n"
-        "        else:\n"
-        "            return []"
+        'def experiment_id(self, _request_timeout: Optional[Union[float,'
+        'Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]]'
+        ' = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str,'
+        ' Any]] = None, _host_index: int = 0) -> list[int]:\n'
+        '        result = self._ExperimentApi.experiment_id('
+        '_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+        '        temp = getattr(result, \"json_experiment_id_result\", None)\n'
+        '        if temp is not None:\n'
+        '            return [x.experiment_id for x in temp]\n'
+        '        else:\n'
+        '            return []'
     )
     new_content, n = pattern.subn(replacement, content)
     if n > 0:
@@ -38,15 +47,23 @@ def update_experiment_id_return(content: str) -> str:
 
 def update_owner_id_return(content: str) -> str:
     pattern = re.compile(
-        r'def owner_id\(self, _request_timeout=None, _request_auth=None, '
-        r'_content_type=None, _headers=None, _host_index=0\):\n\s+'
-        r'result = self._ExperimentApi.owner_id\(_request_timeout, '
-        r'_request_auth, _content_type, _headers, _host_index\)\n\s+'
-        r'return getattr\(result, "json_owner_id_result", None\)'
+        (
+            r'def owner_id\(self, _request_timeout: Optional\[Union\[float, '
+            r'Tuple\[float, float\]\]\] = None, '
+            r'_request_auth: Optional\[Dict\[str, Any\]] = None, '
+            r'_content_type: Optional\[str\] = None, '
+            r'_headers: Optional\[Dict\[str, Any\]] = None, '
+            r'_host_index: int = 0\) -> List\[OwnerIDWrapper\]:\n'
+            r'\s+result = self\._ExperimentApi\.owner_id\('
+            r'_request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
+            r'\s+return getattr\(result, "json_owner_id_result", None\)'
+        )
     )
     replacement = (
-        'def owner_id(self, _request_timeout=None, _request_auth=None, '
-        '_content_type=None, _headers=None, _host_index=0) -> list[int]:\n'
+        'def owner_id(self, _request_timeout: Optional[Union[float, Tuple[float,'
+        ' float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type:'
+        ' Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index:'
+        ' int = 0) -> List[int]:\n'
         '        result = self._ExperimentApi.owner_id('
         '_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
         '        temp = getattr(result, "json_owner_id_result", None)\n'
@@ -67,16 +84,22 @@ def update_profile_id_return(content: str) -> str:
     import re
     pattern = re.compile(
         (
-            r'def profile_id\(self, _request_timeout=None, _request_auth=None, '
-            r'_content_type=None, _headers=None, _host_index=0\):\n\s+'
-            r'result = self._ProfileApi.profile_id\(_request_timeout, _request_auth, '
-            r'_content_type, _headers, _host_index\)\n\s+'
-            r'return getattr\(result, "json_system_profile_id_result", None\)'
+            r'def profile_id\(self, _request_timeout: Optional\[Union\[float, '
+            r'Tuple\[float, float\]\]\] = None, '
+            r'_request_auth: Optional\[Dict\[str, Any\]] = None, '
+            r'_content_type: Optional\[str\] = None, '
+            r'_headers: Optional\[Dict\[str, Any\]] = None, '
+            r'_host_index: int = 0\) -> List\[ProfileIDWrapper\]:\n'
+            r'\s+result = self\._ProfileApi\.profile_id\(_request_timeout, '
+            r'_request_auth, _content_type, _headers, _host_index\)\n'
+            r'\s+return getattr\(result, "json_system_profile_id_result", None\)'
         )
     )
     replacement = (
-        'def profile_id(self, _request_timeout=None, _request_auth=None, '
-        '_content_type=None, _headers=None, _host_index=0) -> list[int]:\n'
+        'def profile_id(self, _request_timeout: Optional[Union[float, Tuple[float,'
+        ' float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: '
+        'Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: '
+        'int = 0) -> list[int]:\n'
         '        result = self._ProfileApi.profile_id('
         '_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
         '        temp = getattr(result, "json_system_profile_id_result", None)\n'
