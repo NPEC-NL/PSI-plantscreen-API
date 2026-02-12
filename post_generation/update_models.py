@@ -40,8 +40,14 @@ def update_fields_with_or_none(file_path, field_names):
 
 update_fields_with_or_none(
     'plantscreen/models/action.py',
-    ['ActionDateStart', 'ProtocolDateChanged']
+    ['ActionDateStart']
 )
+
+update_fields_with_or_none(
+    'plantscreen/models/action_protocol.py',
+    ['ProtocolDateChanged']
+)
+
 update_fields_with_or_none(
     'plantscreen/models/device.py',
     ['DeviceValidityStart', 'DeviceValidityEnd']
