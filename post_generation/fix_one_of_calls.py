@@ -170,12 +170,13 @@ def replace_probe_method(source: str) -> str:
     Replaces the probe() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'def probe\(self, id=None, _request_timeout=None, _request_auth=None, _content_type=None, _headers=None, _host_index=0\):\n'
-        r'(?:\s+.+\n){1,3}?\s+return getattr\(result, "oneof_schema_1_validator", None\)',
+        r'def probe\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\) -> JsonProbeResult:\n'
+        r'\s+result = self\._ProbeApi\.probe\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
+        r'\s+return getattr\(result, "oneof_schema_1_validator", None\)',
         re.MULTILINE
     )
     replacement = (
-        'def probe(self, id=None, _request_timeout=None, _request_auth=None, _content_type=None, _headers=None, _host_index=0):\n'
+        'def probe(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> Probe:\n'
         '        result = self._ProbeApi.probe(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
         '        value = getattr(result, "json_probe_result", None)\n'
         '        if value is None:\n'
@@ -195,12 +196,13 @@ def replace_msc_calibration_light_method(source: str) -> str:
     Replaces the msc_calibration_light() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'def msc_calibration_light\(self, id=None, _request_timeout=None, _request_auth=None, _content_type=None, _headers=None, _host_index=0\):\n'
-        r'(?:\s+.+\n){1,3}?\s+return getattr\(result, "oneof_schema_1_validator", None\)',
+        r'def msc_calibration_light\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\) -> JsonMscCalibrationLightByIDResult:\n'
+        r'\s+result = self\._MscApi\.msc_calibration_light\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
+        r'\s+return getattr\(result, "oneof_schema_1_validator", None\)',
         re.MULTILINE
     )
     replacement = (
-        'def msc_calibration_light(self, id=None, _request_timeout=None, _request_auth=None, _content_type=None, _headers=None, _host_index=0):\n'
+        'def msc_calibration_light(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> MscCalibrationLight:\n'
         '        result = self._MscApi.msc_calibration_light(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
         '        value = getattr(result, "json_msc_calibration_light_by_id_result", None)\n'
         '        if value is None:\n'

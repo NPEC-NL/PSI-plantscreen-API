@@ -53,7 +53,7 @@ After this some postprocessing scripts are executed to make it work:
 3. Run `simplify_returns.py`, for convenience. 
 4. `update_models.py` to account for the `""` the server returns instead of `None` for missing datetime values.
 5. `update_config_file.py` to set the datetime format correct.
-
+6. `add_docstrings.py` can be used to add doc strings to all the functions.
 
 
 Additional notes:
