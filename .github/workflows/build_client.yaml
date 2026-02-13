@@ -58,7 +58,10 @@ jobs:
         run: python post_generation/fix_field_validator.py
 
       - name: Install package in workflow
-        run: pip install .
+        run: python -m pip install .
+
+      - name: Run generate_complete_api_client.py
+        run: python post_generation/generate_complete_api_client.py   
 
       - name: Commit and push generated client
         env:
