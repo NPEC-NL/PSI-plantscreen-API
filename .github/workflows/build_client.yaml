@@ -20,7 +20,7 @@ jobs:
           generator: python
           openapi-file: OpenAPI_specification/PSI_plantscreen_API.json
           output-dir: generated
-          config-file: OpenAPI_specification/api-generator-config.yaml
+          additional-properties: packageName=plantscreen
 
       - name: Copy generated code to /plantscreen
         run: |
