@@ -81,6 +81,12 @@ jobs:
       - name: Run add_docstrings.py
         run: python post_generation/add_docstrings.py 
 
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Format complete_api_client.py with ruff
+        run: ruff format plantscreen/complete_api_client.py
+
       - name: Commit and push generated client
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
