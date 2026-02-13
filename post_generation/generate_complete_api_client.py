@@ -13,6 +13,25 @@ import plantscreen.models as models_module
 
 
 OUTPUT_FILE = "plantscreen/complete_api_client.py"
+param_description_lookup = {
+    'id': 'ID of the resource.',
+    'ids': 'list of IDs of the resources.',
+    'action_id': 'ID of the action.',
+    'device_id': 'ID of the device.',
+    'experiment_id': 'ID of the experiment.',
+    'owner_id': 'ID of the owner.',
+    'param_id': 'ID of the parameter.',
+    'protocol_id': 'ID of the protocol.',
+    'round_id': 'ID of the round.',
+    'tray_id': 'ID of the tray.',
+    'start': 'Start datetime for filtering results.',
+    'stop': 'Stop datetime for filtering results.',
+    '_request_timeout': 'Timeout for the request.',
+    '_request_auth': 'Authentication info for the request.',
+    '_content_type': 'Content type for the request.',
+    '_headers': 'Additional headers for the request.',
+    '_host_index': 'Index of the host to use.',
+}
 
 # Requires plantscreen to be installed with pip!
 #  pip install .
@@ -218,6 +237,7 @@ def generate_combined_api_client():
             params = [p for p in sig.parameters.values() if p.name != 'self']
             param_defs = []
             call_args = []
+            param_doc_lines = []
 
             for p in params:
                 param_type = 'Any'
@@ -263,6 +283,13 @@ def generate_combined_api_client():
                 else:
                     param_defs.append(f"{p.name}: {param_type}")
                 call_args.append(p.name)
+
+                # Add to docstring if in lookup
+                desc = param_description_lookup.get(p.name)
+                if desc:
+                    param_doc_lines.append(f"        {p.name} ({param_type}): {desc}")
+                else:
+                    param_doc_lines.append(f"        {p.name} ({param_type}): ")
             params_str = ', '.join(param_defs)
             call_args_str = ', '.join(call_args)
             # Dynamically determine the correct json_* attribute
@@ -286,6 +313,12 @@ def generate_combined_api_client():
                 field_type_hint = unwrap_type(
                     return_type.__annotations__[json_field]
                 )
+            # Build docstring
+            docstring = None
+            if param_doc_lines:
+                docstring = [f'        """', f'        Parameters:']
+                docstring.extend(param_doc_lines)
+                docstring.append('        """')
             if json_field:
                 # Use the field's type if available, otherwise fallback to Any
                 hint = field_type_hint if field_type_hint else 'Any'
@@ -295,6 +328,8 @@ def generate_combined_api_client():
                     class_lines.append(
                         f'    def {name}(self, {params_str}) -> {hint_clean}:'
                     )
+                    if docstring:
+                        class_lines.extend(docstring)
                     class_lines.append(
                         f'        result = self._{api_cls.__name__}.{name}('
                         f'{call_args_str})'
@@ -304,14 +339,20 @@ def generate_combined_api_client():
                     )
                 else:
                     class_lines.append(f'    def {name}(self) -> {hint_clean}:')
+                    if docstring:
+                        class_lines.extend(docstring)
                     class_lines.append(f'        result = self._{api_cls.__name__}.{name}()')
                     class_lines.append(f'        return getattr(result, "{json_field}", None)')
             else:
                 if params_str:
                     class_lines.append(f'    def {name}(self, {params_str}) -> {return_type_hint}:')
+                    if docstring:
+                        class_lines.extend(docstring)
                     class_lines.append(f'        return self._{api_cls.__name__}.{name}({call_args_str})')
                 else:
                     class_lines.append(f'    def {name}(self) -> {return_type_hint}:')
+                    if docstring:
+                        class_lines.extend(docstring)
                     class_lines.append(f'        return self._{api_cls.__name__}.{name}()')
             class_lines.append('')
 
