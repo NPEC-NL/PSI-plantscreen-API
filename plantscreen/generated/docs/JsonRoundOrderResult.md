@@ -1,0 +1,29 @@
+# JsonRoundOrderResult
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**json_round_order_result** | [**RoundOrder**](RoundOrder.md) |  | [optional] 
+
+## Example
+
+```python
+from plantscreen.models.json_round_order_result import JsonRoundOrderResult
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of JsonRoundOrderResult from a JSON string
+json_round_order_result_instance = JsonRoundOrderResult.from_json(json)
+# print the JSON string representation of the object
+print(JsonRoundOrderResult.to_json())
+
+# convert the object into a dict
+json_round_order_result_dict = json_round_order_result_instance.to_dict()
+# create an instance of JsonRoundOrderResult from a dict
+json_round_order_result_from_dict = JsonRoundOrderResult.from_dict(json_round_order_result_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

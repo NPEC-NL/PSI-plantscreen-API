@@ -1,0 +1,29 @@
+# JsonPlantByTrayIDResult
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**json_plant_by_tray_id_result** | [**List[Plant]**](Plant.md) |  | [optional] 
+
+## Example
+
+```python
+from plantscreen.models.json_plant_by_tray_id_result import JsonPlantByTrayIDResult
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of JsonPlantByTrayIDResult from a JSON string
+json_plant_by_tray_id_result_instance = JsonPlantByTrayIDResult.from_json(json)
+# print the JSON string representation of the object
+print(JsonPlantByTrayIDResult.to_json())
+
+# convert the object into a dict
+json_plant_by_tray_id_result_dict = json_plant_by_tray_id_result_instance.to_dict()
+# create an instance of JsonPlantByTrayIDResult from a dict
+json_plant_by_tray_id_result_from_dict = JsonPlantByTrayIDResult.from_dict(json_plant_by_tray_id_result_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
