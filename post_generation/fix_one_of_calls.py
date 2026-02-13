@@ -20,7 +20,6 @@ def update_probe_api_source():
     else:
         raise Exception("No matching imports found in probe_api.py")
 
-
     # Replace all references to Probe200Response with JsonProbeResult | JsonProbeByIDResult
     source_code, n = re.subn(r'\bProbe200Response\b', 'JsonProbeResult | JsonProbeByIDResult', source_code)
     if n > 0:
@@ -170,22 +169,27 @@ def replace_probe_method(source: str) -> str:
     Replaces the probe() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'def probe\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\) -> JsonProbeResult:\n'
-        r'\s+result = self\._ProbeApi\.probe\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
+        r'(def probe\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\) -> JsonProbeResult:\n)'
+        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)(\s+)result = self\._ProbeApi\.probe\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
         r'\s+return getattr\(result, "oneof_schema_1_validator", None\)',
         re.MULTILINE
     )
-    replacement = (
-        'def probe(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> Probe:\n'
-        '        result = self._ProbeApi.probe(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
-        '        value = getattr(result, "json_probe_result", None)\n'
-        '        if value is None:\n'
-        '            value = getattr(result, "json_probe_by_id_result", None)\n'
-        '        return value'
-    )
-    source, n = pattern.subn(replacement, source)
+
+    def repl(match):
+        funcdef = 'def probe(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> Probe:\n'
+        indent = match.group(2)
+        docstring = match.group(4) or ''
+        body = (
+            f'{indent}result = self._ProbeApi.probe(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+            f'{indent}value = getattr(result, "json_probe_result", None)\n'
+            f'{indent}if value is None:\n'
+            f'{indent}    value = getattr(result, "json_probe_by_id_result", None)\n'
+            f'{indent}return value'
+        )
+        return funcdef + (docstring if docstring else '') + body
+    source, n = pattern.subn(repl, source)
     if n > 0:
-        print("Updated probe method in complete_api_client.py")
+        print("Updated probe method in complete_api_client.py (docstring preserved if present)")
     else:
         raise Exception("No matching probe method found in complete_api_client.py")
     return source
@@ -196,22 +200,27 @@ def replace_msc_calibration_light_method(source: str) -> str:
     Replaces the msc_calibration_light() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'def msc_calibration_light\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\) -> JsonMscCalibrationLightByIDResult:\n'
-        r'\s+result = self\._MscApi\.msc_calibration_light\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
+        r'(def msc_calibration_light\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\) -> JsonMscCalibrationLightByIDResult:\n)'
+        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)(\s+)result = self\._MscApi\.msc_calibration_light\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
         r'\s+return getattr\(result, "oneof_schema_1_validator", None\)',
         re.MULTILINE
     )
-    replacement = (
-        'def msc_calibration_light(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> MscCalibrationLight:\n'
-        '        result = self._MscApi.msc_calibration_light(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
-        '        value = getattr(result, "json_msc_calibration_light_by_id_result", None)\n'
-        '        if value is None:\n'
-        '            value = getattr(result, "json_msc_calibration_light_result", None)\n'
-        '        return value'
-    )
-    source, n = pattern.subn(replacement, source)
+
+    def repl(match):
+        funcdef = 'def msc_calibration_light(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> MscCalibrationLight:\n'
+        indent = match.group(2)
+        docstring = match.group(4) or ''
+        body = (
+            f'{indent}result = self._MscApi.msc_calibration_light(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+            f'{indent}value = getattr(result, "json_msc_calibration_light_by_id_result", None)\n'
+            f'{indent}if value is None:\n'
+            f'{indent}    value = getattr(result, "json_msc_calibration_light_result", None)\n'
+            f'{indent}return value'
+        )
+        return funcdef + (docstring if docstring else '') + body
+    source, n = pattern.subn(repl, source)
     if n > 0:
-        print("Updated msc_calibration_light method in complete_api_client.py")
+        print("Updated msc_calibration_light method in complete_api_client.py (docstring preserved if present)")
     else:
         raise Exception("No matching msc_calibration_light method found in complete_api_client.py")
     return source
