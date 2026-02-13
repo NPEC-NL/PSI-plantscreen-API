@@ -14,25 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker (latest)
-        uses: docker/setup-buildx-action@v3
-
-      - name: Ensure latest Docker client
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-ce docker-ce-cli
-
       - name: Generate Python client using OpenAPI Generator
-        uses: addnab/docker-run-action@v3
+        uses: openapitools/openapi-generator-cli-action@v1
         with:
-          image: openapitools/openapi-generator-cli
-          options: -v ${{ github.workspace }}:/local
-          run: >
-            openapi-generator-cli generate \
-              -i /local/OpenAPI_specification/PSI_plantscreen_API.json \
-              -g python \
-              -o /local/generated \
-              --additional-properties=packageName=plantscreen
+          generator: python
+          input-spec: OpenAPI_specification/PSI_plantscreen_API.json
+          output: generated
+          additional-properties: packageName=plantscreen
 
       - name: Copy generated code to /plantscreen
         run: |
