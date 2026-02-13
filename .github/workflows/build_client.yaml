@@ -19,8 +19,9 @@ jobs:
         with:
           generator: python
           openapi-file: OpenAPI_specification/PSI_plantscreen_API.json
-          output-dir: generated
-          additional-properties: packageName=plantscreen
+          command-args: >-
+            -o generated
+            --additional-properties=packageName=plantscreen
 
       - name: Copy generated code to /plantscreen
         run: |
