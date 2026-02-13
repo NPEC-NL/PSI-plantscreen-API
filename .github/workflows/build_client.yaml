@@ -34,8 +34,7 @@ jobs:
       - name: Copy generated docs to /docs/docs
         run: |
           if [ -d generated/docs ]; then
-            rm -rf docs/
-            mkdir -p docs
+            rm -rf docs/docs
             mkdir -p docs/docs
             cp -r generated/docs/* docs/docs/
             cp generated/README.md docs/plantsc_README.md
@@ -80,7 +79,7 @@ jobs:
 
       - name: Format complete_api_client.py with ruff
         run: ruff format plantscreen/complete_api_client.py
-        
+
       - name: Commit and push generated client
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
