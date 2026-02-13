@@ -27,7 +27,7 @@ jobs:
           if [ -d generated/plantscreen ]; then
             rm -rf plantscreen/
             mkdir -p plantscreen
-            cp -r generated/plantscreen/* plantscreen/
+            cp -r generated/ plantscreen/
           fi
 
       - name: Copy generated docs to /docs/docs
