@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate Python client using OpenAPI Generator
-        uses: openapi-generators/openapi-generator-cli-action@v1
+        uses: openapi-generators/openapi-generator-cli@v1
         with:
           generator: python
           input-spec: OpenAPI_specification/PSI_plantscreen_API.json
