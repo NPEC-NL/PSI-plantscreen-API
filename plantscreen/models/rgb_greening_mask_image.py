@@ -92,7 +92,7 @@ class RgbGreeningMaskImage(BaseModel):
             "DevicePID": obj.get("DevicePID"),
             "ExperimentID": obj.get("ExperimentID"),
             "MeasureAngle": obj.get("MeasureAngle"),
-            "MeasureDate": obj.get("MeasureDate"),
+            "MeasureDate": obj.get("MeasureDate") or None,
             "MeasureHeight": obj.get("MeasureHeight"),
             "MeasureID": obj.get("MeasureID"),
             "RoundID": obj.get("RoundID"),

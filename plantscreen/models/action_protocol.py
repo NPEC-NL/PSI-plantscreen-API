@@ -83,7 +83,7 @@ class ActionProtocol(BaseModel):
             "ActionID": obj.get("ActionID"),
             "ExperimentID": obj.get("ExperimentID"),
             "ProtocolBody": obj.get("ProtocolBody"),
-            "ProtocolDateChanged": obj.get("ProtocolDateChanged"),
+            "ProtocolDateChanged": obj.get("ProtocolDateChanged") or None,
             "ProtocolID": obj.get("ProtocolID"),
             "RoundID": obj.get("RoundID")
         })
