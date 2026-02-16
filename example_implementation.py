@@ -12,9 +12,7 @@ if __name__ == "__main__":
     """Ëxample implementation of all plantscreen endpoints"""
     load_dotenv()
     # Create an instance of the API class
-    api = plantscreen.CompleteAPIClient(
-            plantscreen.Configuration(host=getenv('URL'))
-        )
+    api = plantscreen.CompleteAPIClient(getenv('URL'))
 
     try:
         # Returns a list of all experiment IDs in the database

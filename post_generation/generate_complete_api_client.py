@@ -198,6 +198,7 @@ def generate_combined_api_client():
         'Auto-generated API client wrapper with direct methods for all endpoints.',
         '"""',
         'from plantscreen.api_client import ApiClient',
+        'from plantscreen.configuration import Configuration',
         'import plantscreen.api as api_module',
         'from typing import Any, Optional, Union, Tuple, List, Dict',
         'from datetime import datetime',
@@ -208,8 +209,9 @@ def generate_combined_api_client():
         '\n',
         '',
         'class CompleteAPIClient(ApiClient):',
-        '    def __init__(self, *args: Any, **kwargs: Any) -> None:',
-        '        super().__init__(*args, **kwargs)',
+        '    def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:',
+        '        self.url = url + "/RestService"',
+        '        super().__init__(Configuration(host=self.url + "/json"), *args, **kwargs)',
     ]
 
     # Find all API classes

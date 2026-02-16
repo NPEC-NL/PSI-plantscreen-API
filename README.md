@@ -29,7 +29,7 @@ Unfortunately currently only available on test pypi, installable with:
 ## Example implementation
 Uses a .env file with the following fields:
 ```
-URL: "http://<url>:<poort>/RestService/json"
+URL: "http://<ip-address>:<poort>"
 ```
 The environment files have one additional depency: `pip install python-dotenv`
 Examples:
