@@ -247,7 +247,6 @@ def generate_combined_api_client():
                 else:
                     # Try to infer from docstring
                     doc = method.__doc__ or ''
-                    import re
                     doc_match = re.search(rf'{p.name}\s*\(([^)]+)\)', doc)
                     if doc_match:
                         doc_type = doc_match.group(1).strip()
@@ -316,8 +315,10 @@ def generate_combined_api_client():
             # Build docstring
             docstring = None
             if param_doc_lines:
-                docstring = [f'        """', f'        Parameters:']
-                docstring.extend(param_doc_lines)
+                docstring = [f'        """', f'        Args:']
+                docstring.extend([f'            {line.strip()}' for line in param_doc_lines])
+                docstring.append(f'        Returns:')
+                docstring.append(f'            {clean_optional(field_type_hint) if json_field else return_type_hint}')
                 docstring.append('        """')
             if json_field:
                 # Use the field's type if available, otherwise fallback to Any

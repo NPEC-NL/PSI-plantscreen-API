@@ -39,6 +39,11 @@ def update_experiment_id_return(content: str) -> str:
         )
         docstring = match.group(1) or ''
         indent = match.group(2)
+        if docstring:
+            docstring = re.sub(r'Returns:\n\s*List\[.*?\]: Model class instance\.',
+                               f'Returns:\n{indent}    List[int]: list of ids.',
+                               docstring
+            )
         body = (
             f'{indent}result = self._ExperimentApi.experiment_id(_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
             f'{indent}temp = getattr(result, "json_experiment_id_result", None)\n'
@@ -86,6 +91,11 @@ def update_owner_id_return(content: str) -> str:
         )
         docstring = match.group(1) or ''
         indent = match.group(2)
+        if docstring:
+            docstring = re.sub(r'Returns:\n\s*List\[.*?\]: Model class instance\.',
+                               f'Returns:\n{indent}    List[int]: list of ids.',
+                               docstring
+            )
         body = (
             f'{indent}result = self._ExperimentApi.owner_id(_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
             f'{indent}temp = getattr(result, "json_owner_id_result", None)\n'
@@ -133,6 +143,11 @@ def update_profile_id_return(content: str) -> str:
         )
         docstring = match.group(1) or ''
         indent = match.group(2)
+        if docstring:
+            docstring = re.sub(r'Returns:\n\s*List\[.*?\]: Model class instance\.',
+                               f'Returns:\n{indent}    List[int]: list of ids.',
+                               docstring
+            )
         body = (
             f'{indent}result = self._ProfileApi.profile_id(_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
             f'{indent}temp = getattr(result, "json_system_profile_id_result", None)\n'

@@ -13,7 +13,7 @@ def update_generated_md_files(directory):
         r" ?"
         r"\[\[Back to Model list\]\]\(\.\./README.md#documentation-for-models\)"
     )
-    replacement = '[Back to API Endpoints](../API_endpoints.md) [Back to Models](../models.md)'
+    replacement = '[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md)'
     for root, _, files in os.walk(directory):
         for file in files:
             if file.endswith('.md'):
