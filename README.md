@@ -25,25 +25,42 @@ Unfortunately currently only available on test pypi, installable with:
 `python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple psi-plantscreen`
 
 `pip install psi-plantscreen `  
-Build and tested with python 3.8 on windows 10  
-Cross platform support for Linux, macOS and Windows
 
 ## Example implementation
 Uses a .env file with the following fields:
 ```
-URL: <The url or ip-address of your plantscreen machine >
-PORT: <Poort on which the plantscreen API is available>
+URL: "http://<url>:<poort>/RestService/json"
 ```
 The environment files have one additional depency: `pip install python-dotenv`
 Examples:
-- [Calls to all endpoints](https://github.com/wurDevTim/PSI-plantscreen-API/blob/main/example_implementation.py)
-- [How to download the last 5 measurement files](https://github.com/wurDevTim/PSI-plantscreen-API/blob/main/example_usecase.py)
+- [Calls to all endpoints](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_implementation.py)
+- [How to download the last 5 measurement files](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py)
 
 ## Contributing
+We welcome contributions! 
+If you encounter bugs, have feature requests, or want to suggest improvements, please [create an issue](https://github.com/NPEC-NL/PSI-plantscreen-API/issues) and provide a clear description.
+
+### Setting up a Development Environment
+Requires Python 3.9+
+1. **Create a virtual environment (venv):**
+	```sh
+	python -m venv .venv
+	```
+2. **Activate the venv:**
+	- On Windows:
+	  ```sh
+	  .venv\Scripts\activate
+	  ```
+	- On macOS/Linux:
+	  ```sh
+	  source .venv/bin/activate
+	  ```
+3. **Install the package with build and test dependencies:**
+	```sh
+	pip install .[build, test]
 
 
-
-### Updating the swagger file
+### Updating the OpenAPI specification file
 The API is automatically generated from the [OpenAPI specification file](https://github.com/NPEC-NL/PSI-Fytotron-API/blob/main/OpenAPI_specification/PSI_fytotron_API.json) with the [openapi generator cli](https://github.com/OpenAPITools/openapi-generator-cli).
 The workflows automatically build the client and copy the files to the right folders.
 After this some postprocessing scripts are executed to make it work:
@@ -63,4 +80,9 @@ Additional notes:
 ### Documentation
 Build with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
-#
+Note, the docs pages will unfortunately not be available untill this repo is made public.
+- [complete api](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/CompleteAPIClient.md)
+- [API Endpoints](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/API_endpoints.md)
+- [Models](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/models.md)
+- [example implementations](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_implementation.py)
+- [example usecase](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py)
