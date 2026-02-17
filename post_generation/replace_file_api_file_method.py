@@ -1,7 +1,7 @@
 import re
 
 
-NEW_METHOD = """    def file(
+NEW_METHOD = """def file(
         self,
         path: str,
         _request_timeout: float = 300,
