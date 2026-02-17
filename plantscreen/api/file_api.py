@@ -39,29 +39,30 @@ class FileApi:
         self.api_client = api_client
 
 
-    def file(
-    self,
-    path: str,
-    _request_timeout: float = 300,
-    _headers: Optional[Dict[StrictStr, Any]] = None
-) -> BytesIO:
-    """ Returns the content of a file as bytesio object
+        def file(
+        self,
+        path: str,
+        _request_timeout: float = 300,
+        _headers: Optional[Dict[StrictStr, Any]] = None
+    ) -> BytesIO:
+        """ Returns the content of a file as bytesio object
 
-    Args:
-        path (str): Path of the file to download
+        Args:
+            path (str): Path of the file to download
 
-    Return:
-        io.BytesIO
-    """
-    s = Session()
-    data = BytesIO()
-    with s.get(f"{self.api_client.configuration.host}/file", params={"path": path}, headers=_headers, stream=True, timeout=_request_timeout) as resp:
-        if resp.status_code != 200:
-            raise Exception(f"Failed to download file: {resp.status_code} {resp.reason}")
-        else:
-            data.write(resp.content)
-            data.seek(0)
-    return data
+        Return:
+            io.BytesIO
+
+        """
+        s = Session()
+        data = BytesIO()
+        with s.get(f"{self.api_client.configuration.host}/file", params={"path": path}, headers=_headers, stream=True, timeout=_request_timeout) as resp:
+            if resp.status_code != 200:
+                raise Exception(f"Failed to download file: {resp.status_code} {resp.reason}")
+            else:
+                data.write(resp.content)
+                data.seek(0)
+        return data
 
 
 
