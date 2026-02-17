@@ -2,13 +2,68 @@
 """
 Auto-generated API client wrapper with direct methods for all endpoints.
 """
+
 from plantscreen.api_client import ApiClient
 from plantscreen.configuration import Configuration
 import plantscreen.api as api_module
 from typing import Any, Optional, Union, Tuple, List, Dict
 from datetime import datetime
-from plantscreen.models import Action, ActionGroup, ActionProtocol, BufferHistory, Device, Experiment, ExperimentIDWrapper, ExperimentNote, FcImaging, HcImaging, HcRgbImage, Imaging, LeafParameter, LogTag, LogType, MeasureExtendedData, MscCalibration, MscCalibrationLight, MscCalibrationLight200Response, MscLightSet, Owner, OwnerIDWrapper, Parameter, ParameterImage, Plant, PlantHeight, PlantLeaf, PlantMask, PlantParameter, PlantWeightReference, Probe, Probe200Response, ProbeValue, ProfileIDWrapper, RgbGreeningMaskImage, Round, RoundOrder, ScalesData, ScalesMapping, Scan3DAnalyzedModel, Scan3DImaging, SpectrumDevice, SpectrumDeviceID, SpectrumDeviceWavelengthsJSONWrapper, SpectrumValues, SprayAction, StatisticLeafParameter, StatisticPlantParameter, SystemLog, SystemProfile, Tray, TrayProfile, TrayType, VersionInfo
-
+from plantscreen.models import (
+    Action,
+    ActionGroup,
+    ActionProtocol,
+    BufferHistory,
+    Device,
+    Experiment,
+    ExperimentIDWrapper,
+    ExperimentNote,
+    FcImaging,
+    HcImaging,
+    HcRgbImage,
+    Imaging,
+    LeafParameter,
+    LogTag,
+    LogType,
+    MeasureExtendedData,
+    MscCalibration,
+    MscCalibrationLight,
+    MscCalibrationLight200Response,
+    MscLightSet,
+    Owner,
+    OwnerIDWrapper,
+    Parameter,
+    ParameterImage,
+    Plant,
+    PlantHeight,
+    PlantLeaf,
+    PlantMask,
+    PlantParameter,
+    PlantWeightReference,
+    Probe,
+    Probe200Response,
+    ProbeValue,
+    ProfileIDWrapper,
+    RgbGreeningMaskImage,
+    Round,
+    RoundOrder,
+    ScalesData,
+    ScalesMapping,
+    Scan3DAnalyzedModel,
+    Scan3DImaging,
+    SpectrumDevice,
+    SpectrumDeviceID,
+    SpectrumDeviceWavelengthsJSONWrapper,
+    SpectrumValues,
+    SprayAction,
+    StatisticLeafParameter,
+    StatisticPlantParameter,
+    SystemLog,
+    SystemProfile,
+    Tray,
+    TrayProfile,
+    TrayType,
+    VersionInfo,
+)
 
 
 class CompleteAPIClient(ApiClient):
@@ -239,7 +294,9 @@ class CompleteAPIClient(ApiClient):
         result = self._FcApi.fc_imaging(device_id, round_id, tray_id)
         return getattr(result, "json_fc_imaging_result", None)
 
-    def fc_imaging_extended_data(self, device_id: int, round_id: int, tray_id: int) -> MeasureExtendedData:
+    def fc_imaging_extended_data(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> MeasureExtendedData:
         """
         Args:
             device_id (int): ID of the device.
@@ -271,7 +328,9 @@ class CompleteAPIClient(ApiClient):
         result = self._FcApi.fc_imaging_measure(id)
         return getattr(result, "json_fc_imaging_by_id_result", None)
 
-    def fc_leaf_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[LeafParameter]:
+    def fc_leaf_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[LeafParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -305,7 +364,9 @@ class CompleteAPIClient(ApiClient):
         result = self._FcApi.fc_param(id)
         return getattr(result, "json_fc_param_result", None)
 
-    def fc_param_image(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[ParameterImage]:
+    def fc_param_image(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[ParameterImage]:
         """
         Args:
             device_id (int): ID of the device.
@@ -373,7 +434,9 @@ class CompleteAPIClient(ApiClient):
         result = self._FcApi.fc_plant_mask_measure(id)
         return getattr(result, "json_fc_plant_mask_by_measure_id_result", None)
 
-    def fc_plant_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[PlantParameter]:
+    def fc_plant_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[PlantParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -421,7 +484,9 @@ class CompleteAPIClient(ApiClient):
         result = self._HcApi.hc_imaging(device_id, round_id, tray_id)
         return getattr(result, "json_hc_imaging_result", None)
 
-    def hc_imaging_extended_data(self, device_id: int, round_id: int, tray_id: int) -> MeasureExtendedData:
+    def hc_imaging_extended_data(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> MeasureExtendedData:
         """
         Args:
             device_id (int): ID of the device.
@@ -453,7 +518,9 @@ class CompleteAPIClient(ApiClient):
         result = self._HcApi.hc_imaging_measure(id)
         return getattr(result, "json_hc_imaging_by_id_result", None)
 
-    def hc_leaf_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[StatisticLeafParameter]:
+    def hc_leaf_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[StatisticLeafParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -487,7 +554,9 @@ class CompleteAPIClient(ApiClient):
         result = self._HcApi.hc_param(id)
         return getattr(result, "json_hc_param_result", None)
 
-    def hc_param_image(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[ParameterImage]:
+    def hc_param_image(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[ParameterImage]:
         """
         Args:
             device_id (int): ID of the device.
@@ -555,7 +624,9 @@ class CompleteAPIClient(ApiClient):
         result = self._HcApi.hc_plant_mask_measure(id)
         return getattr(result, "json_hc_plant_mask_by_measure_id_result", None)
 
-    def hc_plant_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[StatisticPlantParameter]:
+    def hc_plant_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[StatisticPlantParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -613,7 +684,9 @@ class CompleteAPIClient(ApiClient):
         result = self._IrApi.ir_imaging(device_id, round_id, tray_id)
         return getattr(result, "json_ir_imaging_result", None)
 
-    def ir_imaging_extended_data(self, device_id: int, round_id: int, tray_id: int) -> MeasureExtendedData:
+    def ir_imaging_extended_data(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> MeasureExtendedData:
         """
         Args:
             device_id (int): ID of the device.
@@ -645,7 +718,9 @@ class CompleteAPIClient(ApiClient):
         result = self._IrApi.ir_imaging_measure(id)
         return getattr(result, "json_ir_imaging_by_id_result", None)
 
-    def ir_leaf_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[StatisticLeafParameter]:
+    def ir_leaf_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[StatisticLeafParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -745,7 +820,9 @@ class CompleteAPIClient(ApiClient):
         result = self._IrApi.ir_plant_mask_measure(id)
         return getattr(result, "json_ir_plant_mask_by_measure_id_result", None)
 
-    def ir_plant_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[StatisticPlantParameter]:
+    def ir_plant_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[StatisticPlantParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -780,17 +857,17 @@ class CompleteAPIClient(ApiClient):
         return getattr(result, "json_msc_calibration_result", None)
 
     def msc_calibration_light(self, id: Optional[int] = None) -> MscCalibrationLight:
-    """
-    Args:
-        id (Optional[int]): ID of the resource.
-    Returns:
-        MscCalibrationLight
-    """
-    result = self._MscApi.msc_calibration_light(id)
-    value = getattr(result, "json_msc_calibration_light_by_id_result", None)
-    if value is None:
-        value = getattr(result, "json_msc_calibration_light_result", None)
-    return value
+        """
+        Args:
+            id (Optional[int]): ID of the resource.
+        Returns:
+            MscCalibrationLight
+        """
+        result = self._MscApi.msc_calibration_light(id)
+        value = getattr(result, "json_msc_calibration_light_by_id_result", None)
+        if value is None:
+            value = getattr(result, "json_msc_calibration_light_result", None)
+        return value
 
     def msc_calibration_light_set(self, id: int) -> MscCalibration:
         """
@@ -814,7 +891,9 @@ class CompleteAPIClient(ApiClient):
         result = self._MscApi.msc_imaging(device_id, round_id, tray_id)
         return getattr(result, "json_msc_imaging_result", None)
 
-    def msc_imaging_extended_data(self, device_id: int, round_id: int, tray_id: int) -> MeasureExtendedData:
+    def msc_imaging_extended_data(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> MeasureExtendedData:
         """
         Args:
             device_id (int): ID of the device.
@@ -846,7 +925,9 @@ class CompleteAPIClient(ApiClient):
         result = self._MscApi.msc_imaging_measure(id)
         return getattr(result, "json_msc_imaging_by_id_result", None)
 
-    def msc_leaf_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[StatisticLeafParameter]:
+    def msc_leaf_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[StatisticLeafParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -902,7 +983,9 @@ class CompleteAPIClient(ApiClient):
         result = self._MscApi.msc_param(id)
         return getattr(result, "json_msc_param_result", None)
 
-    def msc_param_image(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[ParameterImage]:
+    def msc_param_image(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[ParameterImage]:
         """
         Args:
             device_id (int): ID of the device.
@@ -970,7 +1053,9 @@ class CompleteAPIClient(ApiClient):
         result = self._MscApi.msc_plant_mask_measure(id)
         return getattr(result, "json_msc_plant_mask_by_measure_id_result", None)
 
-    def msc_plant_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[StatisticPlantParameter]:
+    def msc_plant_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[StatisticPlantParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1058,17 +1143,17 @@ class CompleteAPIClient(ApiClient):
         return getattr(result, "json_plant_by_tray_id_and_dates_result", None)
 
     def probe(self, id: int = None) -> Probe:
-    """
-    Args:
-        id (int): ID of the resource.
-    Returns:
-        Probe
-    """
-    result = self._ProbeApi.probe(id)
-    value = getattr(result, "json_probe_result", None)
-    if value is None:
-        value = getattr(result, "json_probe_by_id_result", None)
-    return value
+        """
+        Args:
+            id (int): ID of the resource.
+        Returns:
+            Probe
+        """
+        result = self._ProbeApi.probe(id)
+        value = getattr(result, "json_probe_result", None)
+        if value is None:
+            value = getattr(result, "json_probe_by_id_result", None)
+        return value
 
     def probe_value_date(self, start: datetime, stop: datetime) -> List[ProbeValue]:
         """
@@ -1119,7 +1204,9 @@ class CompleteAPIClient(ApiClient):
         else:
             return []
 
-    def rgb_greening_mask_image(self, device_id: int, round_id: int, tray_id: int) -> List[RgbGreeningMaskImage]:
+    def rgb_greening_mask_image(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> List[RgbGreeningMaskImage]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1153,7 +1240,9 @@ class CompleteAPIClient(ApiClient):
         result = self._RgbApi.rgb_imaging(device_id, round_id, tray_id)
         return getattr(result, "json_rgb_imaging_result", None)
 
-    def rgb_imaging_extended_data(self, device_id: int, round_id: int, tray_id: int) -> MeasureExtendedData:
+    def rgb_imaging_extended_data(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> MeasureExtendedData:
         """
         Args:
             device_id (int): ID of the device.
@@ -1185,7 +1274,9 @@ class CompleteAPIClient(ApiClient):
         result = self._RgbApi.rgb_imaging_measure(id)
         return getattr(result, "json_rgb_imaging_by_id_result", None)
 
-    def rgb_leaf_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[LeafParameter]:
+    def rgb_leaf_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[LeafParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1209,7 +1300,9 @@ class CompleteAPIClient(ApiClient):
         result = self._RgbApi.rgb_leaf_param_analyse(id, param_id)
         return getattr(result, "json_rgb_leaf_param_by_analyse_id_result", None)
 
-    def rgb_leaf_param_color(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[LeafParameter]:
+    def rgb_leaf_param_color(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[LeafParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1309,7 +1402,9 @@ class CompleteAPIClient(ApiClient):
         result = self._RgbApi.rgb_plant_mask_measure(id)
         return getattr(result, "json_rgb_plant_mask_by_measure_id_result", None)
 
-    def rgb_plant_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[PlantParameter]:
+    def rgb_plant_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[PlantParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1333,7 +1428,9 @@ class CompleteAPIClient(ApiClient):
         result = self._RgbApi.rgb_plant_param_analyse(id, param_id)
         return getattr(result, "json_rgb_plant_param_by_analyse_id_result", None)
 
-    def rgb_plant_param_color(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[PlantParameter]:
+    def rgb_plant_param_color(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[PlantParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1389,7 +1486,9 @@ class CompleteAPIClient(ApiClient):
         result = self._RoundApi.round_experiment(id)
         return getattr(result, "json_round_by_experiment_id_result", None)
 
-    def round_order_date_experiment(self, id: int, start: datetime, stop: datetime) -> List[RoundOrder]:
+    def round_order_date_experiment(
+        self, id: int, start: datetime, stop: datetime
+    ) -> List[RoundOrder]:
         """
         Args:
             id (int): ID of the resource.
@@ -1453,7 +1552,9 @@ class CompleteAPIClient(ApiClient):
         result = self._ScalesApi.scales_weight_reference_plant(id)
         return getattr(result, "json_plant_weight_reference_by_plant_id_result", None)
 
-    def scales_weight_reference_to_date_tray(self, id: int, var_date: datetime) -> List[PlantWeightReference]:
+    def scales_weight_reference_to_date_tray(
+        self, id: int, var_date: datetime
+    ) -> List[PlantWeightReference]:
         """
         Args:
             id (int): ID of the resource.
@@ -1486,7 +1587,9 @@ class CompleteAPIClient(ApiClient):
         result = self._Scan3dApi.scan3d(device_id, round_id, tray_id)
         return getattr(result, "json_scan3d_imaging_result", None)
 
-    def scan3d_analyzed_model(self, device_id: int, round_id: int, tray_id: int) -> List[Scan3DAnalyzedModel]:
+    def scan3d_analyzed_model(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> List[Scan3DAnalyzedModel]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1518,7 +1621,9 @@ class CompleteAPIClient(ApiClient):
         result = self._Scan3dApi.scan3d_analyzed_model_measure(id)
         return getattr(result, "json_scan3d_analyzed_model_by_measure_id_result", None)
 
-    def scan3d_imaging_extended_data(self, device_id: int, round_id: int, tray_id: int) -> MeasureExtendedData:
+    def scan3d_imaging_extended_data(
+        self, device_id: int, round_id: int, tray_id: int
+    ) -> MeasureExtendedData:
         """
         Args:
             device_id (int): ID of the device.
@@ -1550,7 +1655,9 @@ class CompleteAPIClient(ApiClient):
         result = self._Scan3dApi.scan3d_imaging_measure(id)
         return getattr(result, "json_scan3d_imaging_by_id_result", None)
 
-    def scan3d_leaf_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[LeafParameter]:
+    def scan3d_leaf_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[LeafParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1606,7 +1713,9 @@ class CompleteAPIClient(ApiClient):
         result = self._Scan3dApi.scan3d_param_used_analyse(id)
         return getattr(result, "json_scan3d_used_param_by_analyse_id_result", None)
 
-    def scan3d_plant_param(self, device_id: int, round_id: int, tray_id: int, param_id: int) -> List[PlantParameter]:
+    def scan3d_plant_param(
+        self, device_id: int, round_id: int, tray_id: int, param_id: int
+    ) -> List[PlantParameter]:
         """
         Args:
             device_id (int): ID of the device.
@@ -1644,7 +1753,9 @@ class CompleteAPIClient(ApiClient):
         result = self._SpectrumDeviceApi.spectrum_device_id()
         return getattr(result, "json_spectrum_device_id_result", None)
 
-    def spectrum_values_date_device(self, id: int, start: datetime, stop: datetime) -> List[SpectrumValues]:
+    def spectrum_values_date_device(
+        self, id: int, start: datetime, stop: datetime
+    ) -> List[SpectrumValues]:
         """
         Args:
             id (int): ID of the resource.
@@ -1680,7 +1791,9 @@ class CompleteAPIClient(ApiClient):
         result = self._SystemLogApi.system_log_date_log_tag(tag, start, stop)
         return getattr(result, "json_system_log_by_log_tag_and_date_result", None)
 
-    def system_log_date_log_type(self, type: str, start: datetime, stop: datetime) -> List[SystemLog]:
+    def system_log_date_log_type(
+        self, type: str, start: datetime, stop: datetime
+    ) -> List[SystemLog]:
         """
         Args:
             type (str):
