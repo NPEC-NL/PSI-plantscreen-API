@@ -2,58 +2,31 @@ import os
 import re
 
 
-NEW_METHOD = '''def file(self, path: str,
-                        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,) -> BytesIO:
-        """ Returns the content of a file as bytesio object
+NEW_METHOD = """    def file(
+        self,
+        path: str,
+        _request_timeout: float = 300,
+        _headers: Optional[Dict[StrictStr, Any]] = None
+    ) -> BytesIO:
+        \"\"\" Returns the content of a file as bytesio object
 
         Args:
             path (str): Path of the file to download
 
         Return:
             io.BytesIO
-        """
+
+        \"\"\"
         s = Session()
         data = BytesIO()
-        with s.get(f"{self.api_client.configuration.host}/file", params={"path": path}, headers=None, stream=True, timeout=300) as resp:
-            data.write(resp.content)
-        data.seek(0)
+        with s.get(f"{self.api_client.configuration.host}/file", params={"path": path}, headers=_headers, stream=True, timeout=_request_timeout) as resp:
+            if resp.status_code != 200:
+                raise Exception(f"Failed to download file: {resp.status_code} {resp.reason}")
+            else:
+                data.write(resp.content)
+                data.seek(0)
         return data
-'''
-NEW_METHOD = '''def file(
-    self,
-    path: str,
-    _request_timeout: float = 300,
-    _headers: Optional[Dict[StrictStr, Any]] = None
-) -> BytesIO:
-    """ Returns the content of a file as bytesio object
-
-    Args:
-        path (str): Path of the file to download
-
-    Return:
-        io.BytesIO
-    """
-    s = Session()
-    data = BytesIO()
-    with s.get(f"{self.api_client.configuration.host}/file", params={"path": path}, headers=_headers, stream=True, timeout=_request_timeout) as resp:
-        if resp.status_code != 200:
-            raise Exception(f"Failed to download file: {resp.status_code} {resp.reason}")
-        else:
-            data.write(resp.content)
-            data.seek(0)
-    return data
-'''
+"""
 
 
 def replace_file_method(target_file: str):
