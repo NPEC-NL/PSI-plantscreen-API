@@ -177,7 +177,7 @@ def replace_probe_method(source: str) -> str:
 
     def repl(match):
         funcdef = 'def probe(self, id: int = None) -> Probe:\n'
-        indent = '    '
+        indent = '        '
         docstring = (
             f'{indent}"""\n'
             f'{indent}Args:\n'
@@ -216,7 +216,7 @@ def replace_msc_calibration_light_method(source: str) -> str:
 
     def repl(match):
         funcdef = 'def msc_calibration_light(self, id: Optional[int] = None) -> MscCalibrationLight:\n'
-        indent = '    '
+        indent = '        '
         docstring = (
             f'{indent}"""\n'
             f'{indent}Args:\n'
