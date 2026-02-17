@@ -168,14 +168,15 @@ def replace_probe_method(source: str) -> str:
     Replaces the probe() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'(def probe\(self, id: Optional\[int\] = None\) -> [^:]+:\n)'
-        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)([\s\S]*?)(\s+)return self\._ProbeApi\.probe\(id\)\n',
+        r'(def probe\(self, id: Optional\[int\] = None\) -> [^\n]+:\r?\n)'
+        r'(?:[ \t]*"""[\s\S]*?"""[ \t]*\r?\n)?'  # optional docstring, any whitespace, any line ending
+        r'[ \t]*return self\._ProbeApi\.probe\(id\)[ \t]*\r?\n',
         re.MULTILINE
     )
 
     def repl(match):
         funcdef = 'def probe(self, id: int = None) -> Probe:\n'
-        indent = match.group(2)
+        indent = '    '
         docstring = (
             f'{indent}"""\n'
             f'{indent}Args:\n'
@@ -205,15 +206,15 @@ def replace_msc_calibration_light_method(source: str) -> str:
     Replaces the msc_calibration_light() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'(def msc_calibration_light\(self, id: Optional\[int\] = None\) -> [^:]+:\n)'
-        r'(\s+)(?:"""[\s\S]*?"""\n)?'  # Optional docstring
-        r'(\s*)return self\._MscApi\.msc_calibration_light\(id\)\n',
+        r'(def msc_calibration_light\(self, id: Optional\[int\] = None\) -> [^\n]+:\r?\n)'
+        r'(?:[ \t]*"""[\s\S]*?"""[ \t]*\r?\n)?'  # optional docstring, any whitespace, any line ending
+        r'[ \t]*return self\._MscApi\.msc_calibration_light\(id\)[ \t]*\r?\n',
         re.MULTILINE
     )
 
     def repl(match):
         funcdef = 'def msc_calibration_light(self, id: Optional[int] = None) -> MscCalibrationLight:\n'
-        indent = match.group(2)
+        indent = '    '
         docstring = (
             f'{indent}"""\n'
             f'{indent}Args:\n'
