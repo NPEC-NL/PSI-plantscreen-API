@@ -210,8 +210,8 @@ def generate_combined_api_client():
         '',
         'class CompleteAPIClient(ApiClient):',
         '    def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:',
-        '        self.url = url + "/RestService"',
-        '        super().__init__(Configuration(host=self.url + "/json"), *args, **kwargs)',
+        '        self.file_api = ApiClient(Configuration(host=url + "/RestService"))',
+        '        super().__init__(Configuration(host=url + "/RestService/json"), *args, **kwargs)',
     ]
 
     # Find all API classes
@@ -221,10 +221,17 @@ def generate_combined_api_client():
         if name.endswith('Api') and name[0].isupper()
     ]
     for api_cls in api_classes:
-        class_lines.append(
-            f'        self._{api_cls.__name__}: api_module.{api_cls.__name__} = '
-            f'api_module.{api_cls.__name__}(self)'
-        )
+        # File API uses a different endpoint
+        if api_cls.__name__ == 'FileApi':
+            class_lines.append(
+                f'        self._{api_cls.__name__}: api_module.{api_cls.__name__} = '
+                f'api_module.{api_cls.__name__}(self.file_api)'
+            )
+        else:
+            class_lines.append(
+                f'        self._{api_cls.__name__}: api_module.{api_cls.__name__} = '
+                f'api_module.{api_cls.__name__}(self)'
+            )
     class_lines.append('')
 
     # For each API class, add its public methods to the wrapper
@@ -241,7 +248,13 @@ def generate_combined_api_client():
             call_args = []
             param_doc_lines = []
 
+            # List of generic OpenAPI parameters to exclude
+            excluded_params = {
+                '_request_timeout', '_request_auth', '_content_type', '_headers', '_host_index'
+            }
             for p in params:
+                if p.name in excluded_params:
+                    continue
                 param_type = 'Any'
                 ann = p.annotation
                 if ann is not inspect._empty:

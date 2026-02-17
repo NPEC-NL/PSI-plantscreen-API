@@ -65,13 +65,13 @@ The API is automatically generated from the [OpenAPI specification file](https:/
 The workflows automatically build the client and copy the files to the right folders.
 After this some postprocessing scripts are executed to make it work:
 1. `fix_field_validator.py` removed the field validators for datetime variables, these don't work.
-2. run `pip install .` and then use `generate_complete_api_client.py` to create a single file with all the api calls for convenience.
-3. Use `fix_one_of_calls.py` to fix the two endpoints with multiple return values. While the keyword: `oneof` is used in the specification, this does not work.
-3. Run `simplify_returns.py`, for convenience. 
-4. `update_models.py` to account for the `""` the server returns instead of `None` for missing datetime values.
-5. `update_config_file.py` to set the datetime format correct.
-6. `add_docstrings.py` can be used to add doc strings to all the functions.
-
+2. Update the `file` api call with `replace_file_api_file_method.py`, this is not an HTTP endpoint but a socket stream to download files. 
+3. run `pip install .` and then use `generate_complete_api_client.py` to create a single file with all the api calls for convenience.
+4. Use `fix_one_of_calls.py` to fix the two endpoints with multiple return values. While the keyword: `oneof` is used in the specification, this does not work.
+5. Run `simplify_returns.py`, for convenience. 
+6. `update_models.py` to account for the `""` the server returns instead of `None` for missing datetime values.
+7. `update_config_file.py` to set the datetime format correct.
+8. Copy `xml_decoder.py` to the plantscreen folder
 
 Additional notes:
 - The fileendpoints are called without the '/json' , which means they require a different url.

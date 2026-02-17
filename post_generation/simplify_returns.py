@@ -11,48 +11,28 @@ the id field from each object in the list and return that instead.
 
 def update_experiment_id_return(content: str) -> str:
     pattern = re.compile(
-        (
-            r"def experiment_id\(self, _request_timeout: Optional\[Union\[float, "
-            r"Tuple\[float, float\]\]\] = None, "
-            r"_request_auth: Optional\[Dict\[str, Any\]] = None, "
-            r"_content_type: Optional\[str\] = None, "
-            r"_headers: Optional\[Dict\[str, Any\]] = None, "
-            r"_host_index: int = 0\) -> List\[ExperimentIDWrapper\]:\n"
-            r'(\s+"""[\s\S]*?"""\n)?'
-            r'(\s+)'
-            r'result = self\._ExperimentApi\.experiment_id\('
-            r'_request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
-            r'\s+return getattr\(result, "json_experiment_id_result", None\)'
-        )
+        r'def experiment_id\(self\) -> [^:]+:\n'
+        r'(\s*)result = self\._ExperimentApi\.experiment_id\(\)\n'
+        r'\s*return getattr\(result, "json_experiment_id_result", None\)',
+        re.MULTILINE
     )
 
     def repl(match):
-        funcdef = (
-            'def experiment_id('
-            'self,'
-            ' _request_timeout: Optional[Union[float, Tuple[float, float]]] = None,'
-            ' _request_auth: Optional[Dict[str, Any]] = None,'
-            ' _content_type: Optional[str] = None,'
-            ' _headers: Optional[Dict[str, Any]] = None,'
-            ' _host_index: int = 0'
-            ') -> list[int]:\n'
-        )
-        docstring = match.group(1) or ''
-        indent = match.group(2)
-        if docstring:
-            docstring = re.sub(r'Returns:\n\s*List\[.*?\]: Model class instance\.',
-                               f'Returns:\n{indent}    List[int]: list of ids.',
-                               docstring
-            )
+        funcdef = ('def experiment_id(self) -> list[int]:\n')
+        indent = match.group(1)
         body = (
-            f'{indent}result = self._ExperimentApi.experiment_id(_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+            f'{indent}"""\n'
+            f'{indent}Returns:\n'
+            f'{indent}    List[int]: list of ids.\n'
+            f'{indent}"""\n'
+            f'{indent}result = self._ExperimentApi.experiment_id()\n'
             f'{indent}temp = getattr(result, "json_experiment_id_result", None)\n'
             f'{indent}if temp is not None:\n'
-            f'{indent}    return [x.experiment_id for x in temp]\n'
+            f'{indent}    return sorted([x.experiment_id for x in temp])\n'
             f'{indent}else:\n'
             f'{indent}    return []'
         )
-        return funcdef + (docstring if docstring else '') + body
+        return funcdef + body
     new_content, n = pattern.subn(repl, content)
     if n > 0:
         print("Updated experiment_id method")
@@ -63,48 +43,28 @@ def update_experiment_id_return(content: str) -> str:
 
 def update_owner_id_return(content: str) -> str:
     pattern = re.compile(
-        (
-            r'def owner_id\(self, _request_timeout: Optional\[Union\[float, '
-            r'Tuple\[float, float\]\]\] = None, '
-            r'_request_auth: Optional\[Dict\[str, Any\]] = None, '
-            r'_content_type: Optional\[str\] = None, '
-            r'_headers: Optional\[Dict\[str, Any\]] = None, '
-            r'_host_index: int = 0\) -> List\[OwnerIDWrapper\]:\n'
-            r'(\s+"""[\s\S]*?"""\n)?'
-            r'(\s+)'
-            r'result = self\._ExperimentApi\.owner_id\('
-            r'_request_timeout, _request_auth, _content_type, _headers, _host_index\)\n'
-            r'\s+return getattr\(result, "json_owner_id_result", None\)'
-        )
+        r'def owner_id\(self\) -> [^:]+:\n'
+        r'(\s*)result = self\._ExperimentApi\.owner_id\(\)\n'
+        r'\s*return getattr\(result, "json_owner_id_result", None\)',
+        re.MULTILINE
     )
 
     def repl(match):
-        funcdef = (
-            'def owner_id('
-            'self,'
-            ' _request_timeout: Optional[Union[float, Tuple[float, float]]] = None,'
-            ' _request_auth: Optional[Dict[str, Any]] = None,'
-            ' _content_type: Optional[str] = None,'
-            ' _headers: Optional[Dict[str, Any]] = None,'
-            ' _host_index: int = 0'
-            ') -> list[int]:\n'
-        )
-        docstring = match.group(1) or ''
-        indent = match.group(2)
-        if docstring:
-            docstring = re.sub(r'Returns:\n\s*List\[.*?\]: Model class instance\.',
-                               f'Returns:\n{indent}    List[int]: list of ids.',
-                               docstring
-            )
+        funcdef = ('def owner_id(self) -> list[int]:\n')
+        indent = match.group(1)
         body = (
-            f'{indent}result = self._ExperimentApi.owner_id(_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+            f'{indent}"""\n'
+            f'{indent}Returns:\n'
+            f'{indent}    List[int]: list of ids.\n'
+            f'{indent}"""\n'
+            f'{indent}result = self._ExperimentApi.owner_id()\n'
             f'{indent}temp = getattr(result, "json_owner_id_result", None)\n'
             f'{indent}if temp is not None:\n'
-            f'{indent}    return [x.owner_id for x in temp]\n'
+            f'{indent}    return sorted([x.owner_id for x in temp])\n'
             f'{indent}else:\n'
             f'{indent}    return []'
         )
-        return funcdef + (docstring if docstring else '') + body
+        return funcdef + body
     new_content, n = pattern.subn(repl, content)
     if n > 0:
         print("Updated owner_id method")
@@ -115,48 +75,28 @@ def update_owner_id_return(content: str) -> str:
 
 def update_profile_id_return(content: str) -> str:
     pattern = re.compile(
-        (
-            r'def profile_id\(self, _request_timeout: Optional\[Union\[float, '
-            r'Tuple\[float, float\]\]\] = None, '
-            r'_request_auth: Optional\[Dict\[str, Any\]] = None, '
-            r'_content_type: Optional\[str\] = None, '
-            r'_headers: Optional\[Dict\[str, Any\]] = None, '
-            r'_host_index: int = 0\) -> List\[ProfileIDWrapper\]:\n'
-            r'(\s+"""[\s\S]*?"""\n)?'
-            r'(\s+)'
-            r'result = self\._ProfileApi\.profile_id\(_request_timeout, '
-            r'_request_auth, _content_type, _headers, _host_index\)\n'
-            r'\s+return getattr\(result, "json_system_profile_id_result", None\)'
-        )
+        r'def profile_id\(self\) -> [^:]+:\n'
+        r'(\s*)result = self\._ProfileApi\.profile_id\(\)\n'
+        r'\s*return getattr\(result, "json_system_profile_id_result", None\)',
+        re.MULTILINE
     )
 
     def repl(match):
-        funcdef = (
-            'def profile_id('
-            'self,'
-            ' _request_timeout: Optional[Union[float, Tuple[float, float]]] = None,'
-            ' _request_auth: Optional[Dict[str, Any]] = None,'
-            ' _content_type: Optional[str] = None,'
-            ' _headers: Optional[Dict[str, Any]] = None,'
-            ' _host_index: int = 0'
-            ') -> list[int]:\n'
-        )
-        docstring = match.group(1) or ''
-        indent = match.group(2)
-        if docstring:
-            docstring = re.sub(r'Returns:\n\s*List\[.*?\]: Model class instance\.',
-                               f'Returns:\n{indent}    List[int]: list of ids.',
-                               docstring
-            )
+        funcdef = ('def profile_id(self) -> list[int]:\n')
+        indent = match.group(1)
         body = (
-            f'{indent}result = self._ProfileApi.profile_id(_request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+            f'{indent}"""\n'
+            f'{indent}Returns:\n'
+            f'{indent}    List[int]: list of ids.\n'
+            f'{indent}"""\n'
+            f'{indent}result = self._ProfileApi.profile_id()\n'
             f'{indent}temp = getattr(result, "json_system_profile_id_result", None)\n'
             f'{indent}if temp is not None:\n'
-            f'{indent}    return [x.profile_id for x in temp]\n'
+            f'{indent}    return sorted([x.profile_id for x in temp])\n'
             f'{indent}else:\n'
             f'{indent}    return []'
         )
-        return funcdef + (docstring if docstring else '') + body
+        return funcdef + body
     new_content, n = pattern.subn(repl, content)
     if n > 0:
         print("Updated profile_id method")

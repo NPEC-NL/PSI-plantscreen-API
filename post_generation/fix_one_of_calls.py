@@ -169,29 +169,24 @@ def replace_probe_method(source: str) -> str:
     Replaces the probe() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'(def probe\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\)\s*->\s*[^:]+:\n)'
-        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)([\s\S]*?)(\s+)return self\._ProbeApi\.probe\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n',
+        r'(def probe\(self, id: Optional\[int\] = None\) -> [^:]+:\n)'
+        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)([\s\S]*?)(\s+)return self\._ProbeApi\.probe\(id\)\n',
         re.MULTILINE
     )
 
     def repl(match):
-        funcdef = 'def probe(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> Probe:\n'
+        funcdef = 'def probe(self, id: int = None) -> Probe:\n'
         indent = match.group(2)
         docstring = (
             f'{indent}"""\n'
             f'{indent}Args:\n'
             f'{indent}    id (int): ID of the resource.\n'
-            f'{indent}    _request_timeout (Optional[Union[float, Tuple[float, float]]]): Timeout for the request.\n'
-            f'{indent}    _request_auth (Optional[Dict[str, Any]]): Authentication info for the request.\n'
-            f'{indent}    _content_type (Optional[str]): Content type for the request.\n'
-            f'{indent}    _headers (Optional[Dict[str, Any]]): Additional headers for the request.\n'
-            f'{indent}    _host_index (int): Index of the host to use.\n'
             f'{indent}Returns:\n'
             f'{indent}    Probe\n'
             f'{indent}"""\n'
         )
         body = (
-            f'{indent}result = self._ProbeApi.probe(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+            f'{indent}result = self._ProbeApi.probe(id)\n'
             f'{indent}value = getattr(result, "json_probe_result", None)\n'
             f'{indent}if value is None:\n'
             f'{indent}    value = getattr(result, "json_probe_by_id_result", None)\n'
@@ -211,29 +206,24 @@ def replace_msc_calibration_light_method(source: str) -> str:
     Replaces the msc_calibration_light() method in CompleteAPIClient with the correct oneOf unwrapping logic.
     """
     pattern = re.compile(
-        r'(def msc_calibration_light\(self, id: Optional\[int\] = None, _request_timeout: Optional\[Union\[float, Tuple\[float, float\]\]\] = None, _request_auth: Optional\[Dict\[str, Any\]\] = None, _content_type: Optional\[str\] = None, _headers: Optional\[Dict\[str, Any\]\] = None, _host_index: int = 0\)\s*->\s*[^:]+:\n)'
-        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)([\s\S]*?)(\s+)return self\._MscApi\.msc_calibration_light\(id, _request_timeout, _request_auth, _content_type, _headers, _host_index\)\n',
+        r'(def msc_calibration_light\(self, id: Optional\[int\] = None\) -> [^:]+:\n)'
+        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)([\s\S]*?)(\s+)return self\._MscApi\.msc_calibration_light\(id\)\n',
         re.MULTILINE
     )
 
     def repl(match):
-        funcdef = 'def msc_calibration_light(self, id: int = None, _request_timeout: Optional[Union[float, Tuple[float, float]]] = None, _request_auth: Optional[Dict[str, Any]] = None, _content_type: Optional[str] = None, _headers: Optional[Dict[str, Any]] = None, _host_index: int = 0) -> MscCalibrationLight:\n'
+        funcdef = 'def msc_calibration_light(self, id: Optional[int] = None) -> MscCalibrationLight:\n'
         indent = match.group(2)
         docstring = (
             f'{indent}"""\n'
             f'{indent}Args:\n'
-            f'{indent}    id (int): ID of the resource.\n'
-            f'{indent}    _request_timeout (Optional[Union[float, Tuple[float, float]]]): Timeout for the request.\n'
-            f'{indent}    _request_auth (Optional[Dict[str, Any]]): Authentication info for the request.\n'
-            f'{indent}    _content_type (Optional[str]): Content type for the request.\n'
-            f'{indent}    _headers (Optional[Dict[str, Any]]): Additional headers for the request.\n'
-            f'{indent}    _host_index (int): Index of the host to use.\n'
+            f'{indent}    id (Optional[int]): ID of the resource.\n'
             f'{indent}Returns:\n'
             f'{indent}    MscCalibrationLight\n'
             f'{indent}"""\n'
         )
         body = (
-            f'{indent}result = self._MscApi.msc_calibration_light(id, _request_timeout, _request_auth, _content_type, _headers, _host_index)\n'
+            f'{indent}result = self._MscApi.msc_calibration_light(id)\n'
             f'{indent}value = getattr(result, "json_msc_calibration_light_by_id_result", None)\n'
             f'{indent}if value is None:\n'
             f'{indent}    value = getattr(result, "json_msc_calibration_light_result", None)\n'
