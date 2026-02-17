@@ -94,7 +94,7 @@ class ScalesData(BaseModel):
             "DeviceID": obj.get("DeviceID"),
             "DevicePID": obj.get("DevicePID"),
             "ExperimentID": obj.get("ExperimentID"),
-            "MeasureDate": obj.get("MeasureDate"),
+            "MeasureDate": obj.get("MeasureDate") or None,
             "MeasureID": obj.get("MeasureID"),
             "PlantBarcode": obj.get("PlantBarcode"),
             "PlantID": obj.get("PlantID"),

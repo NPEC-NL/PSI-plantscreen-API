@@ -79,8 +79,8 @@ class TrayProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ProfileDateStart": obj.get("ProfileDateStart"),
-            "ProfileDateStop": obj.get("ProfileDateStop"),
+            "ProfileDateStart": obj.get("ProfileDateStart") or None,
+            "ProfileDateStop": obj.get("ProfileDateStop") or None,
             "ProfileID": obj.get("ProfileID"),
             "ProfileName": obj.get("ProfileName"),
             "TrayID": obj.get("TrayID")

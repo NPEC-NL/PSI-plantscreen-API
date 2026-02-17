@@ -83,12 +83,12 @@ class Owner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "CreateDate": obj.get("CreateDate"),
+            "CreateDate": obj.get("CreateDate") or None,
             "Email": obj.get("Email"),
             "FirstName": obj.get("FirstName"),
-            "LastFailedDate": obj.get("LastFailedDate"),
+            "LastFailedDate": obj.get("LastFailedDate") or None,
             "LastName": obj.get("LastName"),
-            "LastSuccessLogin": obj.get("LastSuccessLogin"),
+            "LastSuccessLogin": obj.get("LastSuccessLogin") or None,
             "Login": obj.get("Login"),
             "OwnerID": obj.get("OwnerID"),
             "SmsPhoneNumber": obj.get("SmsPhoneNumber")

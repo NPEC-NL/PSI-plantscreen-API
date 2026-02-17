@@ -83,7 +83,7 @@ class ProbeValue(BaseModel):
             "ProbeName": obj.get("ProbeName"),
             "ProbeUnit": obj.get("ProbeUnit"),
             "ProbeValue": obj.get("ProbeValue"),
-            "RecordDate": obj.get("RecordDate")
+            "RecordDate": obj.get("RecordDate") or None
         })
         return _obj
 
