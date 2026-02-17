@@ -39,7 +39,7 @@ class FileApi:
         self.api_client = api_client
 
 
-        def file(
+    def file(
         self,
         path: str,
         _request_timeout: float = 300,
