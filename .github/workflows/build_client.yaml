@@ -40,10 +40,6 @@ jobs:
             cp generated/README.md docs/plantsc_README.md
           fi
 
-      - name: copy README to docs section
-        run: |
-          cp README.md docs/README.md
-
       - name: Copy python code to /test
         run: |
           if [ -d build/test ]; then
