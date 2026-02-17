@@ -1,4 +1,3 @@
-
 import re
 
 
@@ -207,7 +206,8 @@ def replace_msc_calibration_light_method(source: str) -> str:
     """
     pattern = re.compile(
         r'(def msc_calibration_light\(self, id: Optional\[int\] = None\) -> [^:]+:\n)'
-        r'(\s+)([\s\S]*?)(?:(\s+"""[\s\S]*?"""\n)?)([\s\S]*?)(\s+)return self\._MscApi\.msc_calibration_light\(id\)\n',
+        r'(\s+)(?:"""[\s\S]*?"""\n)?'  # Optional docstring
+        r'(\s*)return self\._MscApi\.msc_calibration_light\(id\)\n',
         re.MULTILINE
     )
 
