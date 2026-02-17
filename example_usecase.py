@@ -1,7 +1,7 @@
 from os import getenv, makedirs, sep
 from dotenv import load_dotenv
 
-from plantscreen.complete_api import Complete_API
+import plantscreen
 from plantscreen.xml_decoder import protocolxml_to_dict
 
 
@@ -9,10 +9,10 @@ if __name__ == "__main__":
     """Ëxample implementation of downloading the last meassurement results of the latest experiment"""
     load_dotenv()
     # Create an instance of the API class
-    api = Complete_API(getenv('URL'), getenv('PORT'))
+    api = plantscreen.CompleteAPIClient(getenv('URL'))
 
     # Retreive a list with all experiments
-    experiment_list = api.experimentID()
+    experiment_list = api.experiment_id()
     experiment_id = experiment_list[-1]
 
     # List the active devices with their family
@@ -44,12 +44,13 @@ if __name__ == "__main__":
                 # Get the filenames of the measurement results, could be from any device
                 device = device_list[index]
                 data = []
+                tray_id = int(tray['id'])
                 if device.device_family == 'FluorCam':
-                    imaging_reply = api.fc_imaging(device.device_id, round.round_id, tray['id'])
+                    imaging_reply = api.fc_imaging(device.device_id, round.round_id, tray_id)
                     for imaging in imaging_reply:
                         data.append({'.tar': imaging.tar_path})
                 elif device.device_family == 'Hypercam':
-                    imaging_reply = api.hc_imaging(device.device_id, round.round_id, tray['id'])
+                    imaging_reply = api.hc_imaging(device.device_id, round.round_id, tray_id)
                     for imaging in imaging_reply:
                         data.append({'.hdr': imaging.data_header_path,
                                      '.bil': imaging.data_content_path,
@@ -59,27 +60,29 @@ if __name__ == "__main__":
                                      'dark.bil': imaging.calibration_dark_content_path,
                                      })
                 elif device.device_family == 'ThermalCam':
+                    imaging_reply = api.ir_imaging(device.device_id, round.round_id, tray_id)
                     for imaging in imaging_reply:
                         data.append({'.raw': imaging.image_path})
-                    imaging_reply = api.ir_imaging(device.device_id, round.round_id, tray['id'])
+                    imaging_reply = api.ir_imaging(device.device_id, round.round_id, tray_id)
                 elif device.device_family == 'MSC':
                     for imaging in imaging_reply:
                         data.append({'.usraw': imaging.image_path})
-                    imaging_reply = api.msc_imaging(device.device_id, round.round_id, tray['id'])
+                    imaging_reply = api.msc_imaging(device.device_id, round.round_id, tray_id)
                 elif device.device_family == 'RgbCam':
                     for imaging in imaging_reply:
                         data.append({'.png': imaging.image_path})
-                    imaging_reply = api.rgb_imaging(device.device_id, round.round_id, tray['id'])
-                # elif device.device_family == 'Scan3d':
-                #     imaging_reply = api.scan3d_imaging(device.device_id, round.round_id, tray['id'])
-                #     for imaging in imaging_reply:
-                #         data.append({'.pcd': imaging.scan3_d_model_path})
+                    imaging_reply = api.rgb_imaging(device.device_id, round.round_id, tray_id)
+                elif device.device_family == 'Scan3d':
+                    imaging_reply = api.scan3d_imaging(device.device_id, round.round_id, tray_id)
+                    for imaging in imaging_reply:
+                        data.append({'.pcd': imaging.scan3_d_model_path})
 
                 # Download the files
                 for record in data:
                     for type, filename in record.items():
-                        file_content = api.download_file(filename)
+                        test = api.file_changelog()
+                        file_content = api.file(filename)
                         folder_path = f"{experiment_id}{sep}{device.device_family}"
                         makedirs(folder_path, exist_ok=True)
-                        with open(f"{folder_path}{sep}round{round.round_id}_tray{tray['id']}{type}", "wb") as f:
+                        with open(f"{folder_path}{sep}round{round.round_id}_tray{tray_id}{type}", "wb") as f:
                             f.write(file_content.getbuffer())
