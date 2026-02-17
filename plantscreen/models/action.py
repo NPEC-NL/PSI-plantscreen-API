@@ -81,7 +81,7 @@ class Action(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ActionDateStart": obj.get("ActionDateStart") or None,
+            "ActionDateStart": obj.get("ActionDateStart"),
             "ActionDone": obj.get("ActionDone"),
             "ActionGroupID": obj.get("ActionGroupID"),
             "ActionID": obj.get("ActionID"),

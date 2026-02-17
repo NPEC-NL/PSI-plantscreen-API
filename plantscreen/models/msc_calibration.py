@@ -80,7 +80,7 @@ class MscCalibration(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "CalibrationDate": obj.get("CalibrationDate") or None,
+            "CalibrationDate": obj.get("CalibrationDate"),
             "CalibrationID": obj.get("CalibrationID"),
             "CalibrationImagePath": obj.get("CalibrationImagePath"),
             "CameraExposure": obj.get("CameraExposure"),

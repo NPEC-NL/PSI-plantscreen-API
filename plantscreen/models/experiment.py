@@ -87,7 +87,7 @@ class Experiment(BaseModel):
             "ExperimentName": obj.get("ExperimentName"),
             "ExperimentStatus": obj.get("ExperimentStatus"),
             "OwnerID": obj.get("OwnerID"),
-            "StatusChangedDate": obj.get("StatusChangedDate") or None or None
+            "StatusChangedDate": obj.get("StatusChangedDate")
         })
         return _obj
 

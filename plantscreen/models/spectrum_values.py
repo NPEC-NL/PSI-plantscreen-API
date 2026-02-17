@@ -79,7 +79,7 @@ class SpectrumValues(BaseModel):
         _obj = cls.model_validate({
             "SpectrumDeviceID": obj.get("SpectrumDeviceID"),
             "SpectrumPath": obj.get("SpectrumPath"),
-            "SpectrumRecordDate": obj.get("SpectrumRecordDate") or None
+            "SpectrumRecordDate": obj.get("SpectrumRecordDate")
         })
         return _obj
 

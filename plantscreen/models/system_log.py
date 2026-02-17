@@ -85,7 +85,7 @@ class SystemLog(BaseModel):
 
         _obj = cls.model_validate({
             "ExperimentID": obj.get("ExperimentID"),
-            "LogDate": obj.get("LogDate") or None,
+            "LogDate": obj.get("LogDate"),
             "LogID": obj.get("LogID"),
             "LogTag": obj.get("LogTag"),
             "LogText": obj.get("LogText"),

@@ -84,7 +84,7 @@ class Tray(BaseModel):
             "TrayID": obj.get("TrayID"),
             "TrayInfo": obj.get("TrayInfo"),
             "TrayStatus": obj.get("TrayStatus"),
-            "TrayStatusChanged": obj.get("TrayStatusChanged") or None,
+            "TrayStatusChanged": obj.get("TrayStatusChanged"),
             "TrayTypeID": obj.get("TrayTypeID")
         })
         return _obj

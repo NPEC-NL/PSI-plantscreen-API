@@ -82,7 +82,7 @@ class MeasureExtendedData(BaseModel):
         _obj = cls.model_validate({
             "DeviceID": obj.get("DeviceID"),
             "ExtendedData": obj.get("ExtendedData"),
-            "MeasureDate": obj.get("MeasureDate") or None,
+            "MeasureDate": obj.get("MeasureDate"),
             "MeasureID": obj.get("MeasureID"),
             "RoundID": obj.get("RoundID"),
             "TrayID": obj.get("TrayID")

@@ -90,7 +90,7 @@ class PlantMask(BaseModel):
             "ExperimentID": obj.get("ExperimentID"),
             "MaskIsLeaf": obj.get("MaskIsLeaf"),
             "MeasureAngle": obj.get("MeasureAngle"),
-            "MeasureDate": obj.get("MeasureDate") or None,
+            "MeasureDate": obj.get("MeasureDate"),
             "MeasureID": obj.get("MeasureID"),
             "PlantMaskPath": obj.get("PlantMaskPath"),
             "RoundID": obj.get("RoundID"),

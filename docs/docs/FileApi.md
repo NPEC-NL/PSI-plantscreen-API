@@ -32,7 +32,7 @@ configuration = plantscreen.Configuration(
 with plantscreen.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = plantscreen.FileApi(api_client)
-    path = '2013-10-20T19:20:30+01:00' # datetime | fileStoragePath
+    path = 'path_example' # str | fileStoragePath
 
     try:
         # Returns the streamed file located in the data file storage by defined path.
@@ -48,7 +48,7 @@ with plantscreen.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **datetime**| fileStoragePath | 
+ **path** | **str**| fileStoragePath | 
 
 ### Return type
 

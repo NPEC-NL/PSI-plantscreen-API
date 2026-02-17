@@ -80,7 +80,7 @@ class ExperimentNote(BaseModel):
 
         _obj = cls.model_validate({
             "ExperimentID": obj.get("ExperimentID"),
-            "NoteCreatedDate": obj.get("NoteCreatedDate") or None,
+            "NoteCreatedDate": obj.get("NoteCreatedDate"),
             "NoteID": obj.get("NoteID"),
             "NoteText": obj.get("NoteText"),
             "OwnerID": obj.get("OwnerID")

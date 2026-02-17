@@ -82,7 +82,7 @@ class PlantHeight(BaseModel):
 
         _obj = cls.model_validate({
             "ExperimentID": obj.get("ExperimentID"),
-            "HeightDate": obj.get("HeightDate") or None,
+            "HeightDate": obj.get("HeightDate"),
             "HeightValue": obj.get("HeightValue"),
             "PlantBarcode": obj.get("PlantBarcode"),
             "PlantID": obj.get("PlantID"),

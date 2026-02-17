@@ -84,8 +84,8 @@ class Round(BaseModel):
         _obj = cls.model_validate({
             "ActionID": obj.get("ActionID"),
             "ExperimentID": obj.get("ExperimentID"),
-            "RoundDateStart": obj.get("RoundDateStart") or None,
-            "RoundDateStop": obj.get("RoundDateStop") or None,
+            "RoundDateStart": obj.get("RoundDateStart"),
+            "RoundDateStop": obj.get("RoundDateStop"),
             "RoundDone": obj.get("RoundDone"),
             "RoundID": obj.get("RoundID"),
             "RoundProtocolPath": obj.get("RoundProtocolPath"),

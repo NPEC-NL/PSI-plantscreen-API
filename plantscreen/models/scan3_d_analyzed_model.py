@@ -91,7 +91,7 @@ class Scan3DAnalyzedModel(BaseModel):
             "DeviceID": obj.get("DeviceID"),
             "DevicePID": obj.get("DevicePID"),
             "ExperimentID": obj.get("ExperimentID"),
-            "MeasureDate": obj.get("MeasureDate") or None,
+            "MeasureDate": obj.get("MeasureDate"),
             "MeasureID": obj.get("MeasureID"),
             "PlantBarcode": obj.get("PlantBarcode"),
             "PlantID": obj.get("PlantID"),

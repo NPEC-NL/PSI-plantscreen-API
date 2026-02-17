@@ -91,8 +91,8 @@ class Device(BaseModel):
             "DeviceName": obj.get("DeviceName"),
             "DevicePID": obj.get("DevicePID"),
             "DeviceType": obj.get("DeviceType"),
-            "DeviceValidityStart": obj.get("DeviceValidityStart") or None,
-            "DeviceValidityEnd": obj.get("DeviceValidityEnd") or None,
+            "DeviceValidityStart": obj.get("DeviceValidityStart"),
+            "DeviceValidityEnd": obj.get("DeviceValidityEnd"),
             "ProfileID": obj.get("ProfileID")
         })
         return _obj

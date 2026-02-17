@@ -82,7 +82,7 @@ class PlantWeightReference(BaseModel):
             "PlantBarcode": obj.get("PlantBarcode"),
             "PlantID": obj.get("PlantID"),
             "PlantName": obj.get("PlantName"),
-            "ReferenceWeightDate": obj.get("ReferenceWeightDate") or None,
+            "ReferenceWeightDate": obj.get("ReferenceWeightDate"),
             "ReferenceWeightValue": obj.get("ReferenceWeightValue")
         })
         return _obj
