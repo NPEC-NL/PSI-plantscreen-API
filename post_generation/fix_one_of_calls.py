@@ -170,7 +170,8 @@ def replace_probe_method(source: str) -> str:
     pattern = re.compile(
         r'(def probe\(self, id: Optional\[int\] = None\) -> [^\n]+:\r?\n)'
         r'(?:[ \t]*"""[\s\S]*?"""[ \t]*\r?\n)?'  # optional docstring, any whitespace, any line ending
-        r'[ \t]*return self\._ProbeApi\.probe\(id\)[ \t]*\r?\n',
+        r'([ \t]*)result = self\._ProbeApi\.probe\(id\)\r?\n'
+        r'[ \t]*return getattr\(result, "oneof_schema_1_validator", None\)[ \t]*\r?\n',
         re.MULTILINE
     )
 
@@ -208,7 +209,8 @@ def replace_msc_calibration_light_method(source: str) -> str:
     pattern = re.compile(
         r'(def msc_calibration_light\(self, id: Optional\[int\] = None\) -> [^\n]+:\r?\n)'
         r'(?:[ \t]*"""[\s\S]*?"""[ \t]*\r?\n)?'  # optional docstring, any whitespace, any line ending
-        r'[ \t]*return self\._MscApi\.msc_calibration_light\(id\)[ \t]*\r?\n',
+        r'([ \t]*)result = self\._MscApi\.msc_calibration_light\(id\)\r?\n'
+        r'[ \t]*return getattr\(result, "oneof_schema_1_validator", None\)[ \t]*\r?\n',
         re.MULTILINE
     )
 
