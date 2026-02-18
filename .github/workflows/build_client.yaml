@@ -55,6 +55,7 @@ jobs:
 
       - name: Copy xml code
         run: |
+          mkdir -p plantscreen/xml_models
           cp xml/xml_decoder.py plantscreen/xml_decoder.py
           cp xml/xml_models/* plantscreen/xml_models/
           cp xml/test_xml_decoder.py test/test_xml_decoder.py
