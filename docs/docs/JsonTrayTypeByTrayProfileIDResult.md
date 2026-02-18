@@ -24,6 +24,6 @@ json_tray_type_by_tray_profile_id_result_dict = json_tray_type_by_tray_profile_i
 # create an instance of JsonTrayTypeByTrayProfileIDResult from a dict
 json_tray_type_by_tray_profile_id_result_from_dict = JsonTrayTypeByTrayProfileIDResult.from_dict(json_tray_type_by_tray_profile_id_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

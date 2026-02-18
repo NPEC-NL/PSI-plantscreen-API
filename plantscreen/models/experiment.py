@@ -37,43 +37,6 @@ class Experiment(BaseModel):
     status_changed_date: Optional[datetime] = Field(default=None, alias="StatusChangedDate")
     __properties: ClassVar[List[str]] = ["CreatedDate", "ExperimentID", "ExperimentInfo", "ExperimentName", "ExperimentStatus", "OwnerID", "StatusChangedDate"]
 
-    @field_validator('created_date')
-    def created_date_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
-            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
-        return value
-
-    @field_validator('experiment_status')
-    def experiment_status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Active', 'Finalized', 'BackedUp', 'Deleted']):
-            raise ValueError("must be one of enum values ('Active', 'Finalized', 'BackedUp', 'Deleted')")
-        return value
-
-    @field_validator('status_changed_date')
-    def status_changed_date_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
-            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
-        return value
-
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
-
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -124,7 +87,7 @@ class Experiment(BaseModel):
             "ExperimentName": obj.get("ExperimentName"),
             "ExperimentStatus": obj.get("ExperimentStatus"),
             "OwnerID": obj.get("OwnerID"),
-            "StatusChangedDate": obj.get("StatusChangedDate")
+            "StatusChangedDate": obj.get("StatusChangedDate") or None or None
         })
         return _obj
 

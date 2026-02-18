@@ -31,6 +31,6 @@ round_dict = round_instance.to_dict()
 # create an instance of Round from a dict
 round_from_dict = Round.from_dict(round_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

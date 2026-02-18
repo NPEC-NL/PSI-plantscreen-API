@@ -24,6 +24,6 @@ json_scan3d_measure_extended_data_by_id_result_dict = json_scan3d_measure_extend
 # create an instance of JsonScan3dMeasureExtendedDataByIDResult from a dict
 json_scan3d_measure_extended_data_by_id_result_from_dict = JsonScan3dMeasureExtendedDataByIDResult.from_dict(json_scan3d_measure_extended_data_by_id_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

@@ -26,6 +26,6 @@ spectrum_device_wavelengths_json_wrapper_dict = spectrum_device_wavelengths_json
 # create an instance of SpectrumDeviceWavelengthsJSONWrapper from a dict
 spectrum_device_wavelengths_json_wrapper_from_dict = SpectrumDeviceWavelengthsJSONWrapper.from_dict(spectrum_device_wavelengths_json_wrapper_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

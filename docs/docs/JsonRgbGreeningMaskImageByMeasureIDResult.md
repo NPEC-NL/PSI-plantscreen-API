@@ -24,6 +24,6 @@ json_rgb_greening_mask_image_by_measure_id_result_dict = json_rgb_greening_mask_
 # create an instance of JsonRgbGreeningMaskImageByMeasureIDResult from a dict
 json_rgb_greening_mask_image_by_measure_id_result_from_dict = JsonRgbGreeningMaskImageByMeasureIDResult.from_dict(json_rgb_greening_mask_image_by_measure_id_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

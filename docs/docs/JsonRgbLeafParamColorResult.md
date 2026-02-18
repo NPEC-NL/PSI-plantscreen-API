@@ -24,6 +24,6 @@ json_rgb_leaf_param_color_result_dict = json_rgb_leaf_param_color_result_instanc
 # create an instance of JsonRgbLeafParamColorResult from a dict
 json_rgb_leaf_param_color_result_from_dict = JsonRgbLeafParamColorResult.from_dict(json_rgb_leaf_param_color_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

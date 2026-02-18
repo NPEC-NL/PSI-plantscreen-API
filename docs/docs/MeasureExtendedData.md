@@ -29,6 +29,6 @@ measure_extended_data_dict = measure_extended_data_instance.to_dict()
 # create an instance of MeasureExtendedData from a dict
 measure_extended_data_from_dict = MeasureExtendedData.from_dict(measure_extended_data_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

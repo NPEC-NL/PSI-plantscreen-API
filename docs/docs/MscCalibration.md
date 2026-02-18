@@ -29,6 +29,6 @@ msc_calibration_dict = msc_calibration_instance.to_dict()
 # create an instance of MscCalibration from a dict
 msc_calibration_from_dict = MscCalibration.from_dict(msc_calibration_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

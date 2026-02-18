@@ -26,6 +26,6 @@ spectrum_values_dict = spectrum_values_instance.to_dict()
 # create an instance of SpectrumValues from a dict
 spectrum_values_from_dict = SpectrumValues.from_dict(spectrum_values_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

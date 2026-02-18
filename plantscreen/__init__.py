@@ -272,6 +272,13 @@ __all__ = [
     "TrayProfile",
     "TrayType",
     "VersionInfo",
+    "CompleteAPIClient",
+    "parse_xml",
+    "GroupTiming",
+    "Protocol",
+    "SystemConfig",
+    "TAnyShapes",
+    "DataSet",
 ]
 
 # import apis into sdk package
@@ -532,4 +539,10 @@ from plantscreen.models.tray import Tray as Tray
 from plantscreen.models.tray_profile import TrayProfile as TrayProfile
 from plantscreen.models.tray_type import TrayType as TrayType
 from plantscreen.models.version_info import VersionInfo as VersionInfo
+from plantscreen.complete_api_client import CompleteAPIClient
+from plantscreen.xml_decoder import parse_xml
+from plantscreen.xml_models.group_timing import GroupTiming
+from plantscreen.xml_models.system_config import Configuration as SystemConfig
+from plantscreen.xml_models.tray_type import TAnyShapes
+from plantscreen.xml_models.dataset import DataSet
 
