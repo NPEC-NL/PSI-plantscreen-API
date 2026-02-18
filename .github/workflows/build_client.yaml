@@ -48,6 +48,17 @@ jobs:
             cp -r build/test/* test/
           fi
 
+      - name: Copy int.md & README to docs/
+        run: |
+          cp docs/int.md docs/docs/int.md
+          cp README.md docs/README.md
+
+      - name: Copy xml code
+        run: |
+          cp xml/xml_decoder.py plantscreen/xml_decoder.py
+          cp xml/xml_models/* plantscreen/xml_models/
+          cp xml/test_xml_decoder.py test/test_xml_decoder.py
+
       # Run post-generation scripts to fix issues in generated code
       - name: Run fix_field_validator.py
         run: python post_generation/fix_field_validator.py
@@ -73,8 +84,12 @@ jobs:
       - name: Run update_config_file.py
         run: python post_generation/update_config_file.py 
 
-      - name: Copy xml_decoder.py to /plantscreen
-        run: cp post_generation/xml_decoder.py plantscreen/xml_decoder.py
+      - name: update init.py
+        run: python post_generation/update_init.py
+
+      # Documentation updates
+      - name: Run update_docs.py
+        run: python post_generation/update_docs.py
 
       - name: Install ruff
         run: pip install ruff

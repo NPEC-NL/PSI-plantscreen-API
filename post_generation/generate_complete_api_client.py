@@ -2,6 +2,10 @@
 """
 Script to generate a Python class with all wrapped calls
 from OpenAPI client APIs.
+Requires plantscreen to be installed with pip!
+ pip install .
+Only wraps around the functions themselves.
+Not the *_with_http_info and *_without_preload_content
 """
 import sys
 import importlib
@@ -32,51 +36,6 @@ param_description_lookup = {
     '_headers': 'Additional headers for the request.',
     '_host_index': 'Index of the host to use.',
 }
-
-# Requires plantscreen to be installed with pip!
-#  pip install .
-# Only wraps around the functions themselves.
-# Not the *_with_http_info and *_without_preload_content
-
-
-def add_to_init():
-    # --- Add CompleteAPIClient to __init__.py ---
-    init_path = os.path.join(os.path.dirname(OUTPUT_FILE), "__init__.py")
-    with open(init_path, "r", encoding="utf-8") as f:
-        init_lines = f.readlines()
-    # Add import if not present
-    import_line = (
-        "from plantscreen.complete_api_client import CompleteAPIClient\n"
-    )
-    if not any(
-        "CompleteAPIClient" in line and "import" in line
-        for line in init_lines
-    ):
-        # Find first non-comment, non-docstring line after imports
-        insert_at = 0
-        for i, line in enumerate(init_lines):
-            if (
-                line.strip().startswith("from")
-                or line.strip().startswith("import")
-            ):
-                insert_at = i + 1
-        init_lines.insert(insert_at, import_line)
-    # Add to __all__ if not present
-    for i, line in enumerate(init_lines):
-        if line.strip().startswith("__all__"):
-            # Find the closing bracket
-            for j in range(i, len(init_lines)):
-                if "]" in init_lines[j]:
-                    if '"CompleteAPIClient"' not in ''.join(init_lines[i:j+1]):
-                        # Insert before closing bracket
-                        init_lines.insert(j, '    "CompleteAPIClient",\n')
-                    break
-            break
-    with open(init_path, "w", encoding="utf-8") as f:
-        f.writelines(init_lines)
-    print(
-        f"Generated API client written to {OUTPUT_FILE} and added to __init__.py"
-    )
 
 
 def get_json_field_from_return_type(api_module, return_type):
@@ -379,4 +338,3 @@ def generate_combined_api_client():
 
 
 generate_combined_api_client()
-add_to_init()

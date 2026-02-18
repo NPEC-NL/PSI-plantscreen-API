@@ -1,6 +1,6 @@
 import unittest
 
-from plantscreen.xml_data_class import parse_dynamic_xml
+from plantscreen.xml_data_class import parse_xml
 from plantscreen.xml_models.group_timing import GroupTiming
 from plantscreen.xml_models.protocol import Protocol
 from plantscreen.xml_models.configuration import Configuration
@@ -9,10 +9,10 @@ from plantscreen.xml_models.tray_type import TAnyShapes
 from plantscreen.xml_models.dataset import DataSet
 
 
-class TestParseDynamicXml(unittest.TestCase):
+class TestParseXml(unittest.TestCase):
     def test_group_timing(self):
         xml = '''<GroupTiming type="Once"><DateTime>2020-10-03 16:13:48</DateTime></GroupTiming>'''
-        obj = parse_dynamic_xml(xml)
+        obj = parse_xml(xml)
         self.assertIsInstance(obj, GroupTiming)
 
     def test_protocol(self):
@@ -43,7 +43,7 @@ class TestParseDynamicXml(unittest.TestCase):
                 <Light name="LightMain2" value="0" />
             </SetLight>
         </Protocol>'''
-        obj = parse_dynamic_xml(xml)
+        obj = parse_xml(xml)
         self.assertIsInstance(obj, Protocol)
 
     def test_configuration(self):
@@ -83,7 +83,7 @@ class TestParseDynamicXml(unittest.TestCase):
             <HeatingTime>1200</HeatingTime>
         </Configuration>
         '''
-        obj = parse_dynamic_xml(xml)
+        obj = parse_xml(xml)
         self.assertIsInstance(obj, Configuration)
 
     def test_system_config(self):
@@ -118,7 +118,7 @@ class TestParseDynamicXml(unittest.TestCase):
             <Analyse></Analyse>
         </Configuration>
         '''
-        obj = parse_dynamic_xml(xml)
+        obj = parse_xml(xml)
         self.assertIsInstance(obj, SystemConfig)
 
     def test_tanyshapes(self):
@@ -131,7 +131,7 @@ class TestParseDynamicXml(unittest.TestCase):
             </TMultiShapes>
         </TAnyShapes>
         '''
-        obj = parse_dynamic_xml(xml)
+        obj = parse_xml(xml)
         self.assertIsInstance(obj, TAnyShapes)
 
     def test_dataset(self):
@@ -143,7 +143,7 @@ class TestParseDynamicXml(unittest.TestCase):
             <Item name="speed" type="double" unit="km/h">0.4</Item>
         </DataSet>
         '''
-        obj = parse_dynamic_xml(xml)
+        obj = parse_xml(xml)
         self.assertIsInstance(obj, DataSet)
 
 
