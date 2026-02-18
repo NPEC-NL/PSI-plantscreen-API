@@ -13,7 +13,7 @@ from plantscreen.xml_models.system_config import (
 from plantscreen.xml_models.tray_type import TAnyShapes
 
 
-def parse_dynamic_xml(xml: str) -> BaseXmlModel:
+def parse_xml(xml: str) -> BaseXmlModel:
     """
     Parse XML string into the appropriate BaseXmlModel subclass based on
     the root tag.
