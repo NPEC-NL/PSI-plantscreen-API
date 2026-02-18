@@ -1,6 +1,6 @@
 import unittest
 
-from plantscreen.xml_data_class import parse_xml
+from plantscreen.xml_decoder import parse_xml
 from plantscreen.xml_models.group_timing import GroupTiming
 from plantscreen.xml_models.protocol import Protocol
 from plantscreen.xml_models.configuration import Configuration
