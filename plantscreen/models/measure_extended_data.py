@@ -36,6 +36,23 @@ class MeasureExtendedData(BaseModel):
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
     __properties: ClassVar[List[str]] = ["DeviceID", "ExtendedData", "MeasureDate", "MeasureID", "RoundID", "TrayID"]
 
+    @field_validator('measure_date')
+    def measure_date_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -82,7 +99,7 @@ class MeasureExtendedData(BaseModel):
         _obj = cls.model_validate({
             "DeviceID": obj.get("DeviceID"),
             "ExtendedData": obj.get("ExtendedData"),
-            "MeasureDate": obj.get("MeasureDate") or None,
+            "MeasureDate": obj.get("MeasureDate"),
             "MeasureID": obj.get("MeasureID"),
             "RoundID": obj.get("RoundID"),
             "TrayID": obj.get("TrayID")

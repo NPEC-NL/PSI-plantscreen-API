@@ -39,6 +39,43 @@ class Owner(BaseModel):
     sms_phone_number: Optional[StrictStr] = Field(default=None, alias="SmsPhoneNumber")
     __properties: ClassVar[List[str]] = ["CreateDate", "Email", "FirstName", "LastFailedDate", "LastName", "LastSuccessLogin", "Login", "OwnerID", "SmsPhoneNumber"]
 
+    @field_validator('create_date')
+    def create_date_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    @field_validator('last_failed_date')
+    def last_failed_date_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    @field_validator('last_success_login')
+    def last_success_login_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -83,12 +120,12 @@ class Owner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "CreateDate": obj.get("CreateDate") or None,
+            "CreateDate": obj.get("CreateDate"),
             "Email": obj.get("Email"),
             "FirstName": obj.get("FirstName"),
-            "LastFailedDate": obj.get("LastFailedDate") or None,
+            "LastFailedDate": obj.get("LastFailedDate"),
             "LastName": obj.get("LastName"),
-            "LastSuccessLogin": obj.get("LastSuccessLogin") or None,
+            "LastSuccessLogin": obj.get("LastSuccessLogin"),
             "Login": obj.get("Login"),
             "OwnerID": obj.get("OwnerID"),
             "SmsPhoneNumber": obj.get("SmsPhoneNumber")

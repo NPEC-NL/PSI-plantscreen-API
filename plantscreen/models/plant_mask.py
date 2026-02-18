@@ -41,6 +41,23 @@ class PlantMask(BaseModel):
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
     __properties: ClassVar[List[str]] = ["DeviceID", "DevicePID", "ExperimentID", "MaskIsLeaf", "MeasureAngle", "MeasureDate", "MeasureID", "PlantMaskPath", "RoundID", "TrayBarcode", "TrayID"]
 
+    @field_validator('measure_date')
+    def measure_date_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -90,7 +107,7 @@ class PlantMask(BaseModel):
             "ExperimentID": obj.get("ExperimentID"),
             "MaskIsLeaf": obj.get("MaskIsLeaf"),
             "MeasureAngle": obj.get("MeasureAngle"),
-            "MeasureDate": obj.get("MeasureDate") or None,
+            "MeasureDate": obj.get("MeasureDate"),
             "MeasureID": obj.get("MeasureID"),
             "PlantMaskPath": obj.get("PlantMaskPath"),
             "RoundID": obj.get("RoundID"),

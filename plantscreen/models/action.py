@@ -37,6 +37,23 @@ class Action(BaseModel):
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
     __properties: ClassVar[List[str]] = ["ActionDateStart", "ActionDone", "ActionGroupID", "ActionID", "ActionRunning", "ActionStatus", "ExperimentID"]
 
+    @field_validator('action_date_start')
+    def action_date_start_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -81,7 +98,7 @@ class Action(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ActionDateStart": obj.get("ActionDateStart") or None,
+            "ActionDateStart": obj.get("ActionDateStart"),
             "ActionDone": obj.get("ActionDone"),
             "ActionGroupID": obj.get("ActionGroupID"),
             "ActionID": obj.get("ActionID"),

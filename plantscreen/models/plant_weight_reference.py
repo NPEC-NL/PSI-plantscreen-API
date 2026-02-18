@@ -35,6 +35,23 @@ class PlantWeightReference(BaseModel):
     reference_weight_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="ReferenceWeightValue")
     __properties: ClassVar[List[str]] = ["PlantBarcode", "PlantID", "PlantName", "ReferenceWeightDate", "ReferenceWeightValue"]
 
+    @field_validator('reference_weight_date')
+    def reference_weight_date_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -82,7 +99,7 @@ class PlantWeightReference(BaseModel):
             "PlantBarcode": obj.get("PlantBarcode"),
             "PlantID": obj.get("PlantID"),
             "PlantName": obj.get("PlantName"),
-            "ReferenceWeightDate": obj.get("ReferenceWeightDate") or None,
+            "ReferenceWeightDate": obj.get("ReferenceWeightDate"),
             "ReferenceWeightValue": obj.get("ReferenceWeightValue")
         })
         return _obj

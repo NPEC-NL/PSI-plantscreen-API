@@ -38,9 +38,8 @@ from plantscreen.models.json_msc_plant_param_by_analyse_id_result import JsonMsc
 from plantscreen.models.json_msc_plant_param_result import JsonMscPlantParamResult
 from plantscreen.models.json_msc_used_param_by_analyse_id_result import JsonMscUsedParamByAnalyseIDResult
 from plantscreen.models.json_msc_used_param_result import JsonMscUsedParamResult
-from plantscreen.models.json_msc_calibration_light_by_id_result import JsonMscCalibrationLightByIDResult
-from plantscreen.models.json_msc_calibration_light_result import JsonMscCalibrationLightResult
-import json
+from plantscreen.models.msc_calibration_light200_response import MscCalibrationLight200Response
+
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -58,18 +57,6 @@ class MscApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def check_resp_type(self, response_data: bytearray):
-        response_json = response_data.data
-        if response_json is None:
-            return {'200': "JsonMscCalibrationLightResult"}
-        if isinstance(response_json, bytes):
-            response_dict = json.loads(response_json.decode())
-        if isinstance(response_dict, dict):
-            if "JsonMscCalibrationLightResult" in response_dict.keys():
-                return {'200': "JsonMscCalibrationLightResult"}
-            elif "JsonMscCalibrationLightByIDResult" in response_dict.keys():
-                return {'200': "JsonMscCalibrationLightByIDResult"}
-        return {'200': "JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult"}
 
     @validate_call
     def msc_calibration(
@@ -346,7 +333,7 @@ class MscApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult:
+    ) -> MscCalibrationLight200Response:
         """Returns a list of all lightsettings if no ID is passed. Or the light output setting for light group calibration defined by calibration light ID.
 
 
@@ -381,15 +368,14 @@ class MscApi:
             _headers=_headers,
             _host_index=_host_index
         )
+
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult"
+            '200': "MscCalibrationLight200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        _response_types_map = self.check_resp_type(response_data)
-
         response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
@@ -413,7 +399,7 @@ class MscApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult]:
+    ) -> ApiResponse[MscCalibrationLight200Response]:
         """Returns a list of all lightsettings if no ID is passed. Or the light output setting for light group calibration defined by calibration light ID.
 
 
@@ -448,15 +434,14 @@ class MscApi:
             _headers=_headers,
             _host_index=_host_index
         )
+
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult"
+            '200': "MscCalibrationLight200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        _response_types_map = self.check_resp_type(response_data)
-
         response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
@@ -515,15 +500,14 @@ class MscApi:
             _headers=_headers,
             _host_index=_host_index
         )
+
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult"
+            '200': "MscCalibrationLight200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        _response_types_map = self.check_resp_type(response_data)
-
         return response_data.response
 
 
