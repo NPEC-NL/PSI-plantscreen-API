@@ -2,6 +2,10 @@ from pydantic_xml import BaseXmlModel, attr, element
 from typing import List, Optional
 
 
+class Frame(BaseXmlModel, tag='Frame'):
+    angle: Optional[int] = attr(default=None)
+
+
 class Light(BaseXmlModel, tag='Light'):
     name: str = attr()
     value: int = attr()
@@ -42,15 +46,80 @@ class IR1(BaseXmlModel, tag='IR1'):
     delay: str = element(tag='Delay')
 
 
+class PlantMask(BaseXmlModel, tag='PlantMask'):
+    formula: Optional[str] = element(tag='Formula', default=None)
+    threshold: Optional[float] = element(tag='Threshold', default=None)
+    median_filter_size: Optional[int] = element(
+        tag='MedianFilterSize', default=None
+    )
+    min_size: Optional[int] = element(tag='MinSize', default=None)
+    min_hole_size: Optional[int] = element(tag='MinHoleSize', default=None)
+    crop_objects_on_borders: Optional[bool] = element(
+        tag='CropObjectsOnBorders', default=None
+    )
+    crop_objects_on_borders_min_preserve_size: Optional[int] = element(
+        tag='CropObjectsOnBordersMinPreserveSize', default=None
+    )
+    use_reflection_reduction: Optional[bool] = element(
+        tag='UseReflectionReduction', default=None
+    )
+    skip_bad_exposed_points: Optional[bool] = element(
+        tag='SkipBadExposedPoints', default=None
+    )
+
+
+class RGBS(BaseXmlModel, tag='RGBS'):
+    height: Optional[str] = attr(default=None)
+    offset: Optional[int] = element(tag='Offset', default=None)
+    frame: Optional['Frame'] = element(tag='Frame', default=None)
+    delay: Optional[str] = element(tag='Delay', default=None)
+    plant_mask: Optional[PlantMask] = element(tag='PlantMask', default=None)
+
+
+class Rgb(BaseXmlModel, tag='Rgb'):
+    red: Optional[int] = element(tag='Red', default=None)
+    green: Optional[int] = element(tag='Green', default=None)
+    blue: Optional[int] = element(tag='Blue', default=None)
+    brighten_multiplier: Optional[int] = element(
+        tag='BrightenMultiplier', default=None
+    )
+
+
+class Parameters(BaseXmlModel, tag='Parameters'):
+    parameter: Optional[str] = element(tag='Parameter', default=None)
+
+
+class Values(BaseXmlModel, tag='Values'):
+    wl_surrounding: Optional[int] = element(tag='WlSurrounding', default=None)
+    min_valid_pixels_percentage: Optional[int] = element(
+        tag='MinValidPixelsPercentage', default=None
+    )
+
+
+class SWIR(BaseXmlModel, tag='SWIR'):
+    height: Optional[str] = attr(default=None)
+    offset: Optional[int] = element(tag='Offset', default=None)
+    delay: Optional[str] = element(tag='Delay', default=None)
+    rgb: Optional[Rgb] = element(tag='Rgb', default=None)
+    parameters: Optional[Parameters] = element(tag='Parameters', default=None)
+    values: Optional[Values] = element(tag='Values', default=None)
+
+
 class Analyse(BaseXmlModel, tag='Analyse'):
-    mask_erosion_level: int = element(tag='MaskErosionLevel')
+    mask_erosion_level: Optional[int] = element(
+        tag='MaskErosionLevel', default=None
+    )
+    rgbs: Optional['RGBS'] = element(tag='RGBS', default=None)
+    swir: Optional['SWIR'] = element(tag='SWIR', default=None)
 
 
 class Prescription(BaseXmlModel, tag='Prescription'):
-    id: int = attr()
-    name: str = attr()
-    ir1: IR1 = element(tag='IR1')
-    analyse: Analyse = element(tag='Analyse')
+    id: Optional[int] = attr(default=None)
+    name: Optional[str] = attr(default=None)
+    ir1: Optional[IR1] = element(tag='IR1', default=None)
+    rgbs: Optional[RGBS] = element(tag='RGBS', default=None)
+    swir: Optional[SWIR] = element(tag='SWIR', default=None)
+    analyse: Optional[Analyse] = element(tag='Analyse', default=None)
 
 
 class Batch(BaseXmlModel, tag='Batch'):
@@ -66,13 +135,17 @@ class Tray(BaseXmlModel, tag='Tray'):
 
 
 class Measure(BaseXmlModel, tag='Measure'):
-    adapt_time: str = element(tag='AdaptTime')
-    prescription: Prescription = element(tag='Prescription')
+    adapt_time: Optional[str] = element(tag='AdaptTime', default=None)
+    prescription: Optional[Prescription] = element(
+        tag='Prescription', default=None
+    )
     batches: Optional[List[Batch]] = element(tag='Batch')
     trays: Optional[List[Tray]] = element(tag='Tray')
 
 
 class Protocol(BaseXmlModel, tag='Protocol'):
-    set_lights: List[SetLight] = element(tag='SetLight')
-    tray_load: Optional[TrayLoad] = element(tag='TrayLoad')
+    set_lights: Optional[List[SetLight]] = element(
+        tag='SetLight', default=None
+    )
+    tray_load: Optional[TrayLoad] = element(tag='TrayLoad', default=None)
     measure: Optional[Measure] = element(tag='Measure')
