@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -2738,13 +2738,11 @@
 </ul>
 <hr />
 <p>Photon System Instruments (PSI) develivers equipment accross the globe. 
-Most of their systems use the plantscreen software, which comes with an API.
-This API is tricky to implement. 
-The endpoints for instance do not follow the camelCase naming convention, starting the first keyword with a capital.
-This causes problems for most dict to dataclass convertors like dataclasses_json. Luckily swagger can handle this. 
-The wrapping of the returnbodies with a unique keyword is handles with wrapers.</p>
-<p>We, the NPEC team, believe it's a waist of everyones time if we all have to figure out how to get this working.
-Therefore we created he swagger file and a simple python wrapper to integrate the plantscreen API.</p>
+Their cimatecells are controlled with plantscreen software, which comes with an API.
+Experience tough us, this API is a bit tricky to implement. 
+We believe it's a waist of time if everyone has to figure out how to implement this API and test it.
+Therefore we created he swagger file and a simple python wrapper to integrate the  endpoints of the plantscreen API.</p>
+<p>Unfortunately, we where not able to test the 3D scanner and MSC endpoints as the facilities are not equiped with these systems.</p>
 <h2 id="installation">Installation</h2>
 <p>Unfortunately currently only available on test pypi, installable with:
 <code>python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple psi-plantscreen</code></p>
@@ -2756,7 +2754,7 @@ Therefore we created he swagger file and a simple python wrapper to integrate th
 <p>The environment files have one additional depency: <code>pip install python-dotenv</code>
 Examples:
 - <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_implementation.py">Calls to all endpoints</a>
-- <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py">How to download the last 5 measurement files</a></p>
+- <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py">An example of how to download the last 5 measurement files</a></p>
 <h2 id="contributing">Contributing</h2>
 <p>We welcome contributions! 
 If you encounter bugs, have feature requests, or want to suggest improvements, please <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/issues">create an issue</a> and provide a clear description.</p>
@@ -2786,14 +2784,14 @@ After this some postprocessing scripts are executed to make it work:
 5. Run <code>simplify_returns.py</code>, for convenience. 
 6. <code>update_models.py</code> to account for the <code>""</code> the server returns instead of <code>None</code> for missing datetime values.
 7. <code>update_config_file.py</code> to set the datetime format correct.
-8. Copy <code>xml_decoder.py</code> to the plantscreen folder</p>
-<p>Additional notes:
-- The fileendpoints are called without the '/json' , which means they require a different url.
-- It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is done by hand</p>
+8. Copy <code>xml_decoder.py</code> to the plantscreen folder
+9. Update the documentation <code>generate_docs.py</code> and <code>update_docs.py</code></p>
+<p>The fileendpoints use a socket (data stream) to download the files. It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is overwriten with handmade code. Those endspoints are also called without the returntype prefeix: '/json' , which means they require a different url.</p>
 <h3 id="documentation">Documentation</h3>
 <p>Build with <a href="https://squidfunk.github.io/mkdocs-material/">mkdocs-material</a></p>
 <p>Note, the docs pages will unfortunately not be available untill this repo is made public.
 - <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/CompleteAPIClient.md">complete api</a>
+- <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/XMLDecoder.md">XML decoder</a>
 - <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/API_endpoints.md">API Endpoints</a>
 - <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/models.md">Models</a>
 - <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_implementation.py">example implementations</a>
