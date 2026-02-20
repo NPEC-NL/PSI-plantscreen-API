@@ -72,16 +72,17 @@ After this some postprocessing scripts are executed to make it work:
 6. `update_models.py` to account for the `""` the server returns instead of `None` for missing datetime values.
 7. `update_config_file.py` to set the datetime format correct.
 8. Copy `xml_decoder.py` to the plantscreen folder
+9. Update the documentation `generate_docs.py` and `update_docs.py`
 
-Additional notes:
-- The fileendpoints are called without the '/json' , which means they require a different url.
-- It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is done by hand
+The fileendpoints use a socket (data stream) to download the files. It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is overwriten with handmade code. Those endspoints are also called without the returntype prefeix: '/json' , which means they require a different url.
+
 
 ### Documentation
 Build with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
 Note, the docs pages will unfortunately not be available untill this repo is made public.
 - [complete api](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/CompleteAPIClient.md)
+- [XML decoder](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/XMLDecoder.md)
 - [API Endpoints](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/API_endpoints.md)
 - [Models](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/models.md)
 - [example implementations](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_implementation.py)

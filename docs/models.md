@@ -1,7 +1,11 @@
 # Models
 
 This page provides quick links to all model documentation files:
+- [API Models](#api-models)
+- [XML Models](#xml-models)
 
+
+## API Models
 <table>
 	<tr>
 		<td>📄 <a href="docs/Action.md">Action</a></td>
@@ -86,3 +90,17 @@ This page provides quick links to all model documentation files:
 		<td>📄 <a href="docs/VersionInfo.md">VersionInfo</a></td>
 	</tr>
 </table>
+
+## XML Models
+<table>
+	<tr>
+		<td>📄 <a href="docs/Protocol.md">Protocol</a></td>
+		<td>📄 <a href="docs/Configuration.md">Configuration</a></td>
+		<td>📄 <a href="docs/GroupTiming.md">GroupTiming</a></td>
+		<td>📄 <a href="docs/DataSet.md">DataSet</a></td>
+		<td>📄 <a href="docs/TAnyShapes.md">TAnyShapes</a></td>
+	</tr>
+</table>
+
+---
+[Back to API Endpoints](API_endpoints.md) [Back to README](README.md)

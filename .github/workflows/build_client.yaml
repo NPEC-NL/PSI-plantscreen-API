@@ -37,7 +37,6 @@ jobs:
             rm -rf docs/docs
             mkdir -p docs/docs
             cp -r generated/docs/* docs/docs/
-            cp generated/README.md docs/plantsc_README.md
           fi
 
       - name: Copy python code to /test
@@ -91,6 +90,9 @@ jobs:
       # Documentation updates
       - name: Run update_docs.py
         run: python post_generation/update_docs.py
+
+      - name: Run generate_complete_api_client_md.py
+        run: python post_generation/generate_docs.py
 
       - name: Install ruff
         run: pip install ruff
