@@ -11,14 +11,12 @@
 ---
 
 Photon System Instruments (PSI) develivers equipment accross the globe. 
-Most of their systems use the plantscreen software, which comes with an API.
-This API is tricky to implement. 
-The endpoints for instance do not follow the camelCase naming convention, starting the first keyword with a capital.
-This causes problems for most dict to dataclass convertors like dataclasses_json. Luckily swagger can handle this. 
-The wrapping of the returnbodies with a unique keyword is handles with wrapers.
+Their cimatecells are controlled with plantscreen software, which comes with an API.
+Experience tough us, this API is a bit tricky to implement. 
+We believe it's a waist of time if everyone has to figure out how to implement this API and test it.
+Therefore we created he swagger file and a simple python wrapper to integrate the  endpoints of the plantscreen API.
 
-We, the NPEC team, believe it's a waist of everyones time if we all have to figure out how to get this working.
-Therefore we created he swagger file and a simple python wrapper to integrate the plantscreen API.
+Unfortunately, we where not able to test the 3D scanner and MSC endpoints as the facilities are not equiped with these systems.
 
 ## Installation 
 Unfortunately currently only available on test pypi, installable with:
@@ -34,7 +32,7 @@ URL: "http://<ip-address>:<poort>"
 The environment files have one additional depency: `pip install python-dotenv`
 Examples:
 - [Calls to all endpoints](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_implementation.py)
-- [How to download the last 5 measurement files](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py)
+- [An example of how to download the last 5 measurement files](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py)
 
 ## Contributing
 We welcome contributions! 
@@ -72,16 +70,17 @@ After this some postprocessing scripts are executed to make it work:
 6. `update_models.py` to account for the `""` the server returns instead of `None` for missing datetime values.
 7. `update_config_file.py` to set the datetime format correct.
 8. Copy `xml_decoder.py` to the plantscreen folder
+9. Update the documentation `generate_docs.py` and `update_docs.py`
 
-Additional notes:
-- The fileendpoints are called without the '/json' , which means they require a different url.
-- It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is done by hand
+The fileendpoints use a socket (data stream) to download the files. It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is overwriten with handmade code. Those endspoints are also called without the returntype prefeix: '/json' , which means they require a different url.
+
 
 ### Documentation
 Build with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
 Note, the docs pages will unfortunately not be available untill this repo is made public.
 - [complete api](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/CompleteAPIClient.md)
+- [XML decoder](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/XMLDecoder.md)
 - [API Endpoints](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/API_endpoints.md)
 - [Models](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/docs/models.md)
 - [example implementations](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_implementation.py)
