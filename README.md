@@ -39,7 +39,9 @@ We welcome contributions!
 If you encounter bugs, have feature requests, or want to suggest improvements, please [create an issue](https://github.com/NPEC-NL/PSI-plantscreen-API/issues) and provide a clear description.
 
 ### Setting up a Development Environment
-Requires Python 3.9+
+Tested with python 3.10, 3.11, 3.12 and 3.13.
+
+
 1. **Create a virtual environment (venv):**
 	```sh
 	python -m venv .venv
