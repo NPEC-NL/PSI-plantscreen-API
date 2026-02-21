@@ -2,9 +2,9 @@
 name = "psi-plantscreen"
 description = "Python API implementation of PSI plantscreen API"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 keywords = ["PSI", "plantscreen", "API"]
-license = {file = "LICENSE.txt"}
+license = {file = "LICENSE"}
 maintainers = [
   {name = "NPEC WUR"}
 ]
