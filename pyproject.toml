@@ -60,6 +60,8 @@ packages = ["plantscreen"]
 
 [tool.setuptools_scm]
 write_to = "plantscreen/_version.py"
+local_scheme = "no-local-version"
+tag_regex = r'^(\\d+\\.\\d+\\.\\d+)$'
 
 [project.urls]
 "Homepage" = "https://github.com/NPEC-NL/PSI-Plantscreen-API"
