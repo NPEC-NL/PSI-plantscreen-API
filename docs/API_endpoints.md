@@ -8,40 +8,24 @@ For convenience all endpoints are wrapped in:
 
 Individual API groups:
 
-<table>
-	<tr>
-		<td>🔹 <a href="docs/ActionApi.md">ActionApi</a></td>
-		<td>🔹 <a href="docs/BufferApi.md">BufferApi</a></td>
-		<td>🔹 <a href="docs/DeviceApi.md">DeviceApi</a></td>
-	</tr>
-	<tr>
-		<td>🔹 <a href="docs/ExperimentApi.md">ExperimentApi</a></td>
-		<td>🔹 <a href="docs/FcApi.md">FcApi</a></td>
-		<td>🔹 <a href="docs/FileApi.md">FileApi</a></td>
-	</tr>
-	<tr>
-		<td>🔹 <a href="docs/HcApi.md">HcApi</a></td>
-		<td>🔹 <a href="docs/IrApi.md">IrApi</a></td>
-		<td>🔹 <a href="docs/MscApi.md">MscApi</a></td>
-	</tr>
-	<tr>
-		<td>🔹 <a href="docs/PlantApi.md">PlantApi</a></td>
-		<td>🔹 <a href="docs/ProbeApi.md">ProbeApi</a></td>
-		<td>🔹 <a href="docs/ProfileApi.md">ProfileApi</a></td>
-	</tr>
-	<tr>
-		<td>🔹 <a href="docs/RgbApi.md">RgbApi</a></td>
-		<td>🔹 <a href="docs/RoundApi.md">RoundApi</a></td>
-		<td>🔹 <a href="docs/ScalesApi.md">ScalesApi</a></td>
-	</tr>
-	<tr>
-		<td>🔹 <a href="docs/Scan3dApi.md">Scan3dApi</a></td>
-		<td>🔹 <a href="docs/SpectrumDeviceApi.md">SpectrumDeviceApi</a></td>
-		<td>🔹 <a href="docs/SprayApi.md">SprayApi</a></td>
-	</tr>
-	<tr>
-		<td>🔹 <a href="docs/SystemLogApi.md">SystemLogApi</a></td>
-		<td>🔹 <a href="docs/TrayApi.md">TrayApi</a></td>
-		<td>🔹 <a href="docs/VersionInfoApi.md">VersionInfoApi</a></td>
-	</tr>
-</table>
+* 📄 [ActionApi](docs/ActionApi.md)
+* 📄 [BufferApi](docs/BufferApi.md)
+* 📄 [DeviceApi](docs/DeviceApi.md)
+* 📄 [ExperimentApi](docs/ExperimentApi.md)
+* 📄 [FcApi](docs/FcApi.md)
+* 📄 [FileApi](docs/FileApi.md)
+* 📄 [HcApi](docs/HcApi.md)
+* 📄 [IrApi](docs/IrApi.md)
+* 📄 [MscApi](docs/MscApi.md)
+* 📄 [PlantApi](docs/PlantApi.md)
+* 📄 [ProbeApi](docs/ProbeApi.md)
+* 📄 [ProfileApi](docs/ProfileApi.md)
+* 📄 [RgbApi](docs/RgbApi.md)
+* 📄 [RoundApi](docs/RoundApi.md)
+* 📄 [ScalesApi](docs/ScalesApi.md)
+* 📄 [Scan3dApi](docs/Scan3dApi.md)
+* 📄 [SpectrumDeviceApi](docs/SpectrumDeviceApi.md)
+* 📄 [SprayApi](docs/SprayApi.md)
+* 📄 [SystemLogApi](docs/SystemLogApi.md)
+* 📄 [TrayApi](docs/TrayApi.md)
+* 📄 [VersionInfoApi](docs/VersionInfoApi.md)

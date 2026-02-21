@@ -228,8 +228,8 @@ def main(src_file: Path, doc_path: Path, classname: str):
 
     # Add navigation links at the bottom
     md_lines.append(
-        '[Back to top](#) [Back to API Endpoints](API_endpoints.md) '
-        '[Back to Models](Models.md) [Back to README](README.md)\n'
+        '[Back to top](#) | [Back to API Endpoints](API_endpoints.md) '
+        '| [Back to Models](Models.md) | [Back to README](README.md)\n'
     )
 
     # Write to file
@@ -282,9 +282,9 @@ def generate_xml_mdocs():
             md_lines.append('\n---')
 
         md_lines.append(
-            '[Back to top](#) [Back to API Endpoints](../API_endpoints.md) '
-            '[Back to CompleteAPIClient](../CompleteAPIClient.md) '
-            '[Back to README](../README.md)\n'
+            '[Back to top](#) | [Back to API Endpoints](../API_endpoints.md) |'
+            ' [Back to CompleteAPIClient](../CompleteAPIClient.md) |'
+            ' [Back to README](../README.md)\n'
         )
 
         # Write to file
