@@ -2759,20 +2759,24 @@ Examples:
 <p>We welcome contributions! 
 If you encounter bugs, have feature requests, or want to suggest improvements, please <a href="https://github.com/NPEC-NL/PSI-plantscreen-API/issues">create an issue</a> and provide a clear description.</p>
 <h3 id="setting-up-a-development-environment">Setting up a Development Environment</h3>
-<p>Requires Python 3.9+
-1. <strong>Create a virtual environment (venv):</strong>
+<p>Tested with python 3.10, 3.11, 3.12 and 3.13.</p>
+<ol>
+<li><strong>Create a virtual environment (venv):</strong>
     <code>sh
-    python -m venv .venv</code>
-2. <strong>Activate the venv:</strong>
-    - On Windows:
-      <code>sh
-      .venv\Scripts\activate</code>
-    - On macOS/Linux:
-      <code>sh
-      source .venv/bin/activate</code>
-3. <strong>Install the package with build and test dependencies:</strong>
+    python -m venv .venv</code></li>
+<li><strong>Activate the venv:</strong><ul>
+<li>On Windows:
+  <code>sh
+  .venv\Scripts\activate</code></li>
+<li>On macOS/Linux:
+  <code>sh
+  source .venv/bin/activate</code></li>
+</ul>
+</li>
+<li><strong>Install the package with build and test dependencies:</strong>
     ```sh
-    pip install .[build, test]</p>
+    pip install .[build, test]</li>
+</ol>
 <h3 id="updating-the-openapi-specification-file">Updating the OpenAPI specification file</h3>
 <p>The API is automatically generated from the <a href="https://github.com/NPEC-NL/PSI-Fytotron-API/blob/main/OpenAPI_specification/PSI_fytotron_API.json">OpenAPI specification file</a> with the <a href="https://github.com/OpenAPITools/openapi-generator-cli">openapi generator cli</a>.
 The workflows automatically build the client and copy the files to the right folders.
