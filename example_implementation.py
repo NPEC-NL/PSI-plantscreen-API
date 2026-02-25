@@ -760,7 +760,7 @@ if __name__ == "__main__":
         start = datetime.datetime(year=2023, month=9, day=1, hour=1)
         stop = datetime.datetime(year=2023, month=9, day=1, hour=2)
         spectrum_device_value_list = api.spectrum_values_date_device(1, start, stop)
-        pprint(f"All probe values for probe ID between {start} and {stop}: {spectrum_device_value_list}")
+        pprint(f"All spectrum device values for device ID between {start} and {stop}: {spectrum_device_value_list}")
 
         """-----------------------------------------------------------------------------------------------------------------
             Buffer
