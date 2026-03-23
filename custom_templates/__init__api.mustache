@@ -1,0 +1,77 @@
+# flake8: noqa
+
+{{!add wrapper to allow single value arguments to be passed for parameters accepting a list}}
+import inspect
+from functools import wraps
+from typing import get_type_hints, get_origin, Annotated, get_args, Any
+
+
+def allow_single_for_first_list_param(func):
+    def unwrap_annotated(annotation: Any) -> Any:
+        if get_origin(annotation) is Annotated:
+            return get_args(annotation)[0]
+        return annotation
+
+    def first_data_param_accepts_list(func, signature) -> tuple[bool, str]:
+        hints = get_type_hints(func, include_extras=True)
+
+        for param in signature.parameters.values():
+            if param.name in {"self", "cls"}:
+                continue
+
+            annotation = unwrap_annotated(hints[param.name])
+            accepts_list = annotation is list or get_origin(annotation) is list
+            return accepts_list, param.name
+
+        raise ValueError("Function has no non-self/cls parameters")
+
+    sig = inspect.signature(func)
+    accepts_list, target_param_name = first_data_param_accepts_list(func, sig)
+
+    def _normalize_bound_arguments(bound):
+        if target_param_name is None or not accepts_list:
+            return bound
+
+        if target_param_name in bound.arguments:
+            value = bound.arguments[target_param_name]
+            # if the passed value is not a list but should be one
+            if value is not None and not isinstance(value, list):
+                bound.arguments[target_param_name] = [value]
+
+        return bound
+
+    if inspect.iscoroutinefunction(func):
+        @wraps(func)
+        async def async_wrapper(*args, **kwargs):
+            bound = sig.bind_partial(*args, **kwargs)
+            bound = _normalize_bound_arguments(bound)
+            return await func(*bound.args, **bound.kwargs)
+
+        return async_wrapper
+
+    @wraps(func)
+    def sync_wrapper(*args, **kwargs):
+        bound = sig.bind_partial(*args, **kwargs)
+        bound = _normalize_bound_arguments(bound)
+        return func(*bound.args, **bound.kwargs)
+
+    return sync_wrapper
+
+
+{{^lazyImports}}
+{{>exports_api}}
+{{/lazyImports}}
+{{#lazyImports}}if __import__("typing").TYPE_CHECKING:
+    {{>exports_api}}
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            """{{>exports_api}}""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )
+{{/lazyImports}}

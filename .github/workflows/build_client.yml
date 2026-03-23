@@ -24,7 +24,9 @@ jobs:
           openapi-file: OpenAPI_specification/PSI_plantscreen_API.json
           command-args: >-
             -o generated
-            --additional-properties=packageName=plantscreen
+            -t custom_template
+            --additional-properties=packageName=plantscreen,datetimeFormat=%Y-%m-%dT%H:%M:%S
+      
 
       - name: Copy generated code to /plantscreen
         run: |
@@ -79,13 +81,7 @@ jobs:
         run: python post_generation/fix_one_of_calls.py 
 
       - name: Run simplify_returns.py
-        run: python post_generation/simplify_returns.py 
-
-      - name: Run update_models.py
-        run: python post_generation/update_models.py 
-
-      - name: Run update_config_file.py
-        run: python post_generation/update_config_file.py 
+        run: python post_generation/simplify_returns.py
 
       - name: update init.py
         run: python post_generation/update_init.py

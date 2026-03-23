@@ -1,0 +1,9 @@
+
+{{! Add a property that calls the API for the linked model with the parameter identified by x-pp-link.name}}
+@property
+{{#async}}async {{/async}}def {{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}(self) -> {{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}.{{{vendorExtensions.x-pp-link.model}}}:
+    if type(self._{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}) is object:
+        from {{packageName}}.api.{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.tag}}}{{/lambda.snakecase}}_api import {{#lambda.pascalcase}}{{{vendorExtensions.x-pp-link.tag}}}Api{{/lambda.pascalcase}} as Api
+        json_result = {{#async}}await {{/async}}Api().{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.operationId}}}{{/lambda.snakecase}}(self.{{name}})
+        self._{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}} = json_result.result
+    return self._{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}

@@ -1,0 +1,7 @@
+
+{{#async}}async {{/async}}def {{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}}(self,{{#parameters}}{{^source}}{{name}}{{^-last}},{{/-last}}{{/source}}{{/parameters}}) -> {{^isSingleValue}}List[{{/isSingleValue}}{{#lambda.snakecase}}{{{model}}}{{/lambda.snakecase}}.{{{model}}}{{^isSingleValue}}]{{/isSingleValue}}:
+    from {{packageName}}.api.{{#lambda.snakecase}}{{{tag}}}{{/lambda.snakecase}}_api import {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} as Api
+    json_result = {{#async}}await {{/async}}Api().{{#lambda.snakecase}}{{{operationId}}}{{/lambda.snakecase}}(
+            {{#parameters}}{{#source}}{{name}}=self.{{#lambda.snakecase}}{{source}}{{/lambda.snakecase}}{{/source}}{{^source}},{{name}}={{name}}{{/source}}{{/parameters}})
+    return json_result.result
+
