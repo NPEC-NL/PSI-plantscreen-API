@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_probe_result** | [**List[Probe]**](Probe.md) |  | [optional] 
+**result** | [**List[Probe]**](Probe.md)| alias for **json_probe_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

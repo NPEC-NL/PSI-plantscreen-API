@@ -20,14 +20,23 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import spectrum_device
+
 
 class SpectrumDeviceID(BaseModel):
     """
     SpectrumDeviceID
     """ # noqa: E501
     spectrum_device_id: Optional[StrictInt] = Field(default=None, alias="SpectrumDeviceID")
+    _spectrum_device: Optional[spectrum_device.SpectrumDevice] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["SpectrumDeviceID"]
 
     model_config = ConfigDict(
@@ -35,6 +44,16 @@ class SpectrumDeviceID(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+    
+    @property
+    def spectrum_device(self) -> spectrum_device.SpectrumDevice:
+        if type(self._spectrum_device) is object:
+            from plantscreen.api.spectrum_device_api import SpectrumDeviceApi as Api
+            json_result = Api().spectrum_device(self.spectrum_device_id)
+            self._spectrum_device = json_result.result
+        return self._spectrum_device
 
 
     def to_str(self) -> str:
@@ -81,7 +100,7 @@ class SpectrumDeviceID(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "SpectrumDeviceID": obj.get("SpectrumDeviceID")
+                        "SpectrumDeviceID": obj.get("SpectrumDeviceID")
         })
         return _obj
 

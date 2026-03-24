@@ -21,8 +21,13 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class SpectrumDeviceWavelengthsJSONWrapper(BaseModel):
     """
@@ -31,7 +36,19 @@ class SpectrumDeviceWavelengthsJSONWrapper(BaseModel):
     data: Optional[List[Union[StrictFloat, StrictInt]]] = Field(default=None, alias="Data")
     var_date: Optional[datetime] = Field(default=None, alias="Date")
     s_const: Optional[StrictStr] = Field(default=None, alias="SConst")
+
     __properties: ClassVar[List[str]] = ["Data", "Date", "SConst"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -78,8 +95,9 @@ class SpectrumDeviceWavelengthsJSONWrapper(BaseModel):
 
         _obj = cls.model_validate({
             "Data": obj.get("Data"),
-            "Date": obj.get("Date"),
-            "SConst": obj.get("SConst")
+            
+            "Date": obj.get("Date") or None,
+                        "SConst": obj.get("SConst")
         })
         return _obj
 

@@ -15,4 +15,4 @@ In the meantime and as alternative the xml_to_dict function can be used to conve
 
 For example implemenations please see: [example_usecase.py](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py)
 
-[Back to top](#) [Back to API Endpoints](API_endpoints.md) [Back to Models](Models.md) [Back to README](README.md)
+[Back to top](#) | [Back to API Endpoints](API_endpoints.md) | [Back to Models](Models.md) | [Back to README](README.md)

@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_hc_imaging_by_id_result** | [**HcImaging**](HcImaging.md) |  | [optional] 
+**result** | [**HcImaging**](HcImaging.md)| alias for **json_hc_imaging_by_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

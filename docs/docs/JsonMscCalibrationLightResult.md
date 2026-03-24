@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_msc_calibration_light_result** | [**List[MscCalibrationLight]**](MscCalibrationLight.md) |  | [optional] 
+**result** | [**List[MscCalibrationLight]**](MscCalibrationLight.md)| alias for **json_msc_calibration_light_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **reference_weight_date** | **datetime** |  | [optional] 
 **reference_weight_value** | **float** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**plant**|[**int**](Plant.md)|plant_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

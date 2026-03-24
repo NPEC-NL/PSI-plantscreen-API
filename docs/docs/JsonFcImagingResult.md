@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_fc_imaging_result** | [**List[FcImaging]**](FcImaging.md) |  | [optional] 
+**result** | [**List[FcImaging]**](FcImaging.md)| alias for **json_fc_imaging_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.version_info import VersionInfo
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonVersionInfoResult(BaseModel):
     """
     JsonVersionInfoResult
     """ # noqa: E501
     json_version_info_result: Optional[VersionInfo] = Field(default=None, alias="JsonVersionInfoResult")
+
     __properties: ClassVar[List[str]] = ["JsonVersionInfoResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonVersionInfoResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> VersionInfo:
+        return self.json_version_info_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

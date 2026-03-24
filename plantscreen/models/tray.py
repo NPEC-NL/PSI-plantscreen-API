@@ -21,8 +21,25 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import tray_type
+
+
+from plantscreen.models import tray_profile
+
+from plantscreen.models import scales_mapping
+
+from plantscreen.models import plant
+
+from plantscreen.models import plant_weight_reference
+
+from plantscreen.models import system_log
 
 class Tray(BaseModel):
     """
@@ -34,7 +51,107 @@ class Tray(BaseModel):
     tray_status: Optional[StrictStr] = Field(default=None, alias="TrayStatus")
     tray_status_changed: Optional[datetime] = Field(default=None, alias="TrayStatusChanged")
     tray_type_id: Optional[StrictInt] = Field(default=None, alias="TrayTypeID")
+    _tray_type: Optional[tray_type.TrayType] = PrivateAttr(default=object())
+    _tray_profile: Optional[tray_profile.TrayProfile] = PrivateAttr(default=object())
+    _scales_mapping: Optional[scales_mapping.ScalesMapping] = PrivateAttr(default=object())
+    _plants: Optional[List[plant.Plant]] = PrivateAttr(default=object())
+    _plant_reference_weights: Optional[List[plant_weight_reference.PlantWeightReference]] = PrivateAttr(default=object())
+    _system_logs: Optional[List[system_log.SystemLog]] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["TrayBarcode", "TrayID", "TrayInfo", "TrayStatus", "TrayStatusChanged", "TrayTypeID"]
+
+    def tray_type(self) -> tray_type.TrayType:
+        if type(self._tray_type) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray_type(self.tray_type_id)
+            self._tray_type = json_result.result
+        return self._tray_type
+    
+    @property
+    def tray_profile(self) -> tray_profile.TrayProfile:
+        if type(self._tray_profile) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray_profile_tray(id=self.tray_id)
+            self._tray_profile = json_result.result
+        return self._tray_profile
+    
+    
+    
+    @property
+    def scales_mapping(self) -> scales_mapping.ScalesMapping:
+        if type(self._scales_mapping) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().scales_mapping_tray(id=self.tray_id)
+            self._scales_mapping = json_result.result
+        return self._scales_mapping
+    
+    
+    
+    @property
+    def plants(self) -> List[plant.Plant]:
+        if type(self._plants) is object:
+            from plantscreen.api.plant_api import PlantApi as Api
+            json_result = Api().plant_tray(id=self.tray_id)
+            self._plants = json_result.result
+        return self._plants
+    
+    
+    
+    @property
+    def plant_reference_weights(self) -> List[plant_weight_reference.PlantWeightReference]:
+        if type(self._plant_reference_weights) is object:
+            from plantscreen.api.scales_api import ScalesApi as Api
+            json_result = Api().scales_weight_reference_tray(id=self.tray_id)
+            self._plant_reference_weights = json_result.result
+        return self._plant_reference_weights
+    
+    
+    
+    @property
+    def system_logs(self) -> List[system_log.SystemLog]:
+        if type(self._system_logs) is object:
+            from plantscreen.api.system_log_api import SystemLogApi as Api
+            json_result = Api().system_log_tray(id=self.tray_id)
+            self._system_logs = json_result.result
+        return self._system_logs
+    
+    
+
+    
+    def tray_profile_used_by_daterange(self,start,stop) -> List[tray_profile.TrayProfile]:
+        from plantscreen.api.tray_api import TrayApi as Api
+        json_result = Api().tray_profile_used_tray(
+                id=self.tray_id,start=start,stop=stop)
+        return json_result.result
+    
+    
+    def tray_profile_used_at_time(self,date) -> List[tray_profile.TrayProfile]:
+        from plantscreen.api.tray_api import TrayApi as Api
+        json_result = Api().tray_profile_to_date_tray(
+                id=self.tray_id,date=date)
+        return json_result.result
+    
+    
+    def plants_by_daterange(self,start,stop) -> List[plant.Plant]:
+        from plantscreen.api.plant_api import PlantApi as Api
+        json_result = Api().plant_tray_profile_tray(
+                id=self.tray_id,start=start,stop=stop)
+        return json_result.result
+    
+    
+    def plant_reference_weights_at_time(self,date) -> List[plant_weight_reference.PlantWeightReference]:
+        from plantscreen.api.scales_api import ScalesApi as Api
+        json_result = Api().scales_weight_reference_to_date_tray(
+                id=self.tray_id,date=date)
+        return json_result.result
+    
+    
+    def system_logs_by_daterange(self,start,stop) -> List[system_log.SystemLog]:
+        from plantscreen.api.system_log_api import SystemLogApi as Api
+        json_result = Api().system_log_date_tray(
+                id=self.tray_id,start=start,stop=stop)
+        return json_result.result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -80,12 +197,13 @@ class Tray(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "TrayBarcode": obj.get("TrayBarcode"),
-            "TrayID": obj.get("TrayID"),
-            "TrayInfo": obj.get("TrayInfo"),
-            "TrayStatus": obj.get("TrayStatus"),
+                        "TrayBarcode": obj.get("TrayBarcode"),
+                        "TrayID": obj.get("TrayID"),
+                        "TrayInfo": obj.get("TrayInfo"),
+                        "TrayStatus": obj.get("TrayStatus"),
+            
             "TrayStatusChanged": obj.get("TrayStatusChanged") or None,
-            "TrayTypeID": obj.get("TrayTypeID")
+                        "TrayTypeID": obj.get("TrayTypeID")
         })
         return _obj
 

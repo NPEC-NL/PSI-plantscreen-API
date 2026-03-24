@@ -33,7 +33,7 @@ from plantscreen.models.json_fc_plant_param_by_analyse_id_result import JsonFcPl
 from plantscreen.models.json_fc_plant_param_result import JsonFcPlantParamResult
 from plantscreen.models.json_fc_used_param_by_analyse_id_result import JsonFcUsedParamByAnalyseIDResult
 from plantscreen.models.json_fc_used_param_result import JsonFcUsedParamResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -51,7 +51,7 @@ class FcApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_imaging(
         self,
@@ -297,14 +297,17 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -344,7 +347,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_imaging_extended_data(
         self,
@@ -590,14 +593,17 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -637,7 +643,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_imaging_extended_data_measure(
         self,
@@ -857,6 +863,7 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -896,7 +903,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_imaging_measure(
         self,
@@ -1116,6 +1123,7 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1155,7 +1163,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_leaf_param(
         self,
@@ -1414,18 +1422,22 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -1465,7 +1477,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_leaf_param_analyse(
         self,
@@ -1698,10 +1710,12 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -1741,7 +1755,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_param(
         self,
@@ -1961,6 +1975,7 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2000,7 +2015,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_param_image(
         self,
@@ -2259,18 +2274,22 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2310,7 +2329,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_param_image_analyse(
         self,
@@ -2543,10 +2562,12 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2586,7 +2607,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_param_used(
         self,
@@ -2832,14 +2853,17 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -2879,7 +2903,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_param_used_analyse(
         self,
@@ -3099,6 +3123,7 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3138,7 +3163,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_plant_mask(
         self,
@@ -3384,14 +3409,17 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -3431,7 +3459,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_plant_mask_measure(
         self,
@@ -3651,6 +3679,7 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3690,7 +3719,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_plant_param(
         self,
@@ -3949,18 +3978,22 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -4000,7 +4033,7 @@ class FcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def fc_plant_param_analyse(
         self,
@@ -4233,10 +4266,12 @@ class FcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -4273,5 +4308,6 @@ class FcApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

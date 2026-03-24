@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from plantscreen.models.json_version_info_result import JsonVersionInfoResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -35,7 +35,7 @@ class VersionInfoApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def version_info(
         self,
@@ -274,5 +274,6 @@ class VersionInfoApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

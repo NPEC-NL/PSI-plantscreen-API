@@ -24,7 +24,7 @@ from plantscreen.models.json_plant_weight_reference_by_tray_id_result import Jso
 from plantscreen.models.json_plant_weight_reference_by_tray_idto_date_result import JsonPlantWeightReferenceByTrayIDToDateResult
 from plantscreen.models.json_scales_measure_by_id_result import JsonScalesMeasureByIDResult
 from plantscreen.models.json_scales_measure_result import JsonScalesMeasureResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -42,7 +42,7 @@ class ScalesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scales_plant_weight(
         self,
@@ -288,14 +288,17 @@ class ScalesApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -335,7 +338,7 @@ class ScalesApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scales_plant_weight_measure(
         self,
@@ -555,6 +558,7 @@ class ScalesApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -594,7 +598,7 @@ class ScalesApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scales_weight_reference_plant(
         self,
@@ -814,6 +818,7 @@ class ScalesApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -853,7 +858,7 @@ class ScalesApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scales_weight_reference_to_date_tray(
         self,
@@ -1086,10 +1091,12 @@ class ScalesApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if var_date is not None:
             if isinstance(var_date, datetime):
                 _query_params.append(
@@ -1138,7 +1145,7 @@ class ScalesApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scales_weight_reference_tray(
         self,
@@ -1358,6 +1365,7 @@ class ScalesApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1394,5 +1402,6 @@ class ScalesApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

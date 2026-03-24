@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.imaging import Imaging
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonRgbImagingByIDResult(BaseModel):
     """
     JsonRgbImagingByIDResult
     """ # noqa: E501
     json_rgb_imaging_by_id_result: Optional[Imaging] = Field(default=None, alias="JsonRgbImagingByIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonRgbImagingByIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonRgbImagingByIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> Imaging:
+        return self.json_rgb_imaging_by_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

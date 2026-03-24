@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_action_protocol_by_round_id_result** | [**ActionProtocol**](ActionProtocol.md) |  | [optional] 
+**result** | [**ActionProtocol**](ActionProtocol.md)| alias for **json_action_protocol_by_round_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

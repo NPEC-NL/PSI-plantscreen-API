@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.scales_data import ScalesData
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonScalesMeasureByIDResult(BaseModel):
     """
     JsonScalesMeasureByIDResult
     """ # noqa: E501
     json_scales_measure_by_id_result: Optional[ScalesData] = Field(default=None, alias="JsonScalesMeasureByIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonScalesMeasureByIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonScalesMeasureByIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> ScalesData:
+        return self.json_scales_measure_by_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

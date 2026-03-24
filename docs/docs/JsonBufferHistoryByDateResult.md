@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_buffer_history_by_date_result** | [**List[BufferHistory]**](BufferHistory.md) |  | [optional] 
+**result** | [**List[BufferHistory]**](BufferHistory.md)| alias for **json_buffer_history_by_date_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

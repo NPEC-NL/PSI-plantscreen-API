@@ -21,7 +21,7 @@ from pydantic import Field, StrictInt
 from typing_extensions import Annotated
 from plantscreen.models.json_buffer_history_by_date_result import JsonBufferHistoryByDateResult
 from plantscreen.models.json_buffer_history_result import JsonBufferHistoryResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -39,7 +39,7 @@ class BufferApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def buffer_history(
         self,
@@ -259,6 +259,7 @@ class BufferApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -298,7 +299,7 @@ class BufferApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def buffer_history_date(
         self,
@@ -531,6 +532,7 @@ class BufferApi:
 
         # process the path parameters
         # process the query parameters
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -544,6 +546,7 @@ class BufferApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -589,5 +592,6 @@ class BufferApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.spectrum_device_id import SpectrumDeviceID
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonSpectrumDeviceIDResult(BaseModel):
     """
     JsonSpectrumDeviceIDResult
     """ # noqa: E501
     json_spectrum_device_id_result: Optional[List[SpectrumDeviceID]] = Field(default=None, alias="JsonSpectrumDeviceIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonSpectrumDeviceIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonSpectrumDeviceIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[SpectrumDeviceID]:
+        return self.json_spectrum_device_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

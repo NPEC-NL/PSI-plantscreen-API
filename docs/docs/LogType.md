@@ -7,6 +7,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **log_type** | **str** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

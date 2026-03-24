@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_tray_profile_by_tray_idto_date_result** | [**TrayProfile**](TrayProfile.md) |  | [optional] 
+**result** | [**TrayProfile**](TrayProfile.md)| alias for **json_tray_profile_by_tray_idto_date_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+****|[**TrayProfile**](TrayType.md)|tray_type****|[**TrayProfile**](Plant.md)|plants
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

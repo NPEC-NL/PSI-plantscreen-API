@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **light_set_pid_name** | **str** |  | [optional] 
 **light_set_valid** | **bool** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

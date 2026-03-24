@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.log_tag import LogTag
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonSystemLogTagResult(BaseModel):
     """
     JsonSystemLogTagResult
     """ # noqa: E501
     json_system_log_tag_result: Optional[List[LogTag]] = Field(default=None, alias="JsonSystemLogTagResult")
+
     __properties: ClassVar[List[str]] = ["JsonSystemLogTagResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonSystemLogTagResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[LogTag]:
+        return self.json_system_log_tag_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

@@ -20,8 +20,13 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class VersionInfo(BaseModel):
     """
@@ -29,6 +34,7 @@ class VersionInfo(BaseModel):
     """ # noqa: E501
     api_version: Optional[StrictStr] = Field(default=None, alias="ApiVersion")
     database_version: Optional[StrictInt] = Field(default=None, alias="DatabaseVersion")
+
     __properties: ClassVar[List[str]] = ["ApiVersion", "DatabaseVersion"]
 
     model_config = ConfigDict(
@@ -36,6 +42,9 @@ class VersionInfo(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
 
 
     def to_str(self) -> str:
@@ -82,8 +91,8 @@ class VersionInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ApiVersion": obj.get("ApiVersion"),
-            "DatabaseVersion": obj.get("DatabaseVersion")
+                        "ApiVersion": obj.get("ApiVersion"),
+                        "DatabaseVersion": obj.get("DatabaseVersion")
         })
         return _obj
 

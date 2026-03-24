@@ -27,7 +27,7 @@ from plantscreen.models.json_system_log_by_tray_id_and_date_result import JsonSy
 from plantscreen.models.json_system_log_by_tray_id_result import JsonSystemLogByTrayIDResult
 from plantscreen.models.json_system_log_tag_result import JsonSystemLogTagResult
 from plantscreen.models.json_system_log_type_result import JsonSystemLogTypeResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -45,7 +45,7 @@ class SystemLogApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_date_log_tag(
         self,
@@ -291,10 +291,12 @@ class SystemLogApi:
 
         # process the path parameters
         # process the query parameters
+
         if tag is not None:
             
             _query_params.append(('tag', tag))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -308,6 +310,7 @@ class SystemLogApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -356,7 +359,7 @@ class SystemLogApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_date_log_type(
         self,
@@ -602,10 +605,12 @@ class SystemLogApi:
 
         # process the path parameters
         # process the query parameters
+
         if type is not None:
             
             _query_params.append(('type', type))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -619,6 +624,7 @@ class SystemLogApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -667,7 +673,7 @@ class SystemLogApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_date_round(
         self,
@@ -913,10 +919,12 @@ class SystemLogApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -930,6 +938,7 @@ class SystemLogApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -978,7 +987,7 @@ class SystemLogApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_date_tray(
         self,
@@ -1224,10 +1233,12 @@ class SystemLogApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -1241,6 +1252,7 @@ class SystemLogApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -1289,7 +1301,7 @@ class SystemLogApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_log_tag(
         self,
@@ -1531,7 +1543,7 @@ class SystemLogApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_log_type(
         self,
@@ -1773,7 +1785,7 @@ class SystemLogApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_round(
         self,
@@ -1993,6 +2005,7 @@ class SystemLogApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2032,7 +2045,7 @@ class SystemLogApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def system_log_tray(
         self,
@@ -2252,6 +2265,7 @@ class SystemLogApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2288,5 +2302,6 @@ class SystemLogApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

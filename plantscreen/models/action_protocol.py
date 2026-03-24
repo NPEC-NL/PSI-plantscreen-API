@@ -21,20 +21,73 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import action
+
+from plantscreen.models import experiment
+
+from plantscreen.models import round
+
 
 class ActionProtocol(BaseModel):
     """
     ActionProtocol
     """ # noqa: E501
     action_id: Optional[StrictInt] = Field(default=None, alias="ActionID")
+    _action: Optional[action.Action] = PrivateAttr(default=object())
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     protocol_body: Optional[StrictStr] = Field(default=None, alias="ProtocolBody")
     protocol_date_changed: Optional[datetime] = Field(default=None, alias="ProtocolDateChanged")
     protocol_id: Optional[StrictInt] = Field(default=None, alias="ProtocolID")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
+    _round: Optional[round.Round] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ActionID", "ExperimentID", "ProtocolBody", "ProtocolDateChanged", "ProtocolID", "RoundID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def action(self) -> action.Action:
+        if type(self._action) is object:
+            from plantscreen.api.action_api import ActionApi as Api
+            json_result = Api().action(self.action_id)
+            self._action = json_result.result
+        return self._action
+
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
+
+    
+    @property
+    def round(self) -> round.Round:
+        if type(self._round) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round(self.round_id)
+            self._round = json_result.result
+        return self._round
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -80,12 +133,13 @@ class ActionProtocol(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ActionID": obj.get("ActionID"),
-            "ExperimentID": obj.get("ExperimentID"),
-            "ProtocolBody": obj.get("ProtocolBody"),
+                        "ActionID": obj.get("ActionID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+                        "ProtocolBody": obj.get("ProtocolBody"),
+            
             "ProtocolDateChanged": obj.get("ProtocolDateChanged") or None,
-            "ProtocolID": obj.get("ProtocolID"),
-            "RoundID": obj.get("RoundID")
+                        "ProtocolID": obj.get("ProtocolID"),
+                        "RoundID": obj.get("RoundID")
         })
         return _obj
 

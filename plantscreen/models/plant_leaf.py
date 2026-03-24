@@ -20,8 +20,17 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import plant
+
+from plantscreen.models import tray
+
 
 class PlantLeaf(BaseModel):
     """
@@ -30,8 +39,11 @@ class PlantLeaf(BaseModel):
     leaf_index: Optional[StrictInt] = Field(default=None, alias="LeafIndex")
     plant_barcode: Optional[StrictStr] = Field(default=None, alias="PlantBarcode")
     plant_id: Optional[StrictInt] = Field(default=None, alias="PlantID")
+    _plant: Optional[plant.Plant] = PrivateAttr(default=object())
     plant_name: Optional[StrictStr] = Field(default=None, alias="PlantName")
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
+    _tray: Optional[tray.Tray] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["LeafIndex", "PlantBarcode", "PlantID", "PlantName", "TrayID"]
 
     model_config = ConfigDict(
@@ -39,6 +51,28 @@ class PlantLeaf(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
+    
+    @property
+    def plant(self) -> plant.Plant:
+        if type(self._plant) is object:
+            from plantscreen.api.plant_api import PlantApi as Api
+            json_result = Api().plant(self.plant_id)
+            self._plant = json_result.result
+        return self._plant
+
+
+    
+    @property
+    def tray(self) -> tray.Tray:
+        if type(self._tray) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray(self.tray_id)
+            self._tray = json_result.result
+        return self._tray
 
 
     def to_str(self) -> str:
@@ -85,11 +119,11 @@ class PlantLeaf(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "LeafIndex": obj.get("LeafIndex"),
-            "PlantBarcode": obj.get("PlantBarcode"),
-            "PlantID": obj.get("PlantID"),
-            "PlantName": obj.get("PlantName"),
-            "TrayID": obj.get("TrayID")
+                        "LeafIndex": obj.get("LeafIndex"),
+                        "PlantBarcode": obj.get("PlantBarcode"),
+                        "PlantID": obj.get("PlantID"),
+                        "PlantName": obj.get("PlantName"),
+                        "TrayID": obj.get("TrayID")
         })
         return _obj
 

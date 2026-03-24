@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_round_result** | [**Round**](Round.md) |  | [optional] 
+**result** | [**Round**](Round.md)| alias for **json_round_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+****|[**Round**](RoundOrder.md)|order****|[**Round**](ActionGroup.md)|action_group****|[**Round**](ActionProtocol.md)|action_protocol****|[**Round**](Tray.md)|trays****|[**Round**](PlantHeight.md)|plant_heights****|[**Round**](SystemLog.md)|system_logs
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

@@ -21,19 +21,60 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import experiment
+
+from plantscreen.models import owner
+
 
 class ExperimentNote(BaseModel):
     """
     ExperimentNote
     """ # noqa: E501
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     note_created_date: Optional[datetime] = Field(default=None, alias="NoteCreatedDate")
     note_id: Optional[StrictInt] = Field(default=None, alias="NoteID")
     note_text: Optional[StrictStr] = Field(default=None, alias="NoteText")
     owner_id: Optional[StrictInt] = Field(default=None, alias="OwnerID")
+    _owner: Optional[owner.Owner] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ExperimentID", "NoteCreatedDate", "NoteID", "NoteText", "OwnerID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
+
+    
+    @property
+    def owner(self) -> owner.Owner:
+        if type(self._owner) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().owner(self.owner_id)
+            self._owner = json_result.result
+        return self._owner
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -79,11 +120,12 @@ class ExperimentNote(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ExperimentID": obj.get("ExperimentID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+            
             "NoteCreatedDate": obj.get("NoteCreatedDate") or None,
-            "NoteID": obj.get("NoteID"),
-            "NoteText": obj.get("NoteText"),
-            "OwnerID": obj.get("OwnerID")
+                        "NoteID": obj.get("NoteID"),
+                        "NoteText": obj.get("NoteText"),
+                        "OwnerID": obj.get("OwnerID")
         })
         return _obj
 

@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_scan3d_imaging_by_id_result** | [**Scan3DImaging**](Scan3DImaging.md) |  | [optional] 
+**result** | [**Scan3DImaging**](Scan3DImaging.md)| alias for **json_scan3d_imaging_by_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

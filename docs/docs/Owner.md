@@ -15,6 +15,19 @@ Name | Type | Description | Notes
 **owner_id** | **int** |  | [optional] 
 **sms_phone_number** | **str** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+experiments | List[[**object**](Experiment.md)]] | ExperimentApi |  | OwnerID
+
 ## Example
 
 ```python

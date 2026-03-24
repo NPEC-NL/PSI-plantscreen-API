@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.scan3_d_analyzed_model import Scan3DAnalyzedModel
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonScan3dAnalyzedModelByMeasureIDResult(BaseModel):
     """
     JsonScan3dAnalyzedModelByMeasureIDResult
     """ # noqa: E501
     json_scan3d_analyzed_model_by_measure_id_result: Optional[List[Scan3DAnalyzedModel]] = Field(default=None, alias="JsonScan3dAnalyzedModelByMeasureIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonScan3dAnalyzedModelByMeasureIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonScan3dAnalyzedModelByMeasureIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[Scan3DAnalyzedModel]:
+        return self.json_scan3d_analyzed_model_by_measure_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

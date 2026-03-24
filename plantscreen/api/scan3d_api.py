@@ -32,7 +32,7 @@ from plantscreen.models.json_scan3d_plant_param_by_analyse_id_result import Json
 from plantscreen.models.json_scan3d_plant_param_result import JsonScan3dPlantParamResult
 from plantscreen.models.json_scan3d_used_param_by_analyse_id_result import JsonScan3dUsedParamByAnalyseIDResult
 from plantscreen.models.json_scan3d_used_param_result import JsonScan3dUsedParamResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -50,7 +50,7 @@ class Scan3dApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d(
         self,
@@ -296,14 +296,17 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -343,7 +346,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_analyzed_model(
         self,
@@ -589,14 +592,17 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -636,7 +642,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_analyzed_model_analyse(
         self,
@@ -856,6 +862,7 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -895,7 +902,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_analyzed_model_measure(
         self,
@@ -1115,6 +1122,7 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1154,7 +1162,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_imaging_extended_data(
         self,
@@ -1400,14 +1408,17 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -1447,7 +1458,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_imaging_extended_data_measure(
         self,
@@ -1667,6 +1678,7 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1706,7 +1718,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_imaging_measure(
         self,
@@ -1926,6 +1938,7 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1965,7 +1978,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_leaf_param(
         self,
@@ -2224,18 +2237,22 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2275,7 +2292,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_leaf_param_analyse(
         self,
@@ -2508,10 +2525,12 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2551,7 +2570,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_param(
         self,
@@ -2771,6 +2790,7 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2810,7 +2830,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_param_used(
         self,
@@ -3056,14 +3076,17 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -3103,7 +3126,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_param_used_analyse(
         self,
@@ -3323,6 +3346,7 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3362,7 +3386,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_plant_param(
         self,
@@ -3621,18 +3645,22 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -3672,7 +3700,7 @@ class Scan3dApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scan3d_plant_param_analyse(
         self,
@@ -3905,10 +3933,12 @@ class Scan3dApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -3945,5 +3975,6 @@ class Scan3dApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

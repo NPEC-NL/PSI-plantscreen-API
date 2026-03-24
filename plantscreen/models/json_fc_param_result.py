@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.parameter import Parameter
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonFcParamResult(BaseModel):
     """
     JsonFcParamResult
     """ # noqa: E501
     json_fc_param_result: Optional[Parameter] = Field(default=None, alias="JsonFcParamResult")
+
     __properties: ClassVar[List[str]] = ["JsonFcParamResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonFcParamResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> Parameter:
+        return self.json_fc_param_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

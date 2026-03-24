@@ -16,6 +16,19 @@ Name | Type | Description | Notes
 **type_size_y** | **int** |  | [optional] 
 **type_size_z** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

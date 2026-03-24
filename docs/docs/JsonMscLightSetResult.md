@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_msc_light_set_result** | [**MscLightSet**](MscLightSet.md) |  | [optional] 
+**result** | [**MscLightSet**](MscLightSet.md)| alias for **json_msc_light_set_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

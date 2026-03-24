@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.scales_mapping import ScalesMapping
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonScalesMappingByTrayIDResult(BaseModel):
     """
     JsonScalesMappingByTrayIDResult
     """ # noqa: E501
     json_scales_mapping_by_tray_id_result: Optional[List[ScalesMapping]] = Field(default=None, alias="JsonScalesMappingByTrayIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonScalesMappingByTrayIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonScalesMappingByTrayIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[ScalesMapping]:
+        return self.json_scales_mapping_by_tray_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

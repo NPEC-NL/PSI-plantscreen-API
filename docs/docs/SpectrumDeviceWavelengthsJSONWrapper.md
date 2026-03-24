@@ -9,6 +9,19 @@ Name | Type | Description | Notes
 **var_date** | **datetime** |  | [optional] 
 **s_const** | **str** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

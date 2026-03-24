@@ -21,8 +21,13 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class BufferHistory(BaseModel):
     """
@@ -32,6 +37,7 @@ class BufferHistory(BaseModel):
     buffer_state_date: Optional[datetime] = Field(default=None, alias="BufferStateDate")
     buffer_state_id: Optional[StrictInt] = Field(default=None, alias="BufferStateID")
     buffer_state_path: Optional[StrictStr] = Field(default=None, description="filetype", alias="BufferStatePath")
+
     __properties: ClassVar[List[str]] = ["BufferOccasion", "BufferStateDate", "BufferStateID", "BufferStatePath"]
 
     def to_str(self) -> str:
@@ -78,10 +84,11 @@ class BufferHistory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "BufferOccasion": obj.get("BufferOccasion"),
-            "BufferStateDate": obj.get("BufferStateDate"),
-            "BufferStateID": obj.get("BufferStateID"),
-            "BufferStatePath": obj.get("BufferStatePath")
+                        "BufferOccasion": obj.get("BufferOccasion"),
+            
+            "BufferStateDate": obj.get("BufferStateDate") or None,
+                        "BufferStateID": obj.get("BufferStateID"),
+                        "BufferStatePath": obj.get("BufferStatePath")
         })
         return _obj
 

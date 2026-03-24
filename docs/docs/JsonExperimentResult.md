@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_experiment_result** | [**Experiment**](Experiment.md) |  | [optional] 
+**result** | [**Experiment**](Experiment.md)| alias for **json_experiment_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+****|[**Experiment**](Round.md)|rounds****|[**Experiment**](RoundOrder.md)|round_orders****|[**Experiment**](ExperimentNote.md)|notes****|[**Experiment**](Action.md)|actions****|[**Experiment**](Action.md)|unfinished_actions
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

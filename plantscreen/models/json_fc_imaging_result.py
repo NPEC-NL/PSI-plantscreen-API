@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.fc_imaging import FcImaging
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonFcImagingResult(BaseModel):
     """
     JsonFcImagingResult
     """ # noqa: E501
     json_fc_imaging_result: Optional[List[FcImaging]] = Field(default=None, alias="JsonFcImagingResult")
+
     __properties: ClassVar[List[str]] = ["JsonFcImagingResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonFcImagingResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[FcImaging]:
+        return self.json_fc_imaging_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

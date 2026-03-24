@@ -40,7 +40,7 @@ from plantscreen.models.json_msc_used_param_by_analyse_id_result import JsonMscU
 from plantscreen.models.json_msc_used_param_result import JsonMscUsedParamResult
 from plantscreen.models.json_msc_calibration_light_by_id_result import JsonMscCalibrationLightByIDResult
 from plantscreen.models.json_msc_calibration_light_result import JsonMscCalibrationLightResult
-import json
+import jsonfrom plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -70,7 +70,7 @@ class MscApi:
             elif "JsonMscCalibrationLightByIDResult" in response_dict.keys():
                 return {'200': "JsonMscCalibrationLightByIDResult"}
         return {'200': "JsonMscCalibrationLightResult | JsonMscCalibrationLightByIDResult"}
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_calibration(
         self,
@@ -290,6 +290,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -329,7 +330,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_calibration_light(
         self,
@@ -552,6 +553,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -591,7 +593,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_calibration_light_set(
         self,
@@ -811,6 +813,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -850,7 +853,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_imaging(
         self,
@@ -1096,14 +1099,17 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -1143,7 +1149,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_imaging_extended_data(
         self,
@@ -1389,14 +1395,17 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -1436,7 +1445,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_imaging_extended_data_measure(
         self,
@@ -1656,6 +1665,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1695,7 +1705,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_imaging_measure(
         self,
@@ -1915,6 +1925,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1954,7 +1965,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_leaf_param(
         self,
@@ -2213,18 +2224,22 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2264,7 +2279,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_leaf_param_analyse(
         self,
@@ -2497,10 +2512,12 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2540,7 +2557,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_light_set(
         self,
@@ -2760,6 +2777,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2799,7 +2817,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_light_set_used(
         self,
@@ -3045,14 +3063,17 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -3092,7 +3113,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_param(
         self,
@@ -3312,6 +3333,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3351,7 +3373,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_param_image(
         self,
@@ -3610,18 +3632,22 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -3661,7 +3687,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_param_image_analyse(
         self,
@@ -3894,10 +3920,12 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -3937,7 +3965,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_param_used(
         self,
@@ -4183,14 +4211,17 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -4230,7 +4261,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_param_used_analyse(
         self,
@@ -4450,6 +4481,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -4489,7 +4521,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_plant_mask(
         self,
@@ -4735,14 +4767,17 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -4782,7 +4817,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_plant_mask_measure(
         self,
@@ -5002,6 +5037,7 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -5041,7 +5077,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_plant_param(
         self,
@@ -5300,18 +5336,22 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -5351,7 +5391,7 @@ class MscApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def msc_plant_param_analyse(
         self,
@@ -5584,10 +5624,12 @@ class MscApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -5624,5 +5666,6 @@ class MscApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

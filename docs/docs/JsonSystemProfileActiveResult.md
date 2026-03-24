@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_system_profile_active_result** | [**SystemProfile**](SystemProfile.md) |  | [optional] 
+**result** | [**SystemProfile**](SystemProfile.md)| alias for **json_system_profile_active_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+****|[**SystemProfile**](Device.md)|devices
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

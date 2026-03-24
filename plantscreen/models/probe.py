@@ -20,8 +20,13 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class Probe(BaseModel):
     """
@@ -33,6 +38,7 @@ class Probe(BaseModel):
     probe_placement: Optional[StrictStr] = Field(default=None, alias="ProbePlacement")
     probe_unit: Optional[StrictStr] = Field(default=None, alias="ProbeUnit")
     probe_variable: Optional[StrictStr] = Field(default=None, alias="ProbeVariable")
+
     __properties: ClassVar[List[str]] = ["ProbeFamily", "ProbeID", "ProbeName", "ProbePlacement", "ProbeUnit", "ProbeVariable"]
 
     model_config = ConfigDict(
@@ -41,6 +47,20 @@ class Probe(BaseModel):
         protected_namespaces=(),
     )
 
+    
+
+
+
+
+
+
+    
+    def values_by_date(self,start,stop) -> List[probe_value.ProbeValue]:
+        from plantscreen.api.probe_api import ProbeApi as Api
+        json_result = Api().probe_value_date_probe(
+                id=self.probe_id,start=start,stop=stop)
+        return json_result.result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -86,12 +106,12 @@ class Probe(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ProbeFamily": obj.get("ProbeFamily"),
-            "ProbeID": obj.get("ProbeID"),
-            "ProbeName": obj.get("ProbeName"),
-            "ProbePlacement": obj.get("ProbePlacement"),
-            "ProbeUnit": obj.get("ProbeUnit"),
-            "ProbeVariable": obj.get("ProbeVariable")
+                        "ProbeFamily": obj.get("ProbeFamily"),
+                        "ProbeID": obj.get("ProbeID"),
+                        "ProbeName": obj.get("ProbeName"),
+                        "ProbePlacement": obj.get("ProbePlacement"),
+                        "ProbeUnit": obj.get("ProbeUnit"),
+                        "ProbeVariable": obj.get("ProbeVariable")
         })
         return _obj
 

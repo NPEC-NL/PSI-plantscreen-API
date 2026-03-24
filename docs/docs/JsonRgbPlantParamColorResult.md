@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_rgb_plant_param_color_result** | [**List[PlantParameter]**](PlantParameter.md) |  | [optional] 
+**result** | [**List[PlantParameter]**](PlantParameter.md)| alias for **json_rgb_plant_param_color_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

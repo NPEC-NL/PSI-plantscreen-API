@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_system_log_tag_result** | [**List[LogTag]**](LogTag.md) |  | [optional] 
+**result** | [**List[LogTag]**](LogTag.md)| alias for **json_system_log_tag_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

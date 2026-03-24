@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_ir_plant_mask_by_measure_id_result** | [**PlantMask**](PlantMask.md) |  | [optional] 
+**result** | [**PlantMask**](PlantMask.md)| alias for **json_ir_plant_mask_by_measure_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

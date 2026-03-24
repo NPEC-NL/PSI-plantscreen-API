@@ -21,8 +21,13 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.spectrum_device_wavelengths_json_wrapper import SpectrumDeviceWavelengthsJSONWrapper
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class SpectrumDevice(BaseModel):
     """
@@ -31,6 +36,7 @@ class SpectrumDevice(BaseModel):
     spectrum_device_id: Optional[StrictInt] = Field(default=None, alias="SpectrumDeviceID")
     spectrum_device_serial: Optional[StrictStr] = Field(default=None, alias="SpectrumDeviceSerial")
     spectrum_device_wavelengths_json: Optional[SpectrumDeviceWavelengthsJSONWrapper] = Field(default=None, alias="SpectrumDeviceWavelengthsJSON")
+
     __properties: ClassVar[List[str]] = ["SpectrumDeviceID", "SpectrumDeviceSerial", "SpectrumDeviceWavelengthsJSON"]
 
     model_config = ConfigDict(
@@ -39,6 +45,17 @@ class SpectrumDevice(BaseModel):
         protected_namespaces=(),
     )
 
+    
+
+
+
+    
+    def values_by_date(self,start,stop) -> List[spectrum_values.SpectrumValues]:
+        from plantscreen.api.spectrum_device_api import SpectrumDeviceApi as Api
+        json_result = Api().spectrum_values_date_device(
+                id=self.spectrum_device_id,start=start,stop=stop)
+        return json_result.result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -87,8 +104,8 @@ class SpectrumDevice(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "SpectrumDeviceID": obj.get("SpectrumDeviceID"),
-            "SpectrumDeviceSerial": obj.get("SpectrumDeviceSerial"),
+                        "SpectrumDeviceID": obj.get("SpectrumDeviceID"),
+                        "SpectrumDeviceSerial": obj.get("SpectrumDeviceSerial"),
             "SpectrumDeviceWavelengthsJSON": SpectrumDeviceWavelengthsJSONWrapper.from_dict(obj["SpectrumDeviceWavelengthsJSON"]) if obj.get("SpectrumDeviceWavelengthsJSON") is not None else None
         })
         return _obj

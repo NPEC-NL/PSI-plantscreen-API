@@ -13,6 +13,19 @@ Name | Type | Description | Notes
 **owner_id** | **int** |  | [optional] 
 **status_changed_date** | **datetime** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**owner**|[**int**](Owner.md)|owner_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+rounds | List[[**object**](Round.md)]] | RoundApi |  | ExperimentIDround_orders | List[[**object**](RoundOrder.md)]] | RoundApi |  | ExperimentIDnotes | List[[**object**](ExperimentNote.md)]] | ExperimentApi |  | ExperimentIDactions | List[[**object**](Action.md)]] | ActionApi |  | ExperimentIDunfinished_actions | List[[**object**](Action.md)]] | ActionApi |  | ExperimentID
+
 ## Example
 
 ```python

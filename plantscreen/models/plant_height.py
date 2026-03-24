@@ -21,21 +21,75 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import experiment
+
+from plantscreen.models import plant
+
+from plantscreen.models import round
+
 
 class PlantHeight(BaseModel):
     """
     PlantHeight
     """ # noqa: E501
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     height_date: Optional[datetime] = Field(default=None, alias="HeightDate")
     height_value: Optional[StrictInt] = Field(default=None, alias="HeightValue")
     plant_barcode: Optional[StrictStr] = Field(default=None, alias="PlantBarcode")
     plant_id: Optional[StrictInt] = Field(default=None, alias="PlantID")
+    _plant: Optional[plant.Plant] = PrivateAttr(default=object())
     plant_name: Optional[StrictStr] = Field(default=None, alias="PlantName")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
+    _round: Optional[round.Round] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ExperimentID", "HeightDate", "HeightValue", "PlantBarcode", "PlantID", "PlantName", "RoundID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
+
+    
+    @property
+    def plant(self) -> plant.Plant:
+        if type(self._plant) is object:
+            from plantscreen.api.plant_api import PlantApi as Api
+            json_result = Api().plant(self.plant_id)
+            self._plant = json_result.result
+        return self._plant
+
+
+    
+    @property
+    def round(self) -> round.Round:
+        if type(self._round) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round(self.round_id)
+            self._round = json_result.result
+        return self._round
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -81,13 +135,14 @@ class PlantHeight(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ExperimentID": obj.get("ExperimentID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+            
             "HeightDate": obj.get("HeightDate") or None,
-            "HeightValue": obj.get("HeightValue"),
-            "PlantBarcode": obj.get("PlantBarcode"),
-            "PlantID": obj.get("PlantID"),
-            "PlantName": obj.get("PlantName"),
-            "RoundID": obj.get("RoundID")
+                        "HeightValue": obj.get("HeightValue"),
+                        "PlantBarcode": obj.get("PlantBarcode"),
+                        "PlantID": obj.get("PlantID"),
+                        "PlantName": obj.get("PlantName"),
+                        "RoundID": obj.get("RoundID")
         })
         return _obj
 

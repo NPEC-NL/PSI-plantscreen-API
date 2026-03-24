@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.rgb_greening_mask_image import RgbGreeningMaskImage
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonRgbGreeningMaskImageResult(BaseModel):
     """
     JsonRgbGreeningMaskImageResult
     """ # noqa: E501
     json_rgb_greening_mask_image_result: Optional[List[RgbGreeningMaskImage]] = Field(default=None, alias="JsonRgbGreeningMaskImageResult")
+
     __properties: ClassVar[List[str]] = ["JsonRgbGreeningMaskImageResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonRgbGreeningMaskImageResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[RgbGreeningMaskImage]:
+        return self.json_rgb_greening_mask_image_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

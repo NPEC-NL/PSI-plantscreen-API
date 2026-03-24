@@ -21,19 +21,49 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import probe
+
 
 class ProbeValue(BaseModel):
     """
     ProbeValue
     """ # noqa: E501
     probe_id: Optional[StrictInt] = Field(default=None, alias="ProbeID")
+    _probe: Optional[probe.Probe] = PrivateAttr(default=object())
     probe_name: Optional[StrictStr] = Field(default=None, alias="ProbeName")
     probe_unit: Optional[StrictStr] = Field(default=None, alias="ProbeUnit")
     probe_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="ProbeValue")
     record_date: Optional[datetime] = Field(default=None, alias="RecordDate")
+
     __properties: ClassVar[List[str]] = ["ProbeID", "ProbeName", "ProbeUnit", "ProbeValue", "RecordDate"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def probe(self) -> probe.Probe:
+        if type(self._probe) is object:
+            from plantscreen.api.probe_api import ProbeApi as Api
+            json_result = Api().probe(self.probe_id)
+            self._probe = json_result.result
+        return self._probe
+
+
+
+
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -79,10 +109,11 @@ class ProbeValue(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ProbeID": obj.get("ProbeID"),
-            "ProbeName": obj.get("ProbeName"),
-            "ProbeUnit": obj.get("ProbeUnit"),
-            "ProbeValue": obj.get("ProbeValue"),
+                        "ProbeID": obj.get("ProbeID"),
+                        "ProbeName": obj.get("ProbeName"),
+                        "ProbeUnit": obj.get("ProbeUnit"),
+                        "ProbeValue": obj.get("ProbeValue"),
+            
             "RecordDate": obj.get("RecordDate") or None
         })
         return _obj

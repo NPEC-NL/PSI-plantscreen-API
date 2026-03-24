@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_note_result** | [**List[ExperimentNote]**](ExperimentNote.md) |  | [optional] 
+**result** | [**List[ExperimentNote]**](ExperimentNote.md)| alias for **json_note_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

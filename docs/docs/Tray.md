@@ -12,6 +12,19 @@ Name | Type | Description | Notes
 **tray_status_changed** | **datetime** |  | [optional] 
 **tray_type_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**tray_type**|[**int**](TrayType.md)|tray_type_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+tray_profile | List[[**object**](TrayProfile.md)]] | TrayApi |  | TrayIDscales_mapping | List[[**object**](ScalesMapping.md)]] | TrayApi |  | TrayIDplants | List[[**object**](Plant.md)]] | PlantApi |  | TrayIDplant_reference_weights | List[[**object**](PlantWeightReference.md)]] | ScalesApi |  | TrayIDsystem_logs | List[[**object**](SystemLog.md)]] | SystemLogApi |  | TrayID
+
 ## Example
 
 ```python

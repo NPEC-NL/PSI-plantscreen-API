@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.hc_imaging import HcImaging
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonHcImagingByIDResult(BaseModel):
     """
     JsonHcImagingByIDResult
     """ # noqa: E501
     json_hc_imaging_by_id_result: Optional[HcImaging] = Field(default=None, alias="JsonHcImagingByIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonHcImagingByIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonHcImagingByIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> HcImaging:
+        return self.json_hc_imaging_by_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

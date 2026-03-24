@@ -20,8 +20,13 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class MscLightSet(BaseModel):
     """
@@ -32,6 +37,7 @@ class MscLightSet(BaseModel):
     light_set_id: Optional[StrictInt] = Field(default=None, alias="LightSetID")
     light_set_pid_name: Optional[StrictStr] = Field(default=None, alias="LightSetPidName")
     light_set_valid: Optional[StrictBool] = Field(default=None, alias="LightSetValid")
+
     __properties: ClassVar[List[str]] = ["ChannelID", "LightSetCaption", "LightSetID", "LightSetPidName", "LightSetValid"]
 
     model_config = ConfigDict(
@@ -39,6 +45,12 @@ class MscLightSet(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
+
+
 
 
     def to_str(self) -> str:
@@ -85,11 +97,11 @@ class MscLightSet(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ChannelID": obj.get("ChannelID"),
-            "LightSetCaption": obj.get("LightSetCaption"),
-            "LightSetID": obj.get("LightSetID"),
-            "LightSetPidName": obj.get("LightSetPidName"),
-            "LightSetValid": obj.get("LightSetValid")
+                        "ChannelID": obj.get("ChannelID"),
+                        "LightSetCaption": obj.get("LightSetCaption"),
+                        "LightSetID": obj.get("LightSetID"),
+                        "LightSetPidName": obj.get("LightSetPidName"),
+                        "LightSetValid": obj.get("LightSetValid")
         })
         return _obj
 

@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_plant_height_by_round_id_result** | [**List[PlantHeight]**](PlantHeight.md) |  | [optional] 
+**result** | [**List[PlantHeight]**](PlantHeight.md)| alias for **json_plant_height_by_round_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

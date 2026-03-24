@@ -20,8 +20,15 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+
+from plantscreen.models import plant_weight_reference
 
 class Plant(BaseModel):
     """
@@ -32,6 +39,8 @@ class Plant(BaseModel):
     plant_info: Optional[StrictStr] = Field(default=None, alias="PlantInfo")
     plant_name: Optional[StrictStr] = Field(default=None, alias="PlantName")
     tray_area: Optional[StrictStr] = Field(default=None, alias="TrayArea")
+    _reference_weight: Optional[plant_weight_reference.PlantWeightReference] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["PlantBarcode", "PlantID", "PlantInfo", "PlantName", "TrayArea"]
 
     model_config = ConfigDict(
@@ -39,6 +48,22 @@ class Plant(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
+
+
+    
+    @property
+    def reference_weight(self) -> plant_weight_reference.PlantWeightReference:
+        if type(self._reference_weight) is object:
+            from plantscreen.api.scales_api import ScalesApi as Api
+            json_result = Api().scales_weight_reference_plant(id=self.plant_id)
+            self._reference_weight = json_result.result
+        return self._reference_weight
+    
+    
 
 
     def to_str(self) -> str:
@@ -85,11 +110,11 @@ class Plant(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "PlantBarcode": obj.get("PlantBarcode"),
-            "PlantID": obj.get("PlantID"),
-            "PlantInfo": obj.get("PlantInfo"),
-            "PlantName": obj.get("PlantName"),
-            "TrayArea": obj.get("TrayArea")
+                        "PlantBarcode": obj.get("PlantBarcode"),
+                        "PlantID": obj.get("PlantID"),
+                        "PlantInfo": obj.get("PlantInfo"),
+                        "PlantName": obj.get("PlantName"),
+                        "TrayArea": obj.get("TrayArea")
         })
         return _obj
 

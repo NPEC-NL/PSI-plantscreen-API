@@ -35,7 +35,7 @@ from plantscreen.models.json_hc_rgb_image_by_measure_id_result import JsonHcRgbI
 from plantscreen.models.json_hc_rgb_image_result import JsonHcRgbImageResult
 from plantscreen.models.json_hc_used_param_by_analyse_id_result import JsonHcUsedParamByAnalyseIDResult
 from plantscreen.models.json_hc_used_param_result import JsonHcUsedParamResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -53,7 +53,7 @@ class HcApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_imaging(
         self,
@@ -299,14 +299,17 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -346,7 +349,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_imaging_extended_data(
         self,
@@ -592,14 +595,17 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -639,7 +645,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_imaging_extended_data_measure(
         self,
@@ -859,6 +865,7 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -898,7 +905,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_imaging_measure(
         self,
@@ -1118,6 +1125,7 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1157,7 +1165,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_leaf_param(
         self,
@@ -1416,18 +1424,22 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -1467,7 +1479,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_leaf_param_analyse(
         self,
@@ -1700,10 +1712,12 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -1743,7 +1757,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_param(
         self,
@@ -1963,6 +1977,7 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2002,7 +2017,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_param_image(
         self,
@@ -2261,18 +2276,22 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2312,7 +2331,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_param_image_analyse(
         self,
@@ -2545,10 +2564,12 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2588,7 +2609,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_param_used(
         self,
@@ -2834,14 +2855,17 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -2881,7 +2905,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_param_used_analyse(
         self,
@@ -3101,6 +3125,7 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3140,7 +3165,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_plant_mask(
         self,
@@ -3386,14 +3411,17 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -3433,7 +3461,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_plant_mask_measure(
         self,
@@ -3653,6 +3681,7 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3692,7 +3721,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_plant_param(
         self,
@@ -3951,18 +3980,22 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -4002,7 +4035,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_plant_param_analyse(
         self,
@@ -4235,10 +4268,12 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -4278,7 +4313,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_rgb_image(
         self,
@@ -4524,14 +4559,17 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -4571,7 +4609,7 @@ class HcApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def hc_rgb_image_measure(
         self,
@@ -4791,6 +4829,7 @@ class HcApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -4827,5 +4866,6 @@ class HcApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

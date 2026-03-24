@@ -21,7 +21,7 @@ from typing_extensions import Annotated
 from plantscreen.models.json_device_active_result import JsonDeviceActiveResult
 from plantscreen.models.json_device_by_profile_id_result import JsonDeviceByProfileIDResult
 from plantscreen.models.json_device_result import JsonDeviceResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -39,7 +39,7 @@ class DeviceApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def device(
         self,
@@ -259,6 +259,7 @@ class DeviceApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -298,7 +299,7 @@ class DeviceApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def device_active(
         self,
@@ -540,7 +541,7 @@ class DeviceApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def device_profile(
         self,
@@ -760,6 +761,7 @@ class DeviceApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -796,5 +798,6 @@ class DeviceApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

@@ -33,7 +33,7 @@ from plantscreen.models.json_ir_plant_param_by_analyse_id_result import JsonIrPl
 from plantscreen.models.json_ir_plant_param_result import JsonIrPlantParamResult
 from plantscreen.models.json_ir_used_param_by_analyse_id_result import JsonIrUsedParamByAnalyseIDResult
 from plantscreen.models.json_ir_used_param_result import JsonIrUsedParamResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -51,7 +51,7 @@ class IrApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_imaging(
         self,
@@ -297,14 +297,17 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -344,7 +347,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_imaging_extended_data(
         self,
@@ -590,14 +593,17 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -637,7 +643,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_imaging_extended_data_measure(
         self,
@@ -857,6 +863,7 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -896,7 +903,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_imaging_measure(
         self,
@@ -1116,6 +1123,7 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1155,7 +1163,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_leaf_param(
         self,
@@ -1414,18 +1422,22 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -1465,7 +1477,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_leaf_param_analyse(
         self,
@@ -1698,10 +1710,12 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -1741,7 +1755,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_param(
         self,
@@ -1961,6 +1975,7 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2000,7 +2015,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_param_used(
         self,
@@ -2246,14 +2261,17 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -2293,7 +2311,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_param_used_analyse(
         self,
@@ -2513,6 +2531,7 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2552,7 +2571,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_plant_mask(
         self,
@@ -2798,14 +2817,17 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -2845,7 +2867,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_plant_mask_image(
         self,
@@ -3091,14 +3113,17 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -3138,7 +3163,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_plant_mask_image_measure(
         self,
@@ -3358,6 +3383,7 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3397,7 +3423,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_plant_mask_measure(
         self,
@@ -3617,6 +3643,7 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3656,7 +3683,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_plant_param(
         self,
@@ -3915,18 +3942,22 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -3966,7 +3997,7 @@ class IrApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def ir_plant_param_analyse(
         self,
@@ -4199,10 +4230,12 @@ class IrApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -4239,5 +4272,6 @@ class IrApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

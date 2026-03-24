@@ -21,20 +21,73 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import device
+
+from plantscreen.models import round
+
+from plantscreen.models import tray
+
 
 class MeasureExtendedData(BaseModel):
     """
     MeasureExtendedData
     """ # noqa: E501
     device_id: Optional[StrictInt] = Field(default=None, alias="DeviceID")
+    _device: Optional[device.Device] = PrivateAttr(default=object())
     extended_data: Optional[StrictStr] = Field(default=None, alias="ExtendedData")
     measure_date: Optional[datetime] = Field(default=None, alias="MeasureDate")
     measure_id: Optional[StrictInt] = Field(default=None, alias="MeasureID")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
+    _round: Optional[round.Round] = PrivateAttr(default=object())
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
+    _tray: Optional[tray.Tray] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["DeviceID", "ExtendedData", "MeasureDate", "MeasureID", "RoundID", "TrayID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def device(self) -> device.Device:
+        if type(self._device) is object:
+            from plantscreen.api.device_api import DeviceApi as Api
+            json_result = Api().device(self.device_id)
+            self._device = json_result.result
+        return self._device
+
+
+
+
+    
+    @property
+    def round(self) -> round.Round:
+        if type(self._round) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round(self.round_id)
+            self._round = json_result.result
+        return self._round
+
+    
+    @property
+    def tray(self) -> tray.Tray:
+        if type(self._tray) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray(self.tray_id)
+            self._tray = json_result.result
+        return self._tray
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -80,12 +133,13 @@ class MeasureExtendedData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "DeviceID": obj.get("DeviceID"),
-            "ExtendedData": obj.get("ExtendedData"),
+                        "DeviceID": obj.get("DeviceID"),
+                        "ExtendedData": obj.get("ExtendedData"),
+            
             "MeasureDate": obj.get("MeasureDate") or None,
-            "MeasureID": obj.get("MeasureID"),
-            "RoundID": obj.get("RoundID"),
-            "TrayID": obj.get("TrayID")
+                        "MeasureID": obj.get("MeasureID"),
+                        "RoundID": obj.get("RoundID"),
+                        "TrayID": obj.get("TrayID")
         })
         return _obj
 

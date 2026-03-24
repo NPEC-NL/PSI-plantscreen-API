@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.action_group import ActionGroup
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonActionGroupResult(BaseModel):
     """
     JsonActionGroupResult
     """ # noqa: E501
     json_action_group_result: Optional[ActionGroup] = Field(default=None, alias="JsonActionGroupResult")
+
     __properties: ClassVar[List[str]] = ["JsonActionGroupResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonActionGroupResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> ActionGroup:
+        return self.json_action_group_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

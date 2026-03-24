@@ -20,16 +20,28 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import experiment
+
+from plantscreen.models import round
+
 
 class RoundOrder(BaseModel):
     """
     RoundOrder
     """ # noqa: E501
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     order: Optional[StrictInt] = Field(default=None, alias="Order")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
+    _round: Optional[round.Round] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ExperimentID", "Order", "RoundID"]
 
     model_config = ConfigDict(
@@ -37,6 +49,26 @@ class RoundOrder(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+    
+    @property
+    def round(self) -> round.Round:
+        if type(self._round) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round(self.round_id)
+            self._round = json_result.result
+        return self._round
 
 
     def to_str(self) -> str:
@@ -83,9 +115,9 @@ class RoundOrder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ExperimentID": obj.get("ExperimentID"),
-            "Order": obj.get("Order"),
-            "RoundID": obj.get("RoundID")
+                        "ExperimentID": obj.get("ExperimentID"),
+                        "Order": obj.get("Order"),
+                        "RoundID": obj.get("RoundID")
         })
         return _obj
 

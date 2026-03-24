@@ -20,14 +20,20 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class ProfileIDWrapper(BaseModel):
     """
     ProfileIDWrapper
     """ # noqa: E501
     profile_id: Optional[StrictInt] = Field(default=None, alias="ProfileID")
+
     __properties: ClassVar[List[str]] = ["ProfileID"]
 
     model_config = ConfigDict(
@@ -35,6 +41,8 @@ class ProfileIDWrapper(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
 
 
     def to_str(self) -> str:
@@ -81,7 +89,7 @@ class ProfileIDWrapper(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ProfileID": obj.get("ProfileID")
+                        "ProfileID": obj.get("ProfileID")
         })
         return _obj
 

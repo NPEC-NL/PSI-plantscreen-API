@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.plant_leaf import PlantLeaf
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonPlantLeavesByPlantAndTrayIDResult(BaseModel):
     """
     JsonPlantLeavesByPlantAndTrayIDResult
     """ # noqa: E501
     json_plant_leaves_by_plant_and_tray_id_result: Optional[List[PlantLeaf]] = Field(default=None, alias="JsonPlantLeavesByPlantAndTrayIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonPlantLeavesByPlantAndTrayIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonPlantLeavesByPlantAndTrayIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[PlantLeaf]:
+        return self.json_plant_leaves_by_plant_and_tray_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

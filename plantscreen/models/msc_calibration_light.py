@@ -20,8 +20,13 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class MscCalibrationLight(BaseModel):
     """
@@ -33,6 +38,7 @@ class MscCalibrationLight(BaseModel):
     light_caption: Optional[StrictStr] = Field(default=None, alias="LightCaption")
     light_id: Optional[StrictInt] = Field(default=None, alias="LightID")
     light_set_id: Optional[StrictInt] = Field(default=None, alias="LightSetID")
+
     __properties: ClassVar[List[str]] = ["CalibrationID", "CalibrationLightID", "CalibrationLightLevel", "LightCaption", "LightID", "LightSetID"]
 
     model_config = ConfigDict(
@@ -40,6 +46,13 @@ class MscCalibrationLight(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
+
+
+
 
 
     def to_str(self) -> str:
@@ -86,12 +99,12 @@ class MscCalibrationLight(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "CalibrationID": obj.get("CalibrationID"),
-            "CalibrationLightID": obj.get("CalibrationLightID"),
-            "CalibrationLightLevel": obj.get("CalibrationLightLevel"),
-            "LightCaption": obj.get("LightCaption"),
-            "LightID": obj.get("LightID"),
-            "LightSetID": obj.get("LightSetID")
+                        "CalibrationID": obj.get("CalibrationID"),
+                        "CalibrationLightID": obj.get("CalibrationLightID"),
+                        "CalibrationLightLevel": obj.get("CalibrationLightLevel"),
+                        "LightCaption": obj.get("LightCaption"),
+                        "LightID": obj.get("LightID"),
+                        "LightSetID": obj.get("LightSetID")
         })
         return _obj
 

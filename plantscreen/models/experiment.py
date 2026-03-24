@@ -21,8 +21,25 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import owner
+
+
+from plantscreen.models import round
+
+from plantscreen.models import round_order
+
+from plantscreen.models import experiment_note
+
+from plantscreen.models import action
+
+from plantscreen.models import action
 
 class Experiment(BaseModel):
     """
@@ -34,8 +51,88 @@ class Experiment(BaseModel):
     experiment_name: Optional[StrictStr] = Field(default=None, alias="ExperimentName")
     experiment_status: Optional[StrictStr] = Field(default=None, alias="ExperimentStatus")
     owner_id: Optional[StrictInt] = Field(default=None, alias="OwnerID")
+    _owner: Optional[owner.Owner] = PrivateAttr(default=object())
     status_changed_date: Optional[datetime] = Field(default=None, alias="StatusChangedDate")
+    _rounds: Optional[List[round.Round]] = PrivateAttr(default=object())
+    _round_orders: Optional[List[round_order.RoundOrder]] = PrivateAttr(default=object())
+    _notes: Optional[List[experiment_note.ExperimentNote]] = PrivateAttr(default=object())
+    _actions: Optional[List[action.Action]] = PrivateAttr(default=object())
+    _unfinished_actions: Optional[List[action.Action]] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["CreatedDate", "ExperimentID", "ExperimentInfo", "ExperimentName", "ExperimentStatus", "OwnerID", "StatusChangedDate"]
+
+    def owner(self) -> owner.Owner:
+        if type(self._owner) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().owner(self.owner_id)
+            self._owner = json_result.result
+        return self._owner
+
+    
+    @property
+    def rounds(self) -> List[round.Round]:
+        if type(self._rounds) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round_experiment(id=self.experiment_id)
+            self._rounds = json_result.result
+        return self._rounds
+    
+    
+    
+    @property
+    def round_orders(self) -> List[round_order.RoundOrder]:
+        if type(self._round_orders) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round_order_experiment(id=self.experiment_id)
+            self._round_orders = json_result.result
+        return self._round_orders
+    
+    
+    
+    @property
+    def notes(self) -> List[experiment_note.ExperimentNote]:
+        if type(self._notes) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().note_experiment(id=self.experiment_id)
+            self._notes = json_result.result
+        return self._notes
+    
+    
+    
+    @property
+    def actions(self) -> List[action.Action]:
+        if type(self._actions) is object:
+            from plantscreen.api.action_api import ActionApi as Api
+            json_result = Api().action_experiment(id=self.experiment_id)
+            self._actions = json_result.result
+        return self._actions
+    
+    
+    
+    @property
+    def unfinished_actions(self) -> List[action.Action]:
+        if type(self._unfinished_actions) is object:
+            from plantscreen.api.action_api import ActionApi as Api
+            json_result = Api().action_not_done_experiment(id=self.experiment_id)
+            self._unfinished_actions = json_result.result
+        return self._unfinished_actions
+    
+    
+
+    
+    def rounds_by_date(self,start,stop) -> List[round.Round]:
+        from plantscreen.api.round_api import RoundApi as Api
+        json_result = Api().round_date_experiment(
+                id=self.experiment_id,start=start,stop=stop)
+        return json_result.result
+    
+    
+    def round_orders_by_date(self,start,stop) -> List[round_order.RoundOrder]:
+        from plantscreen.api.round_api import RoundApi as Api
+        json_result = Api().round_order_date_experiment(
+                id=self.experiment_id,start=start,stop=stop)
+        return json_result.result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -81,13 +178,15 @@ class Experiment(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "CreatedDate": obj.get("CreatedDate"),
-            "ExperimentID": obj.get("ExperimentID"),
-            "ExperimentInfo": obj.get("ExperimentInfo"),
-            "ExperimentName": obj.get("ExperimentName"),
-            "ExperimentStatus": obj.get("ExperimentStatus"),
-            "OwnerID": obj.get("OwnerID"),
-            "StatusChangedDate": obj.get("StatusChangedDate") or None or None
+            
+            "CreatedDate": obj.get("CreatedDate") or None,
+                        "ExperimentID": obj.get("ExperimentID"),
+                        "ExperimentInfo": obj.get("ExperimentInfo"),
+                        "ExperimentName": obj.get("ExperimentName"),
+                        "ExperimentStatus": obj.get("ExperimentStatus"),
+                        "OwnerID": obj.get("OwnerID"),
+            
+            "StatusChangedDate": obj.get("StatusChangedDate") or None
         })
         return _obj
 

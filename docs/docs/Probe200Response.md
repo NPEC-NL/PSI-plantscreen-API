@@ -8,6 +8,19 @@ Name | Type | Description | Notes
 **json_probe_result** | [**List[Probe]**](Probe.md) |  | [optional] 
 **json_probe_by_id_result** | [**Probe**](Probe.md) |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

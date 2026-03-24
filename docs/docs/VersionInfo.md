@@ -8,6 +8,19 @@ Name | Type | Description | Notes
 **api_version** | **str** |  | [optional] 
 **database_version** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

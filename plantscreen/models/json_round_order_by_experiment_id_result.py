@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.round_order import RoundOrder
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonRoundOrderByExperimentIDResult(BaseModel):
     """
     JsonRoundOrderByExperimentIDResult
     """ # noqa: E501
     json_round_order_by_experiment_id_result: Optional[List[RoundOrder]] = Field(default=None, alias="JsonRoundOrderByExperimentIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonRoundOrderByExperimentIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonRoundOrderByExperimentIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[RoundOrder]:
+        return self.json_round_order_by_experiment_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

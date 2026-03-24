@@ -22,7 +22,7 @@ from typing_extensions import Annotated
 from plantscreen.models.json_spectrum_device_id_result import JsonSpectrumDeviceIDResult
 from plantscreen.models.json_spectrum_device_result import JsonSpectrumDeviceResult
 from plantscreen.models.json_spectrum_values_result import JsonSpectrumValuesResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -40,7 +40,7 @@ class SpectrumDeviceApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def spectrum_device(
         self,
@@ -260,6 +260,7 @@ class SpectrumDeviceApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -299,7 +300,7 @@ class SpectrumDeviceApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def spectrum_device_id(
         self,
@@ -541,7 +542,7 @@ class SpectrumDeviceApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def spectrum_values_date_device(
         self,
@@ -787,10 +788,12 @@ class SpectrumDeviceApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -804,6 +807,7 @@ class SpectrumDeviceApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -849,5 +853,6 @@ class SpectrumDeviceApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

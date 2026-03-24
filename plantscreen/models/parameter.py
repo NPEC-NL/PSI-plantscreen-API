@@ -20,8 +20,13 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class Parameter(BaseModel):
     """
@@ -30,6 +35,7 @@ class Parameter(BaseModel):
     parameter_id: Optional[StrictInt] = Field(default=None, alias="ParameterID")
     parameter_name: Optional[StrictStr] = Field(default=None, alias="ParameterName")
     parameter_unit: Optional[StrictStr] = Field(default=None, alias="ParameterUnit")
+
     __properties: ClassVar[List[str]] = ["ParameterID", "ParameterName", "ParameterUnit"]
 
     model_config = ConfigDict(
@@ -37,6 +43,10 @@ class Parameter(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
 
 
     def to_str(self) -> str:
@@ -83,9 +93,9 @@ class Parameter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ParameterID": obj.get("ParameterID"),
-            "ParameterName": obj.get("ParameterName"),
-            "ParameterUnit": obj.get("ParameterUnit")
+                        "ParameterID": obj.get("ParameterID"),
+                        "ParameterName": obj.get("ParameterName"),
+                        "ParameterUnit": obj.get("ParameterUnit")
         })
         return _obj
 

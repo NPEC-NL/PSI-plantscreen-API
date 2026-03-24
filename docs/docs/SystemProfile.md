@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **profile_name** | **str** |  | [optional] 
 **system_hw_config** | **str** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+devices | List[[**object**](Device.md)]] | DeviceApi |  | ProfileID
+
 ## Example
 
 ```python

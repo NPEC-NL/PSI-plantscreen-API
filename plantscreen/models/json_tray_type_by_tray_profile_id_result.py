@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.tray_type import TrayType
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonTrayTypeByTrayProfileIDResult(BaseModel):
     """
     JsonTrayTypeByTrayProfileIDResult
     """ # noqa: E501
     json_tray_type_by_tray_profile_id_result: Optional[TrayType] = Field(default=None, alias="JsonTrayTypeByTrayProfileIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonTrayTypeByTrayProfileIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonTrayTypeByTrayProfileIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> TrayType:
+        return self.json_tray_type_by_tray_profile_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

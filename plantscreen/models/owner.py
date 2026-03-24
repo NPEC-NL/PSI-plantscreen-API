@@ -21,8 +21,15 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+
+from plantscreen.models import experiment
 
 class Owner(BaseModel):
     """
@@ -37,7 +44,36 @@ class Owner(BaseModel):
     login: Optional[StrictStr] = Field(default=None, alias="Login")
     owner_id: Optional[StrictInt] = Field(default=None, alias="OwnerID")
     sms_phone_number: Optional[StrictStr] = Field(default=None, alias="SmsPhoneNumber")
+    _experiments: Optional[List[experiment.Experiment]] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["CreateDate", "Email", "FirstName", "LastFailedDate", "LastName", "LastSuccessLogin", "Login", "OwnerID", "SmsPhoneNumber"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
+
+
+
+
+    
+    @property
+    def experiments(self) -> List[experiment.Experiment]:
+        if type(self._experiments) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment_owner(id=self.owner_id)
+            self._experiments = json_result.result
+        return self._experiments
+    
+    
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -83,15 +119,18 @@ class Owner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            
             "CreateDate": obj.get("CreateDate") or None,
-            "Email": obj.get("Email"),
-            "FirstName": obj.get("FirstName"),
+                        "Email": obj.get("Email"),
+                        "FirstName": obj.get("FirstName"),
+            
             "LastFailedDate": obj.get("LastFailedDate") or None,
-            "LastName": obj.get("LastName"),
+                        "LastName": obj.get("LastName"),
+            
             "LastSuccessLogin": obj.get("LastSuccessLogin") or None,
-            "Login": obj.get("Login"),
-            "OwnerID": obj.get("OwnerID"),
-            "SmsPhoneNumber": obj.get("SmsPhoneNumber")
+                        "Login": obj.get("Login"),
+                        "OwnerID": obj.get("OwnerID"),
+                        "SmsPhoneNumber": obj.get("SmsPhoneNumber")
         })
         return _obj
 

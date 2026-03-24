@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.statistic_leaf_parameter import StatisticLeafParameter
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonMscLeafParamResult(BaseModel):
     """
     JsonMscLeafParamResult
     """ # noqa: E501
     json_msc_leaf_param_result: Optional[List[StatisticLeafParameter]] = Field(default=None, alias="JsonMscLeafParamResult")
+
     __properties: ClassVar[List[str]] = ["JsonMscLeafParamResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonMscLeafParamResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[StatisticLeafParameter]:
+        return self.json_msc_leaf_param_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
