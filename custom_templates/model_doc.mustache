@@ -14,18 +14,24 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 {{!1:1 Links}}
 {{#vars}}{{#vendorExtensions.x-pp-link}}**{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}**|[**{{dataType}}**]({{model}}.md)|{{name}}{{/vendorExtensions.x-pp-link}}{{/vars}}
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-{{!1:n Links}}
-{{#vendorExtensions.x-pp-link}}{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} | List[[**{{dataType}}**]({{model}}.md)]] | {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} | {{{vendorExtensions.x-pp-link.operationId}}} | {{parameter.source}}{{/vendorExtensions.x-pp-link}}
+{{!implicit Links}}
+{{#vendorExtensions.x-pp-link}}{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} | {{^isSingleValue}}List[{{/isSingleValue}}[**{{dataType}}**]({{model}}.md){{^isSingleValue}}]{{/isSingleValue}} | {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} | {{{vendorExtensions.x-pp-link.operationId}}} | {{parameter.source}}->{{parameter.name}}
+{{/vendorExtensions.x-pp-link}}
 
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
+{{#vendorExtensions.x-pp-rel}}{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} | {{^isSingleValue}}List[{{/isSingleValue}}[**{{dataType}}**]({{model}}.md){{^isSingleValue}}]{{/isSingleValue}} | {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} | {{{operationId}}} | {{#parameters}}{{#source}}{{source}}->{{name}}{{/source}}{{^source}}{{name}}->{{name}}{{/source}}{{^-last}}, {{/-last}}{{/parameters}}
+{{/vendorExtensions.x-pp-rel}}
 ## Example
 
 ```python
