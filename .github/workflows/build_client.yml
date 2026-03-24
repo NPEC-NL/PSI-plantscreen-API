@@ -24,7 +24,7 @@ jobs:
           openapi-file: OpenAPI_specification/PSI_plantscreen_API.json
           command-args: >-
             -o generated
-            -t custom_template
+            -t custom_templates
             --additional-properties=packageName=plantscreen,datetimeFormat=%Y-%m-%dT%H:%M:%S
       
 
