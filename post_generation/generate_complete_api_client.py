@@ -169,8 +169,10 @@ def generate_combined_api_client():
         '',
         'class CompleteAPIClient(ApiClient):',
         '    def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:',
+        '        configuration = Configuration(host=url + "/RestService/json")',
+        '        Configuration.set_default(configuration)',
+        '        super().__init__(configuration, *args, **kwargs)',
         '        self.file_api = ApiClient(Configuration(host=url + "/RestService"))',
-        '        super().__init__(Configuration(host=url + "/RestService/json"), *args, **kwargs)',
     ]
 
     # Find all API classes
