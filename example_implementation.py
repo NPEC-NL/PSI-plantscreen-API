@@ -540,7 +540,7 @@ if __name__ == "__main__":
         pprint(f"Calibration lightsettings: {msc_lightset}")
 
         # Returns all Multispectral calibration lightsettings by calibration ID
-        msc_lightset = api.msc_calibration_light()
+        msc_lightset = api.msc_calibration_light(1)
         pprint(f"Calibration lightsettings by calibration ID: {msc_lightset}")
         """-----------------------------------------------------------------------------------------------------------------
             RGB
