@@ -53,7 +53,8 @@ build = [
   "twine >= 4.0.2",
   "mkdocs >= 1.5.3",
   "mkdocs-material >= 9.5.6",
-  "mkdocstrings[python]"
+  "mkdocstrings[python]",
+  "ruff"
 ]
 
 [tool.setuptools]
