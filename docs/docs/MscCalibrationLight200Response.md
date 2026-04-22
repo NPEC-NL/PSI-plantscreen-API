@@ -40,6 +40,6 @@ msc_calibration_light200_response_dict = msc_calibration_light200_response_insta
 # create an instance of MscCalibrationLight200Response from a dict
 msc_calibration_light200_response_from_dict = MscCalibrationLight200Response.from_dict(msc_calibration_light200_response_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

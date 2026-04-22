@@ -39,6 +39,6 @@ experiment_id_wrapper_dict = experiment_id_wrapper_instance.to_dict()
 # create an instance of ExperimentIDWrapper from a dict
 experiment_id_wrapper_from_dict = ExperimentIDWrapper.from_dict(experiment_id_wrapper_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

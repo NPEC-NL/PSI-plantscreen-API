@@ -43,6 +43,6 @@ action_group_dict = action_group_instance.to_dict()
 # create an instance of ActionGroup from a dict
 action_group_from_dict = ActionGroup.from_dict(action_group_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

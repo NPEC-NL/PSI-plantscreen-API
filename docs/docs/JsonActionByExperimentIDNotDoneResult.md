@@ -39,6 +39,6 @@ json_action_by_experiment_id_not_done_result_dict = json_action_by_experiment_id
 # create an instance of JsonActionByExperimentIDNotDoneResult from a dict
 json_action_by_experiment_id_not_done_result_from_dict = JsonActionByExperimentIDNotDoneResult.from_dict(json_action_by_experiment_id_not_done_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

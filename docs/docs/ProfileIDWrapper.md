@@ -39,6 +39,6 @@ profile_id_wrapper_dict = profile_id_wrapper_instance.to_dict()
 # create an instance of ProfileIDWrapper from a dict
 profile_id_wrapper_from_dict = ProfileIDWrapper.from_dict(profile_id_wrapper_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

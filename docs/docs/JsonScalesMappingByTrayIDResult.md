@@ -39,6 +39,6 @@ json_scales_mapping_by_tray_id_result_dict = json_scales_mapping_by_tray_id_resu
 # create an instance of JsonScalesMappingByTrayIDResult from a dict
 json_scales_mapping_by_tray_id_result_from_dict = JsonScalesMappingByTrayIDResult.from_dict(json_scales_mapping_by_tray_id_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

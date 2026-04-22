@@ -56,6 +56,6 @@ hc_imaging_dict = hc_imaging_instance.to_dict()
 # create an instance of HcImaging from a dict
 hc_imaging_from_dict = HcImaging.from_dict(hc_imaging_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

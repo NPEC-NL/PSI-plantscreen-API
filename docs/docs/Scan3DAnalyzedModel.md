@@ -50,6 +50,6 @@ scan3_d_analyzed_model_dict = scan3_d_analyzed_model_instance.to_dict()
 # create an instance of Scan3DAnalyzedModel from a dict
 scan3_d_analyzed_model_from_dict = Scan3DAnalyzedModel.from_dict(scan3_d_analyzed_model_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

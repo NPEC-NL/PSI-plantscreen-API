@@ -39,6 +39,6 @@ json_system_log_by_round_id_and_date_result_dict = json_system_log_by_round_id_a
 # create an instance of JsonSystemLogByRoundIDAndDateResult from a dict
 json_system_log_by_round_id_and_date_result_from_dict = JsonSystemLogByRoundIDAndDateResult.from_dict(json_system_log_by_round_id_and_date_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

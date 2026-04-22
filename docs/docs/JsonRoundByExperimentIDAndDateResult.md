@@ -39,6 +39,6 @@ json_round_by_experiment_id_and_date_result_dict = json_round_by_experiment_id_a
 # create an instance of JsonRoundByExperimentIDAndDateResult from a dict
 json_round_by_experiment_id_and_date_result_from_dict = JsonRoundByExperimentIDAndDateResult.from_dict(json_round_by_experiment_id_and_date_result_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 

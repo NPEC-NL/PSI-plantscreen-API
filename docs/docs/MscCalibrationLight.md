@@ -44,6 +44,6 @@ msc_calibration_light_dict = msc_calibration_light_instance.to_dict()
 # create an instance of MscCalibrationLight from a dict
 msc_calibration_light_from_dict = MscCalibrationLight.from_dict(msc_calibration_light_dict)
 ```
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 
