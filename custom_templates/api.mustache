@@ -13,6 +13,18 @@ from {{packageName}}.api import allow_single_for_first_list_param
 from {{packageName}}.api_client import ApiClient, RequestSerialized
 from {{packageName}}.api_response import ApiResponse
 from {{packageName}}.rest import RESTResponseType
+{{!Add imports for the custom file method}}
+{{#operations}}
+{{#operation}}
+{{#vendorExtensions.x-pp-has-custom-file-method}}
+from requests import Session
+from io import BytesIO
+{{/vendorExtensions.x-pp-has-custom-file-method}}
+{{#vendorExtensions.x-pp-oneof-response-models}}
+import json
+{{/vendorExtensions.x-pp-oneof-response-models}}
+{{/operation}}
+{{/operations}}
 
 
 {{#operations}}
@@ -29,21 +41,59 @@ class {{classname}}:
         self.api_client = api_client
 {{#operation}}
 
+{{!Custom file method params and the list returns}}
+{{#vendorExtensions.x-pp-has-custom-file-method}}
+{{/vendorExtensions.x-pp-has-custom-file-method}}
+{{^vendorExtensions.x-pp-has-custom-file-method}}
     @allow_single_for_first_list_param
     @validate_call
-    {{#async}}async {{/async}}def {{operationId}}{{>partial_api_args}} -> {{{returnType}}}{{^returnType}}None{{/returnType}}:
+    {{#async}}async {{/async}}def {{operationId}}{{>partial_api_args}} -> {{#vendorExtensions.x-pp-simplify-id-list}}list[int]{{/vendorExtensions.x-pp-simplify-id-list}}{{^vendorExtensions.x-pp-simplify-id-list}}{{{returnType}}}{{^returnType}}None{{/returnType}}{{/vendorExtensions.x-pp-simplify-id-list}}:
 {{>partial_api}}
 
         response_data = {{#async}}await {{/async}}self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
+{{!Fix the returns of the oneoff calls returns.}}
+{{#vendorExtensions.x-pp-oneof-response-models}}
+        _response_types_map = {'200': '{{vendorExtensions.x-pp-oneof-default-model}}'}
+{{#vendorExtensions.x-pp-oneof-selector-param}}
+        if {{.}} is not None:
+            _response_types_map = {'200': '{{#vendorExtensions.x-pp-oneof-response-models}}{{^-first}}{{.}}{{/-first}}{{/vendorExtensions.x-pp-oneof-response-models}}'}
+{{/vendorExtensions.x-pp-oneof-selector-param}}
+{{^vendorExtensions.x-pp-oneof-selector-param}}
+        response_json = response_data.data
+        if response_json is not None and isinstance(response_json, bytes):
+            response_dict = json.loads(response_json.decode())
+            if isinstance(response_dict, dict):
+{{#vendorExtensions.x-pp-oneof-response-models}}
+                if '{{.}}' in response_dict:
+                    _response_types_map = {'200': '{{.}}'}
+{{/vendorExtensions.x-pp-oneof-response-models}}
+{{/vendorExtensions.x-pp-oneof-selector-param}}
+{{/vendorExtensions.x-pp-oneof-response-models}}
         {{#async}}await {{/async}}response_data.read()
+
+{{!Logic to return the list of ints instead of a list of classes.}}
+{{#vendorExtensions.x-pp-simplify-id-list}}
+        _result = self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+        _temp = getattr(_result, "{{resultField}}", None)
+        if _temp is not None:
+            return sorted([x.{{itemField}} for x in _temp])
+        return []
+{{/vendorExtensions.x-pp-simplify-id-list}}
+{{^vendorExtensions.x-pp-simplify-id-list}}
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+{{/vendorExtensions.x-pp-simplify-id-list}}
 
+{{/vendorExtensions.x-pp-has-custom-file-method}}
+{{^vendorExtensions.x-pp-has-custom-file-method}}
 
     @validate_call
     {{#async}}async {{/async}}def {{operationId}}_with_http_info{{>partial_api_args}} -> ApiResponse[{{{returnType}}}{{^returnType}}None{{/returnType}}]:
@@ -70,7 +120,8 @@ class {{classname}}:
         )
         return response_data.response
 
-
+{{/vendorExtensions.x-pp-has-custom-file-method}}
+{{^vendorExtensions.x-pp-has-custom-file-method}}
     def _{{operationId}}_serialize(
         self,
         {{#allParams}}
@@ -238,6 +289,7 @@ class {{classname}}:
             _host=_host,
             _request_auth=_request_auth
         )
+{{/vendorExtensions.x-pp-has-custom-file-method}}
 
 
 {{/operation}}
