@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows: ["Generate Python Client from OpenAPI Spec"]
-    types:
-      - completed
+    types: [completed]
+    branches:
+      - main
 
 jobs:
   build-docs:

@@ -2,8 +2,7 @@
 """
 Script to generate a Python class with all wrapped calls
 from OpenAPI client APIs.
-Requires plantscreen to be installed with pip!
- pip install .
+Uses the local generated plantscreen package from the repository.
 Only wraps around the functions themselves.
 Not the *_with_http_info and *_without_preload_content
 """
@@ -13,6 +12,14 @@ import inspect
 import os
 import re
 import typing
+from pathlib import Path
+
+# Ensure imports resolve to the generated local package in this repository,
+# not a previously installed site-packages version.
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 import plantscreen.models as models_module
 
 
@@ -35,6 +42,17 @@ param_description_lookup = {
     '_content_type': 'Content type for the request.',
     '_headers': 'Additional headers for the request.',
     '_host_index': 'Index of the host to use.',
+}
+
+ONEOF_UNWRAP_CONFIG = {
+    'probe': {
+        'fields': ('json_probe_result', 'json_probe_by_id_result'),
+        'return_type': 'Probe',
+    },
+    'msc_calibration_light': {
+        'fields': ('json_msc_calibration_light_by_id_result', 'json_msc_calibration_light_result'),
+        'return_type': 'MscCalibrationLight',
+    },
 }
 
 
@@ -159,6 +177,7 @@ def generate_combined_api_client():
         'from plantscreen.api_client import ApiClient',
         'from plantscreen.configuration import Configuration',
         'import plantscreen.api as api_module',
+        'from io import BytesIO',
         'from typing import Any, Optional, Union, Tuple, List, Dict',
         'from datetime import datetime',
         (
@@ -169,10 +188,8 @@ def generate_combined_api_client():
         '',
         'class CompleteAPIClient(ApiClient):',
         '    def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:',
-        '        configuration = Configuration(host=url + "/RestService/json")',
-        '        Configuration.set_default(configuration)',
-        '        super().__init__(configuration, *args, **kwargs)',
         '        self.file_api = ApiClient(Configuration(host=url + "/RestService"))',
+        '        super().__init__(Configuration(host=url + "/RestService/json"), *args, **kwargs)',
     ]
 
     # Find all API classes
@@ -296,7 +313,31 @@ def generate_combined_api_client():
                 docstring.append(f'        Returns:')
                 docstring.append(f'            {clean_optional(field_type_hint) if json_field else return_type_hint}')
                 docstring.append('        """')
-            if json_field:
+            oneof_cfg = ONEOF_UNWRAP_CONFIG.get(name)
+            if oneof_cfg:
+                oneof_return_type = oneof_cfg['return_type']
+                oneof_fields = oneof_cfg['fields']
+                if params_str:
+                    class_lines.append(f'    def {name}(self, {params_str}) -> {oneof_return_type}:')
+                    if docstring:
+                        class_lines.extend(docstring)
+                    class_lines.append(
+                        f'        result = self._{api_cls.__name__}.{name}({call_args_str})'
+                    )
+                else:
+                    class_lines.append(f'    def {name}(self) -> {oneof_return_type}:')
+                    if docstring:
+                        class_lines.extend(docstring)
+                    class_lines.append(f'        result = self._{api_cls.__name__}.{name}()')
+                class_lines.append(
+                    f'        value = getattr(result, "{oneof_fields[0]}", None)'
+                )
+                class_lines.append('        if value is None:')
+                class_lines.append(
+                    f'            value = getattr(result, "{oneof_fields[1]}", None)'
+                )
+                class_lines.append('        return value')
+            elif json_field:
                 # Use the field's type if available, otherwise fallback to Any
                 hint = field_type_hint if field_type_hint else 'Any'
                 # Remove redundant Optional wrapping
