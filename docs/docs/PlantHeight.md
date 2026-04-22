@@ -45,6 +45,6 @@ plant_height_dict = plant_height_instance.to_dict()
 # create an instance of PlantHeight from a dict
 plant_height_from_dict = PlantHeight.from_dict(plant_height_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

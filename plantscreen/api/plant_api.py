@@ -105,6 +105,7 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -238,7 +239,6 @@ class PlantApi:
         )
         return response_data.response
 
-
     def _plant_serialize(
         self,
         ids,
@@ -366,6 +366,7 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -499,7 +500,6 @@ class PlantApi:
         )
         return response_data.response
 
-
     def _plant_height_round_serialize(
         self,
         id,
@@ -630,6 +630,7 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -771,7 +772,6 @@ class PlantApi:
         )
         return response_data.response
 
-
     def _plant_leaf_serialize(
         self,
         plant_id,
@@ -904,6 +904,7 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1037,7 +1038,6 @@ class PlantApi:
         )
         return response_data.response
 
-
     def _plant_tray_serialize(
         self,
         id,
@@ -1164,6 +1164,7 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1296,7 +1297,6 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _plant_tray_profile_serialize(
         self,
@@ -1432,6 +1432,7 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1580,7 +1581,6 @@ class PlantApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _plant_tray_profile_tray_serialize(
         self,

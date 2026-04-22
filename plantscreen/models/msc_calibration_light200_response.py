@@ -53,6 +53,31 @@ class MscCalibrationLight200Response(BaseModel):
         else:
             super().__init__(**kwargs)
 
+    @field_validator('actual_instance')
+    def actual_instance_must_validate_oneof(cls, v):
+        instance = MscCalibrationLight200Response.model_construct()
+        error_messages = []
+        match = 0
+        # validate data type: JsonMscCalibrationLightByIDResult
+        if not isinstance(v, JsonMscCalibrationLightByIDResult):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `JsonMscCalibrationLightByIDResult`")
+        else:
+            match += 1
+        # validate data type: JsonMscCalibrationLightResult
+        if not isinstance(v, JsonMscCalibrationLightResult):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `JsonMscCalibrationLightResult`")
+        else:
+            match += 1
+        if match > 1:
+            # more than 1 match
+            raise ValueError("Multiple matches found when setting `actual_instance` in MscCalibrationLight200Response with oneOf schemas: JsonMscCalibrationLightByIDResult, JsonMscCalibrationLightResult. Details: " + ", ".join(error_messages))
+        elif match == 0:
+            # no match
+            raise ValueError("No match found when setting `actual_instance` in MscCalibrationLight200Response with oneOf schemas: JsonMscCalibrationLightByIDResult, JsonMscCalibrationLightResult. Details: " + ", ".join(error_messages))
+        else:
+            return v
+
+    @classmethod
     def from_dict(cls, obj: Union[str, Dict[str, Any]]) -> Self:
         return cls.from_json(json.dumps(obj))
 

@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.tray_type import TrayType
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 class JsonTrayTypeByTrayIDResult(BaseModel):

@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.plant_mask import PlantMask
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 class JsonHcPlantMaskByMeasureIDResult(BaseModel):

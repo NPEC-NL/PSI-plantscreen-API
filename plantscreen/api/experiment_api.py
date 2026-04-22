@@ -106,6 +106,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -239,7 +240,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _experiment_serialize(
         self,
         id,
@@ -370,6 +370,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -510,7 +511,6 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _experiment_date_serialize(
         self,
@@ -658,6 +658,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -783,7 +784,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _experiment_id_serialize(
         self,
         _request_auth,
@@ -904,6 +904,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1037,7 +1038,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _experiment_owner_serialize(
         self,
         id,
@@ -1164,6 +1164,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1297,7 +1298,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _note_experiment_serialize(
         self,
         id,
@@ -1424,6 +1424,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1557,7 +1558,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _owner_serialize(
         self,
         ids,
@@ -1681,6 +1681,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1805,7 +1806,6 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _owner_id_serialize(
         self,

@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.measure_extended_data import MeasureExtendedData
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 class JsonMscMeasureExtendedDataByIDResult(BaseModel):

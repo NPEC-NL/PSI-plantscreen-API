@@ -108,6 +108,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -241,7 +242,6 @@ class TrayApi:
         )
         return response_data.response
 
-
     def _scales_mapping_tray_serialize(
         self,
         id,
@@ -368,6 +368,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -501,7 +502,6 @@ class TrayApi:
         )
         return response_data.response
 
-
     def _tray_serialize(
         self,
         id,
@@ -628,6 +628,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -761,7 +762,6 @@ class TrayApi:
         )
         return response_data.response
 
-
     def _tray_profile_serialize(
         self,
         id,
@@ -892,6 +892,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1032,7 +1033,6 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _tray_profile_to_date_tray_serialize(
         self,
@@ -1175,6 +1175,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1307,7 +1308,6 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _tray_profile_tray_serialize(
         self,
@@ -1443,6 +1443,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1591,7 +1592,6 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _tray_profile_used_tray_serialize(
         self,
@@ -1749,6 +1749,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1882,7 +1883,6 @@ class TrayApi:
         )
         return response_data.response
 
-
     def _tray_round_serialize(
         self,
         id,
@@ -2009,6 +2009,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2142,7 +2143,6 @@ class TrayApi:
         )
         return response_data.response
 
-
     def _tray_type_serialize(
         self,
         id,
@@ -2269,6 +2269,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2402,7 +2403,6 @@ class TrayApi:
         )
         return response_data.response
 
-
     def _tray_type_tray_serialize(
         self,
         id,
@@ -2529,6 +2529,7 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2661,7 +2662,6 @@ class TrayApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _tray_type_tray_profile_serialize(
         self,

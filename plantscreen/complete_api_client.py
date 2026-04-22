@@ -230,17 +230,9 @@ class CompleteAPIClient(ApiClient):
         result = self._ExperimentApi.experiment_date(start, stop)
         return getattr(result, "json_experiment_by_date_result", None)
 
-    def experiment_id(self) -> list[int]:
-        """
-        Returns:
-            List[int]: list of ids.
-        """
+    def experiment_id(self) -> List[ExperimentIDWrapper]:
         result = self._ExperimentApi.experiment_id()
-        temp = getattr(result, "json_experiment_id_result", None)
-        if temp is not None:
-            return sorted([x.experiment_id for x in temp])
-        else:
-            return []
+        return getattr(result, "json_experiment_id_result", None)
 
     def experiment_owner(self, id: int) -> List[Experiment]:
         """
@@ -272,17 +264,9 @@ class CompleteAPIClient(ApiClient):
         result = self._ExperimentApi.owner(ids)
         return getattr(result, "json_owner_result", None)
 
-    def owner_id(self) -> list[int]:
-        """
-        Returns:
-            List[int]: list of ids.
-        """
+    def owner_id(self) -> List[OwnerIDWrapper]:
         result = self._ExperimentApi.owner_id()
-        temp = getattr(result, "json_owner_id_result", None)
-        if temp is not None:
-            return sorted([x.owner_id for x in temp])
-        else:
-            return []
+        return getattr(result, "json_owner_id_result", None)
 
     def fc_imaging(self, device_id: int, round_id: int, tray_id: int) -> List[FcImaging]:
         """
@@ -858,18 +842,15 @@ class CompleteAPIClient(ApiClient):
         result = self._MscApi.msc_calibration(id)
         return getattr(result, "json_msc_calibration_result", None)
 
-    def msc_calibration_light(self, id: Optional[int] = None) -> MscCalibrationLight:
+    def msc_calibration_light(self, id: Optional[int] = None) -> JsonMscCalibrationLightByIDResult:
         """
         Args:
             id (Optional[int]): ID of the resource.
         Returns:
-            MscCalibrationLight
+            JsonMscCalibrationLightByIDResult
         """
         result = self._MscApi.msc_calibration_light(id)
-        value = getattr(result, "json_msc_calibration_light_by_id_result", None)
-        if value is None:
-            value = getattr(result, "json_msc_calibration_light_result", None)
-        return value
+        return getattr(result, "oneof_schema_1_validator", None)
 
     def msc_calibration_light_set(self, id: int) -> MscCalibration:
         """
@@ -1144,18 +1125,15 @@ class CompleteAPIClient(ApiClient):
         result = self._PlantApi.plant_tray_profile_tray(id, start, stop)
         return getattr(result, "json_plant_by_tray_id_and_dates_result", None)
 
-    def probe(self, id: int = None) -> Probe:
+    def probe(self, id: Optional[int] = None) -> JsonProbeResult:
         """
         Args:
-            id (int): ID of the resource.
+            id (Optional[int]): ID of the resource.
         Returns:
-            Probe
+            JsonProbeResult
         """
         result = self._ProbeApi.probe(id)
-        value = getattr(result, "json_probe_result", None)
-        if value is None:
-            value = getattr(result, "json_probe_by_id_result", None)
-        return value
+        return getattr(result, "oneof_schema_1_validator", None)
 
     def probe_value_date(self, start: datetime, stop: datetime) -> List[ProbeValue]:
         """
@@ -1194,17 +1172,9 @@ class CompleteAPIClient(ApiClient):
         result = self._ProfileApi.profile_active()
         return getattr(result, "json_system_profile_active_result", None)
 
-    def profile_id(self) -> list[int]:
-        """
-        Returns:
-            List[int]: list of ids.
-        """
+    def profile_id(self) -> List[ProfileIDWrapper]:
         result = self._ProfileApi.profile_id()
-        temp = getattr(result, "json_system_profile_id_result", None)
-        if temp is not None:
-            return sorted([x.profile_id for x in temp])
-        else:
-            return []
+        return getattr(result, "json_system_profile_id_result", None)
 
     def rgb_greening_mask_image(
         self, device_id: int, round_id: int, tray_id: int

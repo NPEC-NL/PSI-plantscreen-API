@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.hc_rgb_image import HcRgbImage
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 class JsonHcRgbImageResult(BaseModel):

@@ -43,6 +43,6 @@ plant_weight_reference_dict = plant_weight_reference_instance.to_dict()
 # create an instance of PlantWeightReference from a dict
 plant_weight_reference_from_dict = PlantWeightReference.from_dict(plant_weight_reference_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

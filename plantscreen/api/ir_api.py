@@ -120,6 +120,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -269,7 +270,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_imaging_serialize(
         self,
         device_id,
@@ -416,6 +416,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -565,7 +566,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_imaging_extended_data_serialize(
         self,
         device_id,
@@ -704,6 +704,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -837,7 +838,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_imaging_extended_data_measure_serialize(
         self,
         id,
@@ -964,6 +964,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1096,7 +1097,6 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _ir_imaging_measure_serialize(
         self,
@@ -1236,6 +1236,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1393,7 +1394,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_leaf_param_serialize(
         self,
         device_id,
@@ -1542,6 +1542,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1683,7 +1684,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_leaf_param_analyse_serialize(
         self,
         id,
@@ -1816,6 +1816,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1948,7 +1949,6 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _ir_param_serialize(
         self,
@@ -2084,6 +2084,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2233,7 +2234,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_param_used_serialize(
         self,
         device_id,
@@ -2372,6 +2372,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2504,7 +2505,6 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _ir_param_used_analyse_serialize(
         self,
@@ -2640,6 +2640,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2789,7 +2790,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_plant_mask_serialize(
         self,
         device_id,
@@ -2936,6 +2936,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3085,7 +3086,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_plant_mask_image_serialize(
         self,
         device_id,
@@ -3224,6 +3224,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3357,7 +3358,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_plant_mask_image_measure_serialize(
         self,
         id,
@@ -3484,6 +3484,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3616,7 +3617,6 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _ir_plant_mask_measure_serialize(
         self,
@@ -3756,6 +3756,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3913,7 +3914,6 @@ class IrApi:
         )
         return response_data.response
 
-
     def _ir_plant_param_serialize(
         self,
         device_id,
@@ -4062,6 +4062,7 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4202,7 +4203,6 @@ class IrApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _ir_plant_param_analyse_serialize(
         self,

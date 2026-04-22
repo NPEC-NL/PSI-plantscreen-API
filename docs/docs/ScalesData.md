@@ -54,6 +54,6 @@ scales_data_dict = scales_data_instance.to_dict()
 # create an instance of ScalesData from a dict
 scales_data_from_dict = ScalesData.from_dict(scales_data_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

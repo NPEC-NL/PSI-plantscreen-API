@@ -51,6 +51,6 @@ rgb_greening_mask_image_dict = rgb_greening_mask_image_instance.to_dict()
 # create an instance of RgbGreeningMaskImage from a dict
 rgb_greening_mask_image_from_dict = RgbGreeningMaskImage.from_dict(rgb_greening_mask_image_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

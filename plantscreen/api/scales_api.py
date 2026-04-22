@@ -111,6 +111,7 @@ class ScalesApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -260,7 +261,6 @@ class ScalesApi:
         )
         return response_data.response
 
-
     def _scales_plant_weight_serialize(
         self,
         device_id,
@@ -399,6 +399,7 @@ class ScalesApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -532,7 +533,6 @@ class ScalesApi:
         )
         return response_data.response
 
-
     def _scales_plant_weight_measure_serialize(
         self,
         id,
@@ -659,6 +659,7 @@ class ScalesApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -792,7 +793,6 @@ class ScalesApi:
         )
         return response_data.response
 
-
     def _scales_weight_reference_plant_serialize(
         self,
         id,
@@ -923,6 +923,7 @@ class ScalesApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1063,7 +1064,6 @@ class ScalesApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _scales_weight_reference_to_date_tray_serialize(
         self,
@@ -1206,6 +1206,7 @@ class ScalesApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1338,7 +1339,6 @@ class ScalesApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _scales_weight_reference_tray_serialize(
         self,

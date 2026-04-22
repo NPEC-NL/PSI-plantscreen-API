@@ -39,6 +39,6 @@ json_plant_leaves_by_plant_and_tray_id_result_dict = json_plant_leaves_by_plant_
 # create an instance of JsonPlantLeavesByPlantAndTrayIDResult from a dict
 json_plant_leaves_by_plant_and_tray_id_result_from_dict = JsonPlantLeavesByPlantAndTrayIDResult.from_dict(json_plant_leaves_by_plant_and_tray_id_result_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

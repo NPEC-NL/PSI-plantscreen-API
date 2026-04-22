@@ -23,9 +23,9 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_v
 from typing import Any, ClassVar, Dict, List, Optional
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 from plantscreen.models import tray_type
@@ -60,6 +60,30 @@ class Tray(BaseModel):
 
     __properties: ClassVar[List[str]] = ["TrayBarcode", "TrayID", "TrayInfo", "TrayStatus", "TrayStatusChanged", "TrayTypeID"]
 
+    @field_validator('tray_status')
+    def tray_status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['Active', 'Inactive']):
+            raise ValueError("must be one of enum values ('Active', 'Inactive')")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
+
+    
+    @property
     def tray_type(self) -> tray_type.TrayType:
         if type(self._tray_type) is object:
             from plantscreen.api.tray_api import TrayApi as Api

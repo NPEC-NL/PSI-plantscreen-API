@@ -23,9 +23,9 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_v
 from typing import Any, ClassVar, Dict, List, Optional
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 
@@ -39,6 +39,28 @@ class BufferHistory(BaseModel):
     buffer_state_path: Optional[StrictStr] = Field(default=None, description="filetype", alias="BufferStatePath")
 
     __properties: ClassVar[List[str]] = ["BufferOccasion", "BufferStateDate", "BufferStateID", "BufferStatePath"]
+
+    @field_validator('buffer_occasion')
+    def buffer_occasion_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['RoundStart', 'RoundEnd']):
+            raise ValueError("must be one of enum values ('RoundStart', 'RoundEnd')")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

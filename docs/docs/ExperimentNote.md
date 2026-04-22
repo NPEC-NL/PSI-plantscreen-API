@@ -43,6 +43,6 @@ experiment_note_dict = experiment_note_instance.to_dict()
 # create an instance of ExperimentNote from a dict
 experiment_note_from_dict = ExperimentNote.from_dict(experiment_note_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

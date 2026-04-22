@@ -201,7 +201,7 @@ List[[Experiment](docs/Experiment.md)]
 
 ### Return type
 
-list[int]
+List[[ExperimentIDWrapper](docs/ExperimentIDWrapper.md)]
 
 ---
 
@@ -251,7 +251,7 @@ List[[Owner](docs/Owner.md)]
 
 ### Return type
 
-list[int]
+List[[OwnerIDWrapper](docs/OwnerIDWrapper.md)]
 
 ---
 
@@ -1013,7 +1013,7 @@ Name | Type | Description | Notes
 
 ### Return type
 
-[MscCalibrationLight](docs/MscCalibrationLight.md)
+[JsonMscCalibrationLightByIDResult](docs/JsonMscCalibrationLightByIDResult.md)
 
 ---
 
@@ -1383,11 +1383,11 @@ List[[Plant](docs/Plant.md)]
 
 Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **int** | ID of the resource. | 
+**id** | **Optional[int]** | ID of the resource. | 
 
 ### Return type
 
-[Probe](docs/Probe.md)
+[JsonProbeResult](docs/JsonProbeResult.md)
 
 ---
 
@@ -1448,7 +1448,7 @@ Name | Type | Description | Notes
 
 ### Return type
 
-list[int]
+List[[ProfileIDWrapper](docs/ProfileIDWrapper.md)]
 
 ---
 

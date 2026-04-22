@@ -39,6 +39,6 @@ json_ir_plant_mask_image_result_dict = json_ir_plant_mask_image_result_instance.
 # create an instance of JsonIrPlantMaskImageResult from a dict
 json_ir_plant_mask_image_result_from_dict = JsonIrPlantMaskImageResult.from_dict(json_ir_plant_mask_image_result_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

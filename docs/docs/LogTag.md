@@ -40,6 +40,6 @@ log_tag_dict = log_tag_instance.to_dict()
 # create an instance of LogTag from a dict
 log_tag_from_dict = LogTag.from_dict(log_tag_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

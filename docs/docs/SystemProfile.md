@@ -44,6 +44,6 @@ system_profile_dict = system_profile_instance.to_dict()
 # create an instance of SystemProfile from a dict
 system_profile_from_dict = SystemProfile.from_dict(system_profile_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

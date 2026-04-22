@@ -100,6 +100,7 @@ class BufferApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -233,7 +234,6 @@ class BufferApi:
         )
         return response_data.response
 
-
     def _buffer_history_serialize(
         self,
         id,
@@ -364,6 +364,7 @@ class BufferApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -504,7 +505,6 @@ class BufferApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _buffer_history_date_serialize(
         self,

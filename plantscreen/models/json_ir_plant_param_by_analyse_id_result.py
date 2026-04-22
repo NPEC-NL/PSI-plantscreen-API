@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.statistic_plant_parameter import StatisticPlantParameter
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 class JsonIrPlantParamByAnalyseIDResult(BaseModel):

@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.scan3_d_analyzed_model import Scan3DAnalyzedModel
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 class JsonScan3dAnalyzedModelByAnalyseIDResult(BaseModel):

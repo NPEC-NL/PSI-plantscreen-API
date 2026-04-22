@@ -3,7 +3,9 @@
 This page provides quick links to all API endpoint documentation files.
 
 
+
 For convenience all endpoints are wrapped in:
+
 - [CompleteAPIClient](CompleteAPIClient.md)
 
 Individual API groups:

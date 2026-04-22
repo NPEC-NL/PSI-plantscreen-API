@@ -39,6 +39,6 @@ json_fc_measure_extended_data_result_dict = json_fc_measure_extended_data_result
 # create an instance of JsonFcMeasureExtendedDataResult from a dict
 json_fc_measure_extended_data_result_from_dict = JsonFcMeasureExtendedDataResult.from_dict(json_fc_measure_extended_data_result_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

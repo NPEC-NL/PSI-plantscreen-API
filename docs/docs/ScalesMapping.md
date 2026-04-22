@@ -42,6 +42,6 @@ scales_mapping_dict = scales_mapping_instance.to_dict()
 # create an instance of ScalesMapping from a dict
 scales_mapping_from_dict = ScalesMapping.from_dict(scales_mapping_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

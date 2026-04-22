@@ -100,6 +100,7 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -233,7 +234,6 @@ class ProfileApi:
         )
         return response_data.response
 
-
     def _profile_serialize(
         self,
         id,
@@ -356,6 +356,7 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -481,7 +482,6 @@ class ProfileApi:
         )
         return response_data.response
 
-
     def _profile_active_serialize(
         self,
         _request_auth,
@@ -598,6 +598,7 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -722,7 +723,6 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _profile_id_serialize(
         self,

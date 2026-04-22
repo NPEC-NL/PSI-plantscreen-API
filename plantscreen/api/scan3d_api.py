@@ -119,6 +119,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -268,7 +269,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_serialize(
         self,
         device_id,
@@ -415,6 +415,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -564,7 +565,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_analyzed_model_serialize(
         self,
         device_id,
@@ -703,6 +703,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -836,7 +837,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_analyzed_model_analyse_serialize(
         self,
         id,
@@ -963,6 +963,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1095,7 +1096,6 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _scan3d_analyzed_model_measure_serialize(
         self,
@@ -1231,6 +1231,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1380,7 +1381,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_imaging_extended_data_serialize(
         self,
         device_id,
@@ -1519,6 +1519,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1652,7 +1653,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_imaging_extended_data_measure_serialize(
         self,
         id,
@@ -1779,6 +1779,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1911,7 +1912,6 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _scan3d_imaging_measure_serialize(
         self,
@@ -2051,6 +2051,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2208,7 +2209,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_leaf_param_serialize(
         self,
         device_id,
@@ -2357,6 +2357,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2498,7 +2499,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_leaf_param_analyse_serialize(
         self,
         id,
@@ -2631,6 +2631,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2763,7 +2764,6 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _scan3d_param_serialize(
         self,
@@ -2899,6 +2899,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3048,7 +3049,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_param_used_serialize(
         self,
         device_id,
@@ -3187,6 +3187,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3319,7 +3320,6 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _scan3d_param_used_analyse_serialize(
         self,
@@ -3459,6 +3459,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3616,7 +3617,6 @@ class Scan3dApi:
         )
         return response_data.response
 
-
     def _scan3d_plant_param_serialize(
         self,
         device_id,
@@ -3765,6 +3765,7 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3905,7 +3906,6 @@ class Scan3dApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _scan3d_plant_param_analyse_serialize(
         self,

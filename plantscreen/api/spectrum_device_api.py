@@ -101,6 +101,7 @@ class SpectrumDeviceApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -234,7 +235,6 @@ class SpectrumDeviceApi:
         )
         return response_data.response
 
-
     def _spectrum_device_serialize(
         self,
         id,
@@ -357,6 +357,7 @@ class SpectrumDeviceApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -481,7 +482,6 @@ class SpectrumDeviceApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _spectrum_device_id_serialize(
         self,
@@ -611,6 +611,7 @@ class SpectrumDeviceApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -759,7 +760,6 @@ class SpectrumDeviceApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _spectrum_values_date_device_serialize(
         self,

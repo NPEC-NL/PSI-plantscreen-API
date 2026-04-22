@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.rgb_greening_mask_image import RgbGreeningMaskImage
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 class JsonRgbGreeningMaskImageByMeasureIDResult(BaseModel):

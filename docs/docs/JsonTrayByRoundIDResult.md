@@ -39,6 +39,6 @@ json_tray_by_round_id_result_dict = json_tray_by_round_id_result_instance.to_dic
 # create an instance of JsonTrayByRoundIDResult from a dict
 json_tray_by_round_id_result_from_dict = JsonTrayByRoundIDResult.from_dict(json_tray_by_round_id_result_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

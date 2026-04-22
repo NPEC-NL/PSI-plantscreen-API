@@ -39,6 +39,6 @@ json_rgb_used_param_color_by_analyse_id_result_dict = json_rgb_used_param_color_
 # create an instance of JsonRgbUsedParamColorByAnalyseIDResult from a dict
 json_rgb_used_param_color_by_analyse_id_result_from_dict = JsonRgbUsedParamColorByAnalyseIDResult.from_dict(json_rgb_used_param_color_by_analyse_id_result_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -56,6 +56,31 @@ class Probe200Response(BaseModel):
         else:
             super().__init__(**kwargs)
 
+    @field_validator('actual_instance')
+    def actual_instance_must_validate_oneof(cls, v):
+        instance = Probe200Response.model_construct()
+        error_messages = []
+        match = 0
+        # validate data type: JsonProbeResult
+        if not isinstance(v, JsonProbeResult):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `JsonProbeResult`")
+        else:
+            match += 1
+        # validate data type: JsonProbeByIDResult
+        if not isinstance(v, JsonProbeByIDResult):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `JsonProbeByIDResult`")
+        else:
+            match += 1
+        if match > 1:
+            # more than 1 match
+            raise ValueError("Multiple matches found when setting `actual_instance` in Probe200Response with oneOf schemas: JsonProbeByIDResult, JsonProbeResult. Details: " + ", ".join(error_messages))
+        elif match == 0:
+            # no match
+            raise ValueError("No match found when setting `actual_instance` in Probe200Response with oneOf schemas: JsonProbeByIDResult, JsonProbeResult. Details: " + ", ".join(error_messages))
+        else:
+            return v
+
+    @classmethod
     def from_dict(cls, obj: Union[str, Dict[str, Any]]) -> Self:
         return cls.from_json(json.dumps(obj))
 

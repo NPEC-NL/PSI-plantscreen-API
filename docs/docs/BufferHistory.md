@@ -42,6 +42,6 @@ buffer_history_dict = buffer_history_instance.to_dict()
 # create an instance of BufferHistory from a dict
 buffer_history_from_dict = BufferHistory.from_dict(buffer_history_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

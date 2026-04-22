@@ -104,6 +104,7 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -237,7 +238,6 @@ class ActionApi:
         )
         return response_data.response
 
-
     def _action_serialize(
         self,
         id,
@@ -364,6 +364,7 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -497,7 +498,6 @@ class ActionApi:
         )
         return response_data.response
 
-
     def _action_experiment_serialize(
         self,
         id,
@@ -624,6 +624,7 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -757,7 +758,6 @@ class ActionApi:
         )
         return response_data.response
 
-
     def _action_group_serialize(
         self,
         id,
@@ -884,6 +884,7 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1017,7 +1018,6 @@ class ActionApi:
         )
         return response_data.response
 
-
     def _action_group_round_serialize(
         self,
         id,
@@ -1144,6 +1144,7 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1277,7 +1278,6 @@ class ActionApi:
         )
         return response_data.response
 
-
     def _action_not_done_experiment_serialize(
         self,
         id,
@@ -1404,6 +1404,7 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1537,7 +1538,6 @@ class ActionApi:
         )
         return response_data.response
 
-
     def _action_protocol_serialize(
         self,
         id,
@@ -1664,6 +1664,7 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1796,7 +1797,6 @@ class ActionApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _action_protocol_round_serialize(
         self,

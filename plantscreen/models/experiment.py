@@ -23,9 +23,9 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_v
 from typing import Any, ClassVar, Dict, List, Optional
 
 from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 
 from plantscreen.models import owner
@@ -61,6 +61,30 @@ class Experiment(BaseModel):
 
     __properties: ClassVar[List[str]] = ["CreatedDate", "ExperimentID", "ExperimentInfo", "ExperimentName", "ExperimentStatus", "OwnerID", "StatusChangedDate"]
 
+    @field_validator('experiment_status')
+    def experiment_status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['Active', 'Finalized', 'BackedUp', 'Deleted']):
+            raise ValueError("must be one of enum values ('Active', 'Finalized', 'BackedUp', 'Deleted')")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
+
+    
+    @property
     def owner(self) -> owner.Owner:
         if type(self._owner) is object:
             from plantscreen.api.experiment_api import ExperimentApi as Api

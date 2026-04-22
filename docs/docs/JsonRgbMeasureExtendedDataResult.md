@@ -39,6 +39,6 @@ json_rgb_measure_extended_data_result_dict = json_rgb_measure_extended_data_resu
 # create an instance of JsonRgbMeasureExtendedDataResult from a dict
 json_rgb_measure_extended_data_result_from_dict = JsonRgbMeasureExtendedDataResult.from_dict(json_rgb_measure_extended_data_result_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -39,6 +39,6 @@ json_scan3d_leaf_param_by_analyse_id_result_dict = json_scan3d_leaf_param_by_ana
 # create an instance of JsonScan3dLeafParamByAnalyseIDResult from a dict
 json_scan3d_leaf_param_by_analyse_id_result_from_dict = JsonScan3dLeafParamByAnalyseIDResult.from_dict(json_scan3d_leaf_param_by_analyse_id_result_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

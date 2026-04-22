@@ -43,6 +43,6 @@ msc_light_set_dict = msc_light_set_instance.to_dict()
 # create an instance of MscLightSet from a dict
 msc_light_set_from_dict = MscLightSet.from_dict(msc_light_set_dict)
 ```
-[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
