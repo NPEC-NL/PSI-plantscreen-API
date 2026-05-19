@@ -22,10 +22,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 
-from pydantic import PrivateAttr
 from typing import Optional, Set
 from typing_extensions import Self
 
+from pydantic import PrivateAttr
 
 
 from plantscreen.models import action

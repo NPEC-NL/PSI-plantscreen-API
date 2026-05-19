@@ -22,10 +22,10 @@ from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.log_type import LogType
 
-from pydantic import PrivateAttr
 from typing import Optional, Set
 from typing_extensions import Self
 
+from pydantic import PrivateAttr
 
 
 class JsonSystemLogTypeResult(BaseModel):

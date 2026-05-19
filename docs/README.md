@@ -28,7 +28,7 @@ Unfortunately currently only available on test pypi, installable with:
 ## Example implementation
 Uses a .env file with the following fields:
 ```
-URL: "http://<ip-address>:<poort>"
+HOST=http://<ip-address>:<poort>
 ```
 The environment files have one additional depency: `pip install python-dotenv`
 Examples:

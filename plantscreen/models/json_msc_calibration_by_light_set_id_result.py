@@ -22,10 +22,10 @@ from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.msc_calibration import MscCalibration
 
-from pydantic import PrivateAttr
 from typing import Optional, Set
 from typing_extensions import Self
 
+from pydantic import PrivateAttr
 
 
 class JsonMscCalibrationByLightSetIDResult(BaseModel):

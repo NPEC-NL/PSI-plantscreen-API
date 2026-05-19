@@ -71,6 +71,7 @@ class CompleteAPIClient(ApiClient):
     def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:
         self.file_api = ApiClient(Configuration(host=url + "/RestService"))
         super().__init__(Configuration(host=url + "/RestService/json"), *args, **kwargs)
+        ApiClient.set_default(self)
         self._ActionApi: api_module.ActionApi = api_module.ActionApi(self)
         self._BufferApi: api_module.BufferApi = api_module.BufferApi(self)
         self._DeviceApi: api_module.DeviceApi = api_module.DeviceApi(self)

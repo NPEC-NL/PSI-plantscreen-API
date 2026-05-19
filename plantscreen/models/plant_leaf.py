@@ -21,10 +21,10 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 
-from pydantic import PrivateAttr
 from typing import Optional, Set
 from typing_extensions import Self
 
+from pydantic import PrivateAttr
 
 
 from plantscreen.models import plant

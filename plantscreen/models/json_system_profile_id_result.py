@@ -22,10 +22,10 @@ from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.profile_id_wrapper import ProfileIDWrapper
 
-from pydantic import PrivateAttr
 from typing import Optional, Set
 from typing_extensions import Self
 
+from pydantic import PrivateAttr
 
 
 class JsonSystemProfileIDResult(BaseModel):
