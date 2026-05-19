@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json_probe_result** | [**List[Probe]**](Probe.md) |  | [optional] 
-**json_probe_by_id_result** | [**Probe**](Probe.md) |  | [optional] 
+**json_probe_result** | [**List[Probe]**](Probe.md) |  | 
+**json_probe_by_id_result** | [**Probe**](Probe.md) |  | 
 
 
 ## Links

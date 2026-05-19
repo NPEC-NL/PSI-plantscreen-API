@@ -33,7 +33,7 @@ system_logs | List[[**object**](SystemLog.md)] | SystemLogApi |  | TrayID->id
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
 tray_profile_used_by_daterange | List[[**object**](TrayProfile.md)] | TrayApi | TrayProfileUsedTray | TrayID->id, start->start, stop->stop
-tray_profile_used_at_time | List[[**object**](TrayProfile.md)] | TrayApi | TrayProfileToDateTray | TrayID->id, date->date
+tray_profile_used_at_time | List[[**object**](TrayProfile.md)] | TrayApi | TrayProfileToDateTray | TrayID->id, var_date->var_date
 plants_by_daterange | List[[**object**](Plant.md)] | PlantApi | PlantTrayProfileTray | TrayID->id, start->start, stop->stop
 plant_reference_weights_at_time | List[[**object**](PlantWeightReference.md)] | ScalesApi | ScalesWeightReferenceToDateTray | TrayID->id, date->date
 system_logs_by_daterange | List[[**object**](SystemLog.md)] | SystemLogApi | SystemLogDateTray | TrayID->id, start->start, stop->stop

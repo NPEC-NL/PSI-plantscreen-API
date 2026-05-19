@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictInt, field_validator
 from typing_extensions import Annotated
 from plantscreen.models.json_round_by_experiment_id_and_date_result import JsonRoundByExperimentIDAndDateResult
 from plantscreen.models.json_round_by_experiment_id_result import JsonRoundByExperimentIDResult

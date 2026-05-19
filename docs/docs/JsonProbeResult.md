@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json_probe_result** | [**List[Probe]**](Probe.md) |  | [optional] 
+**json_probe_result** | [**List[Probe]**](Probe.md) |  | 
 **result** | [**List[Probe]**](Probe.md)| alias for **json_probe_result**  | 
 
 ## Links

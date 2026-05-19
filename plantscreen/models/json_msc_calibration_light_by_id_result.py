@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from plantscreen.models.msc_calibration_light import MscCalibrationLight
 
 from pydantic import PrivateAttr
@@ -32,7 +32,7 @@ class JsonMscCalibrationLightByIDResult(BaseModel):
     """
     JsonMscCalibrationLightByIDResult
     """ # noqa: E501
-    json_msc_calibration_light_by_id_result: Optional[MscCalibrationLight] = Field(default=None, alias="JsonMscCalibrationLightByIDResult")
+    json_msc_calibration_light_by_id_result: MscCalibrationLight = Field(alias="JsonMscCalibrationLightByIDResult")
 
     __properties: ClassVar[List[str]] = ["JsonMscCalibrationLightByIDResult"]
 

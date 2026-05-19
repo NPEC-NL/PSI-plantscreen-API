@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from plantscreen.models.probe import Probe
 
 from pydantic import PrivateAttr
@@ -32,7 +32,7 @@ class JsonProbeByIDResult(BaseModel):
     """
     JsonProbeByIDResult
     """ # noqa: E501
-    json_probe_by_id_result: Optional[Probe] = Field(default=None, alias="JsonProbeByIDResult")
+    json_probe_by_id_result: Probe = Field(alias="JsonProbeByIDResult")
 
     __properties: ClassVar[List[str]] = ["JsonProbeByIDResult"]
 

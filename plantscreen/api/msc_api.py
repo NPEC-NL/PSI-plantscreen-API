@@ -43,6 +43,8 @@ from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
+import json
+import json
 
 
 class MscApi:
@@ -377,6 +379,12 @@ class MscApi:
             *_param,
             _request_timeout=_request_timeout
         )
+        _response_types_map = {'200': 'JsonMscCalibrationLightResult'}
+        if id is not None:
+            _response_types_map = {'200': 'JsonMscCalibrationLightByIDResult'}
+        _response_types_map = {'200': 'JsonMscCalibrationLightResult'}
+        if id is not None:
+            _response_types_map = {'200': 'JsonMscCalibrationLightByIDResult'}
         response_data.read()
 
         return self.api_client.response_deserialize(

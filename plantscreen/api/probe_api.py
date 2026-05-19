@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictInt, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from plantscreen.models.json_probe_value_by_date_result import JsonProbeValueByDateResult
@@ -27,6 +27,8 @@ from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
+import json
+import json
 
 
 class ProbeApi:
@@ -101,6 +103,12 @@ class ProbeApi:
             *_param,
             _request_timeout=_request_timeout
         )
+        _response_types_map = {'200': 'JsonProbeResult'}
+        if id is not None:
+            _response_types_map = {'200': 'JsonProbeByIDResult'}
+        _response_types_map = {'200': 'JsonProbeResult'}
+        if id is not None:
+            _response_types_map = {'200': 'JsonProbeByIDResult'}
         response_data.read()
 
         return self.api_client.response_deserialize(

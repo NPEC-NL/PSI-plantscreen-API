@@ -23,7 +23,7 @@ Name | Model | Linked Via
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 tray_type | [**object**](TrayType.md) | TrayApi |  | ProfileID->id
-plants | List[[**object**](Plant.md)] | PlantApi |  | ProfileId->id
+plants | List[[**object**](Plant.md)] | PlantApi |  | ProfileID->id
 
 ### Parameterized Relationships
 Name | Model | API | Operation | Parameters

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json_msc_calibration_light_by_id_result** | [**MscCalibrationLight**](MscCalibrationLight.md) |  | [optional] 
+**json_msc_calibration_light_by_id_result** | [**MscCalibrationLight**](MscCalibrationLight.md) |  | 
 **result** | [**MscCalibrationLight**](MscCalibrationLight.md)| alias for **json_msc_calibration_light_by_id_result**  | 
 
 ## Links

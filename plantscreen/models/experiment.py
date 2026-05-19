@@ -61,6 +61,21 @@ class Experiment(BaseModel):
 
     __properties: ClassVar[List[str]] = ["CreatedDate", "ExperimentID", "ExperimentInfo", "ExperimentName", "ExperimentStatus", "OwnerID", "StatusChangedDate"]
 
+    @field_validator('created_date')
+    def created_date_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        #! Pydantic may pass a datetime object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
     @field_validator('experiment_status')
     def experiment_status_validate_enum(cls, value):
         """Validates the enum"""
@@ -69,6 +84,21 @@ class Experiment(BaseModel):
 
         if value not in set(['Active', 'Finalized', 'BackedUp', 'Deleted']):
             raise ValueError("must be one of enum values ('Active', 'Finalized', 'BackedUp', 'Deleted')")
+        return value
+
+    @field_validator('status_changed_date')
+    def status_changed_date_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        #! Pydantic may pass a datetime object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
         return value
 
     model_config = ConfigDict(

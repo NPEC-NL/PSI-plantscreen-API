@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 
 from pydantic import PrivateAttr
@@ -50,6 +50,21 @@ class ActionProtocol(BaseModel):
     _round: Optional[round.Round] = PrivateAttr(default=object())
 
     __properties: ClassVar[List[str]] = ["ActionID", "ExperimentID", "ProtocolBody", "ProtocolDateChanged", "ProtocolID", "RoundID"]
+
+    @field_validator('protocol_date_changed')
+    def protocol_date_changed_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        #! Pydantic may pass a datetime object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

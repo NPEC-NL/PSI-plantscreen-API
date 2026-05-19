@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing_extensions import Annotated
 from plantscreen.models.json_system_log_by_log_tag_and_date_result import JsonSystemLogByLogTagAndDateResult
 from plantscreen.models.json_system_log_by_log_type_and_date_result import JsonSystemLogByLogTypeAndDateResult

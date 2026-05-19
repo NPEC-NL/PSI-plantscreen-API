@@ -32,7 +32,7 @@ class JsonProbeResult(BaseModel):
     """
     JsonProbeResult
     """ # noqa: E501
-    json_probe_result: Optional[List[Probe]] = Field(default=None, alias="JsonProbeResult")
+    json_probe_result: Optional[List[Probe]] = Field(alias="JsonProbeResult")
 
     __properties: ClassVar[List[str]] = ["JsonProbeResult"]
 
@@ -87,6 +87,11 @@ class JsonProbeResult(BaseModel):
                 if _item_json_probe_result:
                     _items.append(_item_json_probe_result.to_dict())
             _dict['JsonProbeResult'] = _items
+        # set to None if json_probe_result (nullable) is None
+        # and model_fields_set contains the field
+        if self.json_probe_result is None and "json_probe_result" in self.model_fields_set:
+            _dict['JsonProbeResult'] = None
+
         return _dict
 
     @classmethod

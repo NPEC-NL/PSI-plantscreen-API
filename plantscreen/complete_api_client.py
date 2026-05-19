@@ -6,6 +6,7 @@ Auto-generated API client wrapper with direct methods for all endpoints.
 from plantscreen.api_client import ApiClient
 from plantscreen.configuration import Configuration
 import plantscreen.api as api_module
+from io import BytesIO
 from typing import Any, Optional, Union, Tuple, List, Dict
 from datetime import datetime
 from plantscreen.models import (
@@ -68,10 +69,8 @@ from plantscreen.models import (
 
 class CompleteAPIClient(ApiClient):
     def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:
-        configuration = Configuration(host=url + "/RestService/json")
-        Configuration.set_default(configuration)
-        super().__init__(configuration, *args, **kwargs)
         self.file_api = ApiClient(Configuration(host=url + "/RestService"))
+        super().__init__(Configuration(host=url + "/RestService/json"), *args, **kwargs)
         self._ActionApi: api_module.ActionApi = api_module.ActionApi(self)
         self._BufferApi: api_module.BufferApi = api_module.BufferApi(self)
         self._DeviceApi: api_module.DeviceApi = api_module.DeviceApi(self)
@@ -230,9 +229,8 @@ class CompleteAPIClient(ApiClient):
         result = self._ExperimentApi.experiment_date(start, stop)
         return getattr(result, "json_experiment_by_date_result", None)
 
-    def experiment_id(self) -> List[ExperimentIDWrapper]:
-        result = self._ExperimentApi.experiment_id()
-        return getattr(result, "json_experiment_id_result", None)
+    def experiment_id(self) -> List[int]:
+        return self._ExperimentApi.experiment_id()
 
     def experiment_owner(self, id: int) -> List[Experiment]:
         """
@@ -264,9 +262,8 @@ class CompleteAPIClient(ApiClient):
         result = self._ExperimentApi.owner(ids)
         return getattr(result, "json_owner_result", None)
 
-    def owner_id(self) -> List[OwnerIDWrapper]:
-        result = self._ExperimentApi.owner_id()
-        return getattr(result, "json_owner_id_result", None)
+    def owner_id(self) -> List[int]:
+        return self._ExperimentApi.owner_id()
 
     def fc_imaging(self, device_id: int, round_id: int, tray_id: int) -> List[FcImaging]:
         """
@@ -445,15 +442,6 @@ class CompleteAPIClient(ApiClient):
         """
         result = self._FcApi.fc_plant_param_analyse(id, param_id)
         return getattr(result, "json_fc_plant_param_by_analyse_id_result", None)
-
-    def file(self, path: str) -> None:
-        """
-        Args:
-            path (str):
-        Returns:
-            None
-        """
-        return self._FileApi.file(path)
 
     def file_changelog(self) -> str:
         return self._FileApi.file_changelog()
@@ -842,7 +830,7 @@ class CompleteAPIClient(ApiClient):
         result = self._MscApi.msc_calibration(id)
         return getattr(result, "json_msc_calibration_result", None)
 
-    def msc_calibration_light(self, id: Optional[int] = None) -> JsonMscCalibrationLightByIDResult:
+    def msc_calibration_light(self, id: Optional[int] = None) -> MscCalibrationLight:
         """
         Args:
             id (Optional[int]): ID of the resource.
@@ -850,7 +838,10 @@ class CompleteAPIClient(ApiClient):
             JsonMscCalibrationLightByIDResult
         """
         result = self._MscApi.msc_calibration_light(id)
-        return getattr(result, "oneof_schema_1_validator", None)
+        value = getattr(result, "json_msc_calibration_light_by_id_result", None)
+        if value is None:
+            value = getattr(result, "json_msc_calibration_light_result", None)
+        return value
 
     def msc_calibration_light_set(self, id: int) -> MscCalibration:
         """
@@ -1125,7 +1116,7 @@ class CompleteAPIClient(ApiClient):
         result = self._PlantApi.plant_tray_profile_tray(id, start, stop)
         return getattr(result, "json_plant_by_tray_id_and_dates_result", None)
 
-    def probe(self, id: Optional[int] = None) -> JsonProbeResult:
+    def probe(self, id: Optional[int] = None) -> Probe:
         """
         Args:
             id (Optional[int]): ID of the resource.
@@ -1133,7 +1124,10 @@ class CompleteAPIClient(ApiClient):
             JsonProbeResult
         """
         result = self._ProbeApi.probe(id)
-        return getattr(result, "oneof_schema_1_validator", None)
+        value = getattr(result, "json_probe_result", None)
+        if value is None:
+            value = getattr(result, "json_probe_by_id_result", None)
+        return value
 
     def probe_value_date(self, start: datetime, stop: datetime) -> List[ProbeValue]:
         """
@@ -1172,9 +1166,8 @@ class CompleteAPIClient(ApiClient):
         result = self._ProfileApi.profile_active()
         return getattr(result, "json_system_profile_active_result", None)
 
-    def profile_id(self) -> List[ProfileIDWrapper]:
-        result = self._ProfileApi.profile_id()
-        return getattr(result, "json_system_profile_id_result", None)
+    def profile_id(self) -> List[int]:
+        return self._ProfileApi.profile_id()
 
     def rgb_greening_mask_image(
         self, device_id: int, round_id: int, tray_id: int

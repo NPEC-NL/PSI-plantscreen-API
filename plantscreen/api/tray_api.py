@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictInt, field_validator
 from typing_extensions import Annotated
 from plantscreen.models.json_scales_mapping_by_tray_id_result import JsonScalesMappingByTrayIDResult
 from plantscreen.models.json_tray_by_round_id_result import JsonTrayByRoundIDResult
