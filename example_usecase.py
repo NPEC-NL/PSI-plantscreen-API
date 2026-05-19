@@ -13,7 +13,7 @@ if __name__ == "__main__":
     """
     load_dotenv()
     # Create an instance of the API class
-    api = plantscreen.CompleteAPIClient(getenv("URL"))
+    api = plantscreen.CompleteAPIClient(getenv("HOST"))
 
     # Retreive a list with all experiments
     experiment_list = api.experiment_id()
