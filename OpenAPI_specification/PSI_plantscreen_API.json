@@ -36,6 +36,10 @@
               }
             }
           }
+        },
+        "x-pp-simplify-id-list": {
+          "resultField": "json_experiment_id_result",
+          "itemField": "experiment_id"
         }
       }
     },
@@ -86,7 +90,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -96,7 +101,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -167,6 +173,10 @@
               }
             }
           }
+        },
+        "x-pp-simplify-id-list": {
+          "resultField": "json_owner_id_result",
+          "itemField": "owner_id"
         }
       }
     },
@@ -329,7 +339,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -339,7 +350,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -448,7 +460,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -458,7 +471,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -815,6 +829,10 @@
               }
             }
           }
+        },
+        "x-pp-simplify-id-list": {
+          "resultField": "json_system_profile_id_result",
+          "itemField": "profile_id"
         }
       }
     },
@@ -1128,7 +1146,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -1138,7 +1157,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -1181,7 +1201,8 @@
             "description": "date",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -1326,7 +1347,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -1336,7 +1358,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -4499,7 +4522,13 @@
               }
             }
           }
-        }
+        },
+        "x-pp-oneof-default-model": "JsonMscCalibrationLightResult",
+        "x-pp-oneof-selector-param": "id",
+        "x-pp-oneof-response-models": [
+          "JsonMscCalibrationLightResult",
+          "JsonMscCalibrationLightByIDResult"
+        ]
       }
     },
     "/Rgb/Imaging/Measure": {
@@ -6273,7 +6302,8 @@
             "description": "toDate",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6371,8 +6401,12 @@
               "application/json": {
                 "schema": {
                   "oneOf": [
-                    { "$ref": "#/components/schemas/JsonProbeResult" },
-                    { "$ref": "#/components/schemas/JsonProbeByIDResult" }
+                    {
+                      "$ref": "#/components/schemas/JsonProbeResult"
+                    },
+                    {
+                      "$ref": "#/components/schemas/JsonProbeByIDResult"
+                    }
                   ],
                   "discriminator": {
                     "propertyName": "type",
@@ -6385,7 +6419,13 @@
               }
             }
           }
-        }
+        },
+        "x-pp-oneof-default-model": "JsonProbeResult",
+        "x-pp-oneof-selector-param": "id",
+        "x-pp-oneof-response-models": [
+          "JsonProbeResult",
+          "JsonProbeByIDResult"
+        ]
       }
     },
     "/Probe/Value/Date": {
@@ -6402,7 +6442,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6412,7 +6453,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6455,7 +6497,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6465,7 +6508,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6563,7 +6607,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6573,7 +6618,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6639,7 +6685,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6649,7 +6696,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6725,7 +6773,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6735,7 +6784,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6811,7 +6861,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6821,7 +6872,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6885,7 +6937,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6895,7 +6948,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6959,7 +7013,8 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           },
@@ -6969,7 +7024,8 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time"
+              "format": "date-time",
+              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
             },
             "required": true
           }
@@ -6995,6 +7051,7 @@
         ],
         "summary": "Returns the streamed file located in the data file storage by defined path.",
         "operationId": "File",
+        "x-pp-has-custom-file-method": true,
         "parameters": [
           {
             "in": "query",
@@ -8241,8 +8298,12 @@
       "JsonMscCalibrationLightByIDResult": {
         "type": "object",
         "x-pp-is-container": "true",
+        "required": [
+          "JsonMscCalibrationLightByIDResult"
+        ],
         "properties": {
           "JsonMscCalibrationLightByIDResult": {
+            "nullable": true,
             "$ref": "#/components/schemas/MscCalibrationLight"
           }
         }
@@ -8250,8 +8311,12 @@
       "JsonMscCalibrationLightResult": {
         "type": "object",
         "x-pp-is-container": "true",
+        "required": [
+          "JsonMscCalibrationLightResult"
+        ],
         "properties": {
           "JsonMscCalibrationLightResult": {
+            "nullable": true,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/MscCalibrationLight"
@@ -8718,6 +8783,9 @@
       "JsonProbeByIDResult": {
         "type": "object",
         "x-pp-is-container": "true",
+        "required": [
+          "JsonProbeByIDResult"
+        ],
         "properties": {
           "JsonProbeByIDResult": {
             "$ref": "#/components/schemas/Probe"
@@ -8727,8 +8795,12 @@
       "JsonProbeResult": {
         "type": "object",
         "x-pp-is-container": "true",
+        "required": [
+          "JsonProbeResult"
+        ],
         "properties": {
           "JsonProbeResult": {
+            "nullable": true,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Probe"
@@ -8938,6 +9010,7 @@
           "CreatedDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ExperimentID": {
@@ -8969,6 +9042,7 @@
           "StatusChangedDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           }
         },
@@ -9064,6 +9138,7 @@
           "CreateDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "Email": {
@@ -9075,6 +9150,7 @@
           "LastFailedDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "LastName": {
@@ -9083,6 +9159,7 @@
           "LastSuccessLogin": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "Login": {
@@ -9122,6 +9199,7 @@
           "NoteCreatedDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "NoteID": {
@@ -9162,11 +9240,13 @@
           "RoundDateStart": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "RoundDateStop": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "RoundDone": {
@@ -9183,7 +9263,7 @@
             "type": "string"
           }
         },
-        "x-pp-link": [
+         "x-pp-link": [
           {
             "name": "order",
             "model": "RoundOrder",
@@ -9259,7 +9339,6 @@
               {"name":"start"},
               {"name":"stop"}
           ]}
-          
         ]
       },
       "RoundOrder": {
@@ -9292,6 +9371,7 @@
           "ActionDateStart": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ActionDone": {
@@ -9376,6 +9456,7 @@
           "ProtocolDateChanged": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProtocolID": {
@@ -9419,11 +9500,13 @@
           "DeviceValidityStart": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "DeviceValidityEnd": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProfileID": {
@@ -9499,6 +9582,7 @@
           "TrayStatusChanged": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "TrayTypeID": {
@@ -9584,7 +9668,7 @@
             "parameters": [
               {"source": "TrayID",
               "name": "id"},
-              {"name":"date"}
+              {"name":"var_date"}
           ]},
           {
             "name": "plants_by_daterange",
@@ -9663,11 +9747,13 @@
           "ProfileDateStart": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProfileDateStop": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProfileID": {
@@ -9703,7 +9789,7 @@
             "tag": "Plant",
             "operationId": "PlantTrayProfile",
             "parameter": {
-              "source": "ProfileId",
+              "source": "ProfileID",
               "name": "id"
             }
           }
@@ -9774,10 +9860,12 @@
               "tag": "Experiment",
               "operationId": "Experiment"
             }
+
           },
           "HeightDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "HeightValue": {
@@ -9873,6 +9961,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -9954,6 +10043,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -10051,6 +10141,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -10128,6 +10219,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -10187,6 +10279,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
@@ -10241,6 +10334,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
@@ -10436,6 +10530,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -10509,6 +10604,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
@@ -10926,6 +11022,7 @@
           "CalibrationDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "CalibrationID": {
@@ -11002,6 +11099,7 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
@@ -11080,6 +11178,7 @@
           "ReferenceWeightDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ReferenceWeightValue": {
@@ -11148,7 +11247,8 @@
           },
           "SprayActionDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
           },
           "SprayActionID": {
             "type": "integer"
@@ -11240,6 +11340,7 @@
           "RecordDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           }
         }
@@ -11284,6 +11385,7 @@
           "Date": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^(([0][0-9]|[1][0-2])/([0-2][0-9]|[3][0-1])/[0-9]{4} ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "01/01/2024 15:00:00"
           },
           "SConst": {
@@ -11309,6 +11411,7 @@
           "SpectrumRecordDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           }
         }
@@ -11326,6 +11429,7 @@
           "BufferStateDate": {
             "type": "string",
             "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "BufferStateID": {
@@ -11350,7 +11454,8 @@
           },
           "LogDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
           },
           "LogID": {
             "type": "integer"
