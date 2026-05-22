@@ -59,23 +59,26 @@ if __name__ == "__main__":
                     device_caption in prescription.keys()
                     or device_caption.upper() in prescription.keys()
                 ):
-                    # for the last tray
-                    tray_id = int(protocol["Tray"][-1]["id"])
-
-                    # Get the filenames of the measurement results.
-                    # These could be from any device.
                     device = device_list[index]
+                    if device.device_family == 'Scales':
+                        continue
+
+                    # for the last tray
+                    # if no batch is defined for the round protocol["Tray"] does not exist and we must fetch the trays
+                    # for the round from the API
+                    if protocol.get("Tray") is not None:
+                        tray_id = int(protocol["Tray"][-1]["id"])
+                    else:
+                        ray_id = round.trays[-1].tray_id
+
                     data = []
+                    imaging_reply = api.imaging(device, round, tray_id)
+                    # Get the filenames of the measurement results.
+                    # These could be from any camera device.
                     if device.device_family == "FluorCam":
-                        imaging_reply = api.fc_imaging(
-                            device.device_id, round.round_id, tray_id
-                        )
                         for imaging in imaging_reply:
                             data.append({".tar": imaging.tar_path})
                     elif device.device_family == "Hypercam":
-                        imaging_reply = api.hc_imaging(
-                            device.device_id, round.round_id, tray_id
-                        )
                         for imaging in imaging_reply:
                             data.append(
                                 {
@@ -96,27 +99,15 @@ if __name__ == "__main__":
                                 }
                             )
                     elif device.device_family == "ThermalCam":
-                        imaging_reply = api.ir_imaging(
-                            device.device_id, round.round_id, tray_id
-                        )
                         for imaging in imaging_reply:
                             data.append({".raw": imaging.image_path})
                     elif device.device_family == "MSC":
-                        imaging_reply = api.msc_imaging(
-                            device.device_id, round.round_id, tray_id
-                        )
                         for imaging in imaging_reply:
                             data.append({".usraw": imaging.image_path})
                     elif device.device_family == "RgbCam":
-                        imaging_reply = api.rgb_imaging(
-                            device.device_id, round.round_id, tray_id
-                        )
                         for imaging in imaging_reply:
                             data.append({".png": imaging.image_path})
                     elif device.device_family == "Scan3d":
-                        imaging_reply = api.scan3d_imaging(
-                            device.device_id, round.round_id, tray_id
-                        )
                         for imaging in imaging_reply:
                             data.append({".pcd": imaging.scan3_d_model_path})
 
