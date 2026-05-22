@@ -2452,4 +2452,12 @@ Name | Type | Description | Notes
 
 ---
 
+## imaging
+
+### Return type
+
+List[[Imaging](docs/Imaging.md)]
+
+---
+
 [Back to top](#) | [Back to API Endpoints](API_endpoints.md) | [Back to Models](Models.md) | [Back to README](README.md)

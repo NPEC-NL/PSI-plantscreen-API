@@ -1929,3 +1929,32 @@ class CompleteAPIClient(ApiClient):
     def version_info(self) -> VersionInfo:
         result = self._VersionInfoApi.version_info()
         return getattr(result, "json_version_info_result", None)
+
+    def imaging(
+        self,
+        device: int | Device,
+        round: int | Round,
+        tray: int | Tray,
+        device_family: str | None = None,
+    ) -> List[Imaging] | List[FcImaging] | List[HcImaging] | List[Scan3DImaging]:
+        round_id = round.round_id if isinstance(round, Round) else round
+        tray_id = tray.tray_id if isinstance(tray, Tray) else tray
+        fn_map = {
+            "FluorCam": self.fc_imaging,
+            "Hypercam": self.hc_imaging,
+            "ThermalCam": self.ir_imaging,
+            "MSC": self.msc_imaging,
+            "RgbCam": self.rgb_imaging,
+            "Scan3d": self.scan3d,
+        }
+        if device_family is None and not isinstance(device, Device):
+            device = self.device(id=device)
+            if device.device_family is None:
+                raise ValueError(f"Device {device} has no device family")
+        device_family = device_family or device.device_family
+
+        if device_family not in fn_map:
+            raise ValueError(
+                f"Invalid device family: {device_family}. Valid choices are {', '.join(fn_map.keys())}"
+            )
+        return fn_map[device_family](device.device_id, round_id, tray_id)

@@ -18,24 +18,36 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
-**action**|[**int**](Action.md)|action_id**experiment**|[**int**](Experiment.md)|experiment_id
+**action**|[**Action**](Action.md)|action_id**experiment**|[**Experiment**](Experiment.md)|experiment_id
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-order | [**object**](RoundOrder.md) | RoundApi |  | RoundID->id
-action_group | [**object**](ActionGroup.md) | ActionApi |  | RoundID->id
-action_protocol | [**object**](ActionProtocol.md) | ActionApi |  | RoundID->id
-trays | List[[**object**](Tray.md)] | TrayApi |  | RoundID->id
-plant_heights | List[[**object**](PlantHeight.md)] | RoundApi |  | RoundID->id
-system_logs | List[[**object**](SystemLog.md)] | SystemLogApi |  | RoundID->id
+order | [**RoundOrder**](RoundOrder.md) | RoundApi |  | **RoundID->id**
+action_group | [**ActionGroup**](ActionGroup.md) | ActionApi |  | **RoundID->id**
+action_protocol | [**ActionProtocol**](ActionProtocol.md) | ActionApi |  | **RoundID->id**
+trays | List[[**Tray**](Tray.md)] | TrayApi |  | **RoundID->id**
+plant_heights | List[[**PlantHeight**](PlantHeight.md)] | RoundApi |  | **RoundID->id**
+system_logs | List[[**SystemLog**](SystemLog.md)] | SystemLogApi |  | **RoundID->id**
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
-system_logs_by_daterange | List[[**object**](SystemLog.md)] | SystemLogApi | SystemLogDateRound | RoundID->id, start->start, stop->stop
+system_logs_by_daterange | List[[**SystemLog**](SystemLog.md)] | SystemLogApi | SystemLogDateRound | **RoundID->id**, start->start, stop->stop
 ## Example
 
 ```python

@@ -15,17 +15,29 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
-**tray**|[**int**](Tray.md)|tray_id
+**tray**|[**Tray**](Tray.md)|tray_id
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-tray_type | [**object**](TrayType.md) | TrayApi |  | ProfileID->id
-plants | List[[**object**](Plant.md)] | PlantApi |  | ProfileID->id
+tray_type | [**TrayType**](TrayType.md) | TrayApi |  | **ProfileID->id**
+plants | List[[**Plant**](Plant.md)] | PlantApi |  | **ProfileID->id**
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
 ## Example

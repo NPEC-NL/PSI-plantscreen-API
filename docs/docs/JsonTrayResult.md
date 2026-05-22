@@ -11,15 +11,27 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
-****|[**Tray**](TrayProfile.md)|tray_profile****|[**Tray**](ScalesMapping.md)|scales_mapping****|[**Tray**](Plant.md)|plants****|[**Tray**](PlantWeightReference.md)|plant_reference_weights****|[**Tray**](SystemLog.md)|system_logs
+****|[**TrayProfile**](TrayProfile.md)|tray_profile****|[**ScalesMapping**](ScalesMapping.md)|scales_mapping****|[**Plant**](Plant.md)|plants****|[**PlantWeightReference**](PlantWeightReference.md)|plant_reference_weights****|[**SystemLog**](SystemLog.md)|system_logs
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
 ## Example

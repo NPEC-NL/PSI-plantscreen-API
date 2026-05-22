@@ -11,15 +11,27 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
-****|[**Round**](RoundOrder.md)|order****|[**Round**](ActionGroup.md)|action_group****|[**Round**](ActionProtocol.md)|action_protocol****|[**Round**](Tray.md)|trays****|[**Round**](PlantHeight.md)|plant_heights****|[**Round**](SystemLog.md)|system_logs
+****|[**RoundOrder**](RoundOrder.md)|order****|[**ActionGroup**](ActionGroup.md)|action_group****|[**ActionProtocol**](ActionProtocol.md)|action_protocol****|[**Tray**](Tray.md)|trays****|[**PlantHeight**](PlantHeight.md)|plant_heights****|[**SystemLog**](SystemLog.md)|system_logs
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
 ## Example
