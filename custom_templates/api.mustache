@@ -43,6 +43,7 @@ class {{classname}}:
 
 {{!Custom file method params and the list returns}}
 {{#vendorExtensions.x-pp-has-custom-file-method}}
+{{>file_api_method}}
 {{/vendorExtensions.x-pp-has-custom-file-method}}
 {{^vendorExtensions.x-pp-has-custom-file-method}}
     @allow_single_for_first_list_param
