@@ -61,7 +61,7 @@ build = [
 packages = ["plantscreen"]
 
 [tool.setuptools_scm]
-write_to = "plantscreen/_version.py"
+version_file = "plantscreen/_version.py"
 local_scheme = "no-local-version"
 
 [project.urls]

@@ -3,6 +3,8 @@ name: Generate Python Client from OpenAPI Spec
 on:
   workflow_dispatch:
   push:
+    branches:
+    - '**'
     paths:
       - 'OpenAPI_specification/PSI_plantscreen_API.json'
       - '.github/workflows/build_client.yml'
