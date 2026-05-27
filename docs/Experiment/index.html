@@ -2937,6 +2937,7 @@
 </table>
 <h2 id="links">Links</h2>
 <h3 id="11-relationships">1:1 Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2948,12 +2949,13 @@
 <tbody>
 <tr>
 <td><strong>owner</strong></td>
-<td><a href="../Owner/"><strong>int</strong></a></td>
+<td><a href="../Owner/"><strong>Owner</strong></a></td>
 <td>owner_id</td>
 </tr>
 </tbody>
 </table>
 <h3 id="implicit-relationships">Implicit Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2967,42 +2969,45 @@
 <tbody>
 <tr>
 <td>rounds</td>
-<td>List[<a href="../Round/"><strong>object</strong></a>]</td>
+<td>List[<a href="../Round/"><strong>Round</strong></a>]</td>
 <td>RoundApi</td>
 <td></td>
-<td>ExperimentID-&gt;id</td>
+<td><strong>ExperimentID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>round_orders</td>
-<td>List[<a href="../RoundOrder/"><strong>object</strong></a>]</td>
+<td>List[<a href="../RoundOrder/"><strong>RoundOrder</strong></a>]</td>
 <td>RoundApi</td>
 <td></td>
-<td>ExperimentID-&gt;id</td>
+<td><strong>ExperimentID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>notes</td>
-<td>List[<a href="../ExperimentNote/"><strong>object</strong></a>]</td>
+<td>List[<a href="../ExperimentNote/"><strong>ExperimentNote</strong></a>]</td>
 <td>ExperimentApi</td>
 <td></td>
-<td>ExperimentID-&gt;id</td>
+<td><strong>ExperimentID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>actions</td>
-<td>List[<a href="../Action/"><strong>object</strong></a>]</td>
+<td>List[<a href="../Action/"><strong>Action</strong></a>]</td>
 <td>ActionApi</td>
 <td></td>
-<td>ExperimentID-&gt;id</td>
+<td><strong>ExperimentID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>unfinished_actions</td>
-<td>List[<a href="../Action/"><strong>object</strong></a>]</td>
+<td>List[<a href="../Action/"><strong>Action</strong></a>]</td>
 <td>ActionApi</td>
 <td></td>
-<td>ExperimentID-&gt;id</td>
+<td><strong>ExperimentID-&gt;id</strong></td>
 </tr>
 </tbody>
 </table>
 <h3 id="parameterized-relationships">Parameterized Relationships</h3>
+<p>All the listed relationships are available as methods on the model instance.</p>
+<p>Parameters written in <strong>bold</strong> are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters</p>
 <table>
 <thead>
 <tr>
@@ -3016,17 +3021,17 @@
 <tbody>
 <tr>
 <td>rounds_by_date</td>
-<td>List[<a href="../Round/"><strong>object</strong></a>]</td>
+<td>List[<a href="../Round/"><strong>Round</strong></a>]</td>
 <td>RoundApi</td>
 <td>RoundDateExperiment</td>
-<td>ExperimentID-&gt;id, start-&gt;start, stop-&gt;stop</td>
+<td><strong>ExperimentID-&gt;id</strong>, start-&gt;start, stop-&gt;stop</td>
 </tr>
 <tr>
 <td>round_orders_by_date</td>
-<td>List[<a href="../RoundOrder/"><strong>object</strong></a>]</td>
+<td>List[<a href="../RoundOrder/"><strong>RoundOrder</strong></a>]</td>
 <td>RoundApi</td>
 <td>RoundOrderDateExperiment</td>
-<td>ExperimentID-&gt;id, start-&gt;start, stop-&gt;stop</td>
+<td><strong>ExperimentID-&gt;id</strong>, start-&gt;start, stop-&gt;stop</td>
 </tr>
 <tr>
 <td>## Example</td>

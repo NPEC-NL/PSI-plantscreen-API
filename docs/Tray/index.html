@@ -2931,6 +2931,7 @@
 </table>
 <h2 id="links">Links</h2>
 <h3 id="11-relationships">1:1 Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2942,12 +2943,13 @@
 <tbody>
 <tr>
 <td><strong>tray_type</strong></td>
-<td><a href="../TrayType/"><strong>int</strong></a></td>
+<td><a href="../TrayType/"><strong>TrayType</strong></a></td>
 <td>tray_type_id</td>
 </tr>
 </tbody>
 </table>
 <h3 id="implicit-relationships">Implicit Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2961,42 +2963,45 @@
 <tbody>
 <tr>
 <td>tray_profile</td>
-<td><a href="../TrayProfile/"><strong>object</strong></a></td>
+<td><a href="../TrayProfile/"><strong>TrayProfile</strong></a></td>
 <td>TrayApi</td>
 <td></td>
-<td>TrayID-&gt;id</td>
+<td><strong>TrayID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>scales_mapping</td>
-<td><a href="../ScalesMapping/"><strong>object</strong></a></td>
+<td><a href="../ScalesMapping/"><strong>ScalesMapping</strong></a></td>
 <td>TrayApi</td>
 <td></td>
-<td>TrayID-&gt;id</td>
+<td><strong>TrayID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>plants</td>
-<td>List[<a href="../Plant/"><strong>object</strong></a>]</td>
+<td>List[<a href="../Plant/"><strong>Plant</strong></a>]</td>
 <td>PlantApi</td>
 <td></td>
-<td>TrayID-&gt;id</td>
+<td><strong>TrayID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>plant_reference_weights</td>
-<td>List[<a href="../PlantWeightReference/"><strong>object</strong></a>]</td>
+<td>List[<a href="../PlantWeightReference/"><strong>PlantWeightReference</strong></a>]</td>
 <td>ScalesApi</td>
 <td></td>
-<td>TrayID-&gt;id</td>
+<td><strong>TrayID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>system_logs</td>
-<td>List[<a href="../SystemLog/"><strong>object</strong></a>]</td>
+<td>List[<a href="../SystemLog/"><strong>SystemLog</strong></a>]</td>
 <td>SystemLogApi</td>
 <td></td>
-<td>TrayID-&gt;id</td>
+<td><strong>TrayID-&gt;id</strong></td>
 </tr>
 </tbody>
 </table>
 <h3 id="parameterized-relationships">Parameterized Relationships</h3>
+<p>All the listed relationships are available as methods on the model instance.</p>
+<p>Parameters written in <strong>bold</strong> are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters</p>
 <table>
 <thead>
 <tr>
@@ -3010,38 +3015,38 @@
 <tbody>
 <tr>
 <td>tray_profile_used_by_daterange</td>
-<td>List[<a href="../TrayProfile/"><strong>object</strong></a>]</td>
+<td>List[<a href="../TrayProfile/"><strong>TrayProfile</strong></a>]</td>
 <td>TrayApi</td>
 <td>TrayProfileUsedTray</td>
-<td>TrayID-&gt;id, start-&gt;start, stop-&gt;stop</td>
+<td><strong>TrayID-&gt;id</strong>, start-&gt;start, stop-&gt;stop</td>
 </tr>
 <tr>
 <td>tray_profile_used_at_time</td>
-<td>List[<a href="../TrayProfile/"><strong>object</strong></a>]</td>
+<td>List[<a href="../TrayProfile/"><strong>TrayProfile</strong></a>]</td>
 <td>TrayApi</td>
 <td>TrayProfileToDateTray</td>
-<td>TrayID-&gt;id, date-&gt;date</td>
+<td><strong>TrayID-&gt;id</strong>, var_date-&gt;var_date</td>
 </tr>
 <tr>
 <td>plants_by_daterange</td>
-<td>List[<a href="../Plant/"><strong>object</strong></a>]</td>
+<td>List[<a href="../Plant/"><strong>Plant</strong></a>]</td>
 <td>PlantApi</td>
 <td>PlantTrayProfileTray</td>
-<td>TrayID-&gt;id, start-&gt;start, stop-&gt;stop</td>
+<td><strong>TrayID-&gt;id</strong>, start-&gt;start, stop-&gt;stop</td>
 </tr>
 <tr>
 <td>plant_reference_weights_at_time</td>
-<td>List[<a href="../PlantWeightReference/"><strong>object</strong></a>]</td>
+<td>List[<a href="../PlantWeightReference/"><strong>PlantWeightReference</strong></a>]</td>
 <td>ScalesApi</td>
 <td>ScalesWeightReferenceToDateTray</td>
-<td>TrayID-&gt;id, date-&gt;date</td>
+<td><strong>TrayID-&gt;id</strong>, date-&gt;date</td>
 </tr>
 <tr>
 <td>system_logs_by_daterange</td>
-<td>List[<a href="../SystemLog/"><strong>object</strong></a>]</td>
+<td>List[<a href="../SystemLog/"><strong>SystemLog</strong></a>]</td>
 <td>SystemLogApi</td>
 <td>SystemLogDateTray</td>
-<td>TrayID-&gt;id, start-&gt;start, stop-&gt;stop</td>
+<td><strong>TrayID-&gt;id</strong>, start-&gt;start, stop-&gt;stop</td>
 </tr>
 <tr>
 <td>## Example</td>

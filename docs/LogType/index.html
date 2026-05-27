@@ -2901,6 +2901,7 @@
 </table>
 <h2 id="links">Links</h2>
 <h3 id="11-relationships">1:1 Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2918,6 +2919,7 @@
 </tbody>
 </table>
 <h3 id="implicit-relationships">Implicit Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2939,6 +2941,9 @@
 </tbody>
 </table>
 <h3 id="parameterized-relationships">Parameterized Relationships</h3>
+<p>All the listed relationships are available as methods on the model instance.</p>
+<p>Parameters written in <strong>bold</strong> are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters</p>
 <table>
 <thead>
 <tr>
@@ -2952,10 +2957,10 @@
 <tbody>
 <tr>
 <td>system_logs_by_daterange</td>
-<td>List[<a href="../SystemLog/"><strong>object</strong></a>]</td>
+<td>List[<a href="../SystemLog/"><strong>SystemLog</strong></a>]</td>
 <td>SystemLogApi</td>
 <td>SystemLogDateLogType</td>
-<td>LogType-&gt;type, start-&gt;start, stop-&gt;stop</td>
+<td><strong>LogType-&gt;type</strong>, start-&gt;start, stop-&gt;stop</td>
 </tr>
 <tr>
 <td>## Example</td>

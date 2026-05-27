@@ -2943,6 +2943,7 @@
 </table>
 <h2 id="links">Links</h2>
 <h3 id="11-relationships">1:1 Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2954,12 +2955,13 @@
 <tbody>
 <tr>
 <td><strong>action</strong></td>
-<td><a href="../Action/"><strong>int</strong></a></td>
+<td><a href="../Action/"><strong>Action</strong></a></td>
 <td>action_id<strong>experiment</strong></td>
 </tr>
 </tbody>
 </table>
 <h3 id="implicit-relationships">Implicit Relationships</h3>
+<p>All the listed relationships are available as properties on the model instance</p>
 <table>
 <thead>
 <tr>
@@ -2973,49 +2975,52 @@
 <tbody>
 <tr>
 <td>order</td>
-<td><a href="../RoundOrder/"><strong>object</strong></a></td>
+<td><a href="../RoundOrder/"><strong>RoundOrder</strong></a></td>
 <td>RoundApi</td>
 <td></td>
-<td>RoundID-&gt;id</td>
+<td><strong>RoundID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>action_group</td>
-<td><a href="../ActionGroup/"><strong>object</strong></a></td>
+<td><a href="../ActionGroup/"><strong>ActionGroup</strong></a></td>
 <td>ActionApi</td>
 <td></td>
-<td>RoundID-&gt;id</td>
+<td><strong>RoundID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>action_protocol</td>
-<td><a href="../ActionProtocol/"><strong>object</strong></a></td>
+<td><a href="../ActionProtocol/"><strong>ActionProtocol</strong></a></td>
 <td>ActionApi</td>
 <td></td>
-<td>RoundID-&gt;id</td>
+<td><strong>RoundID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>trays</td>
-<td>List[<a href="../Tray/"><strong>object</strong></a>]</td>
+<td>List[<a href="../Tray/"><strong>Tray</strong></a>]</td>
 <td>TrayApi</td>
 <td></td>
-<td>RoundID-&gt;id</td>
+<td><strong>RoundID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>plant_heights</td>
-<td>List[<a href="../PlantHeight/"><strong>object</strong></a>]</td>
+<td>List[<a href="../PlantHeight/"><strong>PlantHeight</strong></a>]</td>
 <td>RoundApi</td>
 <td></td>
-<td>RoundID-&gt;id</td>
+<td><strong>RoundID-&gt;id</strong></td>
 </tr>
 <tr>
 <td>system_logs</td>
-<td>List[<a href="../SystemLog/"><strong>object</strong></a>]</td>
+<td>List[<a href="../SystemLog/"><strong>SystemLog</strong></a>]</td>
 <td>SystemLogApi</td>
 <td></td>
-<td>RoundID-&gt;id</td>
+<td><strong>RoundID-&gt;id</strong></td>
 </tr>
 </tbody>
 </table>
 <h3 id="parameterized-relationships">Parameterized Relationships</h3>
+<p>All the listed relationships are available as methods on the model instance.</p>
+<p>Parameters written in <strong>bold</strong> are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters</p>
 <table>
 <thead>
 <tr>
@@ -3029,10 +3034,10 @@
 <tbody>
 <tr>
 <td>system_logs_by_daterange</td>
-<td>List[<a href="../SystemLog/"><strong>object</strong></a>]</td>
+<td>List[<a href="../SystemLog/"><strong>SystemLog</strong></a>]</td>
 <td>SystemLogApi</td>
 <td>SystemLogDateRound</td>
-<td>RoundID-&gt;id, start-&gt;start, stop-&gt;stop</td>
+<td><strong>RoundID-&gt;id</strong>, start-&gt;start, stop-&gt;stop</td>
 </tr>
 <tr>
 <td>## Example</td>
