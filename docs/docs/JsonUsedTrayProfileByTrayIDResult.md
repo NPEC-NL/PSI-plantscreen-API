@@ -11,15 +11,27 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
 ## Example

@@ -22,17 +22,17 @@ from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.msc_calibration_light import MscCalibrationLight
 
-from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
+from pydantic import PrivateAttr
 
 
 class JsonMscCalibrationLightResult(BaseModel):
     """
     JsonMscCalibrationLightResult
     """ # noqa: E501
-    json_msc_calibration_light_result: Optional[List[MscCalibrationLight]] = Field(default=None, alias="JsonMscCalibrationLightResult")
+    json_msc_calibration_light_result: Optional[List[MscCalibrationLight]] = Field(alias="JsonMscCalibrationLightResult")
 
     __properties: ClassVar[List[str]] = ["JsonMscCalibrationLightResult"]
 
@@ -87,6 +87,11 @@ class JsonMscCalibrationLightResult(BaseModel):
                 if _item_json_msc_calibration_light_result:
                     _items.append(_item_json_msc_calibration_light_result.to_dict())
             _dict['JsonMscCalibrationLightResult'] = _items
+        # set to None if json_msc_calibration_light_result (nullable) is None
+        # and model_fields_set contains the field
+        if self.json_msc_calibration_light_result is None and "json_msc_calibration_light_result" in self.model_fields_set:
+            _dict['JsonMscCalibrationLightResult'] = None
+
         return _dict
 
     @classmethod

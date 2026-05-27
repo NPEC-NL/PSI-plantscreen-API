@@ -16,15 +16,27 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
-**action**|[**int**](Action.md)|action_id**experiment**|[**int**](Experiment.md)|experiment_id**round**|[**int**](Round.md)|round_id
+**action**|[**Action**](Action.md)|action_id**experiment**|[**Experiment**](Experiment.md)|experiment_id**round**|[**Round**](Round.md)|round_id
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
 ## Example

@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictInt, field_validator
 from typing_extensions import Annotated
 from plantscreen.models.json_round_by_experiment_id_and_date_result import JsonRoundByExperimentIDAndDateResult
 from plantscreen.models.json_round_by_experiment_id_result import JsonRoundByExperimentIDResult
@@ -104,6 +104,7 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -236,7 +237,6 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _round_serialize(
         self,
@@ -372,6 +372,7 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -520,7 +521,6 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _round_date_experiment_serialize(
         self,
@@ -678,6 +678,7 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -810,7 +811,6 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _round_experiment_serialize(
         self,
@@ -946,6 +946,7 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1094,7 +1095,6 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _round_order_date_experiment_serialize(
         self,
@@ -1252,6 +1252,7 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1385,7 +1386,6 @@ class RoundApi:
         )
         return response_data.response
 
-
     def _round_order_experiment_serialize(
         self,
         id,
@@ -1512,6 +1512,7 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1644,7 +1645,6 @@ class RoundApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _round_order_round_serialize(
         self,

@@ -15,22 +15,34 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 {{!1:1 Links}}
-{{#vars}}{{#vendorExtensions.x-pp-link}}**{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}**|[**{{dataType}}**]({{model}}.md)|{{name}}{{/vendorExtensions.x-pp-link}}{{/vars}}
+{{#vars}}{{#vendorExtensions.x-pp-link}}**{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}**|[**{{model}}**]({{model}}.md)|{{name}}{{/vendorExtensions.x-pp-link}}{{/vars}}
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 {{!implicit Links}}
-{{#vendorExtensions.x-pp-link}}{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} | {{^isSingleValue}}List[{{/isSingleValue}}[**{{dataType}}**]({{model}}.md){{^isSingleValue}}]{{/isSingleValue}} | {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} | {{{vendorExtensions.x-pp-link.operationId}}} | {{parameter.source}}->{{parameter.name}}
+{{#vendorExtensions.x-pp-link}}{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} | {{^isSingleValue}}List[{{/isSingleValue}}[**{{model}}**]({{model}}.md){{^isSingleValue}}]{{/isSingleValue}} | {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} | {{{vendorExtensions.x-pp-link.operationId}}} | **{{parameter.source}}->{{parameter.name}}**
 {{/vendorExtensions.x-pp-link}}
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
-{{#vendorExtensions.x-pp-rel}}{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} | {{^isSingleValue}}List[{{/isSingleValue}}[**{{dataType}}**]({{model}}.md){{^isSingleValue}}]{{/isSingleValue}} | {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} | {{{operationId}}} | {{#parameters}}{{#source}}{{source}}->{{name}}{{/source}}{{^source}}{{name}}->{{name}}{{/source}}{{^-last}}, {{/-last}}{{/parameters}}
+{{#vendorExtensions.x-pp-rel}}{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} | {{^isSingleValue}}List[{{/isSingleValue}}[**{{model}}**]({{model}}.md){{^isSingleValue}}]{{/isSingleValue}} | {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} | {{{operationId}}} | {{#parameters}}{{#source}}**{{source}}->{{name}}**{{/source}}{{^source}}{{name}}->{{name}}{{/source}}{{^-last}}, {{/-last}}{{/parameters}}
 {{/vendorExtensions.x-pp-rel}}
 ## Example
 
@@ -56,6 +68,7 @@ print({{classname}}.to_json())
 * `{{name}}` (value: `{{{value}}}`)
 {{/enumVars}}{{/allowableValues}}
 {{/isEnum}}
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+{{! Custom PSI docs navigation: output links directly to API_endpoints.md and Models.md. }}
+[Back to API Endpoints](../API_endpoints.md) [Back to Models](../Models.md) [[Back to README]](../README.md)
 
 {{/model}}{{/models}}

@@ -12,7 +12,7 @@ if __name__ == "__main__":
     """Ëxample implementation of all plantscreen endpoints"""
     load_dotenv()
     # Create an instance of the API class
-    api = plantscreen.CompleteAPIClient(getenv('URL'))
+    api = plantscreen.CompleteAPIClient(getenv('HOST'))
 
     try:
         # Returns a list of all experiment IDs in the database
@@ -540,7 +540,7 @@ if __name__ == "__main__":
         pprint(f"Calibration lightsettings: {msc_lightset}")
 
         # Returns all Multispectral calibration lightsettings by calibration ID
-        msc_lightset = api.msc_calibration_light()
+        msc_lightset = api.msc_calibration_light(1)
         pprint(f"Calibration lightsettings by calibration ID: {msc_lightset}")
         """-----------------------------------------------------------------------------------------------------------------
             RGB

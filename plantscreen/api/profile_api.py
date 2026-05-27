@@ -100,6 +100,7 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -233,7 +234,6 @@ class ProfileApi:
         )
         return response_data.response
 
-
     def _profile_serialize(
         self,
         id,
@@ -356,6 +356,7 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -481,7 +482,6 @@ class ProfileApi:
         )
         return response_data.response
 
-
     def _profile_active_serialize(
         self,
         _request_auth,
@@ -557,7 +557,7 @@ class ProfileApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> JsonSystemProfileIDResult:
+    ) -> list[int]:
         """Returns a list of all system profile IDs in the database
 
 
@@ -598,10 +598,15 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
-        return self.api_client.response_deserialize(
+
+        _result = self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+        _temp = getattr(_result, "json_system_profile_id_result", None)
+        if _temp is not None:
+            return sorted([x.profile_id for x in _temp])
+        return []
 
 
     @validate_call
@@ -722,7 +727,6 @@ class ProfileApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _profile_id_serialize(
         self,

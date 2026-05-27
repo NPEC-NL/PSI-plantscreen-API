@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing_extensions import Annotated
 from plantscreen.models.json_system_log_by_log_tag_and_date_result import JsonSystemLogByLogTagAndDateResult
 from plantscreen.models.json_system_log_by_log_type_and_date_result import JsonSystemLogByLogTypeAndDateResult
@@ -114,6 +114,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -262,7 +263,6 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _system_log_date_log_tag_serialize(
         self,
@@ -428,6 +428,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -576,7 +577,6 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _system_log_date_log_type_serialize(
         self,
@@ -742,6 +742,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -890,7 +891,6 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _system_log_date_round_serialize(
         self,
@@ -1056,6 +1056,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1204,7 +1205,6 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _system_log_date_tray_serialize(
         self,
@@ -1358,6 +1358,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1483,7 +1484,6 @@ class SystemLogApi:
         )
         return response_data.response
 
-
     def _system_log_log_tag_serialize(
         self,
         _request_auth,
@@ -1600,6 +1600,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1725,7 +1726,6 @@ class SystemLogApi:
         )
         return response_data.response
 
-
     def _system_log_log_type_serialize(
         self,
         _request_auth,
@@ -1846,6 +1846,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1979,7 +1980,6 @@ class SystemLogApi:
         )
         return response_data.response
 
-
     def _system_log_round_serialize(
         self,
         id,
@@ -2106,6 +2106,7 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2238,7 +2239,6 @@ class SystemLogApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _system_log_tray_serialize(
         self,

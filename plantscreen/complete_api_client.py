@@ -6,6 +6,7 @@ Auto-generated API client wrapper with direct methods for all endpoints.
 from plantscreen.api_client import ApiClient
 from plantscreen.configuration import Configuration
 import plantscreen.api as api_module
+from io import BytesIO
 from typing import Any, Optional, Union, Tuple, List, Dict
 from datetime import datetime
 from plantscreen.models import (
@@ -68,10 +69,9 @@ from plantscreen.models import (
 
 class CompleteAPIClient(ApiClient):
     def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:
-        configuration = Configuration(host=url + "/RestService/json")
-        Configuration.set_default(configuration)
-        super().__init__(configuration, *args, **kwargs)
         self.file_api = ApiClient(Configuration(host=url + "/RestService"))
+        super().__init__(Configuration(host=url + "/RestService/json"), *args, **kwargs)
+        ApiClient.set_default(self)
         self._ActionApi: api_module.ActionApi = api_module.ActionApi(self)
         self._BufferApi: api_module.BufferApi = api_module.BufferApi(self)
         self._DeviceApi: api_module.DeviceApi = api_module.DeviceApi(self)
@@ -230,17 +230,8 @@ class CompleteAPIClient(ApiClient):
         result = self._ExperimentApi.experiment_date(start, stop)
         return getattr(result, "json_experiment_by_date_result", None)
 
-    def experiment_id(self) -> list[int]:
-        """
-        Returns:
-            List[int]: list of ids.
-        """
-        result = self._ExperimentApi.experiment_id()
-        temp = getattr(result, "json_experiment_id_result", None)
-        if temp is not None:
-            return sorted([x.experiment_id for x in temp])
-        else:
-            return []
+    def experiment_id(self) -> List[int]:
+        return self._ExperimentApi.experiment_id()
 
     def experiment_owner(self, id: int) -> List[Experiment]:
         """
@@ -272,17 +263,8 @@ class CompleteAPIClient(ApiClient):
         result = self._ExperimentApi.owner(ids)
         return getattr(result, "json_owner_result", None)
 
-    def owner_id(self) -> list[int]:
-        """
-        Returns:
-            List[int]: list of ids.
-        """
-        result = self._ExperimentApi.owner_id()
-        temp = getattr(result, "json_owner_id_result", None)
-        if temp is not None:
-            return sorted([x.owner_id for x in temp])
-        else:
-            return []
+    def owner_id(self) -> List[int]:
+        return self._ExperimentApi.owner_id()
 
     def fc_imaging(self, device_id: int, round_id: int, tray_id: int) -> List[FcImaging]:
         """
@@ -461,15 +443,6 @@ class CompleteAPIClient(ApiClient):
         """
         result = self._FcApi.fc_plant_param_analyse(id, param_id)
         return getattr(result, "json_fc_plant_param_by_analyse_id_result", None)
-
-    def file(self, path: str) -> None:
-        """
-        Args:
-            path (str):
-        Returns:
-            None
-        """
-        return self._FileApi.file(path)
 
     def file_changelog(self) -> str:
         return self._FileApi.file_changelog()
@@ -863,7 +836,7 @@ class CompleteAPIClient(ApiClient):
         Args:
             id (Optional[int]): ID of the resource.
         Returns:
-            MscCalibrationLight
+            JsonMscCalibrationLightByIDResult
         """
         result = self._MscApi.msc_calibration_light(id)
         value = getattr(result, "json_msc_calibration_light_by_id_result", None)
@@ -1144,12 +1117,12 @@ class CompleteAPIClient(ApiClient):
         result = self._PlantApi.plant_tray_profile_tray(id, start, stop)
         return getattr(result, "json_plant_by_tray_id_and_dates_result", None)
 
-    def probe(self, id: int = None) -> Probe:
+    def probe(self, id: Optional[int] = None) -> Probe:
         """
         Args:
-            id (int): ID of the resource.
+            id (Optional[int]): ID of the resource.
         Returns:
-            Probe
+            JsonProbeResult
         """
         result = self._ProbeApi.probe(id)
         value = getattr(result, "json_probe_result", None)
@@ -1194,17 +1167,8 @@ class CompleteAPIClient(ApiClient):
         result = self._ProfileApi.profile_active()
         return getattr(result, "json_system_profile_active_result", None)
 
-    def profile_id(self) -> list[int]:
-        """
-        Returns:
-            List[int]: list of ids.
-        """
-        result = self._ProfileApi.profile_id()
-        temp = getattr(result, "json_system_profile_id_result", None)
-        if temp is not None:
-            return sorted([x.profile_id for x in temp])
-        else:
-            return []
+    def profile_id(self) -> List[int]:
+        return self._ProfileApi.profile_id()
 
     def rgb_greening_mask_image(
         self, device_id: int, round_id: int, tray_id: int
@@ -1965,3 +1929,32 @@ class CompleteAPIClient(ApiClient):
     def version_info(self) -> VersionInfo:
         result = self._VersionInfoApi.version_info()
         return getattr(result, "json_version_info_result", None)
+
+    def imaging(
+        self,
+        device: int | Device,
+        round: int | Round,
+        tray: int | Tray,
+        device_family: str | None = None,
+    ) -> List[Imaging] | List[FcImaging] | List[HcImaging] | List[Scan3DImaging]:
+        round_id = round.round_id if isinstance(round, Round) else round
+        tray_id = tray.tray_id if isinstance(tray, Tray) else tray
+        fn_map = {
+            "FluorCam": self.fc_imaging,
+            "Hypercam": self.hc_imaging,
+            "ThermalCam": self.ir_imaging,
+            "MSC": self.msc_imaging,
+            "RgbCam": self.rgb_imaging,
+            "Scan3d": self.scan3d,
+        }
+        if device_family is None and not isinstance(device, Device):
+            device = self.device(id=device)
+            if device.device_family is None:
+                raise ValueError(f"Device {device} has no device family")
+        device_family = device_family or device.device_family
+
+        if device_family not in fn_map:
+            raise ValueError(
+                f"Invalid device family: {device_family}. Valid choices are {', '.join(fn_map.keys())}"
+            )
+        return fn_map[device_family](device.device_id, round_id, tray_id)

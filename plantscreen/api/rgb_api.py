@@ -126,6 +126,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -275,7 +276,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_greening_mask_image_serialize(
         self,
         device_id,
@@ -414,6 +414,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -546,7 +547,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_greening_mask_image_measure_serialize(
         self,
@@ -682,6 +682,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -831,7 +832,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_imaging_serialize(
         self,
         device_id,
@@ -978,6 +978,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1127,7 +1128,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_imaging_extended_data_serialize(
         self,
         device_id,
@@ -1266,6 +1266,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1399,7 +1400,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_imaging_extended_data_measure_serialize(
         self,
         id,
@@ -1526,6 +1526,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1658,7 +1659,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_imaging_measure_serialize(
         self,
@@ -1798,6 +1798,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1955,7 +1956,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_leaf_param_serialize(
         self,
         device_id,
@@ -2104,6 +2104,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2244,7 +2245,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_leaf_param_analyse_serialize(
         self,
@@ -2390,6 +2390,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2547,7 +2548,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_leaf_param_color_serialize(
         self,
         device_id,
@@ -2696,6 +2696,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2837,7 +2838,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_leaf_param_color_analyse_serialize(
         self,
         id,
@@ -2970,6 +2970,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3102,7 +3103,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_param_serialize(
         self,
@@ -3238,6 +3238,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3387,7 +3388,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_param_color_used_serialize(
         self,
         device_id,
@@ -3526,6 +3526,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3658,7 +3659,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_param_color_used_analyse_serialize(
         self,
@@ -3794,6 +3794,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3943,7 +3944,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_param_used_serialize(
         self,
         device_id,
@@ -4082,6 +4082,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4214,7 +4215,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_param_used_analyse_serialize(
         self,
@@ -4350,6 +4350,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4499,7 +4500,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_plant_mask_serialize(
         self,
         device_id,
@@ -4638,6 +4638,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4770,7 +4771,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_plant_mask_measure_serialize(
         self,
@@ -4910,6 +4910,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5067,7 +5068,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_plant_param_serialize(
         self,
         device_id,
@@ -5216,6 +5216,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5356,7 +5357,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_plant_param_analyse_serialize(
         self,
@@ -5502,6 +5502,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5659,7 +5660,6 @@ class RgbApi:
         )
         return response_data.response
 
-
     def _rgb_plant_param_color_serialize(
         self,
         device_id,
@@ -5808,6 +5808,7 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5948,7 +5949,6 @@ class RgbApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _rgb_plant_param_color_analyse_serialize(
         self,

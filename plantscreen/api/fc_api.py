@@ -120,6 +120,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -269,7 +270,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_imaging_serialize(
         self,
         device_id,
@@ -416,6 +416,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -565,7 +566,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_imaging_extended_data_serialize(
         self,
         device_id,
@@ -704,6 +704,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -837,7 +838,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_imaging_extended_data_measure_serialize(
         self,
         id,
@@ -964,6 +964,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1096,7 +1097,6 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _fc_imaging_measure_serialize(
         self,
@@ -1236,6 +1236,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1393,7 +1394,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_leaf_param_serialize(
         self,
         device_id,
@@ -1542,6 +1542,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1683,7 +1684,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_leaf_param_analyse_serialize(
         self,
         id,
@@ -1816,6 +1816,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1948,7 +1949,6 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _fc_param_serialize(
         self,
@@ -2088,6 +2088,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2245,7 +2246,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_param_image_serialize(
         self,
         device_id,
@@ -2394,6 +2394,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2535,7 +2536,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_param_image_analyse_serialize(
         self,
         id,
@@ -2676,6 +2676,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2825,7 +2826,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_param_used_serialize(
         self,
         device_id,
@@ -2964,6 +2964,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3096,7 +3097,6 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _fc_param_used_analyse_serialize(
         self,
@@ -3232,6 +3232,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3381,7 +3382,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_plant_mask_serialize(
         self,
         device_id,
@@ -3520,6 +3520,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3652,7 +3653,6 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _fc_plant_mask_measure_serialize(
         self,
@@ -3792,6 +3792,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3949,7 +3950,6 @@ class FcApi:
         )
         return response_data.response
 
-
     def _fc_plant_param_serialize(
         self,
         device_id,
@@ -4098,6 +4098,7 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4238,7 +4239,6 @@ class FcApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _fc_plant_param_analyse_serialize(
         self,

@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictInt, field_validator
 from typing import List
 from typing_extensions import Annotated
 from plantscreen.models.json_experiment_by_date_result import JsonExperimentByDateResult
@@ -106,6 +106,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -239,7 +240,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _experiment_serialize(
         self,
         id,
@@ -370,6 +370,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -511,7 +512,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _experiment_date_serialize(
         self,
         start,
@@ -617,7 +617,7 @@ class ExperimentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> JsonExperimentIDResult:
+    ) -> list[int]:
         """Returns a list of all experiment IDs in the database.
 
 
@@ -658,10 +658,15 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
-        return self.api_client.response_deserialize(
+
+        _result = self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+        _temp = getattr(_result, "json_experiment_id_result", None)
+        if _temp is not None:
+            return sorted([x.experiment_id for x in _temp])
+        return []
 
 
     @validate_call
@@ -783,7 +788,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _experiment_id_serialize(
         self,
         _request_auth,
@@ -904,6 +908,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1037,7 +1042,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _experiment_owner_serialize(
         self,
         id,
@@ -1164,6 +1168,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1297,7 +1302,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _note_experiment_serialize(
         self,
         id,
@@ -1424,6 +1428,7 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1557,7 +1562,6 @@ class ExperimentApi:
         )
         return response_data.response
 
-
     def _owner_serialize(
         self,
         ids,
@@ -1640,7 +1644,7 @@ class ExperimentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> JsonOwnerIDResult:
+    ) -> list[int]:
         """Returns a list of all experiment owner IDs in the database.
 
 
@@ -1681,10 +1685,15 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
-        return self.api_client.response_deserialize(
+
+        _result = self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+        _temp = getattr(_result, "json_owner_id_result", None)
+        if _temp is not None:
+            return sorted([x.owner_id for x in _temp])
+        return []
 
 
     @validate_call
@@ -1805,7 +1814,6 @@ class ExperimentApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _owner_id_serialize(
         self,

@@ -1,0 +1,54 @@
+name: Generate OpenAPI Mustache Templates
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Generate default Python Mustache templates
+        run: |
+          mkdir -p generated/mustache-templates
+          docker run --rm \
+            -v "${{ github.workspace }}:/local" \
+            openapitools/openapi-generator-cli:latest \
+            author template -g python -o /local/generated/mustache-templates
+
+      - name: Generate Python client from PSI OpenAPI spec
+        run: |
+          mkdir -p generated/spec-python-client
+          docker run --rm \
+            -v "${{ github.workspace }}:/local" \
+            openapitools/openapi-generator-cli:latest \
+            generate \
+            -g python \
+            -i /local/OpenAPI_specification/PSI_plantscreen_API.json \
+            -o /local/generated/spec-python-client
+
+      - name: Show generated template files
+        run: |
+          echo "Generated templates:"
+          find generated/mustache-templates -maxdepth 3 -type f | sort
+
+      - name: Upload Mustache templates artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: openapi-python-mustache-templates
+          path: generated/mustache-templates
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload spec-generated Python client artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: openapi-psi-python-client
+          path: generated/spec-python-client
+          if-no-files-found: error
+          retention-days: 14

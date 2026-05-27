@@ -17,24 +17,36 @@ Name | Type | Description | Notes
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
-**owner**|[**int**](Owner.md)|owner_id
+**owner**|[**Owner**](Owner.md)|owner_id
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-rounds | List[[**object**](Round.md)] | RoundApi |  | ExperimentID->id
-round_orders | List[[**object**](RoundOrder.md)] | RoundApi |  | ExperimentID->id
-notes | List[[**object**](ExperimentNote.md)] | ExperimentApi |  | ExperimentID->id
-actions | List[[**object**](Action.md)] | ActionApi |  | ExperimentID->id
-unfinished_actions | List[[**object**](Action.md)] | ActionApi |  | ExperimentID->id
+rounds | List[[**Round**](Round.md)] | RoundApi |  | **ExperimentID->id**
+round_orders | List[[**RoundOrder**](RoundOrder.md)] | RoundApi |  | **ExperimentID->id**
+notes | List[[**ExperimentNote**](ExperimentNote.md)] | ExperimentApi |  | **ExperimentID->id**
+actions | List[[**Action**](Action.md)] | ActionApi |  | **ExperimentID->id**
+unfinished_actions | List[[**Action**](Action.md)] | ActionApi |  | **ExperimentID->id**
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
-rounds_by_date | List[[**object**](Round.md)] | RoundApi | RoundDateExperiment | ExperimentID->id, start->start, stop->stop
-round_orders_by_date | List[[**object**](RoundOrder.md)] | RoundApi | RoundOrderDateExperiment | ExperimentID->id, start->start, stop->stop
+rounds_by_date | List[[**Round**](Round.md)] | RoundApi | RoundDateExperiment | **ExperimentID->id**, start->start, stop->stop
+round_orders_by_date | List[[**RoundOrder**](RoundOrder.md)] | RoundApi | RoundOrderDateExperiment | **ExperimentID->id**, start->start, stop->stop
 ## Example
 
 ```python

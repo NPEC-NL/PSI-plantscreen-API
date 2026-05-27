@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictInt, field_validator
 from typing_extensions import Annotated
 from plantscreen.models.json_buffer_history_by_date_result import JsonBufferHistoryByDateResult
 from plantscreen.models.json_buffer_history_result import JsonBufferHistoryResult
@@ -100,6 +100,7 @@ class BufferApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -233,7 +234,6 @@ class BufferApi:
         )
         return response_data.response
 
-
     def _buffer_history_serialize(
         self,
         id,
@@ -364,6 +364,7 @@ class BufferApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -504,7 +505,6 @@ class BufferApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _buffer_history_date_serialize(
         self,

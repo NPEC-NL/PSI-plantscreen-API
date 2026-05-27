@@ -22,10 +22,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 
-from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
+from pydantic import PrivateAttr
 
 
 from plantscreen.models import tray_type
@@ -60,6 +60,45 @@ class Tray(BaseModel):
 
     __properties: ClassVar[List[str]] = ["TrayBarcode", "TrayID", "TrayInfo", "TrayStatus", "TrayStatusChanged", "TrayTypeID"]
 
+    @field_validator('tray_status')
+    def tray_status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['Active', 'Inactive']):
+            raise ValueError("must be one of enum values ('Active', 'Inactive')")
+        return value
+
+    @field_validator('tray_status_changed')
+    def tray_status_changed_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        #! Pydantic may pass a datetime object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
+
+    
+    @property
     def tray_type(self) -> tray_type.TrayType:
         if type(self._tray_type) is object:
             from plantscreen.api.tray_api import TrayApi as Api
@@ -125,10 +164,10 @@ class Tray(BaseModel):
         return json_result.result
     
     
-    def tray_profile_used_at_time(self,date) -> List[tray_profile.TrayProfile]:
+    def tray_profile_used_at_time(self,var_date) -> List[tray_profile.TrayProfile]:
         from plantscreen.api.tray_api import TrayApi as Api
         json_result = Api().tray_profile_to_date_tray(
-                id=self.tray_id,date=date)
+                id=self.tray_id,var_date=var_date)
         return json_result.result
     
     

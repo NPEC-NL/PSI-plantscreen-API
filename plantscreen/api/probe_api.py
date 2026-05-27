@@ -17,18 +17,18 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictInt, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from plantscreen.models.json_probe_value_by_date_result import JsonProbeValueByDateResult
 from plantscreen.models.json_probe_value_by_id_and_date_result import JsonProbeValueByIDAndDateResult
-from plantscreen.models.json_probe_by_id_result import JsonProbeByIDResult
-from plantscreen.models.json_probe_result import JsonProbeResult
-import json
+from plantscreen.models.probe200_response import Probe200Response
 from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
+import json
+import json
 
 
 class ProbeApi:
@@ -43,18 +43,6 @@ class ProbeApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def check_resp_type(self, response_data: bytearray):
-        response_json = response_data.data
-        if response_json is None:
-            return {'200': "JsonProbeResult"}
-        if isinstance(response_json, bytes):
-            response_dict = json.loads(response_json.decode())
-        if isinstance(response_dict, dict):
-            if "JsonProbeResult" in response_dict.keys():
-                return {'200': "JsonProbeResult"}
-            elif "JsonProbeByIDResult" in response_dict.keys():
-                return {'200': "JsonProbeByIDResult"}
-        return {'200': "JsonProbeResult | JsonProbeByIDResult"}
     @allow_single_for_first_list_param
     @validate_call
     def probe(
@@ -72,7 +60,7 @@ class ProbeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> JsonProbeResult | JsonProbeByIDResult:
+    ) -> Probe200Response:
         """If called without ID it returns all probeIDs, when called with it returns one environment probe of that probe ID.
 
 
@@ -107,16 +95,22 @@ class ProbeApi:
             _headers=_headers,
             _host_index=_host_index
         )
+
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "JsonProbeResult | JsonProbeByIDResult"
+            '200': "Probe200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        _response_types_map = self.check_resp_type(response_data)
-
+        _response_types_map = {'200': 'JsonProbeResult'}
+        if id is not None:
+            _response_types_map = {'200': 'JsonProbeByIDResult'}
+        _response_types_map = {'200': 'JsonProbeResult'}
+        if id is not None:
+            _response_types_map = {'200': 'JsonProbeByIDResult'}
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -139,7 +133,7 @@ class ProbeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[JsonProbeResult | JsonProbeByIDResult]:
+    ) -> ApiResponse[Probe200Response]:
         """If called without ID it returns all probeIDs, when called with it returns one environment probe of that probe ID.
 
 
@@ -174,15 +168,14 @@ class ProbeApi:
             _headers=_headers,
             _host_index=_host_index
         )
+
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "JsonProbeResult | JsonProbeByIDResult"
+            '200': "Probe200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        _response_types_map = self.check_resp_type(response_data)
-
         response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
@@ -241,17 +234,15 @@ class ProbeApi:
             _headers=_headers,
             _host_index=_host_index
         )
+
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "JsonProbeResult | JsonProbeByIDResult"
+            '200': "Probe200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        _response_types_map = self.check_resp_type(response_data)
-
         return response_data.response
-
 
     def _probe_serialize(
         self,
@@ -383,6 +374,7 @@ class ProbeApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -523,7 +515,6 @@ class ProbeApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _probe_value_date_serialize(
         self,
@@ -683,6 +674,7 @@ class ProbeApi:
             _request_timeout=_request_timeout
         )
         response_data.read()
+
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -831,7 +823,6 @@ class ProbeApi:
             _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _probe_value_date_probe_serialize(
         self,

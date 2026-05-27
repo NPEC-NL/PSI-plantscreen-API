@@ -10,11 +10,11 @@ import json
 {{{.}}}
 {{/vendorExtensions.x-py-model-imports}}
 
-{{!PrivateAttr for assigning private variabels that act as a chache for properties}}
-from pydantic import PrivateAttr
-
 from typing import Optional, Set
 from typing_extensions import Self
+
+{{!PrivateAttr for assigning private variabels that act as a chache for properties}}
+from pydantic import PrivateAttr
 
 {{! if model is not just a json container import all linked models}}
 {{^vendorExtensions.x-pp-is-container}}
@@ -47,7 +47,42 @@ class {{classname}}({{#parent}}{{{.}}}{{/parent}}{{^parent}}BaseModel{{/parent}}
 {{!If the model is not a json container model, define variables and if a 1:1 link is defined add a private attribute to cache it}}
 {{^vendorExtensions.x-pp-is-container}}
 {{#vars}}
+    {{#required}}
+    {{^isContainer}}
+    {{^isPrimitiveType}}
+    {{^isEnumOrRef}}
+    {{name}}: Optional[{{{dataType}}}] = Field(alias="{{baseName}}")
+    {{/isEnumOrRef}}
+    {{/isPrimitiveType}}
+    {{/isContainer}}
+    {{#isPrimitiveType}}
+        {{#isNullable}}
+    {{name}}: Optional[{{{dataType}}}] = Field(alias="{{baseName}}")
+    {{/isNullable}}
+    {{^isNullable}}
     {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/isNullable}}
+    {{/isPrimitiveType}}
+    {{#isEnumOrRef}}
+    {{#isNullable}}
+    {{name}}: Optional[{{{dataType}}}] = Field(alias="{{baseName}}")
+    {{/isNullable}}
+    {{^isNullable}}
+    {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/isNullable}}
+    {{/isEnumOrRef}}
+    {{#isContainer}}
+    {{#isNullable}}
+    {{name}}: Optional[{{{dataType}}}] = Field(alias="{{baseName}}")
+    {{/isNullable}}
+    {{^isNullable}}
+    {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/isNullable}}
+    {{/isContainer}}
+    {{/required}}
+    {{^required}}
+    {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/required}}
     {{#vendorExtensions.x-pp-link}}
     {{#lambda.snakecase}}_{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}: Optional[{{#lambda.snakecase}}{{{vendorExtensions.x-pp-link.model}}}{{/lambda.snakecase}}.{{{vendorExtensions.x-pp-link.model}}}] = PrivateAttr(default=object())
     {{/vendorExtensions.x-pp-link}}
@@ -56,7 +91,32 @@ class {{classname}}({{#parent}}{{{.}}}{{/parent}}{{^parent}}BaseModel{{/parent}}
 {{! Define all varialbes for container types}}
 {{#vendorExtensions.x-pp-is-container}}
 {{#vars}}
+    {{#required}}
+    {{#isNullable}}
+    {{name}}: Optional[{{{dataType}}}] = Field(alias="{{baseName}}")
+    {{/isNullable}}
+    {{^isNullable}}
+    {{^isPrimitiveType}}
+    {{^isEnumOrRef}}
+    {{^isContainer}}
+    {{name}}: Optional[{{{dataType}}}] = Field(alias="{{baseName}}")
+    {{/isContainer}}
+    {{/isEnumOrRef}}
+    {{/isPrimitiveType}}
+    {{#isPrimitiveType}}
     {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/isPrimitiveType}}
+    {{#isEnumOrRef}}
+    {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/isEnumOrRef}}
+    {{#isContainer}}
+    {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/isContainer}}
+    {{/isNullable}}
+    {{/required}}
+    {{^required}}
+    {{name}}: {{{vendorExtensions.x-py-typing}}}
+    {{/required}}
 {{/vars}}
 {{/vendorExtensions.x-pp-is-container}}
 {{! Define private attributes for all implicit links }}
@@ -93,6 +153,20 @@ class {{classname}}({{#parent}}{{{.}}}{{/parent}}{{^parent}}BaseModel{{/parent}}
 
         {{/isNullable}}
         {{/required}}
+        {{#isDateTime}}
+        #! Pydantic may pass a datetime object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        {{/isDateTime}}
+        {{#isDate}}
+        #! Pydantic may pass a date object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        {{/isDate}}
         if not re.match(r"{{{.}}}", value{{#vendorExtensions.x-modifiers}} ,re.{{{.}}}{{/vendorExtensions.x-modifiers}}):
             raise ValueError(r"must validate the regular expression {{{vendorExtensions.x-pattern}}}")
         return value

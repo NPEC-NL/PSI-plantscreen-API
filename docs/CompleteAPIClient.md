@@ -201,7 +201,7 @@ List[[Experiment](docs/Experiment.md)]
 
 ### Return type
 
-list[int]
+List[[int](docs/int.md)]
 
 ---
 
@@ -251,7 +251,7 @@ List[[Owner](docs/Owner.md)]
 
 ### Return type
 
-list[int]
+List[[int](docs/int.md)]
 
 ---
 
@@ -482,14 +482,6 @@ Name | Type | Description | Notes
 ### Return type
 
 List[[PlantParameter](docs/PlantParameter.md)]
-
----
-
-## file
-
-### Return type
-
-None
 
 ---
 
@@ -1383,7 +1375,7 @@ List[[Plant](docs/Plant.md)]
 
 Name | Type | Description | Notes
 ------------- | ------------- | ------------- | -------------
-**id** | **int** | ID of the resource. | 
+**id** | **Optional[int]** | ID of the resource. | 
 
 ### Return type
 
@@ -1448,7 +1440,7 @@ Name | Type | Description | Notes
 
 ### Return type
 
-list[int]
+List[[int](docs/int.md)]
 
 ---
 
@@ -2457,6 +2449,14 @@ Name | Type | Description | Notes
 ### Return type
 
 [VersionInfo](docs/VersionInfo.md)
+
+---
+
+## imaging
+
+### Return type
+
+List[[Imaging](docs/Imaging.md)]
 
 ---
 

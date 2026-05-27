@@ -5,22 +5,34 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json_msc_calibration_light_by_id_result** | [**MscCalibrationLight**](MscCalibrationLight.md) |  | [optional] 
-**json_msc_calibration_light_result** | [**List[MscCalibrationLight]**](MscCalibrationLight.md) |  | [optional] 
+**json_msc_calibration_light_by_id_result** | [**MscCalibrationLight**](MscCalibrationLight.md) |  | 
+**json_msc_calibration_light_result** | [**List[MscCalibrationLight]**](MscCalibrationLight.md) |  | 
 
 
 ## Links
 
 ### 1:1 Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 
 
 ### Implicit Relationships
+
+All the listed relationships are available as properties on the model instance
+
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
 ### Parameterized Relationships
+
+All the listed relationships are available as methods on the model instance.
+
+Parameters written in **bold** are taken automatically from the model instance, when calling the method you have to
+supply the non-bold parameters
+
 Name | Model | API | Operation | Parameters
 ------------ | ------------- | ------------- | ------------- | -------------
 ## Example

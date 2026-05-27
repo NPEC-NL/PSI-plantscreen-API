@@ -4,6 +4,16 @@ from pathlib import Path
 import re
 
 
+def extract_public_class_names(source: str) -> list[str]:
+    """Extract all public top-level class names from the given source."""
+    tree = ast.parse(source)
+    return [
+        node.name
+        for node in tree.body
+        if isinstance(node, ast.ClassDef) and not node.name.startswith('_')
+    ]
+
+
 def _extract_signature_and_doc(node, skip_first_arg=False):
     """
     Helper to extract signature, docstring, and return type from
@@ -128,15 +138,154 @@ def header_for_complete_api_client() -> list[str]:
 def header_for_xml_decoder() -> list[str]:
     md_lines = []
     md_lines.append('# XML Decoder Reference\n')
-    md_lines.append('This page documents the functions of the `xml_decoder` module, which is used to parse XML strings from the API into structured data models.\n')
-    md_lines.append('The main function is `parse_xml`, which takes an XML string and returns an instance of the appropriate data model based on the root tag of the XML.\n')
-    md_lines.append('The data models are defined in the `plantscreen.xml_models` package and include classes like `Protocol`, `Configuration`, `GroupTiming`, `DataSet`, and `TAnyShapes`.\n')
-    md_lines.append('Initial tests showed not all fields of the XML are always pressent, as a result we cannot guaranty the parser will always work.\n')
-    md_lines.append('Incase you encouter errors, please check the XML content and make a pull request on the repository so we can improve.\n')
-    md_lines.append('In the meantime and as alternative the xml_to_dict function can be used to convert the XML into a dictionary. This works for any XML.\n')
+    md_lines.append(
+        'This page documents the functions of the `xml_decoder` module, which '
+        'is used to parse XML strings from the API into structured data models.\n'
+    )
+    md_lines.append(
+        'The main function is `parse_xml`, which takes an XML string and '
+        'returns an instance of the appropriate data model based on the root '
+        'tag of the XML.\n'
+    )
+    md_lines.append(
+        'The data models are defined in the `plantscreen.xml_models` package '
+        'and include classes like `Protocol`, `Configuration`, `GroupTiming`, '
+        '`DataSet`, and `TAnyShapes`.\n'
+    )
+    md_lines.append(
+        'Initial tests showed not all fields of the XML are always pressent, '
+        'as a result we cannot guaranty the parser will always work.\n'
+    )
+    md_lines.append(
+        'Incase you encouter errors, please check the XML content and make a '
+        'pull request on the repository so we can improve.\n'
+    )
+    md_lines.append(
+        'In the meantime and as alternative the xml_to_dict function can be '
+        'used to convert the XML into a dictionary. This works for any XML.\n'
+    )
     md_lines.append('')
-    md_lines.append('For example implemenations please see: [example_usecase.py](https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/example_usecase.py)\n')
+    md_lines.append(
+        'For example implemenations please see: [example_usecase.py]('
+        'https://github.com/NPEC-NL/PSI-plantscreen-API/blob/main/'
+        'example_usecase.py)\n'
+    )
     return md_lines
+
+
+def generate_api_endpoints_doc(src_root: Path, doc_root: Path) -> None:
+    """Generate a quick-link index for all API endpoint documentation pages."""
+    api_dir = src_root / 'api'
+    api_entries = []
+
+    for api_file in sorted(api_dir.glob('*_api.py')):
+        if api_file.name == '__init__.py':
+            continue
+
+        with open(api_file, encoding='utf-8') as f:
+            source = f.read()
+
+        for class_name in extract_public_class_names(source):
+            api_entries.append((class_name, f'docs/{class_name}.md'))
+
+    api_entries.sort(key=lambda entry: entry[0].lower())
+
+    md_lines = [
+        '# API Endpoints\n',
+        (
+            'This page provides quick links to all API endpoint '
+            'documentation files.\n'
+        ),
+        '',
+        '',
+        'For convenience all endpoints are wrapped in:\n',
+        '- [CompleteAPIClient](CompleteAPIClient.md)\n',
+        'Individual API groups:\n',
+    ]
+
+    for class_name, link in api_entries:
+        md_lines.append(f'* 📄 [{class_name}]({link})')
+
+    md_lines.append('')
+
+    output_path = doc_root / 'API_endpoints.md'
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(md_lines))
+
+    print(f'Generated {output_path}')
+
+
+def generate_models_doc(src_root: Path, doc_root: Path) -> None:
+    """Generate a quick-link index for API and XML model documentation."""
+    api_model_entries = []
+    xml_model_entries = []
+
+    for model_file in sorted((src_root / 'models').glob('*.py')):
+        if (
+            model_file.name in {'__init__.py'}
+            or model_file.stem.startswith('json_')
+        ):
+            continue
+
+        with open(model_file, encoding='utf-8') as f:
+            source = f.read()
+
+        for class_name in extract_public_class_names(source):
+            api_model_entries.append((class_name, f'docs/{class_name}.md'))
+
+    xml_model_docs = {
+        'protocol': 'Protocol',
+        'configuration': 'Configuration',
+        'group_timing': 'GroupTiming',
+        'dataset': 'DataSet',
+        'tray_type': 'TAnyShapes',
+    }
+    for filename, class_name in xml_model_docs.items():
+        model_file = src_root / 'xml_models' / f'{filename}.py'
+        if model_file.exists():
+            xml_model_entries.append((class_name, f'docs/{class_name}.md'))
+
+    api_model_entries = sorted(
+        set(api_model_entries), key=lambda entry: entry[0].lower()
+    )
+    xml_model_entries = sorted(
+        set(xml_model_entries), key=lambda entry: entry[0].lower()
+    )
+
+    md_lines = [
+        '# Models\n',
+        'This page provides quick links to all model documentation files: \n',
+        '- [API Models](#api-models)\n',
+        '- [XML Models](#xml-models)\n',
+        '',
+        '## API Models',
+    ]
+
+    for class_name, link in api_model_entries:
+        md_lines.append(f'* 📄 [{class_name}]({link})')
+
+    md_lines.extend([
+        '',
+        '## XML Models',
+    ])
+
+    for class_name, link in xml_model_entries:
+        md_lines.append(f'* 📄 [{class_name}]({link})')
+
+    md_lines.extend([
+        '',
+        '---',
+        (
+            '[Back to API Endpoints](API_endpoints.md) '
+            '[Back to README](README.md)'
+        ),
+    ])
+
+    output_path = doc_root / 'Models.md'
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(md_lines))
+
+    print(f'Generated {output_path}')
 
 
 def main(src_file: Path, doc_path: Path, classname: str):
@@ -187,7 +336,10 @@ def main(src_file: Path, doc_path: Path, classname: str):
             in_desc = True
             for line in lines:
                 stripped_line = line.strip()
-                if stripped_line.lower().startswith('args:') or stripped_line.lower().startswith('parameters:'):
+                if (
+                    stripped_line.lower().startswith('args:')
+                    or stripped_line.lower().startswith('parameters:')
+                ):
                     in_args = True
                     in_desc = False
                     continue
@@ -195,7 +347,30 @@ def main(src_file: Path, doc_path: Path, classname: str):
                     in_args = False
                     in_desc = False
                     continue
-                if in_args and stripped_line.startswith(('_', '**', '*', 'id', 'device_id', 'round_id', 'tray_id', 'param_id', 'start', 'stop', 'type', 'tag', 'var_date', 'name', 'self', 'response_data', 'default', 'host_index', 'content_type', 'headers', 'request_auth', 'request_timeout')):
+                if in_args and stripped_line.startswith((
+                    '_',
+                    '**',
+                    '*',
+                    'id',
+                    'device_id',
+                    'round_id',
+                    'tray_id',
+                    'param_id',
+                    'start',
+                    'stop',
+                    'type',
+                    'tag',
+                    'var_date',
+                    'name',
+                    'self',
+                    'response_data',
+                    'default',
+                    'host_index',
+                    'content_type',
+                    'headers',
+                    'request_auth',
+                    'request_timeout',
+                )):
                     parts = stripped_line.split(':', 1)
                     if len(parts) == 2:
                         name_type, desc_val = parts
@@ -298,6 +473,9 @@ def generate_xml_mdocs():
 if __name__ == '__main__':
     src_path = Path(__file__).parent.parent / 'plantscreen'
     doc_path = Path(__file__).parent.parent / 'docs'
+
+    generate_api_endpoints_doc(src_path, doc_path)
+    generate_models_doc(src_path, doc_path)
 
     # Complete API Client
     main(

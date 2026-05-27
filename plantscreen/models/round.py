@@ -19,13 +19,13 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-
-from pydantic import PrivateAttr
 
 from typing import Optional, Set
 from typing_extensions import Self
+
+from pydantic import PrivateAttr
 
 
 from plantscreen.models import action
@@ -67,6 +67,36 @@ class Round(BaseModel):
     _system_logs: Optional[List[system_log.SystemLog]] = PrivateAttr(default=object())
 
     __properties: ClassVar[List[str]] = ["ActionID", "ExperimentID", "RoundDateStart", "RoundDateStop", "RoundDone", "RoundID", "RoundProtocolPath", "RoundStatus"]
+
+    @field_validator('round_date_start')
+    def round_date_start_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        #! Pydantic may pass a datetime object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
+
+    @field_validator('round_date_stop')
+    def round_date_stop_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        #! Pydantic may pass a datetime object here (already parsed),
+        # while this regex applies only to raw string input.
+        if not isinstance(value, str):
+            return value
+
+        if not re.match(r"^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$", value):
+            raise ValueError(r"must validate the regular expression /^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$/")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
