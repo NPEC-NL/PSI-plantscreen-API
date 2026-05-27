@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.measure_extended_data import MeasureExtendedData
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonFcMeasureExtendedDataByIDResult(BaseModel):
     """
     JsonFcMeasureExtendedDataByIDResult
     """ # noqa: E501
     json_fc_measure_extended_data_by_id_result: Optional[MeasureExtendedData] = Field(default=None, alias="JsonFcMeasureExtendedDataByIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonFcMeasureExtendedDataByIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonFcMeasureExtendedDataByIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> MeasureExtendedData:
+        return self.json_fc_measure_extended_data_by_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_msc_calibration_result** | [**MscCalibration**](MscCalibration.md) |  | [optional] 
+**result** | [**MscCalibration**](MscCalibration.md)| alias for **json_msc_calibration_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

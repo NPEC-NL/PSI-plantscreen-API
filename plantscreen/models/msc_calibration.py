@@ -21,8 +21,13 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class MscCalibration(BaseModel):
     """
@@ -34,7 +39,22 @@ class MscCalibration(BaseModel):
     camera_exposure: Optional[StrictInt] = Field(default=None, alias="CameraExposure")
     camera_gain: Optional[StrictInt] = Field(default=None, alias="CameraGain")
     light_set_id: Optional[StrictInt] = Field(default=None, alias="LightSetID")
+
     __properties: ClassVar[List[str]] = ["CalibrationDate", "CalibrationID", "CalibrationImagePath", "CameraExposure", "CameraGain", "LightSetID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
+
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -80,12 +100,13 @@ class MscCalibration(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            
             "CalibrationDate": obj.get("CalibrationDate") or None,
-            "CalibrationID": obj.get("CalibrationID"),
-            "CalibrationImagePath": obj.get("CalibrationImagePath"),
-            "CameraExposure": obj.get("CameraExposure"),
-            "CameraGain": obj.get("CameraGain"),
-            "LightSetID": obj.get("LightSetID")
+                        "CalibrationID": obj.get("CalibrationID"),
+                        "CalibrationImagePath": obj.get("CalibrationImagePath"),
+                        "CameraExposure": obj.get("CameraExposure"),
+                        "CameraGain": obj.get("CameraGain"),
+                        "LightSetID": obj.get("LightSetID")
         })
         return _obj
 

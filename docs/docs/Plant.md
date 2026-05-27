@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **plant_name** | **str** |  | [optional] 
 **tray_area** | **str** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+reference_weight | List[[**object**](PlantWeightReference.md)]] | ScalesApi |  | PlantID
+
 ## Example
 
 ```python

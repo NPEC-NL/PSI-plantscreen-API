@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.statistic_plant_parameter import StatisticPlantParameter
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonMscPlantParamByAnalyseIDResult(BaseModel):
     """
     JsonMscPlantParamByAnalyseIDResult
     """ # noqa: E501
     json_msc_plant_param_by_analyse_id_result: Optional[List[StatisticPlantParameter]] = Field(default=None, alias="JsonMscPlantParamByAnalyseIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonMscPlantParamByAnalyseIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonMscPlantParamByAnalyseIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[StatisticPlantParameter]:
+        return self.json_msc_plant_param_by_analyse_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

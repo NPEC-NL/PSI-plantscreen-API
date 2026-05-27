@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **note_text** | **str** |  | [optional] 
 **owner_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**experiment**|[**int**](Experiment.md)|experiment_id**owner**|[**int**](Owner.md)|owner_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

@@ -21,8 +21,23 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import device
+
+from plantscreen.models import experiment
+
+from plantscreen.models import plant
+
+from plantscreen.models import round
+
+from plantscreen.models import tray
+
 
 class Scan3DAnalyzedModel(BaseModel):
     """
@@ -31,16 +46,82 @@ class Scan3DAnalyzedModel(BaseModel):
     analyse_id: Optional[StrictInt] = Field(default=None, alias="AnalyseID")
     analysed_model_path: Optional[StrictStr] = Field(default=None, description="filetype", alias="AnalysedModelPath")
     device_id: Optional[StrictInt] = Field(default=None, alias="DeviceID")
+    _device: Optional[device.Device] = PrivateAttr(default=object())
     device_pid: Optional[StrictStr] = Field(default=None, alias="DevicePID")
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     measure_date: Optional[datetime] = Field(default=None, alias="MeasureDate")
     measure_id: Optional[StrictInt] = Field(default=None, alias="MeasureID")
     plant_barcode: Optional[StrictStr] = Field(default=None, alias="PlantBarcode")
     plant_id: Optional[StrictInt] = Field(default=None, alias="PlantID")
+    _plant: Optional[plant.Plant] = PrivateAttr(default=object())
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
+    _round: Optional[round.Round] = PrivateAttr(default=object())
     tray_barcode: Optional[StrictStr] = Field(default=None, alias="TrayBarcode")
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
+    _tray: Optional[tray.Tray] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["AnalyseID", "AnalysedModelPath", "DeviceID", "DevicePID", "ExperimentID", "MeasureDate", "MeasureID", "PlantBarcode", "PlantID", "RoundID", "TrayBarcode", "TrayID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+    
+    @property
+    def device(self) -> device.Device:
+        if type(self._device) is object:
+            from plantscreen.api.device_api import DeviceApi as Api
+            json_result = Api().device(self.device_id)
+            self._device = json_result.result
+        return self._device
+
+
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
+
+    
+    @property
+    def plant(self) -> plant.Plant:
+        if type(self._plant) is object:
+            from plantscreen.api.plant_api import PlantApi as Api
+            json_result = Api().plant(self.plant_id)
+            self._plant = json_result.result
+        return self._plant
+
+    
+    @property
+    def round(self) -> round.Round:
+        if type(self._round) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round(self.round_id)
+            self._round = json_result.result
+        return self._round
+
+
+    
+    @property
+    def tray(self) -> tray.Tray:
+        if type(self._tray) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray(self.tray_id)
+            self._tray = json_result.result
+        return self._tray
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -86,18 +167,19 @@ class Scan3DAnalyzedModel(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "AnalyseID": obj.get("AnalyseID"),
-            "AnalysedModelPath": obj.get("AnalysedModelPath"),
-            "DeviceID": obj.get("DeviceID"),
-            "DevicePID": obj.get("DevicePID"),
-            "ExperimentID": obj.get("ExperimentID"),
+                        "AnalyseID": obj.get("AnalyseID"),
+                        "AnalysedModelPath": obj.get("AnalysedModelPath"),
+                        "DeviceID": obj.get("DeviceID"),
+                        "DevicePID": obj.get("DevicePID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+            
             "MeasureDate": obj.get("MeasureDate") or None,
-            "MeasureID": obj.get("MeasureID"),
-            "PlantBarcode": obj.get("PlantBarcode"),
-            "PlantID": obj.get("PlantID"),
-            "RoundID": obj.get("RoundID"),
-            "TrayBarcode": obj.get("TrayBarcode"),
-            "TrayID": obj.get("TrayID")
+                        "MeasureID": obj.get("MeasureID"),
+                        "PlantBarcode": obj.get("PlantBarcode"),
+                        "PlantID": obj.get("PlantID"),
+                        "RoundID": obj.get("RoundID"),
+                        "TrayBarcode": obj.get("TrayBarcode"),
+                        "TrayID": obj.get("TrayID")
         })
         return _obj
 

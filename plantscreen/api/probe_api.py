@@ -24,7 +24,7 @@ from plantscreen.models.json_probe_value_by_date_result import JsonProbeValueByD
 from plantscreen.models.json_probe_value_by_id_and_date_result import JsonProbeValueByIDAndDateResult
 from plantscreen.models.json_probe_by_id_result import JsonProbeByIDResult
 from plantscreen.models.json_probe_result import JsonProbeResult
-import json
+import jsonfrom plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -54,7 +54,7 @@ class ProbeApi:
             elif "JsonProbeByIDResult" in response_dict.keys():
                 return {'200': "JsonProbeByIDResult"}
         return {'200': "JsonProbeResult | JsonProbeByIDResult"}
-
+    @allow_single_for_first_list_param
     @validate_call
     def probe(
         self,
@@ -277,6 +277,7 @@ class ProbeApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -316,7 +317,7 @@ class ProbeApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def probe_value_date(
         self,
@@ -549,6 +550,7 @@ class ProbeApi:
 
         # process the path parameters
         # process the query parameters
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -562,6 +564,7 @@ class ProbeApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -610,7 +613,7 @@ class ProbeApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def probe_value_date_probe(
         self,
@@ -856,10 +859,12 @@ class ProbeApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -873,6 +878,7 @@ class ProbeApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -918,5 +924,6 @@ class ProbeApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

@@ -9,6 +9,19 @@ Name | Type | Description | Notes
 **order** | **int** |  | [optional] 
 **round_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**experiment**|[**int**](Experiment.md)|experiment_id**round**|[**int**](Round.md)|round_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

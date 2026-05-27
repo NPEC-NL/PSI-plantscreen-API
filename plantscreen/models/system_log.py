@@ -21,24 +21,92 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import experiment
+
+from plantscreen.models import round
+
+from plantscreen.models import tray
+
+from plantscreen.models import tray_profile
+
 
 class SystemLog(BaseModel):
     """
     SystemLog
     """ # noqa: E501
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     log_date: Optional[datetime] = Field(default=None, alias="LogDate")
     log_id: Optional[StrictInt] = Field(default=None, alias="LogID")
     log_tag: Optional[StrictStr] = Field(default=None, alias="LogTag")
     log_text: Optional[StrictStr] = Field(default=None, alias="LogText")
     log_type: Optional[StrictStr] = Field(default=None, alias="LogType")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
+    _round: Optional[round.Round] = PrivateAttr(default=object())
     tray_barcode: Optional[StrictStr] = Field(default=None, alias="TrayBarcode")
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
+    _tray: Optional[tray.Tray] = PrivateAttr(default=object())
     tray_profile_id: Optional[StrictInt] = Field(default=None, alias="TrayProfileID")
+    _tray_profile: Optional[tray_profile.TrayProfile] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ExperimentID", "LogDate", "LogID", "LogTag", "LogText", "LogType", "RoundID", "TrayBarcode", "TrayID", "TrayProfileID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
+
+
+
+    
+    @property
+    def round(self) -> round.Round:
+        if type(self._round) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round(self.round_id)
+            self._round = json_result.result
+        return self._round
+
+
+    
+    @property
+    def tray(self) -> tray.Tray:
+        if type(self._tray) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray(self.tray_id)
+            self._tray = json_result.result
+        return self._tray
+
+    
+    @property
+    def tray_profile(self) -> tray_profile.TrayProfile:
+        if type(self._tray_profile) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray_profile(self.tray_profile_id)
+            self._tray_profile = json_result.result
+        return self._tray_profile
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -84,16 +152,17 @@ class SystemLog(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ExperimentID": obj.get("ExperimentID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+            
             "LogDate": obj.get("LogDate") or None,
-            "LogID": obj.get("LogID"),
-            "LogTag": obj.get("LogTag"),
-            "LogText": obj.get("LogText"),
-            "LogType": obj.get("LogType"),
-            "RoundID": obj.get("RoundID"),
-            "TrayBarcode": obj.get("TrayBarcode"),
-            "TrayID": obj.get("TrayID"),
-            "TrayProfileID": obj.get("TrayProfileID")
+                        "LogID": obj.get("LogID"),
+                        "LogTag": obj.get("LogTag"),
+                        "LogText": obj.get("LogText"),
+                        "LogType": obj.get("LogType"),
+                        "RoundID": obj.get("RoundID"),
+                        "TrayBarcode": obj.get("TrayBarcode"),
+                        "TrayID": obj.get("TrayID"),
+                        "TrayProfileID": obj.get("TrayProfileID")
         })
         return _obj
 

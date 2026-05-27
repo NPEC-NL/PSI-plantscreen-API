@@ -20,8 +20,15 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+
+from plantscreen.models import device
 
 class SystemProfile(BaseModel):
     """
@@ -32,6 +39,8 @@ class SystemProfile(BaseModel):
     profile_info: Optional[StrictStr] = Field(default=None, alias="ProfileInfo")
     profile_name: Optional[StrictStr] = Field(default=None, alias="ProfileName")
     system_hw_config: Optional[StrictStr] = Field(default=None, alias="SystemHwConfig")
+    _devices: Optional[List[device.Device]] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ProfileActive", "ProfileID", "ProfileInfo", "ProfileName", "SystemHwConfig"]
 
     model_config = ConfigDict(
@@ -39,6 +48,22 @@ class SystemProfile(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
+
+
+    
+    @property
+    def devices(self) -> List[device.Device]:
+        if type(self._devices) is object:
+            from plantscreen.api.device_api import DeviceApi as Api
+            json_result = Api().device_profile(id=self.profile_id)
+            self._devices = json_result.result
+        return self._devices
+    
+    
 
 
     def to_str(self) -> str:
@@ -85,11 +110,11 @@ class SystemProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ProfileActive": obj.get("ProfileActive"),
-            "ProfileID": obj.get("ProfileID"),
-            "ProfileInfo": obj.get("ProfileInfo"),
-            "ProfileName": obj.get("ProfileName"),
-            "SystemHwConfig": obj.get("SystemHwConfig")
+                        "ProfileActive": obj.get("ProfileActive"),
+                        "ProfileID": obj.get("ProfileID"),
+                        "ProfileInfo": obj.get("ProfileInfo"),
+                        "ProfileName": obj.get("ProfileName"),
+                        "SystemHwConfig": obj.get("SystemHwConfig")
         })
         return _obj
 

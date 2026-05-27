@@ -21,7 +21,7 @@ from typing_extensions import Annotated
 from plantscreen.models.json_system_profile_active_result import JsonSystemProfileActiveResult
 from plantscreen.models.json_system_profile_id_result import JsonSystemProfileIDResult
 from plantscreen.models.json_system_profile_result import JsonSystemProfileResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -39,7 +39,7 @@ class ProfileApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def profile(
         self,
@@ -259,6 +259,7 @@ class ProfileApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -298,7 +299,7 @@ class ProfileApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def profile_active(
         self,
@@ -540,7 +541,7 @@ class ProfileApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def profile_id(
         self,
@@ -779,5 +780,6 @@ class ProfileApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

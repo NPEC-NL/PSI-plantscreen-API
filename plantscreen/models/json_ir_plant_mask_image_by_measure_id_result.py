@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.imaging import Imaging
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonIrPlantMaskImageByMeasureIDResult(BaseModel):
     """
     JsonIrPlantMaskImageByMeasureIDResult
     """ # noqa: E501
     json_ir_plant_mask_image_by_measure_id_result: Optional[Imaging] = Field(default=None, alias="JsonIrPlantMaskImageByMeasureIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonIrPlantMaskImageByMeasureIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonIrPlantMaskImageByMeasureIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> Imaging:
+        return self.json_ir_plant_mask_image_by_measure_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

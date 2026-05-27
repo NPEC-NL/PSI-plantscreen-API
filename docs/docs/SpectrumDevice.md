@@ -9,6 +9,19 @@ Name | Type | Description | Notes
 **spectrum_device_serial** | **str** |  | [optional] 
 **spectrum_device_wavelengths_json** | [**SpectrumDeviceWavelengthsJSONWrapper**](SpectrumDeviceWavelengthsJSONWrapper.md) |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

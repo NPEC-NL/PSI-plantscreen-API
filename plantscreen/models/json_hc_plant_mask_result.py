@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.plant_mask import PlantMask
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonHcPlantMaskResult(BaseModel):
     """
     JsonHcPlantMaskResult
     """ # noqa: E501
     json_hc_plant_mask_result: Optional[List[PlantMask]] = Field(default=None, alias="JsonHcPlantMaskResult")
+
     __properties: ClassVar[List[str]] = ["JsonHcPlantMaskResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonHcPlantMaskResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[PlantMask]:
+        return self.json_hc_plant_mask_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

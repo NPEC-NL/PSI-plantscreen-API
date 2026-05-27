@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.profile_id_wrapper import ProfileIDWrapper
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonSystemProfileIDResult(BaseModel):
     """
     JsonSystemProfileIDResult
     """ # noqa: E501
     json_system_profile_id_result: Optional[List[ProfileIDWrapper]] = Field(default=None, alias="JsonSystemProfileIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonSystemProfileIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonSystemProfileIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[ProfileIDWrapper]:
+        return self.json_system_profile_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

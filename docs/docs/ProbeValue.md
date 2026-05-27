@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **probe_value** | **float** |  | [optional] 
 **record_date** | **datetime** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**probe**|[**int**](Probe.md)|probe_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

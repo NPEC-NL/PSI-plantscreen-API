@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.leaf_parameter import LeafParameter
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonScan3dLeafParamByAnalyseIDResult(BaseModel):
     """
     JsonScan3dLeafParamByAnalyseIDResult
     """ # noqa: E501
     json_scan3d_leaf_param_by_analyse_id_result: Optional[List[LeafParameter]] = Field(default=None, alias="JsonScan3dLeafParamByAnalyseIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonScan3dLeafParamByAnalyseIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonScan3dLeafParamByAnalyseIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[LeafParameter]:
+        return self.json_scan3d_leaf_param_by_analyse_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

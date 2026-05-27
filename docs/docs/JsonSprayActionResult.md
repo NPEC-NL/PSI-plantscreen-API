@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_spray_action_result** | [**List[SprayAction]**](SprayAction.md) |  | [optional] 
+**result** | [**List[SprayAction]**](SprayAction.md)| alias for **json_spray_action_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

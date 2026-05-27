@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_round_order_by_experiment_id_result** | [**List[RoundOrder]**](RoundOrder.md) |  | [optional] 
+**result** | [**List[RoundOrder]**](RoundOrder.md)| alias for **json_round_order_by_experiment_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

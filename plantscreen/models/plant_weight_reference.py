@@ -21,8 +21,15 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import plant
+
 
 class PlantWeightReference(BaseModel):
     """
@@ -30,10 +37,33 @@ class PlantWeightReference(BaseModel):
     """ # noqa: E501
     plant_barcode: Optional[StrictStr] = Field(default=None, alias="PlantBarcode")
     plant_id: Optional[StrictInt] = Field(default=None, alias="PlantID")
+    _plant: Optional[plant.Plant] = PrivateAttr(default=object())
     plant_name: Optional[StrictStr] = Field(default=None, alias="PlantName")
     reference_weight_date: Optional[datetime] = Field(default=None, alias="ReferenceWeightDate")
     reference_weight_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="ReferenceWeightValue")
+
     __properties: ClassVar[List[str]] = ["PlantBarcode", "PlantID", "PlantName", "ReferenceWeightDate", "ReferenceWeightValue"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+    
+    @property
+    def plant(self) -> plant.Plant:
+        if type(self._plant) is object:
+            from plantscreen.api.plant_api import PlantApi as Api
+            json_result = Api().plant(self.plant_id)
+            self._plant = json_result.result
+        return self._plant
+
+
+
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -79,11 +109,12 @@ class PlantWeightReference(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "PlantBarcode": obj.get("PlantBarcode"),
-            "PlantID": obj.get("PlantID"),
-            "PlantName": obj.get("PlantName"),
+                        "PlantBarcode": obj.get("PlantBarcode"),
+                        "PlantID": obj.get("PlantID"),
+                        "PlantName": obj.get("PlantName"),
+            
             "ReferenceWeightDate": obj.get("ReferenceWeightDate") or None,
-            "ReferenceWeightValue": obj.get("ReferenceWeightValue")
+                        "ReferenceWeightValue": obj.get("ReferenceWeightValue")
         })
         return _obj
 

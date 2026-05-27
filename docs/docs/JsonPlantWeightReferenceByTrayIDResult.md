@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_plant_weight_reference_by_tray_id_result** | [**List[PlantWeightReference]**](PlantWeightReference.md) |  | [optional] 
+**result** | [**List[PlantWeightReference]**](PlantWeightReference.md)| alias for **json_plant_weight_reference_by_tray_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

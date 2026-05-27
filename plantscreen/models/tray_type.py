@@ -20,8 +20,13 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class TrayType(BaseModel):
     """
@@ -37,6 +42,7 @@ class TrayType(BaseModel):
     type_size_x: Optional[StrictInt] = Field(default=None, alias="TypeSizeX")
     type_size_y: Optional[StrictInt] = Field(default=None, alias="TypeSizeY")
     type_size_z: Optional[StrictInt] = Field(default=None, alias="TypeSizeZ")
+
     __properties: ClassVar[List[str]] = ["TypeID", "TypeInfo", "TypeMaskBottom", "TypeMaskSide", "TypeMaskTop", "TypeMaskUnderSide", "TypeName", "TypeSizeX", "TypeSizeY", "TypeSizeZ"]
 
     model_config = ConfigDict(
@@ -44,6 +50,17 @@ class TrayType(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
+
+
+
+
+
+
+
 
 
     def to_str(self) -> str:
@@ -90,16 +107,16 @@ class TrayType(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "TypeID": obj.get("TypeID"),
-            "TypeInfo": obj.get("TypeInfo"),
-            "TypeMaskBottom": obj.get("TypeMaskBottom"),
-            "TypeMaskSide": obj.get("TypeMaskSide"),
-            "TypeMaskTop": obj.get("TypeMaskTop"),
-            "TypeMaskUnderSide": obj.get("TypeMaskUnderSide"),
-            "TypeName": obj.get("TypeName"),
-            "TypeSizeX": obj.get("TypeSizeX"),
-            "TypeSizeY": obj.get("TypeSizeY"),
-            "TypeSizeZ": obj.get("TypeSizeZ")
+                        "TypeID": obj.get("TypeID"),
+                        "TypeInfo": obj.get("TypeInfo"),
+                        "TypeMaskBottom": obj.get("TypeMaskBottom"),
+                        "TypeMaskSide": obj.get("TypeMaskSide"),
+                        "TypeMaskTop": obj.get("TypeMaskTop"),
+                        "TypeMaskUnderSide": obj.get("TypeMaskUnderSide"),
+                        "TypeName": obj.get("TypeName"),
+                        "TypeSizeX": obj.get("TypeSizeX"),
+                        "TypeSizeY": obj.get("TypeSizeY"),
+                        "TypeSizeZ": obj.get("TypeSizeZ")
         })
         return _obj
 

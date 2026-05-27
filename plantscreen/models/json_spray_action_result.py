@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.spray_action import SprayAction
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonSprayActionResult(BaseModel):
     """
     JsonSprayActionResult
     """ # noqa: E501
     json_spray_action_result: Optional[List[SprayAction]] = Field(default=None, alias="JsonSprayActionResult")
+
     __properties: ClassVar[List[str]] = ["JsonSprayActionResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonSprayActionResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[SprayAction]:
+        return self.json_spray_action_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

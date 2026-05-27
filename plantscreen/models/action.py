@@ -21,8 +21,17 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import action_group
+
+from plantscreen.models import experiment
+
 
 class Action(BaseModel):
     """
@@ -31,11 +40,45 @@ class Action(BaseModel):
     action_date_start: Optional[datetime] = Field(default=None, alias="ActionDateStart")
     action_done: Optional[StrictBool] = Field(default=None, alias="ActionDone")
     action_group_id: Optional[StrictInt] = Field(default=None, alias="ActionGroupID")
+    _action_group: Optional[action_group.ActionGroup] = PrivateAttr(default=object())
     action_id: Optional[StrictInt] = Field(default=None, alias="ActionID")
     action_running: Optional[StrictBool] = Field(default=None, alias="ActionRunning")
     action_status: Optional[StrictStr] = Field(default=None, alias="ActionStatus")
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ActionDateStart", "ActionDone", "ActionGroupID", "ActionID", "ActionRunning", "ActionStatus", "ExperimentID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+    
+    @property
+    def action_group(self) -> action_group.ActionGroup:
+        if type(self._action_group) is object:
+            from plantscreen.api.action_api import ActionApi as Api
+            json_result = Api().action_group(self.action_group_id)
+            self._action_group = json_result.result
+        return self._action_group
+
+
+
+
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -81,13 +124,14 @@ class Action(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            
             "ActionDateStart": obj.get("ActionDateStart") or None,
-            "ActionDone": obj.get("ActionDone"),
-            "ActionGroupID": obj.get("ActionGroupID"),
-            "ActionID": obj.get("ActionID"),
-            "ActionRunning": obj.get("ActionRunning"),
-            "ActionStatus": obj.get("ActionStatus"),
-            "ExperimentID": obj.get("ExperimentID")
+                        "ActionDone": obj.get("ActionDone"),
+                        "ActionGroupID": obj.get("ActionGroupID"),
+                        "ActionID": obj.get("ActionID"),
+                        "ActionRunning": obj.get("ActionRunning"),
+                        "ActionStatus": obj.get("ActionStatus"),
+                        "ExperimentID": obj.get("ExperimentID")
         })
         return _obj
 

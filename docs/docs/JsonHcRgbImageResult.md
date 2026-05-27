@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_hc_rgb_image_result** | [**List[HcRgbImage]**](HcRgbImage.md) |  | [optional] 
+**result** | [**List[HcRgbImage]**](HcRgbImage.md)| alias for **json_hc_rgb_image_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

@@ -10,6 +10,19 @@ Name | Type | Description | Notes
 **buffer_state_id** | **int** |  | [optional] 
 **buffer_state_path** | **str** | filetype | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

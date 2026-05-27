@@ -25,7 +25,7 @@ from plantscreen.models.json_action_group_result import JsonActionGroupResult
 from plantscreen.models.json_action_protocol_by_round_id_result import JsonActionProtocolByRoundIDResult
 from plantscreen.models.json_action_protocol_result import JsonActionProtocolResult
 from plantscreen.models.json_action_result import JsonActionResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -43,7 +43,7 @@ class ActionApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def action(
         self,
@@ -263,6 +263,7 @@ class ActionApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -302,7 +303,7 @@ class ActionApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def action_experiment(
         self,
@@ -522,6 +523,7 @@ class ActionApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -561,7 +563,7 @@ class ActionApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def action_group(
         self,
@@ -781,6 +783,7 @@ class ActionApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -820,7 +823,7 @@ class ActionApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def action_group_round(
         self,
@@ -1040,6 +1043,7 @@ class ActionApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1079,7 +1083,7 @@ class ActionApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def action_not_done_experiment(
         self,
@@ -1299,6 +1303,7 @@ class ActionApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1338,7 +1343,7 @@ class ActionApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def action_protocol(
         self,
@@ -1558,6 +1563,7 @@ class ActionApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1597,7 +1603,7 @@ class ActionApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def action_protocol_round(
         self,
@@ -1817,6 +1823,7 @@ class ActionApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1853,5 +1860,6 @@ class ActionApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

@@ -25,7 +25,7 @@ from plantscreen.models.json_round_order_by_experiment_id_and_date_result import
 from plantscreen.models.json_round_order_by_experiment_id_result import JsonRoundOrderByExperimentIDResult
 from plantscreen.models.json_round_order_result import JsonRoundOrderResult
 from plantscreen.models.json_round_result import JsonRoundResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -43,7 +43,7 @@ class RoundApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def round(
         self,
@@ -263,6 +263,7 @@ class RoundApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -302,7 +303,7 @@ class RoundApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def round_date_experiment(
         self,
@@ -548,10 +549,12 @@ class RoundApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -565,6 +568,7 @@ class RoundApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -613,7 +617,7 @@ class RoundApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def round_experiment(
         self,
@@ -833,6 +837,7 @@ class RoundApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -872,7 +877,7 @@ class RoundApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def round_order_date_experiment(
         self,
@@ -1118,10 +1123,12 @@ class RoundApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -1135,6 +1142,7 @@ class RoundApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -1183,7 +1191,7 @@ class RoundApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def round_order_experiment(
         self,
@@ -1403,6 +1411,7 @@ class RoundApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1442,7 +1451,7 @@ class RoundApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def round_order_round(
         self,
@@ -1662,6 +1671,7 @@ class RoundApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1698,5 +1708,6 @@ class RoundApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

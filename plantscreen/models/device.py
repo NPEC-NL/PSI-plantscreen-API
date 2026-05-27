@@ -21,8 +21,15 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import system_profile
+
 
 class Device(BaseModel):
     """
@@ -38,7 +45,35 @@ class Device(BaseModel):
     device_validity_start: Optional[datetime] = Field(default=None, alias="DeviceValidityStart")
     device_validity_end: Optional[datetime] = Field(default=None, alias="DeviceValidityEnd")
     profile_id: Optional[StrictInt] = Field(default=None, alias="ProfileID")
+    _system_profile: Optional[system_profile.SystemProfile] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["DeviceCaption", "DeviceConfig", "DeviceFamily", "DeviceID", "DeviceName", "DevicePID", "DeviceType", "DeviceValidityStart", "DeviceValidityEnd", "ProfileID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
+
+
+
+
+
+    
+    @property
+    def system_profile(self) -> system_profile.SystemProfile:
+        if type(self._system_profile) is object:
+            from plantscreen.api.profile_api import ProfileApi as Api
+            json_result = Api().profile(self.profile_id)
+            self._system_profile = json_result.result
+        return self._system_profile
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -84,16 +119,18 @@ class Device(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "DeviceCaption": obj.get("DeviceCaption"),
-            "DeviceConfig": obj.get("DeviceConfig"),
-            "DeviceFamily": obj.get("DeviceFamily"),
-            "DeviceID": obj.get("DeviceID"),
-            "DeviceName": obj.get("DeviceName"),
-            "DevicePID": obj.get("DevicePID"),
-            "DeviceType": obj.get("DeviceType"),
+                        "DeviceCaption": obj.get("DeviceCaption"),
+                        "DeviceConfig": obj.get("DeviceConfig"),
+                        "DeviceFamily": obj.get("DeviceFamily"),
+                        "DeviceID": obj.get("DeviceID"),
+                        "DeviceName": obj.get("DeviceName"),
+                        "DevicePID": obj.get("DevicePID"),
+                        "DeviceType": obj.get("DeviceType"),
+            
             "DeviceValidityStart": obj.get("DeviceValidityStart") or None,
+            
             "DeviceValidityEnd": obj.get("DeviceValidityEnd") or None,
-            "ProfileID": obj.get("ProfileID")
+                        "ProfileID": obj.get("ProfileID")
         })
         return _obj
 

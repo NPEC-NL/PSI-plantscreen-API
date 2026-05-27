@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.owner import Owner
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonOwnerResult(BaseModel):
     """
     JsonOwnerResult
     """ # noqa: E501
     json_owner_result: Optional[List[Owner]] = Field(default=None, alias="JsonOwnerResult")
+
     __properties: ClassVar[List[str]] = ["JsonOwnerResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonOwnerResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[Owner]:
+        return self.json_owner_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

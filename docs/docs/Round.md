@@ -14,6 +14,19 @@ Name | Type | Description | Notes
 **round_protocol_path** | **str** | filetype | [optional] 
 **round_status** | **str** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**action**|[**int**](Action.md)|action_id**experiment**|[**int**](Experiment.md)|experiment_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+order | List[[**object**](RoundOrder.md)]] | RoundApi |  | RoundIDaction_group | List[[**object**](ActionGroup.md)]] | ActionApi |  | RoundIDaction_protocol | List[[**object**](ActionProtocol.md)]] | ActionApi |  | RoundIDtrays | List[[**object**](Tray.md)]] | TrayApi |  | RoundIDplant_heights | List[[**object**](PlantHeight.md)]] | RoundApi |  | RoundIDsystem_logs | List[[**object**](SystemLog.md)]] | SystemLogApi |  | RoundID
+
 ## Example
 
 ```python

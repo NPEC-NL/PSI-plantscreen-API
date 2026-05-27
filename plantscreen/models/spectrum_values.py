@@ -21,17 +21,45 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import spectrum_device
+
 
 class SpectrumValues(BaseModel):
     """
     SpectrumValues
     """ # noqa: E501
     spectrum_device_id: Optional[StrictInt] = Field(default=None, alias="SpectrumDeviceID")
+    _spectrum_device: Optional[spectrum_device.SpectrumDevice] = PrivateAttr(default=object())
     spectrum_path: Optional[StrictStr] = Field(default=None, description="filetype", alias="SpectrumPath")
     spectrum_record_date: Optional[datetime] = Field(default=None, alias="SpectrumRecordDate")
+
     __properties: ClassVar[List[str]] = ["SpectrumDeviceID", "SpectrumPath", "SpectrumRecordDate"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def spectrum_device(self) -> spectrum_device.SpectrumDevice:
+        if type(self._spectrum_device) is object:
+            from plantscreen.api.spectrum_device_api import SpectrumDeviceApi as Api
+            json_result = Api().spectrum_device(self.spectrum_device_id)
+            self._spectrum_device = json_result.result
+        return self._spectrum_device
+
+
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -77,8 +105,9 @@ class SpectrumValues(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "SpectrumDeviceID": obj.get("SpectrumDeviceID"),
-            "SpectrumPath": obj.get("SpectrumPath"),
+                        "SpectrumDeviceID": obj.get("SpectrumDeviceID"),
+                        "SpectrumPath": obj.get("SpectrumPath"),
+            
             "SpectrumRecordDate": obj.get("SpectrumRecordDate") or None
         })
         return _obj

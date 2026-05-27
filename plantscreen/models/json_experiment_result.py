@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.experiment import Experiment
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonExperimentResult(BaseModel):
     """
     JsonExperimentResult
     """ # noqa: E501
     json_experiment_result: Optional[Experiment] = Field(default=None, alias="JsonExperimentResult")
+
     __properties: ClassVar[List[str]] = ["JsonExperimentResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonExperimentResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> Experiment:
+        return self.json_experiment_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

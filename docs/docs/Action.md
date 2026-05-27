@@ -13,6 +13,19 @@ Name | Type | Description | Notes
 **action_status** | **str** |  | [optional] 
 **experiment_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**action_group**|[**int**](ActionGroup.md)|action_group_id**experiment**|[**int**](Experiment.md)|experiment_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

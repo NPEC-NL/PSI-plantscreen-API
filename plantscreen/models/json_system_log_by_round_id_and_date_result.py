@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.system_log import SystemLog
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonSystemLogByRoundIDAndDateResult(BaseModel):
     """
     JsonSystemLogByRoundIDAndDateResult
     """ # noqa: E501
     json_system_log_by_round_id_and_date_result: Optional[List[SystemLog]] = Field(default=None, alias="JsonSystemLogByRoundIDAndDateResult")
+
     __properties: ClassVar[List[str]] = ["JsonSystemLogByRoundIDAndDateResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonSystemLogByRoundIDAndDateResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[SystemLog]:
+        return self.json_system_log_by_round_id_and_date_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

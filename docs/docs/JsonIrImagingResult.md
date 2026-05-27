@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_ir_imaging_result** | [**List[Imaging]**](Imaging.md) |  | [optional] 
+**result** | [**List[Imaging]**](Imaging.md)| alias for **json_ir_imaging_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

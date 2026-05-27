@@ -20,8 +20,15 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import experiment
+
 
 class ActionGroup(BaseModel):
     """
@@ -29,9 +36,11 @@ class ActionGroup(BaseModel):
     """ # noqa: E501
     action_protocol_id: Optional[StrictInt] = Field(default=None, alias="ActionProtocolID")
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     group_caption: Optional[StrictStr] = Field(default=None, alias="GroupCaption")
     group_id: Optional[StrictInt] = Field(default=None, alias="GroupID")
     group_repeating_protocol: Optional[StrictStr] = Field(default=None, alias="GroupRepeatingProtocol")
+
     __properties: ClassVar[List[str]] = ["ActionProtocolID", "ExperimentID", "GroupCaption", "GroupID", "GroupRepeatingProtocol"]
 
     model_config = ConfigDict(
@@ -39,6 +48,20 @@ class ActionGroup(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
 
 
     def to_str(self) -> str:
@@ -85,11 +108,11 @@ class ActionGroup(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ActionProtocolID": obj.get("ActionProtocolID"),
-            "ExperimentID": obj.get("ExperimentID"),
-            "GroupCaption": obj.get("GroupCaption"),
-            "GroupID": obj.get("GroupID"),
-            "GroupRepeatingProtocol": obj.get("GroupRepeatingProtocol")
+                        "ActionProtocolID": obj.get("ActionProtocolID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+                        "GroupCaption": obj.get("GroupCaption"),
+                        "GroupID": obj.get("GroupID"),
+                        "GroupRepeatingProtocol": obj.get("GroupRepeatingProtocol")
         })
         return _obj
 

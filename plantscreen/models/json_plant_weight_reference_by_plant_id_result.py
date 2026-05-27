@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.plant_weight_reference import PlantWeightReference
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonPlantWeightReferenceByPlantIDResult(BaseModel):
     """
     JsonPlantWeightReferenceByPlantIDResult
     """ # noqa: E501
     json_plant_weight_reference_by_plant_id_result: Optional[PlantWeightReference] = Field(default=None, alias="JsonPlantWeightReferenceByPlantIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonPlantWeightReferenceByPlantIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonPlantWeightReferenceByPlantIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> PlantWeightReference:
+        return self.json_plant_weight_reference_by_plant_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

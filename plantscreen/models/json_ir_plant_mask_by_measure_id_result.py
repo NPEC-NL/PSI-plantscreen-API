@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.plant_mask import PlantMask
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonIrPlantMaskByMeasureIDResult(BaseModel):
     """
     JsonIrPlantMaskByMeasureIDResult
     """ # noqa: E501
     json_ir_plant_mask_by_measure_id_result: Optional[PlantMask] = Field(default=None, alias="JsonIrPlantMaskByMeasureIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonIrPlantMaskByMeasureIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonIrPlantMaskByMeasureIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> PlantMask:
+        return self.json_ir_plant_mask_by_measure_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

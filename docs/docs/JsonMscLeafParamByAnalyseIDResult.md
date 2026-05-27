@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_msc_leaf_param_by_analyse_id_result** | [**List[StatisticLeafParameter]**](StatisticLeafParameter.md) |  | [optional] 
+**result** | [**List[StatisticLeafParameter]**](StatisticLeafParameter.md)| alias for **json_msc_leaf_param_by_analyse_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

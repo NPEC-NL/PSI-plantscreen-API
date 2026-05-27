@@ -21,8 +21,19 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import tray
+
+
+from plantscreen.models import tray_type
+
+from plantscreen.models import plant
 
 class TrayProfile(BaseModel):
     """
@@ -33,7 +44,52 @@ class TrayProfile(BaseModel):
     profile_id: Optional[StrictInt] = Field(default=None, alias="ProfileID")
     profile_name: Optional[StrictStr] = Field(default=None, alias="ProfileName")
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
+    _tray: Optional[tray.Tray] = PrivateAttr(default=object())
+    _tray_type: Optional[tray_type.TrayType] = PrivateAttr(default=object())
+    _plants: Optional[List[plant.Plant]] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ProfileDateStart", "ProfileDateStop", "ProfileID", "ProfileName", "TrayID"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+
+
+
+
+    
+    @property
+    def tray(self) -> tray.Tray:
+        if type(self._tray) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray(self.tray_id)
+            self._tray = json_result.result
+        return self._tray
+    
+    @property
+    def tray_type(self) -> tray_type.TrayType:
+        if type(self._tray_type) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray_type_tray_profile(id=self.profile_id)
+            self._tray_type = json_result.result
+        return self._tray_type
+    
+    
+    
+    @property
+    def plants(self) -> List[plant.Plant]:
+        if type(self._plants) is object:
+            from plantscreen.api.plant_api import PlantApi as Api
+            json_result = Api().plant_tray_profile(id=self.profile_id)
+            self._plants = json_result.result
+        return self._plants
+    
+    
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -79,11 +135,13 @@ class TrayProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            
             "ProfileDateStart": obj.get("ProfileDateStart") or None,
+            
             "ProfileDateStop": obj.get("ProfileDateStop") or None,
-            "ProfileID": obj.get("ProfileID"),
-            "ProfileName": obj.get("ProfileName"),
-            "TrayID": obj.get("TrayID")
+                        "ProfileID": obj.get("ProfileID"),
+                        "ProfileName": obj.get("ProfileName"),
+                        "TrayID": obj.get("TrayID")
         })
         return _obj
 

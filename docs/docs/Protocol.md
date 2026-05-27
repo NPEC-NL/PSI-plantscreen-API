@@ -185,4 +185,4 @@ Name | Type
 
 
 ---
-[Back to top](#) [Back to API Endpoints](../API_endpoints.md) [Back to CompleteAPIClient](../CompleteAPIClient.md) [Back to README](../README.md)
+[Back to top](#) | [Back to API Endpoints](../API_endpoints.md) | [Back to CompleteAPIClient](../CompleteAPIClient.md) | [Back to README](../README.md)

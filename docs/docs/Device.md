@@ -16,6 +16,19 @@ Name | Type | Description | Notes
 **device_validity_end** | **datetime** |  | [optional] 
 **profile_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**system_profile**|[**int**](SystemProfile.md)|profile_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

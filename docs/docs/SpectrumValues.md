@@ -9,6 +9,19 @@ Name | Type | Description | Notes
 **spectrum_path** | **str** | filetype | [optional] 
 **spectrum_record_date** | **datetime** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**spectrum_device**|[**int**](SpectrumDevice.md)|spectrum_device_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

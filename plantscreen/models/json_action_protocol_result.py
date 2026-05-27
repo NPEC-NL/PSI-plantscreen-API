@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.action_protocol import ActionProtocol
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonActionProtocolResult(BaseModel):
     """
     JsonActionProtocolResult
     """ # noqa: E501
     json_action_protocol_result: Optional[ActionProtocol] = Field(default=None, alias="JsonActionProtocolResult")
+
     __properties: ClassVar[List[str]] = ["JsonActionProtocolResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonActionProtocolResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> ActionProtocol:
+        return self.json_action_protocol_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

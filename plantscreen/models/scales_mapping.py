@@ -20,8 +20,15 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import tray_type
+
 
 class ScalesMapping(BaseModel):
     """
@@ -31,6 +38,8 @@ class ScalesMapping(BaseModel):
     map_column: Optional[StrictInt] = Field(default=None, alias="MapColumn")
     map_row: Optional[StrictInt] = Field(default=None, alias="MapRow")
     tray_type_id: Optional[StrictInt] = Field(default=None, alias="TrayTypeID")
+    _tray_type: Optional[tray_type.TrayType] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["MapArea", "MapColumn", "MapRow", "TrayTypeID"]
 
     model_config = ConfigDict(
@@ -38,6 +47,19 @@ class ScalesMapping(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+
+
+    
+    @property
+    def tray_type(self) -> tray_type.TrayType:
+        if type(self._tray_type) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray_type(self.tray_type_id)
+            self._tray_type = json_result.result
+        return self._tray_type
 
 
     def to_str(self) -> str:
@@ -84,10 +106,10 @@ class ScalesMapping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "MapArea": obj.get("MapArea"),
-            "MapColumn": obj.get("MapColumn"),
-            "MapRow": obj.get("MapRow"),
-            "TrayTypeID": obj.get("TrayTypeID")
+                        "MapArea": obj.get("MapArea"),
+                        "MapColumn": obj.get("MapColumn"),
+                        "MapRow": obj.get("MapRow"),
+                        "TrayTypeID": obj.get("TrayTypeID")
         })
         return _obj
 

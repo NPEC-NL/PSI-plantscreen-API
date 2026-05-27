@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.parameter_image import ParameterImage
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonHcParameterImageByAnalyseIDResult(BaseModel):
     """
     JsonHcParameterImageByAnalyseIDResult
     """ # noqa: E501
     json_hc_parameter_image_by_analyse_id_result: Optional[ParameterImage] = Field(default=None, alias="JsonHcParameterImageByAnalyseIDResult")
+
     __properties: ClassVar[List[str]] = ["JsonHcParameterImageByAnalyseIDResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonHcParameterImageByAnalyseIDResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> ParameterImage:
+        return self.json_hc_parameter_image_by_analyse_id_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

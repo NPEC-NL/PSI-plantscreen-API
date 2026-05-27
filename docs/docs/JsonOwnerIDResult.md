@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_owner_id_result** | [**List[OwnerIDWrapper]**](OwnerIDWrapper.md) |  | [optional] 
+**result** | [**List[OwnerIDWrapper]**](OwnerIDWrapper.md)| alias for **json_owner_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

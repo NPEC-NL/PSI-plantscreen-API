@@ -7,6 +7,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **spectrum_device_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**spectrum_device**|[**int**](SpectrumDevice.md)|spectrum_device_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

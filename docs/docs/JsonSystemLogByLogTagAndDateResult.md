@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_system_log_by_log_tag_and_date_result** | [**List[SystemLog]**](SystemLog.md) |  | [optional] 
+**result** | [**List[SystemLog]**](SystemLog.md)| alias for **json_system_log_by_log_tag_and_date_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

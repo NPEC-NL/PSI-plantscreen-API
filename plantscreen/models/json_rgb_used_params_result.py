@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.parameter import Parameter
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonRgbUsedParamsResult(BaseModel):
     """
     JsonRgbUsedParamsResult
     """ # noqa: E501
     json_rgb_used_params_result: Optional[List[Parameter]] = Field(default=None, alias="JsonRgbUsedParamsResult")
+
     __properties: ClassVar[List[str]] = ["JsonRgbUsedParamsResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonRgbUsedParamsResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[Parameter]:
+        return self.json_rgb_used_params_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

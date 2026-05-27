@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt
 from typing_extensions import Annotated
 from plantscreen.models.json_spray_action_result import JsonSprayActionResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -37,7 +37,7 @@ class SprayApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def spray_action(
         self,
@@ -283,14 +283,17 @@ class SprayApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -327,5 +330,6 @@ class SprayApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

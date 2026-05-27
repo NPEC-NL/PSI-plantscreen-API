@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_experiment_by_owner_result** | [**List[Experiment]**](Experiment.md) |  | [optional] 
+**result** | [**List[Experiment]**](Experiment.md)| alias for **json_experiment_by_owner_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

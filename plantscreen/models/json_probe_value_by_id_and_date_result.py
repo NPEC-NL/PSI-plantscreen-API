@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.probe_value import ProbeValue
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonProbeValueByIDAndDateResult(BaseModel):
     """
     JsonProbeValueByIDAndDateResult
     """ # noqa: E501
     json_probe_value_by_id_and_date_result: Optional[List[ProbeValue]] = Field(default=None, alias="JsonProbeValueByIDAndDateResult")
+
     __properties: ClassVar[List[str]] = ["JsonProbeValueByIDAndDateResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonProbeValueByIDAndDateResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> List[ProbeValue]:
+        return self.json_probe_value_by_id_and_date_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

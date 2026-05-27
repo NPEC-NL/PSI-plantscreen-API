@@ -27,7 +27,7 @@ from plantscreen.models.json_experiment_result import JsonExperimentResult
 from plantscreen.models.json_note_result import JsonNoteResult
 from plantscreen.models.json_owner_id_result import JsonOwnerIDResult
 from plantscreen.models.json_owner_result import JsonOwnerResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -45,7 +45,7 @@ class ExperimentApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def experiment(
         self,
@@ -265,6 +265,7 @@ class ExperimentApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -304,7 +305,7 @@ class ExperimentApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def experiment_date(
         self,
@@ -537,6 +538,7 @@ class ExperimentApi:
 
         # process the path parameters
         # process the query parameters
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -550,6 +552,7 @@ class ExperimentApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -598,7 +601,7 @@ class ExperimentApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def experiment_id(
         self,
@@ -840,7 +843,7 @@ class ExperimentApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def experiment_owner(
         self,
@@ -1060,6 +1063,7 @@ class ExperimentApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1099,7 +1103,7 @@ class ExperimentApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def note_experiment(
         self,
@@ -1319,6 +1323,7 @@ class ExperimentApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1358,7 +1363,7 @@ class ExperimentApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def owner(
         self,
@@ -1579,6 +1584,7 @@ class ExperimentApi:
 
         # process the path parameters
         # process the query parameters
+
         if ids is not None:
             
             _query_params.append(('ids', ids))
@@ -1618,7 +1624,7 @@ class ExperimentApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def owner_id(
         self,
@@ -1857,5 +1863,6 @@ class ExperimentApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

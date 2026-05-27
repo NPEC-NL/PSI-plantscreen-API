@@ -20,14 +20,20 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class LogTag(BaseModel):
     """
     LogTag
     """ # noqa: E501
     log_tag: Optional[StrictStr] = Field(default=None, alias="LogTag")
+
     __properties: ClassVar[List[str]] = ["LogTag"]
 
     model_config = ConfigDict(
@@ -36,6 +42,15 @@ class LogTag(BaseModel):
         protected_namespaces=(),
     )
 
+    
+
+    
+    def system_logs_by_daterange(self,start,stop) -> List[system_log.SystemLog]:
+        from plantscreen.api.system_log_api import SystemLogApi as Api
+        json_result = Api().system_log_date_log_tag(
+                tag=self.log_tag,start=start,stop=stop)
+        return json_result.result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -81,7 +96,7 @@ class LogTag(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "LogTag": obj.get("LogTag")
+                        "LogTag": obj.get("LogTag")
         })
         return _obj
 

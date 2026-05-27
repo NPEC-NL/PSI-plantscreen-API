@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_system_profile_id_result** | [**List[ProfileIDWrapper]**](ProfileIDWrapper.md) |  | [optional] 
+**result** | [**List[ProfileIDWrapper]**](ProfileIDWrapper.md)| alias for **json_system_profile_id_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

@@ -39,7 +39,7 @@ from plantscreen.models.json_rgb_used_param_by_analyse_id_result import JsonRgbU
 from plantscreen.models.json_rgb_used_param_color_by_analyse_id_result import JsonRgbUsedParamColorByAnalyseIDResult
 from plantscreen.models.json_rgb_used_param_color_result import JsonRgbUsedParamColorResult
 from plantscreen.models.json_rgb_used_params_result import JsonRgbUsedParamsResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -57,7 +57,7 @@ class RgbApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_greening_mask_image(
         self,
@@ -303,14 +303,17 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -350,7 +353,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_greening_mask_image_measure(
         self,
@@ -570,6 +573,7 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -609,7 +613,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_imaging(
         self,
@@ -855,14 +859,17 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -902,7 +909,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_imaging_extended_data(
         self,
@@ -1148,14 +1155,17 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -1195,7 +1205,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_imaging_extended_data_measure(
         self,
@@ -1415,6 +1425,7 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1454,7 +1465,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_imaging_measure(
         self,
@@ -1674,6 +1685,7 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1713,7 +1725,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_leaf_param(
         self,
@@ -1972,18 +1984,22 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2023,7 +2039,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_leaf_param_analyse(
         self,
@@ -2256,10 +2272,12 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2299,7 +2317,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_leaf_param_color(
         self,
@@ -2558,18 +2576,22 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2609,7 +2631,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_leaf_param_color_analyse(
         self,
@@ -2842,10 +2864,12 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -2885,7 +2909,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_param(
         self,
@@ -3105,6 +3129,7 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3144,7 +3169,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_param_color_used(
         self,
@@ -3390,14 +3415,17 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -3437,7 +3465,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_param_color_used_analyse(
         self,
@@ -3657,6 +3685,7 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -3696,7 +3725,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_param_used(
         self,
@@ -3942,14 +3971,17 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -3989,7 +4021,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_param_used_analyse(
         self,
@@ -4209,6 +4241,7 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -4248,7 +4281,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_plant_mask(
         self,
@@ -4494,14 +4527,17 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -4541,7 +4577,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_plant_mask_measure(
         self,
@@ -4761,6 +4797,7 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -4800,7 +4837,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_plant_param(
         self,
@@ -5059,18 +5096,22 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -5110,7 +5151,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_plant_param_analyse(
         self,
@@ -5343,10 +5384,12 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -5386,7 +5429,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_plant_param_color(
         self,
@@ -5645,18 +5688,22 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if device_id is not None:
             
             _query_params.append(('deviceId', device_id))
             
+
         if round_id is not None:
             
             _query_params.append(('roundId', round_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -5696,7 +5743,7 @@ class RgbApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def rgb_plant_param_color_analyse(
         self,
@@ -5929,10 +5976,12 @@ class RgbApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if param_id is not None:
             
             _query_params.append(('paramId', param_id))
@@ -5969,5 +6018,6 @@ class RgbApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

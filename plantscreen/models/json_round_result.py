@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.round import Round
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonRoundResult(BaseModel):
     """
     JsonRoundResult
     """ # noqa: E501
     json_round_result: Optional[Round] = Field(default=None, alias="JsonRoundResult")
+
     __properties: ClassVar[List[str]] = ["JsonRoundResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonRoundResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> Round:
+        return self.json_round_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

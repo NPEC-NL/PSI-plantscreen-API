@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_fc_leaf_param_result** | [**List[LeafParameter]**](LeafParameter.md) |  | [optional] 
+**result** | [**List[LeafParameter]**](LeafParameter.md)| alias for **json_fc_leaf_param_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

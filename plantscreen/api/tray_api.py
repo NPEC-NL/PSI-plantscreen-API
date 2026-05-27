@@ -29,7 +29,7 @@ from plantscreen.models.json_tray_type_by_tray_id_result import JsonTrayTypeByTr
 from plantscreen.models.json_tray_type_by_tray_profile_id_result import JsonTrayTypeByTrayProfileIDResult
 from plantscreen.models.json_tray_type_result import JsonTrayTypeResult
 from plantscreen.models.json_used_tray_profile_by_tray_id_result import JsonUsedTrayProfileByTrayIDResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -47,7 +47,7 @@ class TrayApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def scales_mapping_tray(
         self,
@@ -267,6 +267,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -306,7 +307,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray(
         self,
@@ -526,6 +527,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -565,7 +567,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_profile(
         self,
@@ -785,6 +787,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -824,7 +827,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_profile_to_date_tray(
         self,
@@ -1057,10 +1060,12 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if var_date is not None:
             if isinstance(var_date, datetime):
                 _query_params.append(
@@ -1109,7 +1114,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_profile_tray(
         self,
@@ -1329,6 +1334,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1368,7 +1374,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_profile_used_tray(
         self,
@@ -1614,10 +1620,12 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -1631,6 +1639,7 @@ class TrayApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -1679,7 +1688,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_round(
         self,
@@ -1899,6 +1908,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1938,7 +1948,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_type(
         self,
@@ -2158,6 +2168,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2197,7 +2208,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_type_tray(
         self,
@@ -2417,6 +2428,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2456,7 +2468,7 @@ class TrayApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def tray_type_tray_profile(
         self,
@@ -2676,6 +2688,7 @@ class TrayApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -2712,5 +2725,6 @@ class TrayApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

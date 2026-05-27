@@ -86,8 +86,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -97,8 +96,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -331,8 +329,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -342,8 +339,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -452,8 +448,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -463,8 +458,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -1134,8 +1128,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -1145,8 +1138,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -1189,8 +1181,7 @@
             "description": "date",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -1335,8 +1326,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -1346,8 +1336,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6284,8 +6273,7 @@
             "description": "toDate",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6414,8 +6402,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6425,8 +6412,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6469,8 +6455,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6480,8 +6465,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6579,8 +6563,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6590,8 +6573,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6657,8 +6639,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6668,8 +6649,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6745,8 +6725,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6756,8 +6735,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6833,8 +6811,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6844,8 +6821,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6909,8 +6885,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6920,8 +6895,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -6985,8 +6959,7 @@
             "description": "dateStart",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           },
@@ -6996,8 +6969,7 @@
             "description": "dateStop",
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+              "format": "date-time"
             },
             "required": true
           }
@@ -7091,6 +7063,7 @@
     "schemas": {
       "JsonExperimentIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonExperimentIDResult": {
             "type": "array",
@@ -7104,12 +7077,18 @@
         "type": "object",
         "properties": {
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           }
         }
       },
       "JsonExperimentResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonExperimentResult": {
             "$ref": "#/components/schemas/Experiment"
@@ -7118,6 +7097,7 @@
       },
       "JsonExperimentByDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonExperimentByDateResult": {
             "type": "array",
@@ -7129,6 +7109,7 @@
       },
       "JsonExperimentByOwnerResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonExperimentByOwnerResult": {
             "type": "array",
@@ -7140,6 +7121,7 @@
       },
       "JsonOwnerIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonOwnerIDResult": {
             "type": "array",
@@ -7151,6 +7133,7 @@
       },
       "JsonOwnerResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonOwnerResult": {
             "type": "array",
@@ -7162,6 +7145,7 @@
       },
       "JsonNoteResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonNoteResult": {
             "type": "array",
@@ -7173,6 +7157,7 @@
       },
       "JsonRoundResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRoundResult": {
             "$ref": "#/components/schemas/Round"
@@ -7181,6 +7166,7 @@
       },
       "JsonRoundByExperimentIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRoundByExperimentIDResult": {
             "type": "array",
@@ -7192,6 +7178,7 @@
       },
       "JsonRoundByExperimentIDAndDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRoundByExperimentIDAndDateResult": {
             "type": "array",
@@ -7203,6 +7190,7 @@
       },
       "JsonRoundOrderResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRoundOrderResult": {
             "$ref": "#/components/schemas/RoundOrder"
@@ -7211,6 +7199,7 @@
       },
       "JsonRoundOrderByExperimentIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRoundOrderByExperimentIDResult": {
             "type": "array",
@@ -7222,6 +7211,7 @@
       },
       "JsonRoundOrderByExperimentIDAndDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRoundOrderByExperimentIDAndDateResult": {
             "type": "array",
@@ -7233,6 +7223,7 @@
       },
       "JsonActionResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonActionResult": {
             "$ref": "#/components/schemas/Action"
@@ -7241,6 +7232,7 @@
       },
       "JsonActionByExperimentIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonActionByExperimentIDResult": {
             "type": "array",
@@ -7252,6 +7244,7 @@
       },
       "JsonActionByExperimentIDNotDoneResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonActionByExperimentIDNotDoneResult": {
             "type": "array",
@@ -7263,6 +7256,7 @@
       },
       "JsonActionGroupResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonActionGroupResult": {
             "$ref": "#/components/schemas/ActionGroup"
@@ -7271,6 +7265,7 @@
       },
       "JsonActionGroupByRoundIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonActionGroupByRoundIDResult": {
             "$ref": "#/components/schemas/ActionGroup"
@@ -7279,6 +7274,7 @@
       },
       "JsonActionProtocolResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonActionProtocolResult": {
             "$ref": "#/components/schemas/ActionProtocol"
@@ -7287,6 +7283,7 @@
       },
       "JsonActionProtocolByRoundIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonActionProtocolByRoundIDResult": {
             "$ref": "#/components/schemas/ActionProtocol"
@@ -7295,6 +7292,7 @@
       },
       "JsonDeviceResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonDeviceResult": {
             "$ref": "#/components/schemas/Device"
@@ -7303,6 +7301,7 @@
       },
       "JsonDeviceActiveResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonDeviceActiveResult": {
             "type": "array",
@@ -7314,6 +7313,7 @@
       },
       "JsonDeviceByProfileIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonDeviceByProfileIDResult": {
             "type": "array",
@@ -7325,6 +7325,7 @@
       },
       "JsonSystemProfileIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemProfileIDResult": {
             "type": "array",
@@ -7336,6 +7337,7 @@
       },
       "JsonSystemProfileResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemProfileResult": {
             "$ref": "#/components/schemas/SystemProfile"
@@ -7344,6 +7346,7 @@
       },
       "JsonSystemProfileActiveResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemProfileActiveResult": {
             "$ref": "#/components/schemas/SystemProfile"
@@ -7352,6 +7355,7 @@
       },
       "JsonTrayResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayResult": {
             "$ref": "#/components/schemas/Tray"
@@ -7360,6 +7364,7 @@
       },
       "JsonTrayByRoundIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayByRoundIDResult": {
             "type": "array",
@@ -7371,6 +7376,7 @@
       },
       "JsonTrayTypeResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayTypeResult": {
             "$ref": "#/components/schemas/TrayType"
@@ -7379,6 +7385,7 @@
       },
       "JsonTrayTypeByTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayTypeByTrayIDResult": {
             "$ref": "#/components/schemas/TrayType"
@@ -7387,6 +7394,7 @@
       },
       "JsonTrayTypeByTrayProfileIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayTypeByTrayProfileIDResult": {
             "$ref": "#/components/schemas/TrayType"
@@ -7395,6 +7403,7 @@
       },
       "JsonTrayProfileByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayProfileByIDResult": {
             "$ref": "#/components/schemas/TrayProfile"
@@ -7403,6 +7412,7 @@
       },
       "JsonTrayProfileByTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayProfileByTrayIDResult": {
             "type": "array",
@@ -7414,6 +7424,7 @@
       },
       "JsonUsedTrayProfileByTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonUsedTrayProfileByTrayIDResult": {
             "type": "array",
@@ -7425,6 +7436,7 @@
       },
       "JsonTrayProfileByTrayIDToDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonTrayProfileByTrayIDToDateResult": {
             "$ref": "#/components/schemas/TrayProfile"
@@ -7433,6 +7445,7 @@
       },
       "JsonScalesMappingByTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScalesMappingByTrayIDResult": {
             "type": "array",
@@ -7444,6 +7457,7 @@
       },
       "JsonPlantResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantResult": {
             "type": "array",
@@ -7455,6 +7469,7 @@
       },
       "JsonPlantByTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantByTrayIDResult": {
             "type": "array",
@@ -7466,6 +7481,7 @@
       },
       "JsonPlantByTrayIDAndDatesResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantByTrayIDAndDatesResult": {
             "type": "array",
@@ -7477,6 +7493,7 @@
       },
       "JsonPlantByTrayProfileIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantByTrayProfileIDResult": {
             "type": "array",
@@ -7488,6 +7505,7 @@
       },
       "JsonPlantHeightByRoundIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantHeightByRoundIDResult": {
             "type": "array",
@@ -7499,6 +7517,7 @@
       },
       "JsonPlantLeavesByPlantAndTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantLeavesByPlantAndTrayIDResult": {
             "type": "array",
@@ -7510,6 +7529,7 @@
       },
       "JsonFcImagingByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcImagingByIDResult": {
             "$ref": "#/components/schemas/FcImaging"
@@ -7518,6 +7538,7 @@
       },
       "JsonFcImagingResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcImagingResult": {
             "type": "array",
@@ -7529,6 +7550,7 @@
       },
       "JsonFcMeasureExtendedDataByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcMeasureExtendedDataByIDResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -7537,6 +7559,7 @@
       },
       "JsonFcMeasureExtendedDataResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcMeasureExtendedDataResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -7545,6 +7568,7 @@
       },
       "JsonFcPlantMaskByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcPlantMaskByMeasureIDResult": {
             "$ref": "#/components/schemas/PlantMask"
@@ -7553,6 +7577,7 @@
       },
       "JsonFcPlantMaskResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcPlantMaskResult": {
             "type": "array",
@@ -7564,6 +7589,7 @@
       },
       "JsonFcParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcParamResult": {
             "$ref": "#/components/schemas/Parameter"
@@ -7572,6 +7598,7 @@
       },
       "JsonFcUsedParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcUsedParamByAnalyseIDResult": {
             "type": "array",
@@ -7583,6 +7610,7 @@
       },
       "JsonFcUsedParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcUsedParamResult": {
             "type": "array",
@@ -7594,6 +7622,7 @@
       },
       "JsonFcParameterImageByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcParameterImageByAnalyseIDResult": {
             "$ref": "#/components/schemas/ParameterImage"
@@ -7602,6 +7631,7 @@
       },
       "JsonFcParameterImageResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcParameterImageResult": {
             "type": "array",
@@ -7613,6 +7643,7 @@
       },
       "JsonFcPlantParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcPlantParamByAnalyseIDResult": {
             "type": "array",
@@ -7624,6 +7655,7 @@
       },
       "JsonFcPlantParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcPlantParamResult": {
             "type": "array",
@@ -7635,6 +7667,7 @@
       },
       "JsonFcLeafParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcLeafParamByAnalyseIDResult": {
             "type": "array",
@@ -7646,6 +7679,7 @@
       },
       "JsonFcLeafParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonFcLeafParamResult": {
             "type": "array",
@@ -7657,6 +7691,7 @@
       },
       "JsonHcImagingByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcImagingByIDResult": {
             "$ref": "#/components/schemas/HcImaging"
@@ -7665,6 +7700,7 @@
       },
       "JsonHcImagingResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcImagingResult": {
             "type": "array",
@@ -7676,6 +7712,7 @@
       },
       "JsonHcMeasureExtendedDataByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcMeasureExtendedDataByIDResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -7684,6 +7721,7 @@
       },
       "JsonHcMeasureExtendedDataResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcMeasureExtendedDataResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -7692,6 +7730,7 @@
       },
       "JsonHcRgbImageByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcRgbImageByMeasureIDResult": {
             "$ref": "#/components/schemas/HcRgbImage"
@@ -7700,6 +7739,7 @@
       },
       "JsonHcRgbImageResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcRgbImageResult": {
             "type": "array",
@@ -7711,6 +7751,7 @@
       },
       "JsonHcPlantMaskByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcPlantMaskByMeasureIDResult": {
             "$ref": "#/components/schemas/PlantMask"
@@ -7719,6 +7760,7 @@
       },
       "JsonHcPlantMaskResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcPlantMaskResult": {
             "type": "array",
@@ -7730,6 +7772,7 @@
       },
       "JsonHcParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcParamResult": {
             "$ref": "#/components/schemas/Parameter"
@@ -7738,6 +7781,7 @@
       },
       "JsonHcUsedParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcUsedParamByAnalyseIDResult": {
             "type": "array",
@@ -7749,6 +7793,7 @@
       },
       "JsonHcUsedParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcUsedParamResult": {
             "type": "array",
@@ -7760,6 +7805,7 @@
       },
       "JsonHcParameterImageByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcParameterImageByAnalyseIDResult": {
             "$ref": "#/components/schemas/ParameterImage"
@@ -7768,6 +7814,7 @@
       },
       "JsonHcParameterImageResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcParameterImageResult": {
             "type": "array",
@@ -7779,6 +7826,7 @@
       },
       "JsonHcPlantParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcPlantParamByAnalyseIDResult": {
             "type": "array",
@@ -7790,6 +7838,7 @@
       },
       "JsonHcPlantParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcPlantParamResult": {
             "type": "array",
@@ -7801,6 +7850,7 @@
       },
       "JsonHcLeafParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcLeafParamByAnalyseIDResult": {
             "type": "array",
@@ -7812,6 +7862,7 @@
       },
       "JsonHcLeafParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonHcLeafParamResult": {
             "type": "array",
@@ -7823,6 +7874,7 @@
       },
       "JsonIrImagingByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrImagingByIDResult": {
             "$ref": "#/components/schemas/Imaging"
@@ -7831,6 +7883,7 @@
       },
       "JsonIrImagingResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrImagingResult": {
             "type": "array",
@@ -7842,6 +7895,7 @@
       },
       "JsonIrMeasureExtendedDataByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrMeasureExtendedDataByIDResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -7850,6 +7904,7 @@
       },
       "JsonIrMeasureExtendedDataResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrMeasureExtendedDataResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -7858,6 +7913,7 @@
       },
       "JsonIrPlantMaskByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrPlantMaskByMeasureIDResult": {
             "$ref": "#/components/schemas/PlantMask"
@@ -7866,6 +7922,7 @@
       },
       "JsonIrPlantMaskResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrPlantMaskResult": {
             "type": "array",
@@ -7877,6 +7934,7 @@
       },
       "JsonIrPlantMaskImageByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrPlantMaskImageByMeasureIDResult": {
             "$ref": "#/components/schemas/Imaging"
@@ -7885,6 +7943,7 @@
       },
       "JsonIrPlantMaskImageResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrPlantMaskImageResult": {
             "type": "array",
@@ -7896,6 +7955,7 @@
       },
       "JsonIrParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrParamResult": {
             "$ref": "#/components/schemas/Parameter"
@@ -7904,6 +7964,7 @@
       },
       "JsonIrUsedParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrUsedParamByAnalyseIDResult": {
             "type": "array",
@@ -7915,6 +7976,7 @@
       },
       "JsonIrUsedParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrUsedParamResult": {
             "type": "array",
@@ -7926,6 +7988,7 @@
       },
       "JsonIrPlantParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrPlantParamByAnalyseIDResult": {
             "type": "array",
@@ -7937,6 +8000,7 @@
       },
       "JsonIrPlantParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrPlantParamResult": {
             "type": "array",
@@ -7948,6 +8012,7 @@
       },
       "JsonIrLeafParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrLeafParamByAnalyseIDResult": {
             "type": "array",
@@ -7959,6 +8024,7 @@
       },
       "JsonIrLeafParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonIrLeafParamResult": {
             "type": "array",
@@ -7970,6 +8036,7 @@
       },
       "JsonMscImagingByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscImagingByIDResult": {
             "type": "array",
@@ -7981,6 +8048,7 @@
       },
       "JsonMscImagingResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscImagingResult": {
             "type": "array",
@@ -7992,6 +8060,7 @@
       },
       "JsonMscMeasureExtendedDataByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscMeasureExtendedDataByIDResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -8000,6 +8069,7 @@
       },
       "JsonMscMeasureExtendedDataResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscMeasureExtendedDataResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -8008,6 +8078,7 @@
       },
       "JsonMscPlantMaskByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscPlantMaskByMeasureIDResult": {
             "$ref": "#/components/schemas/PlantMask"
@@ -8016,6 +8087,7 @@
       },
       "JsonMscPlantMaskResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscPlantMaskResult": {
             "type": "array",
@@ -8027,6 +8099,7 @@
       },
       "JsonMscParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscParamResult": {
             "$ref": "#/components/schemas/Parameter"
@@ -8035,6 +8108,7 @@
       },
       "JsonMscUsedParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscUsedParamByAnalyseIDResult": {
             "type": "array",
@@ -8046,6 +8120,7 @@
       },
       "JsonMscUsedParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscUsedParamResult": {
             "type": "array",
@@ -8057,6 +8132,7 @@
       },
       "JsonMscParameterImageByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscParameterImageByAnalyseIDResult": {
             "$ref": "#/components/schemas/ParameterImage"
@@ -8065,6 +8141,7 @@
       },
       "JsonMscParameterImageResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscParameterImageResult": {
             "type": "array",
@@ -8076,6 +8153,7 @@
       },
       "JsonMscPlantParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscPlantParamByAnalyseIDResult": {
             "type": "array",
@@ -8087,6 +8165,7 @@
       },
       "JsonMscPlantParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscPlantParamResult": {
             "type": "array",
@@ -8098,6 +8177,7 @@
       },
       "JsonMscLeafParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscLeafParamByAnalyseIDResult": {
             "type": "array",
@@ -8109,6 +8189,7 @@
       },
       "JsonMscLeafParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscLeafParamResult": {
             "type": "array",
@@ -8120,6 +8201,7 @@
       },
       "JsonMscLightSetResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscLightSetResult": {
             "$ref": "#/components/schemas/MscLightSet"
@@ -8128,6 +8210,7 @@
       },
       "JsonMscLightSetUsedResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscLightSetUsedResult": {
             "type": "array",
@@ -8139,6 +8222,7 @@
       },
       "JsonMscCalibrationResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscCalibrationResult": {
             "$ref": "#/components/schemas/MscCalibration"
@@ -8147,6 +8231,7 @@
       },
       "JsonMscCalibrationByLightSetIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscCalibrationByLightSetIDResult": {
             "$ref": "#/components/schemas/MscCalibration"
@@ -8155,6 +8240,7 @@
       },
       "JsonMscCalibrationLightByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscCalibrationLightByIDResult": {
             "$ref": "#/components/schemas/MscCalibrationLight"
@@ -8163,6 +8249,7 @@
       },
       "JsonMscCalibrationLightResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonMscCalibrationLightResult": {
             "type": "array",
@@ -8174,6 +8261,7 @@
       },
       "JsonRgbImagingByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbImagingByIDResult": {
             "$ref": "#/components/schemas/Imaging"
@@ -8182,6 +8270,7 @@
       },
       "JsonRgbImagingResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbImagingResult": {
             "type": "array",
@@ -8193,6 +8282,7 @@
       },
       "JsonRgbMeasureExtendedDataByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbMeasureExtendedDataByIDResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -8201,6 +8291,7 @@
       },
       "JsonRgbMeasureExtendedDataResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbMeasureExtendedDataResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -8209,6 +8300,7 @@
       },
       "JsonRgbPlantMaskByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbPlantMaskByMeasureIDResult": {
             "$ref": "#/components/schemas/PlantMask"
@@ -8217,6 +8309,7 @@
       },
       "JsonRgbPlantMaskResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbPlantMaskResult": {
             "type": "array",
@@ -8228,6 +8321,7 @@
       },
       "JsonRgbGreeningMaskImageByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbGreeningMaskImageByMeasureIDResult": {
             "$ref": "#/components/schemas/RgbGreeningMaskImage"
@@ -8236,6 +8330,7 @@
       },
       "JsonRgbGreeningMaskImageResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbGreeningMaskImageResult": {
             "type": "array",
@@ -8247,6 +8342,7 @@
       },
       "JsonRgbParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbParamResult": {
             "$ref": "#/components/schemas/Parameter"
@@ -8255,6 +8351,7 @@
       },
       "JsonRgbUsedParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbUsedParamByAnalyseIDResult": {
             "type": "array",
@@ -8266,6 +8363,7 @@
       },
       "JsonRgbUsedParamsResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbUsedParamsResult": {
             "type": "array",
@@ -8277,6 +8375,7 @@
       },
       "JsonRgbUsedParamColorByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbUsedParamColorByAnalyseIDResult": {
             "type": "array",
@@ -8288,6 +8387,7 @@
       },
       "JsonRgbUsedParamColorResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbUsedParamColorResult": {
             "type": "array",
@@ -8299,6 +8399,7 @@
       },
       "JsonRgbPlantParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbPlantParamByAnalyseIDResult": {
             "type": "array",
@@ -8310,6 +8411,7 @@
       },
       "JsonRgbPlantParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbPlantParamResult": {
             "type": "array",
@@ -8321,6 +8423,7 @@
       },
       "JsonRgbPlantParamColorByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbPlantParamColorByAnalyseIDResult": {
             "type": "array",
@@ -8332,6 +8435,7 @@
       },
       "JsonRgbPlantParamColorResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbPlantParamColorResult": {
             "type": "array",
@@ -8343,6 +8447,7 @@
       },
       "JsonRgbLeafParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbLeafParamByAnalyseIDResult": {
             "type": "array",
@@ -8354,6 +8459,7 @@
       },
       "JsonRgbLeafParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbLeafParamResult": {
             "type": "array",
@@ -8365,6 +8471,7 @@
       },
       "JsonRgbLeafParamColorByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbLeafParamColorByAnalyseIDResult": {
             "type": "array",
@@ -8376,6 +8483,7 @@
       },
       "JsonRgbLeafParamColorResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonRgbLeafParamColorResult": {
             "type": "array",
@@ -8387,6 +8495,7 @@
       },
       "JsonScan3dImagingByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dImagingByIDResult": {
             "$ref": "#/components/schemas/Scan3DImaging"
@@ -8395,6 +8504,7 @@
       },
       "JsonScan3dImagingResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dImagingResult": {
             "type": "array",
@@ -8406,6 +8516,7 @@
       },
       "JsonScan3dMeasureExtendedDataByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dMeasureExtendedDataByIDResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -8414,6 +8525,7 @@
       },
       "JsonScan3dMeasureExtendedDataResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dMeasureExtendedDataResult": {
             "$ref": "#/components/schemas/MeasureExtendedData"
@@ -8422,6 +8534,7 @@
       },
       "JsonScan3dAnalyzedModelByMeasureIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dAnalyzedModelByMeasureIDResult": {
             "type": "array",
@@ -8433,6 +8546,7 @@
       },
       "JsonScan3dAnalyzedModelByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dAnalyzedModelByAnalyseIDResult": {
             "type": "array",
@@ -8444,6 +8558,7 @@
       },
       "JsonScan3dAnalyzedModelResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dAnalyzedModelResult": {
             "type": "array",
@@ -8455,6 +8570,7 @@
       },
       "JsonScan3dParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dParamResult": {
             "$ref": "#/components/schemas/Parameter"
@@ -8463,6 +8579,7 @@
       },
       "JsonScan3dUsedParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dUsedParamByAnalyseIDResult": {
             "type": "array",
@@ -8474,6 +8591,7 @@
       },
       "JsonScan3dUsedParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dUsedParamResult": {
             "type": "array",
@@ -8485,6 +8603,7 @@
       },
       "JsonScan3dPlantParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dPlantParamByAnalyseIDResult": {
             "type": "array",
@@ -8496,6 +8615,7 @@
       },
       "JsonScan3dPlantParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dPlantParamResult": {
             "type": "array",
@@ -8507,6 +8627,7 @@
       },
       "JsonScan3dLeafParamByAnalyseIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dLeafParamByAnalyseIDResult": {
             "type": "array",
@@ -8518,6 +8639,7 @@
       },
       "JsonScan3dLeafParamResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScan3dLeafParamResult": {
             "type": "array",
@@ -8529,6 +8651,7 @@
       },
       "JsonScalesMeasureByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScalesMeasureByIDResult": {
             "$ref": "#/components/schemas/ScalesData"
@@ -8537,6 +8660,7 @@
       },
       "JsonScalesMeasureResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonScalesMeasureResult": {
             "type": "array",
@@ -8548,6 +8672,7 @@
       },
       "JsonPlantWeightReferenceByPlantIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantWeightReferenceByPlantIDResult": {
             "$ref": "#/components/schemas/PlantWeightReference"
@@ -8556,6 +8681,7 @@
       },
       "JsonPlantWeightReferenceByTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantWeightReferenceByTrayIDResult": {
             "type": "array",
@@ -8567,6 +8693,7 @@
       },
       "JsonPlantWeightReferenceByTrayIDToDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonPlantWeightReferenceByTrayIDToDateResult": {
             "type": "array",
@@ -8578,6 +8705,7 @@
       },
       "JsonSprayActionResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSprayActionResult": {
             "type": "array",
@@ -8589,6 +8717,7 @@
       },
       "JsonProbeByIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonProbeByIDResult": {
             "$ref": "#/components/schemas/Probe"
@@ -8597,6 +8726,7 @@
       },
       "JsonProbeResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonProbeResult": {
             "type": "array",
@@ -8608,6 +8738,7 @@
       },
       "JsonProbeValueByDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonProbeValueByDateResult": {
             "type": "array",
@@ -8619,6 +8750,7 @@
       },
       "JsonProbeValueByIDAndDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonProbeValueByIDAndDateResult": {
             "type": "array",
@@ -8630,6 +8762,7 @@
       },
       "JsonSpectrumDeviceIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSpectrumDeviceIDResult": {
             "type": "array",
@@ -8643,12 +8776,18 @@
         "type": "object",
         "properties": {
           "SpectrumDeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "SpectrumDevice",
+              "tag": "SpectrumDevice",
+              "operationId": "SpectrumDevice"
+            }
           }
         }
       },
       "JsonSpectrumDeviceResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSpectrumDeviceResult": {
             "$ref": "#/components/schemas/SpectrumDevice"
@@ -8657,6 +8796,7 @@
       },
       "JsonSpectrumValuesResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSpectrumValuesResult": {
             "type": "array",
@@ -8668,6 +8808,7 @@
       },
       "JsonBufferHistoryResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonBufferHistoryResult": {
             "$ref": "#/components/schemas/BufferHistory"
@@ -8676,6 +8817,7 @@
       },
       "JsonBufferHistoryByDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonBufferHistoryByDateResult": {
             "type": "array",
@@ -8687,6 +8829,7 @@
       },
       "JsonSystemLogByRoundIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogByRoundIDResult": {
             "type": "array",
@@ -8698,6 +8841,7 @@
       },
       "JsonSystemLogByRoundIDAndDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogByRoundIDAndDateResult": {
             "type": "array",
@@ -8709,6 +8853,7 @@
       },
       "JsonSystemLogByTrayIDResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogByTrayIDResult": {
             "type": "array",
@@ -8720,6 +8865,7 @@
       },
       "JsonSystemLogByTrayIDAndDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogByTrayIDAndDateResult": {
             "type": "array",
@@ -8731,6 +8877,7 @@
       },
       "JsonSystemLogTypeResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogTypeResult": {
             "type": "array",
@@ -8742,6 +8889,7 @@
       },
       "JsonSystemLogByLogTypeAndDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogByLogTypeAndDateResult": {
             "type": "array",
@@ -8753,6 +8901,7 @@
       },
       "JsonSystemLogTagResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogTagResult": {
             "type": "array",
@@ -8764,6 +8913,7 @@
       },
       "JsonSystemLogByLogTagAndDateResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonSystemLogByLogTagAndDateResult": {
             "type": "array",
@@ -8775,6 +8925,7 @@
       },
       "JsonVersionInfoResult": {
         "type": "object",
+        "x-pp-is-container": "true",
         "properties": {
           "JsonVersionInfoResult": {
             "$ref": "#/components/schemas/VersionInfo"
@@ -8787,7 +8938,6 @@
           "CreatedDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ExperimentID": {
@@ -8809,15 +8959,96 @@
             ]
           },
           "OwnerID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Owner",
+              "tag": "Experiment",
+              "operationId": "Owner"
+            }
           },
           "StatusChangedDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           }
-        }
+        },
+        "x-pp-link": [
+          {
+            "name": "rounds",
+            "model": "Round",
+            "tag": "Round",
+            "operationId": "RoundExperiment",
+            "parameter": {
+              "source": "ExperimentID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "round_orders",
+            "model": "RoundOrder",
+            "tag": "Round",
+            "operationId": "RoundOrderExperiment",
+            "parameter": {
+              "source": "ExperimentID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "notes",
+            "model": "ExperimentNote",
+            "tag": "Experiment",
+            "operationId": "NoteExperiment",
+            "parameter": {
+              "source": "ExperimentID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "actions",
+            "model": "Action",
+            "tag": "Action",
+            "operationId": "ActionExperiment",
+            "parameter": {
+              "source": "ExperimentID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "unfinished_actions",
+            "model": "Action",
+            "tag": "Action",
+            "operationId": "ActionNotDoneExperiment",
+            "parameter": {
+              "source": "ExperimentID",
+              "name": "id"
+            }
+          }
+        ],
+        "x-pp-rel":[
+          {
+            "name": "rounds_by_date",
+            "model": "Round",
+            "tag": "Round",
+            "operationId": "RoundDateExperiment",
+            "parameters": [
+              {"source": "ExperimentID",
+              "name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]},
+          {
+            "name": "round_orders_by_date",
+            "model": "RoundOrder",
+            "tag": "Round",
+            "operationId": "RoundOrderDateExperiment",
+            "parameters": [
+              {"source": "ExperimentID",
+              "name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]
+          }
+        ]
       },
       "OwnerIDWrapper": {
         "type": "object",
@@ -8833,7 +9064,6 @@
           "CreateDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "Email": {
@@ -8845,7 +9075,6 @@
           "LastFailedDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "LastName": {
@@ -8854,7 +9083,6 @@
           "LastSuccessLogin": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "Login": {
@@ -8866,18 +9094,34 @@
           "SmsPhoneNumber": {
             "type": "string"
           }
-        }
+        },
+        "x-pp-link": [
+          {
+            "name": "experiments",
+            "model": "Experiment",
+            "tag": "Experiment",
+            "operationId": "ExperimentOwner",
+            "parameter": {
+              "source": "OwnerID",
+              "name": "id"
+            }
+          }
+        ]
       },
       "ExperimentNote": {
         "type": "object",
         "properties": {
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "NoteCreatedDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "NoteID": {
@@ -8887,7 +9131,12 @@
             "type": "string"
           },
           "OwnerID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Owner",
+              "tag": "Experiment",
+              "operationId": "Owner"
+            }
           }
         }
       },
@@ -8895,21 +9144,29 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "RoundDateStart": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "RoundDateStop": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "RoundDone": {
@@ -8925,19 +9182,107 @@
           "RoundStatus": {
             "type": "string"
           }
-        }
+        },
+        "x-pp-link": [
+          {
+            "name": "order",
+            "model": "RoundOrder",
+            "isSingleValue": true,
+            "tag": "Round",
+            "operationId": "RoundOrderRound",
+            "parameter": {
+              "source": "RoundID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "action_group",
+            "model": "ActionGroup",
+            "isSingleValue": true,
+            "tag": "Action",
+            "operationId": "ActionGroupRound",
+            "parameter": {
+              "source": "RoundID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "action_protocol",
+            "model": "ActionProtocol",
+            "isSingleValue": true,
+            "tag": "Action",
+            "operationId": "ActionProtocolRound",
+            "parameter": {
+              "source": "RoundID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "trays",
+            "model": "Tray",
+            "tag": "Tray",
+            "operationId": "TrayRound",
+            "parameter": {
+              "source": "RoundID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "plant_heights",
+            "model": "PlantHeight",
+            "tag": "Round",
+            "operationId": "PlantHeightRound",
+            "parameter": {
+              "source": "RoundID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "system_logs",
+            "model": "SystemLog",
+            "tag": "SystemLog",
+            "operationId": "SystemLogRound",
+            "parameter": {
+              "source": "RoundID",
+              "name": "id"
+            }
+          }
+        ],
+        "x-pp-rel":[
+          {
+            "name": "system_logs_by_daterange",
+            "model": "SystemLog",
+            "tag": "SystemLog",
+            "operationId": "SystemLogDateRound",
+            "parameters": [
+              {"source": "RoundID", "name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]}
+          
+        ]
       },
       "RoundOrder": {
         "type": "object",
         "properties": {
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "Order": {
             "type": "integer"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           }
         }
       },
@@ -8947,14 +9292,18 @@
           "ActionDateStart": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ActionDone": {
             "type": "boolean"
           },
           "ActionGroupID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "ActionGroup",
+              "tag": "Action",
+              "operationId": "ActionGroup"
+            }
           },
           "ActionID": {
             "type": "integer"
@@ -8966,7 +9315,12 @@
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           }
         }
       },
@@ -8977,7 +9331,12 @@
             "type": "integer"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "GroupCaption": {
             "type": "string"
@@ -8995,10 +9354,20 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "ProtocolBody": {
             "type": "string",
@@ -9007,14 +9376,18 @@
           "ProtocolDateChanged": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProtocolID": {
             "type": "integer"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           }
         }
       },
@@ -9046,17 +9419,20 @@
           "DeviceValidityStart": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "DeviceValidityEnd": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "SystemProfile",
+              "tag": "Profile",
+              "operationId": "Profile"
+            }
           }
         }
       },
@@ -9087,7 +9463,19 @@
             "type": "string",
             "example": "\"<?xml version=\"1.0\" encoding=\"utf-8\" ?> <Configuration> <TrayStack> <RowCount>9</RowCount> <RowCapacity>30</RowCapacity> </TrayStack> <AdaptChamber>true</AdaptChamber> <HeightMeasurement>true</HeightMeasurement> <Commands> <SetLight>true</SetLight> <TrayLoad>true</TrayLoad> <TraySwap>true</TraySwap><TrayUnload>false</TrayUnload> <Measure>true</Measure> </Commands> <Lights> <Lightcaption=\"Load\">LightLoad</Light> <Light caption=\"White\">LightMain1</Light> <Light caption=\"Red\">LightMain2</Light> <Light caption=\"IR\">LightMain3</Light> </Lights> <Pids> <PID name=\"RGBM\" caption=\"RGBM\"> <View>Side</View> <Turntable>true</Turntable> <AxisZ heightVisible=\"false\">true</AxisZ> </PID> </Pids> <Analyse> </Analyse> </Configuration>"
           }
-        }
+        },
+        "x-pp-link": [
+          {
+            "name": "devices",
+            "model": "Device",
+            "tag": "Device",
+            "operationId": "DeviceProfile",
+            "parameter": {
+              "source": "ProfileID",
+              "name": "id"
+            }
+          }
+        ]
       },
       "Tray": {
         "type": "object",
@@ -9111,13 +9499,124 @@
           "TrayStatusChanged": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "TrayTypeID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayType",
+              "tag": "Tray",
+              "operationId": "TrayType"
+            }
           }
-        }
+        },
+        "x-pp-link": [
+          {
+            "name": "tray_profile",
+            "model": "TrayProfile",
+            "isSingleValue": true,
+            "tag": "Tray",
+            "operationId": "TrayProfileTray",
+            "parameter": {
+              "source": "TrayID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "scales_mapping",
+            "model": "ScalesMapping",
+            "isSingleValue": true,
+            "tag": "Tray",
+            "operationId": "ScalesMappingTray",
+            "parameter": {
+              "source": "TrayID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "plants",
+            "model": "Plant",
+            "tag": "Plant",
+            "operationId": "PlantTray",
+            "parameter": {
+              "source": "TrayID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "plant_reference_weights",
+            "model": "PlantWeightReference",
+            "tag": "Scales",
+            "operationId": "ScalesWeightReferenceTray",
+            "parameter": {
+              "source": "TrayID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "system_logs",
+            "model": "SystemLog",
+            "tag": "SystemLog",
+            "operationId": "SystemLogTray",
+            "parameter": {
+              "source": "TrayID",
+              "name": "id"
+            }
+          }
+        ],
+        "x-pp-rel":[
+          {
+            "name": "tray_profile_used_by_daterange",
+            "model": "TrayProfile",
+            "tag": "Tray",
+            "operationId": "TrayProfileUsedTray",
+            "parameters": [
+              {"source": "TrayID",
+              "name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]},
+          {
+            "name": "tray_profile_used_at_time",
+            "model": "TrayProfile",
+            "tag": "Tray",
+            "operationId": "TrayProfileToDateTray",
+            "parameters": [
+              {"source": "TrayID",
+              "name": "id"},
+              {"name":"date"}
+          ]},
+          {
+            "name": "plants_by_daterange",
+            "model": "Plant",
+            "tag": "Plant",
+            "operationId": "PlantTrayProfileTray",
+            "parameters": [
+              {"source": "TrayID",
+              "name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]},
+          {
+            "name": "plant_reference_weights_at_time",
+            "model": "PlantWeightReference",
+            "tag": "Scales",
+            "operationId": "ScalesWeightReferenceToDateTray",
+            "parameters": [
+              {"source": "TrayID","name": "id"},
+              {"name":"date"}
+          ]},
+          {
+            "name": "system_logs_by_daterange",
+            "model": "SystemLog",
+            "tag": "SystemLog",
+            "operationId": "SystemLogDateTray",
+            "parameters": [
+              {"source": "TrayID","name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]}
+        ]
       },
       "TrayType": {
         "type": "object",
@@ -9164,13 +9663,11 @@
           "ProfileDateStart": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProfileDateStop": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ProfileID": {
@@ -9180,9 +9677,37 @@
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
-        }
+        },
+        "x-pp-link": [
+          {
+            "name": "tray_type",
+            "model": "TrayType",
+            "isSingleValue": true,
+            "tag": "Tray",
+            "operationId": "TrayTypeTrayProfile",
+            "parameter": {
+              "source": "ProfileID",
+              "name": "id"
+            }
+          },
+          {
+            "name": "plants",
+            "model": "Plant",
+            "tag": "Plant",
+            "operationId": "PlantTrayProfile",
+            "parameter": {
+              "source": "ProfileId",
+              "name": "id"
+            }
+          }
+        ]
       },
       "ScalesMapping": {
         "type": "object",
@@ -9197,7 +9722,12 @@
             "type": "integer"
           },
           "TrayTypeID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayType",
+              "tag": "Tray",
+              "operationId": "TrayType"
+            }
           }
         }
       },
@@ -9219,18 +9749,35 @@
           "TrayArea": {
             "type": "string"
           }
-        }
+        },
+        "x-pp-link": [
+          {
+            "name": "reference_weight",
+            "model": "PlantWeightReference",
+            "isSingleValue": true,
+            "tag": "Scales",
+            "operationId": "ScalesWeightReferencePlant",
+            "parameter": {
+              "source": "PlantID",
+              "name": "id"
+            }
+          }
+        ]
       },
       "PlantHeight": {
         "type": "object",
         "properties": {
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "HeightDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "HeightValue": {
@@ -9240,13 +9787,23 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           }
         }
       },
@@ -9260,13 +9817,23 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9274,16 +9841,31 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9291,7 +9873,6 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -9305,16 +9886,31 @@
             "description": "filetype"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           },
           "TarPath": {
             "type": "string",
@@ -9326,16 +9922,31 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9343,7 +9954,6 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -9353,16 +9963,31 @@
             "type": "integer"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           },
           "CalibrationWhiteHeaderPath": {
             "type": "string",
@@ -9394,16 +10019,31 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9411,7 +10051,6 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -9421,16 +10060,31 @@
             "type": "integer"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           },
           "ImagePath": {
             "type": "string",
@@ -9442,16 +10096,31 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9459,7 +10128,6 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -9469,16 +10137,31 @@
             "type": "integer"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           },
           "Scan3DModelPath": {
             "type": "string",
@@ -9490,7 +10173,12 @@
         "type": "object",
         "properties": {
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "ExtendedData": {
             "type": "string",
@@ -9499,17 +10187,26 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
             "type": "integer"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9517,13 +10214,23 @@
         "type": "object",
         "properties": {
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MaskIsLeaf": {
             "type": "boolean"
@@ -9534,7 +10241,6 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
@@ -9545,13 +10251,23 @@
             "description": "filetype"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9576,13 +10292,23 @@
             "type": "integer"
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9601,13 +10327,23 @@
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9615,13 +10351,23 @@
         "type": "object",
         "properties": {
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9634,13 +10380,23 @@
             "description": "filetype"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9648,16 +10404,31 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9665,7 +10436,6 @@
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureHeight": {
@@ -9675,16 +10445,31 @@
             "type": "integer"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           },
           "GreeningPicturePath": {
             "type": "string",
@@ -9703,18 +10488,27 @@
             "description": "filetype"
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
@@ -9724,16 +10518,31 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9744,13 +10553,23 @@
             "type": "integer"
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9772,13 +10591,23 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayArea": {
             "type": "string"
@@ -9787,7 +10616,12 @@
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9798,13 +10632,23 @@
             "type": "integer"
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureAngle": {
             "type": "integer"
@@ -9842,13 +10686,23 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayArea": {
             "type": "string"
@@ -9857,7 +10711,12 @@
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9868,13 +10727,23 @@
             "type": "integer"
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "LeafIndex": {
             "type": "integer"
@@ -9899,13 +10768,23 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayArea": {
             "type": "string"
@@ -9914,7 +10793,12 @@
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -9925,13 +10809,23 @@
             "type": "integer"
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "LeafIndex": {
             "type": "integer"
@@ -9972,13 +10866,23 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayArea": {
             "type": "string"
@@ -9987,7 +10891,12 @@
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           }
         }
       },
@@ -10017,7 +10926,6 @@
           "CalibrationDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "CalibrationID": {
@@ -10065,21 +10973,35 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "MeasureDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "MeasureID": {
@@ -10089,7 +11011,12 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
@@ -10099,19 +11026,34 @@
             "format": "double"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayArea": {
             "type": "string"
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           },
           "Watered": {
             "type": "boolean"
@@ -10125,7 +11067,12 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
@@ -10133,7 +11080,6 @@
           "ReferenceWeightDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "ReferenceWeightValue": {
@@ -10146,16 +11092,31 @@
         "type": "object",
         "properties": {
           "ActionID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Action",
+              "tag": "Action",
+              "operationId": "Action"
+            }
           },
           "DeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Device",
+              "tag": "Device",
+              "operationId": "Device"
+            }
           },
           "DevicePID": {
             "type": "string"
           },
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "LiquidAmount": {
             "type": "integer"
@@ -10167,18 +11128,27 @@
             "type": "string"
           },
           "PlantID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Plant",
+              "tag": "Plant",
+              "operationId": "Plant"
+            }
           },
           "PlantName": {
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "SprayActionDate": {
             "type": "string",
-            "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+            "format": "date-time"
           },
           "SprayActionID": {
             "type": "integer"
@@ -10193,10 +11163,20 @@
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           }
         }
       },
@@ -10221,13 +11201,31 @@
           "ProbeVariable": {
             "type": "string"
           }
-        }
+        },
+        "x-pp-rel":[
+          {
+            "name": "values_by_date",
+            "model": "ProbeValue",
+            "tag": "Probe",
+            "operationId": "ProbeValueDateProbe",
+            "parameters": [
+              {"source": "ProbeID",
+              "name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]}
+        ]
       },
       "ProbeValue": {
         "type": "object",
         "properties": {
           "ProbeID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Probe",
+              "tag": "Probe",
+              "operationId": "Probe"
+            }
           },
           "ProbeName": {
             "type": "string"
@@ -10242,7 +11240,6 @@
           "RecordDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           }
         }
@@ -10259,7 +11256,20 @@
           "SpectrumDeviceWavelengthsJSON": {
             "$ref": "#/components/schemas/SpectrumDeviceWavelengthsJSONWrapper"
           }
-        }
+        },
+        "x-pp-rel":[
+          {
+            "name": "values_by_date",
+            "model": "SpectrumValues",
+            "tag": "SpectrumDevice",
+            "operationId": "SpectrumValuesDateDevice",
+            "parameters": [
+              {"source": "SpectrumDeviceID",
+              "name": "id"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]}
+        ]
       },
       "SpectrumDeviceWavelengthsJSONWrapper": {
         "type": "object",
@@ -10274,7 +11284,6 @@
           "Date": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^(([0][0-9]|[1][0-2])/([0-2][0-9]|[3][0-1])/[0-9]{4} ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "01/01/2024 15:00:00"
           },
           "SConst": {
@@ -10286,7 +11295,12 @@
         "type": "object",
         "properties": {
           "SpectrumDeviceID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "SpectrumDevice",
+              "tag": "SpectrumDevice",
+              "operationId": "SpectrumDevice"
+            }
           },
           "SpectrumPath": {
             "type": "string",
@@ -10295,7 +11309,6 @@
           "SpectrumRecordDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           }
         }
@@ -10313,7 +11326,6 @@
           "BufferStateDate": {
             "type": "string",
             "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1]) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$",
             "example": "2024-01-01 15:00:00"
           },
           "BufferStateID": {
@@ -10329,12 +11341,16 @@
         "type": "object",
         "properties": {
           "ExperimentID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Experiment",
+              "tag": "Experiment",
+              "operationId": "Experiment"
+            }
           },
           "LogDate": {
             "type": "string",
-            "format": "date-time",
-            "pattern": "^([0-9]{4}-([0][0-9]|[1][0-2])-([0-2][0-9]|[3][0-1])T([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9]))$"
+            "format": "date-time"
           },
           "LogID": {
             "type": "integer"
@@ -10349,16 +11365,31 @@
             "type": "string"
           },
           "RoundID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Round",
+              "tag": "Round",
+              "operationId": "Round"
+            }
           },
           "TrayBarcode": {
             "type": "string"
           },
           "TrayID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "Tray",
+              "tag": "Tray",
+              "operationId": "Tray"
+            }
           },
           "TrayProfileID": {
-            "type": "integer"
+            "type": "integer",
+            "x-pp-link": {
+              "model": "TrayProfile",
+              "tag": "Tray",
+              "operationId": "TrayProfile"
+            }
           }
         }
       },
@@ -10368,7 +11399,20 @@
           "LogType": {
             "type": "string"
           }
-        }
+        },
+        "x-pp-rel":[
+          {
+            "name": "system_logs_by_daterange",
+            "model": "SystemLog",
+            "tag": "SystemLog",
+            "operationId": "SystemLogDateLogType",
+            "parameters": [
+              {"source": "LogType",
+              "name": "type"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]}
+        ]
       },
       "LogTag": {
         "type": "object",
@@ -10376,7 +11420,20 @@
           "LogTag": {
             "type": "string"
           }
-        }
+        },
+        "x-pp-rel":[
+          {
+            "name": "system_logs_by_daterange",
+            "model": "SystemLog",
+            "tag": "SystemLog",
+            "operationId": "SystemLogDateLogTag",
+            "parameters": [
+              {"source": "LogTag",
+              "name": "tag"},
+              {"name":"start"},
+              {"name":"stop"}
+          ]}
+        ]
       },
       "VersionInfo": {
         "type": "object",

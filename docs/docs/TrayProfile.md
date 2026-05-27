@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **profile_name** | **str** |  | [optional] 
 **tray_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**tray**|[**int**](Tray.md)|tray_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+tray_type | List[[**object**](TrayType.md)]] | TrayApi |  | ProfileIDplants | List[[**object**](Plant.md)]] | PlantApi |  | ProfileId
+
 ## Example
 
 ```python

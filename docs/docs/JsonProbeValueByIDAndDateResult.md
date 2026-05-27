@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_probe_value_by_id_and_date_result** | [**List[ProbeValue]**](ProbeValue.md) |  | [optional] 
+**result** | [**List[ProbeValue]**](ProbeValue.md)| alias for **json_probe_value_by_id_and_date_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

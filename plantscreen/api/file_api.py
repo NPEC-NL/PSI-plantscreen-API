@@ -20,7 +20,7 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -38,7 +38,7 @@ class FileApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     def file(
         self,
         path: str,
@@ -219,6 +219,7 @@ class FileApi:
 
         # process the path parameters
         # process the query parameters
+
         if path is not None:
             
             _query_params.append(('path', path))
@@ -251,7 +252,7 @@ class FileApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def file_changelog(
         self,
@@ -490,5 +491,6 @@ class FileApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

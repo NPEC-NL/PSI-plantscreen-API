@@ -11,7 +11,7 @@ def update_probe_api_source():
     replacement = (
         "from plantscreen.models.json_probe_by_id_result import JsonProbeByIDResult\n"
         "from plantscreen.models.json_probe_result import JsonProbeResult\n"
-        "import json"
+        "import json\n"
     )
     source_code, n = pattern.subn(replacement, source_code)
     if n > 0:
@@ -92,7 +92,7 @@ def update_msc_api_source():
     replacement = (
         "from plantscreen.models.json_msc_calibration_light_by_id_result import JsonMscCalibrationLightByIDResult\n"
         "from plantscreen.models.json_msc_calibration_light_result import JsonMscCalibrationLightResult\n"
-        "import json"
+        "import json\n"
     )
     source_code, n = pattern.subn(replacement, source_code)
     if n > 0:

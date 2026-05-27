@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_ir_used_param_result** | [**List[Parameter]**](Parameter.md) |  | [optional] 
+**result** | [**List[Parameter]**](Parameter.md)| alias for **json_ir_used_param_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

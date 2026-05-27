@@ -26,7 +26,7 @@ from plantscreen.models.json_plant_by_tray_profile_id_result import JsonPlantByT
 from plantscreen.models.json_plant_height_by_round_id_result import JsonPlantHeightByRoundIDResult
 from plantscreen.models.json_plant_leaves_by_plant_and_tray_id_result import JsonPlantLeavesByPlantAndTrayIDResult
 from plantscreen.models.json_plant_result import JsonPlantResult
-
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType
@@ -44,7 +44,7 @@ class PlantApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def plant(
         self,
@@ -265,6 +265,7 @@ class PlantApi:
 
         # process the path parameters
         # process the query parameters
+
         if ids is not None:
             
             _query_params.append(('ids', ids))
@@ -304,7 +305,7 @@ class PlantApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def plant_height_round(
         self,
@@ -524,6 +525,7 @@ class PlantApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -563,7 +565,7 @@ class PlantApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def plant_leaf(
         self,
@@ -796,10 +798,12 @@ class PlantApi:
 
         # process the path parameters
         # process the query parameters
+
         if plant_id is not None:
             
             _query_params.append(('plantId', plant_id))
             
+
         if tray_id is not None:
             
             _query_params.append(('trayId', tray_id))
@@ -839,7 +843,7 @@ class PlantApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def plant_tray(
         self,
@@ -1059,6 +1063,7 @@ class PlantApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1098,7 +1103,7 @@ class PlantApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def plant_tray_profile(
         self,
@@ -1318,6 +1323,7 @@ class PlantApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
@@ -1357,7 +1363,7 @@ class PlantApi:
 
 
 
-
+    @allow_single_for_first_list_param
     @validate_call
     def plant_tray_profile_tray(
         self,
@@ -1603,10 +1609,12 @@ class PlantApi:
 
         # process the path parameters
         # process the query parameters
+
         if id is not None:
             
             _query_params.append(('id', id))
             
+
         if start is not None:
             if isinstance(start, datetime):
                 _query_params.append(
@@ -1620,6 +1628,7 @@ class PlantApi:
             else:
                 _query_params.append(('start', start))
             
+
         if stop is not None:
             if isinstance(stop, datetime):
                 _query_params.append(
@@ -1665,5 +1674,6 @@ class PlantApi:
             _host=_host,
             _request_auth=_request_auth
         )
+
 
 

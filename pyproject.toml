@@ -6,7 +6,8 @@ requires-python = ">=3.10"
 keywords = ["PSI", "plantscreen", "API"]
 license = {file = "LICENSE"}
 maintainers = [
-  {name = "NPEC WUR"}
+  {name = "NPEC WUR"},
+  {name = "VBCF PlantS"}
 ]
 
 dynamic = ["version"]

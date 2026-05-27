@@ -10,6 +10,19 @@ Name | Type | Description | Notes
 **map_row** | **int** |  | [optional] 
 **tray_type_id** | **int** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**tray_type**|[**int**](TrayType.md)|tray_type_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

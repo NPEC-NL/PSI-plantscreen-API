@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.msc_light_set import MscLightSet
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonMscLightSetResult(BaseModel):
     """
     JsonMscLightSetResult
     """ # noqa: E501
     json_msc_light_set_result: Optional[MscLightSet] = Field(default=None, alias="JsonMscLightSetResult")
+
     __properties: ClassVar[List[str]] = ["JsonMscLightSetResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonMscLightSetResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> MscLightSet:
+        return self.json_msc_light_set_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

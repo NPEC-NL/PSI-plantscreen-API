@@ -10,13 +10,14 @@
 - [Source Code](https://github.com/NPEC-NL/PSI-Plantscreen-API) <br>
 ---
 
-Photon System Instruments (PSI) develivers equipment accross the globe. 
+Photon System Instruments (PSI) delivers equipment across the globe. 
 Their cimatecells are controlled with plantscreen software, which comes with an API.
-Experience tough us, this API is a bit tricky to implement. 
-We believe it's a waist of time if everyone has to figure out how to implement this API and test it.
-Therefore we created he swagger file and a simple python wrapper to integrate the  endpoints of the plantscreen API.
+Experience taught us, this API is a bit tricky to implement. 
+We believe it's a waste of time if everyone has to figure out how to implement this API and test it.
+Therefore, we created the swagger file and a simple python wrapper to integrate the endpoints of the plantscreen API.
+Additionally the model classes are enriched with properties and functions to access linked models to make usage easier.
 
-Unfortunately, we where not able to test the 3D scanner and MSC endpoints as the facilities are not equiped with these systems.
+Unfortunately, we were not able to test the 3D scanner and MSC endpoints as the facilities are not equipped with these systems.
 
 ## Installation 
 Unfortunately currently only available on test pypi, installable with:
@@ -69,10 +70,8 @@ After this some postprocessing scripts are executed to make it work:
 3. run `pip install .` and then use `generate_complete_api_client.py` to create a single file with all the api calls for convenience.
 4. Use `fix_one_of_calls.py` to fix the two endpoints with multiple return values. While the keyword: `oneof` is used in the specification, this does not work.
 5. Run `simplify_returns.py`, for convenience. 
-6. `update_models.py` to account for the `""` the server returns instead of `None` for missing datetime values.
-7. `update_config_file.py` to set the datetime format correct.
-8. Copy `xml_decoder.py` to the plantscreen folder
-9. Update the documentation `generate_docs.py` and `update_docs.py`
+6. Copy `xml_decoder.py` to the plantscreen folder
+7. Update the documentation `generate_docs.py` and `update_docs.py`
 
 The fileendpoints use a socket (data stream) to download the files. It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is overwriten with handmade code. Those endspoints are also called without the returntype prefeix: '/json' , which means they require a different url.
 

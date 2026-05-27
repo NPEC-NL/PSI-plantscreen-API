@@ -20,14 +20,20 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
 
 class OwnerIDWrapper(BaseModel):
     """
     OwnerIDWrapper
     """ # noqa: E501
     owner_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="OwnerID")
+
     __properties: ClassVar[List[str]] = ["OwnerID"]
 
     model_config = ConfigDict(
@@ -35,6 +41,8 @@ class OwnerIDWrapper(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
 
 
     def to_str(self) -> str:
@@ -81,7 +89,7 @@ class OwnerIDWrapper(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "OwnerID": obj.get("OwnerID")
+                        "OwnerID": obj.get("OwnerID")
         })
         return _obj
 

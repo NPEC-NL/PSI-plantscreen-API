@@ -2460,4 +2460,4 @@ Name | Type | Description | Notes
 
 ---
 
-[Back to top](#) [Back to API Endpoints](API_endpoints.md) [Back to Models](Models.md) [Back to README](README.md)
+[Back to top](#) | [Back to API Endpoints](API_endpoints.md) | [Back to Models](Models.md) | [Back to README](README.md)

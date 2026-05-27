@@ -21,22 +21,151 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import action
+
+from plantscreen.models import experiment
+
+
+from plantscreen.models import round_order
+
+from plantscreen.models import action_group
+
+from plantscreen.models import action_protocol
+
+from plantscreen.models import tray
+
+from plantscreen.models import plant_height
+
+from plantscreen.models import system_log
 
 class Round(BaseModel):
     """
     Round
     """ # noqa: E501
     action_id: Optional[StrictInt] = Field(default=None, alias="ActionID")
+    _action: Optional[action.Action] = PrivateAttr(default=object())
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     round_date_start: Optional[datetime] = Field(default=None, alias="RoundDateStart")
     round_date_stop: Optional[datetime] = Field(default=None, alias="RoundDateStop")
     round_done: Optional[StrictBool] = Field(default=None, alias="RoundDone")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
     round_protocol_path: Optional[StrictStr] = Field(default=None, description="filetype", alias="RoundProtocolPath")
     round_status: Optional[StrictStr] = Field(default=None, alias="RoundStatus")
+    _order: Optional[round_order.RoundOrder] = PrivateAttr(default=object())
+    _action_group: Optional[action_group.ActionGroup] = PrivateAttr(default=object())
+    _action_protocol: Optional[action_protocol.ActionProtocol] = PrivateAttr(default=object())
+    _trays: Optional[List[tray.Tray]] = PrivateAttr(default=object())
+    _plant_heights: Optional[List[plant_height.PlantHeight]] = PrivateAttr(default=object())
+    _system_logs: Optional[List[system_log.SystemLog]] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["ActionID", "ExperimentID", "RoundDateStart", "RoundDateStop", "RoundDone", "RoundID", "RoundProtocolPath", "RoundStatus"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+    
+    
+    @property
+    def action(self) -> action.Action:
+        if type(self._action) is object:
+            from plantscreen.api.action_api import ActionApi as Api
+            json_result = Api().action(self.action_id)
+            self._action = json_result.result
+        return self._action
+
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
+
+
+
+    
+    @property
+    def order(self) -> round_order.RoundOrder:
+        if type(self._order) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round_order_round(id=self.round_id)
+            self._order = json_result.result
+        return self._order
+    
+    
+    
+    @property
+    def action_group(self) -> action_group.ActionGroup:
+        if type(self._action_group) is object:
+            from plantscreen.api.action_api import ActionApi as Api
+            json_result = Api().action_group_round(id=self.round_id)
+            self._action_group = json_result.result
+        return self._action_group
+    
+    
+    
+    @property
+    def action_protocol(self) -> action_protocol.ActionProtocol:
+        if type(self._action_protocol) is object:
+            from plantscreen.api.action_api import ActionApi as Api
+            json_result = Api().action_protocol_round(id=self.round_id)
+            self._action_protocol = json_result.result
+        return self._action_protocol
+    
+    
+    
+    @property
+    def trays(self) -> List[tray.Tray]:
+        if type(self._trays) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray_round(id=self.round_id)
+            self._trays = json_result.result
+        return self._trays
+    
+    
+    
+    @property
+    def plant_heights(self) -> List[plant_height.PlantHeight]:
+        if type(self._plant_heights) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().plant_height_round(id=self.round_id)
+            self._plant_heights = json_result.result
+        return self._plant_heights
+    
+    
+    
+    @property
+    def system_logs(self) -> List[system_log.SystemLog]:
+        if type(self._system_logs) is object:
+            from plantscreen.api.system_log_api import SystemLogApi as Api
+            json_result = Api().system_log_round(id=self.round_id)
+            self._system_logs = json_result.result
+        return self._system_logs
+    
+    
+
+    
+    def system_logs_by_daterange(self,start,stop) -> List[system_log.SystemLog]:
+        from plantscreen.api.system_log_api import SystemLogApi as Api
+        json_result = Api().system_log_date_round(
+                id=self.round_id,start=start,stop=stop)
+        return json_result.result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -82,14 +211,16 @@ class Round(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ActionID": obj.get("ActionID"),
-            "ExperimentID": obj.get("ExperimentID"),
+                        "ActionID": obj.get("ActionID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+            
             "RoundDateStart": obj.get("RoundDateStart") or None,
+            
             "RoundDateStop": obj.get("RoundDateStop") or None,
-            "RoundDone": obj.get("RoundDone"),
-            "RoundID": obj.get("RoundID"),
-            "RoundProtocolPath": obj.get("RoundProtocolPath"),
-            "RoundStatus": obj.get("RoundStatus")
+                        "RoundDone": obj.get("RoundDone"),
+                        "RoundID": obj.get("RoundID"),
+                        "RoundProtocolPath": obj.get("RoundProtocolPath"),
+                        "RoundStatus": obj.get("RoundStatus")
         })
         return _obj
 

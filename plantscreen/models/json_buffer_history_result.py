@@ -21,14 +21,19 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from plantscreen.models.buffer_history import BufferHistory
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
 
 class JsonBufferHistoryResult(BaseModel):
     """
     JsonBufferHistoryResult
     """ # noqa: E501
     json_buffer_history_result: Optional[BufferHistory] = Field(default=None, alias="JsonBufferHistoryResult")
+
     __properties: ClassVar[List[str]] = ["JsonBufferHistoryResult"]
 
     model_config = ConfigDict(
@@ -37,6 +42,11 @@ class JsonBufferHistoryResult(BaseModel):
         protected_namespaces=(),
     )
 
+    
+    @property
+    def result(self) -> BufferHistory:
+        return self.json_buffer_history_result
+    
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""

@@ -8,6 +8,19 @@ Name | Type | Description | Notes
 **json_msc_calibration_light_by_id_result** | [**MscCalibrationLight**](MscCalibrationLight.md) |  | [optional] 
 **json_msc_calibration_light_result** | [**List[MscCalibrationLight]**](MscCalibrationLight.md) |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

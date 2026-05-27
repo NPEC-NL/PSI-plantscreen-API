@@ -20,8 +20,23 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from pydantic import PrivateAttr
+
 from typing import Optional, Set
 from typing_extensions import Self
+
+
+from plantscreen.models import device
+
+from plantscreen.models import experiment
+
+from plantscreen.models import plant
+
+from plantscreen.models import round
+
+from plantscreen.models import tray
+
 
 class LeafParameter(BaseModel):
     """
@@ -29,8 +44,10 @@ class LeafParameter(BaseModel):
     """ # noqa: E501
     analyse_id: Optional[StrictInt] = Field(default=None, alias="AnalyseID")
     device_id: Optional[StrictInt] = Field(default=None, alias="DeviceID")
+    _device: Optional[device.Device] = PrivateAttr(default=object())
     device_pid: Optional[StrictStr] = Field(default=None, alias="DevicePID")
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
+    _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     leaf_index: Optional[StrictInt] = Field(default=None, alias="LeafIndex")
     measure_angle: Optional[StrictInt] = Field(default=None, alias="MeasureAngle")
     measure_id: Optional[StrictInt] = Field(default=None, alias="MeasureID")
@@ -39,11 +56,15 @@ class LeafParameter(BaseModel):
     parameter_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="ParameterValue")
     plant_barcode: Optional[StrictStr] = Field(default=None, alias="PlantBarcode")
     plant_id: Optional[StrictInt] = Field(default=None, alias="PlantID")
+    _plant: Optional[plant.Plant] = PrivateAttr(default=object())
     plant_name: Optional[StrictStr] = Field(default=None, alias="PlantName")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")
+    _round: Optional[round.Round] = PrivateAttr(default=object())
     tray_area: Optional[StrictStr] = Field(default=None, alias="TrayArea")
     tray_barcode: Optional[StrictStr] = Field(default=None, alias="TrayBarcode")
     tray_id: Optional[StrictInt] = Field(default=None, alias="TrayID")
+    _tray: Optional[tray.Tray] = PrivateAttr(default=object())
+
     __properties: ClassVar[List[str]] = ["AnalyseID", "DeviceID", "DevicePID", "ExperimentID", "LeafIndex", "MeasureAngle", "MeasureID", "ParameterID", "ParameterName", "ParameterValue", "PlantBarcode", "PlantID", "PlantName", "RoundID", "TrayArea", "TrayBarcode", "TrayID"]
 
     model_config = ConfigDict(
@@ -51,6 +72,64 @@ class LeafParameter(BaseModel):
         validate_assignment=True,
         protected_namespaces=(),
     )
+
+    
+
+    
+    @property
+    def device(self) -> device.Device:
+        if type(self._device) is object:
+            from plantscreen.api.device_api import DeviceApi as Api
+            json_result = Api().device(self.device_id)
+            self._device = json_result.result
+        return self._device
+
+
+    
+    @property
+    def experiment(self) -> experiment.Experiment:
+        if type(self._experiment) is object:
+            from plantscreen.api.experiment_api import ExperimentApi as Api
+            json_result = Api().experiment(self.experiment_id)
+            self._experiment = json_result.result
+        return self._experiment
+
+
+
+
+
+
+
+
+    
+    @property
+    def plant(self) -> plant.Plant:
+        if type(self._plant) is object:
+            from plantscreen.api.plant_api import PlantApi as Api
+            json_result = Api().plant(self.plant_id)
+            self._plant = json_result.result
+        return self._plant
+
+
+    
+    @property
+    def round(self) -> round.Round:
+        if type(self._round) is object:
+            from plantscreen.api.round_api import RoundApi as Api
+            json_result = Api().round(self.round_id)
+            self._round = json_result.result
+        return self._round
+
+
+
+    
+    @property
+    def tray(self) -> tray.Tray:
+        if type(self._tray) is object:
+            from plantscreen.api.tray_api import TrayApi as Api
+            json_result = Api().tray(self.tray_id)
+            self._tray = json_result.result
+        return self._tray
 
 
     def to_str(self) -> str:
@@ -97,23 +176,23 @@ class LeafParameter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "AnalyseID": obj.get("AnalyseID"),
-            "DeviceID": obj.get("DeviceID"),
-            "DevicePID": obj.get("DevicePID"),
-            "ExperimentID": obj.get("ExperimentID"),
-            "LeafIndex": obj.get("LeafIndex"),
-            "MeasureAngle": obj.get("MeasureAngle"),
-            "MeasureID": obj.get("MeasureID"),
-            "ParameterID": obj.get("ParameterID"),
-            "ParameterName": obj.get("ParameterName"),
-            "ParameterValue": obj.get("ParameterValue"),
-            "PlantBarcode": obj.get("PlantBarcode"),
-            "PlantID": obj.get("PlantID"),
-            "PlantName": obj.get("PlantName"),
-            "RoundID": obj.get("RoundID"),
-            "TrayArea": obj.get("TrayArea"),
-            "TrayBarcode": obj.get("TrayBarcode"),
-            "TrayID": obj.get("TrayID")
+                        "AnalyseID": obj.get("AnalyseID"),
+                        "DeviceID": obj.get("DeviceID"),
+                        "DevicePID": obj.get("DevicePID"),
+                        "ExperimentID": obj.get("ExperimentID"),
+                        "LeafIndex": obj.get("LeafIndex"),
+                        "MeasureAngle": obj.get("MeasureAngle"),
+                        "MeasureID": obj.get("MeasureID"),
+                        "ParameterID": obj.get("ParameterID"),
+                        "ParameterName": obj.get("ParameterName"),
+                        "ParameterValue": obj.get("ParameterValue"),
+                        "PlantBarcode": obj.get("PlantBarcode"),
+                        "PlantID": obj.get("PlantID"),
+                        "PlantName": obj.get("PlantName"),
+                        "RoundID": obj.get("RoundID"),
+                        "TrayArea": obj.get("TrayArea"),
+                        "TrayBarcode": obj.get("TrayBarcode"),
+                        "TrayID": obj.get("TrayID")
         })
         return _obj
 

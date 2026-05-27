@@ -6,6 +6,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json_tray_result** | [**Tray**](Tray.md) |  | [optional] 
+**result** | [**Tray**](Tray.md)| alias for **json_tray_result**  | 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+****|[**Tray**](TrayProfile.md)|tray_profile****|[**Tray**](ScalesMapping.md)|scales_mapping****|[**Tray**](Plant.md)|plants****|[**Tray**](PlantWeightReference.md)|plant_reference_weights****|[**Tray**](SystemLog.md)|system_logs
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
 
 ## Example
 

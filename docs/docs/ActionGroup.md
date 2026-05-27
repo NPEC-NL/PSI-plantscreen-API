@@ -11,6 +11,19 @@ Name | Type | Description | Notes
 **group_id** | **int** |  | [optional] 
 **group_repeating_protocol** | **str** |  | [optional] 
 
+
+## Links
+
+### 1:1
+Name | Model | Linked Via
+------------ | ------------- | -------------
+**experiment**|[**int**](Experiment.md)|experiment_id
+
+### 1:n
+Name | Model | API | Operation | Parameter
+------------ | ------------- | ------------- | ------------- | -------------
+
+
 ## Example
 
 ```python

@@ -1,0 +1,10 @@
+
+@property
+{{#async}}async {{/async}}def {{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}}(self) -> {{^isSingleValue}}List[{{/isSingleValue}}{{#lambda.snakecase}}{{{model}}}{{/lambda.snakecase}}.{{{model}}}{{^isSingleValue}}]{{/isSingleValue}}:
+    if type(self._{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}}) is object:
+        from {{packageName}}.api.{{#lambda.snakecase}}{{{tag}}}{{/lambda.snakecase}}_api import {{#lambda.pascalcase}}{{{tag}}}Api{{/lambda.pascalcase}} as Api
+        json_result = {{#async}}await {{/async}}Api().{{#lambda.snakecase}}{{{operationId}}}{{/lambda.snakecase}}({{parameter.name}}=self.{{#lambda.snakecase}}{{parameter.source}}{{/lambda.snakecase}})
+        self._{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}} = json_result.result
+    return self._{{#lambda.snakecase}}{{{name}}}{{/lambda.snakecase}}
+
+
