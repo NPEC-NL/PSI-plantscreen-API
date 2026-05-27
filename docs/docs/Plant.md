@@ -14,16 +14,19 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-reference_weight | List[[**object**](PlantWeightReference.md)]] | ScalesApi |  | PlantID
+reference_weight | [**object**](PlantWeightReference.md) | ScalesApi |  | PlantID->id
 
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
 ## Example
 
 ```python

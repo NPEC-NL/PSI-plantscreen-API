@@ -14,16 +14,20 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 **tray**|[**int**](Tray.md)|tray_id
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-tray_type | List[[**object**](TrayType.md)]] | TrayApi |  | ProfileIDplants | List[[**object**](Plant.md)]] | PlantApi |  | ProfileId
+tray_type | [**object**](TrayType.md) | TrayApi |  | ProfileID->id
+plants | List[[**object**](Plant.md)] | PlantApi |  | ProfileId->id
 
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
 ## Example
 
 ```python

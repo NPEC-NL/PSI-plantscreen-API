@@ -12,16 +12,19 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
-
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
+values_by_date | List[[**object**](SpectrumValues.md)] | SpectrumDeviceApi | SpectrumValuesDateDevice | SpectrumDeviceID->id, start->start, stop->stop
 ## Example
 
 ```python

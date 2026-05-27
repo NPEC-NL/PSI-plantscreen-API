@@ -38,7 +38,7 @@ class SystemProfile(BaseModel):
     profile_id: Optional[StrictInt] = Field(default=None, alias="ProfileID")
     profile_info: Optional[StrictStr] = Field(default=None, alias="ProfileInfo")
     profile_name: Optional[StrictStr] = Field(default=None, alias="ProfileName")
-    system_hw_config: Optional[StrictStr] = Field(default=None, alias="SystemHwConfig")
+    system_hw_config: Optional[StrictStr] = Field(default=None, alias="SystemHwConfig", json_schema_extra={"examples": ["\"<?xml version=\"1.0\" encoding=\"utf-8\" ?> <Configuration> <TrayStack> <RowCount>9</RowCount> <RowCapacity>30</RowCapacity> </TrayStack> <AdaptChamber>true</AdaptChamber> <HeightMeasurement>true</HeightMeasurement> <Commands> <SetLight>true</SetLight> <TrayLoad>true</TrayLoad> <TraySwap>true</TraySwap><TrayUnload>false</TrayUnload> <Measure>true</Measure> </Commands> <Lights> <Lightcaption=\"Load\">LightLoad</Light> <Light caption=\"White\">LightMain1</Light> <Light caption=\"Red\">LightMain2</Light> <Light caption=\"IR\">LightMain3</Light> </Lights> <Pids> <PID name=\"RGBM\" caption=\"RGBM\"> <View>Side</View> <Turntable>true</Turntable> <AxisZ heightVisible=\"false\">true</AxisZ> </PID> </Pids> <Analyse> </Analyse> </Configuration>"]})
     _devices: Optional[List[device.Device]] = PrivateAttr(default=object())
 
     __properties: ClassVar[List[str]] = ["ProfileActive", "ProfileID", "ProfileInfo", "ProfileName", "SystemHwConfig"]

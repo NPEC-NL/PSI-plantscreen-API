@@ -41,7 +41,7 @@ class MeasureExtendedData(BaseModel):
     """ # noqa: E501
     device_id: Optional[StrictInt] = Field(default=None, alias="DeviceID")
     _device: Optional[device.Device] = PrivateAttr(default=object())
-    extended_data: Optional[StrictStr] = Field(default=None, alias="ExtendedData")
+    extended_data: Optional[StrictStr] = Field(default=None, alias="ExtendedData", json_schema_extra={"examples": ["<DataSet> <Item name=\"latitude\" type=\"double\" unit=\"degree\">49.33948096</Item> <Item name=\"longitude\" type=\"double\" unit=\"degree\">16.47611234</Item> <Item name=\"distanceToWantedPoint\" type=\"double\" unit=\"meters\">0.46</Item> <Item name=\"speed\" type=\"double\" unit=\"km/h\">0.4</Item> </DataSet>"]})
     measure_date: Optional[datetime] = Field(default=None, alias="MeasureDate")
     measure_id: Optional[StrictInt] = Field(default=None, alias="MeasureID")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")

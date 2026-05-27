@@ -14,16 +14,19 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-devices | List[[**object**](Device.md)]] | DeviceApi |  | ProfileID
+devices | List[[**object**](Device.md)] | DeviceApi |  | ProfileID->id
 
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
 ## Example
 
 ```python

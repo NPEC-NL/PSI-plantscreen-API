@@ -10,16 +10,18 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 ****|[**Experiment**](Round.md)|rounds****|[**Experiment**](RoundOrder.md)|round_orders****|[**Experiment**](ExperimentNote.md)|notes****|[**Experiment**](Action.md)|actions****|[**Experiment**](Action.md)|unfinished_actions
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
-
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
 ## Example
 
 ```python

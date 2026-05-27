@@ -10,16 +10,18 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 ****|[**Round**](RoundOrder.md)|order****|[**Round**](ActionGroup.md)|action_group****|[**Round**](ActionProtocol.md)|action_protocol****|[**Round**](Tray.md)|trays****|[**Round**](PlantHeight.md)|plant_heights****|[**Round**](SystemLog.md)|system_logs
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
-
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
 ## Example
 
 ```python

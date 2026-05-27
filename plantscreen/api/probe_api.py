@@ -24,7 +24,8 @@ from plantscreen.models.json_probe_value_by_date_result import JsonProbeValueByD
 from plantscreen.models.json_probe_value_by_id_and_date_result import JsonProbeValueByIDAndDateResult
 from plantscreen.models.json_probe_by_id_result import JsonProbeByIDResult
 from plantscreen.models.json_probe_result import JsonProbeResult
-import jsonfrom plantscreen.api import allow_single_for_first_list_param
+import json
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType

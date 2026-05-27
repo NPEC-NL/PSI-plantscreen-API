@@ -43,7 +43,7 @@ class ActionProtocol(BaseModel):
     _action: Optional[action.Action] = PrivateAttr(default=object())
     experiment_id: Optional[StrictInt] = Field(default=None, alias="ExperimentID")
     _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
-    protocol_body: Optional[StrictStr] = Field(default=None, alias="ProtocolBody")
+    protocol_body: Optional[StrictStr] = Field(default=None, alias="ProtocolBody", json_schema_extra={"examples": ["<Protocol> <SetLight> <Light name=\"LightMain1\" value=\"16\" /> <Light name=\"LightMain2\" value=\"0\" /> </SetLight> <TrayLoadrow=\"3\" count=\"30\" /> <Measure> <AdaptTime>00:00:00</AdaptTime> <Prescription id=\"1\" name=\"Recipe New:1\"> <IR1 height=\"Default\"> <Offset>0</Offset> <Protocol name=\"Single imaging\">(begin-measure (take-image))</Protocol> <Delay>00:00:00</Delay> </IR1> /> <Analyse> <MaskErosionLevel>1</MaskErosionLevel> </Analyse> </Prescription> <Batch name=\"PS90\" pid=\"1\" date=\"2021-08-19\" /> <Tray sid=\"10-1__1\" id=\"3354\" pid=\"1\" /> <Tray sid=\"10-12__1\" id=\"3355\" pid=\"1\" /> </Measure> <SetLight> <Light name=\"LightMain1\" value=\"0\" /> <Light name=\"LightMain2\" value=\"0\" /> </SetLight> </Protocol>"]})
     protocol_date_changed: Optional[datetime] = Field(default=None, alias="ProtocolDateChanged")
     protocol_id: Optional[StrictInt] = Field(default=None, alias="ProtocolID")
     round_id: Optional[StrictInt] = Field(default=None, alias="RoundID")

@@ -16,16 +16,25 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 **owner**|[**int**](Owner.md)|owner_id
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-rounds | List[[**object**](Round.md)]] | RoundApi |  | ExperimentIDround_orders | List[[**object**](RoundOrder.md)]] | RoundApi |  | ExperimentIDnotes | List[[**object**](ExperimentNote.md)]] | ExperimentApi |  | ExperimentIDactions | List[[**object**](Action.md)]] | ActionApi |  | ExperimentIDunfinished_actions | List[[**object**](Action.md)]] | ActionApi |  | ExperimentID
+rounds | List[[**object**](Round.md)] | RoundApi |  | ExperimentID->id
+round_orders | List[[**object**](RoundOrder.md)] | RoundApi |  | ExperimentID->id
+notes | List[[**object**](ExperimentNote.md)] | ExperimentApi |  | ExperimentID->id
+actions | List[[**object**](Action.md)] | ActionApi |  | ExperimentID->id
+unfinished_actions | List[[**object**](Action.md)] | ActionApi |  | ExperimentID->id
 
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
+rounds_by_date | List[[**object**](Round.md)] | RoundApi | RoundDateExperiment | ExperimentID->id, start->start, stop->stop
+round_orders_by_date | List[[**object**](RoundOrder.md)] | RoundApi | RoundOrderDateExperiment | ExperimentID->id, start->start, stop->stop
 ## Example
 
 ```python

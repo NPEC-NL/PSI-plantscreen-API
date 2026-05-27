@@ -40,7 +40,8 @@ from plantscreen.models.json_msc_used_param_by_analyse_id_result import JsonMscU
 from plantscreen.models.json_msc_used_param_result import JsonMscUsedParamResult
 from plantscreen.models.json_msc_calibration_light_by_id_result import JsonMscCalibrationLightByIDResult
 from plantscreen.models.json_msc_calibration_light_result import JsonMscCalibrationLightResult
-import jsonfrom plantscreen.api import allow_single_for_first_list_param
+import json
+from plantscreen.api import allow_single_for_first_list_param
 from plantscreen.api_client import ApiClient, RequestSerialized
 from plantscreen.api_response import ApiResponse
 from plantscreen.rest import RESTResponseType

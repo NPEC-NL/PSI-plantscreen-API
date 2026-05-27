@@ -17,16 +17,25 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 **action**|[**int**](Action.md)|action_id**experiment**|[**int**](Experiment.md)|experiment_id
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-order | List[[**object**](RoundOrder.md)]] | RoundApi |  | RoundIDaction_group | List[[**object**](ActionGroup.md)]] | ActionApi |  | RoundIDaction_protocol | List[[**object**](ActionProtocol.md)]] | ActionApi |  | RoundIDtrays | List[[**object**](Tray.md)]] | TrayApi |  | RoundIDplant_heights | List[[**object**](PlantHeight.md)]] | RoundApi |  | RoundIDsystem_logs | List[[**object**](SystemLog.md)]] | SystemLogApi |  | RoundID
+order | [**object**](RoundOrder.md) | RoundApi |  | RoundID->id
+action_group | [**object**](ActionGroup.md) | ActionApi |  | RoundID->id
+action_protocol | [**object**](ActionProtocol.md) | ActionApi |  | RoundID->id
+trays | List[[**object**](Tray.md)] | TrayApi |  | RoundID->id
+plant_heights | List[[**object**](PlantHeight.md)] | RoundApi |  | RoundID->id
+system_logs | List[[**object**](SystemLog.md)] | SystemLogApi |  | RoundID->id
 
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
+system_logs_by_daterange | List[[**object**](SystemLog.md)] | SystemLogApi | SystemLogDateRound | RoundID->id, start->start, stop->stop
 ## Example
 
 ```python

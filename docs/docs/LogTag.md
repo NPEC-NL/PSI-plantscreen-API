@@ -10,16 +10,19 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
 
-
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
+system_logs_by_daterange | List[[**object**](SystemLog.md)] | SystemLogApi | SystemLogDateLogTag | LogTag->tag, start->start, stop->stop
 ## Example
 
 ```python

@@ -15,16 +15,28 @@ Name | Type | Description | Notes
 
 ## Links
 
-### 1:1
+### 1:1 Relationships
 Name | Model | Linked Via
 ------------ | ------------- | -------------
 **tray_type**|[**int**](TrayType.md)|tray_type_id
 
-### 1:n
+### Implicit Relationships
 Name | Model | API | Operation | Parameter
 ------------ | ------------- | ------------- | ------------- | -------------
-tray_profile | List[[**object**](TrayProfile.md)]] | TrayApi |  | TrayIDscales_mapping | List[[**object**](ScalesMapping.md)]] | TrayApi |  | TrayIDplants | List[[**object**](Plant.md)]] | PlantApi |  | TrayIDplant_reference_weights | List[[**object**](PlantWeightReference.md)]] | ScalesApi |  | TrayIDsystem_logs | List[[**object**](SystemLog.md)]] | SystemLogApi |  | TrayID
+tray_profile | [**object**](TrayProfile.md) | TrayApi |  | TrayID->id
+scales_mapping | [**object**](ScalesMapping.md) | TrayApi |  | TrayID->id
+plants | List[[**object**](Plant.md)] | PlantApi |  | TrayID->id
+plant_reference_weights | List[[**object**](PlantWeightReference.md)] | ScalesApi |  | TrayID->id
+system_logs | List[[**object**](SystemLog.md)] | SystemLogApi |  | TrayID->id
 
+### Parameterized Relationships
+Name | Model | API | Operation | Parameters
+------------ | ------------- | ------------- | ------------- | -------------
+tray_profile_used_by_daterange | List[[**object**](TrayProfile.md)] | TrayApi | TrayProfileUsedTray | TrayID->id, start->start, stop->stop
+tray_profile_used_at_time | List[[**object**](TrayProfile.md)] | TrayApi | TrayProfileToDateTray | TrayID->id, date->date
+plants_by_daterange | List[[**object**](Plant.md)] | PlantApi | PlantTrayProfileTray | TrayID->id, start->start, stop->stop
+plant_reference_weights_at_time | List[[**object**](PlantWeightReference.md)] | ScalesApi | ScalesWeightReferenceToDateTray | TrayID->id, date->date
+system_logs_by_daterange | List[[**object**](SystemLog.md)] | SystemLogApi | SystemLogDateTray | TrayID->id, start->start, stop->stop
 ## Example
 
 ```python

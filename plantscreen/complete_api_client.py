@@ -68,8 +68,10 @@ from plantscreen.models import (
 
 class CompleteAPIClient(ApiClient):
     def __init__(self, url: str, *args: Any, **kwargs: Any) -> None:
+        configuration = Configuration(host=url + "/RestService/json")
+        Configuration.set_default(configuration)
+        super().__init__(configuration, *args, **kwargs)
         self.file_api = ApiClient(Configuration(host=url + "/RestService"))
-        super().__init__(Configuration(host=url + "/RestService/json"), *args, **kwargs)
         self._ActionApi: api_module.ActionApi = api_module.ActionApi(self)
         self._BufferApi: api_module.BufferApi = api_module.BufferApi(self)
         self._DeviceApi: api_module.DeviceApi = api_module.DeviceApi(self)

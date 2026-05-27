@@ -36,7 +36,7 @@ class Device(BaseModel):
     Device
     """ # noqa: E501
     device_caption: Optional[StrictStr] = Field(default=None, alias="DeviceCaption")
-    device_config: Optional[StrictStr] = Field(default=None, alias="DeviceConfig")
+    device_config: Optional[StrictStr] = Field(default=None, alias="DeviceConfig", json_schema_extra={"examples": ["\"<?xml version=\"1.0\" encoding=\"utf-8\"?> <Configuration> <WindowingMode>1</WindowingMode> <ExtractLines>1</ExtractLines> <Focus>10508</Focus><Width>640</Width> <Height>710</Height> <DefaultZ>0</DefaultZ> <MaskCenterX>308</MaskCenterX> <MaskCenterY>637</MaskCenterY> <Barrel>-0.04</Barrel> <MaskRotation>0.0</MaskRotation> <ZConversion>1367</ZConversion> <RatioCoefficient>0.00123869</RatioCoefficient> <BackwardFEC>true</BackwardFEC> <FixedX>false</FixedX> <FixedXPxMmRatio>0</FixedXPxMmRatio> <FixedY>true</FixedY> <FixedYPxMmRatio>0.564726962</FixedYPxMmRatio> <CenterShift> <Item> <Z>0</Z> <XShift>0</XShift> <YShift>0</YShift> </Item> </CenterShift> <ScanLines>710</ScanLines> <PositionStart>1300</PositionStart> <PositionEnd>0</PositionEnd> <ScanSpeed>1770</ScanSpeed> <MoveSpeed>1700</MoveSpeed> <ScanAxis>Z</ScanAxis><HeatingTempDiff>8.0</HeatingTempDiff> <HeatingTime>1200</HeatingTime> </Configuration>"]})
     device_family: Optional[StrictStr] = Field(default=None, alias="DeviceFamily")
     device_id: Optional[StrictInt] = Field(default=None, alias="DeviceID")
     device_name: Optional[StrictStr] = Field(default=None, alias="DeviceName")

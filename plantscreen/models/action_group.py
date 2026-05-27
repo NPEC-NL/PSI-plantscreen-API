@@ -39,7 +39,7 @@ class ActionGroup(BaseModel):
     _experiment: Optional[experiment.Experiment] = PrivateAttr(default=object())
     group_caption: Optional[StrictStr] = Field(default=None, alias="GroupCaption")
     group_id: Optional[StrictInt] = Field(default=None, alias="GroupID")
-    group_repeating_protocol: Optional[StrictStr] = Field(default=None, alias="GroupRepeatingProtocol")
+    group_repeating_protocol: Optional[StrictStr] = Field(default=None, alias="GroupRepeatingProtocol", json_schema_extra={"examples": ["<GroupTiming type=\"Once\"> <DateTime>2020-10-03 16:13:48</DateTime> </GroupTiming>"]})
 
     __properties: ClassVar[List[str]] = ["ActionProtocolID", "ExperimentID", "GroupCaption", "GroupID", "GroupRepeatingProtocol"]
 
