@@ -2511,13 +2511,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#links" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Links
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1:1 Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterized-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameterized Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2771,13 +2810,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#links" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Links
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1:1 Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterized-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameterized Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2845,7 +2923,73 @@
 </tr>
 </tbody>
 </table>
-<h2 id="example">Example</h2>
+<h2 id="links">Links</h2>
+<h3 id="11-relationships">1:1 Relationships</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Model</th>
+<th>Linked Via</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>tray</strong></td>
+<td><a href="../Tray/"><strong>int</strong></a></td>
+<td>tray_id</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implicit-relationships">Implicit Relationships</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Model</th>
+<th>API</th>
+<th>Operation</th>
+<th>Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tray_type</td>
+<td><a href="../TrayType/"><strong>object</strong></a></td>
+<td>TrayApi</td>
+<td></td>
+<td>ProfileID-&gt;id</td>
+</tr>
+<tr>
+<td>plants</td>
+<td>List[<a href="../Plant/"><strong>object</strong></a>]</td>
+<td>PlantApi</td>
+<td></td>
+<td>ProfileId-&gt;id</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameterized-relationships">Parameterized Relationships</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Model</th>
+<th>API</th>
+<th>Operation</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>## Example</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <pre><code class="language-python">from plantscreen.models.tray_profile import TrayProfile
 
 # TODO update the JSON string below

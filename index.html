@@ -2904,12 +2904,13 @@
 <li><a href="https://github.com/NPEC-NL/PSI-Plantscreen-API">Source Code</a> <br></li>
 </ul>
 <hr />
-<p>Photon System Instruments (PSI) develivers equipment accross the globe. 
+<p>Photon System Instruments (PSI) delivers equipment across the globe. 
 Their cimatecells are controlled with plantscreen software, which comes with an API.
-Experience tough us, this API is a bit tricky to implement. 
-We believe it's a waist of time if everyone has to figure out how to implement this API and test it.
-Therefore we created he swagger file and a simple python wrapper to integrate the  endpoints of the plantscreen API.</p>
-<p>Unfortunately, we where not able to test the 3D scanner and MSC endpoints as the facilities are not equiped with these systems.</p>
+Experience taught us, this API is a bit tricky to implement. 
+We believe it's a waste of time if everyone has to figure out how to implement this API and test it.
+Therefore, we created the swagger file and a simple python wrapper to integrate the endpoints of the plantscreen API.
+Additionally the model classes are enriched with properties and functions to access linked models to make usage easier.</p>
+<p>Unfortunately, we were not able to test the 3D scanner and MSC endpoints as the facilities are not equipped with these systems.</p>
 <h2 id="installation">Installation</h2>
 <p>Unfortunately currently only available on test pypi, installable with:
 <code>python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple psi-plantscreen</code></p>
@@ -2953,10 +2954,8 @@ After this some postprocessing scripts are executed to make it work:
 3. run <code>pip install .</code> and then use <code>generate_complete_api_client.py</code> to create a single file with all the api calls for convenience.
 4. Use <code>fix_one_of_calls.py</code> to fix the two endpoints with multiple return values. While the keyword: <code>oneof</code> is used in the specification, this does not work.
 5. Run <code>simplify_returns.py</code>, for convenience. 
-6. <code>update_models.py</code> to account for the <code>""</code> the server returns instead of <code>None</code> for missing datetime values.
-7. <code>update_config_file.py</code> to set the datetime format correct.
-8. Copy <code>xml_decoder.py</code> to the plantscreen folder
-9. Update the documentation <code>generate_docs.py</code> and <code>update_docs.py</code></p>
+6. Copy <code>xml_decoder.py</code> to the plantscreen folder
+7. Update the documentation <code>generate_docs.py</code> and <code>update_docs.py</code></p>
 <p>The fileendpoints use a socket (data stream) to download the files. It's unclear how to implement streams in the swagger file, therefore the 'file' endpoint is overwriten with handmade code. Those endspoints are also called without the returntype prefeix: '/json' , which means they require a different url.</p>
 <h3 id="documentation">Documentation</h3>
 <p>Build with <a href="https://squidfunk.github.io/mkdocs-material/">mkdocs-material</a></p>
