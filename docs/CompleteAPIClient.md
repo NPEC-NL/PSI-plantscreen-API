@@ -485,6 +485,14 @@ List[[PlantParameter](docs/PlantParameter.md)]
 
 ---
 
+## file
+
+### Return type
+
+BytesIO
+
+---
+
 ## file_changelog
 
 ### Return type

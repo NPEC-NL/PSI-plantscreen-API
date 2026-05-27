@@ -38,7 +38,35 @@ class FileApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+    @validate_call
+    def file(
+        self,
+        path: str,
+        _request_timeout: float = 300,
+        _headers: Optional[Dict[StrictStr, Any]] = None
+    ) -> "BytesIO":
+        """Returns the content of a file as bytesio object
 
+        Args:
+            path (str): Path of the file to download
+            _request_timeout (float): Timeout for the request in seconds. Defaults to 300.
+            _headers (Optional[Dict[StrictStr, Any]]): Additional headers for the request.
+
+        Returns:
+            BytesIO: File content as a BytesIO object
+
+        Raises:
+            Exception: If the HTTP response status is not 200
+        """
+        s = Session()
+        data = BytesIO()
+        with s.get(f"{self.api_client.configuration.host}/file", params={"path": path}, headers=_headers, stream=True, timeout=_request_timeout) as resp:
+            if resp.status_code != 200:
+                raise Exception(f"Failed to download file: {resp.status_code} {resp.reason}")
+            else:
+                data.write(resp.content)
+                data.seek(0)
+        return data
 
 
     @allow_single_for_first_list_param

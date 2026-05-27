@@ -444,6 +444,15 @@ class CompleteAPIClient(ApiClient):
         result = self._FcApi.fc_plant_param_analyse(id, param_id)
         return getattr(result, "json_fc_plant_param_by_analyse_id_result", None)
 
+    def file(self, path: str) -> BytesIO:
+        """
+        Args:
+            path (str):
+        Returns:
+            BytesIO
+        """
+        return self._FileApi.file(path)
+
     def file_changelog(self) -> str:
         return self._FileApi.file_changelog()
 
